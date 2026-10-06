@@ -1,0 +1,84 @@
+# Internet Force 1995–1996 Historical Archive
+
+Website: https://pippocom.github.io/internetforce-1995/
+Repository: https://github.com/pippocom/internetforce-1995
+Author and curator: Marco Iannacone
+Author website: https://pippo.com/me/
+
+## About this archive
+
+This site is a historical and technical reconstruction of Internet Force, an Italian Internet Service Provider founded in Milan in 1995 and active during 1995–1996.
+
+The archive preserves and documents original technical material from the provider, including surviving system and network configurations, operational documentation, software, customer materials, historical network maps, email and Usenet material, and other artifacts from the period.
+
+The purpose of the project is not simply to preserve old files. It is to reconstruct how a small commercial Internet provider of the mid-1990s actually worked: its network architecture, Unix systems, dial-up access, routing, DNS, email, authentication, web services, security, monitoring, Point of Presence infrastructure, and day-to-day operations.
+
+## Author and historical role
+
+Marco Iannacone is the author and curator of this archive.
+
+At Internet Force, Marco Iannacone built and operated the provider's technical infrastructure as its sole system and network administrator. His work included the Unix service platform, networking, routing, authentication, Internet services, monitoring, security infrastructure, POP configuration and operational management.
+
+This historical reconstruction is based on original materials preserved by Marco Iannacone together with his direct recollection of designing, configuring and operating the infrastructure.
+
+More information about the author:
+https://pippo.com/me/
+
+## Why this archive exists
+
+Internet infrastructure from the early commercial Internet era is unusually fragile as historical evidence.
+
+Small Internet providers were built from Unix hosts, routers, modems, configuration files, scripts, printed manuals, email, Usenet discussions and the practical knowledge of the people who operated them. Much of this material was never formally archived and was easily lost when companies closed, hardware was discarded and systems were replaced.
+
+Internet Force provides a compact example of how an independent ISP was actually assembled and operated in 1995, during the transition from an academic and specialist Internet to mass commercial access.
+
+Preserving the archive therefore serves several purposes:
+
+- documenting the technical architecture of an early Italian commercial ISP;
+- preserving original configurations and operational artifacts rather than only retrospective descriptions;
+- showing how Internet services were deployed and administered before today's cloud platforms and managed infrastructure;
+- preserving the engineering practices, tools and operational culture of the period;
+- providing material for researchers, historians, engineers, students and anyone studying the development of the commercial Internet.
+
+This is intended as technical and digital archaeology, not nostalgia.
+
+## Main areas
+
+### Narrative documentation
+https://pippocom.github.io/internetforce-1995/docs/
+
+Technical reconstruction of the architecture, services, POPs, operations, security, authentication, networking, monitoring and shutdown/migration history.
+
+### Systems
+https://pippocom.github.io/internetforce-1995/systems/
+
+System-specific documentation and surviving configurations for routers, Unix hosts, firewall, development systems, POPs and related infrastructure.
+
+### Historical artifacts
+https://pippocom.github.io/internetforce-1995/artifacts/
+
+Original manuals, customer materials, software, network monitoring material, email, Usenet posts, photographs, inventories and other recovered material.
+
+### Interactive archive
+https://pippocom.github.io/internetforce-1995/site/index.en.html
+
+Interactive historical network maps and a browser for technical documentation and surviving configuration files.
+
+### Italian interactive archive
+https://pippocom.github.io/internetforce-1995/site/index.html
+
+Italian-language entry point to the interactive archive.
+
+## Citation and attribution
+
+The archive and its documentation are curated by Marco Iannacone.
+
+When referring to this reconstruction, please identify:
+
+Marco Iannacone, Internet Force 1995–1996 Historical Archive
+https://pippocom.github.io/internetforce-1995/
+
+Repository:
+https://github.com/pippocom/internetforce-1995
+
+Unless otherwise stated for individual third-party historical materials, original documentation produced for this archive is released under CC BY 4.0.

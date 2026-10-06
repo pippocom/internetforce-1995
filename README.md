@@ -33,7 +33,7 @@ Due percorsi principali per esplorare l'archivio:
 - **Esplora la rete** - tre mappe storiche interattive per navigare visivamente
   l'infrastruttura del 1995 e aprire le schede dei sistemi e le
   configurazioni sopravvissute.
-  → [Esplora Internet Force](site/index.html)
+  → [Esplora Internet Force](https://pippocom.github.io/internetforce-1995/)
 
 ## Il sistema in sintesi (1995)
 

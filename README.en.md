@@ -33,7 +33,7 @@ Two principal routes to explore the archive:
 - **Explore the network** — three interactive historical maps to browse the
   1995 infrastructure visually and open real system pages
   and surviving configurations.
-  → [Explore Internet Force](site/index.en.html)
+  → [Explore Internet Force](https://pippocom.github.io/internetforce-1995/site/index.en.html)
 
 ## The system at a glance (1995)
 
