@@ -1,0 +1,32 @@
+Per la compilazione del programma e' importante cambiare alcuni valori 
+contenuti in config.h
+In particolare ho aggiunto la barra HR e la possibilita' di rispondere agli
+e-mail.
+Si puo' considerare di modificare print.c per poter aggiungere a pie' pagina
+qualcosa.
+
+
+Una volta compilato hypermail e installato nella directory
+/usr/local/etc/
+
+ecco il comando da dare per ottenere un archivio aggiornato
+dal file intf-list.archive.9605
+
+/usr/local/etc/hypermail -m "intf-list.archive.9605" -d 
+/usr/local/etc/httpd/htdocs/archives/intf-list 
+
+Per cosmopolitan ho creato un archivio in questo modo:
+
+/usr/local/etc/hypermail 
+   -m ~majordomo/lists/cosmo-answer.archive.9605   
+   -d /usr/local/etc/httpd/htdocs/archives/cosmo 
+   -l "Rispondi alle domande di Cosmopolitan" 
+
+a questo punto ho messo un alias in modo che sia aggiornato automaticamente:
+
+risposte-cosmo: "|/usr/local/etc/hypermail -i -u  -d /usr/local/etc/httpd/htdocs/arc
+hives/cosmo"
+
+Ovviamente la directory in cui devo scrivere deve essere modificata cosi':
+
+/usr/local/etc/httpd/htdocs/archives/cosmo>chown root.daemon .

@@ -1,0 +1,18 @@
+
+Collegamento per INDI
+
+Sulla seriale di milano:
+
+encapsulation frame-relay
+frame-relay lmi-type cisco
+frame-relay map ip 10.0.10.130 100 broadcast
+keepalive 10
+
+
+Sulla seriale di pesaro:
+
+encapsulation frame-relay
+frame-relay lmi-type cisco
+frame-relay map ip 10.0.10.1 320 broadcast
+keepalive 10
+

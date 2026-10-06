@@ -1,0 +1,181 @@
+!
+version 10.2
+!
+hostname gw-enter.inet.it
+!
+enable secret 5 $1$SCM7$UnBVOyS8/9sJP9fqF131j0
+enable password 5 <ORIGINAL PASSWORD REMOVED>
+!
+username guest nopassword
+username guest autocommand connect users
+ip subnet-zero
+!
+interface Ethernet0
+ip address 194.20.50.19 255.255.255.224
+!
+interface Serial0
+no ip address
+encapsulation lapb multi
+shutdown
+!
+interface Serial1
+no ip address                                                                  
+!
+interface Async1
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.65
+async mode interactive
+!
+interface Async2
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.66
+async mode interactive
+!
+interface Async3
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.67
+async mode interactive
+!                                                                              
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.68
+async mode interactive
+!
+interface Async5
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.69
+async mode interactive
+!
+interface Async6
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.70
+async mode interactive
+!
+interface Async7
+ip unnumbered Ethernet0                                                        
+encapsulation ppp
+async default ip address 194.20.50.71
+async mode interactive
+!
+interface Async8
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.72
+async mode interactive
+!
+interface Async9
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.73
+async mode interactive
+!
+interface Async10
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp                                                              
+async mode interactive
+!
+interface Async11
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.75
+async mode interactive
+!
+interface Async12
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.76
+async mode interactive
+!
+interface Async13
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.77
+async mode interactive                                                         
+!
+interface Async14
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.78
+async mode interactive
+!
+interface Async15
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.79
+async mode interactive
+!
+interface Async16
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 194.20.50.80
+async mode interactive
+!
+ip domain-name inet.it.                                                        
+ip name-server 194.20.8.4
+ip route 0.0.0.0 0.0.0.0 194.20.50.1
+ip route 194.20.50.0 255.255.255.224 Ethernet0
+ip route 194.20.50.32 255.255.255.224 Ethernet0
+tacacs-server host 194.20.50.2
+tacacs-server last-resort succeed
+snmp-server community <ORIGINAL SECRET REMOVED> RO
+!
+line con 0
+exec-timeout 0 0
+terminal-type vt100
+exec-character-bits 8
+line 1
+exec-timeout 0 0
+login tacacs
+modem ri-is-cd
+terminal-type vt100
+exec-character-bits 8
+stopbits 1
+rxspeed 115200
+txspeed 115200
+flowcontrol hardware                                                           
+exec-timeout 0 30
+login tacacs
+modem ri-is-cd
+terminal-type vt100
+exec-character-bits 8
+no history
+stopbits 1
+rxspeed 115200
+txspeed 115200
+flowcontrol hardware
+line 3 16
+exec-timeout 0 0
+login tacacs
+modem ri-is-cd
+terminal-type vt100
+exec-character-bits 8
+stopbits 1
+rxspeed 115200
+txspeed 115200
+flowcontrol hardware
+line aux 0
+login                                                                          
+terminal-type vt100
+exec-character-bits 8
+!
+end                                                                            

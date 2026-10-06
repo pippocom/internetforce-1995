@@ -1,0 +1,12 @@
+#!/bin/sh
+# Put any local setup commands in here
+
+#well.... lets make sure we have at least 8M swap file....
+#if MS-Windows will rise hell - remove the next line...
+#dd if=/dev/zero of=/dos/386spart.par bs=1024 count=8192
+
+#now lets make a swapfile there...
+#/sbin/mkswap /dos/386spart.par
+#sync
+#/sbin/swapon /dos/386spart.par
+

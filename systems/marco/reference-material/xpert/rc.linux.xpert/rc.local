@@ -1,0 +1,8 @@
+#! /bin/sh
+
+## Allow XDM login from Xterminals on the LAN
+/usr/bin/X11/xdm-shadow
+/usr/bin/X11/xfs &
+
+## Optimize IDE drive usage
+/usr/local/bin/hdparm -a 16 -A 1 -m 16  -u 1 /dev/hda

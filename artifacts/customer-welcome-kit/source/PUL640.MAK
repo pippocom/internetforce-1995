@@ -1,0 +1,10 @@
+BARRA640.FRM
+C:\WINDOWS\SYSTEM\THREED.VBX
+ABOUT.FRM
+NOT640.FRM
+ProjWinSize=91,573,207,168
+ProjWinShow=2
+IconForm="Form1"
+Title="Easy-Net"
+ExeName="EASY-640.EXE"
+Path="C:\TMP\PROVA"

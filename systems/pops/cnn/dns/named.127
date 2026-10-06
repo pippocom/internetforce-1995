@@ -1,0 +1,20 @@
+;
+;    File:      named.127.0.0 file
+;    Purpose:   This file establishes the identity of this DNS.
+;               SOA stands for 'start of authority' and sets the
+;               default parameters for information this DNS is 
+;               authoritative for:
+;
+@        IN SOA    cnn-server.cnn.it. Chris.cnn.it. (
+            951213   ; serial number
+            86400    ; refresh every 12 hours
+            7200     ; retry after 2 hours
+            1209600  ; expire after 2 weeks
+            86400)  ; default ttl is 2 days
+;
+         IN NS    cnn-server.cnn.it.
+
+1.0.0	 IN PTR	   localhost.cnn.it.
+1        IN PTR    localhost.cnn.it.
+
+;

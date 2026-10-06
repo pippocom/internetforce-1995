@@ -1,0 +1,976 @@
+#! /bin/sh
+# This is a shell archive.  Remove anything before this line, then unpack
+# it by saving it into a file and typing "sh file".  To overwrite existing
+# files, type "sh file -c".  You can also feed this as standard input via
+# unshar, or by typing "sh <file", e.g..  If this archive is complete, you
+# will see the following message at the end:
+#		"End of shell archive."
+# Contents:  README Makefile digest aliases.slice sample-digest.cf
+#   sample-digest.header sample-digest.num sample-digest.trailer
+#   sample-digest.vol shlock.pl wrapper.c
+# Wrapped by brent@mycroft on Fri Apr  1 01:38:24 1994
+PATH=/bin:/usr/bin:/usr/ucb ; export PATH
+if test -f 'README' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'README'\"
+else
+echo shar: Extracting \"'README'\" \(1351 characters\)
+sed "s/^X//" >'README' <<'END_OF_FILE'
+Here's the cleaned-up version of my digestifier: it follows RFC 934,
+and so should be compatible with most any digest-digester that comes
+along.  I think I cribbed the precise format from the RISKS digest way
+back when.
+X
+X  This does not automatically increment issue numbers or send the
+message; it just creates a properly formatted digest and spits it to
+stdout.  Both of these can be done in a simple wrapper tailored to how
+things are set up at your end.
+X
+X  To make a digest, you need four things:
+X	- a digest config file, ~/.digestrc by default (sample in
+X	  digest.cf)
+X	- a digest header file (administrivia, sample is foo-header.txt)
+X	- a digest trailer file (ditto, see foo-trailer.txt)
+X	- RFC-822 messages, stored one per file
+X
+X  usage is "digest [-c configfile] messagefile ...".  The few times I
+actually used this, I just piped it into "/usr/lib/sendmail -oi -t".
+X
+X  The config file is commented, and the format should be obvious.  the
+only two things to watch for in the header and trailer files are:
+X	- a line containing _SUBJECTS_ in the header file will be
+X	  replaced by lines consisting of all of the subjects in the
+X	  included messages, in order, indented as far as _SUBJECTS_ is.
+X	- lines beginning with "-" in these files will not be
+X	  properly encapsulated, and will be interpreted by
+X	  undigesting software as message breaks.
+END_OF_FILE
+if test 1351 -ne `wc -c <'README'`; then
+    echo shar: \"'README'\" unpacked with wrong size!
+fi
+# end of 'README'
+fi
+if test -f 'Makefile' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'Makefile'\"
+else
+echo shar: Extracting \"'Makefile'\" \(1677 characters\)
+sed "s/^X//" >'Makefile' <<'END_OF_FILE'
+X# $Source: /mycroft/brent/majordomo/RCS/Makefile,v $
+X# $Revision: 1.12 $
+X# $Date: 1993/09/30 17:29:42 $
+X# $Author: brent $
+X# $State: Exp $
+X# 
+X# $Header: /mycroft/brent/majordomo/RCS/Makefile,v 1.12 1993/09/30 17:29:42 brent Exp $
+X# 
+X# $Locker:  $
+X# 
+X
+X# This is where "wrapper" looks for the programs it's supposed to run.
+W_BIN=/mycroft/brent/majordomo
+X
+X# This is the environment that (along with LOGNAME and USER inherited from the
+X# parent process, and without the leading "W_" in the variable names) gets
+X# passed to processes run by "wrapper"
+X
+W_PATH=/bin:/usr/bin:/usr/ucb
+W_HOME=${W_BIN}
+W_SHELL=/bin/csh
+W_MAJORDOMO_CF=/mycroft/brent/majordomo/majordomo-test.cf
+X
+X# Use these settings for BSD-based systems, including SunOS 4.x.  If you're
+X# using a POSIX-compliant system (including SysV and BSDI), comment these
+X# settings out, and uncomment the POSIX settings below.
+W_USER=daemon
+W_GROUP=majordom
+W_CHOWN=${W_USER}.${W_GROUP}
+W_CHMOD=6755
+WRAPPER_FLAGS = -DBIN=\"${W_BIN}\" -DPATH=\"PATH=${W_PATH}\"	\
+X	-DHOME=\"HOME=${W_HOME}\" -DSHELL=\"SHELL=${W_SHELL}\"	\
+X	-DMAJORDOMO_CF=\"MAJORDOMO_CF=${W_MAJORDOMO_CF}\"
+X
+X# If you're using a POSIX-compliant system, uncomment this set of parameters
+X# and comment out the BSD settings above.
+X# W_UID = 1
+X# W_GID = 15
+X# W_CHOWN=root
+X# W_CHMOD=4755
+X# WRAPPER_FLAGS = -DBIN=\"${W_BIN}\" -DPATH=\"PATH=${W_PATH}\" \
+X# 	-DHOME=\"HOME=${W_HOME}\" -DSHELL=\"SHELL=${W_SHELL}\" \
+X#	-DMAJORDOMO_CF=\"MAJORDOMO_CF=${W_MAJORDOMO_CF}\"       \
+X# 	-DPOSIX_UID=${W_UID} -DPOSIX_GID=${W_GID}
+X
+default: wrapper
+X
+install: wrapper
+X
+wrapper: wrapper.c
+X	cc ${WRAPPER_FLAGS} -o wrapper wrapper.c
+X	chown ${W_CHOWN} wrapper
+X	chmod ${W_CHMOD} wrapper
+X
+END_OF_FILE
+if test 1677 -ne `wc -c <'Makefile'`; then
+    echo shar: \"'Makefile'\" unpacked with wrong size!
+fi
+# end of 'Makefile'
+fi
+if test -f 'digest' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'digest'\"
+else
+echo shar: Extracting \"'digest'\" \(6758 characters\)
+sed "s/^X//" >'digest' <<'END_OF_FILE'
+X#!/usr/local/bin/perl
+X
+X# Original from J Greely <jgreely@cis.ohio-state.edu>, 9/30/92
+X#
+X# Heavily modified by Brent Chapman <Brent@GreatCircle.COM>
+X
+X# $Source: /mycroft/brent/digest/RCS/digest,v $
+X# $Revision: 1.8 $
+X# $Date: 1992/10/16 21:33:27 $
+X# $Author: brent $
+X# $State: Exp $
+X# 
+X# $Header: /mycroft/brent/digest/RCS/digest,v 1.8 1992/10/16 21:33:27 brent Exp $
+X# 
+X# $Locker:  $
+X# 
+X# $Log: digest,v $
+X# Revision 1.8  1992/10/16  21:33:27  brent
+X# Made RFC1153 compliant.  -Brent
+X#
+X# Revision 1.7  1992/10/02  17:03:33  brent
+X# Cleaned up RCS headers.  -Brent
+X#
+X# Revision 1.6  1992/10/02  17:00:13  brent
+X# Added author credits, RCS headers.  -Brent
+X#
+X# Revision 1.5	1992/10/02  16:46:08  brent
+X# Added blank line after encapsulation boundary.
+X# Added "Precedence: bulk" header
+X# 
+X# Revision 1.4	1992/10/02  16:44:19  brent
+X# Added "chdir($HOME)" to make everything happy.  -Brent
+X# 
+X# Revision 1.3	1992/10/01  23:12:55  brent
+X# Extensive modifications for Firewalls-Digest.  -Brent
+X# 
+X# Revision 1.2	1992/10/01  21:13:21  brent
+X# Revised .cf file handling; made keys match header names.
+X# Added "-v" and "-n" switches
+X# 
+X# Revision 1.1	1992/10/01  20:42:17  brent
+X# Initial revision
+X# 
+X
+X&init;
+X&readconfig;
+X
+require "shlock.pl";
+X
+X&set_lock;
+X
+if (defined($opt_r)) {
+X    &receive_message;
+X} elsif (defined($opt_m)) {
+X    &make_digest;
+X} else {
+X    &abort("Usage: digest {-r|-m} [-c config]\nStopped");
+X}
+X
+X&free_lock;
+X
+exit(0);
+X
+sub receive_message {
+X    $sum = 0;
+X    $i = 0;
+X    do {
+X	$i++;
+X	$file = sprintf("%s/%03d", $V{'INCOMING'}, $i);
+X	$sum += (-s $file);
+X    } until (! -e $file);
+X    print STDERR "Receiving $i\n";
+X    open(MSG, ">$file") || &abort("open(MSG, \">$file\"): $!");
+X    while (<STDIN>) {
+X	print MSG $_;
+X    }
+X    close(MSG);
+X    $sum += (-s $file);
+X    if ($sum > $V{'DIGEST_SIZE'}) {
+X	&make_digest;
+X    }
+X    return(1);
+X}
+X
+X
+sub make_digest {
+X    @files=<$V{'INCOMING'}/*>;
+X    if ($#files < $[) {
+X	&abort("No messages.\nStopped ");
+X    }
+X    open(TEMP,">$TEMP") || &abort("$TEMP: $!\n");
+X    print STDERR "producing $V{'NAME'} V$VOLUME #$NUMBER\n";
+X    foreach $message (@files) {
+X	    open(message) || &abort("$message: $!\n");
+X	    #side note: "open message or die"?
+X	    print STDERR "\tprocessing $message\n";
+X
+X	    $/ = '';
+X	    $head = <message>;
+X	    $head =~ s/\n\s+/ /g;
+X	    $body = "";
+X	    ($subj) = ($head =~ /^subject:\s+(.*)/i);
+X	    $subj = "[none]" unless $subj;
+X	    ($from) = ($head =~ /^from:\s+(.*)/i);
+X	    ($date) = ($head =~ /^date:\s+(.*)/i);
+X
+X	    $/ = "\n";
+X	    while (<message>) {
+X		    s/^-/- -/; #escape encapsulation boundaries in message
+X		    $body .= $_;
+X	    }
+X	    close(message);
+X	    $body =~ s/\n+$/\n/;
+X
+X	    push(@subj,$subj);
+X	    print TEMP <<EOF;
+XFrom: $from
+Date: $date
+Subject: $subj
+X
+X$body
+X$EB
+X
+XEOF
+X    }
+X    close(TEMP);
+X
+X    $DIGEST = sprintf("%s/v%02d.n%03d", $V{'ARCHIVE'}, $VOLUME, $NUMBER);
+X    open(DIGEST, ">$DIGEST") || &abort("open(DIGEST, \">$DIGEST\"): $!");
+X
+X    print DIGEST <<EOF;
+XFrom:      $V{'FROM'}
+To:        $V{'TO'}
+Subject:   $V{'NAME'} V$VOLUME #$NUMBER
+Reply-To:  $V{'REPLY-TO'}
+XErrors-To: $V{'ERRORS-TO'}
+Precedence: bulk
+X
+XEOF
+X
+X    $PDATE = &getdate();
+X    printf DIGEST ("%-20s",$V{'NAME'});
+X    $center = " " x int(18 - length($PDATE) / 2);
+X    print  DIGEST $center,$PDATE,$center;
+X    printf DIGEST ("Volume %02d : Number %03d\n\n",$VOLUME,$NUMBER);
+X
+X    foreach (split(/\n/,$HEADER)) {
+X	    if (/_SUBJECTS_/) {
+X		    $pre = $`;
+X		    foreach $subj (@subj) {
+X			    print DIGEST $pre,$subj,"\n";
+X		    }
+X	    }else{
+X		    print DIGEST "$_\n";
+X	    }
+X    }
+X    print DIGEST "\n";
+X    print DIGEST "-" x 70,"\n\n";
+X
+X    open(TEMP);
+X    print DIGEST <TEMP>;
+X    close(TEMP);
+X    unlink($TEMP);
+X
+X    $end = sprintf("End of %s V%d #%d", $V{'NAME'}, $VOLUME, $NUMBER);
+X    print DIGEST $end, "\n";
+X    print DIGEST "*" x length($end), "\n";
+X    print DIGEST "\n";
+X    print DIGEST $TRAILER;
+X
+X    close(DIGEST);
+X
+X    system("/usr/lib/sendmail -f$V{'ERRORS-TO'} $V{'REALLY-TO'} < $DIGEST");
+X
+X    open(NUM_FILE, ">$V{'NUM_FILE'}") ||
+X	&abort("open(NUM_FILE, \">$NUM_FILE\"): $!");
+X    printf NUM_FILE "%d\n", $NUMBER + 1;
+X    close(NUM_FILE);
+X
+X    unlink(@files);
+X
+X    return 0;
+X}
+X
+sub init {
+X	$* = 1;
+X	$HOME = $ENV{"HOME"} || (getpwuid($>))[7];
+X	chdir($HOME);
+X	&getopt("rmc:") ||
+X	    &abort("Usage: digest {-r|-m} [-c config]\nStopped");
+X	$config = $opt_c || "$HOME/.digestrc";
+X	$TEMP = "/tmp/digest.$$";
+X	$SIG{'INT'} = 'cleanup';
+X	@MONTHS = ("January","February","March","April","May","June","July",
+X	           "August","September","October","November","December");
+X	@DAYS = ("Sunday","Monday","Tuesday","Wednesday","Thursday",
+X	         "Friday","Saturday");
+X	$TEMP = "/tmp/digest.$$";
+X	$EB = "-" x 30;
+X}
+X
+sub readconfig {
+X	open(config) || &abort("$config: $!\n");
+X	while (<config>) {
+X		next if /^\s*$|^\s*#/;
+X		chop;
+X		($key,$value) = split(/\s*=\s*/,$_,2);
+X		$V{$key} = $value;
+X	}
+X	close(config);
+X
+X	open(header,$V{'HEADER'}) || &abort("$V{'HEADER'}: $!\n");
+X	$HEADER = join("",<header>);
+X	close(header);
+X
+X	open(trailer,$V{'TRAILER'}) || &abort("$V{'TRAILER'}: $!\n");
+X	$TRAILER = join("",<trailer>);
+X	close(trailer);
+X
+X	open(VOL_FILE,$V{'VOL_FILE'}) || &abort("$V{'VOL_FILE'}: $!\n");
+X	$VOLUME = join("",<VOL_FILE>);
+X	chop($VOLUME);
+X	close(VOL_FILE);
+X
+X	open(NUM_FILE,$V{'NUM_FILE'}) || &abort("$V{'NUM_FILE'}: $!\n");
+X	$NUMBER = join("",<NUM_FILE>);
+X	chop($NUMBER);
+X	close(NUM_FILE);
+X
+X	if (defined($V{'HOME'})) {
+X	    unshift(@INC, $V{'HOME'});
+X	}
+X}
+X
+X#my favorite of the existing getopt routines; twisted
+X#
+sub getopt {
+X	local($_,%opt,$rest) = (split(/([^:])/,$_[0]),'');
+X	while ($_ = $ARGV[0], /^-(.)/ && shift(@ARGV)) {
+X		$rest = $';
+X		last if $1 eq '-';
+X		if (!defined $opt{$1}) {
+X			warn "Unrecognized switch \"-$1\".\n";
+X			return 0;
+X		}elsif ($opt{$1}) {
+X			$rest = shift(@ARGV) if $rest eq '';
+X			eval "\$opt_$1 = \$rest";
+X		}else{
+X			eval "\$opt_$1 = 1";
+X			$rest =~ /^(.)/;
+X			redo if $rest ne '';
+X		}
+X	}
+X	return 1;
+X}
+X
+sub cleanup {
+X	unlink($TEMP);
+X	exit(1);
+X}
+X
+sub getdate {
+X  local($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
+X  return($DAYS[$wday] . ", $mday " . $MONTHS[$mon] . " 19$year");
+X}
+X
+sub set_lock {
+X    for ($tries = 0 ; $tries < 600 ; $tries++) {
+X	if (&shlock($V{'INCOMING'} . "/.LOCK")) {
+X	    # got the lock
+X	    $lock_set = 1;
+X	    return(1);
+X	} else {
+X	    # didn't get the lock; wait 1 second and try again.
+X	    sleep(1);
+X	}
+X    }
+X    # if we got this far, we ran out of tries on the lock.
+X    &abort("unable to create lock \"$V{'INCOMING'}/.LOCK\"; giving up");
+X    return undef;
+X}
+X
+sub free_lock {
+X    if (defined($lock_set)) {
+X	undef($lock_set);
+X	return unlink($V{'INCOMING'} . "/.LOCK");
+X    } else {
+X	return undef;
+X    }
+X}
+X
+sub abort {
+X    local($msg) = shift;
+X
+X    &free_lock;
+X    die($msg);
+X}
+END_OF_FILE
+if test 6758 -ne `wc -c <'digest'`; then
+    echo shar: \"'digest'\" unpacked with wrong size!
+fi
+chmod +x 'digest'
+# end of 'digest'
+fi
+if test -f 'aliases.slice' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'aliases.slice'\"
+else
+echo shar: Extracting \"'aliases.slice'\" \(1528 characters\)
+sed "s/^X//" >'aliases.slice' <<'END_OF_FILE'
+firewalls: "|/usr/local/mail/majordomo/wrapper resend -p bulk -M 10000 -l Firewalls -f Firewalls-Owner -h GreatCircle.COM -s firewalls-outgoing"
+owner-firewalls: firewalls-owner
+firewalls-outgoing: :include:/usr/local/mail/lists/firewalls, firewalls-archive, firewalls-digestify
+owner-firewalls-outgoing: firewalls-owner
+firewalls-archive: /usr/local/mail/archive/firewalls
+owner-firewalls-archive: firewalls-owner
+firewalls-request: "|/usr/local/mail/majordomo/wrapper request-recording firewalls"
+owner-firewalls-request: firewalls-owner
+firewalls-approval: brent
+firewalls-owner: brent
+owner-firewalls-owner: brent
+firewalls-digest: firewalls
+owner-firewalls-digest: firewalls-digest-owner
+firewalls-digestify: "|/usr/local/mail/majordomo/wrapper digest -r -c /usr/local/mail/digest/firewalls-digest.cf"
+owner-firewalls-digestify: firewalls-digest-owner
+firewalls-digest-send: "|/usr/local/mail/majordomo/wrapper resend -p bulk -l Firewalls-Digest -f Firewalls-Digest-Owner -h GreatCircle.COM -s firewalls-digest-outgoing"
+owner-firewalls-digest-send: firewalls-digest-owner
+firewalls-digest-outgoing: :include:/usr/local/mail/lists/firewalls-digest
+owner-firewalls-digest-outgoing: firewalls-digest-owner
+firewalls-digest-request: "|/usr/local/mail/majordomo/wrapper request-recording firewalls-digest"
+owner-firewalls-digest-request: firewalls-digest-owner
+firewalls-digest-approval: brent
+firewalls-digest-owner: brent
+owner-firewalls-digest-owner: brent
+firewalls-test: brent@napa.telebit.com
+owner-firewalls-test: brent
+END_OF_FILE
+if test 1528 -ne `wc -c <'aliases.slice'`; then
+    echo shar: \"'aliases.slice'\" unpacked with wrong size!
+fi
+# end of 'aliases.slice'
+fi
+if test -f 'sample-digest.cf' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'sample-digest.cf'\"
+else
+echo shar: Extracting \"'sample-digest.cf'\" \(1173 characters\)
+sed "s/^X//" >'sample-digest.cf' <<'END_OF_FILE'
+X#Digest configuration file
+X#
+X
+X#name that appears in subject line and digest banner
+NAME=Sample Digest
+X
+X#address reader send to to reply to the entire list
+REPLY-TO=Sample@Domain.ORG
+X
+X#address error messages should go to
+XERRORS-TO=Sample-Digest-Owner@Domain.ORG
+X
+X#address the digest itself appears to be sent to
+TO=Sample-Digest@Domain.ORG
+X
+X#address the digest really is sent to
+REALLY-TO=Sample-Digest-Send@Domain.ORG
+X
+X#address administrative nonsense should go to
+XFROM=Sample-Digest-Owner@Domain.ORG
+X
+X#file containing header text
+HEADER=/mycroft/brent/digest/sample-digest.header
+X
+X#file containing trailer text
+TRAILER=/mycroft/brent/digest/sample-digest.trailer
+X
+X#directory to store incoming messages
+X#INCOMING=/usr/local/mail/digests/incoming/sample
+INCOMING=/mycroft/brent/digest/incoming
+X
+X#file containing volume number
+VOL_FILE=/mycroft/brent/digest/sample-digest.vol
+X
+X#file containing issue number
+NUM_FILE=/mycroft/brent/digest/sample-digest.num
+X
+X#directory to archive outgoing issues
+ARCHIVE=/mycroft/brent/digest/archive
+X
+X#directory containing shlock.pl and other stuff
+HOME=/mycroft/brent/digest
+X
+X#how big do we let digests get before sending?
+DIGEST_SIZE=40000
+END_OF_FILE
+if test 1173 -ne `wc -c <'sample-digest.cf'`; then
+    echo shar: \"'sample-digest.cf'\" unpacked with wrong size!
+fi
+# end of 'sample-digest.cf'
+fi
+if test -f 'sample-digest.header' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'sample-digest.header'\"
+else
+echo shar: Extracting \"'sample-digest.header'\" \(168 characters\)
+sed "s/^X//" >'sample-digest.header' <<'END_OF_FILE'
+In this issue:
+X
+X	_SUBJECTS_ 
+X
+See the end of the digest for information on subscribing to the Sample
+or Sample-Digest mailing lists and on how to retrieve back issues.
+END_OF_FILE
+if test 168 -ne `wc -c <'sample-digest.header'`; then
+    echo shar: \"'sample-digest.header'\" unpacked with wrong size!
+fi
+# end of 'sample-digest.header'
+fi
+if test -f 'sample-digest.num' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'sample-digest.num'\"
+else
+echo shar: Extracting \"'sample-digest.num'\" \(3 characters\)
+sed "s/^X//" >'sample-digest.num' <<'END_OF_FILE'
+X13
+END_OF_FILE
+if test 3 -ne `wc -c <'sample-digest.num'`; then
+    echo shar: \"'sample-digest.num'\" unpacked with wrong size!
+fi
+# end of 'sample-digest.num'
+fi
+if test -f 'sample-digest.trailer' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'sample-digest.trailer'\"
+else
+echo shar: Extracting \"'sample-digest.trailer'\" \(753 characters\)
+sed "s/^X//" >'sample-digest.trailer' <<'END_OF_FILE'
+To subscribe to Sample-Digest, send the command:
+X
+X    subscribe sample-digest
+X
+in the body of a message to "Majordomo@GreatCircle.COM".  If you want
+to subscribe something other than the account the mail is coming from,
+such as a local redistribution list, then append that address to the
+X"subscribe" command; for example, to subscribe "local-sample":
+X
+X    subscribe sample-digest local-sample@your.domain.net
+X
+A non-digest (direct mail) version of this list is also available; to
+subscribe to that instead, replace all instances of "sample-digest"
+in the commands above with "sample".
+X
+Back issues are available for anonymous FTP from FTP.GreatCircle.COM, in
+pub/sample/digest/vNN.nMMM (where "NN" is the volume number, and "MMM"
+is the issue number).
+END_OF_FILE
+if test 753 -ne `wc -c <'sample-digest.trailer'`; then
+    echo shar: \"'sample-digest.trailer'\" unpacked with wrong size!
+fi
+# end of 'sample-digest.trailer'
+fi
+if test -f 'sample-digest.vol' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'sample-digest.vol'\"
+else
+echo shar: Extracting \"'sample-digest.vol'\" \(2 characters\)
+sed "s/^X//" >'sample-digest.vol' <<'END_OF_FILE'
+X1
+END_OF_FILE
+if test 2 -ne `wc -c <'sample-digest.vol'`; then
+    echo shar: \"'sample-digest.vol'\" unpacked with wrong size!
+fi
+# end of 'sample-digest.vol'
+fi
+if test -f 'shlock.pl' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'shlock.pl'\"
+else
+echo shar: Extracting \"'shlock.pl'\" \(6047 characters\)
+sed "s/^X//" >'shlock.pl' <<'END_OF_FILE'
+X# PERL implementation of Erik E. Fair's 'shlock' (from the NNTP distribution)
+X# Ported by Brent Chapman <Brent@GreatCircle.COM>
+X
+X
+X# $Source: /mycroft/brent/majordomo/RCS/shlock.pl,v $
+X# $Revision: 1.7 $
+X# $Date: 1993/10/19 20:21:34 $
+X# $Author: brent $
+X# $State: Exp $
+X#
+X# $Locker:  $
+X# 
+X
+package shlock;
+X
+X$shlock_debug = 0;
+X
+X$EPERM = 1;
+X$ESRCH = 3;
+X$EEXIST = 17;
+X
+sub main'shlock	## Public
+X{
+X    local($file) = shift;
+X    local($tmp);
+X    local($retcode) = 0;
+X    local($redo_loop);
+X
+X    print STDERR "trying lock \"$file\" for pid $$\n" if $shlock_debug;
+X    if (!($tmp = &xtmpfile($file))) {
+X	return(undef);
+X    }
+X
+X    do {
+X	$redo_loop = 0;
+X	if (! link($tmp, $file)) {
+X	    if ($! == $EEXIST) {
+X		print STDERR "lock \"$file\" already exists\n" if $shlock_debug;
+X		$redo_loop = 1;
+X		if (&cklock($file)) {
+X		    print STDERR "extant lock is valid\n" if $shlock_debug;
+X		    $redo_loop = 0;
+X		} else {
+X		    print STDERR "lock is invalid; removing\n" if $shlock_debug;
+X		    if (unlink($file) <= 0) {
+X			warn("shlock: unlink(\"$file\"): $!");
+X		    }
+X		}
+X	    } else {
+X		warn("shlock: link(\"$tmp\", \"$file\"): $!");
+X	    }
+X	} else {
+X	    print STDERR "got lock \"$file\"\n" if $shlock_debug;
+X	    $retcode = 1;
+X	}
+X    } while ($redo_loop);
+X
+X    if (unlink($tmp) <= 0) {
+X	warn("shlock: unlink(\"$file\"): $!");
+X    }
+X    return($retcode);
+X}
+X
+sub p_exists {
+X    local($pid) = shift;
+X
+X    print STDERR "process $pid is " if $shlock_debug;
+X    if ($pid <= 0) {
+X	print STDERR "invalid\n" if $shlock_debug;
+X	return(0);
+X    }
+X    if (kill(0, $pid) <= 0) {
+X	if ($! == $ESRCH)
+X	    { print STDERR "dead\n" if $shlock_debug; return 0; }
+X	elsif ($! == $EPERM)
+X	    { print STDERR "alive\n" if $shlock_debug; return 1; }
+X	else
+X	    { print STDERR "state unknown: $!\n" if $shlock_debug; return 1; }
+X    }
+X    print "alive\n" if $shlock_debug;
+X    return 1;
+X}
+X
+sub cklock {
+X    local($file) = shift;
+X    local(*FILE, $len, $pid, $buf);
+X
+X    print STDERR "checking extant lock \"$file\"\n" if $shlock_debug;
+X    if (!open(FILE, "$file")) {
+X	warn("shlock: open(\"$file\"): $!");
+X	return 1;
+X    }
+X
+X    $buf = <FILE>;
+X
+X    if (int($buf) <= 0) {
+X	close(FILE);
+X	print STDERR "lock file format error\n" if $shlock_debug;
+X	return 0;
+X    }
+X    close(FILE);
+X    return(&p_exists(int($buf)));
+X}
+X
+sub xtmpfile {
+X    local($file) = shift;
+X    local(*FILE);
+X    local($tempname);
+X    local($redo_loop);
+X
+X    $tempname = $file;
+X    if ($tempname =~ /\//) {
+X	$tempname =~ s,/[^\/]*$,/,;
+X	$tempname .= "shlock.$$";
+X    } else {
+X	$tempname = "shlock.$$";
+X    }
+X    print STDERR "temporary filename \"$tempname\"\n" if $shlock_debug;
+X
+X    do {
+X	$redo_loop = 0;
+X	if (!open(FILE, ">$tempname")) {
+X	    if ($! == $EEXIST) {
+X		print STDERR "file \"$tempname\" exists\n" if $shlock_debug;
+X		if (unlink($tempname) <= 0) {
+X		    warn("shlock: unlink(\"$tempname\"): $!");
+X		    return(undef);
+X		}
+X		$redo_loop = 1;
+X	    } else {
+X		warn("shlock: open(\">$tempname\"): $!");
+X		return(undef);
+X	    }
+X	}
+X    } while ($redo_loop);
+X
+X    if (! print FILE "$$\n") {
+X	warn("shlock: write(\"$tempfile\", \"$$\"): $!");
+X	close(FILE);
+X	unlink($tempname) || warn("shlock: unlink(\"$tempname\"): $!");
+X	return(undef);
+X    }
+X
+X    close(FILE);
+X    return($tempname);
+X}
+X
+X# open a file locked for exclusive access; we remember the name of the lock
+X# file, so that we can delete it when we close the file
+X
+sub main'lopen {
+X    local($FH) = shift;
+X    local($mode) = shift;
+X    local($file) = shift;
+X    # $fm is what will actually get passed to open()
+X    local($fm) = "$mode$file";
+X    local($status);
+X    local($tries);
+X
+X    # create name for lock file
+X    local($lockfile) = $file;
+X    $lockfile =~ s,([^/]*)$,L.$1,;
+X
+X    # force unqualified filehandles into callers' package
+X    local($package) = caller;
+X    $FH =~ s/^[^']+$/$package'$&/;
+X
+X    for ($tries = 0 ; $tries < 600 ; $tries++) {
+X	# Try to obtain the lock 600 times, waiting 1 second after each try
+X	if (&main'shlock("$lockfile")) {
+X	    # Got the lock; now try to open the file
+X	    $status = open($FH, $fm);
+X	    if (defined($status)) {
+X		# File successfully opened; remember the lock file for deletion
+X		$lock_files[fileno($FH)] = "$lockfile";
+X	    } else {
+X		# File wasn't successfully opened; delete the lock
+X		unlink("$lockfile");
+X	    }
+X	    # return the success or failure of the open
+X	    return($status);
+X	} else {
+X	    # didn't get the lock; wait 1 second and try again.
+X	    sleep(1);
+X	}
+X    }
+X    # If we get this far, we ran out of tries on the lock.
+X    return undef;
+X}
+X
+X# reopen a file already opened and locked (probably to change read/write mode).
+X# We remember the name of the lock file, so that we can delete it when
+X# we close the file
+X
+sub main'lreopen {
+X    local($FH) = shift;
+X    local($mode) = shift;
+X    local($file) = shift;
+X    # $fm is what will actually get passed to open()
+X    local($fm) = "$mode$file";
+X
+X    # create name for lock file
+X    local($lockfile) = $file;
+X    $lockfile =~ s,([^/]*)$,L.$1,;
+X
+X    # force unqualified filehandles into callers' package
+X    local($package) = caller;
+X    $FH =~ s/^[^']+$/$package'$&/;
+X
+X    # close the old file handle, and delete the lock reference
+X    if ($lock_files[fileno($FH)]) {
+X	undef($lock_files[fileno($FH)]);
+X	close($FH);
+X    } else {
+X	# the file wasn't already locked
+X	# unlink("$lockfile");		### Do we really want to do this?
+X	return(undef);
+X    }
+X
+X    # We've already got the lock; now try to open the file
+X    $status = open($FH, $fm);
+X    if (defined($status)) {
+X	# File successfully opened; remember the lock file for deletion
+X	$lock_files[fileno($FH)] = "$lockfile";
+X    } else {
+X	# File wasn't successfully opened; delete the lock
+X	unlink("$lockfile");
+X    }
+X    # return the success or failure of the open
+X    return($status);
+X}
+X
+X
+X# Close a locked file, deleting the corresponding .lock file.
+sub main'lclose {
+X    local($FH) = shift;
+X
+X    # force unqualified filehandles into callers' package
+X    local($package) = caller;
+X    $FH =~ s/^[^']+$/$package'$&/;
+X
+X    local($lock) = $lock_files[fileno($FH)];
+X    close($FH);
+X    unlink($lock);
+X}
+X
+X1;
+END_OF_FILE
+if test 6047 -ne `wc -c <'shlock.pl'`; then
+    echo shar: \"'shlock.pl'\" unpacked with wrong size!
+fi
+# end of 'shlock.pl'
+fi
+if test -f 'wrapper.c' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'wrapper.c'\"
+else
+echo shar: Extracting \"'wrapper.c'\" \(2329 characters\)
+sed "s/^X//" >'wrapper.c' <<'END_OF_FILE'
+X/*
+X *  $Source: /mycroft/brent/majordomo/RCS/wrapper.c,v $
+X *  $Revision: 1.10 $
+X *  $Date: 1993/05/19 00:11:50 $
+X *  $Author: brent $
+X *  $State: Exp $
+X *
+X *  $Locker:  $
+X *  
+X */
+X
+X#ifndef lint
+static char rcs_header[] = "$Header: /mycroft/brent/majordomo/RCS/wrapper.c,v 1.10 1993/05/19 00:11:50 brent Exp $";
+X#endif
+X
+X#include <stdio.h>
+X
+X#ifndef STRCHR
+X#  define STRCHR(s,c) strchr(s,c)
+X#endif
+X
+X#ifndef BIN
+X#  define BIN "/usr/local/mail/majordomo"
+X#endif
+X
+X#ifndef PATH
+X#  define PATH "PATH=/bin:/usr/bin:/usr/ucb"
+X#endif
+X
+X#ifndef HOME
+X#  define HOME "HOME=/usr/local/mail/majordomo"
+X#endif
+X
+X#ifndef SHELL
+X#  define SHELL "SHELL=/bin/csh"
+X#endif
+X
+char * new_env[] = {
+X    HOME,		/* 0 */
+X    PATH,		/* 1 */
+X    SHELL,		/* 2 */
+X#ifdef MAJORDOMO_CF
+X    MAJORDOMO_CF,	/* 3 */
+X#endif
+X    0,		/* possibly for USER or LOGNAME */
+X    0,		/* possible for LOGNAME */
+X    0
+X};
+X    
+main(argc, argv, env)
+X    int argc;
+X    char * argv[];
+X    char * env[];
+X
+X{
+X    char * prog;
+X    int e, i;
+X
+X    if (argc < 2) {
+X	fprintf(stderr, "USAGE: %s program [<arg> ...]\n", argv[0]);
+X	exit(1);
+X    }
+X
+X    /* if the command contains a /, then don't allow it */
+X    if (STRCHR(argv[1], '/') != NULL) {
+X	/* this error message is intentionally cryptic */
+X	fprintf(stderr, "%s: error: insecure usage\n", argv[0]);
+X	exit(2);
+X    }
+X
+X    if ((prog = (char *) malloc(strlen(BIN) + strlen(argv[1]) + 2)) == NULL) {
+X	fprintf(stderr, "%s: error: malloc failed\n", argv[0]);
+X	exit(3);
+X    }
+X
+X    sprintf(prog, "%s/%s", BIN, argv[1]);
+X
+X    /*  copy the "USER=" and "LOGNAME=" envariables into the new environment,
+X     *  if they exist.
+X     */
+X
+X#ifdef MAJORDOMO_CF
+X    e = 4; /* the first unused slot in new_env[] */
+X#else
+X    e = 3; /* the first unused slot in new_env[] */
+X#endif
+X
+X    for (i = 0 ; env[i] != NULL ; i++) {
+X	if ((strncmp(env[i], "USER=", 5) == 0) ||
+X		(strncmp(env[i], "LOGNAME=", 8) == 0)) {
+X	    new_env[e++] = env[i];
+X	}
+X    }
+X
+X#ifdef POSIX_GID
+X    setgid(POSIX_GID);
+X#else
+X    setgid(getegid());
+X#endif
+X
+X#ifdef POSIX_UID
+X    setuid(POSIX_UID);
+X#else
+X    setuid(geteuid());
+X#endif
+X
+X    if ((getuid() != geteuid()) || (getgid() != getegid())) {
+X	fprintf(stderr, "%s: error: recompile with POSIX flags.\n", argv[0]);
+X	exit(4);
+X    }
+X
+X    execve(prog, argv+1, new_env);
+X
+X    /* the exec should never return */
+X    perror(argv[1]);
+X    exit(5);
+X}
+END_OF_FILE
+if test 2329 -ne `wc -c <'wrapper.c'`; then
+    echo shar: \"'wrapper.c'\" unpacked with wrong size!
+fi
+# end of 'wrapper.c'
+fi
+echo shar: End of shell archive.
+exit 0

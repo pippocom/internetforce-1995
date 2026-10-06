@@ -1,0 +1,21 @@
+#
+# Sun customer networks
+# This file is never consulted when the NIS are running
+#
+loopback	127
+#
+# Internet networks
+#
+intf-office	206.20.95.128
+intf-world	10
+intf-dialup	206.20.95.64
+intf-servers	206.20.95.0
+intfnet		206.20.95
+intf-pesaro	206.20.115
+intf-palermo	206.20.224
+intf-gorgonzola 206.20.225
+intf-seregno    206.20.226
+intf-tera	206.20.227
+intf-cnn	206.20.228
+intf-fano	206.20.230
+intf-indi	206.20.231

@@ -1,0 +1,11 @@
+@               IN      SOA     dante.enter.it. hostmaster.enter.it. (
+                                1996061500      ;serial
+                                86400           ;refresh period (1 day)
+                                7200            ;retry interval (2 hours)
+                                604800          ;expire time (1 week)
+                                86400           ;minimum ttl (1 day)
+                                )
+
+		IN	NS	dante.enter.it.
+		IN	NS	venere.inet.it.
+		IN	NS	ns2.inet.it.

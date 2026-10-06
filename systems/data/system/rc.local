@@ -1,0 +1,331 @@
+#
+# @(#)rc.local 1.116 91/05/10 SMI; from UCB 4.27 83/07/06
+#
+PATH=/bin:/usr/bin:/usr/etc:/usr/ucb; export PATH
+
+#
+# The file "/etc/.UNCONFIGURED" exists on machines shipped from the
+# factory.  We use this file here in order to run configuration programs
+# at the time a machine is booted for the first time.  The configuration
+# programs are responsible for deleting this file after they have
+# completed configuring the system.  These configure programs may halt
+# or reboot the system.
+#
+#
+LC="/usr/etc/install/run_configure"
+NC="/usr/etc/install/sysIDtool"
+
+#
+# Start the RPC portmapper.
+#
+if [ -f /usr/etc/portmap ]; then
+	portmap;		echo 'starting rpc port mapper.'
+fi
+
+if [ -f /etc/.UNCONFIGURED ]; then
+	if [ -f ${NC} ]; then
+		#
+		# run sysidtool to try and configure this system
+		# from the network
+		#
+		intr ${NC}
+		if [ $? = 0 ]; then
+			echo "System configured from network successfully."
+			intr /usr/etc/install/sys_rootpasswd
+		else
+			# sysidtool failed to configure this system,
+			# run sys-config
+			if [ -f ${LC} ]; then
+				intr ${LC}
+			fi
+		fi
+	else
+		# 
+		# run sys-config to configure system
+		#
+		if [ -f ${LC} ]; then
+			intr ${LC}
+		fi
+	fi
+	#
+	# re-run tzsetup since configuration program probably changed timezone
+	#
+	tzsetup
+fi
+
+# if [ -f /usr/etc/keyserv ]; then
+#	keyserv;		echo 'starting RPC key server.'
+#fi
+
+# set the netmask from NIS if running, or /etc/netmasks for all ether interfaces
+ifconfig -a netmask + broadcast + > /dev/null
+
+#
+# Try to add a default route again, now that "/usr" is mounted and NIS
+# is running.
+#
+if [ ! -f /sbin/route -a -f /etc/defaultrouter ]; then
+	route -f add default `cat /etc/defaultrouter` 1
+fi
+
+#
+# Run host-specific routing tables startup script
+#
+if [ -f /etc/rc.route ]; then
+	/etc/rc.route
+fi
+
+#
+# all interfaces are completely configured now.  print it out for posterity.
+#
+echo "network interface configuration:"
+ifconfig -a
+
+#
+# set up gt graphics accelerator
+#
+if [ -f /usr/etc/gtconfig ]; then
+	 /usr/etc/gtconfig
+	fi
+
+# If we are a diskless client, synchronize time-of-day with the server.
+#
+server=`grep ":.*[	 ][	 ]*/[	 ]" /etc/fstab | sed -e "/^#/d" -e "s/:.*//"`
+if [ "$server" ]; then
+	intr -a rdate $server
+fi
+
+#
+# The following will mount /tmp if set up in /etc/fstab.  If you want to use
+# the anonymous memory based file system, have an fstab entry of the form:
+# 	swap	/tmp	tmp rw 0 0
+# Make sure that option TMPFS is configured in the kernel
+# (consult the System and Network Administration Manual).
+#
+mount /tmp
+
+intr -a mount -vat nfs
+
+echo -n 'starting additional services:'
+
+if [ -f /usr/etc/biod ]; then
+	biod 4;			echo -n ' biod'
+fi
+
+echo '.'
+
+rm -f /tmp/t1
+dmesg | grep SunOS | tail -1 | sed -e "s/^.*SunOS/SunOS/" >/tmp/t1
+tail +2 /etc/motd >>/tmp/t1
+mv /tmp/t1 /etc/motd
+chmod 666 /etc/motd
+
+# syslogd doesn't belong here, but needs to be started before the others.
+# It needs to be started after NIS, though, so it can find the "syslog"
+# udp service.
+if [ -f /usr/etc/syslogd ]; then
+	echo 'starting system logger'
+	rm -f /dev/log
+	syslogd
+fi
+
+#
+# Default is to not do a savecore
+#
+# mkdir -p /var/crash/`hostname`
+# echo -n 'checking for crash dump... '
+# intr savecore /var/crash/`hostname`
+# echo ''
+
+if [ -f /dev/sky ]; then
+	skyrc /usr/lib/sky.ucode
+fi
+if [ -f /dev/fpa ]; then
+	/usr/etc/fpa/fpa_download -d -r
+fi
+if [ -f /dev/fpa ]; then
+	/usr/etc/fpa/fparel
+fi
+if [ -f /usr/etc/gpconfig ]; then
+	/usr/etc/gpconfig -f -b
+fi
+if [ -f /dev/dialbox ]; then
+	dbconfig /dev/dialbox
+fi
+
+if [ -d /usr/local/etc/named ]
+then
+	echo -n "PRIMARY NAME SERVER: "
+	/usr/etc/named -b /usr/local/etc/named/named.boot
+	echo done
+elif [ -s /etc/named.boot ]
+then
+	echo -n "SECONDARY NAME SERVER: "
+	/usr/etc/named
+	echo done
+fi
+
+echo -n 'starting local daemons:'
+if [ -f /.DATA_SERVER -o -f /.USERS_SERVER ]; then
+	if [ -f /usr/lib/sendmail -a -f /etc/sendmail.cf ]; then
+		(cd /var/spool/mqueue; rm -f nf* lf*)
+		/usr/lib/sendmail -bd -q1h; echo -n ' sendmail'
+	else
+		echo -n ' [Sendmail is missing!]'
+		sleep 5
+	fi
+fi
+
+#
+# if /etc/exports file exists become nfs server
+#
+#if [ -f /etc/exports ]; then
+#	> /etc/xtab
+#	exportfs -a
+#	nfsd 8 &		echo -n ' nfsd'
+#	if [ -f /etc/security/passwd.adjunct ]; then
+#		# Warning! Turning on port checking may deny access to
+#		# older versions (pre-3.0) of NFS clients.
+#		rpc.mountd
+#		echo "nfs_portmon/W1" | adb -w /vmunix /dev/kmem >/dev/null 2>&1
+#	else
+#		rpc.mountd -n
+#	fi
+#fi
+
+#
+# if /tftpboot exists become a boot server
+#
+#if [ -d /tftpboot ]; then
+#	rarpd -a;		echo -n ' rarpd'
+#	rpc.bootparamd; 	echo -n ' bootparamd'
+#fi
+
+#
+# start up status monitor and locking daemon if present
+#
+if [ -f /usr/etc/rpc.statd ]; then
+	rpc.statd &		echo -n ' statd'
+fi
+if [ -f /usr/etc/rpc.lockd ]; then
+	rpc.lockd &		echo -n ' lockd'
+fi
+#
+# start up authentication daemon if present and if adjunct file exists
+#
+#if [ -f /usr/etc/rpc.pwdauthd -a -f /etc/security/passwd.adjunct ]; then
+#	rpc.pwdauthd &		echo -n ' pwdauthd'
+#fi
+#
+# start up the automounter
+#
+#if [ -f /usr/etc/automount ]; then
+#	automount && 		echo -n ' automount'
+#fi
+#				echo '.'
+#
+# Build the link-editor fast directory cache.
+#
+if [ -f /usr/etc/ldconfig ]; then
+	ldconfig; echo "link-editor directory cache"
+fi
+
+#
+# Network time protocol
+#
+if [ -f /etc/ntp.conf ]; then
+	/usr/local/bin/xntpd; echo "Network time protocol"
+fi
+
+##
+## Begining of server-specific configuration. 
+##
+echo Starting up servers:
+if [ -f /.USERS_SERVER -a -f /.DATA_SERVER ]
+then
+	echo '**
+	      ** FATAL SYSTEM CONFIGURATION ERROR
+	      ** The DATA and USERS servers cannot coexist on the same machine.
+	      ** Please reconfigure the machine.
+	      **'
+	exit -1		# will this drop to singleuser mode?  what will?
+	
+fi
+
+##
+## Strip /etc/inetd.conf from any previous add-ons (back to 'basic'
+## server configuration). All add-ons for this session are added
+## later.
+##
+
+if [ -f /usr/etc/inetd ]; then
+        # strip inetd.conf back to basic server
+        (mv /etc/inetd.conf /etc/inetd.conf.tmp) &&
+        (sed '/^##END$/,$ d' /etc/inetd.conf.tmp > /etc/inetd.conf) &&
+        (echo '##END' >> /etc/inetd.conf)
+        rm /etc/inetd.conf.tmp
+fi
+	      
+if [ -f /.USERS_SERVER ]
+then
+	echo -n "USERS SERVER: "
+	if [ -f /etc/exports ]; then
+		echo -n '[nfsd] '
+		> /etc/xtab
+		exportfs -a
+		nfsd 8 &
+		rpc.mountd
+		echo "nfs_portmon/W1" | adb -w /vmunix /dev/kmem > /dev/null 2>&1
+	else
+		echo '[NO NFS?!]'
+		sleep 10
+	fi
+
+	if [ -f /etc/inetd.conf.USERS ]; then
+		echo -n '[restarting inetd] '
+		cat /etc/inetd.conf.USERS >> /etc/inetd.conf
+		kill -1 `ps aux|grep inetd|grep -v inetd|awk '{print $2}'`
+	else
+		echo '[NO EXTRA INETD.CONF?!]'
+		sleep 10
+	fi
+
+	echo done
+fi
+
+if [ -f /.DATA_SERVER ]
+then
+	echo -n "DATA SERVER: "
+	if [ -f /etc/inetd.conf.DATA ]
+	then
+		echo -n '[restarting inetd] '
+		cat /etc/inetd.conf.DATA >> /etc/inetd.conf
+		kill -1 `ps aux|grep inetd|grep -v inetd|awk '{print $2}'`
+	else
+		echo '[NO EXTRA INETD.CONF?!]'
+		sleep 10
+	fi
+	echo done
+fi
+
+if [ -d /usr/local/etc/httpd ]
+then
+	echo -n "HTTP SERVER: "
+	/usr/local/etc/httpd/start-virtual-www
+	echo done
+fi
+
+## Proxy server : added by marco
+if [ -d /usr/local/etc/proxy/httpd_3.0 ]
+then
+        echo -n "Proxies servers: "
+        /usr/local/etc/proxy/httpd_3.0 -r /usr/local/etc/proxy/config/httpd.conf
+        echo done
+fi
+
+if [ -f /usr/local/etc/rc.news ]
+then
+	echo -n "NEWS SERVER: "
+	/usr/local/etc/rc.news
+	echo done
+fi

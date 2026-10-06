@@ -1,0 +1,124 @@
+##
+## This file was created by tkined version 1.3.4	>> DO NOT EDIT <<
+##
+## This may look like TCL code but it is definitely not!
+##
+
+ined page A4 landscape
+
+set node295 [ ined -noupdate create NODE ]
+ined -noupdate move $node295 91.00 50.00
+ined -noupdate font $node295 fixed
+ined -noupdate name $node295 {2501 World}
+ined -noupdate address $node295 10.0.1.1
+ined -noupdate attribute $node295 SNMP:Config {-community public -address 10.0.1.1 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node295 name
+
+set node292 [ ined -noupdate create NODE ]
+ined -noupdate move $node292 246.00 124.00
+ined -noupdate font $node292 fixed
+ined -noupdate color $node292 red
+ined -noupdate name $node292 206.20.64.29
+ined -noupdate address $node292 206.20.64.29
+ined -noupdate attribute $node292 {round trip time} {206.20.64.29\nunreachable}
+ined -noupdate label $node292 {round trip time}
+
+set link400 [ ined -noupdate create LINK $node295 $node292  ]
+
+set node296 [ ined -noupdate create NODE ]
+ined -noupdate move $node296 377.00 0.00
+ined -noupdate font $node296 fixed
+ined -noupdate name $node296 10.255.255.1
+ined -noupdate address $node296 10.255.255.1
+ined -noupdate label $node296 name
+
+set link401 [ ined -noupdate create LINK $node292 $node296  ]
+
+set node297 [ ined -noupdate create NODE ]
+ined -noupdate move $node297 799.00 0.00
+ined -noupdate icon $node297 SUN-Server.xbm
+ined -noupdate font $node297 fixed
+ined -noupdate color $node297 red
+ined -noupdate name $node297 www.Sun.COM
+ined -noupdate address $node297 192.9.9.100
+ined -noupdate attribute $node297 {round trip time} {www.Sun.COM\nunreachable}
+ined -noupdate label $node297 {round trip time}
+
+set link402 [ ined -noupdate create LINK $node297 $node297  ]
+
+set link403 [ ined -noupdate create LINK $node296 $node297  ]
+
+set node300 [ ined -noupdate create NODE ]
+ined -noupdate move $node300 358.00 175.00
+ined -noupdate font $node300 fixed
+ined -noupdate name $node300 10.255.255.6
+ined -noupdate address $node300 10.255.255.6
+ined -noupdate label $node300 name
+
+set node301 [ ined -noupdate create NODE ]
+ined -noupdate move $node301 569.00 176.00
+ined -noupdate font $node301 fixed
+ined -noupdate color $node301 red
+ined -noupdate name $node301 Fddi1-0.SR1.SCL1.ALTER.NET
+ined -noupdate address $node301 137.39.63.33
+ined -noupdate attribute $node301 {round trip time} {Fddi1-0.SR1.SCL1.ALTER.NET\nunreachable}
+ined -noupdate label $node301 {round trip time}
+
+set link404 [ ined -noupdate create LINK $node300 $node301  ]
+
+set node298 [ ined -noupdate create NODE ]
+ined -noupdate move $node298 779.00 203.00
+ined -noupdate icon $node298 pc.xbm
+ined -noupdate font $node298 fixed
+ined -noupdate color $node298 red
+ined -noupdate name $node298 www.iol.it
+ined -noupdate address $node298 194.20.24.83
+ined -noupdate attribute $node298 {round trip time} {www.iol.it\nunreachable}
+ined -noupdate attribute $node298 SNMP:Config {-community public -address 194.20.24.83 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node298 {round trip time}
+
+set link405 [ ined -noupdate create LINK $node301 $node298  ]
+
+set link406 [ ined -noupdate create LINK $node292 $node300  ]
+
+set node293 [ ined -noupdate create NODE ]
+ined -noupdate move $node293 369.00 96.00
+ined -noupdate font $node293 fixed
+ined -noupdate name $node293 10.255.255.2
+ined -noupdate address $node293 10.255.255.2
+ined -noupdate label $node293 name
+
+set link397 [ ined -noupdate create LINK $node292 $node293  ]
+
+set node294 [ ined -noupdate create NODE ]
+ined -noupdate move $node294 509.00 96.00
+ined -noupdate font $node294 fixed
+ined -noupdate color $node294 red
+ined -noupdate name $node294 sprintnap.mci.net
+ined -noupdate address $node294 192.157.69.11
+ined -noupdate attribute $node294 {round trip time} {sprintnap.mci.net\nunreachable}
+ined -noupdate label $node294 {round trip time}
+
+set link398 [ ined -noupdate create LINK $node293 $node294  ]
+
+set node299 [ ined -noupdate create NODE ]
+ined -noupdate move $node299 704.00 87.00
+ined -noupdate icon $node299 unixpc.xbm
+ined -noupdate font $node299 fixed
+ined -noupdate color $node299 red
+ined -noupdate name $node299 xpert.com
+ined -noupdate address $node299 199.203.132.1
+ined -noupdate attribute $node299 {round trip time} {xpert.com\nunreachable}
+ined -noupdate label $node299 {round trip time}
+
+set link399 [ ined -noupdate create LINK $node294 $node299  ]
+
+set interpreter30 [ ined -noupdate create INTERPRETER ip_monitor.tcl ]
+ined send $interpreter30 restart {Check Reachability} 60 job0 $node294 
+ined send $interpreter30 restart {Check Reachability} 60 job1 $node301 
+ined send $interpreter30 restart {Check Reachability} 60 job2 $node292 
+ined send $interpreter30 restart {Round Trip Time} 60 job3 $stripchart119 
+ined send $interpreter30 restart {Check Reachability} 60 job4 $node297 
+ined send $interpreter30 restart {Check Reachability} 60 job5 $node299 
+ined send $interpreter30 restart {Check Reachability} 60 job6 $node298 
+

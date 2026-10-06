@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Office LAN — Internet Force 1995</title>
+<meta name="description" content="The Internet Force office LAN (1995, intf-office, 206.20.95.128/25): people, workstations and roles.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <p class="brand">Internet Force <span class="years">1995–1996</span></p>
+    <nav class="lang" aria-label="Language">
+<a href="office-lan.html" hreflang="it" lang="it">Italiano</a> <span class="sep">·</span> <span class="current" aria-current="page">English</span>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="content">
+  <p class="eyebrow">Systems Overview · 1995</p>
+  <h1>Office LAN <span class="host">(intf-office)</span></h1>
+  <p class="lede">The Milan office had its own network behind the firewall's office interface, separate from the backbone and the server segments.</p>
+  <figure class="system">
+    <img src="../../images/internetforce_office_lan.png" width="1536" height="1024" alt="Internet Force Office LAN 1995">
+    <figcaption>Complete image <code>images/internetforce_office_lan.png</code> (Office LAN 1995).</figcaption>
+  </figure>
+  <section aria-labelledby="identity-h">
+    <h2 id="identity-h">Network identity</h2>
+    <dl class="identity">
+    <dt>Network</dt><dd><code>intf-office</code> · <code>206.20.95.128/25</code></dd>
+    <dt>Gateway</dt><dd><code>206.20.95.129</code> (firewall office interface <code>le0</code>)</dd>
+    <dt>Hub</dt><dd>3Com LinkBuilder FMS II · <code>206.20.95.254</code></dd>
+    <dt>Role</dt><dd>Office segment behind the firewall: Macs and Unix/Linux.</dd>
+</dl>
+  </section>
+  <section aria-labelledby="services-h">
+    <h2 id="services-h">Attached systems</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Host</th>
+      <th scope="col">Address</th>
+      <th scope="col">Notes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row"><code>firewall</code></th>
+      <td>206.20.95.129</td>
+      <td>gateway for the segment</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>dvlp</code></th>
+      <td>206.20.95.130</td>
+      <td>development/build host</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>anna</code></th>
+      <td>206.20.95.131</td>
+      <td>administration / customer care</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>franz</code></th>
+      <td>206.20.95.132</td>
+      <td>office workstation (commercial management)</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>maxi</code></th>
+      <td>206.20.95.133</td>
+      <td>office workstation (sales)</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>html</code></th>
+      <td>206.20.95.134</td>
+      <td>web-content workstation</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>laura</code></th>
+      <td>206.20.95.135</td>
+      <td>redazione / DTP</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>alice</code></th>
+      <td>206.20.95.136</td>
+      <td>redazione / DTP</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>salvatore</code></th>
+      <td>206.20.95.137</td>
+      <td>art direction / graphics</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>maus</code></th>
+      <td>206.20.95.138</td>
+      <td>hardware support</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>pascal</code></th>
+      <td>206.20.95.139</td>
+      <td>IT management</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>marco</code></th>
+      <td>206.20.95.140</td>
+      <td>administrator workstation</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>PcDemo</code></th>
+      <td>206.20.95.141</td>
+      <td>demo PC</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>oracolo</code></th>
+      <td>206.20.95.142</td>
+      <td>later database/web host</td>
+    </tr>
+  </tbody>
+  </table>
+</div>  </section>
+
+  <section aria-labelledby="ctx-h">
+    <h2 id="ctx-h">Context</h2>
+    <p>The office (<code>intf-office</code>, <code>206.20.95.128/25</code>) was a mixed Macintosh and Unix/Linux working environment behind the firewall’s office interface: editorial and DTP on Macs, the sales area, web authoring and technical administration on Linux. The office network was the protected perimeter from which the firewall GUI and the servers were administered (FireWall-1 rules 10, 11 and 14).</p>
+    <p>The office’s technical workstation is described on the <a href="marco.en.html">marco</a> page (Linux, <code>206.20.95.140</code>).</p>
+    <p class="muted">The image above is documentary: the individual workstations and people are <strong>not interactive</strong> and have no dedicated pages.</p>
+  </section>
+  <section aria-labelledby="docs-h">
+    <h2 id="docs-h">Related documentation</h2>
+    <ul>
+      <li><a class="doc" href="../details.html?file=docs/01-architecture.en.md">Architecture overview</a></li>
+      <li><a class="doc" href="../details.html?file=docs/15-people-and-workflows.en.md">People, machines and workflows</a></li>
+      <li><a class="doc" href="../details.html?file=docs/08-monitoring.en.md">Monitoring</a></li>
+      <li><a class="doc" href="../details.html?file=systems/firewall/README.en.md">The firewall</a></li>
+    </ul>
+  </section>
+  <section class="maps" aria-labelledby="maps-h">
+    <h2 id="maps-h">On the maps</h2>
+    <ul class="maplinks">
+      <li><a href="../network-map.en.html">Internet Force Network Map</a></li>
+      <li><a href="../systems-map.en.html">Systems Overview</a></li>
+    </ul>
+  </section>
+  <section class="techdoc" aria-labelledby="techdoc-h">
+    <h2 id="techdoc-h">Full technical documentation</h2>
+    <p><a class="button" href="../details.html?file=systems/office-lan/README.en.md">Open the canonical Office LAN README</a></p>
+    <p class="muted">This HTML page is a compact presentation; the Markdown README is the canonical source.</p>
+  </section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Internet Force 1995–1996 Historical Archive · <a href="../details.html?file=LICENSE">CC BY 4.0</a> · <a href="https://pippo.com/me/">Marco Iannacone</a> · <a href="https://github.com/pippocom/internetforce-1995">GitHub repository</a></p>
+  </div>
+</footer>
+</body>
+</html>

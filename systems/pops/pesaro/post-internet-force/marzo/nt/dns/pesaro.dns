@@ -1,0 +1,66 @@
+;
+;  Database file pesaro.dns for pesaro.com zone.
+;      Zone version:  1021255470l
+;
+
+@                       IN	SOA	dns.pesaro.com.	dnsmaster.pesaro.com.	(
+                        1021255470   ; serial number
+                        10800       ; refresh
+                        7200        ; retry
+                        2592000     ; expire
+                        86400     ) ; minimum TTL
+
+;
+;  Zone NS records
+;
+
+@                       IN	NS	dns.interbusiness.it.
+@                       IN	NS	dns
+@                       IN	NS	data
+
+;
+;  Zone records
+;
+
+@                       IN	A	195.120.225.6
+@                       IN	MX	10	users
+@                       IN	MX	20	mail.cs.interbusiness.it.
+data                    IN	A	195.120.225.5
+digital                 IN	A	195.120.225.25
+dns                     IN	A	195.120.225.6
+freenews                IN	CNAME	news.gisco.net.
+ftp                     IN	CNAME	data
+libero                  IN	A	195.120.225.23
+localhost               IN	A	127.0.0.1
+mail                    IN	CNAME	users
+mailhost                IN	CNAME	users
+mbox                    IN	CNAME	data
+news                    IN	CNAME	news.interbusiness.it.
+olivieri                IN	A	195.120.225.22
+ppp1                    IN	A	195.120.225.97
+ppp1-fano               IN	A	195.120.225.195
+ppp10                   IN	A	195.120.225.106
+ppp11                   IN	A	195.120.225.107
+ppp12                   IN	A	195.120.225.108
+ppp13                   IN	A	195.120.225.109
+ppp14                   IN	A	195.120.225.110
+ppp15                   IN	A	195.120.225.111
+ppp16                   IN	A	195.120.225.112
+ppp2                    IN	A	195.120.225.98
+ppp2-fano               IN	A	195.120.225.196
+ppp3                    IN	A	195.120.225.99
+ppp3-fano               IN	A	195.120.225.197
+ppp4                    IN	A	195.120.225.100
+ppp4-fano               IN	A	195.120.225.198
+ppp5                    IN	A	195.120.225.101
+ppp5-fano               IN	A	195.120.225.199
+ppp6                    IN	A	195.120.225.102
+ppp6-fano               IN	A	195.120.225.200
+ppp7                    IN	A	195.120.225.103
+ppp7-fano               IN	A	195.120.225.201
+ppp8                    IN	A	195.120.225.104
+roberto                 IN	A	195.120.225.21
+shake                   IN	A	195.120.225.24
+users                   IN	A	195.120.225.6
+web                     IN	A	195.120.225.7
+www                     IN	CNAME	data

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>marco — workstation · Internet Force 1995</title>
+<meta name="description" content="Marco Iannacone's Linux workstation (1995): 486DX, Slackware 2.1, 206.20.95.140; administration, monitoring and associated material.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <p class="brand">Internet Force <span class="years">1995–1996</span></p>
+    <nav class="lang" aria-label="Language">
+<a href="marco.html" hreflang="it" lang="it">Italiano</a> <span class="sep">·</span> <span class="current" aria-current="page">English</span>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="content">
+  <p class="eyebrow">Systems Overview · 1995</p>
+  <h1>marco <span class="host">(workstation)</span></h1>
+  <p class="lede">Marco Iannacone's Linux workstation is part of the operational context of the Milan office: it began as an experimentation environment and became the daily administration station and the home of Marco's personal Web presence.</p>
+  <figure class="system">
+    <img src="../../images/crops/marco.png" width="294" height="299" alt="marco box in the 1995 Systems Overview">
+    <figcaption>Crop from <code>images/internetforce_server_map.png</code> (Systems Overview 1995).</figcaption>
+  </figure>
+  <section aria-labelledby="identity-h">
+    <h2 id="identity-h">System identity</h2>
+    <dl class="identity">
+    <dt>Hostname</dt><dd><code>marco</code></dd>
+    <dt>Address</dt><dd><code>206.20.95.140</code> · office LAN</dd>
+    <dt>Platform</dt><dd>486DX PC</dd>
+    <dt>OS</dt><dd>Linux Slackware 2.1 + X11</dd>
+    <dt>Role</dt><dd>System and network administration; development and testing.</dd>
+</dl>
+  </section>
+  <section aria-labelledby="services-h">
+    <h2 id="services-h">Services and tools</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Service / role</th>
+      <th scope="col">Description</th>
+      <th scope="col">Evidence / configuration</th>
+      <th scope="col">Documentation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">System administration</th>
+      <td>Daily administration station for the Sun servers and the infrastructure.</td>
+      <td class="col-cfg"><a href="../../systems/marco/system/rc.local" class="cfg">rc.local</a> <span class="sep">·</span> <a href="../../systems/marco/system/marco.hard-disk.fdisk.txt" class="cfg">marco.hard-disk.fdisk.txt</a> <span class="sep">·</span> <a href="../../systems/marco/system/rc.0" class="cfg">rc.0</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=systems/marco/README.en.md">this README</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Network management</th>
+      <td>IP/netmask/broadcast/gateway configuration of the workstation.</td>
+      <td class="col-cfg"><a href="../../systems/marco/system/rc.inet1" class="cfg">rc.inet1</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/01-architecture.en.md">Architecture overview</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Client X11</th>
+      <td>Use as an X client towards DVLP and the servers.</td>
+      <td class="col-cfg">FireWall-1 rule 14 (<code>dvlp, marco → marco, dvlp : X11</code>)</td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/06-security.en.md">Security</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Mail / news / web client</th>
+      <td>Mail and the Internet services of the period.</td>
+      <td class="col-cfg"><a href="../../systems/marco/system/sendmail.cf.linux" class="cfg">sendmail.cf.linux</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/04-email.en.md">Email</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Development and testing</th>
+      <td>Experimentation and testing; it was <strong>not</strong> the production build chain.</td>
+      <td class="col-cfg"><em>environment described in prose</em></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/07-development.en.md">Development</a></td>
+    </tr>
+    <tr>
+      <th scope="row">tkined / SNMP monitoring</th>
+      <td>Infrastructure monitoring.</td>
+      <td class="col-cfg"><a href="../details.html?file=artifacts/tkined/README.en.md" class="cfg">artifacts/tkined/</a> <span class="sep">·</span> <a href="../details.html?file=artifacts/monitoring/idt-connectivity/README.en.md" class="cfg">artifacts/monitoring/idt-connectivity/</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/08-monitoring.en.md">Monitoring</a></td>
+    </tr>
+  </tbody>
+  </table>
+</div>  </section>
+
+  <section class="associated" aria-labelledby="assoc-h">
+    <h2 id="assoc-h">Associated material and activities</h2>
+    <p class="muted">Historical material linked to the workstation or to Marco’s technical work, <strong>distinct from the services running on the machine</strong>. The box represents the <strong>1995</strong> environment: part of the material is later and must be read with the stated date.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Material</th>
+      <th scope="col">Date / context</th>
+      <th scope="col">Description</th>
+      <th scope="col">Link</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Internet guide / Hypertxt</th>
+      <td>1994–1997</td>
+      <td class="col-cfg">Marco Iannacone’s hypertextual guide to the Internet (MaISoft Hypertxt); partial copies recovered from the workstation.</td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=systems/marco/hypertxt/README.en.md">systems/marco/hypertxt/</a></td>
+    </tr>
+    <tr>
+      <th scope="row">PGP</th>
+      <td>1995-09-17 · 1995-10-11</td>
+      <td class="col-cfg">Marco's personal use of PGP, one of the early public-key encryption programs to gain wide adoption in the 1990s, began before Internet Force and continued during and after it; the recovered public keyring is preserved here.</td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=systems/marco/pgp/README.en.md">systems/marco/pgp/</a></td>
+    </tr>
+    <tr>
+      <th scope="row">pippo.com and personal Web presence</th>
+      <td>1997 snapshot (page from 1995)</td>
+      <td class="col-cfg">Marco's personal website, from the period when it was still hosted on Internet Force's infrastructure.</td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=systems/marco/personal-web/pippo.com-1997/README.en.md">systems/marco/personal-web/pippo.com-1997/</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Easy! (Welcome Kit)</th>
+      <td>1996</td>
+      <td class="col-cfg">Software kit for connecting to and browsing the Internet, developed by Marco Iannacone for Internet Force customers.</td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=artifacts/customer-welcome-kit/README.en.md">artifacts/customer-welcome-kit/</a></td>
+    </tr>
+    <tr>
+      <th scope="row">tkined / SNMP monitoring</th>
+      <td>1995</td>
+      <td class="col-cfg">Network map created from the Linux/X workstation, plus recovered SNMP files.</td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=artifacts/tkined/README.en.md">artifacts/tkined/</a></td>
+    </tr>
+    <tr>
+      <th scope="row">DEFCON V (article)</th>
+      <td>1997 — <strong>post-Internet Force</strong></td>
+      <td class="col-cfg">Article about DEFCON V in Las Vegas, one of the early hacker conventions of the 1990s, recovered from the workstation's DAT backup.</td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=systems/marco/defcon-v-1997/README.en.md">artifacts/…/defcon-v-1997/</a></td>
+    </tr>
+  </tbody>
+  </table>
+</div>    <p class="note"><strong>Chronology.</strong> DEFCON V is <strong>1997</strong> material, later than Internet Force’s operational phase: it must not be presented as present on the workstation in 1995. The same applies to the 1997 <code>pippo.com</code> snapshot. The material recovered from the DAT documents the continuity of Marco’s technical work; it does not prove that every artifact was physically on this disk in 1995.</p>
+  </section>
+  <section class="maps" aria-labelledby="maps-h">
+    <h2 id="maps-h">On the maps</h2>
+    <ul class="maplinks">
+      <li><a href="../network-map.en.html">Internet Force Network Map</a></li>
+      <li><a href="../systems-map.en.html">Systems Overview</a></li>
+    </ul>
+  </section>
+  <section class="techdoc" aria-labelledby="techdoc-h">
+    <h2 id="techdoc-h">Full technical documentation</h2>
+    <p><a class="button" href="../details.html?file=systems/marco/README.en.md">Open the canonical workstation README</a></p>
+    <p class="muted">This HTML page is a compact presentation; the Markdown README is the canonical source.</p>
+  </section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Internet Force 1995–1996 Historical Archive · <a href="../details.html?file=LICENSE">CC BY 4.0</a> · <a href="https://pippo.com/me/">Marco Iannacone</a> · <a href="https://github.com/pippocom/internetforce-1995">GitHub repository</a></p>
+  </div>
+</footer>
+</body>
+</html>

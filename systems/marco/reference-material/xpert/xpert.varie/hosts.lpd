@@ -1,0 +1,12 @@
+#
+# hosts.lpd	This file describes the names of the hosts which are
+#		allowed to use the remote printer services of this
+#		host.  This file is used by the LPD subsystem.
+#
+# Version:	@(#)/etc/hosts.lpd	2.00	04/30/93
+#
+# Author:	Fred N. van Kempen, <waltje@uwalt.nl.mugnet.org
+#
+#
+
+# End of hosts.lpd.

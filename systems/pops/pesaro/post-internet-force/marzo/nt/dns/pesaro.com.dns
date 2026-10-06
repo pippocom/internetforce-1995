@@ -1,0 +1,60 @@
+;
+;  Database file pesaro.com.dns for pesaro.com zone.
+;      Zone version:  3l
+;
+
+@                       IN	SOA	data.pesaro.com.	dnsmaster.pesaro.com.	(
+                        3           ; serial number
+                        3600        ; refresh
+                        600         ; retry
+                        86400       ; expire
+                        3600      ) ; minimum TTL
+
+;
+;  Zone NS records
+;
+
+@                       IN	NS	data
+@                       IN	NS	dns
+@                       IN	NS	dns.interbusiness.it.
+
+;
+;  Zone records
+;
+
+@                       IN	MX	10	users
+@                       IN	MX	20	mail.cs.interbusiness.it.
+@                       0	IN	TXT	"Implemented by Netconfig"	
+data                    IN	A	195.120.225.5
+freenews                IN	CNAME	news.gisco.NET.
+ftp                     IN	CNAME	data
+mail                    IN	CNAME	users
+mbox                    IN	CNAME	data
+news                    IN	CNAME	nesw.interbusiness.it.
+ppp1			IN	A	195.120.225.97
+ppp2			IN	A	195.120.225.98
+ppp3			IN	A	195.120.225.99
+ppp4			IN	A	195.120.225.100
+ppp5			IN	A	195.120.225.101
+ppp6			IN	A	195.120.225.102
+ppp7			IN	A	195.120.225.103
+ppp8			IN	A	195.120.225.104
+ppp10			IN	A	195.120.225.106
+ppp11			IN	A	195.120.225.107
+ppp12			IN	A	195.120.225.108
+ppp13			IN	A	195.120.225.109
+ppp14			IN	A	195.120.225.110
+ppp15			IN	A	195.120.225.111
+ppp16			IN	A	195.120.225.112
+
+ppp1-fano		IN		A	195.120.225.195
+ppp2-fano		IN	A	195.120.225.196
+ppp3-fano		IN	A	195.120.225.197
+ppp4-fano		IN	A	195.120.225.198
+ppp5-fano		IN	A       195.120.225.199
+ppp6-fano		IN	A       195.120.225.200
+ppp7-fano		IN	A       195.120.225.201
+
+users                   IN	A	195.120.225.6
+web                     IN	A	195.120.225.7
+www                     IN	CNAME	data

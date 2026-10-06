@@ -1,0 +1,815 @@
+From ianna@marco.internetforce.com Fri Jun 21 11:44:27 1996
+Date: Fri, 21 Jun 1996 11:44:25 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: domain@nis.garr.it
+cc: GARR-NIS Staff <staff@nis.garr.it>
+Subject: registrazione dominio internetforce.it
+Message-ID: <Pine.LNX.3.91.960621112141.7276A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+domain:    internetforce.it
+x400-domain: c=it; admd=0; prmd=internetforce; 
+org:       Internet Force
+descr:     Internet Force - fornitore di servizi e accesso a Internet
+admin-c:   Patrizia Stoppa
+tech-c:    Marco Iannacone
+tech-c:    Maurizio Gerosa
+postmaster: Marco Iannacone
+zone-c:    Marco Iannacone
+nserver:   206.20.95.3  dns.internetforce.it
+nserver:   131.114.2.5  192.12.192.5  dns.nis.garr.it
+dom-net:   206.20.95.0 
+remarks:   Fully-managed
+changed:   ianna@intf.com 960621
+source:    GARR-NIS
+ 
+person:    Marco Iannacone
+address:   INTERNET FORCE
+address:   via Plana, 20
+address:   I-20155 MILANO
+address:   Italy
+phone:     +39 2 39210765
+fax-no:    +39 2 39210119
+e-mail:    ianna@intf.com
+changed:   ianna@intf.com 960621
+source:    GARR-NIS
+ 
+person:    Maurizio Gerosa
+address:   INTERNET FORCE
+address:   via Plana, 20
+address:   20155 MILANO
+address:   Italy
+phone:     +39 2 39210765
+fax-no:    +39 2 39210119
+e-mail:    maus@intf.com
+changed:   ianna@intf.com 960621
+source:    GARR-NIS
+
+person:    Patrizia Stoppa 
+address:   INTERNET FORCE 
+address:   via Plana, 20 
+address:   20155 MILANO
+address:   Italy
+phone:     +39 2 39210765
+fax-no:    +39 2 39210119
+e-mail:    patrizia@intf.com
+changed:   ianna@intf.com 960621
+source:    GARR-NIS
+
+
+From ianna@marco.internetforce.com Fri Jun 21 11:45:52 1996
+Date: Fri, 21 Jun 1996 11:45:51 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: ORG-REG@NIS.GARR.IT
+Subject: Organization registration
+Message-ID: <Pine.LNX.3.91.960621113858.7276C-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+ #***********************************************************************
+ # Sezione 1: Informazioni OBBLIGATORIE sulle organizzazioni            #
+ #***********************************************************************
+ organization-name: Internet Force
+ organization-alias-name:
+ organization-unit:
+ organization-alias-unit:
+ address-street: Via Plana, 20
+ address-locality: Milano
+ address-province: Milano
+ address-zip: I-20155
+ country: IT
+ descr: Internet Force is an Italian Service Provider
+ descr: It sells services and connectivity for the Internet
+ descr:
+ descr:
+ phone: +39-2-39210765
+ fax-no: +39-2-39210119
+ telex:
+ associated-domain: internetforce.it
+ dir-admin: Marco Iannacone
+ directory: YES
+ 
+ person: Marco Iannacone
+ address-street: Via Plana, 20
+ address-locality: Milano
+ address-province: Milano
+ address-zip: I-20155
+ country: IT
+ person-title: System Administrator
+ descr: Network and system responsible
+ business-category: Networking
+ phone:+39-2-39210765
+ fax-no:+39-2-39210119
+ e-mail: ianna@intf.com
+ 
+ person: Maurizio Gerosa
+ address-street: Via Plana, 20
+ address-locality: Milano
+ address-province: Milano
+ address-zip: I-20155
+ country: IT
+ person-title: Technical Director
+ phone:+39-2-39210765
+ fax-no:+39-2-39210119
+ e-mail: maus@intf.com
+ 
+ person: Patrizia Stoppa
+ address-street: Via Plana, 20
+ address-locality: Milano
+ address-province: Milano
+ address-zip: I-20155
+ country: IT
+ person-title: Billing Contact
+ phone:+39-2-39210765
+ fax-no:+39-2-39210119
+ e-mail: patrizia@intf.com
+
+
+From ianna@marco.internetforce.com Fri Jun 21 14:15:54 1996
+Date: Fri, 21 Jun 1996 14:15:52 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: staff@nis.garr.it
+Subject: registrazione dominio internetforce.it
+In-Reply-To: <199606211049.MAA29110@asso.nis.garr.it>
+Message-ID: <Pine.LNX.3.91.960621141023.7859A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+A seguito della richiesta di registrazione del domain 
+internetforce.it, ho ricevuto la risposta automatica 
+delle operazioni di controllo sulla correttezza della medesima.
+L'unico messaggio ricevuto era il seguente warning:
+
+> WARNING:     if you have a mntner object, please add the "mnt-by:" tag.
+
+Avendo letto nella parte seguente del e-mail che:
+
+> 
+> Objects that just generated a WARNING have been reset to the correct value
+> and have gotten over the syntax control phase.
+
+ritengo che non sia piu' necessario rispedire la richiesta,
+ma che il valore e' stato automaticamente corretto assumendo il valore 
+opportuno... E' cosi'?
+
+Posso quindi attendere che la mia richiesta venga presa in esame?
+
+grazie,
+
+cordiali saluti,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE
+
+From ianna@marco.internetforce.com Mon Jun 24 09:22:32 1996
+Date: Mon, 24 Jun 1996 09:22:30 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: staff@nis.garr.it
+Subject: Assunzione di responsabilita': internetforce.it
+Message-ID: <Pine.LNX.3.91.960624091730.18224A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+
+A seguito della richiesta di registrazione del domain 
+internetforce.it, ho dato disposizioni affinche' vi venisse
+inviato via fax la mia domanda di assunzione di responsabilita',
+e le informazioni dettagliate sulla nostra societa' che richiedete
+per la registrazione di un dominio.
+Vorrei avere conferma (appena possibile) dell'avvenuta ricezione
+delle medesime e della loro conformita' a quanto da Voi richiesto.
+
+grazie,
+
+cordiali saluti,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE
+
+
+From dbmaster@asso.nis.garr.it Fri Jul  5 12:22:37 1996
+Return-Path: dbmaster@asso.nis.garr.it
+Received: from asso.nis.garr.it (asso.nis.garr.it [193.205.245.10]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id MAA31005 for <ianna@marco.internetforce.com>; Fri, 5 Jul 1996 12:22:33 +0100
+Received: (from dbmaster@localhost) by asso.nis.garr.it (8.7/8.7) id MAA04623; Fri, 5 Jul 1996 12:02:44 +0200 (MET DST)
+From: GARR-NIS Hostmaster <hostmaster@nis.garr.it>
+Message-Id: <199607051002.MAA04623@asso.nis.garr.it>
+Subject: Avviso Cambio Fornitore INDI.IT
+To: elisa@ibenet.it, piero@free.it, ianna@marco.internetforce.com
+Date: Fri, 5 Jul 96 12:02:43 MET DST
+Organization: GARR Network Information Service
+Reply-To: staff@nis.garr.it
+X-Mailer: ELM [version 2.3 PL11]
+Status: O
+X-Status: 
+
+Buongiorno,
+
+per vostra informazione:
+
+in data 05-07-96 riceviamo via fax da Antonio Mattei  della
+Indi Spa, Macerata (con dominio assegnato indi.it)
+comunicazione circa il cambiamento del proprio network provider,
+che da I.B.E.Net diventa InternetForce.
+
+Distinti saluti,
+        Lorenzo Luconi Trombacchi
+        GARR-NIS Staff
+
+-- 
+ GARR-NIS Hostmaster of the Day
+  ----------                                                  -------------
+  GARR - Network Information Service        E-mail: hostmaster@nis.garr.it
+  c/o CNUCE - Istituto del CNR              Phone:  +39 50 593360
+  via S. Maria, 36                          Fax:    +39 50 904052
+  56126 PISA  Italy                         Telex:  500371 - CNUCE
+  ----------                                                  -------------
+
+From owner-ip-nsp-ita@NIS.GARR.IT Mon Jul 29 13:32:24 1996
+Return-Path: owner-ip-nsp-ita@NIS.GARR.IT
+Received: from jolly.nis.garr.it (jolly.nis.garr.it [193.205.245.5]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id NAA19944 for <ianna@MARCO.INTERNETFORCE.COM>; Mon, 29 Jul 1996 13:32:14 +0100
+Received: from jolly (jolly.nis.garr.it [193.205.245.5]) by jolly.nis.garr.it (8.7.2/8.7) with SMTP id NAA28525; Mon, 29 Jul 1996 13:47:06 +0200 (MET DST)
+Received: from LISTSERV.NIS.GARR.IT by LISTSERV.NIS.GARR.IT (LISTSERV-TCP/IP
+          release 1.8b) with spool id 91977 for
+          IP-NSP-ITA@LISTSERV.NIS.GARR.IT; Mon, 29 Jul 1996 13:47:04 +0200
+Received: from asso.nis.garr.it (asso.nis.garr.it [131.114.192.40]) by
+          jolly.nis.garr.it (8.7.2/8.7) with ESMTP id NAA28517 for
+          <ip-nsp-ita@nis.garr.it>; Mon, 29 Jul 1996 13:47:03 +0200 (MET DST)
+Received: (from dbmaster@localhost) by asso.nis.garr.it (8.7/8.7) id NAA24455
+          for ip-nsp-ita@nis.garr.it; Mon, 29 Jul 1996 13:47:02 +0200 (MET DST)
+From: GARR-NIS Hostmaster <hostmaster@NIS.GARR.IT>
+Message-Id: <199607291147.NAA24455@asso.nis.garr.it>
+Subject: Lista dei domini non riconosciuti
+To: ip-nsp-ita@NIS.GARR.IT
+Date: Mon, 29 Jul 96 13:47:01 MET DST
+Organization: GARR Network Information Service
+Reply-To: staff@NIS.GARR.IT
+X-Mailer: ELM [version 2.3 PL11]
+Sender: owner-ip-nsp-ita@NIS.GARR.IT
+Status: RO
+X-Status: 
+
+Salve,
+
+per vostra informazioni vi alleghiamo di seguito la lista dei
+domini "orfani" per i quali e' stato inserito il valore "NO-PROVIDER-MNT"
+nel campo mnt-by.
+
+Vi ricordiamo che se entro sei mesi a partire da oggi tali domini non saranno
+riconosciuti, saranno rimossi.
+
+Cordiali saluti
+
+        GARR-NIS Staff
+
+
+accent.it
+comune.pistoia.it
+crf.it
+didocom.it
+eurotel.it
+eznet.it
+irst.it
+itc.it
+sgpat.trento.it
+softeam.it
+smartino.ge.it
+sitel.it
+computeam.it
+testfi.it
+regione.liguria.it
+challenger.it
+isef.to.it
+isef.torino.it
+
+--
+ GARR-NIS Hostmaster of the Day
+  ----------                                                  -------------
+  GARR - Network Information Service        E-mail: hostmaster@nis.garr.it
+  c/o CNUCE - Istituto del CNR              Phone:  +39 50 593360
+  via S. Maria, 36                          Fax:    +39 50 904052
+  56126 PISA  Italy                         Telex:  500371 - CNUCE
+  ----------                                                  -------------
+
+From pm-check@asso.nis.garr.it Thu Aug  1 12:25:02 1996
+Return-Path: pm-check@asso.nis.garr.it
+Received: from users.internetforce.com (root@users.internetforce.com [206.20.95.4]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id MAA15302 for <ianna@marco.internetforce.com>; Thu, 1 Aug 1996 12:25:01 +0100
+Received: from asso.nis.garr.it (asso.nis.garr.it [193.205.245.10]) by users.internetforce.com (8.6.12/8.6.12) with ESMTP id NAA22980 for <postmaster@internetforce.it>; Thu, 1 Aug 1996 13:21:35 +0200
+Organization: GARR-NIS - Pisa (Italy)
+Received: (from pm-check@localhost) by asso.nis.garr.it (8.7/8.7) id NAA17455 for postmaster@internetforce.it; Thu, 1 Aug 1996 13:17:02 +0200 (MET DST)
+Message-Id: <199608011117.NAA17455@asso.nis.garr.it>
+Subject: postmaster test for internetforce.it
+From: pm-check@nis.garr.it (GARR Network Information Service)
+Date: Thu, 1 Aug 96 13:17:02 MET DST
+Reply-To: pm-check@nis.garr.it
+To: postmaster@internetforce.it
+X-Mailer: fastmail [version 2.3 PL11]
+Status: RO
+X-Status: 
+
+
+	Questo e' un test per controllare la raggiungibilita'
+	di postmaster@<dominio>, come previsto dalle regole 
+	sottoscritte al momento della registrazione dello stesso.
+
+	P.S.: non occorre confermare il ricevimento della mail
+
+	----------
+
+	This is a mail test to check if the address postmaster@<domain>
+	is reachable, as foreseen by the rules subscribed by the requestor
+	when he/she applied for the domain registation.
+
+	P.S.: please, do not confirm or reply to this mail
+
+			- Il Servizio Informativo della rete GARR
+			- GARR Network Information Service
+
+
+From ianna@internetforce.com Thu Aug 29 16:30:51 1996
+Date: Thu, 29 Aug 1996 16:30:21 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@internetforce.com>
+To: domain@nis.garr.it
+cc: GARR-NIS Staff <staff@nis.garr.it>
+Subject: registrazione dominio cnn.it
+Message-ID: <Pine.LNX.3.91.960809163340.26931A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+domain:    cnn.it
+x400-domain: c=it; admd=0; prmd=cnn; 
+org:       Cyber National Network
+descr:     Cyber National Network - Servizi su Internet
+admin-c:   Christian Colombo
+tech-c:    Marco Iannacone
+tech-c:    Christian Colombo
+postmaster: Christian Colombo
+zone-c:    Christian Colombo
+nserver:   206.20.228.70  cnn-server.cnn.it
+nserver:   131.114.2.5  192.12.192.5  dns.nis.garr.it
+nserver:   206.20.95.3 dns.internetforce.it
+dom-net:   206.20.228.0
+remarks:   Fully-managed
+mnt-by:    INTERNETFORCE-MNT
+changed:   ianna@intf.com 960829
+source:    GARR-NIS
+
+person:    Marco Iannacone
+address:   INTERNET FORCE
+address:   via Plana, 20
+address:   I-20155 MILANO
+address:   Italy
+phone:     +39 2 39210765
+fax-no:    +39 2 39210119
+e-mail:    ianna@intf.com
+changed:   ianna@intf.com 960621
+source:    GARR-NIS
+ 
+person:    Christian Colombo
+address:   Cyber National Network
+address:   viale Monza, 48
+address:   20100 MILANO
+address:   Italy
+phone:     +39 2 26829349
+fax-no:    +39 2 26145977
+e-mail:    chris@cnn.it
+changed:   ianna@intf.com 960829
+source:    GARR-NIS
+
+
+
+
+
+
+
+
+
+
+From ianna@internetforce.com Thu Aug 29 16:34:08 1996
+Date: Thu, 29 Aug 1996 16:34:05 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@internetforce.com>
+To: ORG-REG@NIS.GARR.IT
+cc: GARR-NIS Staff <staff@nis.garr.it>
+Subject: Registrazione organizzazione
+Message-ID: <Pine.LNX.3.91.960829111208.11111A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+organization-name: Cyber National Network
+organization-alias-name: CNN
+address-street: viale Monza, 48
+address-locality: MILANO
+address-province: MILANO
+address-zip: I-20100
+country: IT
+descr: It sells services on the Internet
+phone:     +39 2 26829349
+fax-no:    +39 2 26145977
+telex:
+associated-domain: cnn.it
+dir-admin: Marco Iannacone
+directory: YES
+
+person:    Christian Colombo
+address-street:   viale Monza, 48
+address-locality: MILANO
+address-province: MILANO
+address-zip:   I-20127
+country: IT
+person-title: Administrator
+descr: Responsable of the Administration of the Company
+phone:     +39 2 26829349   
+fax-no:    +39 2 26145977
+e-mail:    chris@cnn.it
+
+person: Marco Iannacone
+address-street: via Plana, 20 
+address-locality: MILANO
+address-province: MILANO 
+address-zip: I-20155
+country: IT
+person-title: System & Network Administrator
+descr: He helps CNN with all Network-related problems
+business-category: Networking
+phone: +39 2 39210765
+fax-no: +39 2 39210119
+e-mail: ianna@intf.com
+
+From ianna@marco.internetforce.com Mon Sep  2 10:16:16 1996
+Date: Mon, 2 Sep 1996 10:16:08 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: domain@nis.garr.it
+Subject: registrazione dominio cnn.it
+Message-ID: <Pine.LNX.3.91.960902101500.13503B-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+
+domain:    cnn.it
+x400-domain: c=it; admd=0; prmd=cnn; 
+org:       Cyber National Network
+descr:     Cyber National Network - Servizi su Internet
+admin-c:   Christian Colombo
+tech-c:    Marco Iannacone
+tech-c:    Christian Colombo
+postmaster: Christian Colombo
+zone-c:    Christian Colombo
+nserver:   206.20.228.70  cnn-server.cnn.it
+nserver:   131.114.2.5  192.12.192.5  dns.nis.garr.it
+nserver:   206.20.95.3 dns.internetforce.it
+dom-net:   206.20.228.0
+remarks:   Fully-managed
+mnt-by:    INTERNETFORCE-MNT
+changed:   ianna@marco.internetforce.com 960902
+source:    GARR-NIS
+
+person:    Marco Iannacone
+address:   INTERNET FORCE
+address:   via Plana, 20
+address:   I-20155 MILANO
+address:   Italy
+phone:     +39 2 39210765
+fax-no:    +39 2 39210119
+e-mail:    ianna@intf.com
+changed:   ianna@intf.com 960621
+source:    GARR-NIS
+ 
+person:    Christian Colombo
+address:   Cyber National Network
+address:   viale Monza, 48
+address:   20127 MILANO
+address:   Italy
+phone:     +39 2 26829349
+fax-no:    +39 2 26145977
+e-mail:    chris@cnn.it
+changed:   ianna@marco.internetforce.com 960902
+source:    GARR-NIS
+
+
+
+
+
+
+
+From daemon@asso.nis.garr.it Mon Sep  2 10:27:01 1996
+Return-Path: daemon@asso.nis.garr.it
+Received: from asso.nis.garr.it (asso.nis.garr.it [193.205.245.10]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id KAA13525 for <ianna@MARCO.INTERNETFORCE.COM>; Mon, 2 Sep 1996 10:26:57 +0100
+Organization: GARR-NIS - Pisa (Italy)
+Received: (from daemon@localhost) by asso.nis.garr.it (8.7/8.7) id KAA22204; Mon, 2 Sep 1996 10:56:38 +0200 (MET DST)
+Date: Mon, 2 Sep 1996 10:56:38 +0200 (MET DST)
+Message-Id: <199609020856.KAA22204@asso.nis.garr.it>
+To: Marco Iannacone <ianna@MARCO.INTERNETFORCE.COM>
+From: GARR-NIS Database Management <hostmaster@nis.garr.it>
+Subject: Re: registrazione dominio cnn.it
+Reply-To: hostmaster@nis.garr.it
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Your e-mail:
+
+>   From:    Marco Iannacone <ianna@MARCO.INTERNETFORCE.COM>
+>   Subject: registrazione dominio cnn.it
+>   Date:    Mon, 2 Sep 1996 10:16:08 +0100
+>   Msg-Id:  
+
+has been processed by the GARR NIS Syntax Phase database software and
+produced the following output:
+
+------------------------------------------------------------------------
+Syntax Check Phase OK: [domain] cnn.it
+
+Syntax Check Phase OK: [person] Marco Iannacone
+
+Syntax Check Phase OK: [person] Christian Colombo
+
+
+No syntax error/warnings were found in your request.
+Your request has gotten over the syntax control phase.  Congratulations.
+Now your request is submitted to the Registration Authority staff for
+the semantic control phase (domain name verification, cross-checks with
+the documents of the requesting organization, etc.). This phase may take
+up to 10 working days as clearly stated in the italian naming rules
+(http://www.nis.garr.it/netdoc/ITA-PE/Documenti/regole-naming.txt).
+
+-------------------------------------------------------------------------
+
+If you have any questions about an error or warning message, please
+contact <staff@nis.garr.it>.
+
+Sincerely Yours, 
+GARR-NIS Database Maintenance Department Robot
+
+From daemon@asso.nis.garr.it Wed Sep 11 18:12:38 1996
+Return-Path: daemon@asso.nis.garr.it
+Received: from asso.nis.garr.it (asso.nis.garr.it [193.205.245.10]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id SAA17008 for <ianna@MARCO.INTERNETFORCE.COM>; Wed, 11 Sep 1996 18:12:25 +0100
+Organization: GARR-NIS - Pisa (Italy)
+Received: (from daemon@localhost) by asso.nis.garr.it (8.7/8.7) id SAA09069; Wed, 11 Sep 1996 18:59:23 +0200 (MET DST)
+Date: Wed, 11 Sep 1996 18:59:23 +0200 (MET DST)
+Message-Id: <199609111659.SAA09069@asso.nis.garr.it>
+To: Marco Iannacone <ianna@MARCO.INTERNETFORCE.COM>
+From: GARR-NIS Database Management <hostmaster@nis.garr.it>
+Subject: Re: registrazione dominio cnn.it
+Reply-To: hostmaster@nis.garr.it
+Precedence: bulk
+Status: O
+X-Status: 
+
+Your e-mail:
+
+>   From:    Marco Iannacone <ianna@MARCO.INTERNETFORCE.COM>
+>   Subject: registrazione dominio cnn.it
+>   Date:    Mon, 2 Sep 1996 10:16:08 +0100
+>   Msg-Id:  
+
+has been processed by the automatic update procedure at the GARR NIS.
+Diagnostic output follows:
+
+------------------------------------------------------------------------
+Update OK: [domain] cnn.it
+
+Update NOOP: [person] Marco Iannacone
+
+Update OK: [person] Christian Colombo
+
+
+No error/warnings were found in your database update.  Congratulations.
+-------------------------------------------------------------------------
+
+If you have any questions about an error or warning message, please
+contact <staff@nis.garr.it>.
+
+Sincerely Yours, 
+GARR-NIS Database Maintenance Department Robot
+
+From daemon@asso.nis.garr.it Wed Sep 11 18:12:49 1996
+Return-Path: daemon@asso.nis.garr.it
+Received: from asso.nis.garr.it (asso.nis.garr.it [193.205.245.10]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id SAA17009 for <ianna@marco.internetforce.com>; Wed, 11 Sep 1996 18:12:35 +0100
+Organization: GARR-NIS - Pisa (Italy)
+Received: (from daemon@localhost) by asso.nis.garr.it (8.7/8.7) id SAA09073; Wed, 11 Sep 1996 18:59:24 +0200 (MET DST)
+Date: Wed, 11 Sep 1996 18:59:24 +0200 (MET DST)
+Message-Id: <199609111659.SAA09073@asso.nis.garr.it>
+From: GARR-NIS Database Notifications <hostmaster@nis.garr.it>
+Subject: Notification of GARR-NIS Database changes
+Reply-To: hostmaster@nis.garr.it
+To: ianna@marco.internetforce.com
+Status: RO
+X-Status: 
+
+Dear Colleague,
+
+This is to notify you that some objects in which you are mentioned as
+a notifier, guardian or maintainer of one of the guarded attributes
+in this object have been modified in the NEW GARR-NIS database.
+The objects below are the NEW entries for these
+objects in the database. In case of DELETIONS, the deleted object is
+displayed. NOOPs will not be reported.
+
+The update causing these changes had the following mail headers:
+
+- From:    Marco Iannacone <ianna@MARCO.INTERNETFORCE.COM>
+- Subject: registrazione dominio cnn.it
+- Date:    Mon, 2 Sep 1996 10:16:08 +0100
+- Msg-Id:  
+
+GARR-NIS Database Notification Department
+
+---
+OBJECT BELOW CREATED:
+
+domain:      cnn.it
+x400-domain: c=it; admd=0; prmd=cnn; 
+org:         Cyber National Network
+descr:       Cyber National Network - Servizi su Internet
+admin-c:     Christian Colombo
+tech-c:      Marco Iannacone
+tech-c:      Christian Colombo
+postmaster:  Christian Colombo
+zone-c:      Christian Colombo
+nserver:     206.20.228.70  cnn-server.cnn.it 
+nserver:     131.114.2.5  192.12.192.5  dns.nis.garr.it 
+nserver:     206.20.95.3  dns.internetforce.it 
+dom-net:     206.20.228.0 
+remarks:     Fully-managed
+mnt-by:      INTERNETFORCE-MNT
+changed:     ianna@marco.internetforce.com 960902
+source:      GARR-NIS
+
+From ianna@marco.internetforce.com Thu Sep 19 11:15:31 1996
+Return-Path: ianna@marco.internetforce.com
+Received: from users.internetforce.com (root@users.internetforce.com [206.20.95.4]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id LAA32256 for <ianna@marco.internetforce.com>; Thu, 19 Sep 1996 11:15:30 +0100
+Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id MAA07190 for <ianna@intf.com>; Thu, 19 Sep 1996 12:01:25 +0200
+Date: Thu, 19 Sep 1996 11:15:29 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: ianna@intf.com
+Subject: registrazione dominio promotion.it
+Message-ID: <Pine.LNX.3.91.960919111005.32118A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+domain:    promotion.it
+x400-domain: c=it; admd=0; prmd=promotion; 
+org:       Internet Service Promotion Ing. Guido Principi
+descr:     Sviluppo di software multimediale
+admin-c:   Guido Principi
+tech-c:    Marco Iannacone
+postmaster: Marco Iannacone
+zone-c:    Marco Iannacone
+nserver:   206.20.95.3  dns.internetforce.it
+nserver:   131.114.2.5  192.12.192.5  dns.nis.garr.it
+dom-net:   206.20.95.0
+remarks:   Fully-managed
+mnt-by:    INTERNETFORCE-MNT
+changed:   ianna@intf.com 960918
+source:    GARR-NIS
+
+person:    Marco Iannacone
+address:   INTERNET FORCE
+address:   via Plana, 20
+address:   I-20155 MILANO
+address:   Italy
+phone:     +39 2 39210765
+fax-no:    +39 2 39210119
+e-mail:    ianna@intf.com
+changed:   ianna@intf.com 960621
+source:    GARR-NIS
+ 
+person:    Guido Principi
+address:   Via M. Del Monaco, 9 
+address:   I-61100 PESARO
+address:   Italy
+address:   
+phone:     +39 71 403731
+fax-no:    +39 71 403731
+e-mail:    gprinc@intf.com
+changed:   ianna@intf.com 960918
+source:    GARR-NIS
+
+
+
+From daemon@asso.nis.garr.it Thu Sep 19 11:30:32 1996
+Return-Path: daemon@asso.nis.garr.it
+Received: from asso.nis.garr.it (asso.nis.garr.it [193.205.245.10]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id LAA32327 for <ianna@MARCO.INTERNETFORCE.COM>; Thu, 19 Sep 1996 11:30:27 +0100
+Organization: GARR-NIS - Pisa (Italy)
+Received: (from daemon@localhost) by asso.nis.garr.it (8.7/8.7) id MAA03423; Thu, 19 Sep 1996 12:10:50 +0200 (MET DST)
+Date: Thu, 19 Sep 1996 12:10:50 +0200 (MET DST)
+Message-Id: <199609191010.MAA03423@asso.nis.garr.it>
+To: Marco Iannacone <ianna@MARCO.INTERNETFORCE.COM>
+From: GARR-NIS Database Management <hostmaster@nis.garr.it>
+Subject: Re: registrazione dominio promotion.it
+Reply-To: hostmaster@nis.garr.it
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Your e-mail:
+
+>   From:    Marco Iannacone <ianna@MARCO.INTERNETFORCE.COM>
+>   Subject: registrazione dominio promotion.it
+>   Date:    Thu, 19 Sep 1996 11:19:48 +0100
+>   Msg-Id:  
+
+has been processed by the GARR NIS Syntax Phase database software and
+produced the following output:
+
+------------------------------------------------------------------------
+Syntax Check Phase OK: [domain] promotion.it
+
+Syntax Check Phase OK: [person] Marco Iannacone
+
+Syntax Check Phase OK: [person] Guido Principi
+
+
+No syntax error/warnings were found in your request.
+Your request has gotten over the syntax control phase.  Congratulations.
+
+Now your request is submitted to the Registration Authority staff for
+the semantic control phase (domain name verification, cross-checks with
+the documents of the requesting organization, etc.). This phase may take
+up to 10 working days as clearly stated in the Italian naming rules
+(http://www.nis.garr.it/netdoc/ITA-PE/Documenti/regole-naming.txt).
+
+-------------------------------------------------------------------------
+
+If you have any questions about an error or warning message, please
+contact <staff@nis.garr.it>.
+
+Sincerely Yours, 
+GARR-NIS Database Maintenance Department Robot
+
+From daemon@asso.nis.garr.it Tue Sep 24 14:07:12 1996
+Return-Path: daemon@asso.nis.garr.it
+Received: from asso.nis.garr.it (asso.nis.garr.it [193.205.245.10]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id OAA13119 for <ianna@marco.internetforce.com>; Tue, 24 Sep 1996 14:07:07 +0100
+Organization: GARR-NIS - Pisa (Italy)
+Received: (from daemon@localhost) by asso.nis.garr.it (8.7/8.7) id OAA19918; Tue, 24 Sep 1996 14:58:15 +0200 (MET DST)
+Date: Tue, 24 Sep 1996 14:58:15 +0200 (MET DST)
+Message-Id: <199609241258.OAA19918@asso.nis.garr.it>
+From: GARR-NIS Database Notifications <hostmaster@nis.garr.it>
+Subject: Notification of GARR-NIS Database changes
+Reply-To: hostmaster@nis.garr.it
+To: ianna@marco.internetforce.com
+Status: RO
+X-Status: 
+
+Dear Colleague,
+
+This is to notify you that some objects in which you are mentioned as
+a notifier, guardian or maintainer of one of the guarded attributes
+in this object have been modified in the NEW GARR-NIS database.
+The objects below are the NEW entries for these
+objects in the database. In case of DELETIONS, the deleted object is
+displayed. NOOPs will not be reported.
+
+The update causing these changes had the following mail headers:
+
+- From:    Marco Iannacone <ianna@MARCO.INTERNETFORCE.COM>
+- Subject: Re: registrazione dominio promotion.it (2)
+- Date:    Tue, 24 Sep 1996 08:33:05 +0100
+- Msg-Id:  
+
+GARR-NIS Database Notification Department
+
+---
+OBJECT BELOW CREATED:
+
+domain:      promotion.it
+x400-domain: c=it; admd=0; prmd=promotion; 
+org:         Internet Service Promotion Ing. Guido Principi
+descr:       Sviluppo di software multimediale
+admin-c:     Guido Principi
+tech-c:      Marco Iannacone
+postmaster:  Marco Iannacone
+zone-c:      Marco Iannacone
+nserver:     206.20.95.3  dns.promotion.it 
+nserver:     131.114.2.5  192.12.192.5  dns.nis.garr.it 
+dom-net:     206.20.95.0 
+remarks:     Fully-managed
+mnt-by:      INTERNETFORCE-MNT
+changed:     ianna@marco.internetforce.com 960918
+source:      GARR-NIS
+

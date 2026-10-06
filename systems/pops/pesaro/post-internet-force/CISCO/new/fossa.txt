@@ -1,0 +1,129 @@
+version 10.3
+service udp-small-servers
+service tcp-small-servers
+!
+hostname virtual2511
+!
+enable secret 5 $1$uGR1$4xpzdew3fhR26e93bxXIr.
+enable password <ORIGINAL PASSWORD REMOVED>
+!
+username virtual password 7 <ORIGINAL PASSWORD REMOVED>
+chat-script rstusr "" "at&fs0=1e0&r2&d2&c1&b1&h1&m0&k0" "&OK"
+chat-script script dialnum "" "atd\T" TIMEOUT 60 CONNECT \c
+!
+interface Ethernet0
+ no ip address
+ shutdown
+!
+interface Serial0
+ backup interface Async9
+ no ip address
+!
+interface Serial1
+ no ip address
+ shutdown
+!
+interface Async1
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.41
+ async mode interactive
+ no cdp enable
+!
+interface Async2
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.34
+ async mode interactive
+ no cdp enable
+!
+interface Async3
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.35
+ async mode interactive
+ no cdp enable
+!
+interface Async4
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.36
+ async mode interactive
+ no cdp enable
+!
+interface Async5
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.37
+ async mode interactive
+ no cdp enable
+!
+interface Async6
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.38
+ async mode interactive
+ no cdp enable
+!
+interface Async7
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.39
+ async mode interactive
+ no cdp enable
+!
+interface Async8
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.40
+ async mode interactive
+ no cdp enable
+!
+interface Async9
+ ip tcp header-compression passive
+ encapsulation ppp
+ keepalive 32767
+ async default ip address 195.120.225.33
+ async dynamic address
+ async dynamic routing
+ async mode interactive
+ dialer in-band
+ dialer idle-timeout 2147483
+ dialer map ip 195.120.225.33 name 2511pesaro modem-script dialnum broadcast 425
+1
+ dialer-group 1
+ ppp authentication chap
+!
+ip name-server 195.120.225.6
+ip name-server 195.120.225.5
+ip route 0.0.0.0 0.0.0.0 195.120.225.106
+ip route 195.120.225.106 255.255.255.255 Async9
+access-list 100 deny   ip any host 255.255.255.255
+access-list 100 permit ip any any
+dialer-list 1 protocol ip list 100
+!
+line con 0
+line 1 8
+ transport input all
+ rxspeed 38400
+ txspeed 38400
+ flowcontrol hardware
+line aux 0
+ modem InOut
+ script reset rstusr
+ transport input all
+ rxspeed 38400
+ txspeed 38400
+ flowcontrol hardware
+line vty 0 4
+ password <ORIGINAL PASSWORD REMOVED>
+ login
+!

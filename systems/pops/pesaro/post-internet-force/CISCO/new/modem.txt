@@ -1,0 +1,374 @@
+[navbar]
+[Strip_TechTips]
+
+Basic Modem Cabling and Configuration
+
+---------------------------------------------------------------------------
+
+Introduction
+
+This document will show you how to configure most popular modems to work on
+a Cisco access server or on a router's console/AUX port. The first section,
+"RS-232 Cabling," provides important background information, but if you're
+already familiar with modem cabling, go ahead and skip to the section
+called "Configuring the Cisco Side" on page 3.
+
+RS-232 Cabling
+
+The end-to-end topology for a dial-in connection looks like this:
+
+--------            --------
+|Cisco |  --------  |access|  -------  --------  --------  -----------
+|Access|->|RS-232|->|server|->|PSTN*|->|client|->|RS-232|->|client PC|
+|Server|  --------  |modem |  -------  |modem |  --------  |or router|
+--------            --------  *Public  --------            -----------
+                               Switch
+                               Telephone
+                               Network
+
+The Cisco access server and the client PC or router are generally called
+Data Terminal Equipment (DTE), and the server and client modems are called
+Data Circuit-terminating Equipment (DCE).
+
+To connect a modem to a Cisco 2500, or RJ-45-based console or AUX port, use
+the setup below. See the faxback document "Cabling Guide for RJ-45 Console
+and AUX Ports" for more details.
+
+  console/AUX port----Rolled RJ-45 Cable + CAB-MMOD----Modem
+
+To connect a modem to a Cisco 4000 or 7000, or DB-25-based AUX port, use
+the setup below.
+
+  AUX Port----DB-25 Straight Cable----Modem
+
+The Cisco access server uses three pairs of wires to connect the DCE to the
+DTE. In each pair, one wire transmits, and the other receives. These pairs
+are TX/RX, RTS/CTS, and DTR/DCD. Each pair requires specific configuration
+on both the DTE and the DCE.
+
+TX/RX - Data Transfer
+
+Transmit: DTE >---TX---> DCE
+
+Receive: DTE <---RX---< DCE
+
+Transmit and receive speed is set on the modem using the TX/RX wire pair.
+Notice that the DCE transmits on RX and receives on TX.
+
+Rule
+
+The speeds at which the two devices are communicating on the RS-232 must be
+the same. If they are not, you'll get a speed mismatch, where either
+garbage or nothing appears on the screen when dialing in to the modem.
+
+Configuration Reference Notes
+
+   * access server: speed xxxxx
+
+   * modem: configuration commands vary from modem to modem. Check your
+     modem manual under options such as port-rate adjust, buffered mode, or
+     lock dte. Often, just turning on error correction for the modem will
+     make it go into buffered mode, which may lock the speed.
+
+     In order to lock the modem at the new access server speed, you may
+     need to set the speed on the access server first, then send an AT
+     command to the modem with a reverse telnet. You'll find more details
+     about this in the section "Connecting the Modem" below.
+
+RTS/CTS - Hardware Flow Control
+
+Request to Send: DTE >---RTS---> DCE
+
+Clear to Send: DTE <---CTS---< DCE
+
+This pair of wires indicates the ability of a device to receive data. For
+example, when the DCE has a full data buffer and can no longer accept data
+from the DTE for transmitting, it will lower the CTS signal. When the
+access server can no longer accept data, it lowers the RTS signal.
+
+Rule
+
+Both the access server and the modem must agree to hardware handshake with
+CTS/RTS.
+
+Configuration Reference Notes
+
+   * access server: flowcontrol hardware
+
+   * modem: configuration commands vary from modem to modem. Look for
+     "Hardware Handshaking" or "RTS/CTS Flow Control" in the modem manual.
+
+Both the access server and the modem must be set for Hardware Flow Control.
+If they do not agree on handshaking, they will tend to overflow each
+other's buffers. Dropped characters or packet errors are typical signs of a
+handshaking mismatch.
+
+DTR/DCD - Modem Control
+
+Data Terminal Ready: DTE >---DTR---> DCE
+
+Data Carrier Detect: DTE <---DCD---< DCE
+
+This pair of wires is used between the DTE and the DCE to initiate and
+receive calls. When the access server is ready, DTR output is high. The
+access server lowers DTR to drop any existing calls and return to the
+stored configuration. The modem uses DCD output to indicate that a call has
+arrived that needs servicing by the access server. The modem drops DCD to
+indicate loss of the call.
+
+Rule
+
+The access server and modem must agree on the function of DTR and DCD.
+
+Configuration Reference Notes
+
+   * access server: modem inout or modem ri-is-cd
+
+     Use modem inout to allow incoming and outgoing connections to the
+     modem. You will need modem inout while configuring the modem. Use
+     modem ri-is- cd to allow incoming only connections. Cabling other than
+     what we suggested at the beginning of this section can cause modem
+     control to fail since modem DCD may not be wired.
+
+   * modem: usually &c1 and &d2
+
+     This is often referred to as RS-232 standard operation.
+
+Configuring the Cisco Side
+
+Now let's start configuring. On the Cisco, this line configuration usually
+works best:
+
+  line x
+  ! where x = TTY #. AUX port is 1 on router, last_tty+1 on access server.
+  speed 38400
+  ! Set to highest speed in common between modem and port.
+  flow hard
+  ! RTS/CTS flowcontrol.  CTS only on ASM.
+  modem inout
+  ! Drop connection on loss of CD, Cycle DTR for connection close
+
+Each line in this configuration assumes that the modem will be set up in a
+specific way, which you'll see how to accomplish using the chart at the end
+of this document. Specifically, it assumes that we will lock DTE speed, set
+hardware (RTS/CTS) flowcontrol, set carrier detect to reflect the actual
+carrier state, and set the modem to hang up on loss of DTR. Flowcontrol and
+modem control are not available on pre-9.21 router aux ports.
+
+   * If flowcontrol is not available, stay at 9600 baud.
+   * Don't use the Cisco autobaud feature. Today's modems do a much better
+     job.
+   * If you are routing over the AUX port, remember that each character
+     generates a processor interrupt. Abnormally high CPU may be resolved
+     by using a lower AUX port speed.
+
+Bit rate trivia:
+
+   * 38400 is the maximum speed for the 500-CS and AUX ports.
+   * 57600 is the maximum speed for ASM, STS-10.
+   * 115200 is the maximum speed for the 25xx access servers.
+
+Connecting the Modem
+
+Attach the modem to a port, and configure your modem using reverse
+connection. To do this, issue the command
+
+  telnet x.x.x.x 20yy
+
+where x.x.x.x is any active, connected, and up interface on the Cisco
+device and yy is the line number to which you want to connect.* You can
+issue this telnet command from anywhere on the network that can ping
+x.x.x.x.
+
+     Recall that 01 is the AUX port on a router. On an Access server,
+     the AUX port is the last_tty+1 - that is, on a 16-port Access
+     Server, the AUX port is port 17.
+
+If you get a connection refused, either someone already has a connection to
+that port or there is an exec (prompt) running on that port. Clear the line
+from the console to try again by issuing the command
+
+  clear line yy
+
+where yy is the line number. If it still fails, make sure that you have set
+modem inout for that line. If you don't have modem control (as in pre-9.21
+AUX ports), set no exec on the line before making a reverse connection. If
+you still get a connection refused, disconnect the modem, issue the command
+
+  telnet x.x.x.x 20yy
+
+and then reconnect and configure the modem. As a last resort, configure the
+modem using an external terminal. Be sure to clear the line before each
+connection attempt.
+
+Configuring the Modem
+
+Once you've attached to the modem at the same speed to which the Cisco port
+will be set (through a reverse telnet connection), you're ready to issue
+the AT commands. You can build the exact command string you need from the
+attached chart. Just follow these steps:
+
+  1. As a minimum, you must start with the information in the REQUIRED FOR
+     ALL column and the EC/COMPRESSION pair that you need (either BEST or
+     NO). Use the BEST pair for applications that are primarily file
+     transfer. Use the NO pair for connections that are primarily ARA,
+     Xremote, or interactive packet-protocol (SLIP/PPP) traffic. Generally,
+     Cisco recommends BEST. Adjust your configuration as your needs change.
+
+  2. If you have an AUX port (or no modem control), add the AUX PORT
+     section. Remember to limit to 9600 bps if you have no flow control.
+
+  3. Add the PLAT SPEC ASM only for ASM platforms, and CAB-MDCE if you have
+     a 500-CS with a CAB-MDCE.
+
+  4. Finalize the string with an &W.
+
+For example, a Microcom modem with best error correction/compression with
+an ASM would need this string:
+
+  AT&FS0=1&C1&D3\Q3\J0\N6%C1\Q2&W
+
+Some Hard-Learned Hints and Tricks
+
+   * If you dial up and connect, and you get no response, try ^U (clear
+     line) and ^Q (XON) and a few returns to wake it up.
+
+   * If you type "quit" and the modem doesn't hang up, the modem is not
+     watching DTR or you have not set modem inout on the Cisco.
+
+   * If you land in someone else's session when you dial in, the modem is
+     not dropping CD on disconnect or you have not set up modem inout on
+     the Cisco.
+     Remember, you cannot set up modem control on pre-9.21 router aux
+     ports.
+
+   * If you issue a +++ on the dialing modem, followed by an ATO to
+     reconnect and you find that you are frozen, this means the answering
+     modem saw and interpreted the +++ when it was echoed to you. This is a
+     bug - a fairly common one - in the answering modem. Set ATS2=255 or
+     ATS2=128 on the answering modem.
+
+   * If you have autoselect turned on for the line (9.21 and after), a
+     carriage return is required to see a prompt.
+
+   * If you do hardware flow control (which is recommended), make sure the
+     Router/Access Server's line (DTE) and the modem (DCE) both have that
+     feature enabled. Having one on and the other one off will cause you to
+     lose data.
+
+   * If you have an MDCE, your life will be a lot simpler if you turn it
+     into an MMOD by moving pin 6 to pin 8 (most modems use CD and not DSR
+     to indicate the presence of a carrier). Otherwise, some modems can be
+     programmed to sprocide carrier information via DSR (see chart below).
+     If you do not know what an MDCE is, disregard this paragraph.
+
+Deciphering the Chart
+
+*NA* means that option is not available on that modem.
+
+--> means the command on the right will take care of that function.
+
+<-- means the command on the left will take care of that function.
+
+AUX PORT parameters are only required for pre-9.21 aux ports or any other
+port without modem control set.
+
+PLAT SPEC parameters are the platform specific parameters required for ASM
+(no RTS) or 500-CS CAB-MCDCE (requires DSR to performs the CD function).
+
+COMMENTS alert you to modem-specific weirdness.
+
+              =========REQUIRED FOR ALL========= =======EC/COMPRESSION=======
+
+MODEM BRAND     FD  AA  CD  DTR  RTS/CTS LOCK DTE  Best   Best   No      No
+                            Hngp   Flow    Speed   Error  Comp   Error   Comp
+=============================================================================
+Codex 3260      &F S0=1 &C1 &D3    *FL3     *SC1    *SM3   *DC1   *SM1  *DC0
+
+USR Courier     &F S0=1 &C1 &D3   &H1&R2    &B1     &M4    &K1    &M0   &K0
+USR Sportster
+
+Global Village  &F S0=1 &C1 &D3    \Q3      \J0     \N7    %C1    \N0   %C0
+Teleport Gold
+
+AT&T Paradyne   &F S0=1 &C1 &D3    \Q3      --->    \N7    %C1    \N0   %C0
+Dataport
+
+Hayes modems    &F S0=1 &C1 &D3    &K3      &Q6     &Q5    &Q9    &Q6   <---
+Accura/Optima
+
+Microcom        &F S0=1 &C1 &D3    \Q3      \J0     \N6    %C1    \N0   %C0
+QX4232 series
+
+Motorola UDS    &F S0=1 &C1 &D3    \Q3      \J0     \N6    %C1    \N0   %C0
+FastTalk II
+
+Multitech       &F S0=1 &C1 &D3    &E4      $BA0    &E1    &E15   &E0   &E14
+MT1432 MT932
+
+Viva            &F S0=1 &C1 &D3    &K3      --->    \N3    %M3    \N0   %M0
+14.4/9642c
+
+ZyXel           &F S0=1 &C1 &D3    &H3      &B1     &K4    <---   &K0   <---
+U-1496E
+
+Supra           &F S0=1 &C1 &D3    &K3      --->    \N3    %C1    \N0   %C0
+V.32bis/28.8
+
+ZOOM            &F S0=1 &C1 &D3    &K3      --->    \N3    %C2    \N0   %C0
+14.4
+
+Practical       &F S0=1 &C1 &D3    &K3      --->    &Q5   &Q9     &Q6   <---
+Peripherals
+
+Megahertz       &F S0=1 &C1 &D3    \Q3      \J0     \N6    %C1    \N0   %C0
+
+                =AUX PORT= =PLAT SPEC=
+MODEM BRAND     No    No    ASM   CAB-  Write   COMMENTS
+                Echo  Res   only  MDCE  Memory
+=============================================================================
+
+Codex 3260      E0    Q1    *NA*  &S1   &W
+
+USR Courier     E0    Q1    &R1   *NA*  &W      Cool stuff on ftp.usr.com
+USR Sportster
+
+Global Village  E0    Q1    \Q2   *NA*  &W
+Teleport Gold
+
+AT&T Paradyne   E0    Q1    \Q2   *NA*  &W
+Dataport
+
+Hayes modems    E0    Q1    *NA*  *NA*  &W
+Accura/Optima
+
+Microcom        E0    Q1    \Q2   *NA*   &W     Almost all Microcom modems
+QX4232 series                                   have similar config params.
+
+Motorola UDS    E0    Q1    \Q2   *NA*   &W
+FastTalk II
+
+Multitech       E0    Q1    &E12  &S1   &W      Lock speed with AT$SB38400
+All models                                      (or your favorite speed)
+
+Viva            E0    Q1    *NA*  &S1   &W
+14.4/9642c
+
+ZyXel           E0    Q1    *NA*  &S1   &W      Cool stuff on ftp.zyxel.com
+U-1496E
+
+Supra           E0    Q1    *NA*  &S1   &W
+V.32bis/28.8
+
+ZOOM            E0    Q1    *NA*  &S1   &W
+14.4
+
+Practical       E0    Q1    *NA*  *NA*  &W      Based on PC288LCD. May vary.
+Peripherals
+
+Megahertz       E0    Q1    \Q2   *NA*   &W
+
+---------------------------------------------------------------------------
+Posted: Jun 19 15:42:06 1995
+
+Copyright 1995 ©Cisco Systems Inc.

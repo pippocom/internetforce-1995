@@ -1,0 +1,50 @@
+!
+version 10.0
+!
+hostname pesaro-fano
+!
+enable password <ORIGINAL PASSWORD REMOVED>
+!
+ip subnet-zero
+!
+interface Ethernet0
+ip address 195.120.225.3 255.255.255.224
+!
+interface Serial0
+ip address 195.120.225.193 255.255.255.224
+bandwidth 19
+!
+interface Serial1
+no ip address
+shutdown
+!
+ip domain-name pesaro.com
+ip name-server 195.120.225.6
+ip name-server 151.99.125.2
+ip route 0.0.0.0 0.0.0.0 195.120.225.1
+ip route 195.120.225.32 255.255.255.224 195.120.225.2
+ip route 195.120.225.96 255.255.255.224 195.120.225.2
+ip route 195.120.225.0 255.255.255.224 Ethernet0
+ip route 195.120.225.160 255.255.255.224 195.120.225.194
+ip route 195.120.225.192 255.255.255.224 195.120.225.194
+tacacs-server host 195.120.225.6
+tacacs-server extended
+tacacs-server authenticate connections
+tacacs-server authenticate slip always
+tacacs-server notify connections
+tacacs-server notify enable
+tacacs-server notify logout
+tacacs-server notify slip
+snmp-server community <ORIGINAL SECRET REMOVED> RO
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+password <ORIGINAL PASSWORD REMOVED>
+login
+line vty 5 16
+password <ORIGINAL PASSWORD REMOVED>
+login
+!
+end

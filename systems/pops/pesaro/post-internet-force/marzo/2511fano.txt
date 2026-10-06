@@ -1,0 +1,174 @@
+!
+version 11.0
+service udp-small-servers
+service tcp-small-servers
+!
+hostname 2511fano
+!
+enable password <ORIGINAL PASSWORD REMOVED>
+!
+ip subnet-zero
+!
+interface Ethernet0
+ ip address 195.120.225.161 255.255.255.224
+!
+interface Serial0
+ ip address 195.120.225.194 255.255.255.224
+ bandwidth 19
+!
+interface Serial1
+ no ip address
+ shutdown
+!                                                                              
+!
+version 11.0
+service udp-small-servers
+service tcp-small-servers
+!
+hostname 2511fano
+!
+enable password <ORIGINAL PASSWORD REMOVED>
+!
+ip subnet-zero
+!
+interface Ethernet0
+ ip address 195.120.225.161 255.255.255.224
+!
+interface Serial0
+ ip address 195.120.225.194 255.255.255.224
+ bandwidth 19
+!
+interface Serial1
+ no ip address
+ shutdown
+!                                                                              
+ async mode interactive
+ peer default ip address 195.120.225.197
+ no cdp enable
+!
+interface Async4
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ keepalive 10
+ async mode interactive
+ peer default ip address 195.120.225.198
+ no cdp enable
+!
+interface Async5
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ keepalive 10
+ async mode interactive
+ peer default ip address 195.120.225.199
+ no cdp enable
+!
+interface Async6                                                               
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ keepalive 10
+ async mode interactive
+ peer default ip address 195.120.225.200
+ no cdp enable
+!
+interface Async7
+ no ip address
+ keepalive 10
+ peer default ip address 195.120.225.201
+!
+interface Async8
+ no ip address
+ keepalive 10
+ peer default ip address 195.120.225.202
+!
+interface Async9
+ no ip address
+ keepalive 10
+ peer default ip address 195.120.225.203
+!                                                                              
+interface Async10
+ no ip address
+ keepalive 10
+ peer default ip address 195.120.225.204
+!
+interface Async11
+ no ip address
+ keepalive 10
+ peer default ip address 195.120.225.205
+!
+interface Async12
+ no ip address
+ keepalive 10
+ peer default ip address 195.120.225.206
+!
+interface Async13
+ no ip address
+ keepalive 10
+ peer default ip address 195.120.225.207
+!
+interface Async14
+ no ip address
+ keepalive 10                                                                  
+ peer default ip address 195.120.225.208
+!
+interface Async15
+ no ip address
+ keepalive 10
+ peer default ip address 195.120.225.209
+!
+interface Async16
+ no ip address
+ keepalive 10
+ peer default ip address 195.120.225.210
+!
+ip domain-name pesaro.com
+ip name-server 195.120.225.6
+ip name-server 195.120.225.5
+ip route 0.0.0.0 0.0.0.0 195.120.225.1
+ip route 195.120.225.0 255.255.255.224 195.120.225.193
+ip route 195.120.225.32 255.255.255.224 195.120.225.2
+ip route 195.120.225.64 255.255.255.224 195.120.225.5
+ip route 195.120.225.96 255.255.255.224 195.120.225.2
+ip route 195.120.225.128 255.255.255.224 195.120.225.5
+ip route 195.120.225.160 255.255.255.224 Ethernet0
+tacacs-server host 195.120.225.6                                               
+tacacs-server extended
+tacacs-server authenticate connections
+tacacs-server authenticate slip always
+tacacs-server notify connections
+tacacs-server notify enable
+tacacs-server notify logout
+tacacs-server notify slip
+snmp-server community <ORIGINAL SECRET REMOVED> RO
+!
+line con 0
+ exec-timeout 0 0
+ terminal-type vt100
+ exec-character-bits 8
+line 1 16
+ exec-timeout 0 0
+ login tacacs
+ modem InOut
+ terminal-type vt100
+ exec-character-bits 8
+ transport input all
+ stopbits 1
+ rxspeed 38400
+ txspeed 38400                                                                 
+ flowcontrol hardware
+line aux 0
+ password <ORIGINAL PASSWORD REMOVED>
+ login
+ modem InOut
+ terminal-type VT100
+ transport input all
+ rxspeed 19200
+ txspeed 19200
+ flowcontrol hardware
+line vty 0 4
+ password <ORIGINAL PASSWORD REMOVED>
+ login
+!
+end                                                                            

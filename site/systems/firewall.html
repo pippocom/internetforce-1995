@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FIREWALL — Internet Force 1995</title>
+<meta name="description" content="Sistema FIREWALL di Internet Force (1995): gateway Check Point FireWall-1, interfacce, routing e policy.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <p class="brand">Internet Force <span class="years">1995–1996</span></p>
+    <nav class="lang" aria-label="Lingua">
+<span class="current" aria-current="page">Italiano</span> <span class="sep">·</span> <a href="firewall.en.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="content">
+  <p class="eyebrow">Systems Overview · 1995</p>
+  <h1>FIREWALL <span class="host">(firewall)</span></h1>
+  <p class="lede">Il gateway di sicurezza proteggeva i server centrali e la LAN dell'ufficio, con una policy separata per ogni interfaccia. I clienti dial-up stavano dal lato world/backbone e non erano oggetto della sua protezione.</p>
+  <figure class="system">
+    <img src="../../images/crops/firewall.png" width="322" height="349" alt="Scheda FIREWALL nella Systems Overview 1995">
+    <figcaption>Ritaglio da <code>images/internetforce_server_map.png</code> (Systems Overview 1995).</figcaption>
+  </figure>
+  <section aria-labelledby="identity-h">
+    <h2 id="identity-h">Identità del sistema</h2>
+    <dl class="identity">
+    <dt>Hostname</dt><dd><code>firewall</code></dd>
+    <dt>Indirizzi</dt><dd><code>10.0.0.1</code> (fw-world) · <code>206.20.95.10</code> (fw-data) · <code>206.20.95.11</code> (fw-users) · <code>206.20.95.12</code> (fw-shell) · <code>206.20.95.129</code> (office)</dd>
+    <dt>Piattaforma</dt><dd>Sun SPARCstation 5</dd>
+    <dt>OS</dt><dd>SunOS 4.1.4</dd>
+    <dt>Ruolo</dt><dd>Gateway Check Point FireWall-1: packet filtering, NAT e segmentazione.</dd>
+</dl>
+  </section>
+  <section aria-labelledby="services-h">
+    <h2 id="services-h">Servizi e configurazione</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Servizio / ruolo</th>
+      <th scope="col">Descrizione</th>
+      <th scope="col">Configurazione / evidenza</th>
+      <th scope="col">Documentazione</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">FireWall-1 2.0a</th>
+      <td>Gateway di sicurezza: packet filtering, NAT e segmentazione di rete.</td>
+      <td class="col-cfg"><a href="../../systems/firewall/checkpoint/firewall-lic.txt" class="cfg">checkpoint/firewall-lic.txt</a> <span class="sep">·</span> <a href="../details.html?file=systems/firewall/checkpoint/README.md" class="cfg">checkpoint/</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/06-security.md">Sicurezza</a> <span class="sep">·</span> <a class="doc" href="../details.html?file=systems/firewall/TECHNICAL.md">TECHNICAL</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Policy / rule base — evidenza visiva</th>
+      <td>Screenshot originale del Rule Base Editor (<code>/usr/local/etc/fw/conf/final1.W</code>), 15 regole.</td>
+      <td class="col-cfg"><a href="../../systems/firewall/checkpoint/FW-policy.gif" class="cfg">checkpoint/FW-policy.gif</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/06-security.md">Sicurezza</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Routing e interfacce</th>
+      <td>Cinque interfacce Ethernet, rotte host-specific sui segmenti DATA/USERS, rotte dei POP.</td>
+      <td class="col-cfg"><a href="../../systems/firewall/network/rc.route" class="cfg">network/rc.route</a> <span class="sep">·</span> <a href="../details.html?file=systems/firewall/network/README.md" class="cfg">network/</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/01-architecture.md">Panoramica dell'architettura</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Avvio, logging e monitoraggio</th>
+      <td>Avvio di FireWall-1 (<code>fwstart</code>), accounting dial-up, <code>loghost</code> centrale.</td>
+      <td class="col-cfg"><a href="../../systems/firewall/network/rc.local" class="cfg">network/rc.local</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/08-monitoring.md">Monitoraggio</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Hardening di sistema</th>
+      <td>Script di permessi, account di servizio, <code>inetd</code> minimale, <code>ftpusers</code>.</td>
+      <td class="col-cfg"><a href="../details.html?file=systems/firewall/system/README.md" class="cfg">system/</a> <span class="sep">·</span> <a href="../../systems/firewall/system/fixperms" class="cfg">system/fixperms</a> <span class="sep">·</span> <a href="../../systems/users/system/ftpusers" class="cfg">../users/system/ftpusers</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/06-security.md">Sicurezza</a></td>
+    </tr>
+  </tbody>
+  </table>
+</div>  </section>
+
+  <section class="policy" aria-labelledby="policy-h">
+    <h2 id="policy-h">Evidenza visuale della policy FireWall-1</h2>
+    <figure class="system">
+      <img src="../../systems/firewall/checkpoint/FW-policy.gif" alt="Screenshot originale della rule base di Check Point FireWall-1" class="policy-img">
+      <figcaption>Check Point FireWall-1 — Rule Base Editor. Reperto storico.</figcaption>
+    </figure>
+    <p>Questo screenshot originale del Rule Base Editor è <strong>evidenza visuale</strong> della policy caricata, conservata come reperto. Non sostituisce la trascrizione testuale delle regole in <a href="../details.html?file=docs/06-security.md">Sicurezza</a>, che resta la fonte primaria.</p>
+  </section>
+  <section class="maps" aria-labelledby="maps-h">
+    <h2 id="maps-h">Nelle mappe</h2>
+    <ul class="maplinks">
+      <li><a href="../network-map.html">Internet Force Network Map</a></li>
+      <li><a href="../systems-map.html">Systems Overview</a></li>
+    </ul>
+  </section>
+  <section class="techdoc" aria-labelledby="techdoc-h">
+    <h2 id="techdoc-h">Documentazione tecnica completa</h2>
+    <p><a class="button" href="../details.html?file=systems/firewall/README.md">Apri il README canonico del firewall</a></p>
+    <p class="muted">La pagina HTML è una presentazione compatta; il README Markdown è la fonte canonica.</p>
+  </section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Internet Force 1995–1996 Historical Archive · <a href="../details.html?file=LICENSE">CC BY 4.0</a> · <a href="https://pippo.com/me/">Marco Iannacone</a> · <a href="https://github.com/pippocom/internetforce-1995">Repository GitHub</a></p>
+  </div>
+</footer>
+</body>
+</html>

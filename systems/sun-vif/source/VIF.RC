@@ -1,0 +1,36 @@
+#!/bin/sh
+#         vvvvvvvvvvvvvvvvvvvvvvvvv
+VIF_HOSTS="myhost-vif0 myhost-vif1"	# modify this line
+#         ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+umask 22
+
+PROG_DIR=`dirname $0`
+PROG_DIR=${PROG_DIR:-.}
+EXEC_SCRIPT="/tmp/vif.exec.$$"
+
+cat > $EXEC_SCRIPT << EOF
+#!/bin/sh
+mknod /dev/vif c \$4 0
+EOF
+chmod a+x $EXEC_SCRIPT
+
+rm -f /dev/vif
+modload $PROG_DIR/vif.o -exec $EXEC_SCRIPT
+rm -f $EXEC_SCRIPT
+
+echo > /dev/vif
+
+ETH_ADDR=`ifconfig le0 | awk '/ether/ { print $2 }'`
+N=0; export N
+for VIF_HOST in $VIF_HOSTS; do
+	ifconfig vif$N $VIF_HOST up
+	for BAD_ROUTE in `netstat -r | awk '/vif'$N'/ { print $1 }'`; do
+		route delete $BAD_ROUTE $VIF_HOST
+	done
+	route add host $VIF_HOST $VIF_HOST 0
+	arp -s $VIF_HOST $ETH_ADDR pub
+	N=`expr $N + 1`
+done
+
+netstat -ia

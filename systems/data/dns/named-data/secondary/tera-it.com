@@ -1,0 +1,18 @@
+@  IN	SOA	alpha.tera-it.com. MiMo.tera-it.com. (
+		1996091601	 ; Serial
+		10800		 ; Refresh 3 hours
+		3600		 ; Retry 1 hour
+		604800		 ; Expire after a week
+		86400 )	 ; Minimum ttl 1 day
+                                NS      alpha.tera-it.com.
+				NS	dns.internetforce.com.
+				NS	styx.ios.com.
+; *****************************************************************
+; This file is auto-generated from a master file -- do not edit it,
+; but arrange that the master is edited instead.
+; *****************************************************************
+alpha      A  206.20.227.66
+www   IN  CNAME  alpha.tera-it.com.
+dns   IN  CNAME  alpha.tera-it.com.
+tera-it.com.      MX  10  alpha.tera-it.com.
+        A  206.20.227.66

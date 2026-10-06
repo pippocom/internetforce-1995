@@ -1,0 +1,27 @@
+;
+;    File:      named.zoneinfo
+;    Purpose:   This file establishes the name/address information
+;               for this zone.  You will have to fill out the actual
+;               information for your specific zone in the format shown
+;               in the comments.
+;
+@        IN SOA    cnn-server.cnn.it. root.cnn.it. (
+            951213   ; serial number
+            86400    ; refresh every 12 hours
+            7200     ; retry after 2 hours
+            1209600  ; expire after 2 weeks
+            86400)  ; default ttl is 2 days
+;
+         IN NS    cnn-server.cnn.it.
+	 IN NS	  dns.nis.garr.it.
+ 	 IN NS	  dns.internetforce.it.
+	 IN A	  206.20.228.70
+ 	 IN MX	10 cnn-server.cnn.it.
+
+localhost	IN     A   127.0.0.1
+cnn-server	IN A	206.20.228.70
+		IN MX 10 cnn-server
+www		IN CNAME	cnn-server.cnn.it.
+ftp		IN CNAME	cnn-server.cnn.it.
+mail		IN CNAME	cnn-server.cnn.it.
+dns		IN CNAME 	cnn-server.cnn.it.

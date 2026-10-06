@@ -1,0 +1,29 @@
+@  IN	SOA	dns dnsmaster.internetforce.com. (
+		1996091101	 ; Serial
+		10800		 ; Refresh 3 hours
+		3600		 ; Retry 1 hour
+		604800		 ; Expire after a week
+		86400 )	 ; Minimum ttl 1 day
+				NS	styx.ios.com.
+				NS	noc.ios.com.
+				NS	harley.ios.com.
+; *****************************************************************
+; This file is auto-generated from a master file -- do not edit it,
+; but arrange that the master is edited instead.
+; *****************************************************************
+2      PTR  ppp1-palermo.internetforce.com.
+3      PTR  ppp2-palermo.internetforce.com.
+4      PTR  ppp3-palermo.internetforce.com.
+5      PTR  ppp4-palermo.internetforce.com.
+6      PTR  ppp5-palermo.internetforce.com.
+7      PTR  ppp6-palermo.internetforce.com.
+8      PTR  ppp7-palermo.internetforce.com.
+9      PTR  ppp8-palermo.internetforce.com.
+10      PTR  ppp9-palermo.internetforce.com.
+11      PTR  ppp10-palermo.internetforce.com.
+12      PTR  ppp11-palermo.internetforce.com.
+13      PTR  ppp12-palermo.internetforce.com.
+14      PTR  ppp13-palermo.internetforce.com.
+15      PTR  ppp14-palermo.internetforce.com.
+16      PTR  ppp15-palermo.internetforce.com.
+17      PTR  ppp16-palermo.internetforce.com.

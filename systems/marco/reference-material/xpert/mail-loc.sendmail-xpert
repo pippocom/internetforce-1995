@@ -1,0 +1,7 @@
+Mlocal,         P=/bin/mail.local, F=lsDFMAw5:/|@rmn, S=10/30, R=20/40,
+                T=DNS/RFC822/X-Unix,
+                A=mail -d $u
+Mprog,          P=/bin/sh, F=lsDFMoeu, S=10/30, R=20/40, D=$z:/,
+                T=X-Unix,
+                A=sh -c $u
+

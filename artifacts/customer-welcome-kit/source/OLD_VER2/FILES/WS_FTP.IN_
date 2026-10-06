@@ -1,0 +1,14 @@
+[_config_]
+SESSION=Internetforce
+
+[Personal ftp]
+HOST=users.internetforce.com
+UID=inserire nome_utente
+PASVMODE=0
+
+[Internetforce]
+HOST=ftp.internetforce.com
+UID=anonymous
+PWD=guest@intf.com
+PASVMODE=0
+

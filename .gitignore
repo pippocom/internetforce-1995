@@ -1,0 +1,13 @@
+# Raw Internetforce historical archive - local only, never commit
+/_ref_INTF/
+
+# Private raw recovered originals - local only, never commit/publish
+# (migration ZIPs with cleartext credentials, third-party upstream sources,
+#  PGP upstream distribution). These are provenance-only originals; the public
+#  repository documents them but does not redistribute them.
+# Anchored to the repository root so that quarantined TOBEREMOVED/_private/
+# remains visible to Git.
+/_private/
+
+# macOS
+.DS_Store

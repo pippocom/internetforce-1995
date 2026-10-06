@@ -1,0 +1,30 @@
+#!/bin/sh
+# 
+# Firewall Specific configuration:
+#
+ifconfig le0 netmask 255.255.255.128
+
+ifconfig qe3 fw-world netmask 255.0.0.0
+route add net 206.20.95.64 ts1 1
+route add net 206.20.115.0 10.0.3.1 1
+route add net 206.20.224.0 10.0.4.1 1
+route add net 206.20.225.0 10.0.5.1 1
+route add net 206.20.226.0 10.0.6.1 1
+route add net default intf-idt 1
+
+ifconfig qe0 fw-data netmask 255.255.255.192
+route delete intfnet fw-data
+route add host data fw-data 0
+route add host 206.20.95.20 fw-data 0
+
+ifconfig qe1 fw-users netmask 255.255.255.192
+route delete intfnet fw-users
+route add host users fw-users 0
+route add host 206.20.95.23 fw-users 0
+route add host 206.20.95.22 fw-users 0
+route add host 206.20.95.21 fw-users 0
+route add host 206.20.95.24 fw-users 0
+
+ifconfig qe2 fw-shell netmask 255.255.255.192
+route delete intfnet fw-shell
+route add host shell fw-shell 0

@@ -1,0 +1,12 @@
+The DNS Server is now booting from the registry.
+New zones or changes to zone information made through the DNS Manager,
+require the DNS server to boot from information stored in the registry.
+Further changes to zone configuration MUST be made through the DNS Manager,
+as the boot file is no longer being read.
+The previous boot file has been moved to the backup directory.
+
+If you must return to using a boot file, use the registry editor to open
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters and delete
+the value EnableRegistryBoot.  Then replace your desired boot file in the
+system32\dns directory.  Note, however, that ALL changes to zone information,
+including new zones, made through the DNS Manager will be lost.

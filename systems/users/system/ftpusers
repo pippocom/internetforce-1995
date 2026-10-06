@@ -1,0 +1,9 @@
+root
+nobody
+daemon
+sys
+bin
+uucp
+news
+majordomo
+operator

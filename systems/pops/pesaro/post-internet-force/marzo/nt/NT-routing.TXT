@@ -1,0 +1,433 @@
+C:\>netstat -rn
+
+Route Table
+
+Active Routes:
+
+  Network Address          Netmask  Gateway Address        Interface  Metric
+          0.0.0.0          0.0.0.0    195.120.225.1    195.120.225.5       1
+        127.0.0.0        255.0.0.0        127.0.0.1        127.0.0.1       1
+    195.120.225.0  255.255.255.224    195.120.225.5    195.120.225.5       1
+    195.120.225.5  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.26  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.27  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.28  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.29  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.30  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.32  255.255.255.224    195.120.225.2    195.120.225.5       1
+   195.120.225.64  255.255.255.224   195.120.225.65    195.120.225.5       1
+   195.120.225.65  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.66  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.67  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.68  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.69  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.70  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.71  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.72  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.73  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.74  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.75  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.76  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.77  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.78  255.255.255.255        127.0.0.1        127.0.0.1       1
+   195.120.225.96  255.255.255.224    195.120.225.2    195.120.225.5       1
+  195.120.225.160  255.255.255.224    195.120.225.3    195.120.225.5       1
+  195.120.225.192  255.255.255.224    195.120.225.3    195.120.225.5       1
+  195.120.225.255  255.255.255.255    195.120.225.5    195.120.225.5       1
+        224.0.0.0        224.0.0.0    195.120.225.5    195.120.225.5       1
+  255.255.255.255  255.255.255.255    195.120.225.5    195.120.225.5       1
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    127.0.0.1:1025         127.0.0.1:1034         ESTABLISHED
+  TCP    127.0.0.1:1034         127.0.0.1:1025         ESTABLISHED
+  TCP    195.120.225.5:80       195.120.225.21:1072    ESTABLISHED
+  TCP    195.120.225.5:80       195.120.225.21:1074    ESTABLISHED
+  TCP    195.120.225.5:80       195.120.225.21:1075    ESTABLISHED
+  TCP    195.120.225.5:80       195.120.225.21:1079    ESTABLISHED
+  TCP    195.120.225.5:1105     192.35.156.23:21       ESTABLISHED
+  TCP    195.120.225.5:1106     192.35.156.23:33386    ESTABLISHED
+
+
+
+Le istruzioni di routing statico inserite sono:
+
+route add 195.120.225.32 MASK 255.255.255.224 195.120.225.2 -p
+route add 195.120.225.96 MASK 255.255.255.224 195.120.225.2 -p
+route add 195.120.225.160 MASK 255.255.255.224 195.120.225.3 -p
+route add 195.120.225.192 MASK 255.255.255.224 195.120.225.3 -p
+
+Altre modifiche effettuate nella configurazione di Rete:
+
+Services
+Installato DNS server
+Installato RIP
+Eliminato Workstation
+Eliminato NetBios Interface
+
+Configurazione DNS:
+
+Regedit: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters
+Cancellato EnableRegistryBoot
+
+Sostituito system32\dns\boot con
+
+;
+;   DNS boot file
+;
+;   NOTE:   It is NOT necessary to use a boot file to run the DNS server.
+;
+;   The Microsoft DNS server is capable of reading configuration, zone
+;   and cache information from a "boot" file or from the NT registry.
+;
+;   To take full advantage of the capabilities of the Microsoft DNS
+;   server we suggest using the DNS Administration tool (dnsadmin.exe).
+;   If you are new to DNS or are setting up a new installation, then we
+;   strongly recommend using the Admin tool, in which case you need not
+;   setup a boot file.
+;
+;   However, if you are porting an existing BIND DNS installation, then
+;   the DNS server will be able to read your existing boot file.  Note,
+;   that the file MUST be named "boot".
+;
+
+;
+;   Boot file syntax:
+;
+;   Directives in this file instruct the DNS service when it is starting.
+;   Anything on a line followin a semicolon ';' is a comment, and is ignored.
+;
+;   This file and all files listed in this file must be in
+;   %SystemRoot%\system32\dns directory.
+;
+
+;
+;   Interoperation with UNIX DNS servers running BIND:
+;
+;   Most BIND versions do not accept properly formatted zone transfers
+;   unless they contain only a single resource record in each message
+;   of the zone transfer.  This transfer method is grossly inefficient
+;   both in terms of speed and bandwidth.  New BIND versions may not
+;   have this bug.
+;
+;   The Microsoft DNS server will accept (receive) any properly formatted
+;   zone transfer message, and is configured to send in either fashion.
+;   Hence this issue ONLY relates to BIND recieving zone transfers --
+;   i.e. BIND server as a secondary.
+;
+;   YOU SHOULD CHANGE:
+;       - uncomment BindSecondaries, if have BIND secondaries for
+;           some of your zones
+;       - uncomment NoBindSecondaries, if have ONLY Microsoft or
+;           other non-BIND DNS servers as your secondaries or if
+;           you do not have secondaries for any of these zones
+;
+
+BindSecondaries
+
+;NoBindSecondaries
+
+
+;
+;   CACHE FILE
+;
+;   The "cache" file contains information necessary to contact the ROOT
+;   domain name servers.
+;
+;   The syntax of this command is:
+;
+;      cache   .       Cache.dns
+;
+;   YOU SHOULD CHANGE:
+;
+;   =>  Nothing - do NOT change this line, if you are NOT a root domain
+;       server.
+;       (Note:  if you are not connected to the Internet, be sure and edit
+;       the cache file to point at the root servers for your intranet.)
+;
+;       OR
+;
+;   =>  Comment out this line, if this DNS server is the ROOT domain
+;       server for a private intranet.
+;
+
+cache   .   cache.dns
+
+
+;
+;   PRIMARY DOMAINS
+;
+;   "Primary" domains are listed below.  The second column is the name of the
+;   domain for which this name server is authoritative.  The third column is
+;   the name if the database file which contains the authoritative data.
+;
+;   The syntax of this command is:
+;
+;       primary <domain> <filename>
+;
+;   YOU SHOULD CHANGE:
+;       - The names of the domains.
+;       - The names of the database files.
+;       - Comment out domains for which server will be secondary.
+;
+
+;primary   place.dom                 place.dns
+;primary   29.5.192.in-addr.arpa     192.dns
+
+primary    0.0.127.in-addr.arpa      localhost-rev
+
+;
+;   SECONDARY DOMAINS
+;
+;   "Secondary" domains are listed below.
+;
+;   The syntax of this command is:
+;
+;       secondary <domain> <master DNS ip address> <filename>
+;
+;   YOU SHOULD CHANGE:
+;       - The names of the domains.
+;       - The names of the database files.
+;       - The IP address of the primary DNS server (192.255.255.7).
+;       - Uncomment domains for which server will be secondary, then
+;         comment out the primary statement for that domain above.
+;
+
+secondary    pesaro.com                 195.120.225.6   pesaro.dns
+secondary    225.120.195.in-addr.arpa   195.120.225.6   db.195.120.225
+
+
+
+Pesaro. dns ha il seguente contenuto:
+
+;
+;  Database file pesaro.dns for pesaro.com zone.
+;      Zone version:  1021255468l
+;
+
+@                       IN	SOA	dns.pesaro.com.	dnsmaster.pesaro.com.	(
+                        1021255468   ; serial number
+                        10800       ; refresh
+                        7200        ; retry
+                        2592000     ; expire
+                        86400     ) ; minimum TTL
+
+;
+;  Zone NS records
+;
+
+@                       IN	NS	dns.interbusiness.it.
+@                       IN	NS	dns
+@                       IN	NS	data
+
+;
+;  Zone records
+;
+
+@                       IN	A	195.120.225.6
+@                       IN	MX	10	users
+@                       IN	MX	20	mail.cs.interbusiness.it.
+data                    IN	A	195.120.225.5
+digital                 IN	A	195.120.225.25
+dns                     IN	A	195.120.225.6
+freenews                IN	CNAME	news.gisco.net.
+ftp                     IN	CNAME	data
+libero                  IN	A	195.120.225.23
+localhost               IN	A	127.0.0.1
+mail                    IN	CNAME	users
+mailhost                IN	CNAME	users
+mbox                    IN	CNAME	data
+news                    IN	CNAME	news.interbusiness.it.
+olivieri                IN	A	195.120.225.22
+ppp1                    IN	A	195.120.225.97
+ppp1-fano               IN	A	195.120.225.195
+ppp10                   IN	A	195.120.225.106
+ppp11                   IN	A	195.120.225.107
+ppp12                   IN	A	195.120.225.108
+ppp13                   IN	A	195.120.225.109
+ppp14                   IN	A	195.120.225.110
+ppp15                   IN	A	195.120.225.111
+ppp16                   IN	A	195.120.225.112
+ppp2                    IN	A	195.120.225.98
+ppp2-fano               IN	A	195.120.225.196
+ppp3                    IN	A	195.120.225.99
+ppp3-fano               IN	A	195.120.225.197
+ppp4                    IN	A	195.120.225.100
+ppp4-fano               IN	A	195.120.225.198
+ppp5                    IN	A	195.120.225.101
+ppp5-fano               IN	A	195.120.225.199
+ppp6                    IN	A	195.120.225.102
+ppp6-fano               IN	A	195.120.225.200
+ppp7                    IN	A	195.120.225.103
+ppp7-fano               IN	A	195.120.225.201
+ppp8                    IN	A	195.120.225.104
+roberto                 IN	A	195.120.225.21
+shake                   IN	A	195.120.225.24
+users                   IN	A	195.120.225.6
+web                     IN	A	195.120.225.7
+www                     IN	CNAME	data
+
+
+db.195.120.225 ha invece il seguente contenuto:
+
+;
+;  Database file db.195.120.225 for 225.120.195.in-addr.arpa zone.
+;      Zone version:  1021255468l
+;
+
+@                       IN	SOA	dns.225.120.195.in-addr.arpa.	dnsmaster.pesaro.com.	(
+                        1021255468   ; serial number
+                        10800       ; refresh
+                        7200        ; retry
+                        2592000     ; expire
+                        86400     ) ; minimum TTL
+
+;
+;  Zone NS records
+;
+
+@                       IN	NS	dns.interbusiness.it.
+@                       IN	NS	dns.pesaro.com.
+@                       IN	NS	data.pesaro.com.
+
+;
+;  Zone records
+;
+
+100                     IN	PTR	ppp4.pesaro.com.
+101                     IN	PTR	ppp5.pesaro.com.
+102                     IN	PTR	ppp6.pesaro.com.
+103                     IN	PTR	ppp7.pesaro.com.
+104                     IN	PTR	ppp8.pesaro.com.
+105                     IN	PTR	www.esperia.it.
+106                     IN	PTR	ppp10.pesaro.com.
+107                     IN	PTR	ppp11.pesaro.com.
+108                     IN	PTR	ppp12.pesaro.com.
+109                     IN	PTR	ppp13.pesaro.com.
+110                     IN	PTR	ppp14.pesaro.com.
+111                     IN	PTR	ppp15.pesaro.com.
+112                     IN	PTR	ppp16.pesaro.com.
+195                     IN	PTR	ppp1-fano.pesaro.com.
+196                     IN	PTR	ppp2-fano.pesaro.com.
+197                     IN	PTR	ppp3-fano.pesaro.com.
+198                     IN	PTR	ppp4-fano.pesaro.com.
+199                     IN	PTR	ppp5-fano.pesaro.com.
+200                     IN	PTR	ppp6-fano.pesaro.com.
+201                     IN	PTR	ppp7-fano.pesaro.com.
+21                      IN	PTR	roberto.pesaro.com.
+22                      IN	PTR	olivieri.pesaro.com.
+23                      IN	PTR	libero.pesaro.com.
+24                      IN	PTR	shake.pesaro.com.
+25                      IN	PTR	digital.pesaro.com.
+26                      IN	PTR	www.fano.net.
+27                      IN	PTR	www.boldyoung.com.
+28                      IN	PTR	promotion.it.
+29                      IN	PTR	alluflon.it.
+30                      IN	PTR	orciani.it.
+5                       IN	PTR	data.pesaro.com.
+6                       IN	PTR	users.pesaro.com.
+                        IN	PTR	dns.pesaro.com.
+                        IN	PTR	pesaro.com.
+65                      IN	PTR	confartps.it.
+66                      IN	PTR	www.pcpesaro.com.
+67                      IN	PTR	promoitalia.it.
+68                      IN	PTR	setware.com.
+69                      IN	PTR	rommy.it.
+7                       IN	PTR	web.pesaro.com.
+70                      IN	PTR	www.bbc.it.
+71                      IN	PTR	www.diamantinidomeniconi.it.
+72                      IN	PTR	radiocitta.it.
+73                      IN	PTR	sgm.it.
+74                      IN	PTR	www.cdopesaro.com.
+75                      IN	PTR	www.tecnos.com.
+76                      IN	PTR	cmtutensili.it.
+77                      IN	PTR	pieroguidi.it.
+78                      IN	PTR	www.loveisland.com.
+97                      IN	PTR	ppp1.pesaro.com.
+98                      IN	PTR	ppp2.pesaro.com.
+99                      IN	PTR	ppp3.pesaro.com.
+
+
+Cache.dns e' composto cosi':
+
+
+;
+;  Cache file:
+;
+
+.                       2951677696	IN	NS	D.ROOT-SERVERS.net.
+D.ROOT-SERVERS.net.     792791296	IN	A	128.8.10.90
+.                       2951677696	IN	NS	E.ROOT-SERVERS.net.
+E.ROOT-SERVERS.net.     792791296	IN	A	192.203.230.10
+.                       2951677696	IN	NS	I.ROOT-SERVERS.net.
+I.ROOT-SERVERS.net.     792791296	IN	A	192.36.148.17
+.                       2951677696	IN	NS	F.ROOT-SERVERS.net.
+F.ROOT-SERVERS.net.     792791296	IN	A	192.5.5.241
+.                       2951677696	IN	NS	G.ROOT-SERVERS.net.
+G.ROOT-SERVERS.net.     792791296	IN	A	192.112.36.4
+.                       2951677696	IN	NS	J.ROOT-SERVERS.net.
+J.ROOT-SERVERS.net.     792791296	IN	A	198.41.0.10
+.                       2951677696	IN	NS	K.ROOT-SERVERS.net.
+K.ROOT-SERVERS.net.     792791296	IN	A	198.41.0.11
+.                       2951677696	IN	NS	A.ROOT-SERVERS.net.
+A.ROOT-SERVERS.net.     792791296	IN	A	198.41.0.4
+.                       2951677696	IN	NS	H.ROOT-SERVERS.net.
+H.ROOT-SERVERS.net.     792791296	IN	A	128.63.2.53
+.                       2951677696	IN	NS	B.ROOT-SERVERS.net.
+B.ROOT-SERVERS.net.     792791296	IN	A	128.9.0.107
+.                       2951677696	IN	NS	C.ROOT-SERVERS.net.
+C.ROOT-SERVERS.net.     2923038976	IN	A	192.33.4.12
+.                       2951677696	IN	NS	D.ROOT-SERVERS.net.
+D.ROOT-SERVERS.net.     792791296	IN	A	128.8.10.90
+.                       2951677696	IN	NS	E.ROOT-SERVERS.net.
+E.ROOT-SERVERS.net.     792791296	IN	A	192.203.230.10
+.                       2951677696	IN	NS	I.ROOT-SERVERS.net.
+I.ROOT-SERVERS.net.     792791296	IN	A	192.36.148.17
+.                       2951677696	IN	NS	F.ROOT-SERVERS.net.
+F.ROOT-SERVERS.net.     792791296	IN	A	192.5.5.241
+.                       2951677696	IN	NS	G.ROOT-SERVERS.net.
+G.ROOT-SERVERS.net.     792791296	IN	A	192.112.36.4
+.                       2951677696	IN	NS	J.ROOT-SERVERS.net.
+J.ROOT-SERVERS.net.     792791296	IN	A	198.41.0.10
+.                       2951677696	IN	NS	K.ROOT-SERVERS.net.
+K.ROOT-SERVERS.net.     792791296	IN	A	198.41.0.11
+.                       2951677696	IN	NS	A.ROOT-SERVERS.net.
+A.ROOT-SERVERS.net.     792791296	IN	A	198.41.0.4
+.                       2951677696	IN	NS	H.ROOT-SERVERS.net.
+H.ROOT-SERVERS.net.     792791296	IN	A	128.63.2.53
+.                       2951677696	IN	NS	B.ROOT-SERVERS.net.
+B.ROOT-SERVERS.net.     792791296	IN	A	128.9.0.107
+.                       2951677696	IN	NS	C.ROOT-SERVERS.net.
+C.ROOT-SERVERS.net.     2923038976	IN	A	192.33.4.12
+
+
+
+
+Mentre localhost-rev e':
+
+
+;
+;  Database file localhost-rev for 0.0.127.in-addr.arpa zone.
+;      Zone version:  96070201l
+;
+
+@                       IN	SOA	dns.pesaro.com.	dnsmaster.pesaro.com.	(
+                        96070201    ; serial number
+                        28800       ; refresh
+                        7200        ; retry
+                        604800      ; expire
+                        86400     ) ; minimum TTL
+
+;
+;  Zone NS records
+;
+
+@                       IN	NS	dns.pesaro.com.
+
+;
+;  Zone records
+;
+
+1                       IN	PTR	localhost.
+

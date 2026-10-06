@@ -1,0 +1,372 @@
+root:a.sTk2WEJ6YJk:0:0:root:/root:/bin/bash
+bin:*:1:1:bin:/bin:
+daemon:*:2:2:daemon:/sbin:
+adm:*:3:4:adm:/var/adm:
+lp:*:4:7:lp:/var/spool/lpd:
+sync:*:5:0:sync:/sbin:/bin/sync
+shutdown:*:6:0:shutdown:/sbin:/sbin/shutdown
+halt:*:7:0:halt:/sbin:/sbin/halt
+mail:*:8:12:mail:/var/spool/mail:
+news:*:9:13:news:/var/spool/news:
+uucp:*:10:14:uucp:/var/spool/uucp:
+operator:*:11:0:operator:/root:
+games:*:12:100:games:/usr/games:
+gopher:*:13:30:gopher:/usr/lib/gopher-data:
+ftp:*:14:50:FTP User:/home/ftp:
+nobody:*:99:99:Nobody:/:
+man:*:13:15:man:/usr/man:
+#nobody:*:65535:100:nobody:/dev/null:
+#ftp:*:404:1::/home/ftp:/bin/bash
+guest:*:405:100:guest:/dev/null:/dev/null
+paolo:JYPuZKudx7jak:504:100:Paolo Lezzi:/home/paolo:/bin/zsh
+gmb:cJppQ4o8yogAw:508:100:Gian Mario Bandera:/home/gmb:/bin/zsh
+cetti:pgmNcLP09mkRM:509:100:cetti padovani:/home/cetti:/bin/bash
+taverna:NZ2SzIEx/YNZo:1000:100:Taverna Giovanni:/home/taverna:/bin/bash
+parolini:e7vxkkuYZidZY:1001:100:Parolini Cinzia:/home/parolini:/bin/bash
+dario:NAqKETYYFd06I:502:100:Dario Ballabio:/home/dario:/bin/zsh
+signal:2V317nLaV421.:1003:100:signal lux:/home/signal:/bin/bash
+Lomba:Ze5m8T6dlEask:1005:100:colombani paolo:/home/Lomba:/bin/bash
+marco:ONQZnkZCR1hAY:503:100:Marco Tucci:/home/marco:/bin/bash
+daverio:8C3ifeqk7oUBY:1008:100:marco daverio:/home/daverio:/bin/bash
+lux:hU704qLqo88H2:1009:100:Lucio Bragagnolo:/home/lux:/bin/bash
+quazzo:r9PmhV6St5OW6:1010:100:achille quazzo:/home/quazzo:/bin/bash
+magoalex:IvlFzDQ/jiV9U:1011:100:alessio buratta:/home/magoalex:/bin/bash
+invento:wHPHZcXGUYUM.:1012:100:loris invento:/home/invento:/bin/bash
+giorgio:o.fSFaSgfdO72:1016:100:giorgio vittadini:/home/giorgio:/bin/bash
+new::513:100:Login per Abbonamento ON LINE:/home/new:/bin/bash
+tonolini:Qcvnbn1HIvzok:514:100:Bruno Tonolini:/home/tonolini:/bin/bash
+ariel:4WmBQIgYLynOA:1018:100:marina perri:/home/ariel:/bin/bash
+sergiog:Yr5p6jTDWB5aQ:1019:100:sergio garbagnati:/home/sergiog:/bin/bash
+galtalex:juBfj.tZAMBK6:516:100:Alessandro Galtarossa:/home/galtalex:/bin/bash
+fener:QE7qwoWN0pxSs:518:100:flavio frontini:/home/fener:/bin/bash
+ravizza:z5DPuxieHLjkY:1024:100:Ravizza Graziano Giovanni:/home/ravizza:/bin/bash
+stsciume:EeiWHN2TK8Jdg:1026:100:Studio Sciume e Associati:/home/stsciume:/bin/bash
+capello:SjbWTVGlwFmwg:519:100:sandro Capello:/home/capello:/bin/bash
+castigli:rC5CvKa8d0.CY:1027:100:Castiglione Emma:/home/castigli:/bin/bash
+stellaf:HSry5EubIk4ik:1028:100:Stella Federico:/home/stellaf:/bin/bash
+somam:JS3F10vOQaXVE:1029:100:Somaschini Massimo:/home/somam:/bin/bash
+fontana:8MO/xVffBpE4Q:1030:100:Fontanateatro:/home/fontana:/bin/bash
+colomban:au/yHrFoFjfOE:521:100:Paolo Colombani[3~:/home/colomban:/bin/bash
+euroware:9xAVDAOivMig6:520:100:euroware:/home/euroware:/bin/tcsh
+drusian:ChjqJeLboV.76:1032:100:Drusian Giovanni:/home/drusian:/bin/bash
+murachel:z2VANhwnJg4tY:1033:100:Murachelli Edoardo:/home/murachel:/bin/bash
+lau:DBGjIJ6PkChxc:1034:100:Laura Anoja:/home/lau:/bin/bash
+gallotti:tZPjDojQkmQCE:1036:100:Davide Gallotti:/home/gallotti:/bin/bash
+mary:ZCIQwwsx2Br8E:523:100:Maria Padovani:/home/mary:/bin/bash
+akko:3j1uUnfC7GHP.:1041:100:Luca Accomazzi:/home/akko:/bin/bash
+icitecnr:WmrnXqn7db4h.:1042:100:CNR:/home/icitecnr:/bin/bash
+cnrpfe:GthlS3YbSXpgI:1045:100:cnr:/home/cnrpfe:/bin/bash
+montic:doIcr7dG4iO8.:1046:100:Monti Cesarino:/home/montic:/bin/bash
+martin:frjSgKxO8paoY:1047:100:Martinelli Renato:/home/martin:/bin/bash
+abqhksi:5Mv5Mh06LqwBc:1048:100:Abaqus HKSI Italia:/home/abqhksi:/bin/bash
+simon:Pq.zq7Sfg6/F6:1049:100:Simonetti Giuseppe:/home/simon:/bin/bash
+vtlhksi:A.Tr4MwNOsLEg:1050:100:Vitali - HKSI Italia:/home/vtlhksi:/bin/bash
+glzhksi:NDVPjQ92fIT4w:1051:100:Zano - HKSI Italia:/home/glzhksi:/bin/bash
+enghksi:SVE7O.d46nHLg:1052:100:Abaqus group:/home/enghksi:/bin/bash
+netmag:ZXgHptgRdYAOQ:1053:100:Internet Magazine .net:/home/netmag:/bin/bash
+manti:EWt8wajWpPxAc:1054:100:Gaetano Manti:/home/manti:/bin/bash
+gusmini:9Azz6aU.IoH9A:1056:100:Vladimiro Gusmini:/home/gusmini:/bin/bash
+smatti:16WY/Zk/q8A0c:1057:100:Giovanni Smacchetti:/home/smatti:/bin/bash
+gatto:q83D8ibdDO03Y:527:100:Gloria Lojacono:/home/gatto:/bin/bash
+pusterla:RXkIYlH16TbpA:529:100:Michele Pusterla:/home/pusterla:/bin/bash
+picciolo:5PHIcvO0Wixhk:1062:100:Picciolo Paolo:/home/picciolo:/bin/bash
+biasfair:9FmQ7e7RF10LI:1070:100:Bias Fairs:/home/biasfair:/bin/bash
+biasedit:p/MHW80graflU:1071:100:Bias Edit:/home/biasedit:/bin/bash
+biasprom:hzDH0/b3f.RrA:1072:100:Bias Promot:/home/biasprom:/bin/bash
+biaspres:AoKcgdnESlQ1c:1073:100:Bias Press:/home/biaspres:/bin/bash
+baby:kRJZu7.kDrF0c:1074:100:baby:/home/baby:/bin/bash
+ferrarie:ZonPHgDLdzj3Y:1075:100:Emilio Ferrari:/home/ferrarie:/bin/bash
+wolter:nWaCTPuzyLdxQ:1076:100:Carlo Wolter:/home/wolter:/bin/bash
+cavalli:dJ4c5YH7YY.Vk:1077:100:Cavalli e cavallerizzi:/home/cavalli:/bin/bash
+thx:9Pa8rTfjlMCMQ:1078:60:Maurizio Maranghi:/home/thx:/bin/bash
+gabriele:C9U.S7aQ1YGdM:1095:60:Gabriele Finessi:/home/gabriele:/bin/bash
+cavazzan:CNBN6cY.S8Tn2:1100:100:Cavazzana:/home/cavazzan:/bin/bash
+kallerge:Z.s6n.Zi0rJyA:1098:100:Kallergen:/home/kallerge:/bin/bash
+mosconi:JIVYV8zs0mu5U:1089:100:Mosconi:/home/mosconi:/bin/bash
+simeng:H3E95m/sldjcU:1088:100:Simi Engineering:/home/simeng:/bin/bash
+gerlon:6hRlivtqmsI2Q:1102:100:Gerloni Salvatore:/home/gerlon:/bin/bash
+pichlau:/HXvNq7npszpI:1079:100:Thomas Pichlau:/home/pichlau:/bin/bash
+pietra:k/LfqGZFYXg8A:1066:100:Enrico Pietralunga:/home/pietra:/bin/bash
+bigia:V/93hZgXQwSCo:1059:100:Bigiarelli:/home/bigia:/bin/bash
+villani:eiBGq6eJKl7.A:1069:100:Villani Davide:/home/villani:/bin/bash
+hofstet:IANFNK4FkH53E:1111:100:Hofstetter Johannes Alfred:/home/hofstet:/bin/bash
+luigid:PiZUh4gJtWMJQ:1112:100:PierLuigi D'Auerlio:/home/luigid:/bin/bash
+micheleb:GC3/IPql5FW8Y:1113:100:Bellin Michele:/home/micheleb:/bin/bash
+savorana:9bQmv.PL8aehM:510:100:Alberto Savorana:/home/savorana:/bin/bash
+francov:f2hT/EGAIpBFM:1125:100:Franco Vittadini:/home/francov:/bin/bash
+maurizms:zs6kwJ/z/Mdvs:1126:100:Maurizio Mesenzani:/home/maurizms:/bin/bash
+joe:69U15vcPIswpc:1128:100:Gioacchino Ligresti:/home/joe:/bin/bash
+beltomo:8PwUwaioo1yJw:1129:100:Giacomo Sistu:/home/beltomo:/bin/bash
+jrg:y2toU2boQfkJg:1132:100:Regna-Gladin Jean:/home/jrg:/bin/bash
+seabird:oLqNE2UQ8gtNU:1133:100:Minotti Antonio:/home/seabird:/bin/bash
+gallimar:uF2uvvozJPMfw:1134:100:Galli Marco:/home/gallimar:/bin/bash
+chiarav:HqDX5sBbgcmBo:1135:100:Chiara Valsecchi:/home/chiarav:/bin/bash
+beta80:Rm3/.dQJiKXDQ:1136:100:Beta80 Software e Sistemi SPA:/home/beta80:/bin/bash
+lino:z1n2RzMH8.sr2:1138:100:Celsi Pasqualino:/home/lino:/bin/bash
+fgreseli:aivmBe7AAPAQs:1139:60:Francesca Ferrari:/home/francef:/bin/bash
+iptmilan:hIAkom8ayVZ9c:1140:100:Inprotec Milano:/home/iptmilan:/bin/bash
+fox:1O9hVVmSXyPT2:1141:100:Savino Luigi:/home/fox:/bin/bash
+clint:sp4vXe7OKTNyw:1142:100:Comunione e Liberazione:/home/clint:/bin/bash
+clsegr:UNCfPIvbY9JgA:1143:100:Segreteria C.L.:/home/clsegr:/bin/bash
+cltracce:bO8.qUvKYcsjg:1144:100:Tracce C.L.:/home/cltracce:/bin/bash
+lgfashmi:xRRHnAIKGqynU:1146:100:Kim Pill Soo:/home/lgfashmi:/bin/bash
+frisco:Bon7cBHTw.EFY:1147:100:Goretti Maurizio:/home/frisco:/bin/bash
+scp:LMucccEZjb77M:1148:100:Dassi Umberto:/home/scp:/bin/bash
+scacchi:Sfe8SIR69ZSh6:1149:100:Zaninotto Franco:/home/scacchi:/bin/bash
+europart:P5r3e3Ju.nZMg:1150:100:Ferrario (Europartner):/home/europart:/bin/bash
+ceccon:9OMltV6OfyVns:1151:100:Michele Ceccon:/home/ceccon:/bin/bash
+gatti:Bcgjlqe9U6WOQ:1152:100:Flavio Gatti:/home/gatti:/bin/bash
+donluigi:WA/kP1fP/v272:1153:100:Don Luigi Fere`:/home/donluigi:/bin/bash
+*vittorio:STi2jnplZyMbQ:1154:100:Gelmi Vittorio:/home/vittorio:/bin/bash
+anipla:efHM4zqkhn.Q6:1155:100:Anderloni Alfredo:/home/anipla:/bin/bash
+cllom:tno6lbJ.FWYU2:1157:100:C.L.:/home/cllom:/bin/bash
+chiavari:VkKwW.q0yEb7g:1158:100:Gatto Matteo:/home/chiavari:/bin/bash
+arianna:/Tv7eLuOAge9I:1159:100:Arianna:/home/arianna:/bin/bash
+diesse:CyiO2ce9jNZHQ:1160:100:Diesse:/home/diesse:/bin/bash
+consant:VD9wCoau347Ko:1163:100:Antiquorum:/home/consant:/bin/bash
+lorizzo:Qu8IB7xPvyuRw:1164:100:Lorizzo Michele:/home/lorizzo:/bin/bash
+kotramil:oL1CMusmYOW2c:1165:100:Korea Trade Center:/home/1165:/bin/bash
+rotondom:/U5g5SENh2B.k:1167:100:Rotondo Marco:/home/1167:/bin/bash
+baloo:afGczk9H2O6SE:1168:100:Barteselli Marco:/home/1168:/bin/bash
+nicotera:vUKOdqf0qsT4Y:1169:100:Nicotera:/home/1169:/bin/bash
+cnricite:VL28J0EeVwSBc:1170:100:CNR/ICITE:/home/1170:/bin/bash
+algobit:d8smp7XMO3Dpo:1172:100:Algobit:/home/1172:/bin/bash
+alpha:lF.sk4RsNgtvM:1173:100:Alpha (prova):/home/1173:/bin/bash
+engra:H3Y/97xaWrpDo:1174:100:Bianchi Enrico:/home/1174:/bin/bash
+corrado:OCxvU4CjgOqtA:1175:100:Corrado Rinaldi:/home/1175:/bin/bash
+giacobaz:Ps.krcxaPg.0s:1156:100:Marco Giacobazzi:/home/marcog:/bin/bash
+amarcoli:4gbVJpiXtZ846:1131:100:Alessandro Marcolin:/home/marcolin:/bin/bash
+katia:W.CHh4zMQcdng:1177:100:Calanca Katia:/home/1177:/bin/bash
+garonzia:EwOi6Ka4LCZBM:1178:100:Garonzi Antonio:/home/1178:/bin/bash
+antit:jr2ALMYen2EJw:1162:100:Antiquorum:/home/antit:/bin/bash
+maxvigie:lpZMJfP/mN4aY:1179:100:Sceriffo Massimo:/home/1179:/bin/bash
+vinciana:Jf11se9jzhF3o:1180:100:Bozzi Riccardo:/home/1180:/bin/bash
+strike:nCOtgJR27LsKQ:1182:100:Gavazzi GivanBattista:/home/1182:/bin/bash
+avettor:ZwzNuW7eyozCA:1183:100:Vettor Aronne:/home/1183:/bin/bash
+faggio:rZP3AwFeJU42g:1184:100:Faggioli Alessandro:/home/1184:/bin/bash
+valle:M.8oc/w99pF/o:1185:100:Valle Mario:/home/1185:/bin/bash
+zuliani:ch4bsldOmR5lk:1186:100:Zuliani Roberto:/home/1186:/bin/bash
+koi:rKdi1KNWKarFQ:1187:100:Carena Laura:/home/1187:/bin/bash
+massimo:zbYYjJjJRctck:1188:100:Massimo :/home/1188:/bin/bash
+militell:FltCnICHeze1M:1189:100:Militello Ferruccio:/home/1189:/bin/bash
+anthares:QMk2yS8ytUQXw:1192:100:Anthares:/home/1192:/bin/bash
+patria:xNCfh7wxUN98c:1193:100:Patria:/home/1193:/bin/bash
+grassi:51EpKchJkh/5U:1195:100:Luca Grassi:/home/1195:/bin/bash
+molteni:SfVRCXjgOPYUg:1196:100:Mario Molteni:/home/1196:/bin/bash
+repat:SawgR36d8u2GA:1197:100:Balconi Renzo:/home/1197:/bin/bash
+cristina:SOmobZRmu.q4g:1198:100:Marazzi Cristina:/home/1198:/bin/bash
+ssvb:7D6qKYiIlgHts:1199:100:Frigerio Alberto:/home/1199:/bin/bash
+pleasing:P5hn9jgp5AYSw:1200:100:Riparato:/home/1200:/bin/bash
+ecs:TLMJFsRrhY7qA:1201:100:ECS:/home/1201:/bin/bash
+preveco:r.mY6Zr/ivZFc:1203:100:Societa' Preveco:/home/1203:/bin/bash
+gel:SBa.ozOxMwhVk:1202:100:Elia Guido:/home/1202:/bin/bash
+cestari:SlUfPJrdjIJJ6:1205:100:Cestari Davide:/home/1205:/bin/bash
+salva:pFOsbgIf4P7nM:1207:100:Catalfamo Salvatore:/home/1207:/bin/bash
+cosv:z50rhYs2Bm7Sc:1208:100:Associazione COSV:/home/1208:/bin/bash
+lansol:G4HIOz./hfVgo:1210:100:Lantech Solutions:/home/1210:/bin/bash
+lanser:VqggoaYpe3h.E:1211:100:Lan Service:/home/1211:/bin/bash
+franz:Ro0yq7ZCOyrko:1212:100:Franco Spina:/home/1212:/bin/bash
+eloso:rXBw7D.2FzLf6:1215:100:Franchi Salvatore:/home/1215:/bin/bash
+mileto:dy5zCyEq6JwUY:1216:100:Mileto Vincenzo:/home/1216:/bin/bash
+stmartin:hlNqr31Q3t7sw:1217:100:Martin Luca:/home/1217:/bin/bash
+lella:bgbWop1jQorA.:501:100:Raffaella Torraco:/home/1217:/bin/bash
+betty:P7tb.vWPAZj9o:1218:100:Elisabetta Lovati:/home/1218:/bin/bash
+zed:y5.7zTmzhmPgw:1219:100:Zini Dario:/home/1219:/bin/bash
+fiera1:kcw4oNDvuopFQ:1220:100:Ente Fiera di Milano:/home/1220:/bin/bash
+fiera2:uMb2hWzm5g9b6:1221:100:Ente Fiera di Milano:/home/1221:/bin/bash
+fiera3:5KpNf6EFgm9GM:1222:100:Ente Fiera di Milano:/home/1222:/bin/bash
+fiera4:h7oNrotndAAuk:1223:100:Ente Fiera di Milano:/home/1223:/bin/bash
+fiera5:kB5tQ4V9li0kg:1224:100:Ente Fiera di Milano:/home/1224:/bin/bash
+degrandi:lrR/NSY.8XNfk:1225:100:Degrandis:/home/1225:/bin/bash
+secrp:A.bzpzkBbEZWc:1226:100:S.E.C.R.P.:/home/1226:/bin/bash
+cri:RTJPxzjWcEWZk:1227:100:Pieralisi Cristina:/home/1227:/bin/bash
+crf:qGeO5.HSZNBeE:1228:100:Romito Antonella:/home/1228:/bin/bash
+bitspcs:7D9lHQnrKff2.:1229:100:Coleman Julian:/home/1229:/bin/bash
+gigio:8wSxeIiE0SDe6:1230:100:Luigi Ravelli:/home/1230:/bin/bash
+gla:MbhZVhBIAUmDI:1231:100:GLA Elettronica:/home/1231:/bin/bash
+tecnoit:Yl.V6Tev36MNY:1233:100:Zamperoni Flavia Viviana:/home/1233:/bin/bash
+pacciani:EPILFgpREuVT2:1235:100:Passoni Andrea:/home/1235:/bin/bash
+bellintl:6NNMBmu8UiaKk:1237:100:Casiroli Paolo:/home/1237:/bin/bash
+alovati:en6r9YDOqQFBU:1239:100:Alfredo Lovati:/home/1239:/bin/bash
+money:H.9cq8zejHUZE:1240:100:Bianchi CarloMaria:/home/1240:/bin/bash
+gastone:jPyI9Djo4BOUM:1241:100:Amadori Antonio:/home/1241:/bin/bash
+npo:1hF571ztO6xcc:1243:100:NPO:/home/1243:/bin/bash
+hyd:l.N7XnaouKTlE:1245:100:Yong Hee:/home/1245:/bin/bash
+kallegol:LouqeKFw5tfh6:1246:100:Bonalumi Maurizio:/home/1246:/bin/bash
+crox:wHrCUDst8KE4Q:1247:100:Carbonchi:/home/1247:/bin/bash
+archimed:4MJYOxhaqH63U:1248:100:archimed:/home/1248:/bin/bash
+vinet:cu6ygLXP9dicM:1249:100:unet:/home/1249:/bin/bash
+cmb:4kK3qu5N84mKI:1250:100:Credit Mutuel:/home/1250:/bin/bash
+praxis:DNaQNIvcia5kI:1251:100:Praxis:/home/1251:/bin/bash
+apisoni:mwiSPvMH4DHQ6:1252:100:Ambrogio Pisoni:/home/1252:/bin/bash
+genghini:zBqw.dCirifiA:1253:100:Studio Genghini:/home/1253:/bin/bash
+burson:WVk5FrajaQdV2:1254:100:Burson-Marsteller:/home/1254:/bin/bash
+mfor:TgdG9thIVfB4s:1255:100:Marco Foroni:/home/1255:/bin/bash
+emanuele:P4JypC/68CGvc:1256:100:Emanuele Crosti:/home/1256:/bin/bash
+entf:LmnGbo6TVdjSw:1257:100:Ente Nazionale Turismo Francese:/home/1257:/bin/bash
+mdeluca:Tohx/TELa5KC.:1258:100:De Luca Michele:/home/1258:/bin/bash
+menotti:n7TWFKW56NyuU:1259:100:Sig.ra Guenzi:/home/1259:/bin/bash
+duesse:ZFwGgXf9V3Ki2:1260:100:Duesse:/home/1260:/bin/bash
+austin:gPnS8eTBKAegg:1261:100:Austin Italia:/home/1261:/bin/bash
+ike:THKJGBlowheuU:1262:100:Castellano Paolo:/home/1262:/bin/bash
+lifeline:Tcsi.lGbl/k.o:1263:100:Enrico Ferrari:/home/1263:/bin/bash
+trabucch:XNXlZK00motZA:1264:100:Marco Trabucchi:/home/1264:/bin/bash
+eurolink:CMX4eTKd7cA0.:1265:100:Eurolink:/home/1265:/bin/bash
+network:ZuRQV1H4Y6gYY:1266:100:Societa' Tricad:/home/1266:/bin/bash
+copat:8lYYJetOYEC7o:1267:100:Copat:/home/1267:/bin/bash
+cpuccio:6CYKJVHGbHABA:1268:100:Carlo Puccio:/home/1268:/bin/bash
+etabeta:QBIB4sCwuBpt.:1269:100:Rossini Carlo:/home/1269:/bin/bash
+marasco:9dyGryaaLBq1o:1270:100:Alessandro Marasco:/home/1270:/bin/bash
+leiterm:qWbQI5CYo9xQo:1271:100:Young & Rubicam Italia:/home/1271:/bin/bash
+max:LaOQvt/Nz5MWA:1272:100:Massimo :/home/1272:/bin/bash
+eurotecn:doBgeBwsPtilg:1278:100:Eurotecnes:/home/1278:/bin/bash
+edoc:JDjDy648Oeg.g:1279:100:Edoardo Cerizza:/home/1279:/bin/bash
+europex:My6qOUIsIr0rE:1280:100:Zerilli Andrea:/home/1280:/bin/bash
+asciume:YJd4g2tsTccSk:1282:100:Alberto Sciume':/home/1282:/bin/bash
+chiarabi:ZUyMnvMBOz26c:1283:100:Chiara Beniamini:/home/1283:/bin/bash
+bontex:4x/vWy/8aFt3U:1284:100:Bontex:/home/1284:/bin/bash
+thx2:JjQ9eNz0BysSA:1285:100:Maurizio Maranghi:/home/1285:/bin/bash
+parenti:Y0uv8VDPdumFw:1286:100:Parenti Marco:/home/1286:/bin/bash
+coppola:JhDVcMN6t4kKc:1287:100:Luxor:/home/1287:/bin/bash
+bicocchi:qbdQ7oeZxDWuM:1288:100:Luxor:/home/1288:/bin/bash
+iscardir:bed199ZsI2xk2:1290:100:Iscar Italia:/home/1290:/bin/false
+iscarmkt:u7JBPgfLQPeyc:1291:100:Iscar Italia:/home/1291:/bin/false
+iscarcom:vXzU4Qmdgx53I:1292:100:Iscar Italia:/home/1292:/bin/false
+gicchier:Ul7S5QOkKi0Do:1295:100:Gicchieri:/home/1295:/bin/false
+mor:DMQlQZIKITL4Y:1289:100:Hezy Mor:/home/1289:/bin/false
+cantoni:EF84RrrjXTCk2:1296:100:Pompe Gabbioneta:/home/1296:/bin/false
+circolino:jaIDL/3R.yu7w:1297:100:Happening del Circolino:/home/1297:/bin/false
+ambrove:FSbQT7tNzHvhM:1299:100:Banco Ambrosiano Veneto:/home/1299:/bin/false
+rcarcano:mzzu.YQkfmleY:1300:100:Roberto Carcano:/home/1300:/bin/false
+alis:cEfa/xqEu1mWY:1301:100:Alis s.r.l.:/home/1301:/bin/false
+charliej:ycXt7j3OSbyHE:1302:100:Ligresti Laura:/home/1302:/bin/false
+basilico:Jw.dOZRjSaNq6:1305:100:Asso Servizi s.r.l.:/home/1305:/bin/false
+tecnomat:U4ibsRzQjz9jE:1303:100:Sidi Tecnomatica:/home/1303:/bin/false
+alex:giLtNpwwfq/1M:1304:100:Alessandro Dallera:/home/1304:/bin/false
+uvolonte:y8PbUjENOphF.:1306:100:Lombardia Informatica:/home/1306:/bin/false
+lguidi:tiNl4ROB7f4PU:1318:100:Luigi Guidi:/home/1318:/bin/false
+massimog:ibHY1rf9bLN7w:1310:100:Garbagnati Massimo:/home/1310:/bin/false
+sudler:IduOjmzdZnC0U:1311:100:Sudler & Hennessey:/home/1311:/bin/false
+moneycri:aH4ktSLdciviA:1313:100:Perotti Anita:/home/1313:/bin/false
+diamond:XXLxlXhXGeGus:1314:100:Malossi Alberto:/home/1314:/bin/false
+insolito:a/DUnvXpWsYnA:1317:100:Insolito:/home/1317:/bin/false
+eurocrea:CRUXgL2zTmTpE:511:100:Eurocrea Consulting:/home/1318:/bin/bash
+cklein:Tilh8VkdpO/vo:1315:100:Calvin Klein:/home/1315:/bin/false
+lilith:ExBxL1JY9Vjys:1316:100:Giannini Valentina:/home/1316:/bin/false
+movct:nMaFsZW4FAC1s:1321:100:CL/CDO Catania:/home/1321:/bin/false
+osherson:vz5iucwig9Ow.:1324:100:Osherson Daniel:/home/1324:/bin/false
+paganini:N0/DzE1yzFKuQ:1327:100:Paganini Francesco:/home/1327:/bin/false
+ferla:1oEwWhK4vKMdg:1329:100:Ferla Simona:/home/1329:/bin/false
+stjohn:eRVMeGGOuz6Og:1340:100:St.John Michael:/home/1340:/bin/false
+boccuni:/BYfcy2MsLgKQ:1330:100:Boccuni Maurizio:/home/1330:/bin/false
+sinfo:dbObkmE1oC4Rs:1337:100:Lisimberti:/home/1337:/bin/false
+liguoro:WTUTAcnKBY4V2:1344:100:Alberto Liguoro:/home/1344:/bin/false
+rivera:GlvYlQsBrCGrk:1345:100:Paolo Rivera:/home/1345:/bin/false
+jpcasta:q0LEp.sk16vfQ:1346:100:Castagna:/home/1346:/bin/false
+perini:a8NMPn5qYWaO2:1347:100:Andrea Perini:/home/1347:/bin/false
+mbombell:Pf2zVyFKdQHig:517:100:Mario Bombelli:/home/1297:/bin/false
+perduca:FEnBXXMiwAXe6:1312:100:Perduca:/home/1312:/bin/false
+lzamboni:81x6lf55b8DJc:1328:100:Zamboni:/home/1328:/bin/false
+racdyn:QrwHTgQNFviFg:1341:100:Racing Dynamics:/home/1341:/bin/false
+dolceita:UKDVKrLhLwsA.:1343:100:Dolce Italia:/home/1343:/bin/false
+tecneur:eDOqx.MrDYvKU:526:100:Tecnoimmagine s.r.l.:/home/1345:/bin/false
+marino:J7nSdjwiZRKFw:1323:100:Marino Alessandro:/home/1323:/bin/false
+fiorino:dyWJ7SBHq/Kwc:1338:100:Fiorino Saccaggi:/home/1338:/bin/false
+annoni:8Ty3UTsdW/85U:1339:100:Annoni:/home/1339:/bin/false
+mirochim:prhRpuP.SqAMo:528:100:Miro' Chimica:/home/528:/bin/false
+pirro:thesfTXBLQfmk:530:100:Pirro Elio:/home/1309:/bin/false
+sergio:i7wgMJi.SaCwU:531:100:Sergio Dellisanti:/home/531:/bin/false
+uberto:DoHQnwb8Pdp0w:532:100:Giacheri Uberto:/home/532:/bin/false
+marconi:55b9X36SpZRBI:533:100:Marconi Annamaria:/home/533:/bin/false
+schiatti:6p3wDSHA6ahnw:534:100:Schiatti:/home/534:/bin/false
+pcastel:bnacR94JF0Ynk:535:100:Castelli:/home/535:/bin/false
+softtele:kznnhpS3gQnn6:537:100:Societa' Softtele:/home/537:/bin/false
+luca:4v0jE23Ye3hbU:536:100:Luca Fusina:/home/536:/bin/bash
+apiviali:1lXjETSsrpVQU:538:100:Antonio Piviali:/home/538:/bin/false
+scuria:Yx.ul5rsKT/fI:539:100:Marco Scuriatti:/home/539:/bin/false
+giancafa:6oBYyzVl7m7Ew:540:100:Giancarlo Faccio:/home/540:/bin/false
+prova:hZoihXw2hICd.:542:100:prova:/home/542:/bin/false
+manur:VOfbHDvCqmMFY:543:100:Manuela Ricci:/home/543:/bin/false
+to:UxDkNWYAevAUE:544:100:Snaider-Baur:/home/544:/bin/bash
+casati:6DstI.ffElHJg:545:100:Casati:/home/545:/bin/false
+come:iZpbgO9nhodcg:525:100:Andrea Legnani:/home/525:/bin/false
+gepcom:tClU0lnTFlblY:541:100:Magistri:/home/541:/bin/false
+castellani:Ye6r4nxN3Oe8I:546:100:Andrea Castellani:/home/546:/bin/false
+olgeni:VK9u8KTW2oR3k:547:100:Giacomo Olgeni:/home/547:/bin/false
+mascio:bzDqN1zOIGGe2:548:100:Mascini:/home/548:/binfalse
+calapric:StnG5bu./rLo.:549:100:Calaprice:/home/549:/bin/false
+abri:EETpwVe81ce4s:550:100:Abri:/home/550:/bin/false
+dilorenz:qfRde8K.8ao26:551:100:Dilorenzo:/home/551:/bin/false
+lupi:4ks6nhx2pcSHk:552:100:Lupi:/home/552:/bin/false
+calderon:StOik0c4Y6QD2:553:100:Calderon:/home/553:/bin/false
+defendim:E7g4bRzYDqbeE:554:100:Mauro DeFendi:/home/554:/bin/false
+fstars:wFa5T.XbfL7u6:555:100:Five Stars:/home/555:/bin/false
+fasc:6TE.JwVrksW1s:556:100:Fondo Nazionale Previdenza...:/home/556:/bin/false
+netstore:Qf3TDbuXewHT.:558:100:Societa' Neve:/home/558:/bin/false
+malta:Ug5LunCbnL5Ik:560:100:Societa' Malta:/home/560:/bin/false
+younga:vzmzkvQjbQdQ.:561:100:Young&Rubicam:/home/561:/bin/false
+youngb:Cb62s8GM8C1Bg:562:100:Young&Rubicam:/home/562:/bin/false
+cohne:xVSGxLiTCFfe2:563:100:Cohne&Wolf:/home/563:/bin/false
+dagnino:sa/M6nEdhuNDI:522:100:Arianna Dagnino:/home/522:/bin/false
+gfabio:GZIZt2Lz1CSxA:564:100:Giovannelli Fabio:/home/564:/bin/false
+sempio:Cm1rwYovBhtLg:524:100:Enrico Sempio:/home/524:/bin/false
+gipsy:duN1Iosi6.W1o:565:100:Nello Frezza:/home/565:/bin/false
+matteo:dopNYpaTfUC5c:566:100:Matteo Santoni:/home/566:/bin/false
+borretti:I3fEryg5pRHxc:567:100:Cesare Borretti:/home/567:false
+tgit:PE5WMKScoobUQ:1099:100:Italia Telecomunicazioni:/home/1099:/bin/false
+cdoinfo:1IGmc/93Yb7bo:568:100:C.d.O. Informatica:/home/568:/bin/bash
+adduser:*:500:502:RHS Linux User:/home/adduser:/bin/bash
+inprotec:Sa.g5.zih3GIA:1004:100:Inprotec srl:/home/1004:/bin/bash
+ininternet:7s7vh5NyJ3bbM:1006:100:Fabrizio Salvadori:/home/1006:/bin/bash
+stanchi:/fq21j1lEC1QA:1007:100:Avvocato Stanchi:/home/1007:/bin/false
+vim:5p1qOyDXS/Ts.:1013:100:Fabrizio Vim:/home/1013:/bin/false
+edinvest:LaeWeDUbfKV5Y:1014:100:Dole:/home/1014:/bin/false
+assenza:SKyOsB7.htvg6:1015:100:Giovanni Assenza:/home/1015:/bin/false
+cl:l27sf0KrwkNkY:1017:100:Comunione Liberazione:/home/1017:/bin/false
+filiaggi:RvW0kcRmRpck.:1020:100:ITSAE:/home/1020:/bin/bash
+damiani:eo2ntL9oSI3Yk:1021:100:ITSAE:/home/1021:/bin/bash
+ferrario:SjYCfXXg5dqvQ:1022:100:ITSAE:/home/1022:/bin/bash
+peccenati:me8jim6pqxLFc:1023:100:ITSAE:/home/1023:/bin/bash
+deambrosis:xbovS1oKSE9Jo:1025:100:ITSAE:/home/1025:/bin/bash
+sfiliaggi:S1o4lzm.RPeW.:1031:100:ABB SAE SADELMI:/home/1031:/bin/false
+itsae:5TbsvNGmy1xnQ:1002:100:ABB Sae Sadelmi:/home/itsae:/bin/false
+notar:Z/vGmMlogPCE.:1035:100:Notar Francesco:/home/1035:/bin/false
+vfigini:G6K0V3n6fbliE:1037:100:Vittorio Figini:/home/1037:/bin/false
+capo:VggMGTXnQrvlw:1038:100:capobussi:/home/1038:/bin/bash
+ubulibri:aAHkliAZqVfL2:1039:100:ubulibri:/home/1039:/bin/bash
+bosdac:15cDoi3z5LAN6:1040:100:NPO prova:/home/1040:/bin/false
+s0611417:2KIZU3Pt2fcUI:1043:100:Andrea Wurzer:/home/1043:/bin/false
+ferrante:xYlFx6p5xUiWk:1044:100:Mauro Ferrante:/home/1044:/bin/false
+milan:JM3EwkaK2xbVs:1055:100::/home/1055:/bin/false
+guarino:5YYbLLFLBkqPs:1058:100:Laura Anoja:/home/1058:/bin/false
+eurofluid:bq.fK.stpuXvI:1060:100:Valerio Giobbi:/home/1060:/bin/false
+burchi:J1/LEr12RYfzo:1061:100:Ilario Burchi:/home/1061:/bin/false
+clgio:EBNy5GGuAIoFc:1063:100:Comunione Liberazione:/home/1063:/bin/false
+vmeroni:p0ocFe8Y7Wquc:1064:100:Viviana Meroni:/home/1064:/bin/false
+errlog:Ff1kxn0gkg2JQ:1065:100::/home/1065:/bin/false
+contini:bSS2tfOMJzMvk:1067:100:Daniele Contini:/home/1067:/bin/bash
+aberetta:SPBgZjSueeLMQ:1068:100:A. Beretta:/home/1068:/bin/false
+marzio:Y7WpZGkVtK1yM:1080:100:Marzio--Enter:/home/1080:/bin/false
+cotonella:GqHCyWmw.RueQ:1081:100:Zannier SpA:/home/1081:/bin/false
+romano:UnGpPnZERFxaI:1082:100:Marco Romano:/home/1082:/bin/false
+cosver:o3k5D/Yay7T2w:1083:100:Paolo Costanzo:/home/1083:/bin/false
+vferrari:3i0Y2BYDQWEH6:1084:100:Angelo Sala:/home/1084:/bin/false
+oalgisi:X0z2boxJxf9I.:1085:100:Omar Algisi:/home/1085:/bin/false
+babe:EbIrbKKA2cbBw:1086:100:Nicoletta Bruno:/home/1086:/bin/false
+cantu:IcYtrn2T0ys/6:1087:100:Carlo Alberto Cantu':/home/1087:/bin/false
+vrconsulting:djly8FHgtyqjY:1090:100:VR Consulting sas:/home/1090:/bin/false
+fos:yn8OdNy5AhujQ:1091:100:Luca Bascetta:/home/1091:/bin/false
+mfiorentino:Ld3jhkbGgbj6Q:1092:100:Hyperphar:/home/1092:/bin/false
+rcasarini:vHqwJ8lYLXass:1093:100:Hyperphar:/home/1093:/bin/false
+adverse:vykWB05kbvD6E:1094:100:Hyperphar:/home/1094:/bin/false
+update:SRONh8Lc0fOyo:1096:100:Hyperphar:/home/1096:/bin/false
+hyp:zJyh6XpUcNu9s:1097:100:Hyperphar:/home/1097:/bin/false
+hypadmin:B.QKS8Qbbn6pE:1101:100:Hyperphar:/home/1101:/bin/false
+biometrics:r8CTRktEtQH26:1103:100:Hyperphar:/home/1103:/bin/false
+abignamini:xU7Sxp7oZcQy6:1104:100:Hyperphar:/home/1104:/bin/false
+lgrassi:PATnYucLObWQs:1105:100:Hyperphar:/home/1105:/bin/false
+lperacino:CjWbGk7R3yJE.:1106:100:Hyperphar:/home/1106:/bin/false
+beungarbe:sjPjm7usmZuxI:1107:100:Hyperphar:/home/1107:/bin/false
+hyperphar:.2qj4m7mjvxxg:1108:100:Hyperphar:/home/1108:/bin/bash
+hyperstat:SsG6p272Tn7iw:1109:100:Hyperphar:/home/1109:/bin/bash
+health:ukbT5VNEOMYJw:1110:100:Hyperphar:/home/1110:/bin/bash

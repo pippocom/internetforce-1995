@@ -1,0 +1,12 @@
+#
+# Sun customer networks
+# This file is never consulted when the NIS are running
+#
+loopback	127
+#
+# Internet networks
+#
+intfnet		206.20.95
+intf-office	206.20.95.128
+intf-world	206.20.95.64
+intf-servers	206.20.95.0

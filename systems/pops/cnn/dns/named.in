@@ -1,0 +1,28 @@
+;
+;    File:      named.inaddr
+;    Purpose:   This file establishes the address-to-name lookup
+;               information for this zone.  You will have to
+;               fill out the actual address information for your
+;               specific zone in the format shown in the comments
+;
+@        IN SOA    cnn-server.cnn.it. root.cnn.it. (
+            951213   ; serial number
+            86400    ; refresh every 12 hours
+            7200     ; retry after 2 hours
+            1209600  ; expire after 2 weeks
+            86400)  ; default ttl is 2 days
+;
+         IN NS    cnn-server.cnn.it.
+	 IN NS    dns.nis.garr.it.
+	 IN NS    dns.internetforce.it.
+1        IN PTR    localhost.cnn.it.
+;
+;  	Addresses point to canonical name    (EXAMPLES ONLY)
+;
+;	33	IN PTR	example_host1.software.com.
+;	34	IN PTR	example_host2.software.com.
+;
+
+70	 IN PTR		www.cnn.it.
+71	 IN PTR		chris.cnn.it.
+

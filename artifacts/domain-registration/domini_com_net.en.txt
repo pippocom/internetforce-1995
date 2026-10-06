@@ -1,0 +1,397 @@
+Registration of .com/.net domains - Internet Force procedure 1995-1996
+======================================================================
+
+This document reconstructs how Internet Force registered international domains
+(.com and .net) in the years 1995-1996. The reconstruction is based mainly on
+the operational email exchanges preserved in the archive (InterNIC/Network
+Solutions and IDT) and on the DNS configurations of the period; to frame some
+steps it also refers to historical external documentation, listed at the end.
+
+In the period considered, registering a domain was not the simple purchase
+through a Web interface. It was coordinated work involving:
+
+- administrative information about the domain holder;
+- DNS configuration (zone, records, nameservers);
+- primary and secondary nameservers;
+- external parties (the InterNIC/Network Solutions registry and the upstream
+  provider IDT, which supplied the secondary DNS);
+- a formal request sent by electronic mail with a text template.
+
+Internet Force handled the whole technical side and filled in the request on
+behalf of the customers, using its own DNS server as the primary nameserver and
+a server of the upstream provider as the secondary.
+
+------------------------------------------------------------------------------
+1. Who did what
+------------------------------------------------------------------------------
+
+Customer
+  Provided the holder's data (name, address, contacts) and the desired domain
+  name. Did not interact with the registry or with DNS.
+
+Internet Force (typically Marco Iannacone, system/network administrator)
+  Collected the data, prepared the DNS zone on its own server, indicated the
+  primary nameserver, asked the upstream provider to act as secondary, filled
+  in the registration template and sent it to InterNIC, then verified the
+  outcome.
+
+InterNIC / Network Solutions
+  The registry for .com/.net domains in the United States. Requests were sent by
+  email (hostmaster@internic.net / domreg@internic.net) and were tracked with an
+  identifier such as [NIC-...].
+
+IDT (IDT Corporation / Internet Online Services, domain ios.com)
+  Internet Force's upstream provider. Through the host harley.ios.com it
+  supplied the secondary nameserver for the registered domains.
+
+------------------------------------------------------------------------------
+2. Workflow followed by Internet Force
+------------------------------------------------------------------------------
+
+From the preserved exchanges this operational sequence emerges:
+
+1.  The customer requests a domain and provides their data.
+2.  Internet Force gathers the information needed for the template.
+3.  Internet Force prepares the domain's DNS zone on its own server (DATA),
+    starting from a source file for the domain.
+4.  It sets up the necessary records: SOA, NS, and at least one A record for the
+    web/mail host; it adds MX and CNAME when needed.
+5.  It checks the consistency of the zone (SOA serial, generation with makezones,
+    reload of named).
+6.  It defines the nameservers: the primary is the Internet Force DNS
+    (data.internetforce.com, 206.20.95.3); the secondary is harley.ios.com
+    (198.4.75.46).
+7.  It asks IDT to activate the secondary, sending the domain data to the
+    ios.com hostmaster.
+8.  It fills in the InterNIC domain template with administrative, technical and
+    billing data and with the nameservers.
+9.  It sends the request to the registry (hostmaster@internic.net), with a
+    subject such as "Domain name registration".
+10. It handles the registry's replies: confirmation notifications (NOTIFY with a
+    request for ACK/NAK), any corrections or subsequent changes (MODIFY DOMAIN).
+11. It verifies the outcome: registration completed, root server update,
+    visibility via whois.
+
+Note on timing. The request to InterNIC and the one to IDT could proceed in
+parallel: the zone on the Internet Force DNS was prepared before sending, while
+the loading of the secondary on harley.ios.com was handled by IDT. In the emails
+the two tracks coexist, so the sequence was not rigidly a cascade.
+
+------------------------------------------------------------------------------
+3. Data requested by the domain template
+------------------------------------------------------------------------------
+
+The templates used are InterNIC's "Domain Version" 2.0 and 3.0. The fields
+actually present are:
+
+  Authorization
+    0a. (N)ew (M)odify (D)elete
+    0b. Auth Scheme (e.g. MAIL-FROM)
+    0c. Auth Info
+
+  1.  Purpose/Description
+  2.  Complete Domain Name
+
+  Organization Using Domain Name
+    3a. Organization Name
+    3b. Street Address
+    3c. City
+    3d. State
+    3e. Postal Code
+    3f. Country / Country Code
+
+  Administrative Contact
+    4a. NIC Handle (if known)
+    4b. (I)ndividual (R)ole
+    4c. Name
+    4d. Organization Name
+    4e. Street Address
+    4f. City
+    4g. State
+    4h. Postal Code
+    4i. Country Code
+    4j. Phone Number
+    4k. Fax Number
+    4l. E-Mailbox
+
+  Technical Contact
+    (same fields as the administrative contact, numbered 5a-5l)
+
+  Billing Contact
+    (same fields, numbered 6a-6l)
+
+  Prime Name Server
+    7a. Primary Server Hostname
+    7b. Primary Server Netaddress
+
+  Secondary Name Server(s)
+    8a. Secondary Server Hostname
+    8b. Secondary Server Netaddress
+
+  Invoice Delivery
+    9.  (E)mail (P)ostal
+
+Explanation of the main technical fields:
+
+- Primary Server Hostname / Netaddress: name and IP address of the primary
+  nameserver, i.e. the server on which Internet Force administered the zone as
+  the primary copy (data.internetforce.com, 206.20.95.3).
+- Secondary Server Hostname / Netaddress: name and address of the secondary
+  nameserver, which kept a copy of the zone and guaranteed its reachability even
+  if the primary was unavailable (harley.ios.com, 198.4.75.46).
+- NIC Handle: an identifying code for a person or organization already
+  registered with InterNIC (for example MI77 for Marco Iannacone). It made it
+  possible to avoid re-entering all the contact's data every time.
+
+------------------------------------------------------------------------------
+4. Brief explanation of the DNS concepts
+------------------------------------------------------------------------------
+
+These notes serve to read the records and the template; they do not change the
+historical workflow.
+
+SOA (Start of Authority)
+  The record that opens the zone and defines its authoritative parameters. It
+  contains the name of the primary server, the email address of the responsible
+  person (written with a dot instead of the at sign, e.g.
+  dnsmaster.internetforce.com.) and some management values: Serial (version of
+  the zone, incremented on every change), Refresh (how often the secondary
+  rechecks the primary), Retry (how long before retrying), Expire (when the
+  secondary copy expires), Minimum TTL.
+
+NS (Name Server)
+  Lists the authoritative nameservers for the domain. These are the servers that
+  answer officially for that name: in the pippo.com example they were
+  harley.ios.com, dns.internetforce.com and dns2.internetforce.com.
+
+A (Address)
+  Associates a host name with an IPv4 address, for example
+  www -> 206.20.95.25.
+
+MX (Mail eXchanger)
+  Indicates the servers that receive the domain's mail. A numeric value
+  (preference) sets the order: lower = preferred.
+
+CNAME (Canonical Name)
+  Creates an alias towards another canonical name, for example
+  www IN CNAME cnn-server.cnn.it.
+
+Primary DNS / master
+  The server on which the zone was administered as the primary copy, i.e. the
+  source of the changes.
+
+Secondary DNS / slave
+  A server that automatically kept a copy of the zone by reading it from the
+  primary, contributing to the redundancy and reachability of the domain.
+
+DNS delegation
+  By registering the domain, the authoritative nameservers are indicated at the
+  higher level (the .com registry). That indication is the delegation: from that
+  moment queries for the domain are directed to the indicated nameservers. This
+  is why the nameserver configuration had to be ready before or during
+  registration: without working nameservers the domain, even if registered,
+  would not resolve.
+
+------------------------------------------------------------------------------
+5. Real example of a template (InterNIC, New)
+------------------------------------------------------------------------------
+
+Below is a registration template actually sent, in its original format. It is
+the request for shiseidoit.com as it appears in the preserved exchanges
+(mailbox DOMAIN-IDT.mailbox; the resulting record also appears in
+DOMAIN.mailbox). The fields are given in their original order and terminology.
+
+    Domain Version Number: 2.0
+
+    0.   (N)ew (M)odify (D)elete....: New
+
+    1.   Purpose/Description........: commercial
+
+    2.   Complete Domain Name.......: shiseidoit.com
+
+    Organization Using Domain Name
+    3a.  Organization Name..........: Internet Force
+    3b.  Street Address.............: Via Plana, 20
+    3c.  City.......................: Milano
+    3d.  State......................:
+    3e.  Postal Code................: 20155
+    3f.  Country....................: IT
+
+    Administrative Contact
+    4a.  NIC Handle (if known)......: MI77
+    4b.  Name (Last, First).........:
+    4c.  Organization Name..........:
+    4d.  Street Address.............:
+    4e.  City.......................:
+    4f.  State......................:
+    4g.  Postal Code................:
+    4h.  Country....................:
+    4i.  Phone Number...............:
+    4j.  E-Mailbox..................:
+
+    Technical Contact
+    5a.  NIC Handle (if known)......: MI77
+    5b.  Name (Last, First).........:
+    5c.  Organization Name..........:
+    5d.  Street Address.............:
+    5e.  City.......................:
+    5f.  State......................:
+    5g.  Postal Code................:
+    5h.  Country....................:
+    5i.  Phone Number...............:
+    5j.  E-Mailbox..................:
+
+    Billing Contact
+    6a.  NIC Handle (if known)......:
+    6b.  Name (Last, First).........: Patrizia Stoppa
+    6c.  Organization Name..........: Internet Force
+    6d.  Street Address.............: Via, Plana 20
+    6e.  City.......................: MILANO
+    6f.  State......................:
+    6g.  Postal Code................: I-20155
+    6h.  Country....................: Italy
+    6i.  Phone Number...............: +39-2-39210765
+    6j.  E-Mailbox..................: patrizia@internetforce.com
+
+    Prime Name Server
+    7a.  Primary Server Hostname....: data.internetforce.com
+    7b.  Primary Server Netaddress..: 206.20.95.3
+
+    Secondary Name Server(s)
+    8a.  Secondary Server Hostname..: harley.ios.com
+    8b.  Secondary Server Netaddress: 198.4.75.46
+
+    Invoice Delivery
+    9.   (E)mail (P)ostal...........: Postal
+
+When the contacts were already registered, one could give only the NIC Handle
+(MI77) and leave the other contact fields empty; InterNIC completed the data
+from its own database.
+
+Related message: the InterNIC notification for shiseidoit.com (subject
+[NIC-950605.807] NOTIFY SHISEIDOIT-DOM) asked for confirmation before completing
+the update and reported the resulting record with "Record created on
+12-Jun-95" and the two domain servers; it is preserved in DOMAIN.mailbox.
+
+------------------------------------------------------------------------------
+6. Real example of a DNS configuration (.com)
+------------------------------------------------------------------------------
+
+The domain pippo.com, registered on 10 May 1995 through InterNIC, is hosted on
+the Internet Force DNS. The generated zone is in
+systems/data/dns/named-data/primary/pippo.com:
+
+    @  IN  SOA  pippo.com dnsmaster.internetforce.com. (
+              1996092401   ; Serial
+              10800        ; Refresh 3 hours
+              3600         ; Retry 1 hour
+              604800       ; Expire after a week
+              86400 )      ; Minimum ttl 1 day
+                        NS  harley.ios.com.
+                        NS  dns.internetforce.com.
+                        NS  dns2.internetforce.com.
+    pippo.com.  MX  0   internetforce.com.
+    www     A   206.20.95.25
+    dns     A   206.20.95.3
+
+Here the practical relationship with the registration is visible:
+
+- the two nameservers declared in the InterNIC template
+  (data.internetforce.com and harley.ios.com) appear as NS records of the zone;
+- the host www has the site's IP address (206.20.95.25), which on the web
+  machine was made available through the VIF virtual interfaces;
+- the MX routes the domain's mail towards internetforce.com.
+
+The complete zone: systems/data/dns/named-data/primary/pippo.com
+Master source: systems/data/dns/named-data/pippo.source
+Declaration in named.boot: systems/data/dns/named.boot (line "primary
+pippo.com").
+
+------------------------------------------------------------------------------
+7. Role of IDT
+------------------------------------------------------------------------------
+
+In the preserved exchanges (DOMAIN-IDT.mailbox) IDT Corporation / Internet
+Online Services, through Alexei Yashkov (alexis@silver.ios.com, alexis@ios.com),
+played the role of **secondary name server**. Marco Iannacone explicitly asked
+IDT to activate the secondary for every new domain, sending the data already
+registered with InterNIC, in particular the pair:
+
+    Domain servers in listed order:
+    DATA.INTERNETFORCE.COM       206.20.95.3
+    HARLEY.IOS.COM               198.4.75.46
+
+Examples present in the emails:
+
+- pesaro.com: "I'd like you to be our secondary name server."
+- pippo.com: "As usual I'd like you to be our secondary domain server."
+- art-diary.com: IDT replies "Created. Changes will be visible from
+  harley.ios.com today April 27".
+- pcpesaro.com, boldyoung.com, creo-mi.com: request to update harley.ios.com.
+
+IDT also asked to receive a copy of the InterNIC template sent
+("It would be great if you send a copy of InterNIC form to hostmaster@ios.com
+when you register a domain"), confirming that the secondary DNS and the
+registration were two sides of the same procedure.
+
+In short: Internet Force kept the primary zone on DATA and delegated to IDT the
+task of keeping harley.ios.com as secondary, so that the domain was reachable
+even without the primary server.
+
+------------------------------------------------------------------------------
+8. Errors, confirmations and iterations
+------------------------------------------------------------------------------
+
+The process was manual and provided for explicit confirmations by the registry.
+
+- Confirmation before the update. For changes to a domain, InterNIC sent a
+  "NOTIFY ... BEFORE-UPDATE" message with a block to fill in
+  (0a. (A)ck (N)ak) and the proposed record. The administrative or technical
+  contact had to reply with "A" (or "ACK") to confirm. This is the case for
+  SHISEIDOIT-DOM and PIPPO-DOM in DOMAIN.mailbox.
+- Subsequent changes. After registration, variations such as a change of email
+  addresses were requested by re-sending the template with the subject
+  "MODIFY DOMAIN <name>". Example: "[NIC-950919.3151] MODIFY DOMAIN pippo.com",
+  with purpose "Change of some e-mail addresses".
+- Completion. When the registration succeeded, InterNIC replied:
+  "Registration for the domain name shown below has been completed", noting that
+  if the request arrived before 18:00 Eastern Time the domain entered the root
+  server update of the same day and became visible via whois from the following
+  day.
+
+------------------------------------------------------------------------------
+Repository references
+------------------------------------------------------------------------------
+
+Mailboxes used:
+  artifacts/email-archive/technical/DOMAIN.mailbox
+    InterNIC notifications for shiseidoit.com and pippo.com (Version 2.0 and 3.0
+    template and related ACK).
+  artifacts/email-archive/technical/DOMAIN-IDT.mailbox
+    New registration templates (art-diary.com, shiseidoit.com) and exchanges with
+    IDT/Alexei Yashkov for the secondary name server.
+
+DNS configurations used:
+  systems/data/dns/named-data/primary/pippo.com   (example .com zone)
+  systems/data/dns/named-data/pippo.source        (master source of the zone)
+  systems/data/dns/named-data/primary/shiseidoit.com
+  systems/data/dns/named.boot                      (list of the primary zones)
+
+Related DNS documentation:
+  systems/data/dns/README.md
+  systems/data/dns/TECHNICAL.md
+  systems/data/dns/DOMAIN-PROVISIONING-WORKFLOW.md
+  docs/03-dns.md
+  systems/sun-vif/README.md                        (IP addresses of the sites)
+
+------------------------------------------------------------------------------
+Historical external sources
+------------------------------------------------------------------------------
+
+- RFC 1591, "Domain Name System Structure and Delegation" (J. Postel, IETF,
+  March 1994). The InterNIC completion message preserved in the mailboxes refers
+  explicitly to this document for the question of rights over names and of
+  disputes.
+
+Note: the InterNIC templates (versions 2.0 and 3.0) are not an external source,
+but historical material present in the Internet Force mailboxes.

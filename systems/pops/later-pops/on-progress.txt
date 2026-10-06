@@ -1,0 +1,4 @@
+Tera: 10.0.7.1 e 10.0.7.130 mentre la classe C e' 206.20.227.0
+CNN: 10.0.8.1 e 10.0.8.130 mentre la Classe C e' 206.20.228.0
+Fano: mentre la Classe C e' 206.20.230.0
+Indi: mentre la classe C e' 206.20.231.0

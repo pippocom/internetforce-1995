@@ -1,0 +1,653 @@
+From: micr...@tiscalinet.it (Salvatore)
+Newsgroups: it.comp.os.dos
+Subject: Internet e Dos: le FAQ di Iannacone
+Date: Sat, 03 Feb 2001 01:02:34 GMT
+Message-ID: <3a7a001...@news.aruba.it>
+Come promesso eccole:
+
+|##############################################
+
+>From ianna@pippo.com Tue Jul 06 07:19:50 1996
+Newsgroups: it.comp.dos,it.faq
+Subject: FAQ: Collegarsi ad Internet da DOS
+From: ianna@pippo.com (Marco Iannacone)
+Date: 6 Jul 1996 07:19:50 +0200
+
+
+FAQ: Collegarsi ad Internet da DOS
+
+
+tratto dalla Guida ad Internet e alla Realta' Virtuale
+(http://www.pippo.com/hypertxt/) di M. Iannacone
+
+
+ver. 0.3d
+
+
+INDICE
+======
+
+1. INTRODUZIONE
+1.1 Perche'?
+1.2 La filosofia client-server
+1.3 Chi non conosce Linux e' perduto?
+2. REQUISITI
+2.1 Test e raccolta informazioni
+3. PROGRAMMI
+3.1 Stack TCP/IP
+3.2 Mail
+3.3 Ftp client
+3.4 News Readers
+3.5 IRC Client
+3.6 Browser web
+3.7 Xserver
+3.8 Virtual Network Computer
+3.9 Altro
+4. UN ESEMPIO PRATICO
+4.1 Caldera WebSpyder
+4.1.1 contenuto del disco
+4.1.2 Collegamento a IOL
+4.1.3 Approfondimento (hacking around - solo per utenti esperti!)
+5. ALTRI LINK UTILI
+6. QUESTO DOCUMENTO
+7. LEGALESE
+
+A. RINGRAZIAMENTI
+
+
+1. INTRODUZIONE
+---------------------------------
+Molti lettori si chiederanno che motivo possa esserci ad utilizzare
+un sistema operativo che ha oltre 15 anni per accedere alla Rete
+quando con meno di due milioni č possibile comprare un recentissimo
+Pentium multimediale con l'ultima versione di Win98. In realtā
+proprio questo (sbagliato) modo di pensare ha fatto si che oggi per
+poter scrivere un documento, un'e-mail o fare dei calcoli sia
+necessario disporre di una macchina con ALMENO 32MB di RAM e un
+HD da 2GB.
+I programmi (e i sistemi operativi) della Microsoft sembrano fare a
+gara per richiedere un numero sempre pių alto di risorse pur fornendo
+le medesime funzionalitā generazione dopo generazione.
+Un approccio completamente diverso viene seguito da altri sistemi
+(quali Linux, FreeBSD, QNX..) che sono (tuttoggi) in grado di girare
+sia su 386 con 2MB di RAM ma anche su grossi server della SUN
+(ovviamente le prestazioni saranno diverse)..
+Con questo documento mi propongo di ridare un po' di lustro al
+vecchio DOS e dimostrare che Win95 non ha poi inventato niente di
+nuovo.
+
+1.1 Perche?
+---------------------
+Non sono pazzo, e nemmeno un nostalgico! La veritā č che ci sono molti
+vecchi computer in giro (mi riferisco a 286, 8088 e perfino 8086)
+che non possono far girare le ultime versioni dei sistemi
+operativi ma possono egregiamente consentire agli utenti di accedere
+alle informazioni.
+
+Certo sono macchine lente, e non potrete vedere molte immagini (in
+realtā dipende da quale sistema usate), ma sarete sorpresi da quanto
+sono veloci nell'accedere ad informazioni testuali.
+
+1.2 La filosofia client-server
+--------------------------------------------
+La diffusione del World Wide Web ha dimostrato l'importanza della
+filosofia client-server, dove i dati e i servizi sono messi a
+disposizione dai server e i client di preoccupano solo di
+visualizzarli attraverso applicazioni leggere.
+Le informazioni a disposizione sono moltissime ed č inutile
+sovraccaricare la propria macchina con pesanti elaborazioni, quando
+si puō far svolgere il lavoro duro ad un computer remoto, per poi
+ottenere il risultato comodamente sul proprio schermo.
+Seguendo la logica evoluzione di questa filosofia, che senso ha
+caricare sul proprio computer un mastodontico word processor (di cui
+
+magari si usa solo una piccola parte delle funzioni) quando se
+ne potrebbe utilizzare uno remoto?
+
+Le applicazioni di domani potrebbero essere costruite a moduli (in
+Java) e risiedere tutte su server:
+l'utente che ne avesse bisogno, potrebbe richiedere solo i moduli a
+lui necessari, che verrebbero scaricati, e una volta ultimato il loro
+compito sparirebbero automaticamente.
+Con programmi cosė piccoli non sarebbero quindi necessari super-
+computer, ma macchine veloci e ben integrate con la Rete: in poche
+parole Network Computer (alcuni dispositivi di questo genere sono giā
+in vendita e non si basano di certo su sistemi operativi della
+Microsoft!).
+
+Un vecchio 386 e' ancora in grado di compiere un compito pių che
+dignitoso: accedere ad Internet.
+Se quindi il software viene spostato sui server lasciando sul client
+solo le funzioni di interfaccia grafica, un PC in grado di utilizzare
+servizi quali web e posta elettronica, puō risultare una buona
+stazione di lavoro.
+
+Scuole, biblioteche, e molte organizzazioni no-profit stanno giā
+prendendo in considerazione questo tipo di approccio: acquistare a
+poco prezzo computer di vecchia generazione da societā che intendono
+liberarsene, installare un sistema operativo molto efficiente (come
+Linux), aggiungere un modem e collegarli alla Rete (o ad una
+Intranet).
+
+1.3 Chi non conosce Linux e' perduto?
+--------------------------------------------------------------
+No.. Se disponete di un vecchio PC XT, 8088, 286, 386, una versione di
+DOS (almeno) 3.3 (meglio 5.0) e un modem (almeno) 9600bps (oppure una
+scheda Ethernet) il vostro PC vale ancora qualcosa!
+Esistono due modalitā per riciclare i vostri PC: una consiste nel
+collegarli alla vostra LANs e utilizzarli per accedere ad
+applicazioni web-based, mentre l'altra prevede l'utilizzo del modem
+per farle accedere ad Internet. In questo documento cercherō di
+spiegare la seconda modalitā.
+
+Se invece siete interessati a capire come realizzare uno dei server
+di cui si parlava, vi consiglio di provare Linux (per maggiori
+informazioni http://www.pippo.com/linux.html)
+
+2. REQUISITI
+-----------------------
+Come per tutte le altre piattaforme per poter cominciare dovete
+disporre del giusto software. In particolare, dovendovi collegare ad
+Intenet avrete bisogno di uno stack TCP/IP e di una serie di client
+che vi consentano di accedere ai differenti servizi; inoltre visto
+che volete collegarvi via modem, avrete bisogno anche di un packet
+driver, di un dialer.
+Nel mondo DOS ci sono numerose applicazioni per accedere alla Rete:
+si va dalle suite complete come Minuet (creata dall'Universitā del
+Minnesota - ftp://ftp.umn.edu/pub/minuet/latest/minuarc.exe)
+alle singole applicazioni che devono essere eseguite indipendentemente.
+Il vantaggio delle applicazioni tutto-in-uno č che consentono di
+eseguire pių applicazioni ovviando ai noti limiti di singletasking
+che il Dos possiede.
+
+Per poter utilizzare le applicazioni che andrō a descrivere dovete
+possedere oltre al PC (8086, 286 o sup) e al modem (di cui conoscete
+
+porta e IRQ), almeno 640K di RAM, un HD, un accesso ad Internet ed
+essere in grado di creare/ modificare dei BATCH file in DOS.
+
+(un elenco completo di molte applicazioni DOS per Internet č
+disponibile presso:
+
+http://www.dendarii.demon.co.uk/FAQs/dos-apps.html).
+
+2.1 Test e raccolta informazioni
+---------------------------------------------------
+La prima cosa da fare č quella di rendere operativo il vostro modem.
+Puō sembrare ovvio, ma la maggior parte degli errori sono causati
+proprio da problemi legati a questo dispositivo. Prima di cercare di
+collegarvi al vostro ISP vi consiglio quindi di provare il vostro
+modem accedendo ad una normale BBS con un qualsiasi software di
+comunicazione (ad es. Telix o Terminate).
+
+Bisognerā passare una stringa di inizializzazione al modem:
+AT&F0 ricarica nel modem i parametri di fabbrica mentre ATX3 evita
+che il modem rimanga in attesa del segnale di linea.
+Generalmente č importante abilitare il controllo di flusso hardware
+(&K3), l'hung-up automatico in caso di caduta del DTR (&D2) e
+impostare opportunamente il DCD (&C1).
+
+La configurazione del modem potrā generare dei problemi con i
+dispositivi plug&play e per questo sarā necessario modificare
+opportunamente CONFIG.SYS e/o AUTOEXEC.BAT indicando la porta di I/O
+e l'IRQ usato. (Gli esempi che seguono fanno riferimento ad un US
+Robotics Sporster 14.400 interno configurato come COM3 IRQ3).
+
+Altre importanti informazioni che si devono conoscere sono:
+
+- il vostro ISP vi fornisce un IP statico o uno dinamico?
+- Viene utilizzata una particolare subnet mask?
+- Qual č il DNS server primario? Quale il secondario?
+- Qual č il gateway da usare?
+- Qual č il vostro user-name? e la vostra password?
+- Qual č il vostro SMTP server? E il POP server?
+
+
+3. PROGRAMMI
+----------------------------
+Il modo pių semplice di procedere č usare Nettamer
+(http://www.nettamer.net): un programma tutto-in-uno che possiede
+dialer, stack TCP/IP, ftp, telnet, posta elettronica, news, WWW, ping
+e finger. Per maggiori informazioni sull'uso del programma consiglio di
+consultare il relativo newsgroup (alt.comp.shareware.nettamer)
+e le FAQ
+(http://www.cs.ruu.nl/wais/html/na-dir/off-line-readers/net-tamer.html)
+
+Se volete giocare sporco (č cioč non vi sentite obbligati ad usare il
+DOS), potete scaricare il dischetto di QNX: si tratta di un sistema
+operativo Linux-like ed in grado di funzionare con un 386 e
+pochissima RAM. All'interno del dischetto DEMO (perfettamente
+funzionante e disponibile presso http://www.qnx.com/) troverete un
+bellissimo browser grafico, un dialer, uno stack TCP/IP e il tutto
+predisposto per potersi collegare ai principali provider italiani.
+
+Se la soluzione tutto-in-uno non vi piace, dovrete procurarvi tutti i
+singoli componenti che vi servono. Come dicevamo, il primo componente
+di cui avrete bisogno č un packet driver: a mio avviso il migliore č
+dospppd (derivato dal famoso pppd di Linux) che potete scaricare da
+
+ftp://ftp.agate.net/users/01935/internet/dosppp06.zip). ma esistono
+
+altri programmi quali Etherppp
+(ftp://ftp2.cc.ukans.edu/pub/WWW/DosLynx/support/etherppp.zip) o
+Klos (http://www.klos.com/demo/pppshare.exe) che svolgono lo
+stesso
+compito e sono scaricabili dal medesimo sito.
+
+3.1 Stack TCP/IP
+-----------------------------
+Come stack TCP/IP potete scaricare indifferentemente WATTCP
+(ftp://dorm.rutgers.edu/pub/msdos/wattcp/wattcp.zip) o il Trumpet TCP
+(ftp://ftp.agate.net/users/01935/internet/tcp201.zip).
+
+Sistemata la parte di comunicazione č necessario disporre delle
+singole applicazioni:
+
+3.2 Mail
+--------------
+Pegasus per DOS
+(ftp://risc.ua.edu/pub/network/pegasus/pmail340.zip)
+
+POPMail
+(ftp://ftp.agate.net/users/01935/internet/popml322.zip)
+
+3.3 Ftp client
+-----------------------
+Wattcp FTP
+(ftp://ftp.agate.net/users/01935/internet/dosppp06.zip)
+
+
+3.4 News Readers
+-------------------------------
+Trumpet (disponibile presso http://www.trumpet.com.au)
+
+3.5 IRC Client
+-----------------------
+jpIRC
+(http://www.geocities.com/SiliconValley/Vista/7104/jpirc.htm)
+
+IRC
+(ftp://ftp.agate.net/users/01935/internet/irc101.zip)
+
+Voice
+(ftp://ftp.agate.net/users/01935/internet/voice11b.zip)
+
+3.6 Browser web
+-----------------------------
+Qui la scelta č molto ricca!
+
+Doslynx
+
+ftp://ftp.agate.net/users/01935/internet/dosppp06.zip
+
+ftp://ftp2.cc.ukans.edu/pub/WWW/DosLynx/DLX0_8A.EXE
+
+Bobcat (successore di DosLynx)
+
+http://www.fdisk.com/doslynx/bobcat.htm
+
+Arachne
+
+http://www.naf.cz/arachne/
+
+WebSpider
+
+http://www.caldera.com/
+
+3.7 Xserver
+------------------
+E' stato realizzato un Xserver (commerciale) a partire dall'ottimo
+codice
+Xfree86.
+E' disponibile presso: http://www.xtreme.it/english/xappeal.html
+
+3.8 Virtual Network Computer
+-----------------------------------------------
+Esiste una versione DOS dell'eccezionale VNC:
+
+http://www.complang.tuwien.ac.at/nino/dosvnc.html
+
+3.9 Altro
+--------------
+Per coloro che volessero scaricare altre applicazioni, segnalo che
+presso http://www.agate.net/~tvdog/internet.html č disponibile un
+ampio elenco con informazioni sulle funzionalitā di ogni pacchetto.
+
+In ogni caso segnalo:
+
+MUD
+(ftp://ftp.agate.net/users/01935/internet/slip_mud.zip)
+
+Nslookup
+(ftp://ftp.agate.net/users/01935/internet/nslookup.zip)
+
+PING
+(ftp://ftp.agate.net/users/01935/internet/ping.exe)
+
+Talk
+(ftp://ftp.agate.net/users/01935/internet/talk-13.zip)
+
+4. UN ESEMPIO PRATICO
+---------------------------------------------
+Quando ho iniziato a scrivere questo documento mi ero riproposto di
+analizzare in questa sezione come configurare PPPD e poi come utilizzare
+i vari client... in realtā il recente rilascio della versione stabile
+di Caldera WebSpider, mi ha fatto cambiare idea!
+
+Trattandosi infatti di un ottimo browser grafico, di un client di
+posta elettronica (POP3), di un dialer e di uno stack TCP/IP
+completamente integrati tra loro e decisamente facili da configurare,
+ho pensato che fosse meglio concentrare la nostra attenzione solo su
+questo prodotto.
+
+
+4.1 Caldera WebSpyder
+----------------------------------------
+Caldera, avendo acquistato da tempo il famoso DR-DOS (versione Dos
+alternativa a quello Microsoft ma perfettamente compatibile) ha
+
+intenzione di spingerne l'utilizzo per la creazione di Network
+computer, WebTV, Net-top-box utilizzando tutta quella componentistica
+per PC che il mercato ancora offre ma che Windows 95 considera troppo
+lenta. A questo scopo Caldera ha realizzato le componeti aggiuntive
+che il DOS necessitava utilizzando software giā liberamente
+disponibili sul mercato e vende ora un ottimo prodotto che puō essere
+modificato e personalizzato dai vari OEM che decidono di acquistarne
+la licenza.
+Per chi non conoscesse Caldera, ricordo che si tratta di una delle
+societā che commercializza una versione commerciale di Linux. Il
+prodotto chiamato OpenLinux č una delle versioni pių curate di Linux
+e contiene parecchio software commerciale.
+
+A dimostrazione della bontā del suo browser DOS (WebSpyder), Caldera
+consente di scaricare gratuitamente una copia del prodotto che č
+pensata per essere contenuta in un dischetto!
+E' sufficiente scaricare dal loro web server (http://www.caldera.com)
+l'immagine del dischetto e il programma discopy.exe per poter
+ricostruire un prezioso disco contenente sistema operativo (DOS),
+dialer, stack TCP/IP, browser e client di posta tutti perfettamente
+funzionanti.
+
+
+4.1.1 contenuto del disco
+-----------------------------------------
+Ma vediamo di analizzare il contenuto del disco che la Caldera
+distribuisce e come questo possa essere utilizzato
+
+Il disco contiene i seguenti file:
+
+ibmdos.com - command.com - choice.com - vdrvchng.com - drlogo.lgo -
+com_port.exe - vdisk.sys - drmouse.com - emm386.sys - welcome.txt -
+fade.com - ansi.sys - autoexec.bat - config.sys -ws32.exe
+
+Di cui ws32.exe č un file compresso autoestraente che contiene il
+browser, il client di posta, lo stack e in pratica tutto il software
+che vi serve, mentre gli altri sono, per la maggior parte, classici
+files DOS.
+La configurazione e l'uso del programma č davvero semplice: č
+sufficiente infilare il dischetto nel PC (ancora spento) fare il boot
+e... inserire le classiche informazioni necessarie per accedere al
+vostro provider.
+
+4.1.2 Collegamento a IOL
+------------------------------------------
+Prendendo in esame Italia OnLine, dato che io chiamo da Milano, devo
+inserire:
+
+Internet Settings
+
+Name Server 1 (DNS): 194.20.24.1
+Name Server 2 (DNS): 194.20.24.2
+Subnet: 255.255.255.0
+
+
+Dialer Settings
+
+Username: ianna
+
+Password: *************************
+
+Telephone: 48329701
+
+Use a script file: in questa sezione potete indicare uno script file
+se il vostro provider lo richiede.
+Nel mio caso (IOL) non ce n'č bisogno.
+In ogni caso un esempio di script file che puō essere adattato alle
+vostre esigenze č il seguente:
+
+;
+;This script file was generated by DR-WebSpyder
+;It is Windows95 compatible
+;
+
+proc main
+
+waitfor "ogin:"
+transmit $USERID, raw
+transmit "^M"
+
+waitfor "assword:"
+transmit $PASSWORD, raw
+transmit "^M"
+
+endproc
+
+
+Email Settings
+
+E-mail: ia...@iol.it
+
+Mailbox username: ianna
+
+Mailbox password: ***********************
+
+Mailbox server name (cioč il POP server): popmail.iol.it
+
+
+Send mail server (cioč il server SMTP): mail.iol.it
+
+Modem Settings
+
+Inserite la stringa di inizializazione del vostro modem (spesso e'
+sufficiente ATX3 ma NON scrivetemi per chiedermi qual č la pių
+adatta per il vostro modem!!)
+Advanced Settings
+
+In questa sezione inserite il vostro proxy server (se lo volete
+usare) nel mio caso e': http://proxy.iol.it porta 8080
+
+Una volta fatto ciō il vostro collegamento č pronto: č sufficiente
+digitare un URL all'interno del vostro browser e il collegamento
+viene attivato automaticamente!
+
+
+4.1.3 Approfondimento (hacking around - solo per utenti esperti!)
+----------------------------------------------------------------------------
+---------------------------
+Dato che la configurazione del sistema č piuttosto semplice, in
+questa sezione vorrei fornire alcuni dettagli a coloro che amano
+modificare le cose a loro piacere. Gran parte di quanto viene
+mostrato sullo schermo nella fase di boot precedente all'apertura del
+browser č originato (come ci si poteva aspettare) da un istruzione
+all'interno dell'autoexec.bat.
+Coloro che hanno lavorato sui PC anche nel periodo in cui il DOS la
+faceva da padrone (personalmente ho iniziato con il DOS 3.3),
+potranno divertirsi a personalizzare il pacchetto secondo le proprie
+esigenze.
+
+Non č affatto difficile! In pochi minuti si puō configurare WebSpyder
+in modo da NON doverlo settare ogni volta, oppure con un po' di pių
+tempo utilizzarlo sulla propria LANs.
+
+Nel riquadro che segue mostro il contenuto del file AUTOEXEC.BAT con
+(in rosso) i miei commenti che spiegano il significato dei passaggi
+pių importanti.
+Per facilitare il lavoro a chi si voglia cimentare nel modificare il
+pacchetto, segnalo che il file principale (WS32.EXE) che contiene
+tutto il sistema č un semplice file estraente e puō essere sostituito
+con un qualsiasi file autoestraente creato con PKZIP o ARJ per DOS.
+In particolare quindi con il contenuto della directory drwebspy dopo
+che vi siano state fatte le modifiche desiderate.
+
+(ATTENZIONE: se usate ARJ per creare l'autoestraente, ricordatevi di
+dargli il parametro /y quando lo eseguite!)
+
+@echo off
+rem questa istruzione carica il driver per il mouse
+a:\drmouse
+rem questa imposta la risoluzione video
+A:\VDRVCHNG 3583
+if errorlevel 1 goto fail
+md drwebspy
+cd drwebspy
+rem le due istruzioni che seguono copiano il file autoestraente in un
+RAMDRIVE (in cui
+rem hanno precedentemente creato una directory drwebspy e eseguono il
+file autoestraente
+copy a:\ws32.exe
+ws32
+del ws32.exe
+a:\fade
+rem Quello che segue e' il solito NAG-screen
+type a:\welcome.txt
+pause
+cls
+
+rem la parte che segue serve solo per capire quale modem avete e
+quindi copiare il file opportuno
+rem sopra quello di configurazione (net.cfg). Nel caso il vostro
+modem utilizzi una configurazione
+rem particolare (per esempio IRQ non standard) č sufficiente che
+modifichiate il file opportuno
+rem inserendo i dati corretti (si tratta di un semplice file di
+testo)
+echo Do you have a modem connected to your computer?
+a:\choice
+
+if errorlevel 2 goto nomodem
+
+a:\com_port -j
+if errorlevel 4 goto com4
+if errorlevel 3 goto com3
+if errorlevel 2 goto com2
+if errorlevel 1 goto com1
+pause
+goto nomodem
+
+:com1
+ren net-com1.cfg net.cfg
+goto loadnetwork
+
+:com2
+ren net-com2.cfg net.cfg
+goto loadnetwork
+
+:com3
+ren net-com3.cfg net.cfg
+goto loadnetwork
+
+:com4
+ren net-com4.cfg net.cfg
+goto loadnetwork
+
+:loadnetwork
+rem questa parte server che impostare alcune variabili di sistema
+rem e caricare i driver di rete
+SET NWLANGUAGE=ENGLISH
+SET WEBSPY=DIAL
+LH LSL
+LH NESL
+LH NCOMX
+LH NWREMOTE
+LH PKT2ODI /B:1
+
+:nomodem
+rem questa parte lancia il browser caricando una pagina di default
+drwebspy license.htm
+goto end
+
+:fail
+a:\fade
+echo .
+echo Sorry, you need at least 8 Mb RAM to run this demo
+echo (4 Mb for a RAM disk; 4 Mb to run DR-WebSpyder).
+
+:end
+
+
+5. ALTRI LINK UTILI
+-----------------------------------
+Caldera - http://www.caldera.com/
+Il sito ufficiale di Linux - http://www.linux.org/
+Le FAQ di it.comp.linux - http://www.pippo.com/linux.html
+QNX - http://www.qnx.com/
+FreeBSD - http://www.freebsd.org/
+
+La homepage dell'autore - http://www.pippo.com/
+
+6. QUESTO DOCUMENTO
+---------------------------------------------
+Questo documento realizzato da Marco Iannacone (ia...@pippo.com) viene
+
+rilasciato secondo la licenza GNU General Public License (GPL o
+copyleft)
+versione 2 della Free Software Foundation. Chiunque e' autorizzato a
+distribuire copie elettroniche o cartacee del presente documento,
+
+allegarlo a raccolte, CD-ROM o programmi, a patto di citare la fonte da
+
+cui e' stato tratto. Dato che il documento viene distribuito gratuita-
+mente l'autore non si assume NESSUNA responsabilita' per eventuali
+errori
+o inesattezze che possano essere presenti.
+Le considerazioni espresse all'interno del documento devono essere
+considerate opinioni personali dell'autore e NON dogmi assoluti.
+
+
+7. LEGALESE
+------------------
+I marchi registrati nominati all'interno del presente documento sono di
+proprieta' dei legittimi proprietari.
+
+
+A. RINGRAZIAMENTI
+-------------------------------------
+Non sarebbe stato possibile realizzare questo documento senza l'aiuto
+offerto (indirettamente) da tutti gli autori dei documenti citati
+all'interno di questo documento.
+Invito quindi tutti i lettori del presente, ad andare a leggere gli
+originali in modo da poter approfondire l'argomento.
+
+
+1998-99, Marco Iannacone <ia...@pippo.com>
+
+--
+Posted from ro...@shelley.pointest.com [194.133.145.2]
+via Mailgate.ORG Server - http://www.mailgate.org
+
+|############################################
+
+
+Capito perche' non bisogna gettare niente?
+
+
+In un anno e mezzo alcuni indirizzi riportati nell'articolo hanno subito
+variazioni. Ne riporto un paio aggiornati:
+
+Arachne:
+http://browser.arachne.cz/
+
+Tvdog:
+http://www.oldskool.org/~tvdog/internet.html
+
+Inoltre permettetemi di indicare un newsreader per Dos: GoldED (danese)
+e il suo evoluto (GoldED+ russo). Vanno bene perfino su un 8086, e da
+quel che ho potuto vedere su fr.comp.os.dos e' molto usato in Europa. Da
+noi, forse, e' conosciuto solo in ambito Linux.
+
+GoldED: http://www.odinns.dk/goldware/
+
+GoldED+: http://golded-plus.sourceforge.net/
+
+
+Salvatore (micr...@tiscalinet.it)

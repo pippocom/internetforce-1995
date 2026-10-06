@@ -1,0 +1,23 @@
+@  IN   SOA     dns dnsmaster.internetforce.com. (
+                1996091101       ; Serial
+                10800            ; Refresh 3 hours
+                3600             ; Retry 1 hour
+                604800           ; Expire after a week
+                86400 )  ; Minimum ttl 1 day
+                                NS      dante.enter.it.
+                                NS      venere.inet.it.
+; *****************************************************************
+localhost      A  127.0.0.1
+marco      A  194.20.50.14
+www        A  196.20.50.29
+mailhost     CNAME  marco.intf.com.
+users     CNAME  marco.intf.com.
+mail     CNAME  marco.intf.com.
+loghost     CNAME  marco.intf.com.
+;ftp     CNAME  data.intf.com.
+www1     CNAME  www.intf.com.
+news     CNAME  news.enter.it.
+dns      A  194.20.50.2
+intf.com.      MX  0  marco.internetforce.com.
+        A  194.20.50.14
+

@@ -1,0 +1,28 @@
+#
+#  Host/IP address table for Internet Force Srl.
+#
+127.0.0.1	localhost
+#
+#
+# Hosts on the 206.20.95.0/255.255.255.192 subnet (firewall virtual segment)
+#
+206.20.95.3	data.internetforce.com data
+206.20.95.4	users.internetforce.com users
+206.20.95.5	shell.internetforce.com shell
+206.20.95.10	fw-data.internetforce.com fw-data	# data p-to-p interface
+206.20.95.11 	fw-users.internetforce.com fw-users	# users p-to-p interface
+206.20.95.12	fw-shell.internetforce.com fw-shell	# shell p-to-p interface	
+#
+#
+10.0.0.1	fw-world.internetforce.com fw-world
+10.0.1.1	intf-idt.internetforce.com intf-idt
+10.0.2.1	ts1.internetforce.com ts1
+#
+# Hosts on the 206.20.95/128/255.255.255.128 subnet (office network)
+206.20.95.129	firewall.internetforce.com firewall	# office interface
+206.20.95.130	dvlp.internetforce.com dvlp
+# [more PCs/MACs should be here as well]
+206.20.95.131   anna.internetforce.com anna
+206.20.95.132   franz.internetforce.com franz
+206.20.95.133   maxi.internetforce.com   maxi
+206.20.95.134   html.internetforce.com  html

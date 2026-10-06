@@ -1,0 +1,71 @@
+Web Roamer Usage of the guest book form.
+Invocation of the guest book script.
+Other information.
+
+----------------------------------------------------------------------------
+
+Usage
+
+All information in the guest book form beyond your name is optional. The
+country name is best-guessed by checking your remote host's domain name.
+This domain name is also placed in the email field.
+
+Everything except the 'private note' will be viewable on the guestpage.
+
+----------------------------------------------------------------------------
+
+Invocation
+
+To invoke the script, make the following HREF link: (information in []'s is
+optional)
+
+[http://domain]/~treedog/cgi-bin/guestb2.cgi?owner!guestpage[!returnpage]
+
+   * /~treedog/cgi-bin/guestb2.cgi is the path to the guest book script, and
+     may vary from server to server. The script must be placed in a valid
+     script directory (ask you webmaster for details). If, when accessing
+     the script, you are receiving the script code back instead of the guest
+     book form, it means that the script is not in a valid script directory.
+
+   * The ? and ! are required syntax for this script to function properly.
+
+   * owner toggles how the script functions, and can be one of the
+     following:
+        o username
+          A valid UNIX username for the system. This makes the
+          guestpage/returnpage relative to ~username/public-web.
+        o http or root (not the superuser)
+          Makes guestpage/returnpage relative to the WWW server's root
+          directory ($wwwroot = http://www.io.com).
+        o special user name listed in the script
+          Makes the guestpage/returnpage relative to the special user's
+          directory as listed in the script. This allows for non-UNIX
+          usernames to be used for guest books.
+
+   * guestpage is the HTML file where the guestbook script will append input
+     from the guestbook form. This file MUST already exist and be writable
+     by the WWW server (which usually means world writable, e.g.
+     -rw-rw-rw-). The file should probably start out something like:
+
+             <HTML>
+             <HEAD>
+             <TITLE>My Guestbook Title</TITLE>
+             </HEAD>
+
+             <BODY>
+             <H1>Welcome to My Guestbook</H1>
+             <HR>
+
+   * returnpage is an HTML page that will be referenced after the user signs
+     in as a return point. It is based of the user's home page (or special
+     user's root page) and defaults to the user's home page if nothing is
+     specified.
+
+----------------------------------------------------------------------------
+
+Other information
+
+Feel free to obtain the latest source code for your own use, or mail the
+author any feedback/suggestions about the script.
+
+jhobbs@cs.uoregon.edu

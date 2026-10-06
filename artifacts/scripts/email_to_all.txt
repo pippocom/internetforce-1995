@@ -1,0 +1,16 @@
+This is the correct syntax to send a message to everybody:
+
+cat message.mail | mail `\ls /users/01`
+
+
+                            VACATION
+
+Sun Os has a particular program called vacation which can be used
+to give an automatic reply to an incoming message.
+It is located in /usr/ucb/vacation
+To activate it just crate a .forward file containing the following sentence:
+
+\root, "|/usr/ucb/vacation root
+
+After that, just run vacation to edit the .vacation.msg
+and then run vacation -I

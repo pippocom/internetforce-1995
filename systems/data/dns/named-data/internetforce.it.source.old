@@ -1,0 +1,72 @@
+@  IN	SOA	dns.internetforce.it. dnsmaster.internetforce.com. (
+		1995103001	 ; Serial
+		10800		 ; Refresh 3 hours
+		3600		 ; Retry 1 hour
+		604800		 ; Expire after a week
+		86400 )	 ; Minimum ttl 1 day
+				NS	styx.ios.com.
+				NS	noc.ios.com.
+				NS	harley.ios.com.
+				NS	dns.internetforce.com.
+				NS	dns2.internetforce.com.
+;F *****************************************************************
+;F This file is auto-generated from a master file -- do not edit it,
+;F but arrange that the master is edited instead.
+;F *****************************************************************
+
+;R *****************************************************************
+;R This file is auto-generated from a master file -- do not edit it,
+;R but arrange that the master is edited instead.
+;R *****************************************************************
+
+; This is the master file from which the zone files for the following
+; zones are generated:
+;   internetforce.it.
+;   95.20.206.in-addr.arpa.
+;
+; See the makezones script for full details of this process.
+;
+;      Syntax of this file:
+;
+;      ;F      comment for forward file only
+;      ;R      comment for reverse files only
+;      >F      A record for forward file only
+;      >R      A record for reverse file only
+;      >E      A record refers to external network
+;      >M      A record with multiply-named IP address,
+;		 causing multiple PTR records in reverse file
+
+localhost		A	127.0.0.1
+
+; hosts on the 206.20.95.0/255.255.255.192 subnet 
+; (virtual subnet simulated by the firewall and many point-to-point links)
+>E data			A	206.20.95.3
+>E users			A	206.20.95.4
+>E shell			A	206.20.95.5
+
+
+; well-known aliases
+mailhost		CNAME	users.internetforce.it.
+mail			CNAME	users.internetforce.it.
+loghost			CNAME	data.internetforce.it.
+ftp			CNAME	data.internetforce.it.
+www			CNAME	users.internetforce.it.
+news			CNAME	news.io.com.
+
+
+;  Other CNAMEs and some virtual domains.
+
+
+
+www1			CNAME   data.internetforce.it.
+
+;>M dns			A	206.20.95.3
+;>M dns2			A	206.20.95.4
+
+
+; MX records for netforce.com.
+
+@			MX 0	users.internetforce.it.
+			MX 1	data.internetforce.it.
+;>M 			A       206.20.95.4
+;

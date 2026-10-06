@@ -1,0 +1,6630 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+******************************************************************
+
+******************************************************************
+
+			 U.S. Robotics
+
+	  The Intelligent Choice in Data Communications
+
+
+
+
+
+
+
+
+
+
+
+		     Technical Reference Guide                    
+
+		    Sportster High Speed Modems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Copyright 1995 by U.S. Robotics Access Corp.
+
+			 8100 North McCormick Blvd.
+
+			Skokie, Illinois 60076-2999
+
+			   All Rights Reserved
+
+			      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			Revision Date:  5/8/95
+
+
+
+
+
+
+
+
+
+******************************************************************
+
+******************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************
+
+Table of Contents
+
+**********************************************************************
+
+
+
+Placing Calls   
+
+     Using AT Commands  
+
+     Dial (D)   
+
+	  Cancel Dialing        
+
+	  Dial Command Options  
+
+	  Dialing Stored Numbers (DSn)  
+
+     Redialing  
+
+	  Dial the Last-Dialed Number (DL)      
+
+	  Re-execute the Last Command (A/)      
+
+     Answering  
+
+     Disconnecting And Hanging Up       
+
+	  Escape Code Operations (+++)  
+
+	  Hanging Up (Hn)       
+
+	  Break Handling (&Yn)  
+
+     International Calls        
+
+	  ITU-T/Bell Answer Sequence (Bn)       
+
+	  Guard Tone (&Gn)      
+
+	  Pulse Dial Make/Break Ratio (&Pn)     
+
+	  ITU-T V.21 300 bps    
+
+	  ITU-T V.23 1200/75 bps        
+
+
+
+Modem Configuration     
+
+     Factory Configuration (&Fn and Yn) 
+
+	  Permanent Configuration Templates (&Fn)       
+
+	  Programmable Templates (Yn)   
+
+     Customizing Your Defaults (&Wn)    
+
+     Resetting the Modem (Z)    
+
+
+
+Temporarily Changing A Setting  
+
+     Tone Dialing       
+
+     Speaker    
+
+	  Volume Control (Ln)   
+
+	  Speaker Control (Mn)  
+
+     Local Echo 
+
+	  Command Mode Local Echo (En)  
+
+	  Online Local Echo (Fn)        
+
+     S-Registers        
+
+     Result Codes       
+
+	  Response Modes (Vn)   
+
+	  Quiet Mode (Qn)       
+
+	  Result Code Options (Xn)      
+
+	  Additional Result Code Options (&An)  
+
+     Error Control (&Mn)        
+
+	  Auto Answer with Error Control        
+
+	  Data Compression (&Kn)        
+
+     Data Rate Commands 
+
+	  Software Requirements 
+
+	  Serial Port Rate (&Bn)        
+
+	  Connection Rate (&Nn and &Un) 
+
+     Flow Control       
+
+	  Software Flow Control Warning 
+
+	  Transmit Data Flow Control (&Hn)      
+
+	  Received Data Flow Control    
+
+     Serial Operations  
+
+	  Carrier Detect (&Cn)  
+
+	  Data Terminal Ready (&Dn)     
+
+	  Data Set Ready (&Sn)  
+
+
+
+Getting Help    
+
+     Inquiries (In)     
+
+     S-Register Query (Sr?)     
+
+     Stored Phone Number Query (&Zn?)   
+
+     Last-Dialed Number Query (DL?)     
+
+     Help Screens       
+
+	  Basic Command Set ($) 
+
+	  Ampersand Command Set (&$)    
+
+	  Dialing (D$)  
+
+	  S-Register Functions (S$)     
+
+
+
+Testing the Modem       
+
+     Testing With &Tn   
+
+	  Ending a Test: &T0, S18        
+
+	  Analog Loopback: &T1, &T8      
+
+	  Digital Loopback: &T3 Command  
+
+	  &T4, &T5      
+
+	  Remote Digital Loopback: &T6, &T7      
+
+     Dial Test: S16=2    
+
+
+
+Other Operations        
+
+     Fax Operations     
+
+	  Faxmodem Guidelines   
+
+	  Fax Service Class 1 Commands
+
+	  Fax Mode Flow Control Setting 
+
+	  FCC Notice    
+
+	  A Note to Programmers 
+
+     Voice/Data Communications  
+
+	  Procedures    
+
+
+
+Technical Specifications        
+
+     Compatibility      
+
+     The Serial Interface       
+
+	  Pin Assignments       
+
+	  Minimum Requirements  
+
+	  Additional Flow Control Functions     
+
+	  57.6K and 38.4K bps Serial Port Rates 
+
+     Default Settings   
+
+	  Data Format   
+
+	  Template Settings     
+
+
+
+Modem Concepts  
+
+     How Modems Work    
+
+     Modem Connections  
+
+     Line Travel        
+
+     Digital Data       
+
+     Flow Control       
+
+     Error Control      
+
+	  ITU-T V.42 Handshaking        
+
+	  MNP Handshaking       
+
+	  Data Compression      
+
+	  Flow Control  
+
+	  Online Fallback/Fall Forward  
+
+     Throughput Guidelines      
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************
+
+Placing Calls
+
+**********************************************************************
+
+
+
+NOTE:  Unless otherwise indicated, settings listed as default are 
+
+based on the hardware flow control template stored in NVRAM when 
+
+the modem is shipped.  References to DIP switches only apply to 
+
+modems with DIP switches.
+
+
+
+======================================================================
+
+Using AT Commands
+
+======================================================================
+
+To send commands directly to your modem, first put your computer 
+
+in Terminal mode.  Some communications programs do this 
+
+automatically upon loading.  Others require you to display a 
+
+communications terminal screen, press a Function key, or perform some 
+
+other operation. Refer to your communications software documentation for 
+
+instructions.
+
+
+
+1. Type all commands in either upper case (AT) or lower case (at), but 
+
+not a combination (At).
+
+
+
+2. All commands except A/ (re-execute last command) and +++ (escape 
+
+code) must be preceded by the AT prefix and are executed with the 
+
+Enter/Carriage Return key (<Enter>).
+
+
+
+3. The command string can be a maximum of 60 characters.  The modem 
+
+doesn't count the Carriage Return character or spaces.  In a dial string, 
+
+it counts but doesn't act on punctuation, such as hyphens and parentheses.
+
+
+
+4. A missing numeric parameter is assumed to be zero, as in the command 
+
+to hang up; ATH <Enter> is the same as ATH0 <Enter>.
+
+
+
+======================================================================
+
+Dial (D)
+
+======================================================================
+
+To dial a phone number and place a call without using your 
+
+software's dialing directory, first put the computer in Terminal mode.  
+
+Then type the AT and D commands, the number you wish to connect with, 
+
+and press Enter.  Spaces in our command examples are 
+
+ignored by the modem and are only included for readability.
+
+
+
+	ATD 1234567 <Enter>
+
+
+
+After you have entered the command (unless you lowered your 
+
+modem's speaker volume), you will hear the modem go off hook and 
+
+dial the telephone number, followed by a series of handshaking signals.  
+
+
+
+The Dial command string may include up to 60 characters.  The 
+
+modem counts but ignores punctuation characters such as 
+
+parentheses and hyphens.  It does not count the Carriage Return 
+
+key (<Enter>) required to execute the command.
+
+
+
+The modem also executes any other commands or options included 
+
+in the command line.  The following example instructs the modem to 
+
+turn off the speaker (M0) and dial (D) the phone number (1234567) 
+
+using tone dialing (T).
+
+
+
+	AT M0 DT 1234567 <Enter>
+
+
+
+You may want to review the many options on the next several pages 
+
+that are available for tailoring Dial strings.  
+
+
+
+---------------
+
+Cancel Dialing
+
+---------------
+
+To cancel Dial command execution, press any key.  If you 
+
+inadvertently hit a key on the keyboard while the modem is dialing, 
+
+the call is canceled.  If this occurs, type the A/ command, which re-
+
+executes the last command you entered.
+
+
+
+--------------------
+
+Dial Command Options
+
+--------------------
+
+You can modify the dial string according to the needs of the 
+
+connection.  Listed below are options available to you when entering 
+
+the Dial string.
+
+
+
+
+
+Dial Type: Pulse or Tone
+
+
+
+The modem defaults to pulse (rotary) dialing.  To have the modem 
+
+use tone dialing, which includes the asterisk (*) and pound sign (#), 
+
+use the T option.
+
+
+
+Dial type commands may be included in the Dial string (ATDT 
+
+number) or issued separately (ATT or ATP).  However, if you'll 
+
+always use tone dialing, write tone dialing to NVRAM as the 
+
+modem's default and/or use adaptive dialing, described in the next 
+
+section, Adaptive Dialing.
+
+
+
+NOTE:  You can switch from one dial type to another within a dialing 
+
+sequence.  The modem remains set to the last dialing type 
+
+instruction until it is reset by using the ATZ command or it receives 
+
+a different dial-type command.
+
+
+
+
+
+Adaptive Dialing (X2 through X4)
+
+
+
+When any of the X2 through X4 (default) result code options is in 
+
+effect and you do not issue a dial type in the Dial string, the modem 
+
+defaults to pulse dialing.  If you issue a tone dial command,  the 
+
+modem will default to Hunt dialing, beginning with tone and adapting 
+
+to pulse when necessary.  For instance, if the phone company's 
+
+central office does not have tone-detection equipment, the modem 
+
+automatically reverts to pulse dialing.
+
+
+
+
+
+Wait for Another Dial Tone (W)
+
+
+
+This command is useful in situations where you must wait for a 
+
+second dial tone before continuing to dial.  For example, if you need 
+
+to dial for an outside line, as in the following example, the modem 
+
+resumes dialing as soon as it detects the next dial tone.
+
+
+
+	ATD9W1234567 <Enter>
+
+
+
+NOTE:  This command executes only if result code option X2 or X4 
+
+(default) has been issued.  If the modem is set to X0, X1, or X3, the 
+
+modem interprets the W as a comma (two-second pause).
+
+
+
+
+
+Pause (,)
+
+
+
+A comma causes a two-second delay in the dial sequence.  The 
+
+following example contains four-second delays at several points.
+
+
+
+	ATDP 9,,7654321,,55555,,1 312 1234567 <Enter>
+
+
+
+The first four-second pause is to access an outside line after dialing 
+
+9, but you may wish to use the W option, described above.  The 
+
+second pause is to make sure the remote system is ready for the 
+
+user's account number, and the third, to delay before dialing the 
+
+long-distance number.
+
+
+
+Such pauses, however, may not be necessary.  Experiment and use 
+
+delays only as required.  The duration of the delay can be changed 
+
+by using the S8 register.  The default duration of the delay is 2 
+
+seconds.
+
+
+
+
+
+Slash (/)
+
+
+
+A slash (/) can be used in any command string to make the modem 
+
+pause for only 125 milliseconds.  Some users find it helpful to have 
+
+the shorter delay resulting from a series of slashes, rather than the 
+
+two-second comma pause.
+
+
+
+
+
+Dial and Return to Command Mode (;)
+
+
+
+If your phone is plugged into the modem, you can use this option to 
+
+have the modem Auto Dial a telephone rather than a modem.  The 
+
+modem dials, remains off hook, and returns the OK message, 
+
+indicating it is in Command mode.
+
+
+
+For example, to have the modem place a voice call, enter the Dial 
+
+command with a semicolon.
+
+
+
+	ATDT5551234; <Enter>
+
+
+
+When the modem returns the OK result, pick up your phone receiver 
+
+so you can talk to the other party and send the command that hangs 
+
+up the modem.
+
+
+
+	ATH <Enter>
+
+
+
+Similarly, to call a recorded weather or other service, have the 
+
+modem dial, listen to the recording over the modem's speaker, and 
+
+when you are finished, instruct the modem to hang up.
+
+
+
+
+
+Transferring Calls (!)
+
+
+
+This command is used for modems installed where other modems 
+
+share the phone line.  The modem flashes the switch-hook.  That is, 
+
+it goes off hook 0.5 seconds, on hook for 0.5 seconds, and off hook 
+
+again to dial the specified extension.  The following example 
+
+includes instructions to transfer the call to extension 1234, return to 
+
+Command mode (;) and to hang up (H).
+
+
+
+	ATDT !1234;H <Enter>
+
+
+
+
+
+Wait for an Answer (@)
+
+
+
+Some online services answer the phone and return a tape-recorded 
+
+request for information before processing transactions.  In such 
+
+instances, the @ command can be used in the Dial string to tell the 
+
+modem to detect at least one ring, wait for five seconds of silence at 
+
+the other end of the call, and then continue to execute the Dial 
+
+string.
+
+
+
+To use the @ command, set the modem result code option to X3 or 
+
+X4 (default).  If the modem is set to X2 or lower, the modem returns 
+
+an ERROR message when it encounters the @ character in a 
+
+command string.
+
+
+
+In the next example, the modem is set to the X3 result code option 
+
+and dials a banking service.  Each occurrence of @ in the example 
+
+indicates a five-second wait for silence. The pauses here are for 
+
+taped requests from the bank for:  a password (12345), an account 
+
+number (6789), and a transaction code (2).  The transaction code 
+
+might indicate, for example, a request for an account balance.
+
+
+
+	ATX3 DT5551234 @ 12345 @ 6789 @ 2 <Enter>
+
+
+
+If the necessary conditions do not occur, that is, there are no rings 
+
+or no following five seconds of silence, the modem times out as it 
+
+normally would (after 60 seconds).  It then sends the message 
+
+NO ANSWER to the screen and aborts the call.
+
+
+
+
+
+Reversing Originate/Answer Frequencies (R)
+
+
+
+This command allows calls to an originate-only modem (a modem 
+
+set up to send only).  It reverses the modem's originate/answer 
+
+frequencies, forcing the modem to dial out at the answer frequency.  
+
+The command follows the Dial command, before or after the phone 
+
+number.
+
+
+
+	AT D1234567R <Enter>
+
+	AT DR1234567 <Enter>
+
+
+
+----------------------------
+
+Dialing Stored Numbers (Dsn)
+
+----------------------------
+
+You can store up to four frequently used telephone numbers in 
+
+nonvolatile random-access memory (NVRAM).  Use the &Zn=s 
+
+command to store telephone numbers, where n is the position of the 
+
+number in NVRAM (03) and s is the stored number.  The following 
+
+command string stores the telephone number (4441212) at position 
+
+1 in NVRAM.
+
+
+
+	AT&Z1=4441212 <Enter>
+
+
+
+To dial a stored number, use the DSn command, where n is the 
+
+position of the number in NVRAM (0-3).  In the first example, the 
+
+modem dials the phone number stored at position 0.  In the second, 
+
+the modem dials the phone number stored at position 3.
+
+
+
+	ATDS0 <Enter>
+
+	ATDS3 <Enter>
+
+
+
+NOTE:  Do not include modem settings in the &Zn=s string.  If the 
+
+call requires special settings, insert them in the command string 
+
+before the DSn command.  For example, &K3 (selective data 
+
+compression) is inserted before the Dial command to call the 
+
+number stored at position 0.
+
+
+
+	AT&K3 DS0 <Enter>
+
+
+
+This establishes &K3 as the current setting.  To return to default 
+
+data compression mode after the call, issue the following command.
+
+
+
+	AT&K1 <Enter>
+
+======================================================================
+
+Redialing 
+
+======================================================================
+
+The most frequent reason for redialing is receipt of a busy signal.  
+
+Your modem provides two redialing options, as follows.
+
+
+
+--------------------------------
+
+Dial the Last-Dialed Number (DL)
+
+--------------------------------
+
+When you want to redial a number, enter the DL command.  The 
+
+modem dials the last-dialed number, which it has stored in a special 
+
+buffer.
+
+
+
+	ATDL <Enter>
+
+
+
+To display the number stored in the last-dialed buffer, use the 
+
+following query.
+
+
+
+	ATDL? <Enter>
+
+
+
+To write the last number dialed to NVRAM, use &Zn=L where n is the 
+
+position in NVRAM.  The following example stores the last-dialed 
+
+number at position 3.
+
+
+
+	&Z3=L <Enter>
+
+
+
+If a number is already stored at position 3, that number is 
+
+overwritten with the last-dialed number.
+
+
+
+--------------------------------
+
+Re-execute the Last Command (A/)
+
+--------------------------------
+
+Another option for redialing is to enter the A/ command.  This 
+
+command does not require the AT prefix or a Carriage Return.
+
+
+
+	A/
+
+
+
+When the modem receives a command, it stores it in its command 
+
+buffer until it receives the next AT command.  The A/ command re-
+
+executes whatever AT command is currently stored in the buffer.  
+
+
+
+NOTE:  If you've sent the modem an additional command since the 
+
+Dial command, A/ repeats that command instead of redialing.
+
+
+
+======================================================================
+
+Answering 
+
+======================================================================
+
+Your modem is shipped with Auto Answer suppressed (DIP switch 5 
+
+on).  To set the modem to automatically answer incoming calls, do 
+
+one of the following.
+
+
+
+Before powering on the modem...
+
+
+
+Set DIP switch 5 off (up). When you power on, the modem answers 
+
+incoming calls on the first ring.
+
+
+
+If you want the modem to answer after several rings, set DIP switch 
+
+7 off (up). Specify the rings you want the modem to answer on in 
+
+NVRAM (default is 1 ring). The valid range is 1 to 255 rings. Power 
+
+off the modem and power it on again with its new DIP switch and 
+
+NVRAM settings.
+
+
+
+During a current session...
+
+
+
+Issue the ATS0 command.  For example, to have the modem answer 
+
+on the fourth ring issue the following command.
+
+
+
+	ATS0=4 <Enter>
+
+
+
+NOTE:  You can select how many rings must occur before the 
+
+modem answers by setting n in ATS0=n to the number of rings you
+
+want.  If you use your phone line for both voice and modem calls, 
+
+you may not want the modem to answer immediately (so that you 
+
+can answer voice calls).  
+
+
+
+When the modem senses a call, it sends the RING result code to 
+
+your screen, goes off hook, and sends the remote modem a high-
+
+pitched answer tone.  If the sending modem does not receive back a 
+
+Carrier Detect signal within 60 seconds, the sending modem hangs 
+
+up.  If the connection is made, the modem returns a CONNECT result 
+
+code.  When a call is disconnected by you or the remote user, the 
+
+modem hangs up and returns the NO CARRIER code to the computer 
+
+screen.
+
+
+
+You can set the modem to receive calls when you're not at your 
+
+computer.  Load your communications software, and set the modem 
+
+to Auto Answer.  Also set your software's file-save function to save 
+
+incoming messages and/or files.
+
+
+
+If you've attached your phone so it can be used for conventional 
+
+calls, disable Auto Answer when you are not expecting incoming 
+
+data calls or set S0 to a high number.  Otherwise, your modem may 
+
+answer the phone before you do, greeting a voice caller with a high-
+
+pitched answer tone.
+
+
+
+
+
+Suppressing Auto Answer
+
+
+
+To disable Auto Answer, set DIP switch 5 on (up) before powering on
+
+the modem, or set the modem to answer on zero (or no) rings during 
+
+the current session.
+
+
+
+	ATS0=0 <Enter>
+
+
+
+NOTE:  The S-register setting S0=0 cannot be saved to NVRAM.
+
+
+
+
+
+Manual Answer
+
+
+
+If you've disabled Auto Answer but are expecting an incoming data 
+
+call, use the Manual Answer (A) command.  Send the modem the 
+
+following command after the RING result code appears on your 
+
+screen.
+
+
+
+	ATA <Enter>
+
+
+
+When the call is disconnected, the modem returns to its original 
+
+state, Auto Answer disabled.
+
+
+
+======================================================================
+
+Disconnecting And Hanging Up 
+
+======================================================================
+
+Use the commands described below to instruct the modem to 
+
+disconnect the call and hang up the line.
+
+
+
+----------------------------
+
+Escape Code Operations (+++)
+
+----------------------------
+
+Once the modem is online to another system, the only command it 
+
+recognizes is an escape code of three plus symbols that forces the 
+
+modem into Online-Command mode.  Issue the escape command in 
+
+the following sequence.
+
+
+
+1. Wait one second after sending the last item of data.
+
+2. Type three plus symbols (+++).
+
+3. Wait one second before typing any data.
+
+
+
+Do not type the AT prefix or a Carriage Return.  The guard time of 
+
+one second before and after prevents the modem from 
+
+misinterpreting the presence of the +++ symbols in the transmitted 
+
+data stream.
+
+
+
+If necessary, the character used in the escape code or the duration 
+
+of the guard time can be changed by resetting register S2 or S12.  
+
+The default for register S2 is 43, and the function of this register
+
+is to store the ASCII decimal code for the escape code character (+).  
+
+The default for register S12 is 50, and the function of this register 
+
+is to set the duration, in fiftieths of a second, of the guard time 
+
+for the escape code sequence (+++).
+
+
+
+
+
+Modem Response to +++
+
+
+
+When the modem receives +++, by default it enters Online-
+
+Command mode and returns the OK result code.  It maintains the 
+
+connection and is ready to act on commands.  You may then choose 
+
+one of the following options.
+
+
+
+1. Issue commands to the modem and then return it online.  
+
+2. Hang up the modem.
+
+
+
+Alternatively, if you want the modem automatically to hang up on 
+
+receiving the +++ escape code, set Register S13 to 128 and write 
+
+the command to your NVRAM templates.  See the following.
+
+
+
+	ATS13=128 &W &W1 <Enter>
+
+
+
+The modem disconnects and sends the NO CARRIER result code to 
+
+the screen.
+
+
+
+
+
+Returning Online (On)
+
+
+
+After forcing the modem into Online-Command mode with the escape 
+
+code sequence, you can issue commands and then switch (toggle) 
+
+the modem back online with the O command, as in the following 
+
+example.
+
+
+
+	AT Q1 O <Enter>
+
+
+
+O0  Returns online (normal).
+
+O1  Returns online and retrains.  If errors occur during a non-ARQ
+
+    (error control) connection, try this option.  The modem returns 
+
+    online and requests that both modems resynchronize.
+
+
+
+---------------
+
+Hanging Up (Hn)
+
+---------------
+
+At its default setting, the escape code forces the modem into Online-
+
+Command mode but leaves the line open.  To hang up the modem, 
+
+issue the following command once the modem sends the OK result 
+
+code.
+
+
+
+	ATH <Enter>
+
+
+
+H0  Hangs up (goes on hook).
+
+H1  Goes off hook.
+
+
+
+--------------------
+
+Break Handling (&Yn)
+
+--------------------
+
+This command lets you send a Break signal to abort data transfer 
+
+without disconnecting from the phone line interface.  
+
+
+
+&Y0  Destructive, no Break signal transmitted:  the modem clears 
+
+     the data from its transmit buffer (all data is lost) but does not 
+
+     transmit the Break signal to the remote modem.
+
+
+
+&Y1  Destructive, expedited:  the modem clears the buffer and 
+
+     immediately sends a Break signal to the remote modem. 
+
+     Default.
+
+
+
+&Y2  Nondestructive, expedited:  the modem retains data in the 
+
+     transmit buffer, but immediately sends a Break signal to the 
+
+     remote modem.
+
+
+
+&Y3  28.8 only. Nondestructive, unexpedited (send Break in 
+
+     sequence):  the modem transmits any buffer data received 
+
+     before the Break, sends the Break, and then sends any 
+
+     subsequent input from the computer.
+
+
+
+If the call is under MNP5 data compression, destructive Breaks 
+
+cause both modems to reset their data compression tables.  When 
+
+transmission resumes, the modems build new tables, and the result 
+
+is lower than normal throughput.
+
+
+
+======================================================================
+
+International Calls
+
+======================================================================
+
+The following commands apply to international calls.
+
+
+
+-------------------------------
+
+ITU-T/Bell Answer Sequence (Bn)
+
+-------------------------------
+
+To answer international calls, use the default B0 setting.
+
+
+
+B0  Default.  This setting is required for V.32  or higher modems to 
+
+    answer V.32 or higher calls.  It also selects the ITU-T V.25 
+
+    answer sequence (used outside of North America).
+
+
+
+B1  This setting selects the Bell 2225 Hz answer tone used in the
+
+    U.S. and Canada and may be used when the remote modem 
+
+    operates at only 2400 bps or lower.  However, if the modem is 
+
+    set to B1, it won't be recognized by V.32 bis modems and can't 
+
+    answer calls at 9600 bps and above.
+
+
+
+----------------
+
+Guard Tone (&Gn)
+
+----------------
+
+The United Kingdom and some Commonwealth countries use phone 
+
+switching systems that require answering modems to send an 1800 
+
+Hz guard tone after they send an answer tone.  Some other 
+
+European phone networks require a 550 Hz guard tone.  Guard tones 
+
+are not used in the United States or Canada.
+
+
+
+&G0  No guard tone, U.S./Canada.  Default.
+
+&G1  550 Hz guard tone follows answer tone.  Requires B0 setting.
+
+&G2  1800 Hz guard tone follows answer tone, United Kingdom and
+
+     some Commonwealth countries.  Requires B0 setting.
+
+
+
+---------------------------------
+
+Pulse Dial Make/Break Ratio (&Pn)
+
+---------------------------------
+
+This command sets the ratio of the off-hook/on-hook (make/break) 
+
+interval for pulse dialing.  The default sets the modem for use in 
+
+North America.  The ratio must be changed if the modem is used to 
+
+dial out in the United Kingdom and some Commonwealth countries.
+
+
+
+&P0  Make/break ratio, U.S./Canada:  39%/61%.  Default.
+
+&P1  Make/break ratio, United Kingdom, some Commonwealth
+
+     countries:  33%/67%.
+
+
+
+------------------
+
+ITU-T V.21 300 bps
+
+------------------
+
+Select this option to call or answer overseas modems at 300 bps.  In 
+
+V.21 mode, the modem answers Bell 103/V.21 calls, but only 
+
+originates V.21 calls.  This option is enabled in Register S27 with 
+
+the following command.
+
+
+
+	ATS27=1 <Enter>
+
+
+
+----------------------
+
+ITU-T V.23 1200/75 bps
+
+----------------------
+
+Some United Kingdom and European systems require a V.23 
+
+connection (that is, 1200-bps speed with a 75-bps back channel).  
+
+Enable the V.23 option with Register S27=16. In addition, force a 
+
+1200 connection with &N2 and disable error correction with &M0. 
+
+You can establish a V.23 connection with the following command.
+
+
+
+	AT &M0 &N2 S27=16 <Enter>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************
+
+Modem Configuration
+
+**********************************************************************
+
+
+
+Your modem is preconfigured at the factory so you should be able to 
+
+connect the modem, set up your communications software, and be 
+
+ready to send and receive data.  Many users won't need to change 
+
+the default configurations, but if you want to, this section will tell you 
+
+how.  Many of the functions described below can be handled by your 
+
+communications software, but you also have the power to place your 
+
+computer in Terminal mode (via your communications software) and 
+
+control the modem directly. 
+
+
+
+======================================================================
+
+Factory Configuration (&Fn and Yn)   
+
+======================================================================
+
+The modem is preconfigured at the factory with three permanent and 
+
+two programmable templates.  
+
+
+
+---------------------------------------
+
+Permanent Configuration Templates (&Fn)  
+
+---------------------------------------
+
+The following permanent templates come with your modem.  The 
+
+default template consists of the most reliable settings, but these 
+
+settings may not work for all users.
+
+
+
+&F0  Low performance template.  This template does not include 
+
+     performance features, such as a fixed serial port rate or 
+
+     hardware flow control.  What it does offer is compatibility with 
+
+     atypical computers or software that cannot handle flow control 
+
+     and other features.
+
+     
+
+     If you need a low performance template because of data-
+
+     transfer difficulties, load this template by entering the following 
+
+     command.
+
+
+
+     AT&F <Enter>
+
+     (equivalent to AT&F0 <Enter>)
+
+
+
+     This template allows you to communicate with atypical 
+
+     systems that cannot handle flow control and other features.
+
+
+
+&F1  Hardware flow control template.  Default.  This template sets 
+
+     the modem to hardware flow control, a fixed serial port rate, the
+
+     highest level result codes, and the most complete result-code set.
+
+
+
+     This template is recommended for all IBM-compatible 
+
+     computers, as long as your communications software supports 
+
+     hardware flow control, a fixed serial port rate, and the advanced 
+
+     result-code subset. 
+
+
+
+&F2  Software flow control template.  We recommend you do not use 
+
+     this template unless your communications software ONLY 
+
+     supports software flow control.
+
+
+
+     To load this template and save it as your power-on/reset 
+
+     default, enter the following command.
+
+
+
+     AT&F2&W <Enter>
+
+
+
+If you need a low performance template because of data-transfer 
+
+difficulties, flip DIP switch 7 on (up) and reset the modem (ATZ 
+
+command), or load the &F0 Low Performance template by entering 
+
+the following command.
+
+
+
+	AT&F0 <Enter>
+
+
+
+This template allows you to communicate with atypical systems that 
+
+cannot handle flow control and other features.
+
+
+
+NOTE:  Refer to the next section in this chapter, Programmable 
+
+Templates, for more information on selecting and modifying 
+
+templates to save as your start-up configuration.
+
+
+
+---------------------------
+
+Programmable Templates (Yn)
+
+---------------------------
+
+In addition to the &Fn permanent configuration templates, you can 
+
+use two programmable templates.  Your programmable templates 
+
+are located in nonvolatile random access memory (NVRAM), which 
+
+will retain values when the modem is powered off.
+
+
+
+By default, the modem loads NVRAM template 0 (or Y0) for its 
+
+power-on/reset default settings.
+
+
+
+Possible NVRAM commands:
+
+
+
+Y0  Loads NVRAM template 0 used with the hardware flow control 
+
+    template (&F1).  Default.
+
+Y1  Loads NVRAM template 1 used with the software flow control 
+
+    template (&F2).  
+
+
+
+For example, if you want to switch the power-on/reset default NVRAM 
+
+template from Y0 to Y1, enter the Y command, then reset the modem 
+
+with the Z command.
+
+
+
+	AT Y1 Z <Enter>
+
+
+
+To customize other defaults you want to store in NVRAM as part of 
+
+your customized power-on/reset template, use the &Wn command 
+
+in the next section, Customing Your Defaults.
+
+
+
+WARNING:  The Yn command, which selects template settings to 
+
+use as the power-on/reset default, may select different power-
+
+on/reset default settings than those currently loaded if you altered 
+
+the settings during the current session.  Before changing a template, 
+
+use option 4 of the Inquiry (I) command to display the current 
+
+settings.
+
+
+
+	AT I4 <Enter> 
+
+
+
+The Y setting on the ATI4 screen indicates whether Y0 or Y1 is the 
+
+power-on/reset default.  To display all the NVRAM settings in both 
+
+Y0 and Y1 templates, use option 5 of the Inquiry command (I).
+
+
+
+	AT I5 <Enter> 
+
+
+
+======================================================================
+
+Customizing Your Defaults (&Wn)
+
+======================================================================
+
+When your modem is shipped, it uses template 0 in NVRAM as the 
+
+power-on/reset default.  Template 0 (Y0) is initially loaded with the 
+
+&F1 permanent configuration settings.  Although you cannot alter the 
+
+&F1 template, you can add, delete, or modify the settings stored in 
+
+your NVRAM templates.  It is more likely, however, that you will want 
+
+to keep your power-on/reset default settings and simply change a 
+
+setting for a current session.  Refer to the next chapter Temporarily 
+
+Changing a Setting in this guide for more information.
+
+
+
+If you want to modify your default configuration settings, use the &Wn 
+
+command.  Possible command options are:
+
+
+
+&W0  Modifies the NVRAM 0 template (Y0).
+
+&W1  Modifies the NVRAM 1 template (Y1).
+
+
+
+Typically, users prefer the default settings stored in NVRAM when 
+
+the modem is shipped, but you may set up different power-on/reset 
+
+defaults.  For instance, if your system supports hardware flow 
+
+control, you can set your Y1 template to the settings for hardware 
+
+flow control so both templates set the modem for hardware flow 
+
+control.  The Y0 template is shipped with hardware flow control 
+
+settings.
+
+
+
+	AT &F1 &W1 <Enter>
+
+
+
+NOTE:  Yn is unique because it writes itself to NVRAM.  You do not 
+
+need to use the &Wn command to load a programmable template.
+
+
+
+Similarly, if your system only supports software flow control, you 
+
+can set your Y0 template to the settings for software flow control so 
+
+both templates set the modem for software flow control.  The Y1 
+
+template is shipped with software flow control settings.
+
+
+
+	AT &F2 &W <Enter> 
+
+
+
+You may also specify the entire configuration in a single command 
+
+string that ends with the &Wn command.  The following example 
+
+sets the modem for the current session and stores the configuration 
+
+in NVRAM 1 (or Y1).
+
+
+
+	AT &K3 &W1 <Enter>
+
+
+
+After sending a configuration to NVRAM, you can change any setting 
+
+just for the current session, as in the following example.  The 
+
+NVRAM configuration remains intact.
+
+
+
+	AT &K3 <Enter>
+
+
+
+But if you want the new setting to be a default, write it to NVRAM at 
+
+the same time, as in the following example, which saves the setting 
+
+to NVRAM template 0.  
+
+
+
+	AT &K3 &W <Enter>
+
+
+
+If you've sent the modem commands to change settings throughout 
+
+your session and want to save your current configuration, send just 
+
+the &Wn command.  The current settings are then written to NVRAM 
+
+0 (or Y0) as in the example below.
+
+
+
+	AT&W <Enter>
+
+
+
+If you cannot use hardware flow control and need to use Xmodem-
+
+type file transfer protocols, use either Y0 or Y1 for a no flow control 
+
+configuration with no error control.
+
+
+
+	AT &F &M &W <Enter>
+
+	or
+
+	AT &F &M &W1 <Enter>
+
+
+
+
+
+======================================================================
+
+Resetting the Modem (Z)
+
+======================================================================
+
+If you've changed several current settings and want to reset to your 
+
+modem, use the following command.
+
+
+
+	ATZn <Enter>
+
+
+
+Z0  Resets modem to NVRAM profile selected by Y command.
+
+Z1  Resets modem to NVRAM profile 0.
+
+Z2  Resets modem to NVRAM profile 1.
+
+Z3  Resets modem to factory default profile 0 (&F0).
+
+Z4  Resets modem to factory default profile 1 (&F1). 
+
+Z5  Resets modem to factory default profile 2 (&F2).
+
+
+
+The modem reads its DIP switch settings and resets to its NVRAM defaults 
+
+(DIP switch 7 off) or the &F0 Low Performance template (DIP switch 7 
+
+on) settings.
+
+
+
+Use the ATZ command if you've changed the position of DIP switches 1-7 
+
+while the modem is on, so that the modem can read the new settings. The 
+
+only other way to initiate a new setting for switches 1-7 is to turn the 
+
+modem off and on again.
+
+
+
+NOTE:  You cannot issue additional commands on the same line with the Z 
+
+command, because the modem will ignore everything following the Z 
+
+command.  For example, if you enter ATZE1Q0 the modem ignores the 
+
+E1Q0 portion of the command string.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************
+
+Temporarily Changing A Setting
+
+**********************************************************************
+
+
+
+When you change a setting, the modem retains it until you do one of the 
+
+following.
+
+
+
+1. Change the setting again.
+
+2. Issue the ATZ command to reset the modem to the profile by the Y 
+
+command.
+
+3. Turn the system off and power it on again.
+
+
+
+======================================================================
+
+Tone Dialing
+
+======================================================================
+
+The modem defaults to pulse (rotary) dialing.  To have the modem 
+
+use tone dialing, which lets you use the asterisk (*) and pound sign 
+
+(#) in the dialing string, use the T command.
+
+
+
+	ATDT 4445555 <Enter>
+
+
+
+To have the modem always use tone dialing, use the T and &W 
+
+commands to place the tone option in both NVRAM templates, as 
+
+shown below.
+
+
+
+	AT T &W &W1 <Enter>
+
+
+
+======================================================================
+
+Speaker
+
+======================================================================
+
+The modem's speaker enables you to monitor the dial-connect 
+
+process.  There are several ways to make use of this feature.  After 
+
+the modem dials a number, it waits up to 60 seconds for a high-
+
+pitched answer tone from the other modem, immediately followed by 
+
+data signals, called a carrier.  These signals must occur before a 
+
+data link is established.
+
+
+
+At the default X4 setting, the modem sends your screen the NO 
+
+CARRIER message after 60 seconds.  If you listen to the speaker 
+
+and realize you have received a voice answer, you can respond 
+
+immediately, instead of waiting for the modem to time out and sending 
+
+the NO CARRIER message by pressing any key on the keyboard.  
+
+This cancels the call.
+
+
+
+You can also hear if dialing is proceeding too quickly for the 
+
+system.  If so, terminate the call by pressing any key and retype the 
+
+Dial command, but insert a comma (,) or a couple of slashes (/) to 
+
+have the modem pause during the dialing process.
+
+
+
+-------------------
+
+Volume Control (Ln)
+
+-------------------
+
+The following options allow you to adjust the speaker of an internal 
+
+modem.
+
+
+
+L0  Low.
+
+L1  Low.
+
+L2  Medium.  Default.
+
+L3  High.
+
+
+
+NOTE:  For an external modem, the volume control knob is on the 
+
+left side panel of the modem.
+
+
+
+--------------------
+
+Speaker Control (Mn)
+
+--------------------
+
+This command disables the speaker entirely or sets the speaker to 
+
+monitor different segments of the dial-connect sequence.
+
+
+
+M0  Disables the speaker entirely so that you don't hear the modem 
+
+    go off hook, dial, etc.
+
+
+
+M1  The speaker is on until your modem detects the remote 
+
+    modem's carrier signal.  Default.  You can monitor call
+
+    progress until your modem detects the remote modem's carrier 
+
+    signals, or until the 60-second timeout and NO CARRIER result 
+
+    code display.  When your modem detects a carrier signal, the 
+
+    modem disconnects the speaker and data-transmission sounds 
+
+    are suppressed.
+
+
+
+M2  The speaker is on continuously, including during data 
+
+    transmission.
+
+
+
+M3  The speaker doesn't turn on until after the last digit is dialed, 
+
+    then goes off when your modem detects the remote modem's 
+
+    carrier signal.
+
+
+
+======================================================================
+
+Local Echo
+
+======================================================================
+
+Local echo is the display of what you type at the keyboard, and 
+
+online echo is the display of data the modem transmits to another 
+
+modem.  The En command controls the display of your typed 
+
+commands when the modem is in Command mode.  The Fn command controls 
+
+the display of data when your modem is online to another system.
+
+
+
+----------------------------
+
+Command Mode Local Echo (En)
+
+----------------------------
+
+The power-on/reset default for command mode local echo is set with 
+
+DIP switch 4. The modem is shipped with DIP switch 4 off, enabling 
+
+local echo of your typed commands.
+
+
+
+Use the En command to control the local echo for a current session, 
+
+independent of the switch setting.  This command cannot be stored 
+
+in NVRAM.  
+
+
+
+E0  Command mode echo OFF.  The modem does not display 
+
+    keyboard commands.
+
+E1  Command mode echo ON.  Default
+
+
+
+NOTE:  If double characters appear on the screen when you type, 
+
+you have activated both the modem's and software's local echo 
+
+commands and one of them should be deactivated.
+
+
+
+----------------------
+
+Online Local Echo (Fn)
+
+----------------------
+
+This command causes the modem to display a copy of the data it is 
+
+transmitting to another system.  Many receiving modems, however, 
+
+also return a copy of received data, which is called a remote echo.  
+
+If the modem's online echo is ON and there is also remote echoing, 
+
+double characters appear on the screen.
+
+
+
+In some microcomputer documentation, the term duplex is applied to 
+
+online local echoing, although the term is not technically accurate.
+
+
+
+F0  Online echo ON.  Sometimes called half duplex.  As the modem 
+
+    transmits data to a remote system, it also sends a copy of the 
+
+    data to the local screen.
+
+
+
+F1  Online echo OFF.  Sometimes called full duplex.  Default.
+
+
+
+======================================================================
+
+S-Registers
+
+======================================================================
+
+The S-registers are used to set various timing parameters and to 
+
+redefine selected ASCII characters and other configuration options.  
+
+Refer to the S-register Options list under Template Settings in the 
+
+Technical Specifications chapter in this guide for a summary of 
+
+S-register functions and setting options.  
+
+
+
+Users typically require the default values.  To change a setting, use 
+
+the ATSr=n command, where r is the register and n is a decimal 
+
+value from 0-255 (unless otherwise indicated).
+
+
+
+The example below sets the modem's test timer (S-register 18) to 10 
+
+seconds.
+
+
+
+	ATS18=10 <Enter>
+
+
+
+The modem does not perform a value-range check.  Thus, some 
+
+values you select may not work with some equipment, and you'll have 
+
+to readjust the settings.
+
+
+
+Use ATSr? to display the contents of a register.
+
+
+
+	ATS18? <Enter>
+
+
+
+======================================================================
+
+Result Codes
+
+======================================================================
+
+Four commands control the result codes that the modem returns to the screen.
+
+
+
+Vn   Numeric/verbal response mode
+
+Qn   Displays/suppresses all result codes
+
+Xn   Result code options
+
+&An  Displays/suppresses additional result code options
+
+
+
+These commands are explained in the following sections.
+
+
+
+-------------------
+
+Response Modes (Vn)
+
+-------------------
+
+You can select whether result codes are sent to the screen in words 
+
+(verbal mode) or numbers (numeric mode).  
+
+
+
+The power-on/reset default for response modes is set with DIP switch 2. 
+
+The modem is shipped with DIP switch 2 off, enabling verbal mode.
+
+
+
+Use the Vn command to select verbal or numeric result codes for a 
+
+current session, independent of the DIP switch setting.  This command 
+
+cannot be stored in NVRAM.
+
+
+
+V0  Numeric mode.  Numeric result codes are displayed on the 
+
+    same line as your AT command, as in the following example, 
+
+    where a 3 is returned for NO CARRIER.
+
+
+
+    ATD1234567 <Enter>
+
+    becomes
+
+    3TD1234567 <Enter>
+
+
+
+V1  Verbal mode.  Default.  Verbal responses are displayed on the 
+
+    next line after your command, as shown below.
+
+    
+
+    ATD1234567 <Enter>
+
+    NO CARRIER
+
+
+
+---------------
+
+Quiet Mode (Qn)
+
+---------------
+
+Enables/suppresses the display of result codes.  
+
+
+
+The power-on/reset default for response modes is set with DIP switch 3.  
+
+The modem is shipped with DIP switch 3 on (up) to display result codes.
+
+
+
+Use the Qn command to control the display for your current session.  
+
+This command cannot be stored in NVRAM if you have DIP switches on your 
+
+modem.  However, it can be stored on modems without DIP switches.
+
+
+
+Q0  Result codes are displayed.  Default.
+
+Q1  Result codes are suppressed.
+
+Q2  Result codes are suppressed only in Answer mode.
+
+
+
+------------------------
+
+Result Code Options (Xn)
+
+------------------------
+
+You have five options, X0 through X4, for selecting the result-code set 
+
+best suited to your applications, as shown in the following tables.
+
+
+
+X0   Basic set.  Returns the first five codes (0-4) in the following 
+
+     table.
+
+
+
+X1   Extended set (codes 0-5, 10, 13 and 18).  Adds rate-specific 
+
+     CONNECT messages to the Basic set.  This set also includes all 
+
+     &An result codes.
+
+
+
+X2-4 The default is X4.  These options include the X1 set, call-
+
+     progress codes 6 or 7, and 8, and the functions listed in the 
+
+     following table.
+
+
+
+NOTE:  By default, the modem is also set to &A3, which selects 
+
+additional results that report the protocols used in the connection.  
+
+More CONNECT messages indicate an error control connection, the 
+
+call modulation, or the error control and data compression used.  
+
+See the next section, Additional Result Code Options (&An), in 
+
+this chapter.
+
+
+
+
+
+	       Result Code Options
+
+
+
+			       Setting
+
+Result Codes                  X0      X1     X2     X3     X4
+
+0/OK                           x       x      x      x      x
+
+1/CONNECT                      x       x      x      x      x
+
+2/RING                         x       x      x      x      x
+
+3/NO CARRIER                   x       x      x      x      x
+
+4/ERROR                        x       x      x      x      x
+
+5/CONNECT 1200                         x      x      x      x
+
+6/NO DIAL TONE                                x             x
+
+7/BUSY                                               x      x
+
+8/NO ANSWER                                          x      x
+
+10/CONNECT 2400                        x      x      x      x
+
+13/CONNECT 9600                        x      x      x      x
+
+18/CONNECT 4800                        x      x      x      x
+
+20/CONNECT 7200                        x      x      x      x
+
+21/CONNECT 12000                       x      x      x      x
+
+25/CONNECT 14400                       x      x      x      x
+
+43/CONNECT 16800 (28.8 only)           x      x      x      x
+
+85/CONNECT 19200 (28.8 only)           x      x      x      x
+
+91/CONNECT 21600 (28.8 only)           x      x      x      x
+
+99/CONNECT 24000 (28.8 only)           x      x      x      x
+
+103/CONNECT 26400 (28.8 only)          x      x      x      x
+
+107/CONNECT 28800 (28.8 only)          x      x      x      x
+
+
+
+Functions
+
+Adaptive Dialing                              x      x      x
+
+Wait for 2nd Dial Tone (W)                    x             x
+
+Wait for Answer (@)                                  x      x    
+
+Fast Dial                                     x             x
+
+
+
+
+
+
+
+			Result Code Definitions
+
+
+
+Result Code       Meaning
+
+0/OK              Command has been executed.
+
+1/CONNECT         Connection established with another modem; 
+
+		  if set to X0, connection may be 30028,800 bps; 
+
+		  if X1 or higher, connection is at 300 bps.
+
+2/RING            Incoming ring detected.
+
+3/NO CARRIER      Carrier may not be detected or carrier has 
+
+		  been dropped due to disconnect.
+
+4/ERROR           Command is invalid.
+
+5/CONNECT 1200    Connection established with another modem 
+
+		  at 1200 bps.
+
+6/NO DIAL TONE    Dial tone not detected during the normal 2 
+
+		  seconds, set in Register S6.
+
+7/BUSY            Busy signal detected; modem hangs up.
+
+8/NO ANSWER       After waiting 5 seconds for an answer, modem 
+
+		  hangs up; returned instead of NO CARRIER 
+
+		  when the @ dialing option is used.
+
+10/CONNECT 2400   Connection at reported rate.  Same for results 
+
+		  of 4800 (18), 9600 (13), 7200 (20), 12K (21), 
+
+		  14.4K (25), 16.8K (43), 19.2K (85), 21.6K (91), 
+
+		  24K (99), 26.4K (103), 28.8K (107).
+
+
+
+
+
+Functions:
+
+
+
+Adaptive Dialing (HUNT): The modem attempts to use tone dialing, 
+
+and if that doesn't work, it reverts to rotary (pulse) dialing.
+
+
+
+Wait for Another Dial Tone (W): The modem halts dialing until it detects 
+
+another dial tone.
+
+
+
+Wait for an Answer (@): The modem does not continue dialing until it 
+
+detects 5 seconds of silence on the line.
+
+
+
+Fast Dial: The modem dials immediately after detecting a dial-tone, instead 
+
+of waiting the normal 2 seconds set in register S6.
+
+
+
+------------------------------------
+
+Additional Result Code Options (&An)
+
+------------------------------------
+
+Use this command to enable/disable one of the following sets of 
+
+error control, modulation, or protocol result codes.
+
+
+
+If you encounter software problems, it may be because your 
+
+software expects to find different result codes from those the modem 
+
+is sending.  (The modem defaults to &A3.)  Review your software 
+
+documentation or try &A2, &A1, or &A0.  You may need to call your 
+
+software's technical support to find out which &An setting they 
+
+support.
+
+
+
+&A0  ARQ (error control) codes are disabled.  This setting does not 
+
+     affect an error control connection; the modem returns standard 
+
+     CONNECT messages if result codes are enabled.
+
+
+
+&A1  ARQ codes are enabled.  CONNECT/ARQ is displayed if the 
+
+     modem is set to X0 and the connection is 1200 bps and above.  
+
+     If the modem is set to X1 or above, the results indicate the 
+
+     connection rate.  If your software cannot handle the ARQ codes, 
+
+     select &A0.
+
+
+
+&A2  V.32 modulation codes are enabled.  These results require a 
+
+     setting of X1 or higher.  If your software cannot handle the 
+
+     added modulation information, select &A1 or &A0.
+
+
+
+&A3  Protocol codes are enabled.  Default.  Error control protocols 
+
+     reported are LAPM or MNP.  When the call is not under one of 
+
+     those protocols (and ARQ is not included in the result code), the 
+
+     modem reports NONE, for no protocol.
+
+
+
+If the modems are using data compression, the type of compression,
+
+V42BIS or MNP5, is added to the result code.  If your 
+
+software cannot handle the added protocol information, select &A2, 
+
+&A1, or &A0.
+
+
+
+Although these codes will return numeric identifiers if you've set the 
+
+modem to V0, they are the same numeric identifiers used for &A2 
+
+result codes.  If you want &A3 protocol indicators, use verbal mode 
+
+(V1), and not numeric mode (V0).
+
+
+
+======================================================================
+
+Error Control (&Mn)
+
+======================================================================
+
+By default, the modem first attempts a connection using V.42 (LAPM) 
+
+error control, and if that doesn't succeed, it attempts an MNP 
+
+connection.  If that doesn't succeed, the modem tries to connect 
+
+without error control. 
+
+
+
+Error control is possible at rates of 1200 bps and above.  The 
+
+following options are available.
+
+
+
+NOTE:  ARQ is a term for error control protocols that include error 
+
+detection and automatic retransmission of corrupted blocks of data.
+
+
+
+&M0  Normal mode, no error control.  Because of the nature of 
+
+     phone-line channels, this is never recommended for calls 
+
+     above 2400 bps unless you're using an error-correcting file-
+
+     transfer protocol.
+
+
+
+&M1  Reserved.
+
+
+
+&M2  Reserved.
+
+
+
+&M3  Reserved.
+
+
+
+&M4  Normal/ARQ mode.  Default.  If the remote modem doesn't 
+
+     recognize the modem's error control signals (V.42 or MNP), 
+
+     your modem will operate in normal mode, as though it were set 
+
+     to &M0.
+
+
+
+&M5  ARQ mode.  If the remote modem doesn't recognize the error 
+
+     control request (V.42 or MNP) the modem hangs up.
+
+
+
+Always set the modem for error control, &M4 (default) or &M5, for 
+
+calls at speeds over 2400 bps.  Most users communicating with 
+
+V.42- or MNP-compatible modems will want error control at 2400 and 
+
+1200 bps, as well.  
+
+
+
+If you're dialing and have trouble connecting, it may be because the 
+
+remote modem doesn't have MNP capability, and it misinterprets 
+
+your modem's MNP error control request.  If you know the remote 
+
+modem doesn't support MNP, disable MNP handshaking on a 28.8 
+
+modem by setting register S27 to 16 (ATS27=16) and on a 14.4 
+
+modem by setting register S15 to 4 (ATS15=4).  The modem still 
+
+connects, but without MNP error control.
+
+
+
+To reset the modem for normal operations after the call, issue the ATZ 
+
+(reset) command or set register S27 to zero.
+
+
+
+------------------------------
+
+Auto Answer with Error Control
+
+------------------------------
+
+When set to &M4 or &M5 and a call comes in, the modem goes off 
+
+hook and responds to received error control signals.  If the modem 
+
+doesn't receive those signals and is set to Normal/ARQ mode (&M4), 
+
+it answers the call in Normal mode (&M0).  If it doesn't receive the 
+
+signals and is set to ARQ mode (&M5), it hangs up.
+
+
+
+----------------------
+
+Data Compression (&Kn)
+
+----------------------
+
+When data compression is enabled, the transmitting modem detects 
+
+redundant units of data and recodes them into shorter units of fewer 
+
+bits.  The receiving modem decompresses the redundant data units 
+
+before passing them to the receiving computer.
+
+
+
+Compression does not occur unless the modems can establish an 
+
+error control connection.  If the modem makes a V.42 connection, it 
+
+negotiates V.42 bis compression.  If V.42 bis is not feasible, the 
+
+connection remains under error control, but without data 
+
+compression.
+
+
+
+If the modem makes an MNP connection, it negotiates for MNP level 
+
+5 (MNP5) data compression.  If the remote modem does not have 
+
+MNP5 capability, the connection remains under MNP error control, 
+
+but without compression.
+
+
+
+&K0  Data compression disabled.
+
+
+
+&K1  Auto enabled/disabled.  Default.  The modem enables 
+
+     compression if the serial port rate is fixed (&B1) and disables 
+
+     compression if the serial port rate varies by following the 
+
+     connection rate (&B0).  (Compression offers no throughput 
+
+     advantage when serial port and connection rates are equal and 
+
+     may even degrade throughput.)
+
+
+
+&K2  Data compression enabled.  Use this setting to keep the 
+
+     modem from disabling compression.
+
+
+
+&K3  Selective data compression.  The modem negotiates only for 
+
+     V.42 bis compression, and disables MNP level 5 (MNP5) 
+
+     compression.  See the following note.
+
+
+
+NOTE:  MNP5 compression is not useful when transferring already 
+
+compressed files, such as the .ZIP files downloaded from computer 
+
+bulletin boards (BBS) and 8-bit binary files that appear already 
+
+compressed to the modem.  MNP5 tends to add data to these files, 
+
+and as a result, throughput over the phone link degrades.
+
+
+
+V.42 bis compression detects when data is already compressed and 
+
+turns off until it detects that compression will be advantageous.  
+
+The special &K3 setting allows the best throughput for already 
+
+compressed and 8-bit binary files.  
+
+
+
+======================================================================
+
+Data Rate Commands
+
+======================================================================
+
+The &Bn and &Nn commands control data rates at the serial port and 
+
+phone line interfaces.
+
+
+
+Your modem defaults to a fixed rate at the serial port interface (&B1) 
+
+to keep the serial port rate higher than the connection rate.  You'll 
+
+get greater throughput regardless of the connection rate.  Your 
+
+software, however, must support this feature, and you must set your 
+
+software to use a fixed rate.
+
+
+
+For the phone line, however, we recommend variable connection 
+
+rates (&N0).  This lets the modem switch its connection rate to match 
+
+the rate of a remote modem, no matter what that rate is.  If the 
+
+connection rate is fixed, for example, at 9600 bps (&N6), the modem 
+
+only connects with modems operating at that rate.  Of course, if your 
+
+application requires connections with modems at only one rate, you 
+
+may wish to set the modem to a fixed connection rate.
+
+
+
+---------------------
+
+Software Requirements
+
+---------------------
+
+Both variable and fixed serial port rates require communications 
+
+software support.  Most communications programs support variable 
+
+or fixed rates.  Check your software manual.  Set your software before 
+
+making calls.
+
+
+
+----------------------
+
+Serial Port Rate (&Bn)
+
+----------------------
+
+Initially, the modem's serial port rate is dependent on your software 
+
+setting.  The modem detects the rate at which it receives the AT 
+
+command to determine the serial port rate. After that, the modem 
+
+depends on its &B setting.
+
+
+
+&B0  Variable serial port rates.  The modem switches its serial port 
+
+     rate to follow the connection rate your local modem 
+
+     established with a remote modem.  If your software has Auto 
+
+     Baud Detect, turn it on.  The software will switch its serial port 
+
+     rate to match the connection rate.
+
+
+
+&B1  Fixed serial port rate.  Default.  The modem detects its serial 
+
+     port rate from your last AT command and maintains it, 
+
+     whatever the connection rate.  
+
+
+
+     Set your software to 115.2K, 57.6K, 38.4K, or 19.2K bps, then 
+
+     set the modem to &B1 for the best throughput.  Some programs 
+
+     require that you turn off Auto Baud Detect to fix the serial port 
+
+     rate.  Others use the term Serial Port Lock (yes or no).
+
+
+
+     The serial port rate must equal or exceed the connection rate.  
+
+     Also, this setting requires flow control, preferably hardware 
+
+     flow control (&H1), to avoid buffer overflow.
+
+
+
+&B2  Fixed for ARQ calls/Variable for non-ARQ calls, Answer mode 
+
+     only.  When the modem goes off hook and answers in ARQ 
+
+     mode, it shifts its serial port rate to the one written to NVRAM, 
+
+     for example, 38.4K bps.  In non-ARQ mode, it acts as if set to 
+
+     &B0 when answering, and switches its serial port rate to match 
+
+     the call's connection rate.
+
+
+
+     This option is designed for installations such as Bulletin 
+
+     Boards that receive calls from a wide variety of modems.
+
+
+
+-----------------------------
+
+Connection Rate (&Nn and &Un)
+
+-----------------------------
+
+Use the &Nn command to select variable or fixed rates at the phone-
+
+line interface.  Variable rates let the modem connect with a variety of 
+
+remote modems, while fixed rates limit calls to one connection rate.
+
+
+
+&N0  Variable rates.  Default.  Your modem negotiates with the 
+
+     remote modem for the highest possible connection rate, 
+
+     depending on the capabilities of the remote modem.  This is the 
+
+     recommended setting.
+
+
+
+&N1-14  Fixed rate.  Your modem only connects if the remote 
+
+	modem is operating at the same rate.  If not, the modem 
+
+	hangs up. Also, it sets the ceiling rate if &Un is greater than 
+
+	0 (for 28.8 only).
+
+
+
+	The fixed rate options are as follows.
+
+	&N1   300 bps                 &N8     14,400 bps
+
+	&N2   1200 bps                &N9     16,800 bps (28.8 only)
+
+	&N3   2400 bps                &N10    19,200 bps (28.8 only)
+
+	&N4   4800 bps                &N11    21,600 bps (28.8 only)
+
+	&N5   7200 bps                &N12    24,000 bps (28.8 only)
+
+	&N6   9600 bps                &N13    26,400 bps (28.8 only)
+
+	&N7   12,000 bps              &N14    28,800 bps (28.8 only)
+
+
+
+By fixing the connection rate, you can filter out calls at other than a 
+
+specific rate, such as for security reasons.
+
+
+
+Use the &Un command (28.8 modems only) to set the floor connect rate 
+
+when &Un is set greater than 0. &Nn is the ceiling connect rate. 
+
+
+
+&U0  Disabled.  Default.  
+
+
+
+&U1-14  Fixed rate options as follows.
+
+	&U1   300 bps                 &U8     14,400 bps
+
+	&U2   1200 bps                &U9     16,800 bps 
+
+	&U3   2400 bps                &U10    19,200 bps 
+
+	&U4   4800 bps                &U11    21,600 bps 
+
+	&U5   7200 bps                &U12    24,000 bps 
+
+	&U6   9600 bps                &U13    26,400 bps 
+
+	&U7   12,000 bps              &U14    28,800 bps 
+
+
+
+======================================================================
+
+Flow Control 
+
+======================================================================
+
+The modem uses either hardware or software flow control to manage 
+
+the amount of data stored in the buffers, thus preventing buffer 
+
+overflow.
+
+
+
+Your modem defaults to hardware flow control.  This type of flow 
+
+control is performed between the modem and computer via discreet 
+
+signals sent through the serial port.
+
+
+
+Software flow control uses the standard ASCII Transmit OFF (XOFF) 
+
+character, Ctrl-S, and the Transmit ON (XON) character, Ctrl-Q.
+
+ASCII definitions are as follows.
+
+
+
+XON     Ctrl-Q  ASCII 17 Decimal, 11 Hex
+
+XOFF    Ctrl-S  ASCII 19 Decimal, 13 Hex
+
+
+
+NOTE:  Both your software and computer must support the flow 
+
+control you select.  All 100% IBM PC-compatible computers support 
+
+hardware flow control.  However, hardware flow control requires 
+
+software support.  Refer to your software documentation to see what 
+
+flow control your software supports. 
+
+
+
+Be sure to set your software appropriately before transferring files.
+
+
+
+If possible, use hardware flow control.  See the next section, 
+
+Software Flow Control Warning, in this chapter.  If you can't use hardware 
+
+flow control and are doing Xmodem-type protocol or binary file 
+
+transfers, select a protocol that performs error correction, and turn 
+
+off the modem's error control (AT&M0).
+
+
+
+-----------------------------
+
+Software Flow Control Warning
+
+-----------------------------
+
+In ordinary operations, the only characters the modem recognizes 
+
+during a call are the three plus symbols (+++) of the escape code 
+
+that return it to Command mode.  But when software flow control is 
+
+enabled, the modem or computer also recognizes Ctrl-S or Ctrl-Q 
+
+characters.  If these characters occur in a file or as part of a 
+
+protocol, the modem interprets them as XON/XOFF characters and 
+
+acts on them.  
+
+
+
+For example, XON/XOFF characters occur in binary files and are 
+
+used by Xmodem-type protocols.  They may also come from the 
+
+remote system.  An XON from the remote system, after your modem 
+
+has sent an XOFF, can result in buffer overflow.
+
+
+
+Software flow control may prove satisfactory if you're only 
+
+transferring text files; however, you may lose data if XON/XOFF 
+
+characters occur in the data stream from other sources. 
+
+
+
+To select software flow control, write the &F2 configuration template 
+
+to Y1.
+
+
+
+	AT &F2 &W1 <Enter>
+
+
+
+--------------------------------
+
+Transmit Data Flow Control (&Hn)
+
+--------------------------------
+
+This type of flow control regulates data your computer transmits to 
+
+your modem for transmission over the phone link.  The modem 
+
+monitors its Transmit Data buffer as data comes in from the 
+
+computer.  If the buffer nears 90% capacity, the modem signals the 
+
+computer to stop transmitting.  When the modem has sent enough 
+
+data over the phone link to empty half the buffer, the modem signals 
+
+the computer to resume transmitting.
+
+
+
+Transmit Data flow control should be enabled in the following 
+
+situations.
+
+
+
+1. You're using error control (any allowable rate above 300 bps) with 
+
+or without data compression.  If data is resent due to errors, a 
+
+continuous stream of data from the computer could overflow the 
+
+modem's buffer.
+
+
+
+2. The serial port rate is higher than the connection rate.  For 
+
+example, the serial port rate is 38.4K bps and the connection rate is 
+
+14.4K bps.  
+
+
+
+NOTE:  Set your software to either hardware or software flow control.  
+
+Some programs also require that you turn off the type you are not 
+
+using.
+
+
+
+&H0  Transmit Data flow control disabled.  
+
+
+
+&H1  Hardware flow control.  Default.  Your computer and software 
+
+     must support the Clear to Send (CTS) signal.  The modem drops 
+
+     the Clear to Send (CTS) signal to the computer when its buffer 
+
+     nears 90% capacity and starts sending CTS again when the 
+
+     buffer is about half full.
+
+
+
+&H2  Software flow control.  Your software must support XON/XOFF 
+
+     signaling.  The modem sends an XOFF to the terminal when its 
+
+     buffer nears 90% capacity and sends an XON when the buffer is 
+
+     about half full.  Default in the &F2 Software Flow Control 
+
+     template.  
+
+
+
+&H3  Use both hardware and software flow control.  Select this 
+
+     option if you're not sure what your computer supports.
+
+     
+
+--------------------------
+
+Received Data Flow Control
+
+--------------------------
+
+Two commands, &Rn (hardware) and &In (software), control the flow of 
+
+received data passed by the modem to your computer.  Because 
+
+computers handle incoming data more quickly than the modem 
+
+receives it over the phone line, most applications won't need this.
+
+
+
+
+
+Hardware Control (&Rn)
+
+
+
+When your computer drops its Request to Send (RTS) signal, the 
+
+modem stops passing along received data to the computer.  The 
+
+computer sends RTS again when it is ready to receive more data.
+
+Your computer and software must support RTS.  However, you cannot 
+
+use this type of flow control if your software requires a constant 
+
+RTS signal.
+
+
+
+NOTE:  Use hardware flow control only for ARQ (error control) calls, 
+
+because the V.42 and MNP protocols control the data flow across the 
+
+phone link.  During non-ARQ calls, however, there is no way to 
+
+signal the remote modem to stop sending data.  If your modem 
+
+stops passing data to your computer and the remote modem keeps 
+
+sending, your modem's Received Data buffer will overflow.
+
+
+
+&R0  Reserved.
+
+&R1  The modem ignores Request to Send (RTS).  This setting is 
+
+     required if your software does not support RTS.
+
+&R2  Hardware flow control of received data enabled.  Default.  The 
+
+     modem passes received data to your computer only on receipt 
+
+     of the RTS signal.
+
+
+
+
+
+Software Control (&In)
+
+
+
+When you send your modem a Ctrl-S (XOFF) command from the 
+
+keyboard, the modem stops passing received data to your 
+
+computer.  When you send a Ctrl-Q (XON) command, your modem 
+
+resumes.
+
+
+
+NOTE:  Because of the risk of data loss, &I15 are recommended only 
+
+if your data does not have XON/XOFF control characters.  See 
+
+Software Flow Control Warning earlier in this chapter.
+
+
+
+&I0  Disables XON/XOFF flow control of received data.  Default.  
+
+     Recommended for non-ARQ calls.
+
+
+
+&I1  The modem acts on your typed Ctrl-S/Ctrl-Q commands and 
+
+     passes them to the remote computer.  Not recommended for 
+
+     non-ARQ calls.  Use in ARQ mode only, but keep in mind that 
+
+     XON/XOFF characters sent to the remote computer may interfere 
+
+     with XON/XOFF signaling between it and the remote modem.  
+
+     &I2 is preferred for ARQ calls.
+
+
+
+&I2  Your modem reacts to your XON/XOFF commands but removes 
+
+     them before sending data to the remote computer.  This is the 
+
+     default in the &F2 (Software Flow Control) template.  
+
+     Recommended setting for ARQ mode only.  It ensures that the 
+
+     remote computer does not confuse its modem's XON/XOFF 
+
+     characters with yours.
+
+
+
+     If the call is not in ARQ mode, there is no flow control on the 
+
+     phone link.  If you send an XOFF to your modem and it stops 
+
+     passing data, it has no way to tell the remote computer and 
+
+     modem to stop sending for a while, and your modem's buffer 
+
+     may overflow.  See &I5 for another alternative.
+
+
+
+&I3  Reserved.  
+
+
+
+&I4  Reserved.
+
+
+
+&I5  Enables phone link flow control when the connection is not 
+
+     under error control.  Both modems must use &I5.  In ARQ mode, 
+
+     the modem operates as if set to &I2.  It acts on XON/XOFF 
+
+     commands but does not pass them on to the remote system.
+
+     
+
+     In non-ARQ mode, the modem acts as if set to &I0.  It does not 
+
+     look for local XON/OFF commands but does look for any 
+
+     XON/XOFF characters coming in over the phone link from the 
+
+     remote computer.  The modem acts upon them and drops them 
+
+     from the data stream.
+
+
+
+     Operators can signal the other modem to stop sending and 
+
+     control phone link data flow to keep their modem's buffer from 
+
+     overflowing, if both are set to &I5.
+
+
+
+======================================================================
+
+Serial Operations
+
+======================================================================
+
+The parameters described below are directly affected by the serial 
+
+connection and DIP switch settings.
+
+
+
+--------------------
+
+Carrier Detect (&Cn)
+
+--------------------
+
+The power-on/reset default for Carrier Detect is set with DIP switch 6.  
+
+The modem is shipped with DIP switch 6 off (down), disabling 
+
+override for normal operations.  
+
+
+
+Use the &Cn command to control Carrier Detect for a current 
+
+session, independent of the switch setting.  Check your 
+
+communications software manual to find the required setting.  This 
+
+command cannot be stored in NVRAM.  
+
+
+
+&C0  CD override, CD always on.
+
+&C1  Normal CD operations.  The modem sends a CD signal when 
+
+     connecting with another modem and drops CD upon 
+
+     disconnecting.  Most communications software programs 
+
+     require this setting.
+
+
+
+-------------------------
+
+Data Terminal Ready (&Dn)
+
+-------------------------
+
+The power-on/reset default for Data Terminal Ready is set with DIP 
+
+switch 1.  The modem is shipped with DIP switch 1 off (down), 
+
+disabling override for normal operations.  
+
+
+
+Use the &Dn command to control DTR for a current session, 
+
+independent of the switch setting.  Check your communications 
+
+software manual to find the required setting.  This command cannot 
+
+be stored in NVRAM.  
+
+
+
+&D0  DTR override, modem ignores DTR.
+
+
+
+&D1  Reserved.
+
+
+
+&D2  Normal DTR operations.  The computer or terminal must send 
+
+     a DTR signal or the modem won't accept commands.  Dropping 
+
+     DTR terminates a call.  Most communications software 
+
+     programs require this setting.
+
+
+
+&D3  Reset when DTR drops (toggles).  This  command is the 
+
+     equivalent to S13=1, however it is NOT savable to NVRAM.  If 
+
+     you need to save this command to NVRAM, use S13=1
+
+
+
+--------------------
+
+Data Set Ready (&Sn)
+
+--------------------
+
+The modem sends your computer a Data Set Ready (DSR) signal.  
+
+(Data Set is industry jargon for modem.)  Few, if any, commercial 
+
+communications programs require the modem to control DSR (&S1).  
+
+Leave the modem set for DSR override (&S0), unless you know that 
+
+your installation requires a different setting.
+
+
+
+&S0  DSR is always on (override).  Default.
+
+&S1  In Originate mode, the modem sends DSR after dialing, when it 
+
+     detects the remote modem's answer tone.  In Answer mode, it 
+
+     sends DSR after sending an answer tone.
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************
+
+Getting Help
+
+**********************************************************************
+
+
+
+Checking the Help screens is the first step in troubleshooting.  
+
+These screens give you the information you'll need to identify a 
+
+problem.  Once a problem is identified, it can be solved easily.
+
+
+
+======================================================================
+
+Inquiries (In)
+
+======================================================================
+
+The Inquiry command has eight options.  The most commonly used 
+
+options display the following information.
+
+
+
+ATI4  Current settings
+
+ATI5  NVRAM settings
+
+ATI6  Link diagnostics
+
+
+
+I0  The modem returns a product code.  If you have a problem and 
+
+    call Technical Support, you will be asked for this product code.
+
+
+
+I1  The modem performs a checksum of its read-only memory (ROM) 
+
+    and returns the result to the screen.  This function is used only in 
+
+    factory testing.  The modem should always read the same 
+
+    number.
+
+
+
+I2  The modem performs a test of its random-access memory (RAM) 
+
+    and returns either the OK (0) or ERROR (4) result code, followed 
+
+    by OK when the test is completed. Use this command as a 
+
+    checkpoint if the modem appears to be malfunctioning.
+
+
+
+I3  The modem returns a product identification string.
+
+
+
+I4  The modem displays its current configuration.
+
+
+
+I5  The modem displays the stored phone numbers and two 
+
+    templates (Y0 and Y1) stored in nonvolatile random access 
+
+    memory (NVRAM).  Activate the second screen by pressing any 
+
+    key.
+
+
+
+I6  During a connection, the modem monitors and stores information 
+
+    about link operations.  Use this command to request a diagnostic 
+
+    summary.
+
+    
+
+For calls under data compression, the number of characters sent 
+
+may be less than the number of octets sent due to buffering 
+
+operations.  
+
+
+
+Most terms used in the display are self-explanatory except for the 
+
+following:
+
+
+
+Octets:  Compressed data units.  If the number of octets is greater 
+
+than the number of characters sent, the modems probably used 
+
+MNP5 compression on an already compressed file, and the result 
+
+was expanded data.
+
+
+
+Blers:  Errors in data and protocol blocks.  If there were many block 
+
+errors, your modem may have experienced problems receiving data 
+
+from the line.
+
+
+
+Blocks Resent:  These represent blocks the remote modem resent 
+
+due to the previous category, Blers.
+
+
+
+Link Timeouts:  Protocol detection problems; communications were 
+
+severed momentarily and the modems probably recovered.  This 
+
+does not indicate the retry timeout.
+
+
+
+Link Naks:  Negative acknowledgments (one or more blocks).
+
+
+
+Data Compression:  Indicates the type of data compression 
+
+negotiated for the call (V42BIS or MNP5) or NONE.  A V42BIS 
+
+response includes the size of the dictionary and the maximum 
+
+string length used, for example, 2048/32.
+
+
+
+Fallback: Enabled/Disabled:  indicates whether the modems 
+
+negotiated online fallback during the connection sequence.
+
+
+
+Protocol:  Indicates the error control protocol negotiated (LAPM, 
+
+MNP, NONE).
+
+
+
+Speed:  The last rates at which the receiver/transmitter were 
+
+operating before disconnecting.
+
+
+
+Disconnect Reason:  Possible reasons the modem hung up are as 
+
+follows:
+
+
+
+	DTR dropped: The DTE dropped the Data Terminal Ready 
+
+	signal, terminating the call.
+
+	
+
+	Escape code: You sent the modem the +++ escape code.
+
+
+
+	Loss of carrier: The modem detected loss of the remote 
+
+	modem's carrier and waited the duration specified in 
+
+	Register S10 (default is 0.7 seconds).
+
+
+
+	Inactivity timeout: The modem detected no activity on the 
+
+	line for the duration specified in Register S19 (default is 0, 
+
+	timer disabled).
+
+
+
+	MNP incompatibility: The modem is set to &M5 and the 
+
+	remote modem does not have MNP compatibility, or there 
+
+	was an MNP negotiation procedure error.
+
+
+
+	Retransmit limit: The modems reached the maximum of 12 
+
+	attempts to transfer a data frame without error.
+
+
+
+	LD received: The remote modem sent an MNP error control 
+
+	link disconnect request.
+
+
+
+	DISC: The remote modem sent a V.42 disconnect frame.
+
+
+
+	Loop loss disconnect: The modem detected a loss of current 
+
+	on the loop connecting it with the telephone company central 
+
+	office.  This usually occurs because the remote modem has 
+
+	hung up.  The central office drops current momentarily when 
+
+	there is a disconnect at the other end of a call.  Unless 
+
+	Register S38 is set higher than 0, the modem immediately 
+
+	hangs up at loop loss.
+
+
+
+	Unable to retrain: After several attempts, disturbances on the 
+
+	phone line prevented the modems from retraining 
+
+	(resynchronizing), and they could no longer transmit or 
+
+	receive data.
+
+
+
+	Invalid speed: The modem is set to &N1 or higher for a fixed 
+
+	link rate, and the remote modem is not operating at the same 
+
+	rate.
+
+
+
+	XID timeout: The modems failed to negotiate the V.42 
+
+	detection (XID exchange) phase.
+
+
+
+	SABME (Set asynchronous balance mode extended) timeout: 
+
+	The modems failed this part of V.42 link negotiation.
+
+
+
+	Break timeout: Incompatible processing of a Break signal 
+
+	occurred.
+
+
+
+	Invalid codeword: The modem received an invalid V.42 bis 
+
+	(compression) frame.
+
+
+
+	A rootless tree: The modem received an invalid V.42 bis 
+
+	(compression) frame.
+
+
+
+	Illegal command code: The modem received an invalid V.42 
+
+	bis (compression) frame.
+
+
+
+	Extra stepup: The modem received an invalid V.42 bis 
+
+	(compression) frame.
+
+
+
+I7  The modem returns a product configuration.  If you have a 
+
+    problem and call Technical Support, you may be asked to read 
+
+    this screen.
+
+
+
+======================================================================
+
+S-Register Query (Sr?)
+
+======================================================================
+
+This command allows you to view the contents of a particular S-
+
+register, as in the following example that requests the contents of 
+
+Register S0 ("On what ring will the modem answer?").
+
+
+
+	ATS0? <Enter>
+
+
+
+======================================================================
+
+Stored Phone Number Query (&Zn?)
+
+======================================================================
+
+Use this command to display the phone number stored in NVRAM at 
+
+position n, as in the following example that includes a sample 
+
+modem response.
+
+
+
+	AT&Z3? <Enter>
+
+	5551234
+
+
+
+======================================================================
+
+Last-Dialed Number Query (DL?)
+
+======================================================================
+
+Use this command to display the number stored in the last-dialed 
+
+number buffer.
+
+
+
+	ATDL? <Enter>
+
+
+
+======================================================================
+
+Help Screens
+
+======================================================================
+
+Your modem provides four Help screens:  summaries of the basic 
+
+AT command set, extended ampersand (&) AT command set, Dial 
+
+command options, and S-register functions.
+
+
+
+
+
+Stops/Restarts Display
+
+
+
+The following command stops the display.  Hold down the Control 
+
+key and type S.
+
+
+
+	<Ctrl>S
+
+
+
+To restart the display, use the same command or press <any key>.
+
+
+
+
+
+Cancels Display
+
+
+
+Either of the following commands cancels the display.
+
+
+
+	<Ctrl>C
+
+	<Ctrl>K
+
+
+
+---------------------
+
+Basic Command Set ($)
+
+---------------------
+
+Use AT$, to display a partial summary of the command set.  A 
+
+second screen, activated by pressing any key, shows the remaining 
+
+commands.
+
+
+
+--------------------------
+
+Ampersand Command Set (&$)
+
+--------------------------
+
+Use AT&$ to display a partial summary of the extended ampersand 
+
+command set.  A second screen, activated by pressing any key, 
+
+shows the remaining command set.
+
+
+
+------------
+
+Dialing (D$)
+
+------------
+
+Use ATD$, to display the Dial command summary.
+
+
+
+-------------------------
+
+S-Register Functions (S$)
+
+-------------------------
+
+Use ATS$, to display a partial summary of the S-register functions.  
+
+A second screen, activated by pressing any key, shows the 
+
+remaining registers.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************
+
+Testing the Modem
+
+**********************************************************************
+
+
+
+Modem testing is available with the &Tn command and Register S16 
+
+(Dial test).  All loopback testing conforms to ITU-T Recommendation 
+
+V.54.
+
+
+
+NOTE:  Only one test can be performed at a given time.  If you send 
+
+a test command while the modem is already in Test mode, you'll 
+
+receive an ERROR message.
+
+
+
+======================================================================
+
+Testing With &Tn
+
+======================================================================
+
+The tests supported through the &Tn command include analog 
+
+loopback, digital loopback, and remote digital loopback.  You can 
+
+key in your own data during testing or use the modem's internal test 
+
+pattern and error detector.
+
+
+
+Always disable error control before testing.  If the modem is 
+
+detecting errors and, as a result, retransmitting the affected data, 
+
+your test results will be invalid.
+
+
+
+-----------------------
+
+Ending a Test: &T0, S18
+
+-----------------------
+
+Issue the &T0 command to terminate a test.  Alternatively, set 
+
+Register S18 to a specified number of seconds, for example, 
+
+S18=10.  When the 10 seconds are up, the modem automatically 
+
+ends the test and returns to Command mode.  If the test was Analog 
+
+Loopback, the &T0 command hangs the modem up.  If the test was 
+
+Digital or Remote Digital Loopback, issue an ATH command to hang 
+
+up the modem or an ATZ command to hang up the modem and reset 
+
+it to its defaults.
+
+
+
+NOTE:  If you use the S18 test timer, but in the process of testing 
+
+you issue an ATZ command, S18 resets to zero and the timer is 
+
+disabled.  Also, you cannot store a value for S18 in nonvolatile 
+
+memory; its power-on and reset default is always zero.
+
+
+
+-------------------------
+
+Analog Loopback: &T1, &T8
+
+-------------------------
+
+This test checks the operation of the modem's transmitter and 
+
+receiver.
+
+
+
+
+
+&T1 Command
+
+
+
+This analog loopback option requires that you type data you can 
+
+later verify at your screen.
+
+
+
+1. The modem should be on hook in Command mode.  If you wish, 
+
+set Register S18 as a test timer.  For example, insert S18=10 in the 
+
+following command string before &T1.
+
+
+
+	AT &M0 S18=10 &T1 <Enter>
+
+
+
+This command instructs the modem to disable error control, set the 
+
+timer, enter analog loopback (AL) mode, and send a CONNECT message.
+
+
+
+2. Type recognizable data so that you can verify it when it is looped 
+
+back to the screen.
+
+
+
+3. End the test.  If you set S18, the modem automatically stops the 
+
+test at the timeout, exits AL mode, and responds OK.
+
+
+
+If you didn't set Register S18, wait one second, and type +++ to end 
+
+the test and return the modem to Command mode.  When the 
+
+modem responds OK, type AT&T0 to terminate AL mode and hang up 
+
+the modem.  (Typing ATH has the same effect.  Typing ATZ also has 
+
+the same effect, but also resets the modem and restores your &M 
+
+default.)
+
+
+
+The modem responds OK.  If the modem sends an ERROR 
+
+message, you have issued an invalid command.
+
+
+
+4. If there were no errors, reset the modem to &M4 (enables error 
+
+control) unless you've issued the ATZ reset command.
+
+
+
+NOTE:  If the modem is in Online-Command mode, that is, still 
+
+connected to a remote modem, and you send it an &T1 or &T8 
+
+command, it drops the call, enters AL mode, sends a CONNECT 
+
+result, and waits for loopback characters.
+
+
+
+
+
+&T8 Command
+
+
+
+This analog loopback (AL) option causes the modem to send an 
+
+internal test pattern to its transmitter and loop it back to the receiver.  
+
+An internal error detector counts any errors, and when the test is 
+
+ended, sends the number of errors or 000 (no errors) to the screen.
+
+
+
+Since you don't type anything during this test, and the modem does 
+
+not send anything to the screen, this option verifies only the 
+
+modem.  If there are no errors but your problem continues, it may be 
+
+at the computer interface.
+
+
+
+1. The modem should be on hook in Command mode.  If you wish, 
+
+set Register S18 as a test timer.  For example, insert S18=10 in the 
+
+following command string before &T8.
+
+
+
+	AT &M0 S18=10 &T8 <Enter>
+
+
+
+This command instructs the modem to disable error control, set the 
+
+timer, and enter AL mode.  The modem sends its internal test pattern 
+
+to the transmitter, and loops the pattern back to the receiver.  You will 
+
+not see any data on your screen.
+
+
+
+2. End the test.  If you set S18, the modem automatically stops the 
+
+test at the timeout.  If you didn't set Register S18, type AT&T0 to end 
+
+the test.  Or use ATH or ATZ to end the test and hang up the modem.
+
+
+
+When the modem hangs up, it returns a three-digit code, followed by 
+
+OK.  A code of 000 indicates no errors were found.  A code of 255 
+
+indicates 255 or more errors.  An ERROR message indicates that 
+
+you issued an invalid command.
+
+
+
+3. If there were no errors, reset the modem to &M4 (enables error 
+
+control) unless you issued the ATZ reset command.
+
+
+
+-----------------------------
+
+Digital Loopback: &T3 Command
+
+-----------------------------
+
+If your modem has passed the analog loopback (AL) test, the digital 
+
+loopback test can help you locate a problem with a remote modem 
+
+or the telephone channel.
+
+
+
+1. Set the modem to &M0 to disable error control.  Establish a 
+
+connection with the remote modem.
+
+
+
+2. Bring the modem back to Online-Command mode with the +++ 
+
+escape code.  Then send it the AT&T3 command.  The modem enters 
+
+digital loopback (DL) mode.
+
+
+
+3. The remote user should type a short message.  It will be looped 
+
+back by your modem for verification on the remote screen.  You will 
+
+not see the message or any other data.
+
+
+
+4. When the remote user has completed the test,  issue the AT&T0 
+
+command to end the test.  If you wish, return the modem online 
+
+(ATO) to resume Data mode.  Or use ATH or ATZ to end the test and 
+
+hang up the modem.  The modem responds OK.  If the modem sends 
+
+an ERROR message, you have issued an invalid command.
+
+
+
+--------
+
+&T4, &T5
+
+--------
+
+The &T4 option grants a remote modem's request for a Remote 
+
+Digital Loopback test.
+
+
+
+The &T5 option cancels &T4 and your modem will not recognize a 
+
+request for a Remote Digital Loopback test from a remote modem.  
+
+This is the default so that your modem isn't subject to another user 
+
+calling and tying up your modem without your permission.
+
+
+
+---------------------------------
+
+Remote Digital Loopback: &T6, &T7
+
+---------------------------------
+
+This test, like the Local Digital Loopback test, verifies the condition 
+
+of both modems and the phone link.
+
+
+
+The request for and granting of Remote Digital Loopback testing 
+
+requires that both modems use ITU-T V.54 standard signaling.  The 
+
+test must be performed at 2400 or 1200 bps.  If the remote modem 
+
+does not have the capability or is not set to respond, you will get an 
+
+ERROR result code.
+
+
+
+
+
+&T6 Command
+
+
+
+This remote digital loopback (RDL) option requires that you send 
+
+keyboard data to the modem and verify it when it is returned over 
+
+the phone lines and to your screen.
+
+
+
+1. Set your software to 2400 or 1200 bps.  Set the modem to &M0 
+
+(disables error control).  If you wish, set the S18 timer.
+
+
+
+Establish a connection with the remote modem.  If you haven't 
+
+already done so, arrange with the remote user to cooperate with 
+
+your testing.  The remote user should set his or her modem to 
+
+acknowledge the RDL request, for example, AT&T4.
+
+
+
+2. Bring the modem back to Online-Command mode with the +++ 
+
+escape code.  Send the modem the AT&T6 command.  The modem 
+
+enters RDL mode.
+
+
+
+3. Type a short message.  It will be looped back to your modem by 
+
+the remote modem and to your screen for verification.  The remote 
+
+user will not see your data.
+
+
+
+4. End the test.  If you set Register S18, the modem automatically 
+
+ends the test when the test timeout is reached.  If you didn't set S18, 
+
+type AT&T0 to end the test.  If you wish, return the modem online 
+
+(ATO) to resume Data mode.  Or use ATH or ATZ to end the test and 
+
+hang up the modem.  The modem responds OK.  If you issue an 
+
+invalid command, the modem sends an ERROR message.
+
+
+
+Data errors indicate a problem with the remote modem or the phone 
+
+link.  If you have not performed analog loopback testing with your 
+
+modem, there may also be a problem with your modem.
+
+
+
+5. Reset the modem to &M4 (enables error control) unless you used 
+
+the reset command ATZ.
+
+
+
+
+
+&T7 Command
+
+
+
+This test option causes the modem to send an internal test pattern 
+
+through the remote digital loopback.  An internal error detector 
+
+counts any errors, and when the test is ended, sends the number of 
+
+errors or 000 (no errors) to the screen.
+
+
+
+You don't need to type anything during this test.  The modem sends 
+
+only its final error count to your screen.
+
+
+
+1. Set your software to 2400 or 1200 bps.  Set the modem to &M0 
+
+(disables error control).  If you wish, set the S18 timer.
+
+
+
+Establish a connection with the remote modem.  If you haven't 
+
+already done so, arrange with the remote user to cooperate with your 
+
+testing.  The remote user should set his or her modem to acknowledge 
+
+the RDL request, for example, AT&T4.
+
+
+
+2. Bring the modem back to Online-Command mode with the +++ 
+
+escape code.  Then send it the AT&T7 command.  The modem enters 
+
+RDL mode.
+
+
+
+The modem sends its internal test pattern to the remote modem, 
+
+which loops it back to your modem.  You will not see the data on 
+
+your screen.
+
+
+
+3. End the test.  If you set S18, the modem automatically stops the 
+
+test when the timer times out.  If you didn't set Register S18, type 
+
+AT&T0 to end the test.  After you view the test results (next 
+
+paragraph), return the modem online if you wish (ATO) and resume 
+
+Data mode.  Or use ATH or ATZ to end the test and hang up the 
+
+modem.
+
+
+
+When you terminate the test, the modem returns a three-digit code, 
+
+followed by OK.  A code of 000 indicates no errors were found.  A 
+
+code of 255 indicates 255 or more errors.  If you issue an invalid 
+
+command, the modem sends an ERROR message.
+
+
+
+If you've performed an analog loopback and know your modem is 
+
+working properly, errors indicate a problem with either the phone 
+
+connection or the remote modem.
+
+
+
+4. Reset the modem to &M4 (enables error control) unless you've 
+
+sent it the ATZ reset command.
+
+
+
+======================================================================
+
+Dial Test: S16=2
+
+======================================================================
+
+The dial test is used for factory-testing the frequencies of tone 
+
+dialing values.  When S-register 16 is set to 2 and a single tone is 
+
+dialed (for example, ATD7 <Enter>), the modem continues to 
+
+transmit that tone until you press <Enter> again.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************
+
+Other Operations
+
+**********************************************************************
+
+This chapter covers fax, voice and data operations.
+
+
+
+======================================================================
+
+Fax Operations
+
+======================================================================
+
+-------------------
+
+Faxmodem Guidelines
+
+-------------------
+
+Fax operations require facsimile-compatible software that can send 
+
+or receive Group III faxes.  To send or receive faxes, follow the 
+
+instructions in your fax software manual.
+
+
+
+The modem's normal operating mode is Data mode.  If your fax 
+
+software is typical, it automatically switches the modem to Fax 
+
+mode when you run the program and resets the modem to Data 
+
+mode when you exit the program.
+
+
+
+If you have a problem, however, and think the modem may be in the 
+
+wrong mode, you can use one of the following AT commands to 
+
+manually switch the modem.
+
+
+
+Most users will never need to use these commands.
+
+
+
+AT+FCLASS=0 <Enter>    Switch to Data mode
+
+AT+FCLASS=1 <Enter>    Switch to Class 1 Fax mode
+
+AT+FCLASS=2.0 <Enter>  Switch to Class 2.0 Fax mode; 28.8 
+
+		       modems only
+
+
+
+If you are not sure whether the modem is in Data or Fax mode, type 
+
+the following command.
+
+
+
+	AT+FCLASS? <Enter> 
+
+
+
+The modem returns a 0 to indicate Data mode, a 1 to indicate Class 
+
+1 Fax mode, or a 2.0 to indicate Class 2.0 Fax Class mode (28.8 
+
+modems only).  Modems are not compliant with TR-29 (SSP-2388-A) 
+
+Class 2 facsimile control.
+
+
+
+NOTE:  Whenever you reset the faxmodem by using the ATZ 
+
+command, toggling the DTR signal, or turning the power off and on, 
+
+the modem will be set to data mode.
+
+
+
+
+
+Fax Service Class 1 Commands:
+
+
+
++FCLASS=n  Sets Facsimile Service Class.
+
+	   0 Data Mode.
+
+	   1 Group 3 Facsimile Service Class 1 mode.
+
+
+
++FCLASS?  Returns to the current FCLASS.
+
+	  0 Data Mode.
+
+	  1 Group 3 Facsimile Service Class 1 mode.
+
+
+
++FCLASS=?  Returns the possible values of FCLASS.
+
+	   0 Data mode.
+
+	   1 Group 3 Facsimile Service Class 1 mode.
+
+
+
++FTS=n  Stops facsimile transmission. Modem waits for the 
+
+	specified amount of time, set in 10 millisecond intervals, 
+
+	and then sends the OK result code to the DTE. (0-255)
+
+
+
++FRS=n  Causes the modem to listen and to report back an OK result 
+
+	code when silence has been present on the line for the 
+
+	amount of time specified, set in 10 millisecond intervals. 
+
+	(0-255)
+
+
+
++FTM=n  Causes the modem to transmit data using the modulation 
+
+	selected with the parameter. The modem returns the 
+
+	CONNECT result code and transmits the proper training 
+
+	sequence in the selected mode, followed by constant 1 
+
+	bits, until data is received from the DTE. (3, 24, 48, 
+
+	72, 96, 97, 98, 121, 122, 145, 146)
+
+
+
++FRM=n  Receives mode using the modulation. (3, 24, 48, 72, 96, 
+
+	97, 98, 121, 122, 145, 146)
+
+
+
++FTH=n  Transmits HDLC data with carrier. (3, 24, 48, 72, 96, 
+
+	97, 98, 121, 122, 145, 146)
+
+
+
+-----------------------------
+
+Fax Mode Flow Control Setting
+
+-----------------------------
+
+Many fax software products use software flow control when the 
+
+modem is in Fax mode.  To be compatible with software products 
+
+that use software flow control by default, your modem automatically 
+
+switches to software flow control when entering Fax mode.  For the 
+
+best information on modem settings, see your fax software manual.
+
+
+
+----------
+
+FCC Notice
+
+----------
+
+FCC part 68, rules regarding fax operation, has been amended as 
+
+follows:  
+
+
+
+Telephone facsimile machines -- identification of the sender of the 
+
+message:  It shall be unlawful for any person within the United 
+
+States to use a computer or other electronic device to send any 
+
+message via a telephone facsimile machine unless such a 
+
+message clearly contains, in a margin at the top or bottom of each 
+
+transmitted page or on the first page of the transmission, the date 
+
+and time it is sent and an identification of the business, other entity, 
+
+or individual sending the message and the telephone number of the 
+
+sending machine or of such business, other entity, or individual.  
+
+Telephone facsimile machines manufactured on and after December 
+
+20, 1992 must clearly mark such identifying information on each 
+
+transmitted page.
+
+
+
+---------------------
+
+A Note to Programmers
+
+---------------------
+
+If you want to know more about the supported fax commands, refer 
+
+to the standard for the Service Class 1 fax protocol.
+
+
+
+ANSI/EIA/TIA-578-1990 (EIA-578)
+
+Asynchronous Facsimile DCE Control Standard
+
+November, 1990  Approved:  October 22, 1990
+
+
+
+You can obtain a copy of this standard by contacting Global 
+
+Engineering Documents at 1-800-854-7179. 
+
+
+
+For more information on supported Class 2.0 fax commands, refer to 
+
+the standard for the Service Class 2.0 fax protocol (28.8 modems 
+
+only).
+
+
+
+ANSI/EIA/TIA-592-1993 (EIA-592)
+
+Asynchronous Facsimile DCE Control Standard
+
+May, 1993
+
+
+
+======================================================================
+
+Voice/Data Communications
+
+======================================================================
+
+When you install your modem, it is recommended to plug your 
+
+phone into the second modular jack of the modem so it's available 
+
+for voice calls.  You can also use the phone to set up 
+
+communications with another user whose modem uses the AT 
+
+command set, such as another modem. 
+
+
+
+NOTE:  If the modem is off hook, the handset will appear to be dead.  
+
+No sound will be heard through the handset.
+
+
+
+----------
+
+Procedures
+
+----------
+
+1. First call the other user to establish the parity, word length, and 
+
+number of Stop bits the other person's modem accepts.  Then turn 
+
+the call over to your modems, as follows.
+
+
+
+2. Without hanging up the phone, have your modem go off hook in 
+
+Originate mode.  Type the following command.
+
+
+
+	ATD <Enter>
+
+
+
+NOTE:  Be sure the modem is not set to X2 or X4, or it will return the 
+
+NO DIAL TONE result code and hang up.
+
+
+
+3. The other party should have the remote modem go off hook in 
+
+Answer mode.  The following command is used to do this.
+
+
+
+	ATA <Enter>
+
+
+
+4. Now both of you can hang up your respective phones while the 
+
+two modems establish the data link.  They will maintain the link until 
+
+one of you gives your modem a command to disconnect. 
+
+
+
+Either party's device can be the originate or answer modem; it 
+
+doesn't matter who made the phone call.  But one modem must 
+
+enter Originate mode and the other Answer mode.  You and the other 
+
+party, therefore, must agree on which command, ATD or ATA, you 
+
+will each use.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************
+
+Technical Specifications
+
+**********************************************************************
+
+
+
+======================================================================
+
+Compatibility
+
+======================================================================
+
+Your modem conforms to the following standards, ensuring 
+
+compatibility with a wide base of installed modems.  ITU-T is the 
+
+new signifier of what was formerly the CCITT international standards 
+
+body.
+
+
+
+V.34  28.8K/26.4K/24K/21.6K/19.2K/16.8K/14.4K/12K/9600/
+
+      7200/4800/2400 bps (28.8 only)
+
+
+
+V.Fast Class  28.8K/26.4K/24K/21.6K/19.2K/16.8K bps (28.8 only)
+
+
+
+ITU-T V.32 bis  14.4K/12K/9600/7200/4800 bps
+
+
+
+ITU-T V.32  9600/4800 bps
+
+
+
+ITU-T V.22 bis  2400 bps
+
+
+
+Bell 212A  1200 bps (also ITU-T V.22)
+
+
+
+ITU-T V.23  1200 bps with 75 bps back channel (some United 
+
+Kingdom and European phone systems)
+
+
+
+Bell 103   300 bps (ITU-T V.21 optional)
+
+
+
+ITU-T V.42  LAPM error control, 1200 bps and higher
+
+
+
+ITU-T V.42 bis  Data compression, 1200 bps and higher
+
+
+
+MNP  Levels 2, 3 and 4 error control, level 5 data compression, 
+
+1200 bps and higher
+
+
+
+ITU-T V.54  Analog, digital, and remote digital loopback testing
+
+
+
+
+
+Faxmodems:
+
+
+
+EIA/TIA-592  Service Class 2.0 Asynchronous Facsimile DCE Control 
+
+Standard (V.FC/V.34 
+
+only)
+
+
+
+EIA/TIA-578  Service Class 1 Asynchronous Facsimile DCE Control 
+
+Standard
+
+
+
+ITU-T V.17  14.4K/12K bps
+
+
+
+ITU-T V.29  9600/7200 bps
+
+
+
+ITU-T V.27 ter  4800/2400 bps
+
+
+
+ITU-T V.21  300 bps
+
+
+
+======================================================================
+
+The Serial Interface
+
+======================================================================
+
+The serial interface information below applies only to external 
+
+modems. It is a standard developed by the Electronic Industries 
+
+Association (EIA) that defines the signals and voltages used when 
+
+data is exchanged between a computer and a modem or serial 
+
+printer.
+
+
+
+The entire standard covers many more functions than are used in 
+
+most data communications applications.  Data is transmitted 
+
+between the devices over a shielded serial cable with a 25-pin male 
+
+(DB-25P) connector to the modem and a 25-pin, 9-pin, 8-pin, or 
+
+custom-built connector to the computer.
+
+
+
+NOTE:  FCC regulations require the use of a shielded cable when 
+
+connecting a modem to a computer to ensure minimal interference 
+
+with radio and television.
+
+
+
+---------------
+
+Pin Assignments
+
+---------------
+
+Pin assignments are factory-set in your modem to match the 
+
+standard DB-25 assignments in the following table.  DB-9 
+
+connectors for IBM PC/AT-compatible computers should be wired at 
+
+the computer end of the cable as shown in the DB-9 column.  
+
+
+
+
+
+		   Serial Interface Pin Definitions
+
+
+
+						      Signal Source
+
+      DB-25   DB-9    Circuit  Function              Computer/Modem
+
+      1       -       AA       Chassis Ground              Both
+
+      2       3       BA       Transmitted Data          Computer
+
+      3       2       BB       Received Data               Modem
+
+      4       7       CA       Request to Send           Computer
+
+      5       8       CB       Clear to Send               Modem
+
+      6       6       CC       Data Set Ready              Modem
+
+      7       5       AB       Signal Ground               Both
+
+      8       1       CF       Carrier Detect              Modem
+
+      12      -       SCF      Speed Indicate              Modem
+
+      20      4       CD       Data Terminal Ready       Computer
+
+      22      9       CE       Ring Indicate               Modem
+
+
+
+NOTE:  A three-wire interface consists of Receive, Transmit, and 
+
+Ground wires and does not support hardware flow control.  Systems 
+
+requiring three-wire interfaces must use software flow control.  If 
+
+your system doesn't support software flow control, use no flow 
+
+control but be sure to use an error-correcting protocol.
+
+
+
+If you're using a Macintosh computer, ask your dealer for the correct 
+
+modem cable; we recommend a Hardware Handshaking cable.
+
+
+
+		      Macintosh 8-Pin DIN
+
+
+
+						  Signal Source
+
+      DB-25    MAC    Function                   Computer/Modem
+
+      20/51    1      Output Handshake(1)        Computer/Modem(1)
+
+      4        2(2)   Input Handshake                Computer
+
+      2        3(2)   Transmit Data Negative(3)      Computer
+
+      7        4      Ground                           Both
+
+      3        5      Receive Data Negative(4)         Modem
+
+      -        6      Transmit Data Positive             -
+
+      -        7      Not connected                      -
+
+      -        8      Receive Data Positive              -
+
+
+
+1  Adds CTS capability when in Hardware mode.
+
+2  Hardware handshaking lines.
+
+3  To do this, you must ground pin 6.
+
+4  To do this, you must ground pin 8.
+
+
+
+--------------------
+
+Minimum Requirements
+
+--------------------
+
+Some computer equipment supports only a few of the serial signal 
+
+functions set in your modem.  The minimum required for the modem 
+
+to operate is as follows.
+
+
+
+
+
+	      Minimum Required Pins
+
+
+
+	DB-25   DB-9    8-Pin   
+
+	Pin     Pin     DIN     Function
+
+	2       3       3       Transmitted Data
+
+	3       2       5       Received Data
+
+	7       5       4       Signal Ground
+
+	20      4       1       Data Terminal Ready*
+
+
+
+* Required if DIP switch 1 is OFF for normal DTR operations, 
+
+override disabled.
+
+
+
+---------------------------------
+
+Additional Flow Control Functions
+
+---------------------------------
+
+If your computer and software support Clear to Send (CTS) and you 
+
+wish to use Transmit Data hardware flow control (&H1), Pin 5 (DB-25) 
+
+or Pin 8 (DB-9) is required.
+
+
+
+If your computer and software support Request to Send (RTS) and 
+
+you wish to use Received Data hardware flow control (&R2), Pin 4 
+
+(DB-25) or Pin 7 (DB-9) is required.  
+
+
+
+-------------------------------------
+
+57.6K and 38.4K bps Serial Port Rates
+
+-------------------------------------
+
+Your software and computer must support the 57.6K or 38.4K bps 
+
+rate.  Make sure the serial cable is shielded.  Cables are normally 
+
+six feet long, but longer lengths are possible.  If you encounter 
+
+problems with signal degradation, try a shorter cable.
+
+
+
+If you decide to build your own cable, use a low-capacitance cable.  
+
+To further minimize the capacitance, connect only those functions 
+
+(pins) that your application requires.
+
+
+
+======================================================================
+
+Default Settings
+
+======================================================================
+
+-----------
+
+Data Format
+
+-----------
+
+Both your software and the remote system must use the same 10-bit 
+
+data format.  If you don't know the setup of the remote computer's 
+
+modem, phone ahead to find out what combination of word length, 
+
+parity, and Stop bit is required.
+
+
+
+Set your communications software to the required scheme.  Some 
+
+communications programs use a kind of shorthand for formats, such 
+
+as 7-E-1 or 8-N-1.  The modem detects the format from the AT prefix 
+
+of the next command it receives from your keyboard or from your 
+
+software.
+
+
+
+	 Allowable Data Formats
+
+
+
+     Word        Parity      Stop
+
+     Length      (1 Bit)     Bits
+
+       7        Even, Odd,     1
+
+		Mark, Space    
+
+       7        None           2
+
+       8        None           1
+
+
+
+-----------------
+
+Template Settings
+
+-----------------
+
+You can create one or two customized configurations and store one 
+
+of them at a time in nonvolatile random-access memory (NVRAM) as 
+
+your power-on/reset default using the &Wn command.  As long as 
+
+DIP switch 7 is OFF when you power-on or reset the modem, your 
+
+defaults are loaded into the modem's random-access memory 
+
+(RAM).  To view your NVRAM settings, use the ATI5 command.
+
+
+
+Your modem is preconfigured in the factory for the &F1 Hardware 
+
+Flow Control template settings in NVRAM as Y0, and the 
+
+&F2 Software Flow Control template settings in NVRAM as Y1.
+
+
+
+Tables on the next pages list the settings of the permanent 
+
+configuration templates &F1 (default), &F2, and &F0, as well as 
+
+parameters you can modify and store in the NVRAM configuration 
+
+templates.  
+
+
+
+     &F1  Hardware Flow Control Template
+
+	      Factory Default
+
+
+
+Feature                     &F1     Settings
+
+ITU-T/Bell Answer Sequence  B0      ITU-T sequence
+
+Online Echo                 F1      Online Echo OFF 
+
+Volume Control (internal)   L2      Medium volume
+
+Speaker Control             M1      Speaker ON until CONNECT
+
+Pulse/Tone Dialing          P       Pulse Dialing
+
+Result Code Options         X4      All Result codes
+
+ARQ Result Codes            &A3     All protocol codes enabled
+
+Serial port Rate            &B1     Fixed serial port rate
+
+Guard Tone                  &G0     No guard tone
+
+Transmit Data Flow Control  &H1     Hardware flow control
+
+Received Data Software 
+
+Flow Control                &I0     Disabled
+
+Data Compression            &K1     Auto enable/disable
+
+Error Control               &M4     Auto select
+
+Connection Rate             &N0     Variable connection rate
+
+Make/Break Ratio            &P0     U.S./Canada ratio
+
+Received Data Hardware 
+
+Flow Control                &R2     Enabled
+
+Data Set Ready (DSR)        &S0     DSR always on
+
+Modem Testing               &T5     Deny remote digital loopback
+
+Break Handling              &Y1     Break clears buffer; break                                              
+
+				    then goes to remote modem
+
+Stored Phone Numbers        &Zn=s
+
+
+
+
+
+The following parameters are changed via your communications 
+
+software:
+
+
+
+Word Length         8 bits*
+
+Parity              None*
+
+Serial port Rate    19.2 Kbps*
+
+
+
+* Initial Settings; match software settings of subsequent &W 
+
+commands.
+
+
+
+The &F2 and &F0 templates differ from the &F1 template for only a 
+
+few commands.  The tables below list only those settings that differ 
+
+from the &F1 template.
+
+
+
+	  &F2 Software Flow Control Template
+
+
+
+Feature                     &F2  Setting
+
+Transmit Data Flow Control  &H2  Transmit data software flow control
+
+Receive Data Flow Control   &R1  Received data hardware flow 
+
+				 control disabled                                
+
+			    &I2  Received data software flow     
+
+				 control enabled
+
+
+
+
+
+	&F0  Low Performance Template
+
+
+
+Feature                     &F0    Settings
+
+Result Code Options         X1     Basic subset
+
+ARQ Result Codes            &A1    ARQ codes enabled
+
+Serial port Rate            &B0    Variable serial port rate
+
+Transmit Data Flow Control  &H0    Disabled
+
+Receive Data Flow Control   &R1    Disabled
+
+
+
+The following parameters are changed via your communications software:
+
+Word Length          7 bits*
+
+Parity               Even*
+
+Serial port Rate     9600 bps*
+
+
+
+* Initial Settings; match software settings of subsequent &W commands.
+
+
+
+	NVRAM S-Register Options
+
+
+
+NVRAM S-register Options                       Factory Setting
+
+S0*  Number of rings to answer on.                    1
+
+S1   Counts and stores number of rings from an
+
+     incoming call (read only).                       0
+
+S2   Escape code character.                          43
+
+S3   Carriage return character.                      13
+
+S4   Line feed character.                            10
+
+S5   Backspace character.                             8
+
+S6   Dial wait-time, sec.                             2
+
+S7   Carrier wait-time, sec.                         60
+
+S8   Dial pause, sec.                                 2
+
+S9   Carrier detect time, 1/10th sec.                 6
+
+S10  Carrier loss wait-time, 1/10th sec.              7
+
+S11  Tone duration, spacing, msec.                   70
+
+S12  Escape code guard time, 1/50th sec.             50
+
+S13  Bit-mapped functions (14.4 only).                0
+
+     Bit  Value  Result
+
+     0    1      Resets when DTR drops.
+
+     1    2      Resets non-MNP transmit buffer from
+
+		 1.5K to 128 bytes.
+
+     2    4      Sets backspace key to delete.
+
+     3    8      On DTR signal, auto dials the number
+
+		 stored in NVRAM at position 0.
+
+     4    16     At power on/reset, auto dials the 
+
+		 number stored in NVRAM at position 0.
+
+     5    32     Reserved.
+
+     6    64     Reserved.
+
+     7    128    Disconnects on escape code.
+
+S13  Bit-mapped functions (28.8 only).                0
+
+     Bit  Value  Result
+
+     0    1      Resets when DTR drops.
+
+     1    2      Reserved.
+
+     2    4      Reserved.
+
+     3    8      On DTR signal, auto dials the number
+
+		 stored in NVRAM at position 0.
+
+     4    16     At power on/reset, auto dials the 
+
+		 number stored in NVRAM at position 0.
+
+     5    32     Reserved.
+
+     6    64     Disables MNP level 3 (used for testing 
+
+		 level 2).
+
+     7    128    Reserved.
+
+S14  Reserved (14.4 only).                            -
+
+S14  Bit-mapped functions (28.8 only).                0
+
+     Bit  Value  Result
+
+     0    1      The modem hangs up on receipt of +++,
+
+		 returns to command mode, and sends the
+
+		 NO CARRIER result code.
+
+     1-7  -      Reserved.
+
+S15  ARQ Options Register (14.4 only).                0
+
+     Bit  Value  Result
+
+     0    1      Disables ARQ/MNP for V.22.
+
+     1    2      Disables ARQ/MNP for V.22 bis.
+
+     2    4      Disables ARQ/MNP for V.32/V.32 bis/
+
+		 V.32 terbo.
+
+     3    8      Disables MNP handshake.
+
+     4    16     Disables MNP level 4.
+
+     5    32     Disables MNP level 3.
+
+     6    64     MNP compatibility.
+
+     7    128    Disables V.42 operation.
+
+S15  Bit-mapped functions (28.8 only).                0
+
+     Bit  Value  Result
+
+     0-2  -      Reserved.
+
+     3    8      Resets non-ARQ mode transmit buffer
+
+		 from 1.5K bytes to 128.
+
+     4    16     Disables MNP level 4; retransmitting the          
+
+		 larger level 4 data blocks may be a 
+
+		 problem if you expect a great number of
+
+		 errors during a call.
+
+     5    32     Sets Backspace key to delete.            
+
+     6-7  -      Reserved.
+
+S16  Bit-mapped functions.                            0
+
+     Bit  Value  Result
+
+     0    1      Reserved.
+
+     1    2      Touch tone dialing test.
+
+     2-7  4-128  Reserved.
+
+S17  Reserved.                                        0  
+
+S18  &Tn Loopback testing timer, sec.                       0
+
+S19  Inactivity/hang up timer, min.                   0
+
+S20  Reserved.                                        0
+
+S21  Break length, 1/100th msec.                     10
+
+S22  XON character                                   17
+
+S23  XOFF character                                  19
+
+S24  Reserved.                                        0
+
+S25  DTR recognition time, 1/100th sec. (14.4 only)  20
+
+S25  DTR recognition time, 1/100th sec. (28.8  only)  5
+
+S26  Reserved.                                        0  
+
+S27  Bit-mapped functions (14.4 only).                0
+
+     Bit  Value  Result
+
+     0    1      Enables ITU-T V.21 modulation at 300 
+
+		 bps for overseas calls; in V.21 mode, the
+
+		 modem answers both overseas and domestic
+
+		 (U.S. and Canada) calls, but only originates
+
+		 V.21 calls. 
+
+     1    2      Enables unencoded (non-trellis coded)
+
+		 modulation in V.32 mode; rarely used part 
+
+		 part of ITU-T Recommendation V.32.
+
+     2    4      Disables V.32 modulation.
+
+     3    8      Disables 2100Hz answer tone to allow two
+
+		 V.42 modems to connect more quickly.
+
+     4    16     Enables V.23 fallback mode.
+
+     5    32     Disables V.32 bis mode.
+
+     6    64     Reserved.
+
+     7    128    Software compatibility mode. This setting
+
+		 disables the codes and displays the 9600
+
+		 code instead. The actual rate of the call can
+
+		 be viewed on the AT16 screen. Used for 
+
+		 unusual software incompatibilities. Some 
+
+		 software may not accept 7200, 12000, and 
+
+		 14400 bps result codes.
+
+S27  Bit-mapped functions (28.8 only).                0
+
+     Bit  Value  Result
+
+     0    1      Enables ITU-T V.21 modulation at 300 
+
+		 bps for overseas calls; in V.21 mode, the
+
+		 modem answers both overseas and domestic
+
+		 (U.S. and Canada) calls, but only originates
+
+		 V.21 calls. 
+
+     1    2      Enables unencoded (non-trellis coded)
+
+		 modulation in V.32 mode; rarely used part 
+
+		 part of ITU-T Recommendation V.32.
+
+     2    4      Disables V.32 modulation.
+
+     3    8      Disables 2100 Hz answer tone to allow two
+
+		 V.42 modems to connect more quickly.
+
+     4    16     See below.
+
+     5    32     See below.
+
+     6    64     Reserved.
+
+     7    128    Software compatibility mode. This setting
+
+		 disables the codes and displays the 9600
+
+		 code instead. The actual rate of the call can
+
+		 be viewed on the AT16 screen. Used for 
+
+		 unusual software incompatibilities. Some 
+
+		 software may not accept 7200, 12000, and 
+
+		 14400 bps result codes.
+
+Error control handshaking options:  select the total values of 
+
+bits 4 and 5.
+
+     Bit 4  Bit 5  Result
+
+     0      0      Completes handshaking sequence: V.42 Detection. 
+
+		   LAPM error control, MNP.
+
+     16     0      Disables MNP.
+
+     0      32     Disables V.42 detection and LAPM.  
+
+     16     32     Combined value of 48 negotiates LAPM without  
+
+		   Detection phase.  Choose this value if the
+
+		   remote modem uses LAPM but does not support
+
+		   the Detection phase.
+
+S28  V.21/V.23 fallback delay, 1/10th msec.           8
+
+S29  V.21 answer mode fallback timer, 1/10th msec.
+
+     (14.4 only).                                     20
+
+S29  Reserved (28.8 only).                            -
+
+S30-33  Reserved.                                     0
+
+S34  Reserved (14.4 only).                            -
+
+S34  Bit-mapped functions (28.8 only)                 6
+
+     Bit  Value  Result
+
+     0    1      Disables V.32 bis. Used for troubleshooting.
+
+     1-2  -      Reserved.
+
+     3    8      Enables V.23 modulation.
+
+     4-7  -      Reserved.
+
+S35  Reserved.
+
+S36  Reserved.
+
+S37  Reserved.
+
+S38  Disconnects wait time, sec.                      0
+
+S39-44  Reserved.                                     0
+
+S51  Bit-mapped functions (28.8 only)                 0
+
+     Bit  Value  Result
+
+     0    1      Disables MNP/V.42 in V.22.
+
+     1    2      Disables MNP/V.42 in V.22 bis.
+
+     2    4      Disables MNP/V.42 in V.32 bis.
+
+     3-7  -      Reserved.
+
+S54  Bit-mapped functions (28.8 only)                 0
+
+     Bit  Value  Result
+
+     0    1      Disables 2400 symbol rate.
+
+     1    2      Disables 2743 symbol rate.
+
+     2    4      Disables 2800 symbol rate.
+
+     3    8      Disables 3000 symbol rate.
+
+     4    16     Disables 3200 symbol rate.
+
+     5    32     Disables 3429 symbol rate.
+
+     6    64     Disables Call Indicate (V.34 only)
+
+     7    128    Disables V.8 (V.34 only).
+
+S55  Bit-mapped functions (28.8 only)                 0
+
+     Bit  Value  Result
+
+     0    1      Disables 8S-2D map.
+
+     1    2      Disables 16S-4D map.
+
+     2    4      Disables 32S-2D map.   
+
+     3    8      Disables 64S-4D map.
+
+     4-7  -      Reserved.
+
+S56  Bit-mapped functions (28.8 only)                 0
+
+     Bit  Value  Result
+
+     0    1      Disables non-linearing coding.
+
+     1    2      Disables TX level derivation.
+
+     2    4      Disables pre-emphasis.
+
+     3    8      Disables pre-coding.
+
+     4    16     Disables shaping.
+
+     5    32     Reserved.
+
+     6    64     Disables V.34 (V.34 only).
+
+     7    128    Disables V.FC.
+
+     
+
+NOTE:  Bit-mapped registers have up to eight functions. Select the 
+
+bit(s) you want on and set the register to the total of values in the 
+
+Value column.
+
+
+
+* The valid range of rings that can be stored in NVRAM for S0 is 1 to 
+
+255. 1 is the default for modems with DIP switches. 0 is the default 
+
+for modems without DIP switches. S0=0 cannot be stored in NVRAM. 
+
+Regardless of the NVRAM setting, DIP switch 5 must be off for the 
+
+modem to be in Auto Answer mode at power-on/reset.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************************************
+
+Modem Concepts
+
+**********************************************************************
+
+
+
+======================================================================
+
+How Modems Work
+
+======================================================================
+
+The word "modem" derives from the words "modulation" and 
+
+"demodulation".  A modem modulates (converts) digital data 
+
+(computer information) to analog data (fluctuations in tones carried 
+
+over a copper telephone wire).  The information is carried over a 
+
+telephone network until it reaches its destination, where another 
+
+modem demodulates the analog signals and converts them back to 
+
+digital data so the computer there can use the information.
+
+
+
+This ability to use the telephone network for quick, inexpensive data 
+
+exchange makes a modem a powerful tool that can be used by 
+
+businesses and individuals worldwide to expand business and 
+
+personal networks.
+
+
+
+======================================================================
+
+Modem Connections
+
+======================================================================
+
+Modems come in all shapes and sizes and their ability to 
+
+communicate is based on the protocols they use (the rules they 
+
+follow) to perform operations in identical ways.  They may be preset 
+
+or reset logically (using communications software) or reset 
+
+physically (using DIP switches) to best communicate with the 
+
+modem they are transferring information to and receiving 
+
+information from.
+
+
+
+When the modems initially contact each other, the calling modem 
+
+contacts the answering modem and introduces itself.  The modems 
+
+communicate via a series of signals to identify the appropriate 
+
+protocol and speed for efficient data transfer.  The answering 
+
+modem either accepts the call or rejects the call.  This transaction 
+
+is called a handshake.  
+
+
+
+Successful handshaking results in a carrier signal.  When modems 
+
+establish a carrier signal, your modem sends a Carrier Detect signal 
+
+to your computer, indicating that the modems are ready to transfer 
+
+data.  If they fail to connect, your modem sends your computer a No 
+
+Carrier message.  
+
+
+
+======================================================================
+
+Line Travel
+
+======================================================================
+
+Poor telephone line quality may cause a decrease in efficient data 
+
+transmission.  In order to ensure the data sent and received is 
+
+reliable, error control was introduced by modem manufacturers.  The 
+
+modems check each data block received, and if something went 
+
+wrong between locations, the receiving device instructs the sending 
+
+device to resend the affected block.
+
+
+
+Modems send information at different rates, measured in bits per 
+
+second (bps).  Today, the figures can be staggering.  In the most 
+
+optimal situation, a 28.8 modem can exchange data as fast as 
+
+115,200 bps in data only mode, and a 14.4 modem can exchange 
+
+data in 57,600 bps.  
+
+
+
+In most cases, though, the speed relies heavily on the ability of the 
+
+modem to adapt to line conditions at high speed.  This adaptability 
+
+is the most important feature of your modem.
+
+
+
+======================================================================
+
+Digital Data
+
+======================================================================
+
+The smallest data unit sent is made up of a defined word length (7 or 
+
+8 bits each), a start bit (a 0 that indicates where the data unit 
+
+begins), and one or two stop bits. 
+
+
+
+Parity bits were the typical method of controlling errors before the 
+
+introduction of cyclic redundancy check (CRC) error correction, 
+
+described below under Error Control.  A parity bit is either a 1 (odd 
+
+parity) or a 0 (even parity), depending upon whether the data 
+
+segment has an odd or even number of binary digits.  Some 
+
+systems allow mark parity (parity is always 1 - odd) or space parity 
+
+(parity is always 0 - even).  Parity bits are used less now that CRC is 
+
+common.  
+
+
+
+The setting 8-N-1 (word length=8, parity=none, stop bits=1) has 
+
+become the most common data format in data communications.  
+
+Both computers involved in a data transfer must use the same 
+
+parity, word length, and number of stop bits, or connection isn't 
+
+possible and garbage characters (random characters that appear in 
+
+a nonsensical order) will display.  The software must first be set the 
+
+same on the computers at both ends of the data transfer before the 
+
+modems can operate effectively.  A simple phone call to determine 
+
+the settings at the other end can clear this up quickly and easily.  
+
+
+
+A specific parity setting is required, even if it is none (8-N-1), to 
+
+assure that users with older systems can still communicate with 
+
+newer modems.
+
+
+
+======================================================================
+
+Flow Control
+
+======================================================================
+
+Another important aspect of modem communications is flow control, 
+
+which manages the amount of data stored in buffers (temporary 
+
+memory locations).  Buffers are used to store information before it is 
+
+passed on to a computer or modem.  Flow control is used to prevent 
+
+buffer overflow.  The system uses either hardware or software 
+
+(using control characters) flow control.  We recommend the use of 
+
+hardware flow control, because actual data may be mistaken for the 
+
+control characters used in software flow control and the data may be 
+
+distorted.
+
+
+
+======================================================================
+
+Error Control
+
+======================================================================
+
+Error control protects the integrity of data transferred over phone 
+
+channels and is available for calls at 1200 bps and above.  It can be 
+
+disabled, although high-speed calls (above 2400 bps) should 
+
+always be made using error control.  The operations defined in an 
+
+error control protocol include the following.
+
+
+
+1. Establishment of compatibility.
+
+
+
+2. Data formatting into blocks. 
+
+
+
+3. Error detection through Cyclic Redundancy Checking (CRC).
+
+CRC is based on algorithms that calculate a value for an entire block 
+
+of data.  The CRC value attached to each block sent must match the 
+
+receiving modem's calculation.  If not, the remote modem sends a 
+
+negative acknowledgment to the sending modem.
+
+
+
+4. Positive acknowledgment of error-free blocks and negative 
+
+acknowledgment of corrupted data blocks.
+
+
+
+5. Retransmission of corrupted data blocks.
+
+
+
+Always set your modem for error control, &M4 (by default) or &M5, 
+
+for calls at speeds over 2400 bps.  Most users communicating with 
+
+V.42- or MNP-compatible modems will want error control at 2400 and 
+
+1200 bps, as well.  
+
+
+
+Your modem is set at the factory to &M4, causing it to try for an error 
+
+control connection, and if that isn't possible, to proceed with the call 
+
+in Normal mode.  The modem first tries for a V.42 connection, then 
+
+an MNP connection.  The information below assumes a modem 
+
+setting of &M4.
+
+
+
+----------------------
+
+ITU-T V.42 Handshaking
+
+----------------------
+
+The exchange of signals between two devices in order to establish a 
+
+communications link is called handshaking.  ITU-T V.42 includes a 
+
+two-stage handshaking process.
+
+
+
+1. A detection phase that is based on an exchange of predefined 
+
+characters.
+
+
+
+2. LAPM (Link Access Procedures for modems) Negotiation.  In this 
+
+phase, the modems identify their capabilities concerning maximum 
+
+data-block size and the number of outstanding data blocks allowed 
+
+before an acknowledgment is required.
+
+
+
+---------------
+
+MNP Handshaking
+
+---------------
+
+This protocol is supported by the ITU-T V.42 recommendation.  It 
+
+was originally developed by Microcom, Inc. and is now in the public 
+
+domain.
+
+
+
+MNP handshaking begins with an MNP link request sent by the 
+
+calling modem.  If the remote modem doesn't recognize the request, 
+
+error control isn't possible.
+
+
+
+----------------
+
+Data Compression
+
+----------------
+
+If the modems successfully establish a V.42 connection, they also 
+
+negotiate for the associated V.42 bis data compression.  If a V.42 
+
+connection is not established, but an MNP connection is 
+
+established, they negotiate for MNP5 data compression.
+
+Modems using V.42 bis compression negotiate the following 
+
+options.
+
+
+
+1. Dictionary size: the amount of memory available for compression 
+
+table entries.  (Entries in the table are codes devised for redundant 
+
+data.  The data is packed into shorter data units, called code words, 
+
+and unpacked by the receiving modem.)
+
+
+
+Possible sizes are as follows. Your modem uses 11-bit, or 2048-
+
+entry dictionaries, but drops down if the remote modem uses a 512- 
+
+or 1024-entry dictionary.
+
+
+
+	Bits    Entries
+
+	9       512
+
+	10      1024
+
+	11      2048
+
+
+
+2. Maximum string length of each entry.  
+
+
+
+As the dictionary fills, the modem deletes the oldest, unused 
+
+strings.  V.42 bis compression is more efficient than MNP5 
+
+compression, in part because it dynamically deletes unusable 
+
+strings.  In addition, it works better with files that are already 
+
+compressed.  These include .ZIP files downloaded from many 
+
+bulletin boards and 8-bit binary files, which appear to the modem to 
+
+be compressed.
+
+
+
+MNP5 compression should not be used with such files because it 
+
+adds data to them, which lessens throughput.  The additional data is 
+
+stripped when the file is decompressed by the remote modem.  
+
+When transferring such files, it's best to set the modem to &K3.  
+
+This allows V.42 bis compression to work dynamically with the 
+
+compressed data but disables MNP5.
+
+
+
+------------
+
+Flow Control
+
+------------
+
+Flow control of data from the computer is required when modems 
+
+use error control for two reasons.
+
+
+
+1. The transmitting modem stores a copy of each frame it transmits 
+
+to the remote end until it is acknowledged by the receiving modem.
+
+
+
+2. If errors are encountered, the transmitting modem must resend the 
+
+corrupted data.  This retransmission activity, combined with the steady 
+
+stream of data from the computer, can overflow the buffer.
+
+
+
+----------------------------
+
+Online Fallback/Fall Forward
+
+----------------------------
+
+Under error control, if a disturbance on the phone line causes an 
+
+error to a data block, the receiving modem replies with a negative 
+
+acknowledgment.  In response, the transmitting modem retrieves a 
+
+copy of the original data block from its transmit buffer, and every 
+
+block it sent after that block, and retransmits them.  This keeps the 
+
+data error-free and in sequence.
+
+
+
+However, there is a retransmission limit:  the modems hang up if 
+
+line disturbances are so severe that one of the modems has 
+
+retransmitted the same block of data twelve times without a positive 
+
+acknowledgment.
+
+
+
+Because high-rate calls are more vulnerable than transmissions at 
+
+2400 bps and below, V.34 modems (such as your 28.8 modem) risk 
+
+reaching the retransmit limit and hanging up.  To prevent this, one of 
+
+the modems requests that they fall back to a slower rate if 
+
+necessary.  When line conditions improve, the modems fall forward 
+
+to the next higher rate, up to the original connection rate of the call.
+
+
+
+======================================================================
+
+Throughput Guidelines
+
+======================================================================
+
+The following guidelines should help you to make the most of your 
+
+modem's advanced performance features.  In many instances, 
+
+experimentation and experience will indicate what works best for 
+
+your applications.
+
+
+
+Throughput is the volume of user information transferred per 
+
+second, without Start and Stop bits and other overhead information.  
+
+You'll obtain optimal throughput under the following conditions.
+
+
+
+1. Your communications software supports a fixed serial port rate 
+
+(between your modem and the computer) higher than the connection 
+
+rate (between the two connecting modems).  An example of this 
+
+would be setting your software to lock into the 38.4K bps rate, and 
+
+retaining the default &B1 setting.
+
+
+
+2. The call uses data compression.
+
+
+
+3. You're transmitting text files.  Throughput is higher for text files 
+
+than other types of files, such as .EXE or .COM binary files.  
+
+
+
+4. File transfer may be slowed down by a file-transfer protocol.  
+
+Many non-text files require a file-transfer protocol, but throughput 
+
+results vary.  For example, certain public domain file-transfer 
+
+protocols have the following effects.  Both modems must use the 
+
+same protocol for data transfer to take place.
+
+
+
+Kermit     Newer versions of Kermit support packets up to 9K bps 
+
+	   and a sliding window design to eliminate turnaround delay.  
+
+	   With earlier versions, however, throughput may be 
+
+	   severely reduced due to short block lengths (possibly 
+
+	   under 128 bytes) and acknowledgment turnaround time.
+
+
+
+Xmodem     Throughput may be reduced if your version uses short 
+
+	   block lengths, for example 128 bytes.  Some versions 
+
+	   use blocks of 1K byte, which is much better, although 
+
+	   overhead (error control protocol information) still affects 
+
+	   overall throughput.
+
+
+
+Ymodem     This protocol is similar to Xmodem with 1K byte block 
+
+	   lengths and allows multiple files to be sent in one 
+
+	   transfer.
+
+
+
+The above protocols further reduce throughput during error control 
+
+(ARQ) connections.  The accuracy of the data is checked twice, by 
+
+the file-transfer protocol and by the modem.  To avoid redundancy, 
+
+disable modem error control by setting the modem to &M0.
+
+
+
+Zmodem     The most current version of this protocol can yield the 
+
+	   most efficiency.  Leave the modem at its error control 
+
+	   default (&M4) and data compression default, &K1. Zmodem 
+
+	   performs the same kind of compression as V.42 bis; 
+
+	   it turns off its compression if files are already compressed.
+
+
+
+Ymodem-G   This is an alternative protocol with the modem left at 
+
+	   its error control default, &M4.  Ymodem-G assumes 
+
+	   the modems are using error control.  Overhead is minimal, 
+
+	   with throughput almost equal to that obtained with no 
+
+	   file-transfer protocol.  However, keep in mind that Ymodem-G 
+
+	   is only useful if the modems are using error control.  
+
+	   In addition, follow this recommendation only if your 
+
+	   machine and software are set to hardware flow control. 
+
+
+
+WARNING:  If you are using an X-, Y- or Zmodem-type protocol, do 
+
+not use the modem's software flow control.
+
+
+
+
+

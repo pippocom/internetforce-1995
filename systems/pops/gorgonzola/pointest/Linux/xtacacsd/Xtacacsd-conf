@@ -1,0 +1,119 @@
+## xtacacs config file. Use with xtacacsd v2.x
+#
+# All entries are processed and in the order they are read.
+# The first permit or deny match will stop searching any further.
+# ACL entries do not set permit or deny. However, most other
+# entries will set permit or deny, and will cause an immediate
+# return if they explicity set permit or deny.
+
+# Boolean options
+BLANKPASSWORD
+NONAMESERVER
+#IGNORECASE
+HostWTMP
+LOGGING
+#QUIET
+
+DEBUGLEVEL 2
+
+#WTMP	/var/xtacacs/wtmp
+#UTMP	/var/xtacacs/utmp
+
+# Upto 5 password files. Command line arguments will precede  this list.
+# Specify DEFAULT if you want to search the default password file (which
+# can use NIS)- however this default system password file will be
+# searched in a case-sensitive manner since the getpwnam() call does not
+# permit case-insensitive searching.
+# All the other password files listed here will be searched using the
+# Getpw() routines (which does not support YP style entries).
+PASSWD	DEFAULT
+#PASSWD	/usr/local/tacacs/passwd
+#PASSWD  /etc/passwd.local
+
+##
+# For password authentication using Enigma Logic or SDI cards, use the
+# 'AUTHTOKEN' config lines.The password string is case sensitive and
+# the program to exec must exist and be executable. It should return
+# 1 to permit access, and 0 to deny access.
+#	AUTHTOKEN  <passwd-string>  <prog to exec for passwd auth>
+#AUTHTOKEN  ENIGMA  /usr/local/tacacs/bin/enigma 
+#AUTHTOKEN  SDI	/usr/local/tacacs/bin/sdcheck
+
+##
+## To put restrictions on the connections...
+##
+#
+# While doing an 'exec', it adds on the username, host & line number
+# at the end as an argument.
+#
+# <list type> <key> HOST {hostname} [LINE <line number>,<line number>] \
+#	<request type>|ALL [<action>] <args>
+#
+#	where
+#	<list type> is one of:
+#		USER GROUP or GECO
+#	<request type> is one of:
+#		arap chap login connect enable slip slipaddr old any/all
+#	<action> is one of:
+#		acl permit deny getok norouting numlogin execpermit execdeny
+#
+#  The list can further be tailored using HOST to specify the terminal
+#  server that is sending the tacacs request and LINE to specify the
+#  tty line number (the LINE's are optional).
+#
+# For the user-list, the <key> is the username, for the group-list
+# it is the gid (NOT group-name) and for the geco-list it is an geco 
+# string match (the last portion of the geco string if it has fields
+# separated by commas).
+# 
+# The first explicit 'permit' or 'deny' match will return. Hence, put
+# 'acl' entries first.
+#
+# In following example, the user 'admin' will have an ACL of '0' (no
+# access-list) and a permit for *all* types of requests. SLIP requests
+# will have the program 'mail_download' run on the server host.
+# Users in group 10 will be okay-ed against the program 'daytime_logins'
+# (which will automatically be run with the username, gid, host & port
+# as args. This check is done AFTER the password has been verified.
+# User 'bin' is denied all access.
+# Users with the keyword 'dialback' as the last string in the geco field
+# will be denied access (execdeny) and the program 'dialback.csh' will be run.
+# Users with 'slip' as the last string in the geco field will be
+# permitted access (subject to that fact that no previous line has denied
+# them access (order is important).
+# All remaining users will have an ACL of '8' on all connections. SLIP 
+# requests will have an inbound ACL of 101, outbound ACL of 202 and a limit
+# of 5 on the number of logins.
+#
+##
+# <list>	  <host>	<req>	 <action>	<args>
+#
+#USER guest	HOST all	slip	acl		0-111
+## La seguente e' un aggiunta di marco
+USER all        HOST all        all     numlogin        1
+USER guest	HOST all	all 	acl		0-111
+USER guest	HOST all	slip	deny
+GROUP all	HOST all	all	numlogin	1
+GROUP all	HOST all	all	login	permit
+GROUP all	HOST all	all	slip 	permit
+#USER admin	HOST all	all	acl		0
+#USER admin	HOST all	slip	execpermit	/usr/bin/mail_download
+#USER admin	HOST all LINE 1,2,3,4	all	permit
+#
+#GROUP 10	HOST noontime	login	getok 		/bin/daytime_logins
+#
+#USER bin	HOST all	all	deny
+#
+#
+#GECO dialback	HOST cs500	login	execdeny	/bin/dialback.csh
+#
+#GROUP all	HOST all	all	acl		8
+#GROUP all	HOST all	slip	acl		101-202
+#GROUP 55	HOST all	all	numlogin	5	
+#
+### since slipaddr requests are all authenticated anyway
+#GROUP all	HOST all	slipaddr	permit
+#
+### permit doing a slip default on the following lines
+#GECO slip	HOST all	LINE 5,6,7,8,9	slip	permit
+#

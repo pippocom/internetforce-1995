@@ -1,0 +1,120 @@
+#!/usr/local/bin/perl
+
+###########################################################################
+#                       post_response.cgi                                 #
+#                                                                         #
+# This script was written by Selena Sol (selena@eff.org                   #
+# http://www.eff.org/~erict) having been inspired by countless other      #
+# perl authors.  Feel free to copy, cite, reference, sample, borrow or    #
+# plagiarize the contents.  However, please let me know where it goes so  #
+# that I can at least watch and take part in the development of the       #
+# memes. Information wants to be free, support public domain freware.     #
+#                                                                         #
+###########################################################################
+
+#Gather the form data and set some server specific variables
+
+  &get_form_data;
+  $counter = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Data/counter.list";
+  &counter;
+  $header = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Header/header_$MID.dat";
+  $body = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Body/body_$MID.txt";
+  $reply_list = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Replies/replies_$MID.list";
+  $oldmid_body = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Body/body_$MYDATA{'oldmid'}.txt";
+  $oldmid_header = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Header/header_$MYDATA{'oldmid'}.dat";
+  $quotetext= `cat $oldmid_body`;
+  $page_name = "Template Message Board - Posting";
+  $background = "/Images/Backgrounds/bkgnd.jpg";
+  $submit_post_script = "submit_post.cgi";
+  $line = "/Images/Icons/Lines/smalline.gif";
+  $post_button_grey = "/Images/Buttons/post_grey.gif";
+  $read_messages_script = "gen_first_page.cgi?mid=1&oldmid=1";
+  $read_button ="/Images/Buttons/message_archive_top.gif";
+
+# Print out the submission form
+
+  print "Content-type: text/html\n\n";
+  print "<HTML><HEAD><TITLE>$page_name</TITLE></HEAD>";
+  print "<BODY BACKGROUND=\"$background\">";
+  print "<FORM METHOD=\"POST\" ACTION=\"$submit_post_script\">";
+  print "<TABLE BORDER=0><TR>";
+  print "<TH>First Name</TH><TD>";
+  print "<INPUT TYPE=\"text\" NAME=\"fname\" SIZE=\"50\" MAXLENGTH=\"50\">"; 
+  print "</TD></TR><TR><TH>Last Name</TH><TD>";
+  print "<INPUT TYPE=\"text\" NAME=\"lname\" SIZE=\"50\" MAXLENGTH=\"50\">";
+  print "</TD></TR><TR><TH>E-Mail Address</TH><TD>";
+  print "<INPUT TYPE=\"text\" NAME=\"email\" SIZE=\"50\" MAXLENGTH=\"50\">";
+  print "</TD></TR><TR><TH>Subject</TH><TD>";
+  print "<INPUT TYPE=\"text\" NAME=\"subject\" SIZE=\"50\" MAXLENGTH=\"50\">";
+  print "</TD></TR><TR><TH>Message Body</TH><TD>";
+  print "<TEXTAREA NAME=\"body\" ROWS=\"10\" COLS=\"51\"></TEXTAREA></TD>";
+  print "</TR></TABLE>";
+  print "<CENTER><P><IMG SRC=\"$line\"><P>";
+  print "<TABLE BORDER=0 CELLPADDING=2 CELLSPACING=2><TR>";
+  print "<TD><IMG SRC=\"$post_button_grey\" BORDER=0 ALT=\"[Post";
+  print "a Message]\"></a></TD>";
+  print "<TD><A HREF=\"$read_messages_script\">";
+  print "<IMG SRC=\"$read_button\" BORDER=0 ALT=\"[Read";
+  print "through Message Archive]\"></A></TD>";
+  print "</TR></TABLE>";
+  print "<INPUT TYPE=\"hidden\" NAME=\"oldmid\" VALUE = \"$MYDATA{'oldmid'}>";
+  print "<INPUT TYPE=\"hidden\" NAME=\"mid\" VALUE = \"$MID\">";
+  print "<P><CENTER>";
+  print "<INPUT TYPE=\"submit\" VALUE=\"Submit your message\">"; 
+  print "<INPUT TYPE=\"reset\" VALUE=\"Clear this form\">";
+  print "</P></CENTER></FORM></BODY></HTML>";
+
+##############################################################################
+#                               SUBROUTINES                                  #
+##############################################################################
+
+sub get_form_data
+  {
+
+# This form parsing routine was adapted from a script by Robert John
+# Mudry which was published by the Coriolis Group as freeware in "Serving
+# The Web".  This is an excellent book which I recommend to any cgi
+# programmer.
+
+# First, split up $FORM_DATA into $NAME and $VALUE.  Store $VALUE
+# in $MYDATA{$NAME} provided that $NAME is not already in use.  If it is, a
+# temporary number stored in $NUM is incremented and a new the $VALUE is
+# saved as the new variable.
+
+  $FORM_DATA = $ENV{'QUERY_STRING'};
+  foreach (split(/&/, $FORM_DATA))
+    {
+    ($NAME, $VALUE) = split(/=/, $_);
+    $NAME =~ s/\+/ /g;
+    $NAME =~ s/%([0-9|A-F]{2})/pack(C,hex($1))/eg;
+    $VALUE =~ s/\+/ /g;
+    $VALUE =~ s/%([0-9|A-F]{2})/pack(C,hex($1))/eg;
+
+# Find unique Variable Name for every variable coming in from the form input
+
+    $NUM = "0";
+    while ($MYDATA{$NAME} ne "")
+      {
+      $NUM++;
+      $NAME =~ s/\.([0-9]+$)|$/\.$NUM/;
+      }
+# Store Variable NAME=Variable VAUE pair
+
+      $MYDATA{$NAME} = $VALUE;
+   }
+  }
+
+sub counter
+  {
+
+# This subroutine checks to see which was the last number (tail -1) in the
+# counter file.  It then adds one to that number, assigns the new value to
+# the new message (Message ID) and then appends the counter file 
+# with the new number.
+
+  $MID = `tail -1 $counter`;
+  $MID += 1;
+  open (NOTE, ">>$counter");
+  print NOTE "$MID\n";
+  close (NOTE);
+  }

@@ -1,0 +1,194 @@
+!
+version 10.3
+service udp-small-servers
+service tcp-small-servers
+!
+hostname Sfera2511
+!
+enable secret 5 $1$tJ1a$FI8ByV9jcKTl6U6dLrlQ41
+enable password <ORIGINAL PASSWORD REMOVED>
+!
+ip subnet-zero
+!
+interface Ethernet0
+ ip address 194.235.140.1 255.255.255.224
+!
+interface Serial0
+ ip address 194.235.165.18 255.255.255.252
+ bandwidth 64
+!
+interface Serial1
+ no ip address
+ shutdown                                                                      
+ shutdown
+!
+interface Async1
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.225
+ async mode interactive
+ no cdp enable
+!
+interface Async2
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.226
+ async mode interactive
+ no cdp enable
+!
+interface Async3
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.227
+ async mode interactive                                                        
+ async mode interactive
+ no cdp enable
+!
+interface Async4
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.228
+ async mode interactive
+ no cdp enable
+!
+interface Async5
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.229
+ async mode interactive
+ no cdp enable
+!
+interface Async6
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.230                                      
+ async default ip address 194.235.140.230
+ async mode interactive
+ no cdp enable
+!
+interface Async7
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.231
+ async mode interactive
+ no cdp enable
+!
+interface Async8
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.232
+ async mode interactive
+ no cdp enable
+!
+interface Async9
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp                                                             
+ encapsulation ppp
+ async default ip address 194.235.140.233
+ async mode interactive
+ no cdp enable
+!
+interface Async10
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.234
+ async mode interactive
+ no cdp enable
+!
+interface Async11
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.235
+ async mode interactive
+ no cdp enable
+!
+interface Async12
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive                                             
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.236
+ async mode interactive
+ no cdp enable
+!
+interface Async13
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.237
+ async mode interactive
+ no cdp enable
+!
+interface Async14
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.238
+ async mode interactive
+ no cdp enable
+!
+interface Async15
+ ip unnumbered Ethernet0                                                       
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.239
+ async mode interactive
+ no cdp enable
+!
+interface Async16
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.235.140.240
+ async mode interactive
+ no cdp enable
+!
+ip name-server 194.235.140.5
+ip name-server 194.235.164.130
+ip name-server 194.235.140.6
+ip route 0.0.0.0 0.0.0.0 194.235.165.17
+ip route 194.235.140.0 255.255.255.224 Ethernet0
+ip route 194.235.140.32 255.255.255.224 Ethernet0
+ip route 194.235.140.64 255.255.255.224 Ethernet0
+tacacs-server host 194.235.140.5
+tacacs-server extended                                                         
+tacacs-server extended
+tacacs-server authenticate connections
+tacacs-server authenticate slip always
+tacacs-server notify connections
+tacacs-server notify enable
+tacacs-server notify logout
+tacacs-server notify slip
+snmp-server community <ORIGINAL SECRET REMOVED> RO
+!
+line con 0
+line 1 16
+ exec-timeout 0 0
+ login tacacs
+ modem ri-is-cd
+ terminal-type vt100
+ exec-character-bits 8
+ transport input all
+ stopbits 1
+ rxspeed 38400
+ txspeed 38400
+ flowcontrol hardware
+line aux 0
+ transport input all
+line vty 0 4                                                                   
+ password <ORIGINAL PASSWORD REMOVED>
+ login
+!
+end                                                                            

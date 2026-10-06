@@ -1,0 +1,6 @@
+I modelli di MicroTransciever usati sono:
+
+Allied TELESYN per reti Ethernet
+MOD 210TS
+AUI/10BaseT (attacco RJ45)
+IEEE 802.3

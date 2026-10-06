@@ -1,0 +1,19 @@
+Name:    www.microsoft.com
+Addresses:  198.105.232.5, 198.105.232.6, 198.105.232.4
+
+
+Name: www.iol.it
+Address: 194.20.24.83
+
+
+Name:    xpert.com
+Address:  192.114.166.130
+
+Name:    fddisunsite.oit.unc.edu
+Address:  152.2.254.81
+Aliases:  sunsite.unc.edu
+
+Name:    styx.ios.com
+Address:  198.4.75.44
+
+

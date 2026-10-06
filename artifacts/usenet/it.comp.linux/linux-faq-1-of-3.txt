@@ -1,0 +1,847 @@
+
+da Marco Iannacone
+18 ott 1997, 09:00:00
+a it.comp.linux
+
+             INFORMAZIONI RELATIVE A LINUX E DOMANDE RICORRENTI
+                                [Linux FAQ & News in Italian]
+
+di Marco Iannacone - ianna@pippo.com
+Versione 0.9.9b
+
+INDICE
+
+1. INTRODUZIONE
+     1.1 Che cos'e' Linux?
+     1.1.1 Che aspetto ha Linux?
+     1.2 Un po' di storia
+     1.3 Cosa rende Linux differente?
+2. CARATTERISTICHE TECNICHE
+     2.1 Come si rapporta Linux con gli altri sistemi operativi?
+     2.1.1 Linux vs. MS-DOS
+     2.1.2 Linux vs. MS-Windows
+     2.1.3 Linux vs. Windows NT
+     2.1.4 Linux vs. Apple Macintosh
+     2.1.5 Linux vs. Solaris
+     2.1.6 Linux vs. QNX
+     2.1.7 Linux vs. OS/2
+     2.1.8 Linux vs. Windows95/98
+3. CHI USA LINUX?
+4. E' DISPONIBILE DELLA DOCUMENTAZIONE?
+     4.1 Linux Documentation Project (LPD)
+     4.1.1 Italian Linux Documentation Project (ILDP)
+     4.1.2 Italian-HOWTO
+     4.2 FAQ
+     4.3 HOW-TO
+     4.4 Newsgroups
+     4.5 Libri e giornali
+     4.6 Cosa dicono di Linux (pareri autorevoli e recensioni)
+5. COME POSSO OTTENERE UNA COPIA DI LINUX?
+     5.1 Ma quanto costa?
+     5.2 Ftp Server
+     5.3 Distribuzioni
+6. INSTALLAZIONE
+     6.1 Quale hardware?
+     6.2 Dischi di avvio
+     6.2.1 Bootdisk
+     6.2.2 Rootdisk
+     6.3 Preparazione HD
+     6.4 Iniziamo
+7. PRINCIPALI APPLICAZIONI
+     7.1 Ma Linux contiene tutte le applicazioni di cui ho bisogno?
+     7.1.1 Workstation (Front Office)
+     7.1.2 Server (Back Office)
+     7.1.3 Sviluppo (programmazione)
+     7.2 Wish List (desiderata)
+8. DOMANDE
+     8.1 cos'e' il kernel?
+     8.2 cos'e' la shell?
+     8.3 cos'e' X-Windows?
+     8.4 cos'e' un windows-manager?
+     8.5 come faccio a vedere cdrom e floppy?
+     8.6 come posso avere sia NT che Linux sul mio pc?
+     8.7 Linux su un floppy?
+     8.8 come faccio a stampare?
+     8.9 Esiste COBOL per Linux?
+     8.10 Perche' non riesco ad accedere alla part. fat32/ntfs?
+     8.11 Perche' Linux mi vede solo 64MB di RAM (ma io ne ho 128)?
+     8.12 Linux e' Anno2000 compatibile?
+     8.13 Posso accedere da Linux al mio AS/400?
+     8.14 Posso accedere da Linux ad OpenVMS e VAX?
+     8.12 Qual e' il modo migliore di porre una domanda o proporre un
+     argomento nel NG?
+9. COME POSSO CONTRIBUIRE A DIFFONDERE LINUX?
+     9.1 siete studenti?
+     9.2 siete giornalisti?
+     9.3 lavorate in un negozio di PC?
+     9.4 sapete l'Inglese?
+     9.5 lavorate in un ISP?
+     9.6 avete letto un articolo su Linux?
+     9.7 siete programmatori, analisti, project manager dell'IT?
+10. COME INTRODURRE LINUX IN AZIENDA?
+     10.1 I programmi opensource sono affidabili/performanti?
+     10.2 Ma NT non e' meglio?
+     10.3 Con quali progetti posso partire?
+     10.4 Atteggiamenti nei confronti di Linux
+11. BREVE STORIA DI UNIX
+12. LICENZA D'USO
+13. ALTRI LINK UTILI
+14. QUESTO DOCUMENTO
+15. LEGALESE
+A. GLOSSARIO
+B. RINGRAZIAMENTI
+
+1. INTRODUZIONE
+
+Con questa guida mi propongo di riunire all'interno di un unico documento
+in Italiano, informazioni che possano essere utili a coloro che vogliono
+avvicinarsi a questo ottimo sistema operativo e nello stesso tempo fornire
+delle notizie che possano essere utilizzate dai system integrator per
+giustificare la scelta di Linux all'interno di un'azienda. Si tratta di una
+versione in continua evoluzione e come tale conterra' sicuramente
+imprecisioni; spero di poter migliorare le versioni successive grazie anche al
+contributo che vorrete inviarmi (critiche, correzioni, suggerimenti per nuovi
+capitoli, precisazioni...).
+Una versione piu' o meno aggiornata di questa guida e' disponibile nei
+newsgroup it.faq e it.comp.linux e sui seguenti server:
+
+<http://www.pippo.com/linux.html>http://www.pippo.com/linux.html (Server
+ufficiale)
+
+MIRROR:
+
+   * <http://howto.linuxberg.com/it.FAQ>http://howto.linuxberg.com/it.FAQ/
+   * <http://www.linux.it/ospiti/faqicl>http://www.linux.it/ospiti/faqicl/
+   *
+<ftp://ftp.pluto.linux.it/pub/pluto/ildp/FAQ>ftp://ftp.pluto.linux.it/pub/pl
+uto/ildp/FAQ/
+   *
+<http://master.pluto.linux.it/ildp/FAQ>http://master.pluto.linux.it/ildp/FAQ/
+   * <http://users.iol.it/ianna>http://users.iol.it/ianna/
+   * <http://www.linux.it/ospiti/iclfaq>http://www.linux.it/ospiti/iclfaq/
+   *
+<http://www.fokus.gmd.de/linux/ilpd/FAQ>http://www.fokus.gmd.de/linux/ilpd/F
+AQ/
+   *
+<http://members.tripod.com/~ranger_rg/faq/linux.html>http://members.tripod.c
+om/~ranger_rg/faq/linux.html
+   *
+<http://space.tin.it/computer/feipr/linux.txt>http://space.tin.it/computer/f
+eipr/linux.txt
+   *
+<http://bertola.eu.org/usenet/faq/testi/linux.txt>http://bertola.eu.org/usen
+et/faq/testi/linux.txt
+   *
+<http://www.freeweb.org/computer/giulivo/linux_faq.htm>http://www.freeweb.or
+g/computer/giulivo/linux_faq.htm
+   *
+<http://www.vedovanet.bbk.org/linux/faq>http://www.vedovanet.bbk.org/linux/f
+aq/
+   *
+<http://www.agora.stm.it/P.Meraglia/linux.htm>http://www.agora.stm.it/P.Mera
+glia/linux.htm
+   *
+<http://www.geocities.com/capecanaveral/hangar/5319/linux.htm>http://www.geo
+cities.com/capecanaveral/hangar/5319/linux.htm
+   *
+<http://www.agora.stm.it/A.Rollo/faq.txt>http://www.agora.stm.it/A.Rollo/faq
+.txt
+   * <http://www.soft-ita.net/linux>http://www.soft-ita.net/linux/
+   *
+<http://www.linuxvalley.com/mirror/linuxfaq>http://www.linuxvalley.com/mirro
+r/linuxfaq/
+   *
+<http://www.massimo.demartino.com/ianna/linux.htm>http://www.massimo.demarti
+no.com/ianna/linux.htm
+   * <http://137.204.200.1/linux.html>http://137.204.200.1/linux.html
+   * attendo eventuali segnalazioni per ampliare la lista
+
+1.1 Che cos'e' Linux
+
+Linux e' una implementazione gratuita di UNIX per personal computer
+(386-Pentium PRO), Digital Alpha, PowerPC, Sun SPARC, Apple Macintosh,
+Atari ST/TT, Amiga, MIPS, che supporta pieno multitasking, multi-user,
+multi-threading, X Windows, TCP/IP, ottima capacita' di comunicazione con
+altri sistemi operativi (quali quelli della Microsoft, Apple, Novell) e
+molto altro ancora. Le sue radici sono profondamente radicate in Internet.
+Le prime versioni del programma sono state sviluppate interamente da Linus
+Torvalds (torvalds@transmeta.com) presso l'Universita' di Helsinki in
+Finlandia, ma cio' che rende Linux cosi' diverso e' il fatto di essere
+cresciuto grazie all'aiuto di moltissimi ed eterogenei gruppi di
+programmatori UNIX ed esperti di Sistemi Operativi che hanno messo a
+disposizione il codice da loro prodotto, gratuitamente. Questa
+eterogeneita' si riferisce sia alle competenze tecniche e al settore di
+provenienza che alla dislocazione geografica.
+Affinche' queste comunita' di programmatori potessero lavorare insieme era
+necessario un efficiente strumento di comunicazione. Lo strumento fu
+Internet ed essendo Linux il sistema operativo scelto da queste persone,
+significa che gli strumenti e le utility necessarie ad utilizzare la Rete
+furono tra le prime a comparire.
+Oltre ad essere sviluppate appositamente per Linux, molte delle
+applicazioni furono portate da quello che era il miglior software
+disponibile in quel momento sul mercato.
+Per esempio, il compilatore C e' gcc (della Free Software Foundation): si
+tratta di un compilatore che viene comunemente utilizzato su piattaforma HP e
+Sun.
+In 8 anni Linux e' diventato il sistema operativo piu' evoluto tecnicamente
+dell'intera categoria e - a causa della disponibilita' dei sorgenti - e'
+diventato il punto di riferimento per lo sviluppo del kernel da parte di
+Microsoft e SCO. Inoltre molti degli sviluppatori di Solaris/QNX/AIX/SCO e NT,
+quando vanno a casa la sera - riscrivono e aggiungono le loro uniche e
+talvolta
+proprietarie tecnologie nel codice pubblico di Linux in modo che tutti gli
+altri possano utilizzarle.
+
+1.1.1 Che aspetto ha Linux?
+
+Per gli impazienti che vogliono capire subito come e' fatto, esiste uno
+screensaver x Windows 95/98/NT che mostra alcune schermate delle principali
+GUI
+e applicazioni di una workstation Linux.
+E' possibile scaricare lo screensaver da:
+
+http://<http://www.pippo.com/>www.pippo.com/linux-saver.html
+
+(ovviamente un server potra' avere un aspetto diverso in quanto usera'
+applicazioni differenti)
+
+1.2 Un po' di Storia
+
+Il 1 Agosto 1991, Linus annuncio' nel newsgroup comp.os.minix di aver
+iniziato a lavorare su una nuova versione di Minix e mise a disposizione i
+suoi risultati pubblicando i sorgenti della versione 0.01. Questo primo
+lavoro non conteneva nemmeno gli eseguibili, ma solo alcune parti base del
+kernel e dava per scontato che si avesse accesso ad una macchina Minix su cui
+compilarlo.
+Il 5 Ottobre 1991 Linus annuncio' la prima versione *ufficiale*: la 0.02.
+Questa era in grado di far girare bash (la famosa shell UNIX) e il
+compilatore gcc (GNU).
+Da quel momento nuove versioni si susseguirono velocemente (grazie al
+contributo di molti altri programmatori) e nel Marzo 1992 Linus rilascio'
+la versione 0.95 ad indicare che il sistema era ormai maturo per la prima
+release (1.0). In realta' a piu' di un anno di distanza (nel Dicembre 1993) il
+kernel di Linux era ancora fermo alla versione 0.99.pl14.
+Oggi, nel momento in cui vi scrivo e' stata rilasciata la versione 2.2.9 e
+ormai il sistema e' cosi' completo e stabile da poter competere e
+surclassare il nostro *amato* Ms Windows (di cui contiene un emulatore).
+
+1.3 Che cosa rende Linux differente?
+
+Una prima grossa differenza tra Linux e gli altri sistemi operativi e' il
+prezzo: e' gratuito.
+Cio' significa che puo' essere copiato e ridistribuito senza dover pagare
+nessuna royalty.
+Comunque Linux ha molti altri vantaggi oltre all'essere gratuito. Il codice
+sorgente di Linux e' a disposizione di chiunque (intendo i sorgenti
+dell'intero
+sistema operativo: dal kernel alla piu' piccola utility!).
+Gli ultimi 5 anni nella storia dello sviluppo di Linux hanno dimostrato
+l'importanza di questa liberta'. Cio' ha comportato uno straordinario
+livello di coinvolgimento di migliaia - addirittura centinaia di migliaia - di
+persone in tutto il mondo.
+Questa liberta' ha consentito ai produttori di hardware di sviluppare i
+driver per i loro particolari dispositivi senza dover ottenere una costosa
+licenza per il codice sorgente o firmare un vincolante accordo di
+non-disclosure.
+E cio' ha reso possibile agli studenti di informatica di tutto il mondo (ma
+non
+solo) di dare un'occhiata dall'interno ad un vero sistema operativo la cui
+qualita' non e' seconda a nessun prodotto commerciale. Per le sue
+caratteristiche Linux e' oggi il sistema preferito dai programmatori UNIX e
+dagli hackers; oltre ai GURU anche molte aziende e ISP iniziano a prenderlo in
+seria considerazione e a sviluppare potenti server utilizzando proprio questo
+Sistema Operativo.
+
+2. CARATTERISTICHE TECNICHE
+
+Le caratteristiche di questo sistema operativo lo rendono adatto ad
+impieghi di ogni genere (vedi paragrafo - CHI USA LINUX?). Ecco comunque
+una lista del- le principali caratteristiche di Linux (tratta dal Linux
+Information sheet - metalab.unc.edu/pub/Linux/docs/HOWTO/INFO-SHEET ):
+
+   * multitasking: puo' eseguire piu' programmi nello stesso momento
+   * multiuser: supporta piu' utenti sulla stessa macchina (senza
+     richiedere licenze aggiuntive!)
+   * multiplatform: e' in grado di girare su differenti piattaforme (non
+     solo INTEL ma anche Digital Alpha, PowerPC, Sun SPARC, Macintosh e
+     MIPS)
+   * gira in modalita' protetta su processori 386 o superiori
+   * prevede funzioni di protezione della memoria tra processi in maniera
+     tale da non consentire ad un solo programma di mandare in crash
+     l'intero sistema
+   * shared copy-on-write pages among executables. Cio' significa che
+     processi multipli possono utilizzare la stessa memoria per girare.
+     Quando uno di questi cerca di scrivere nella parte di memoria
+     condivisa, quella pagina (4KB di memoria) viene copiata da qualche
+     altra parte. Copy-on-write ha due vantaggi: maggiori prestazioni e
+     riduzione del consumo di memoria.
+   * gestione della memoria virtuale attraverso la paginazione (senza cioe'
+     dover scaricare l'intero processo) sul disco: su una partizione
+     separata, su un file all'interno del filesystem, o entrambi, con la
+     possibilita' di aggiungere al volo - qualora ce ne fosse bisogno -
+     ulteriori aree di swap (senza dover riavviare la macchina o
+     interrompere il processo). Un totale di 16 aree di swap da 128MB
+     possono essere utilizzate contem- poraneamente per un ammontare di 2
+     GB di spazio di swap utilizzabile.
+   * un pool di memoria unificato per i programmi e la memoria cache, in
+     maniera tale che tutta la memoria libera possa essere utilizzata come
+     cache, e tuttavia la cache possa essere ridotta qualora ci sia bisogno
+     di lanciare un grosso programma.
+   * possiede librerie statiche e dinamiche (Dynamic Link Libraries - DLL)
+   * esegue il core dump consentendo un analisi dopo il crash. In questo
+     modo e' possibile utilizzare un debugger non solo quando un programma
+     sta girando, ma anche dopo che e' andato in crash
+   * compatibile con POSIX, System V e BSD a livello di sorgente
+   * compatibile con SCO, SVR3, SVR4 a livello di eseguibili grazie
+     all'adozione di un emulatore iBSC2-compatibile.
+   * completa disponibilita' dei sorgenti, compreso l'intero kernel e tutti
+     i driver, gli strumenti di sviluppo e tutti i programmi utente;
+     inoltre e' tutto liberamente distribuibile
+   * e' anno-2000 compatibile
+   * POSIX job control
+   * dispone di pseudoterminali (pty's)
+   * emulatore 387 a livello di kernel in maniera tale che nessun programma
+     abbia bisogno del proprio emulatore... Ogni computer che utilizza
+     Linux appare come se possedesse un coprocessore matematico. Ovviamente
+     se il vostro computer possiede gia' una FPU, e' possibile rimuovere
+     l'emulatore dal kernel guadagnando alcuni Kb di memoria.
+   * supporto per diverse tastiere internazionali (tra cui quella Italiana)
+     ed e' possibile caricare e scaricare i driver al volo.
+   * consol virtuali multiple: e' possibile effettuare diversi login
+     indipendenti dalla stessa postazione e passare da una all'altra con
+     una semplice combinazione di tasti (spesso ALT-F1 - ALT-F2...). E'
+     possibile avere fino a 64 sessioni parallele, contemporanee e
+     indipendenti.
+   * supporto nativo per molteplici filesystem: minix-1, Xenix System V,
+     MS-DOS, HPFS (OS/2 2.x), VFAT (Windows 95), NT, HFS (Apple Mac), FFS
+     (Amiga),CD-ROM, NFS...
+   * filesystem nativo che supporta partizioni fino a 4TB e nomi lunghi
+     fino a 255 caratteri
+   * networking TCP/IP nativo (comprendente ftp, telnet, NFS, etc.)
+   * puo' agire da server per reti AppleTalk
+   * puo' agire da server per reti Microsoft (emulando LanManager, NT...) e
+     da client (WfWg, W95, NT)
+   * puo' agire da client o server in una rete Novell Netware
+   * puo' lavorare in clustering
+   * e molto altro ancora...
+
+2.1 Come si rapporta Linux agli altri sistemi operativi?
+
+Linux si basa sullo standard POSIX per i sistemi operativi che e' stato
+derivato originariamente dalle funzionalita' del mondo UNIX. UNIX e'
+compatibile con Linux a livello di chiamate di sistema, il che significa
+che la maggior parte dei programmi scritti per altre versioni di UNIX o per
+Linux possono essere compilate e funzionare anche sugli altri sistemi con
+poche
+o spesso nessuna modifica.
+Generalmente Linux gira molto piu' velocemente delle altre versioni di UNIX
+sullo stesso hardware. E UNIX presenta l'inconveniente di non essere
+liberamente distribuibile.
+Nei paragrafi che seguono cerchero' di mostrare i punti forti e quelli
+deboli di Linux paragonandone le caratteristiche con quelle dei principali
+sistemi operativi. Il mio intento e' quello di fare un confronto obbiettivo...
+tuttavia devo ammettere di essere un fan di Linux... ;) Invito quindi
+chiunque abbia serie argomentazioni da portare in difesa di un sistema
+operativo (o correzioni su quanto da me scritto) ad inviarmele: prometto
+che saranno inserite!
+
+Nota: nelle valutazioni che seguono oltre al sistema base, ho considerato
+eventuali aggiunte SOLO se non comportano costi aggiuntivi. Eventuali
+resource KIT disponibili a pagamento non sono stati presi in
+considerazione.
+
+2.1.1 Linux vs. MS-DOS
+
+Le similitudini tra Linux e MS-DOS si limitano al fatto che entrambi hanno un
+file system gerarchico. Ma MS-DOS gira solo su processori x86 non e'
+multi-user
+ne' multitasking (per non parlare del multithreading) e non e' gratuito.
+Inoltre MS-DOS e' in grado di interagire pochissimo con altri sistemi
+operativi, ha grossi limiti per quanto riguarda la gestione della memoria, non
+comprende programmi che consentano il networking, ne' utility per lo sviluppo
+(quali compilatori e debugger) e nessuna delle altre utility distribuite con
+Linux (quali ad esempio una GUI).
+Ad ulteriore vantaggio di Linux non si dimentichi che Linux e' in grado di
+leggere nativamente una partizione DOS e di eseguire diversi programmi DOS
+(grazie al programma DOSEMU). A vantaggio del DOS, va invece detto che
+richiede
+meno memoria per girare (gli bastano 640K mentre Linux vuole
+almeno 4MB) e funziona anche su processori 286 e inferiori.
+
+Nota: in realtà esistono anche progetti che consentono di far girare Linux con
+risorse hardware molto ridotte (286 - o inferiore, 2MB di RAM), ma sono da
+considerarsi degli esperimenti destinati ad usi molto particolari.
+Per chi fosse interessato seguono alcuni esempi (segnalazione di
+daedalus@freemail.it):
+
+ELKS The Embeddable Linux Kernel Subset -
+http://www.elks.ecs.soton.ac.uk/cgi-bin/ELKS
+
+e
+
+Small Linux - http://smalllinux.netpedia.net/
+
+2.1.2 Linux vs. MS-Windows 3.x
+
+Microsoft Windows offre alcune delle capacita' grafiche di Linux e
+comprende alcune funzionalita' di networking, ma conserva molti degli
+svantaggi di MS_DOS specialmente quelli relativi alla gestione di memoria.
+Inoltre ha dei notevoli problemi di sicurezza e affidabilita' per non
+parlare del costo da sostenere per l'acquisto dell'ambiente operativo e di
+tutti gli applicativi di cui si ha bisogno. Per finire ricordo che si
+tratta di un ambiente monoutente e che e' sbagliato considerarlo un sistema
+operativo in quanto si basa ancora sul DOS (pur riuscendo a bypassarne alcune
+limitazioni).
+
+Grazie all'impiego di emulatori (ampiamente disponibili: Wine, WABI, Willow
+Twin Library), Linux e' in grado di eseguire molti programmi sviluppati per
+Win
+3.x.
+
+2.1.3 Linux vs. Windows NT
+
+La superiorita' di Linux rispetto a NT per quanto riguarda la migliore
+capacita' di multitasking/multithreading, la migliore gestione della
+memoria, la migliore gestione e sicurezza del filesystem sono ampiamente
+dimostrate. Linux offre una maggior possibilita' di configurazione e
+consente la fusione di due sistemi in uno o la clonazione di una macchina
+con poco sforzo. Linux offre inoltre migliori capacita' di networking,  una
+GUI
+piu' versatile e potente e necessita di minori requisiti minimi in termini di
+risorse hardware.
+Windows NT e' disponibile SOLO su Digital Alpha, e processori X86.
+Windows NT e' sul mercato da poco tempo (che significa che e' stato
+dedicato molto meno tempo per scoprire la presenza di bug e risolverli), e il
+prezzo del solo sistema operativo e' piuttosto elevato.
+
+Un confronto molto completo e preciso tra Linux e NT e' disponibile presso
+
+http://www.jimmo.com/Debate/intro.html
+
+Un altro confronto (interessante) tra NT4 e Unix (con riferimenti anche a
+Linux) e' disponibile presso:
+
+http://www.unix-vs-nt.org/
+
+Perfino il Gartner Group afferma la superiorita' di Unix nei confronti di
+NT definendo Unix piu' scalabile, flessibile, robusto e maturo. Afferma,
+inoltre che gia' il 14% delle aziende ha iniziato ad usare Linux:
+
+http://www.gartner.com/public/static/datapro/industry/indnews6.html
+
+Se siete interessati ad un'analisi comparata dei costi all'interno di un
+azienda con diversi client e server leggete:
+
+http://www.cyber.com.au/misc/frsbiz/nt_linux.htm
+
+Altre informazioni su come sostituire NT con Linux sono disponibili presso:
+
+http://citv.unl.edu/linux/LinuxPresentation.html
+
+Per finire un analisi sulla architettura a 64-bit, SMP, Cluster, etc. in
+cui si confrontano molte versioni di UNIX (purtroppo non Linux) e NT4 e'
+disponibile presso:
+
+http://www.unix.digital.com/unix/v4/dhbrown/AIX43.htm
+
+2.1.4 Linux vs. Apple Macintosh
+
+Il sistema operativo di Apple per i Macintosh funziona SOLO sui Mac.
+Inoltre soffre della mancanza di strumenti di sviluppo, di scarsa
+interoperabilita' con altri sistemi operativi, di un multitasking
+primitivo, assenza di multi- threading, problemi di sicurezza e
+affidabilita'. Si tratta inoltre di un sistema operativo monoutente.
+In realta' le ultime versioni del System (8.5.x) hanno risolto molti dei
+problemi aumentando le capacita' di multitasking e l'affidabilita'
+dell'intero sistema.
+Anche le capacita' di networking dei Mac sono migliorate, rendendo questa
+piattaforma una buona workstation per grafica e DTP. Tuttavia proprio per
+ovviare alle limitazioni del proprio sistema operativo la Apple ha avviato due
+progetti legati a tecnologie Un*x: Mac OS X e MkLinux.
+
+Mac OS X - in cui il kernel e molti componenti sono derivati da BSD 4.4 -
+e' il successore del System 8.5.x. Si tratta di una buona versione di Unix
+sulla quale gira la nota GUI Apple.
+
+MkLinux e' un porting di Linux su processore Motorola a cui Apple stessa ha
+contribuito attivamente.
+
+NOTA (contributo di Sebastiano Pilla <case@tvol.it>): Esistono anche altri
+porting di Linux, non sponsorizzati da Apple ma sviluppati piu' attivamente e
+che supportano meglio le macchine Apple piu' recenti: LinuxPPC e Yellow Dog
+Linux.
+
+Curiosità: Esiste un emulatore per Linux (Executor - un prodotto
+commerciale) che consente di eseguire applicativi Mac anche su quella
+piattaforma.
+
+2.1.5 Linux vs. SUN Solaris
+
+Solaris e' un ottimo sistema operativo! E' di gran lunga migliore rispetto a
+tutti gli i sistemi citati precedentemente e presenta gran parte delle
+caratteristiche tecniche di Linux che ho esposto all'inizio del paragrafo 2.
+Gli unici vantaggi a favore di Linux che mi vengono in mente sono:
+
+   * il costo inferiore
+   * le minori richieste in termini di RAM
+   * la maggiore velocita' di Linux a parita' di hardware
+   * disponibilita` per svariate architetture hardware (Solaris gira solo
+     su Sparc e Intel)
+
+2.1.6 Linux vs. QNX
+(contributo di Marcello Magnifico <marcello.magnifico@rccr.cremona.it>)
+
+Gli unici vantaggi di QNX nei confronti di Linux sono le dimensioni e la
+estrema efficienza. Chi ha provato il Demodisk di QNX sa che il microkernel
+modulare di questo sistema operativo e' grande appena undici kilobytes, e che
+la sua velocita' e' superiore a quella di qualsiasi altro prodotto.
+Purtroppo QNX e' nato per le industrie come sistema operativo realtime,
+quindi i prezzi non sono assolutamente concorrenziali. Il fatto di essere
+protetto da una chiave hardware lo rende solo piu' ristretto in termini di
+utilizzo. Linux risulta quindi in moltissimi casi una scelta migliore.
+
+2.1.7 Linux vs. OS/2
+(contributo di Marcello Magnifico <marcello.magnifico@rccr.cremona.it>)
+
+OS/2 e' stato il primo sistema operativo a diffusione di massa ad avere una
+GUI
+orientata agli oggetti, anticipando nelle edizioni 2.x caratteristiche che
+avrebbero acquisito popolarita' con Windows 95. Purtroppo, fin dalle stesse
+edizioni 2.x, le sue caratteristiche di efficienza e requisiti minimi
+assomigliavano troppo a quelle del futuro Windows 95. Nonostante cio', OS/2 e'
+stato per un certo tempo il miglior Windows in circolazione, potendo lanciare
+applicazioni Dos, Windows e OS/2. Tale estrema versatilita' gli ha fatto
+conquistare una certa popolarita' tra alcuni di quegli hacker che ora
+supportano anche Linux.
+Non e' questo il luogo adatto a discutere questo sistema gia' abbastanza
+controverso: chi usa OS/2 di solito e' convinto di aver fatto la miglior
+scelta, per un'infinita' di ragioni, e la difende con forza.
+Come Linux e' un altro pianeta rispetto a Windows, cosi' e' anche OS/2 nei
+confronti del Dos, grazie anche ad un filesystem HPFS migliore di quello FAT.
+In ogni caso - oggi - il problema piu' grosso di questo OS e' che la casa
+produttrice (IBM) lo ha abbandonato in favore di NT.
+
+Linux puo' leggere questo filesystem: cio' invita ad installare i due
+sistemi sullo stesso elaboratore. I conflitti tra i bootloader dei due OS
+si possono risolvere con estrema facilita' con l'aiuto dei documenti HOWTO.
+
+2.1.8 Linux vs. Windows95/98
+
+Questo sistema operativo e' in realta' un ibrido tra Windows NT e Windows
+3.x. Presenta quindi gli svantaggi di entrambi e si rivela (dal punto di
+vista tecnico e di architettura) di gran lunga inferiore a Linux.
+
+Windows 95/98, tuttavia, e' preinstallato (e pagato) su tutte le macchine, e'
+noto a molti utenti (per cui e' semplice trovare aiuto quando ci sono
+problemi), e' usato anche da moltissimi programmatori (per cui e` facile farsi
+fare programmi per esigenze specifiche che non si sanno risolvere da soli),
+etc.
+Inoltre esiste un vastissimo numero di applicazioni e di giochi (sia a 16
+che a 32-bit). Tutti questi aspetti fanno si che Microsoft detenga il
+monopolio del mercato.
+
+In realta', se si analizzano i vantaggi che ho esposto, si capisce
+facilmente che non sono sostenuti da scelte tecniche, ma dipendono
+esclusivamente dalla notorieta' del sistema!
+La forte crescita che Linux sta avendo, potrebbe un giorno ribaltare questa
+situazione... tutto dipendera' da quanto voi stessi vorrete conoscerlo e
+promuoverlo con altri!
+
+3. CHI USA LINUX?
+
+Linux e' diffuso ormai sia in organismi statali e governativi (americani! -
+purtroppo da noi e' gia' tanto che ci sia un vecchio Olivetti!) che
+nell'industria. In molti casi la decisione iniziale di andare su questo
+sistema operativo e' stata presa per ragioni di costo, ma poi Linux ha
+dimostrato di essere vincente anche in molti altri aspetti.
+La NASA ha mandato Linux nello Spazio utilizzandolo sullo Space Shuttle
+quest'anno, la Kodak lo ha adottato sulla sua nuova piattaforma per il
+processamento del colore, la Corel ha lanciato nel 98 il suo NC e
+nonostante Windows CE - il sistema operativo utilizzato e' Linux.
+La Boeing usa Linux, la Xerox lo ha adottato. Le SouthWest Airlines e Sixt
+Rent-a-Car usano Linux. E non dimentichiamo CISCO, il gruppo IKEA e
+Mercedes. Si dice che anche Lucent ne faccia uso!
+Linux e' pienamente supportato da Netscape, viene fornito con i servizi di
+Novell Directory, GroupWare, Netware Client, Java 1.1 SDK; Nonostante la
+maggior parte delle nuove versioni di sistemi operativi sul mercato siano a 32
+bit - Linux e' disponibile a 32-bit su macchine a 32 e a 64-bit su macchine a
+64 e puo' essere acquistato nelle piu' grosse catene di personal computer
+negli
+Stati Uniti: EggHead, CompUSA, Fry's, MicroCentre, Computer City, J&R's.
+
+Altri luoghi dove Linux ha una significativa quota di penetrazione sul
+mercato sono web server, Internet provider e Universita'. Cio' dimostra che
+Linux ha davvero qualcosa da offrire.
+L'architettura Linux e' gia' la seconda piattaforma piu' comune come Web
+Server negli USA seconda solo Solaris (utilizzando entrambi l'Apache Web
+Server).
+Inoltre molte persone che si sono accorte di aver bisogno di conoscere UNIX
+per
+la loro carriera, hanno deciso di usare Linux a casa come strumento di
+apprendimento.
+Linux sta diventando, inoltre, diffuso in sistemi avanzati e chiavi in
+mano, tra cui firewall, routers e Point of Sales systems (POS).
+
+4. E' DISPONIBILE DELLA DOCUMENTAZIONE?
+
+Essendosi sviluppato grazie a Internet, Linux dispone di una delle piu'
+ampie documentazioni mai realizzate per un sistema operativo. Si tratta di
+documenti scritti da differenti autori che pero' hanno cercato (e tuttora
+cercano) di coordinarsi in modo da riuscire a coprire ogni aspetto legato a
+questo OS. Nei paragrafi che seguono, presento un elenco dei principali
+raggruppamenti di documenti organizzati cercando di spiegarne le
+caratteristiche.
+Va tenuto presente, tuttavia, che centinaia di altri documenti sono
+presenti negli archivi delle mailing list e nei newsgroup. Se siete
+interessati a delle informazioni che non riuscite a trovare, vi bastera'
+quindi effettuare un paio di ricerche con Altavista
+(http://www.altavista.com) oppure Dejanews (http://www.deja.com/) per
+trovare quello di cui avete bisogno.
+
+4.1 Linux Documentation Project
+
+Il Linux Documentation Project e' nato allo scopo di creare una buona e
+affidabile documentazione per il sistema operativo Linux. Si tratta di una
+collaborazione tra persone sparse per il mondo che hanno deciso di
+prendersi cura della documentazione di Linux a partire dalla documentazione
+online (man pages, texinfo docs, e cosi' via) per finire ai libri su carta che
+comprendono aspetti quali l'installazione e l'uso (semplice o avanzato) di
+Linux. Si tratta quindi di un gruppo di volontari che non fa capo ad nessun
+organismo centrale: chiunque sia interessato a dare una mano e' il benvenuto.
+
+Segue una lista dei progetti in fase di sviluppo da parte del LDP, in cui
+sono indicati i vari coordinatori.
+
+   * Linux Installation and Getting Started - Matt Welsh
+     (mdw@metalab.unc.edu)
+
+     Si tratta di una completa guida all'installazione e all'uso di Linux
+     rivolta agli utenti alle prime armi. Si occupa di come ottenere,
+     installare, e usare Linux.
+     E' rivolto ad utenti che non hanno alcuna familiarita' con UNIX.
+     Quindi se siete utenti MS-DOS o Windows, e volete iniziare con Linux,
+     questo e' il libro giusto per voi. Il libro contiene un completo
+     tutorial a UNIX per i nuovi utenti, ma nello stesso tempo tratta in
+     alcuni capitoli concetti elementari di system administration e
+     funzioni avanzate quali la configurazione di X Windows e il
+     networking. La versione corrente di questo libro e' la 3.2, datata 22
+     Febbraio 1998. Sono circa 188 pagine.
+
+     Puo' essere scaricata da
+     metalab.unc.edu/pub/Linux/docs/LDP/install-guide
+
+   * Linux User's Guide Larry Greenfield (greenfie@gauss.rutgers.edu), e
+     Karl Fogel (kfogel@occs.cs.oberlin.edu).
+
+     Questo libro copre tutti gli aspetti utili all'utente finale di Linux,
+     dal sedersi di fronte ad una macchina Linux ed effettuare il primo
+     login all'uti- lizzo di strumenti complessi quali gcc, emacs, e cosi'
+     via. Non richiede alcuna conoscenza di UNIX, e puo' quindi essere
+     utilizzata come guida intro- duttiva allo UNIX in generale.
+
+     Puo' essere scaricata da metalab.unc.edu/pub/Linux/docs/LDP/
+
+   * Linux System Administrator's Guide - Lars Wirzenius
+     (wirzeniu@cc.helsinki.fi)
+
+     Essendo il terzo libro del progetto LDP, da' per scontato che sia
+     stato gia' letto e assimilato il contenuto dell' Installation e della
+     User's Guide. Copre tutti gli aspetti necessari a mantenere attivo un
+     sistema, gestire gli account degli utenti, i backup, la configurazione
+     e il tuning di sistema, l'installazione e l'upgrade del software, e
+     molto ancora.
+
+     Puo' essere scaricata da
+     metalab.unc.edu/pub/Linux/docs/LDP/system-admin-guide
+
+   * Linux Network Administrator's Guide - Olaf Kirch
+     (okir@mathematik.th-darmstadt.de)
+
+     Questa guida e' complementare alla System Admin's Guide e copre tutti
+     gli aspetti del networking sotto Linux, da UUCP ai collegamenti
+     attraverso la porta seriale a TCP/IP, SLIP, configurazione del DNS,
+     della posta elettronica, dei newsgroup e di NFS.
+
+     Puo' essere scaricata da
+     metalab.unc.edu/pub/Linux/docs/LDP/network-guide
+
+   * Linux Kernel Hacker's Guide - Michael K. Johnson
+     (johnsonm@metalab.unc.edu)
+
+     Questo manuale e' una guida al kernel di Linux: comprende sia la parte
+     teorica che quella di implementazione. E' il libro adatto a coloro che
+     sono intenzionati a scrivere un device driver, o semplicemente
+     nell'hacking del kernel.
+
+     Puo' essere scaricata da
+     metalab.unc.edu/pub/Linux/docs/LDP/kernel-hackers-guide
+
+   * Linux Man Pages/Online Documentation - Rik Faith (faith@cs.unc.edu)
+
+     Rik Faith si sta occupando di produrre un set completo di man pages
+     per Linux. Queste pagine comprendono tutte le chiamate di sistema e in
+     particolare le sezioni 2, 3, 4, 5, 6, 7, e 9. Le sezioni 1 e 8 sono
+     escluse intenzionalmente in quanto ogni singolo pacchetto generalmente
+     comprende le proprie pagine di aiuto.
+
+     La Versione 1.2 delle man pages e' disponibile presso
+     metalab.unc.edu/pub/Linux/docs/LDP/man-pages
+
+4.1.1 Italian Linux Documentation Project (ILDP)
+
+Ovvero moltissima documentazione su Linux in lingua italiana E' disponibile
+presso:
+
+http://www.pluto.linux.it/ildp
+
+4.1.2 Italian-HOWTO
+
+Informazioni utili per configurare Linux per la realta' Italiana
+
+http://www.pluto.linux.it/~gaio/Italian-HOWTO
+
+4.2 FAQ
+
+Esistono diverse raccolte delle domande piu' frequenti relative a Linux:
+Possono essere scaricate da:
+
+ftp://tsx-11.mit.edu/pub/linux/docs
+
+e da
+
+ftp://rtfm.mit.edu (che e' l'archivio generale in cui sono raccolte tutte
+le FAQ).
+
+Inoltre segnalo Linux META-FAQ di Michael K. Johnson
+(johnsonm@metalab.unc.edu)
+
+Si tratta di una breve raccolta di informazioni relative a Linux, tratte da
+diverse fonti.
+
+Puo' essere scaricata da metalab.unc.edu/pub/Linux/docs/META-FAQ
+
+4.3 HOW-TO
+
+Linux HOWTOs sono una raccolta di documenti online, ognuno dei quali
+descrive un particolare aspetto di Linux - come l'installazione, la
+configuazione TCP/IP, l'utilizzo della stampante, l'uso di dispositivi
+SCSI, e cosi' via.
+
+L'indice delle HOWTO (che puo' essere scaricato da
+metalab.unc.edu/pub/Linux/docs/HOWTO/HOWTO-INDEX) contiene l'elenco di
+tutti i documenti HOWTO disponibili e quali sono le istruzioni per poterne
+scrivere altri. Attualmente il coordinatore degli HOWTO e' Tim Bynum
+(linux-howto@metalab.unc.edu).
+
+Tutti i documenti HOWTO sono disponibili presso
+metalab.unc.edu/pub/Linux/docs/HOWTO
+
+Ad ogni modo eccone la lista (probabilmente incompleta):
+
+3Dfx-HOWTO                       Mail-HOWTO
+AX25-HOWTO                       Multi-Disk-HOWTO
+Access-HOWTO                     Multicast-HOWTO
+Alpha-HOWTO                      NET-3-HOWTO
+Assembly-HOWTO                   NFS-HOWTO
+Benchmarking-HOWTO               NIS-HOWTO
+BootPrompt-HOWTO                 Networking-Overview-HOWTO
+Bootdisk-HOWTO                   Optical-Disk-HOWTO
+Busmouse-HOWTO                   Oracle-HOWTO
+CD-Writing-HOWTO                 PCI-HOWTO
+CDROM-HOWTO                      PCMCIA-HOWTO
+Chinese-HOWTO                    PPP-HOWTO
+Commercial-HOWTO                 Parallel-Processing-HOWTO
+Config-HOWTO                     Pilot-HOWTO
+Consultants-HOWTO                Polish-HOWTO
+Cyrillic-HOWTO                   PostgreSQL-HOWTO
+DNS-HOWTO                        Printing-HOWTO
+DOS-Win-to-Linux-HOWTO           Printing-Usage-HOWTO
+DOSEMU-HOWTO                     README
+Danish-HOWTO                     RPM-HOWTO
+Distribution-HOWTO               Reading-List-HOWTO
+ELF-HOWTO                        Root-RAID-HOWTO
+Emacspeak-HOWTO                  SCSI-Programming-HOWTO
+Esperanto-HOWTO                  SMB-HOWTO
+Ethernet-HOWTO                   SRM-HOWTO
+Finnish-HOWTO                    Security-HOWTO
+Firewall-HOWTO                   Serial-HOWTO
+French-HOWTO                     Serial-Programming-HOWTO
+Ftape-HOWTO                      Shadow-Password-HOWTO
+GCC-HOWTO                        Slovenian-HOWTO
+German-HOWTO                     Sound-HOWTO
+Glibc2-HOWTO                     Sound-Playing-HOWTO
+HAM-HOWTO                        Spanish-HOWTO
+HOWTO-INDEX                      TeTeX-HOWTO
+Hardware-HOWTO                   Text-Terminal-HOWTO
+Hebrew-HOWTO                     Thai-HOWTO
+INFO-SHEET                       Tips-HOWTO
+IPX-HOWTO                        UMSDOS-HOWTO
+ISP-Hookup-HOWTO                 UPS-HOWTO
+Installation-HOWTO               UUCP-HOWTO
+Intranet-Server-HOWTO            User-Group-HOWTO
+Italian-HOWTO                    VAR-HOWTO
+Java-CGI-HOWTO                   VME-HOWTO
+Kernel-HOWTO                     VMS-to-Linux-HOWTO
+Keyboard-and-Console-HOWTO       Virtual-Services-HOWTO
+LinuxDoc+Emacs+Ispell-HOWTO      WWW-HOWTO
+META-FAQ                         WWW-mSQL-HOWTO
+MGR-HOWTO                        XFree86-HOWTO
+MILO-HOWTO                       XFree86-Video-Timings-HOWTO
+
+Inoltre presso metalab.unc.edu/pub/Linux/HOWTO/mini sono disponibili una
+serie di documenti detti mini-HOWTO... Eccone una lista (probabilmente
+incompleta):
+
+3-Button-Mouse                  Mac-Terminal
+ADSL                            Mail-Queue
+ADSM-Backup                     Mail2News
+AI-Alife                        Man-Page
+Advocacy                        Modules
+Backup-With-MSDOS               Multiboot-with-LILO
+Battery-Powered                 NCD-X-Terminal
+Boca                            NFS-Root
+BogoMips                        NFS-Root-Client
+Bridge                          Netscape+Proxy
+Bridge+Firewall                 News-Leafsite
+Bzip2                           Offline-Mailing
+Cable-Modem                     Partition
+Clock                           Partition-Rescue
+Coffee                          Path
+Colour-ls                       Pre-Installation-Checklist
+Cyrus-IMAP                      Process-Accounting
+DHCP                            Proxy-ARP-Subnet
+DHCPcd@                         Public-Web-Browser
+DPT-Hardware-RAID               Qmail+MH
+Diald                           Quota
+Diskless                        RCS
+Ext2fs-Undeletion               README
+Fax-Server                      RPM+Slackware
+Firewall-Piercing               Remote-Boot
+GIS-GRASS                       Remote-X-Apps
+GTEK-BBS-550                    SLIP-PPP-Emulator
+Hard-Disk-Upgrade               Sendmail+UUCP
+INDEX                           Small-Memory
+INDEX.html                      Software-Building
+IO-Port-Programming             Software-RAID
+IP-Alias                        Soundblaster-AWE
+IP-Masquerade                   StarOffice
+IP-Subnetworking                Term-Firewall
+ISP-Connectivity                TkRat
+Install-From-ZIP                Token-Ring
+Kerneld                         Ultra-DMA
+LBX                             Update
+LILO                            Upgrade
+Large-Disk                      VPN
+Leased-Line                     Visual-Bell
+Linux+DOS+Win95+OS2             Windows-Modem-Sharing
+Linux+FreeBSD                   WordPerfect
+Linux+FreeBSD-mini-HOWTO        X-Big-Cursor
+Linux+NT-Loader                 XFree86-XInside
+Linux+Win95                     Xterm-Title
+Linux-mini-HOWTOs.tar.gz        ZIP-Drive
+Loadlin+Win95                   ZIP-Install
+Loopback-Root-FS
+
+Ricordo, comunque, che su ILPD
+(<http://www.pluto.linux.it/ildp>http://www.pluto.linux.it/ildp) sono
+disponibili la maggior parte degli HOWTO tradotti in Italiano

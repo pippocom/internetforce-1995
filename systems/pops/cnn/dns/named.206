@@ -1,0 +1,12 @@
+; File named.206.20.228
+@        IN SOA    cnn-server.cnn.it. root.cnn.it. (
+            951213   ; serial number
+            86400    ; refresh every 12 hours
+            7200     ; retry after 2 hours
+            1209600  ; expire after 2 weeks
+            86400)  ; default ttl is 2 days
+
+	 IN NS	cnn-server.cnn.it.
+
+70 	IN PTR cnn-server.cnn.it.
+71 	IN PTR chris.cnn.it.

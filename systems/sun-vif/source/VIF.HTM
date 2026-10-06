@@ -1,0 +1,31 @@
+<!DOCTYPE HTML SYSTEM "html.dtd">
+<HTML>
+<HEAD><TITLE>VIF for SunOS 4.x</TITLE></HEAD>
+<BODY>
+<HR>
+<H1><CENTER>VIF (Virtual Interface) for SunOS 4.x.</CENTER></H1>
+<HR>
+<P>This distribution is slightly remastered <A HREF="SITE/vif-1.01.tar.gz">
+VIF version 1.01</A> floating around the net (see <A
+HREF="SITE/if_vif.c">if_vif.c</A> for credits). Note that the original
+distribution also includes HP-UX 9.x port.</P>
+<HR>
+<UL>
+<LI>download <A HREF="SITE/if_vif.c"><B>if_vif.c</B></A> (just click it and
+when you have it in your Web browser window save it through the File
+menu);</LI>
+<LI>compile loadable module as following:
+<PRE>cc -O -DDETACH -DKERNEL -DINET -D`arch -k` -c if_vif.c
+ld -o vif.o -r if_vif.o</PRE></LI> 
+<LI>download <A HREF="SITE/vif.rc"><B>vif.rc</B></A> script and modify it
+according to your needs;</LI> 
+<LI>install <B>vif.o</B> and <B>vif.rc</B> some place, e.g.:
+<PRE>install -m 0755 vif.o vif.rc /etc</PRE></LI>
+<LI>update <B>/etc/rc.local</B> and make it calling <B>vif.rc</B>, e.g:
+<PRE>echo /etc/vif.rc >> /etc/rc.local</PRE></LI>
+<LI>reboot or simply run <B>vif.rc</B> and don't forget to have fun :-)</LI> 
+</UL>
+<HR>
+<A HREF="mailto:appro@fy.chalmers.se">Andy</A>.
+</BODY>
+</HTML>

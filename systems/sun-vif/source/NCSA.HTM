@@ -1,0 +1,103 @@
+Modifications to NCSA httpd 1.3 for multiple servers on a multi-homed host.
+
+Placed in the public domain by A P Barrett <barrett@ee.und.ac.za>,
+10 November 1994.
+
+These modifications, which I will call the BindAddress and the
+VirtualHost modifications, deal in two different ways with allowing an
+HTTP server on a multi-homed host to change its behaviour depending on
+which of the multiple addresses received a connection.
+
+This may be useful if you wany a single physical host to behave as if it
+were several different hosts.  For example, if you operate HTPP servers
+on behalf of several independent organisations, it may be useful for you
+to run all the servers on a single multi-homed host, giving each address
+on your multi-homed host a domain name associated with the organisation
+on whose behalf you run the server.
+
+Note that use of the "ifconfig alias" command in some recent versions
+of Un*x can allow a host that is physically single-homed to appear
+multi-homed.
+
+* The BindAddress feature allows you to run multiple simultaneous
+  instances of the server (in daemon mode, not in inetd mode), with
+  each instance of the server handling a different one of your host's
+  addresses.  Each server is entirely independent, and may have a
+  different set of configuration files.  In fact, each server must have
+  a different server configuration file, and must have a different set
+  of log files and pid files, but they can share some of the other
+  files.
+
+  How it works:
+
+      Usually, the server uses the bind() socket call to bind to the
+      INADDR_ANY address, which means that it will receive incoming
+      connections at any of your host's addresses.
+
+      With this feature, you tell the server to bind to some other
+      address instead.  You can then run several servers on the same
+      port, each bound to a different address.  Incoming connections
+      will be handled by the appropriate server, according to the
+      address that received the connection.
+
+  This feature is available only if you compile with the preprocessor
+  macro APB_BIND_ADDRESS defined.  A convenient way of doing that is to
+  add "-DAPB_BIND_ADDRESS" to the CFLAGS in the Makefile.
+
+  Assuming the feature is available, it is controlled by the new
+  "BindAddress" command in the server configuration file.  There may
+  not be more than one BindAddress command in the server configuration
+  file.  The BindAddress command takes a single argument, which must be
+  a numeric IP address, or a domain name that maps to exactly one IP
+  address, or a star ("*").  The default is "*", which mimics the old
+  behaviour of binding to the INADDR_ANY address.
+
+* The VirtualHost modification allows you to run a single instance of
+  the server (in either daemon mode or inetd mode), with the server
+  changing the value of a few key internal variables according to which
+  local address received a particular connection.
+
+  How it works:
+
+      When the server receives a connection, it uses the getsockname()
+      socket call to find which local address received the connection.
+      It then looks this address up in a table, and adjusts the
+      information corresponding to the ServerName and ServerAdmin
+      variables from the server configuration file, and the DocumentRoot
+      variable from the document configuration file.  If the address is
+      not found in the table, the server uses the standard information
+      that would have been used in the absence of this feature.
+
+  This feature is available only if you compile with the preprocessor
+  macro APB_VIRTUAL_HOST defined.  A convenient way of doing that is to
+  add "-DAPB_VIRTUAL_HOST" to the CFLAGS in the Makefile.
+
+  Assuming the feature is available, it is controlled by the new
+  "VirtualHost" section command in the server configuration file.  There
+  may be up to 20 VirtualHost sections in the server configuration file
+  (unless you change the MAX_VIRTUAL_HOSTS definition in httpd.h).  Each
+  VirtualHost section looks like this:
+
+      <VirtualHost host-name-or-address>
+      ServerName name-of-server
+      ServerAdmin email-address-of-server-administrator
+      DocumentRoot name-of-document-root-directory
+      </VirtualHost>
+
+  The host-name-or-address is the numeric IP address or the domain name
+  to which the other information applies.  The ServerName, ServerAdmin
+  and DocumentRoot commands are all optional, may appear in any order,
+  and have the same meanings as the corresponding commands in the main
+  section of the server configuration file or the document configuration
+  file, except that they are not used for every connection, but only for
+  connections that are received on the local address specified in the
+  host-name-or-address parameter.
+
+  If one or more VirtualHost sections appear in the server configuration
+  file then the format of messages in the access log file is augmented
+  to include the ServerName as an extra field between the time and the
+  request.
+
+  The ServerRoot directory, the various log files and pid files, and all
+  other variables, remain independent of the local address that receives
+  a connection.

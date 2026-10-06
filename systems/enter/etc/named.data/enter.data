@@ -1,0 +1,83 @@
+@               IN      SOA     dante.enter.it. hostmaster.enter.it. (
+                                1996092301      ;serial
+                                86400           ;refresh period (1 day)
+                                7200            ;retry interval (2 hours)
+                                604800          ;expire time (1 week)
+                                86400           ;minimum ttl (1 day)
+                                )
+
+                IN      NS      dante.enter.it.
+                IN      NS      venere.inet.it.
+                IN      NS      ns2.inet.it.
+                IN      NS      dns.nis.garr.it.
+
+                IN      MX       50 dante.enter.it.
+                IN      MX      100 relay.inet.it.
+                IN      MX      200 relay2.inet.it.
+
+                IN      A       194.20.50.2
+
+gw-enter        IN      A       194.20.50.1
+                IN      HINFO   "Cisco" "Ethernet 0"
+
+dante           IN      A       194.20.50.2
+                IN      MX      40 dante.enter.it.
+		IN	MX	50 Enter02.enter.it.
+                IN      MX      100 relay.inet.it.
+                IN      MX      200 relay2.inet.it.
+
+www		IN	CNAME	dante.enter.it.
+smtp		IN	CNAME	dante.enter.it.
+pop3		IN	CNAME	dante.enter.it.
+news		IN	CNAME	dante.enter.it.
+
+
+pc		IN	A	194.20.50.3
+		IN	MX	50 dante.enter.it.
+		IN	MX	100 relay.inet.it.
+		IN	MX	200 relay2.inet.it.
+
+gw-enter2       IN      A       194.20.50.4
+                IN      HINFO   "Cisco2" "Ethernet 0"
+
+Enter01		IN	A	194.20.50.5
+		IN	MX	50 dante.enter.it.
+		IN	MX	100 relay.inet.it.
+		IN	MX	200 relay2.inet.it.
+
+Enter02		IN	A	194.20.50.6
+		IN	MX	20 Enter02.enter.it.
+		IN	MX	50 dante.enter.it.
+		IN	MX	100 relay.inet.it.
+		IN	MX	200 relay2.inet.it.
+
+Eric		IN	A	194.20.50.7
+		IN	MX	20 eric.enter.it.
+		IN	MX	50 dante.enter.it.
+		IN	MX	100 relay.inet.it.
+		IN	MX	200 relay2.inet.it.
+
+blacknight	IN	A	194.20.50.8
+		IN	MX	20 eric.enter.it.
+		IN	MX	50 dante.enter.it.
+		IN	MX	100 relay.inet.it.
+		IN	MX	200 relay2.inet.it.
+
+gw-enter3	IN	A	194.20.50.9
+
+hub		IN	A	194.20.50.10
+
+brightsun	IN	A	194.20.50.11
+
+darkstar	IN	A	194.20.50.12
+
+dar		IN	A	194.20.50.23
+
+inprotec	IN	A	194.20.50.24
+		IN	MX	50 dante.enter.it.
+		IN	MX	100 relay.inet.it.
+		IN	MX	200 relay2.inet.it.
+
+abbitsae	IN	A	194.20.50.26
+
+gw-racdyn	IN	A	194.185.100.193

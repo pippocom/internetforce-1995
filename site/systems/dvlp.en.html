@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DVLP — Internet Force 1995</title>
+<meta name="description" content="DVLP, Internet Force's Sun development/build and operations host (1995).">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <p class="brand">Internet Force <span class="years">1995–1996</span></p>
+    <nav class="lang" aria-label="Language">
+<a href="dvlp.html" hreflang="it" lang="it">Italiano</a> <span class="sep">·</span> <span class="current" aria-current="page">English</span>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="content">
+  <p class="eyebrow">Systems Overview · 1995</p>
+  <h1>DVLP <span class="host">(dvlp)</span></h1>
+  <p class="lede">DVLP was the machine where software and configuration were prepared before they went anywhere near the production servers: the Sun development, build and operations host.</p>
+  <figure class="system">
+    <img src="../../images/crops/dvlp.png" width="336" height="349" alt="DVLP box in the 1995 Systems Overview">
+    <figcaption>Crop from <code>images/internetforce_server_map.png</code> (Systems Overview 1995).</figcaption>
+  </figure>
+  <section aria-labelledby="identity-h">
+    <h2 id="identity-h">System identity</h2>
+    <dl class="identity">
+    <dt>Hostname</dt><dd><code>dvlp</code></dd>
+    <dt>Address</dt><dd><code>206.20.95.130</code> · office LAN</dd>
+    <dt>Platform</dt><dd>Sun SPARCstation 4</dd>
+    <dt>OS</dt><dd>SunOS 4.1.4</dd>
+    <dt>Role</dt><dd>Development/build, staging and operations host; central <code>loghost</code>.</dd>
+</dl>
+  </section>
+  <section aria-labelledby="services-h">
+    <h2 id="services-h">Services and configuration</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Service / role</th>
+      <th scope="col">Description</th>
+      <th scope="col">Configuration / evidence</th>
+      <th scope="col">Documentation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Development and build host</th>
+      <td>Software preparation and compilation before production.</td>
+      <td class="col-cfg"><em>described in the canonical README</em></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/07-development.en.md">Development</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Compilers and build environment</th>
+      <td>Toolchain kept off the production servers.</td>
+      <td class="col-cfg"><em>no recovered configuration</em></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/07-development.en.md">Development</a> <span class="sep">·</span> <a class="doc" href="../details.html?file=docs/11-software-inventory.en.md">Software inventory</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Perl and support tools</th>
+      <td>Operational and provisioning scripts.</td>
+      <td class="col-cfg"><a href="../../artifacts/scripts/expire.pl" class="cfg">artifacts/scripts/expire.pl</a> <span class="sep">·</span> <a href="../details.html?file=artifacts/scripts/README.en.md" class="cfg">artifacts/scripts/</a> <span class="sep">·</span> <a href="../details.html?file=artifacts/tools/README.en.md" class="cfg">artifacts/tools/</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/07-development.en.md">Development</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Local source code</th>
+      <td>General development area on <code>/cisco</code> and around it.</td>
+      <td class="col-cfg"><em>no source archive published</em></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/07-development.en.md">Development</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Router configuration tools</th>
+      <td>Storage of the Cisco configurations and the new-POP procedure.</td>
+      <td class="col-cfg"><a href="../../systems/pops/CISCO-add_new_pop-HOWTO.txt" class="cfg">../pops/CISCO-add_new_pop-HOWTO.txt</a> <span class="sep">·</span> <a href="../details.html?file=systems/pops/README.en.md" class="cfg">../pops/</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/16-router-and-wan.en.md">Router and WAN</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Deployment and system changes</th>
+      <td>Changes prepared here and applied to the production hosts.</td>
+      <td class="col-cfg"><a href="../../artifacts/scripts/system.modification-after_OSINSTALLATION.txt" class="cfg">artifacts/scripts/system.modification-after_OSINSTALLATION.txt</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/07-development.en.md">Development</a></td>
+    </tr>
+    <tr>
+      <th scope="row">DAT tape backup and <code>loghost</code></th>
+      <td>Operational point for the central-system backups.</td>
+      <td class="col-cfg"><a href="../details.html?file=systems/dvlp/BACKUP.en.md" class="cfg">BACKUP</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/14-operations-and-backup.en.md">Operations and backup</a></td>
+    </tr>
+  </tbody>
+  </table>
+</div>  </section>
+
+  <section aria-labelledby="note-h">
+    <h2 id="note-h">Historical note</h2>
+    <p>DVLP was the Sun development/build host; the Linux <code>marco</code> workstation was for experimentation, administration and testing. <strong>A Linux → SunOS cross-compilation was not part of the operational workflow.</strong></p>
+  </section>
+  <section class="maps" aria-labelledby="maps-h">
+    <h2 id="maps-h">On the maps</h2>
+    <ul class="maplinks">
+      <li><a href="../network-map.en.html">Internet Force Network Map</a></li>
+      <li><a href="../systems-map.en.html">Systems Overview</a></li>
+    </ul>
+  </section>
+  <section class="techdoc" aria-labelledby="techdoc-h">
+    <h2 id="techdoc-h">Full technical documentation</h2>
+    <p><a class="button" href="../details.html?file=systems/dvlp/README.en.md">Open the canonical DVLP README</a></p>
+    <p class="muted">This HTML page is a compact presentation; the Markdown README is the canonical source.</p>
+  </section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Internet Force 1995–1996 Historical Archive · <a href="../details.html?file=LICENSE">CC BY 4.0</a> · <a href="https://pippo.com/me/">Marco Iannacone</a> · <a href="https://github.com/pippocom/internetforce-1995">GitHub repository</a></p>
+  </div>
+</footer>
+</body>
+</html>

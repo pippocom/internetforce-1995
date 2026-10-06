@@ -1,0 +1,242 @@
+FAQ ON CISCO
+
+1 - How can I add and configure a new CISCO for a POP?
+
+First go in /tftboot in marco and copy 2511pesaro and
+2501pesaro giving the name of the new POP.
+Connect the CISCO to WORLD-HUB. Connect a PC to console port
+of the CISCO. The speed should be set at 9600.
+After that enter in the configuration of the CISCO
+enter in enable configuration and do setup.
+
+This will appear on your screen:
+
+setup
+
+         --- System Configuration Dialog ---
+
+At any point you may enter a question mark '?' for help.
+Refer to the 'Getting Started' Guide for additional help.
+Use ctrl-c to abort configuration dialog at any prompt.
+Default settings are in square brackets '[]'.
+
+Continue with configuration dialog? [yes]: 
+
+First, would you like to see the current interface summary? [yes]: 
+
+Interface    IP-Address      OK?  Method     Status                 Protocol
+Ethernet0    10.0.2.1        YES  manual     up                     
+up      
+Serial0      unassigned      YES  not set    administratively down  
+down    
+Serial1      unassigned      YES  not set    administratively down  
+down    
+
+Configuring global parameters:
+
+  Enter host name [2511]: 
+
+The enable secret is a one-way cryptographic secret used
+instead of the enable password when it exists.
+
+  Enter enable secret [<Use current secret>]: 
+
+The enable password is used when there is no enable secret
+and when using older software and some boot images.
+
+  Enter enable password [intf]: 
+  Enter virtual terminal password [intf]: 
+  Configure SNMP Network Management? [yes]: 
+    Community string [public]: 
+ Configure SNMP Network Management? [yes]: 
+    Community string [public]: 
+  Configure IP? [yes]: 
+    Configure IGRP routing? [yes]: no
+
+(The last one is a particular protocoll that allow dynamic routing)
+
+    Configure RIP routing? [no]: 
+  Configure Async lines? [yes]: no
+
+Configuring interface parameters:
+
+Configuring interface Ethernet0:
+  Is this interface in use? [yes]: 
+  Configure IP on this interface? [yes]: 
+    IP address for this interface [10.0.2.1]: 
+    Number of bits in subnet field [0]: 18
+    Class A network is 10.0.0.0, 16 subnet bits; mask is 255.255.255.0
+
+Configuring interface Serial0:
+  Is this interface in use? [no]: 
+
+The following configuration command script was created:
+
+hostname 2511
+enable secret 5 $1$synthetic$syntheticSyntheticSynthet1
+enable password ******
+line vty 0 4
+password ******
+snmp-server community public
+!
+ip routing
+!
+interface Ethernet0
+ip address 10.0.2.1 255.255.255.0
+!
+interface Serial0
+shutdown
+no ip address
+!
+interface Serial1
+shutdown
+no ip address
+!
+end       
+          
+Use this configuration? [yes/no]: yes
+########
+
+After that do write mem.
+
+
+Than you should configure it routing to get configuration file from marco:
+
+ conf t
+
+ ip default-gateway 10.0.0.1
+ ip route 0.0.0.0 0.0.0.0 10.0.0.1
+ ip route 10.0.0.1 255.255.255.255 Ethernet0
+
+ ctrl-z
+ write t
+ write mem
+
+Now always from enable configuration do:
+
+conf net
+
+choose host
+
+put ip address of the host (marco) 206.20.95.140
+
+put the name of the file /tftpboot/2511roma (for example)
+
+Now do write t. The CISCO will check if the rules are OK.
+If everything was OK do write mem.
+
+Now connect the 2501 to the WORLD HUB and enter in the
+configuration. Do as you did with 2511 but change the num of bit
+in subnet filed with 17.
+
+    Number of bits in subnet field [0]: 17
+
+
+2 - How can I change a single parameter for a line?
+
+Telnet in the router
+
+conf t
+
+interface Async10 (for example)
+
+no cdp enable (for example)
+
+CTRL-Z
+
+write mem
+
+
+3 - How can I sutdown line 14 now?
+
+    From configuration:
+
+    clear line tty 14
+
+
+7 - What have I to do to configure a new POP?
+
+POP 2511 and 2501
+ First of all copy the new configuration of pesaro CISCO and modify
+ them changing ip address and configuring the routing tables.
+
+Internet force
+ In order to allow customers from the other POP to reach the Net
+ we should add on Internet Force 2501 an access-list line similar
+ to the following one
+
+  access-list 111 permit ip 206.20.115.0 0.0.0.255 0.0.0.0 255.255.255.255
+
+ and a routing one like
+
+  ip route 206.20.115.0 255.255.255.0 10.0.0.1
+
+
+Then go in the firewall and do:
+
+
+netstat -rn  (in order to see the current tables)
+
+Then do:
+
+route add net 206.20.115.0 10.0.3.1 1
+
+changing the ip addresses
+
+
+This will update the routing but we still need to update all the files
+in order to work also on the next update.
+We should edit all the files that contains the routings
+(if we don't remembr just go in /etc and grep 206.20.95.64 *)
+ 
+/etc/netmasks
+
+do as done for 206.20.115.
+
+/etc/networks
+
+do as done for intf-pesaro
+
+/etc/rc.route
+
+add the line
+
+route add net 206.20.115.0 10.0.3.1 1
+
+changing the parameter to fix with the new ip.
+
+
+More than this some changes need to be done on the firewall policy.
+
+In group routeres add an object similar to pesaro2501
+In group ts add an object similar to pesaro2511
+In group clients add an object similar to Pesaro's net.
+
+More than this some changes need to be done on DVLP:
+
+in  /etc/fw/lib/code.def
+
+add two lines like:
+
+        * FireWall GUI first, in order to be recognized.
+         */
+        net_in(ip_src,pesaro,pesaro_netmask) or
+        net_in(ip_dst,pesaro,pesaro_netmask) or
+
+More than this some changes need to be done on FWALL:
+
+edit /usr/local/xacct-dialup/xacct.conf
+
+add a new host definition:
+
+#define modems_palermo  206.20.224.0/255.255.255.0
+
+modify the group definition
+
+#define modems (modems_ts1 modems_pesaro modems_palermo)
+
+after that reboot FWALL and DVLP.
+
+
+If they have a LAN, remember to add their workstations in RetePOP
+so they won't be able to run a server web.

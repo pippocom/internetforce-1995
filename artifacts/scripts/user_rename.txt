@@ -1,0 +1,15 @@
+How can I change the name of a user, manually?
+
+as root
+
+  Modify the name /etc/passwd.
+  mv the old directoty to the new one
+
+    ex. 
+
+       /users/01>mv c.moda/ c_moda/
+
+
+  modify the user passwd file with the new name.\
+
+

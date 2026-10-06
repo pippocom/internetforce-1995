@@ -1,0 +1,30 @@
+Informazioni addizionali per Infosfera:
+
+194.235.140.1 Gateway Ethernet CISCO 2511 Password: <ORIGINAL PASSWORD REMOVED>
+194.235.140.5 Macchina Linux (sax.infosferas.it) : Passwd <ORIGINAL PASSWORD REMOVED>
+194.235.140.6 Macchina NT: Password <ORIGINAL PASSWORD REMOVED>
+
+Filesystem         1024-blocks  Used Available Capacity Mounted on
+/dev/sda1             155517    8323   139164      6%   /
+/dev/sda2             202188   66851   124895     35%   /usr
+/dev/sda5              93297     973    87507      1%   /var
+/dev/sda6            1473977     201  1395060      0%   /export
+
+USER       PID %CPU %MEM  SIZE   RSS TTY STAT START   TIME COMMAND
+root         1  0.6  0.5   776   320  ?  S    10:58   0:16 init [3] 
+root         2  0.0  0.0     0     0  ?  SW   10:58   0:00 (kflushd)
+root         3  0.0  0.0     0     0  ?  SW<  10:58   0:00 (kswapd)
+root         9  0.0  0.3   756   252  ?  S    10:58   0:00 update (bdflush) 
+root        57  0.0  0.5   772   328  ?  S    10:58   0:00 /usr/sbin/crond -l10 
+root        71  0.0  0.6   784   384  ?  S    10:58   0:00 /usr/sbin/syslogd 
+root        73  0.0  0.6   872   436  ?  S    10:58   0:00 /usr/sbin/klogd 
+root        75  0.0  0.5   772   324  ?  S    10:58   0:00 /usr/sbin/inetd 
+root        77  0.0  0.7   956   504  ?  S    10:58   0:00 /usr/sbin/named 
+root        81  0.0  0.5   808   368  ?  S    10:58   0:00 /etc/xtacacsd -lsn 
+root        85  0.0  1.0  1156   640  ?  S    10:58   0:00 sendmail: accepting connections                                                                                                                                                                     
+                                                      
+root        86  0.0  1.1  1136   712   1 S    10:58   0:00 -tcsh 
+root        87  0.0  0.4   768   288   2 S    10:58   0:00 /sbin/agetty 38400 tty2 linux 
+root       130  0.3  0.0     0     0  ?  Z    11:40   0:00 (sh <zombie>)
+root       132  0.0  0.5   812   344   1 R    11:40   0:00 ps -auxwww 
+

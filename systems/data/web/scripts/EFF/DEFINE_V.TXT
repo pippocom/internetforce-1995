@@ -1,0 +1,18 @@
+#!/usr/local/bin/perl
+
+###########################################################################
+#                        define_variables.cgi                             #
+#                                                                         #
+# This script was written by Selena Sol (selena@eff.org                   #
+# http://www.eff.org/~erict) having been inspired by countless other      #
+# perl authors.  Feel free to copy, cite, reference, sample, borrow or    #
+# plagiarize the contents.  However, please let me know where it goes so  #
+# that I can at least watch and take part in the development of the       #
+# memes. Information wants to be free, support public domain freware.     #
+#                                                                         #
+###########################################################################
+
+$header = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Header/header_$MYDATA{'mid'}.dat";
+$body = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Body/body_$MYDATA{'mid'}.txt";
+$reply_list = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Replies/replies_$MYDATA{'mid'}.list";
+

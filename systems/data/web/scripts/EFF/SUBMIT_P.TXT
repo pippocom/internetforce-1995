@@ -1,0 +1,221 @@
+#!/usr/local/bin/perl
+
+###########################################################################
+#                         submit_post.cgi                                 #
+#                                                                         #
+# This script was written by Selena Sol (selena@eff.org                   #
+# http://www.eff.org/~erict) having been inspired by countless other      #
+# perl authors.  Feel free to copy, cite, reference, sample, borrow or    #
+# plagiarize the contents.  However, please let me know where it goes so  #
+# that I can at least watch and take part in the development of the       #
+# memes. Information wants to be free, support public domain freware.     #
+#                                                                         #
+###########################################################################
+
+# Gather form data and set some server specific variables.  Note the mail 
+# line has a server specific variable not located here at the top.  Also 
+# the REPLIES open part has one too.
+
+  &get_form_data;
+  $header = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Header/header_$MYDATA{'mid'}.dat";
+  $body = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Body/body_$MYDATA{'mid'}.txt";
+  $reply_list = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Replies/replies_$MYDATA{'mid'}.list";
+  $oldmid_reply_list = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Replies/replies_$MYDATA{'oldmid'}.list";
+  $oldmid_body = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Body/body_$MYDATA{'oldmid'}.txt";
+  $oldmid_header = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Header/header_$MYDATA{'oldmid'}.dat";
+  $mail = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/mail.temp";
+  &get_date;
+  $get_last_update_script = "get_last_update.cgi";
+  $last_modified_button = "/Images/Buttons/last_modified.gif";
+  $line = "/Images/Icons/Lines/smalline.gif";
+  $post_response_script = "post_response.cgi?oldmid=$MYDATA{'mid'}";
+  $post_button = "/Images/Buttons/post_a_reply.gif";
+  $read_messages_script = "gen_first_page.cgi?mid=1&oldmid=1";
+  $read_button = "/Images/Buttons/message_archive_top.gif";
+  $page_name = "Template Message Board";
+  $background = "/Images/Backgrounds/bkgnd.jpg";
+
+# Gather info from the post that is being responded to
+
+  open(HEADER,$oldmid_header);
+  while (<HEADER>)
+    {
+    @grepfields=split(/:/,$_);
+    $lname = $grepfields[0];
+    $fname = $grepfields[1];
+    $email = $grepfields[2];
+    $date = $grepfields[3];
+    $subject = $grepfields[4];
+    }
+  close (HEADER);
+
+  $_ = `cat $oldmid_body`;
+  s/\n\n/<P>/g;
+  $data = $_;
+
+# Create the header file for the new post
+
+  open (HEADER, ">>$header");
+  print HEADER "$MYDATA{'lname'}:$MYDATA{'fname'}:$MYDATA{'email'}:$date1 $day1,$year:$MYDATA{'subject'}\n";
+  close (HEADER);
+  system ("chmod 775 $header");
+
+# Create the new body file
+
+  open (BODY, ">>$body");
+  print BODY "$MYDATA{'body'}";
+  close (BODY);
+  system ("chmod 775 $body");
+
+# Create the new reply list file
+
+  open (REPLYLIST, ">>$reply_list");
+  close (REPLYLIST);
+  system ("chmod 775 $reply_list");
+
+# Update the old reply list with the information from this new reply
+
+  open (OLDMIDREPLYLIST, ">>$oldmid_reply_list");
+  print OLDMIDREPLYLIST "$MYDATA{'mid'}:-$MYDATA{'subject'}:$MYDATA{'oldmid'}:$MYDATA{'lname'}:$MYDATA{'fname'}\n";
+  close (OLDMIDREPLYLIST);
+  system ("chmod 775 $oldmid_reply_list");  
+
+# Mail the original poster a note telling them that their post has been 
+# answered
+
+  open (MAIL, ">$mail");
+  print MAIL "Someone has responded to your posting on The Template BBS at:\n\n";
+  print MAIL "http://www.nchgr.nih.gov/cgi-bin/BBS/Template/Scripts/generate_post.cgi?mid=$url&oldmid=$MYDATA{'mid'}";
+  close (MAIL);
+  system ("chmod 775 $mail");
+
+  system("/usr/ucb/mail -s Template_BBS_Response_Notification $email < $mail"); 
+  system ("rm $mail");
+
+# Print out the HTML response
+
+  print "Content-type: text/html\n\n";
+  print "<HTML><HEAD><TITLE>$page_name</TITLE></HEAD>";
+  print "<BODY BACKGROUND=\"$background\">";
+  print "<FONT SIZE=+1>";
+
+# Make sure this is not a top level message
+
+  if ($oldmid >1)
+    {  
+    print "<B>Name:</B> $fname $lname<BR>";
+    print "<B>Email:</B> <A HREF=\"mailto:$email\">$email</A><BR>";
+    print "<B>Date:</B> $date<BR>";
+    print "<B>Subject:</B> $subject<BR>";
+    print "</FONT>";
+    print "<B>Body:</B><BLOCKQUOTE>$data</BLOCKQUOTE>";
+    print "<B>Replies:</B>";
+    }  
+
+  print "<UL>";
+
+  open (REPLIES, $oldmid_reply_list);
+  while (<REPLIES>)
+    {
+    ($url,$subject1) = split(/:/, $_);
+    print "<LI><A HREF=\"http://www.nchgr.nih.gov/cgi-bin/BBS/Template/Scripts/generate_post.cgi?mid=$url&oldmid=$MYDATA{'mid'}\">Subject$subject1</A><BR>";
+    }
+  close (REPLIES);
+
+  print "</UL><CENTER><P><IMG SRC=\"$line\"><P>";
+  print "<A HREF=\"$post_response_script\">";
+  print "<IMG SRC=\"$post_button\" BORDER=0 ALT=\"[Post";
+  print "a Message]\"></a>";
+  print "<A HREF=\"$read_messages_script\">";
+  print "<IMG SRC=\"$read_button\" BORDER=0";
+  print "ALT=\"[Read through Message Archive]\"></A>";
+  print "<A HREF=\"$get_last_update_script\">";
+  print "<IMG SRC=\"$last_modified_button\"";
+  print "BORDER=0 ALT=\"[Last Modified List]\"></A>";
+  print "</CENTER></BODY></HTML>";
+
+
+##############################################################################
+#                               SUBROUTINES                                  #
+##############################################################################
+
+sub get_form_data
+
+# This form parsing routine was adapted from a script by Robert John
+# Mudry which was published by the Coriolis Group as freeware in "Serving
+# The Web".  This is an excellent book which I recommend to any cgi
+# programmer.
+
+  {
+        $LENGTH = $ENV{'CONTENT_LENGTH'};
+        if ($LENGTH > "32768")
+           {
+           die "major network spam, stopped";
+           }
+
+# Dump the information from the browser into variable $C for
+# filtration.  If the charcter coming in is an "=", we
+# know a value is starting .  If the character is an "&", we know that its
+# the end of a value.  Use the $START variable to watch the size of the
+# input.  So long as it is small enough, things are finem and $FORM_DATA
+# should be appended.  If not, disregard the long string.  The reason
+# that the limit above was 32768, when here it is  8192 is because we don't
+ # want a legitimate blabbermouth to get cut off.
+
+         while ($LENGTH--)
+               {
+               $C = getc(STDIN);
+               if ($C eq "=" || $C eq "&")
+                  {
+                  $START = "0";
+                  }
+               else
+                    {
+                    $START++;
+                    }
+               if ($START <= "8192")
+                  {
+                  $FORM_DATA .=$C;
+                  }
+          }
+
+# So first, split up $FORM_DATA into $NAME and $VALUE.  Now store $VALUE
+# in $MYDATA{$NAME} provided that $NAME is not already in use.  If it is, a
+# temporary number stored in $NUM is incremented and a new the $VALUE is
+# saved as the new variable.
+
+  foreach (split(/&/, $FORM_DATA))
+          {
+          ($NAME, $VALUE) = split(/=/, $_);
+          $NAME =~ s/\+/ /g;
+          $NAME =~ s/%([0-9|A-F]{2})/pack(C,hex($1))/eg;
+          $VALUE =~ s/\+/ /g;
+          $VALUE =~ s/%([0-9|A-F]{2})/pack(C,hex($1))/eg;
+
+# Find unique Name
+
+          $NUM = "0";
+          while ($MYDATA{$NAME} ne "")
+                {
+                $NUM++;
+                $NAME =~ s/\.([0-9]+$)|$/\.$NUM/;
+                }
+
+# Store NAME=VAUE pair
+
+          $MYDATA{$NAME} = $VALUE;
+       }
+  }
+
+
+sub get_date
+  {
+  $date = `date`;
+  @date = split(/\s+/, $date);
+  $day=$date[0];
+  $date1=$date[1];
+  $day1=$date[2];
+  $time=$date[3];
+  $time1=$date[4];
+  $year=$date[5];
+  }

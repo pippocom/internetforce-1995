@@ -1,0 +1,103 @@
+<html>
+<!-- Ianna's Home Page version 0.2 - 10/10/1995 -->
+<META NAME="AUTHOR" CONTENT="Marco Iannacone">
+<title>IannaSpace</title> 
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Beginning of JavaScript Applet -------------------
+
+/* Copyright (C)1996 Web Integration Systems, Inc. DBA Websys, Inc.
+   All Rights Reserved.
+   
+   This applet can be re-used or modified, if credit is given in
+   the source code.
+
+   We will not be held responsible for any unwanted effects due to the
+   usage of this applet or any derivative.  No warrantees for usability
+   for any specific application are given or implied.
+        
+   Chris Skinner, January 30th, 1996.
+        
+   Hacked for CNNfn by RD, Jan. 31, 1996
+*/
+   
+function scrollit_r2l(seed)
+{
+        var m1  = "Marco Iannacone is happy to host you in his page "; 
+   
+        var msg=m1;
+        var out = " ";
+        var c   = 1;
+   
+        if (seed > 100) {
+                seed--;
+                var cmd="scrollit_r2l(" + seed + ")";
+                timerTwo=window.setTimeout(cmd,100);
+        }
+        else if (seed <= 100 && seed > 0) {
+                for (c=0 ; c < seed ; c++) {
+                        out+=" ";
+                }   
+                out+=msg;
+                seed--;  
+                var cmd="scrollit_r2l(" + seed + ")";
+                    window.status=out;
+                timerTwo=window.setTimeout(cmd,100);
+        }
+        else if (seed <= 0) {
+                if (-seed < msg.length) {   
+                        out+=msg.substring(-seed,msg.length);
+                        seed--;
+                        var cmd="scrollit_r2l(" + seed + ")";
+                        window.status=out;
+                        timerTwo=window.setTimeout(cmd,100);
+                }
+                else {
+                        window.status=" ";
+                        timerTwo=window.setTimeout("scrollit_r2l(100)",75);
+                }
+        }
+}
+// -- End of JavaScript code -------------- -->
+                        
+</SCRIPT>
+
+<body background="matrix.gif" bgcolor=#000000 text="#ffffff" link="#ffff00" vlink="#00ffff" onLoad="timerONE=window.setTimeout('scrollit_r2l(100)',500);">
+<p>Hi everybody! My name is Marco Iannacone and I work as System Administrator for <strong>many</strong> italian Internet provider.
+With these few pages I'd like to tell you some of my favourite places on The Net, together with speaking a little about myself.</p>
+The main topics I'd like to speak about are:
+<DL><DD>
+<H3><xA HREF="tech.html"> Technical stuff: Computers, Operating System, Security...</A><p></p>
+<xA HREF="like.html"> What I like: Books, Music, Movies...</A><p></p>
+<A HREF="where.html"> Where to go: for leisure or work...</A></H3><p></p>
+</DL>
+<PRE>There two main ways to browse my pages;
+
+  - For each page I prepared a short self-playing presentation, for
+    those who have a browser that support it
+    (Netscape 1.22 for example).
+  - I did also a normal index. You can use it, if you like... :)
+</PRE>  
+<p></p>
+<DL>
+<H2>To go to the next page choose the option you prefer:</H2>
+<DD>
+<H4><IMG SRC="violet.gif" VALIGN="MIDDLE"><xA HREF="goplay.html"> Self-playing presentation</A></H4>
+<H4><IMG SRC="violet.gif" VALIGN="MIDDLE"><xA HREF="go.html"> Normal index</A></H4>
+</DL>
+<DL>
+Do you want to learn more about the Net? Get my hypertextual guide to Internet (in Italian)<br>
+<DD>
+<H4><IMG SRC="violet.gif" VALIGN+="MIDDLE"><A HREF="hyper140.zip">Full hypertext (ver. 1.40 - 1.4 Mb)</A></H4>
+<H4><IMG SRC="violet.gif" VALIGN+="MIDDLE"><A HREF="hypertxt.zip">Old version (ver. 1.29b - 1.1 Mb)</A></H4>
+</DL>
+<br><p></p>
+Press <a href="http://www.pippo.com/hypertxt/" TARGET="_top">here</a>, instead, to read the documentation.<br><br>
+<b>If you prefer to receive it by mail, just <a href="write.html">let me know it...</a><br> 
+<p></p>
+<TABLE BORDER=0 CELLPADDING=2><TR><TD ALIGN=MIDDLE>
+<TD VALIGN=MIDDLE><A HREF="http://www.altair.it/cusi/cusi.html" target="corpo"><img src="world.gif" border=0 alt="Search"></A></TD></TR>
+</TABLE>
+
+<!-- Offline mirror from Internet Archive; target 19970511230030. -->
+</body></html>

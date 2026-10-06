@@ -1,0 +1,19 @@
+.                       99999999        IN      NS      NS.INTERNIC.NET.
+                        99999999        IN      NS      AOS.ARL.ARMY.MIL.
+                        99999999        IN      NS      NS1.ISI.EDU.
+                        99999999        IN      NS      C.NYSER.NET.
+                        99999999        IN      NS      TERP.UMD.EDU.
+                        99999999        IN      NS      NS.NASA.GOV.
+                        99999999        IN      NS      NIC.NORDU.NET.
+                        99999999        IN      NS      NS.NIC.DDN.MIL.
+
+NS.INTERNIC.NET.        99999999        IN      A       198.41.0.4
+AOS.ARL.ARMY.MIL.       99999999        IN      A       128.63.4.82
+                        99999999        IN      A       192.5.25.82
+NS1.ISI.EDU.            99999999        IN      A       128.9.0.107
+C.NYSER.NET.            99999999        IN      A       192.33.4.12
+TERP.UMD.EDU.           99999999        IN      A       128.8.10.90
+NS.NASA.GOV.            99999999        IN      A       128.102.16.10
+                        99999999        IN      A       192.52.195.10
+NIC.NORDU.NET.          99999999        IN      A       192.36.148.17
+NS.NIC.DDN.MIL.         99999999        IN      A       192.112.36.4

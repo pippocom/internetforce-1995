@@ -1,0 +1,39 @@
+; BIND version named 4.9.3-Release-P1-Monday-06-May-96
+; BIND version GregSchueman-LarryKahn-VirajBais
+; zone 'pointest.com'   last serial 1996100303
+; from 194.133.2.197   at Sun Oct 06 20:02:43 1996
+$ORIGIN com.
+pointest	IN	SOA	dns.pesaro.com. dnsmaster.pesaro.com. (
+		1996100601 10800 3600 604800 86400 )
+		IN	NS	interbusiness.it.
+		IN	NS	users.pesaro.com.
+		IN	MX	10 users.pointest.com.
+		IN	MX	20 interbusiness.it.
+		IN	A	195.120.225.6
+$ORIGIN pesaro.com.
+localhost	IN	A	127.0.0.1
+news		IN	CNAME	news.interbusiness.it.
+users		IN	A	195.120.225.6
+mail		IN	CNAME	users.pesaro.com.
+mailhost	IN	CNAME	users.pesaro.com.
+mbox		IN	CNAME	users.pesaro.com.
+dns		IN	A	195.120.225.6
+data		IN	A	195.120.225.5
+ppp1		IN	A	195.120.225.97
+ppp2		IN	A	194.120.225.98
+www		IN	CNAME	data.pesaro.com.
+ppp3		IN	A	194.120.225.99
+ppp4		IN	A	194.120.225.100
+ppp5		IN	A	194.120.225.101
+ppp6		IN	A	194.120.225.102
+ppp7		IN	A	194.120.225.103
+ppp8		IN	A	194.120.225.104
+ppp9		IN	A	194.120.225.105
+ppp10		IN	A	194.120.225.106
+ppp11		IN	A	194.120.225.107
+ppp12		IN	A	194.120.225.108
+ppp13		IN	A	194.120.225.109
+ppp14		IN	A	194.120.225.110
+ppp15		IN	A	194.120.225.111
+ppp16		IN	A	194.120.225.112
+ftp		IN	CNAME	data.pesaro.com.

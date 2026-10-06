@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+#       DATA SERVER routing tables:
+#
+hostname=`hostname`
+route delete intfnet $hostname
+route add $hostname $hostname 0
+route add default fw-$hostname 1

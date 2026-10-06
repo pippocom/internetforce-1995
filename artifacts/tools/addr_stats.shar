@@ -1,0 +1,169 @@
+#! /bin/sh
+# This is a shell archive.  Remove anything before this line, then unpack
+# it by saving it into a file and typing "sh file".  To overwrite existing
+# files, type "sh file -c".  You can also feed this as standard input via
+# unshar, or by typing "sh <file", e.g..  If this archive is complete, you
+# will see the following message at the end:
+#		"End of shell archive."
+# Contents:  addr_stats.pl mailstuff.pl
+# Wrapped by brent@mycroft on Wed Nov  4 09:27:12 1992
+PATH=/bin:/usr/bin:/usr/ucb ; export PATH
+if test -f 'addr_stats.pl' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'addr_stats.pl'\"
+else
+echo shar: Extracting \"'addr_stats.pl'\" \(935 characters\)
+sed "s/^X//" >'addr_stats.pl' <<'END_OF_FILE'
+X#!/usr/local/bin/perl
+X
+Xrequire "/mycroft/brent/majordomo/mailstuff.pl";
+X
+Xwhile (<ARGV>) {
+X    @a = &ParseAddrs($_);
+X    foreach (@a) {
+X	@n = split("@");
+X	@p = split(/\./, $n[1]);
+X	$_ = $p[$#p];
+X	tr/A-Z/a-z/;
+X	$count{$_}++;
+X	$total++;
+X	if (/^com$|^gov$|^mil$|^net$|^edu$|^org$|^us$/) {
+X	    $domestic++;
+X	} else {
+X	    $foreign++;
+X	}
+X    }
+X}
+X
+X@data = (sort ncmp keys %count);
+X
+X$cols = 6;
+X$rows = int($#data / $cols + 1);
+X
+Xfor ($i = 0 ; $i < $rows ; $i ++) {
+X    for ($j = 0 ; $j < $cols ; $j++) {
+X	$_ = $data[$i + $rows * $j];
+X	if (defined($_)) {
+X	    printf "%4d %-3.3s", $count{$_}, $_;
+X	} else {
+X	    print "        ";
+X	}
+X	print (($j != 5) ? "  " : "\n");
+X    }
+X}
+X
+Xprint "\n";
+Xprintf "USA\t%4d (%5.2f %%)\n", $domestic, $domestic / $total * 100.0;
+Xprintf "Non-USA\t%4d (%5.2f %%)\n", $foreign, $foreign/ $total * 100.0;
+Xprint "\n";
+Xprintf "Total\t%4d\n", $total;
+X
+Xsub ncmp {
+X    return(($count{$b} <=> $count{$a}) || ($a cmp $b));
+X}
+END_OF_FILE
+if test 935 -ne `wc -c <'addr_stats.pl'`; then
+    echo shar: \"'addr_stats.pl'\" unpacked with wrong size!
+fi
+chmod +x 'addr_stats.pl'
+# end of 'addr_stats.pl'
+fi
+if test -f 'mailstuff.pl' -a "${1}" != "-c" ; then 
+  echo shar: Will not clobber existing file \"'mailstuff.pl'\"
+else
+echo shar: Extracting \"'mailstuff.pl'\" \(2121 characters\)
+sed "s/^X//" >'mailstuff.pl' <<'END_OF_FILE'
+X#  Mail header hacking routines for the "majordomo" PERL LISTSERV
+X#
+X#  Derived from:
+X#  Routines to parse out an RFC 822 mailheader
+X#     E. H. Spafford,  last mod: 11/91
+X#  
+X#  ParseMailHeader breaks out the header into an % array
+X#    indexed by a lower-cased keyword, e.g.
+X#       &ParseMailHeader(STDIN, *Array);
+X#	use $Array{'subject'}
+X#
+X#    Note that some duplicate lines (like "Received:") will get joined
+X#     into a single entry in %Array; use @Array if you want them separate
+X#    $Array will contain the unprocessed header, with embedded
+X#     newlines
+X#    @Array will contain the header, one line per entry
+X#
+X#  RetMailAddr tries to pull out the "preferred" return address
+X#    based on the presence or absence of various return-reply fields
+X
+Xpackage MailStuff;
+X
+X#  Call as &ParseMailHeader(FileHandle, *array)
+X
+Xsub main'ParseMailHeader  ## Public
+X{
+X    local($save1, $save2) = ($*, $/);
+X    local($FH, *array) =  @_;
+X    local ($keyw, $val);
+X
+X    %array = ();
+X
+X# force unqualified filehandles into callers' package
+X    local($package) = caller;
+X    $FH =~ s/^[^']+$/$package'$&/;
+X
+X    ($*, $/) = (1, '');
+X    $array = $_ = <$FH>;
+X    s/\n\s+/ /g;
+X       
+X    @array = split('\n');
+X    foreach $_ (@array)
+X    {
+X	($keyw, $val) = m/^([^:]+):\s*(.*\S)\s*$/g;
+X	$keyw =~ y/A-Z/a-z/;
+X	if (defined($array{$keyw})) {
+X	    $array{$keyw} .= ", $val";
+X	} else {
+X	    $array{$keyw} = $val;
+X	}
+X    }
+X    ($*, $/) = ($save1, $save2); 
+X}
+X
+X
+X#  Call as $addr = &RetMailAddr(*array)
+X#    This assumes that the header is in RFC 822 format
+X
+Xsub main'RetMailAddr  ## Public
+X{
+X    local(*array) = @_;
+X
+X    local($ReplyTo) = defined($array{'reply-to'}) ?
+X		$array{'reply-to'} : $array{'from'};
+X
+X    $ReplyTo = $array{'apparently-from'} unless $ReplyTo;
+X
+X    join(", ", &main'ParseAddrs($ReplyTo)) if $ReplyTo;
+X    $ReplyTo;
+X}
+X
+X# @addrs = &ParseAddrs($addr_list)
+Xsub main'ParseAddrs {
+X    local($_) = shift;
+X    1 while s/\([^\(\)]*\)//g; 		# strip comments
+X    1 while s/"[^"]*"//g;		# strip comments
+X    split(/,/);				# split into parts
+X    foreach (@_) {
+X	1 while s/.*<(.*)>.*/\1/;
+X	s/^\s+//;
+X	s/\s+$//;
+X    }
+X
+X    @_;
+X}
+X
+X1;
+END_OF_FILE
+if test 2121 -ne `wc -c <'mailstuff.pl'`; then
+    echo shar: \"'mailstuff.pl'\" unpacked with wrong size!
+fi
+# end of 'mailstuff.pl'
+fi
+echo shar: End of shell archive.
+exit 0

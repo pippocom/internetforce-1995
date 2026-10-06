@@ -1,0 +1,65 @@
+CYBERSPAZIO
+di Marco Iannacone - ianna@pippo.com
+-----------------------------------------------------------------------------------------------------------------
+Il presente articolo e' un estratto dalla guida ad Internet e alla Realta'
+Virtuale - http://www.pippo.com/hypertxt/
+-----------------------------------------------------------------------------------------------------------------
+
+<< Cyberspazio: un nuovo universo, un universo parallelo creato e alimentato
+dalle reti globali di comunicazione via computer. Un mondo in cui prende forma
+uno scambio globale di conoscenze, segreti, misurazioni, indicatori,
+divertimenti e agenti non umani: luci suoni, presenze mai viste sula faccia
+della terra che sbocciano in una vasta notte elettronica.
+
+Cyberspazio: ogni computer collegato al sistema può entrarvi, da ogni luogo,
+senza limiti; ci si può entrare allo stesso modo da uno scantinato a Vancouver,
+da una barca a Port-au-Prince, da un taxi a New York, da un garage a Texas City,
+da un appartamento a Roma, da un ufficio ad Hong Kong, da un bar a Kyoto, da un
+caffè a Kinshasa, da un laboratorio sulla Luna.
+
+Cyberspazio: una geografia mentale comune .. con un milione di voci e due
+milioni di occhi in un silenzioso, invisibile concerto di domande, accordi,
+condivisione di sogni e semplice osservazione.
+
+Cyberspazio: ogni tipo di informazione importante per la vita degli individui e
+delle organizzazioni, dalla semplice sopravvivenza economica al raggiungimento
+della sicurezza e della legalità, dalla ricerca di elementi di approvazione,
+confidenza e libertà al perseguimento del potere della conoscenza e del
+divertimento nel proprio interesse potrà essere trovata in vendita o liberamente
+disponibile nel Cyberspazio. Dalle grandi banche dati che costituiscono la
+ricchezza del nostro patrimonio culturale si può attingere qualsiasi documento,
+riascoltare qualsiasi registrazione, rivedere qualsiasi immagine. Chi entra in
+questo mondo ha un intero laboratorio a disposizione, una ricca dotazione di
+strumenti; da casa controlla un mondo intero senza muoversi dalla sua poltrona.
+
+Cyberspazio: un'allucinazione vissuta consensualmente da miliardi di
+operatori... Linee di luce allineate nel non-spazio della mente. >>
+
+Così scrive William Gibson in Neuromancer. I suoi software cowboys navigano nel
+cyberspazio collegando il proprio sistema nervoso alla Matrice, una rete
+informatica globale. Il termine ciberspazio (creato da Gibson) è stato preso in
+prestito dagli scienziati per descrivere la realtà virtuale creata tramite
+computer. Il ciberspazio è un'entità logica, che però si presenta anche come
+scenario, come paesaggio che può essere visualizzato e percorso da particolari
+categorie di persone: i cybernauti. Il Cybernauta deve indossare degli abiti
+computerizzati: un data glove, un HMD, una data suit. A questo punto può
+immergersi e navigare nella realtà virtuale. Può muoversi, spostarsi, toccare
+oggetti, incontrare creature artificiali e interagire con loro in un ambiente
+creato dal computer. L'ambiente virtuale è mentale, non esiste realmente nello
+spazio, ma per il cybernauta la illusione della realtà è completa: entra nel
+mondo grafico tridimensionale creato dal computer e lo vive come se fosse reale.
+
+Insomma il cyberspazio si può definire un ambiente computerizzato esplorabile.
+Quando il cybernauta muove la mano o la testa, i sensori degli abiti
+"cibernetici" comunicano tale spostamento al computer, che ricalcola in una
+frazione di secondo l'intero mondo virtuale. Così il cybernauta può guardare in
+ogni direzione, può spostarsi (camminando o volando), può prendere in mano ed
+esaminare eventuali oggetti del mondo virtuale. L'uomo ragiona, sperimenta,
+scopre non solo con processi mentali astratti, ma anche soprattutto con i suoi
+cinque sensi.
+Un'idea di quali siano le implementazioni del cyberspazio che sono già
+realizzabili e di quali siano quelle che ci si aspetta di attuare nel prossimo
+futuro, viene data nei paragrafi successivi e in particolar modo in Realtà
+Virtuale e Ciberspazio.
+
+Copyright ® 1994-99 Marco Iannacone <ianna@pippo.com>

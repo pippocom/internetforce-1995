@@ -1,0 +1,140 @@
+#!/usr/local/bin/perl
+
+###########################################################################
+#                     get_last_update.cgi                                 #
+#                                                                         #
+# This script was written by Selena Sol (selena@eff.org                   #
+# http://www.eff.org/~erict) having been inspired by countless other      #
+# perl authors.  Feel free to copy, cite, reference, sample, borrow or    #
+# plagiarize the contents.  However, please let me know where it goes so  #
+# that I can at least watch and take part in the development of the       #
+# memes. Information wants to be free, support public domain freware.     #
+#                                                                         #
+###########################################################################
+
+# First set some server specific variables.  BTW, $database_path1 and 
+# generate_post.cgi variables are defined below, so don't forget it when 
+# you move this script.
+
+  $body = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Body/body_$MYDATA{'mid'}.txt";
+  $reply_list = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Replies/replies_$MYDATA{'mid'}.list";
+  $filelist = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/files.list";
+  $filelist1 = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/files1.list";
+  $filelist2 = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/files2.list";
+  $url_path = "/cgi-bin/BBS/Template/Messages/Replies/";
+  $database_path = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Replies/";
+  $page_name = "Template Message Board";
+  $background = "/Images/Backgrounds/bkgnd.jpg";
+  $line = "/Images/Icons/Lines/smalline.gif";
+  $gen_first_page_script = "gen_first_page.cgi?mid=1&oldmid=1";
+  $read_button = "/Images/Buttons/message_archive_top.gif";
+  $get_last_update_script = "get_last_update.cgi";
+  $last_modified_button = "/Images/Buttons/last_modified_grey.gif";
+
+# Gather and sort the incoming data
+
+  &get_form_data;
+
+# Now get the list of all the replies.list.  This will tell us which 
+# items have had responses
+
+  system ("ls $database_path > $filelist");
+  open (FILENAMES, $filelist);
+  while (<FILENAMES>)
+    {
+    @filenames=split(/ /,$_);
+    foreach (@filenames)
+      {
+
+# check to see which files in the list have been modified in the time 
+# period given by the form.  If so, gather some info that we'll need to 
+# create the HTML output
+
+      if (-M $_ < $MYDATA{'time'})
+        {
+        $database_path1 = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Replies/$_";
+        $replyinfo = `cat $database_path1`;
+        open (REPLYINFO, ">>$filelist1");
+        print REPLYINFO "$replyinfo";
+        }
+      }
+    }
+  close (FILENAMES);
+  close (REPLYINFO);
+
+# Output the HTML response
+
+  print "Content-type: text/html\n\n";
+  print "<HTML><HEAD><TITLE>$page_name</TITLE></HEAD>";
+  print "<BODY BACKGROUND=\"$background\">";
+  print "<CENTER><H2>Messages posted in the last $MYDATA{'time'} days";
+  print "</H2></CENTER><UL>\n";
+
+# Now gather the necessary info from our recently updated files
+
+  open (FILENAMES, $filelist1);
+  while (<FILENAMES>)
+    {
+    @grepfields=split(/:/,$_);
+    $oid = $grepfields[0];
+    $subject = $grepfields[1];
+    $oldoid = $grepfields[2];
+    $lname = $grepfields[3];
+    $fname = $grepfields[4];
+    print "<LI><A HREF=\"generate_post.cgi?mid=$oid&oldmid=$oldmid\">$fname $lname$subject</A>";
+    }  
+    close (FIELNAMES);
+  system ("rm $filelist");
+  system ("rm $filelist1");
+
+# Finish off the HTML output
+
+  print "<CENTER><P><IMG SRC=\"$line\"><P>";
+  print "<A HREF=\"$gen_first_page_script\">";
+  print "<IMG SRC=\"$read_button\" BORDER=0 ALT=\"[Read";
+  print "through Message Archive]\"></A>\n";
+  print "<IMG SRC=\"$last_modified_button\"";
+  print "BORDER=0 ALT=\"[Last Modified List]\"></A>";
+  print "</CENTER></BODY></HTML>";
+
+
+#############################################################################
+#                            SUBROUTINES                                    #
+#############################################################################
+
+sub get_form_data
+
+  {
+
+# This form parsing routine was adapted from a script by Robert John
+# Mudry which was published by the Coriolis Group as freeware in "Serving
+# The Web".  This is an excellent book which I recommend to any cgi
+# programmer.
+
+# First, split up $FORM_DATA into $NAME and $VALUE.  Store $VALUE
+# in $MYDATA{$NAME} provided that $NAME is not already in use.  If it is, a
+# temporary number stored in $NUM is incremented and a new the $VALUE is
+# saved as the new variable.
+
+  $FORM_DATA = $ENV{'QUERY_STRING'};
+  foreach (split(/&/, $FORM_DATA))
+    {
+    ($NAME, $VALUE) = split(/=/, $_);
+    $NAME =~ s/\+/ /g;
+    $NAME =~ s/%([0-9|A-F]{2})/pack(C,hex($1))/eg;
+    $VALUE =~ s/\+/ /g;
+    $VALUE =~ s/%([0-9|A-F]{2})/pack(C,hex($1))/eg;
+
+# Find unique Variable Name for every variable coming in from the form input
+
+    $NUM = "0";
+    while ($MYDATA{$NAME} ne "")
+      {
+      $NUM++;
+      $NAME =~ s/\.([0-9]+$)|$/\.$NUM/;
+      }
+# Store Variable NAME=Variable VAUE pair
+
+      $MYDATA{$NAME} = $VALUE;
+    }
+  }

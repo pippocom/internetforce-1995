@@ -1,0 +1,2224 @@
+From domreg@internic.net Fri Apr 26 23:35:04 1996
+Return-Path: domreg@internic.net
+Received: from ops.internic.net (ops.internic.net [198.41.0.67]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id XAA02323 for <ianna@marco.internetforce.com>; Fri, 26 Apr 1996 23:34:59 +0100
+Received: (domreg@localhost) by ops.internic.net (8.7.4/InterNIC-RS) id SAA11132; Fri, 26 Apr 1996 18:05:00 -0400 (EDT)
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199604262205.SAA11132@ops.internic.net>
+Subject: Re: [NIC-960426.463] ART-DIARY.COM
+Date: Fri, 26 Apr 1996 18:04:59 -0400 (EDT)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: RO
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Internet Force (ART-DIARY-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: ART-DIARY.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Gerosa, Maurizio (MG1163) maus@INTERNETFORCE.COM
+      39-2-39210765
+   Billing Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+
+   Record last updated on 26-Apr-96.
+   Record created on 26-Apr-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com   Wed Dec 31 19:00:00 1969
+>Received: from users.internetforce.com (users.internetforce.com [206.20.95.4]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id GAA03401 for <hostmaster@internic.net>; Fri, 26 Apr 1996 06:07:31 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id MAA28833; Fri, 26 Apr 1996 12:07:28 +0200
+>Date: Fri, 26 Apr 1996 11:36:45 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>cc: alexis@silver.ios.com, irosen@styx.ios.com
+>Subject: [NIC-960426.463] Domain name registration
+>Message-ID: <Pine.LNX.3.91.960426093658.26545A-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960426.463
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960426060741
+>Status: O
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: art-diary.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......:
+>5b.  Name (Last, First).........: Gerosa, Maurizio
+>5c.  Organization Name..........: Internet Force
+>5d.  Street Address.............: Via Plana, 20
+>5e.  City.......................: Milano
+>5f.  State......................:
+>5g.  Postal Code................: 20155
+>5h.  Country....................: IT
+>5i.  Phone Number...............: 39-2-39210765
+>5j.  E-Mailbox..................: maus@internetforce.com
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: MI77
+>6b.  Name (Last, First).........:
+>6c.  Organization Name..........:
+>6d.  Street Address.............:
+>6e.  City.......................:
+>6f.  State......................:
+>6g.  Postal Code................:
+>6h.  Country....................:
+>6i.  Phone Number...............:
+>6j.  E-Mailbox..................:
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+>
+
+From domreg@internic.net Sat May  4 00:11:19 1996
+Return-Path: domreg@internic.net
+Received: from ops.internic.net (ops.internic.net [198.41.0.67]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id AAA31099 for <ianna@marco.internetforce.com>; Sat, 4 May 1996 00:11:17 +0100
+Received: (domreg@localhost) by ops.internic.net (8.7.4/InterNIC-RS) id SAA28664; Fri, 3 May 1996 18:35:22 -0400 (EDT)
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199605032235.SAA28664@ops.internic.net>
+Subject: Re: [NIC-960503.686] PESARO.COM
+Date: Fri, 3 May 1996 18:35:21 -0400 (EDT)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: RO
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Internet Force (PESARO-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: PESARO.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Gerosa, Maurizio (MG1163) maus@INTERNETFORCE.COM
+      39-2-39210765
+   Billing Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+
+   Record last updated on 03-May-96.
+   Record created on 03-May-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com   Wed Dec 31 19:00:00 1969
+>Received: from marco.internetforce.com (marco.internetforce.com [206.20.95.140]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id JAA26761 for <hostmaster@internic.net>; Fri, 3 May 1996 09:58:08 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by marco.internetforce.com (8.6.12/8.6.9) with SMTP id PAA29264 for <hostmaster@internic.net>; Fri, 3 May 1996 15:33:42 +0100
+>Date: Fri, 3 May 1996 15:33:41 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>Subject: [NIC-960503.686] Domain name registration
+>Message-ID: <Pine.LNX.3.91.960503153311.28513I-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960503.686
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960503095821
+>Status: O
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: pesaro.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......:
+>5b.  Name (Last, First).........: Gerosa, Maurizio
+>5c.  Organization Name..........: Internet Force
+>5d.  Street Address.............: Via Plana, 20
+>5e.  City.......................: Milano
+>5f.  State......................:
+>5g.  Postal Code................: 20155
+>5h.  Country....................: IT
+>5i.  Phone Number...............: 39-2-39210765
+>5j.  E-Mailbox..................: maus@internetforce.com
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: MI77
+>6b.  Name (Last, First).........:
+>6c.  Organization Name..........:
+>6d.  Street Address.............:
+>6e.  City.......................:
+>6f.  State......................:
+>6g.  Postal Code................:
+>6h.  Country....................:
+>6i.  Phone Number...............:
+>6j.  E-Mailbox..................:
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+>
+>
+
+From domreg@internic.net Wed May  8 02:33:04 1996
+Return-Path: domreg@internic.net
+Received: from ops.internic.net (ops.internic.net [198.41.0.67]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id CAA14735 for <ianna@marco.internetforce.com>; Wed, 8 May 1996 02:32:56 +0100
+Received: (domreg@localhost) by ops.internic.net (8.7.4/InterNIC-RS) id UAA21731; Tue, 7 May 1996 20:53:19 -0400 (EDT)
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199605080053.UAA21731@ops.internic.net>
+Subject: Re: [NIC-960507.899] SICILIA.COM
+Date: Tue, 7 May 1996 20:53:18 -0400 (EDT)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: RO
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Internet Force (SICILIA-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: SICILIA.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Billing Contact:
+      Gerosa, Maurizio (MG1163) maus@INTERNETFORCE.COM
+      39-2-39210765
+
+   Record last updated on 07-May-96.
+   Record created on 07-May-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com   Wed Dec 31 19:00:00 1969
+>Received: from users.internetforce.com (internetforce.com [206.20.95.4]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id HAA09762 for <hostmaster@internic.net>; Tue, 7 May 1996 07:55:00 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id NAA08751 for <hostmaster@internic.net>; Tue, 7 May 1996 13:54:57 +0200
+>Date: Tue, 7 May 1996 13:33:57 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>Subject: [NIC-960507.899] Domain name registration
+>Message-ID: <Pine.LNX.3.91.960507133313.11871C-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960507.899
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960507075510
+>Status: O
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: sicilia.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......: MI77
+>5b.  Name (Last, First).........: 
+>5c.  Organization Name..........: 
+>5d.  Street Address.............: 
+>5e.  City.......................: 
+>5f.  State......................:
+>5g.  Postal Code................: 
+>5h.  Country....................: 
+>5i.  Phone Number...............: 
+>5j.  E-Mailbox..................: 
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: MG1163
+>6b.  Name (Last, First).........:
+>6c.  Organization Name..........:
+>6d.  Street Address.............:
+>6e.  City.......................:
+>6f.  State......................:
+>6g.  Postal Code................:
+>6h.  Country....................:
+>6i.  Phone Number...............:
+>6j.  E-Mailbox..................:
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+>
+>
+>
+>
+>
+
+From domreg@internic.net Wed May 15 21:56:33 1996
+Return-Path: domreg@internic.net
+Received: from moses.internic.net (moses.internic.net [198.41.0.68]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id VAA13823 for <ianna@marco.internetforce.com>; Wed, 15 May 1996 21:56:30 +0100
+Received: (domreg@localhost) by moses.internic.net (8.6.10/MOSES-1) id PAA28881; Wed, 15 May 1996 15:11:20 -0500
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199605152011.PAA28881@moses.internic.net>
+Subject: Re: [NIC-960515.967] CREO-MI.COM
+Date: Wed, 15 May 1996 15:11:20 -0500 (GMT-0500)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: O
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Internet Force (CREO-MI-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: CREO-MI.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Billing Contact:
+      Gerosa, Maurizio (MG1163) maus@INTERNETFORCE.COM
+      39-2-39210765
+
+   Record last updated on 15-May-96.
+   Record created on 15-May-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com   Wed Dec 31 19:00:00 1969
+>Received: from users.internetforce.com (users.internetforce.com [206.20.95.4]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id JAA18892 for <hostmaster@internic.net>; Wed, 15 May 1996 09:26:34 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id PAA06288 for <hostmaster@internic.net>; Wed, 15 May 1996 15:26:33 +0200
+>Date: Wed, 15 May 1996 15:12:38 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>Subject: [NIC-960515.967] Domain name registration
+>Message-ID: <Pine.LNX.3.91.960515151203.11859L-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960515.967
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960515092639
+>Status: O
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: creo-mi.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......: MI77
+>5b.  Name (Last, First).........: 
+>5c.  Organization Name..........: 
+>5d.  Street Address.............: 
+>5e.  City.......................: 
+>5f.  State......................:
+>5g.  Postal Code................: 
+>5h.  Country....................: 
+>5i.  Phone Number...............: 
+>5j.  E-Mailbox..................: 
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: MG1163
+>6b.  Name (Last, First).........:
+>6c.  Organization Name..........:
+>6d.  Street Address.............:
+>6e.  City.......................:
+>6f.  State......................:
+>6g.  Postal Code................:
+>6h.  Country....................:
+>6i.  Phone Number...............:
+>6j.  E-Mailbox..................:
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+
+From ianna@marco.internetforce.com Tue May  7 09:13:04 1996
+Date: Tue, 7 May 1996 09:13:02 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: Alexei Yashkov <alexis@silver.ios.com>
+Subject: domain name registration
+Message-ID: <Pine.LNX.3.91.960507090648.11257A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+
+Hi Alexei,
+We'd like to register a new domain:
+
+pesaro.com
+
+I'd like you to be our secondary name server.
+
+This are the information we have already sent to InterNIC
+
+thanks,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE
+
+
+Internet Force (PESARO-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: PESARO.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Gerosa, Maurizio (MG1163) maus@INTERNETFORCE.COM
+      39-2-39210765
+   Billing Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+
+   Record last updated on 03-May-96.
+   Record created on 03-May-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+
+
+
+From ianna@marco.internetforce.com Thu May 23 17:29:27 1996
+Date: Thu, 23 May 1996 17:29:24 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: Alexei Yashkov <alexis@silver.ios.com>
+Subject: Domain name registration
+In-Reply-To: <199604270550.BAA28012@silver.ios.com>
+Message-ID: <Pine.LNX.3.91.960523172618.29986D-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+Hi there,
+I've just activated a new domain: pippo.com
+As usual I'd like you to be our secondary domain server.
+
+here is the informations I sent to InterNIC:
+
+   Domain Name: PIPPO.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Billing Contact:
+      Costantino, Iannacone (IC124) emmedue@IOL.IT
+      +39-2-2870652
+
+   Record last updated on 10-May-96.
+   Record created on 10-May-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+
+
+can you please do it?
+
+thanks,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE
+
+From alexis@silver.ios.com Fri May 24 15:40:54 1996
+Return-Path: alexis@silver.ios.com
+Received: from silver.ios.com (root@silver.ios.com [198.4.75.60]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id PAA03934 for <ianna@marco.internetforce.com>; Fri, 24 May 1996 15:40:52 +0100
+Received: (from alexis@localhost) by silver.ios.com (8.7.5/8.7.3) id KAA21754 for ianna@marco.internetforce.com; Fri, 24 May 1996 10:34:25 -0400 (EDT)
+From: Alexei Yashkov <alexis@silver.ios.com>
+Message-Id: <199605241434.KAA21754@silver.ios.com>
+Subject: Re: Domain name registration
+To: ianna@marco.internetforce.com (Marco Iannacone)
+Date: Fri, 24 May 1996 10:34:25 -0400 (EDT)
+In-Reply-To: <Pine.LNX.3.91.960523172618.29986D-100000@marco.internetforce.com> from "Marco Iannacone" at May 23, 96 05:29:24 pm
+Content-Type: text
+Status: RO
+X-Status: 
+
+> I've just activated a new domain: pippo.com
+> As usual I'd like you to be our secondary domain server.
+> 
+> here is the informations I sent to InterNIC:
+> 
+>    Domain Name: PIPPO.COM
+> 
+>    Administrative Contact:
+>       Iannacone, Marco (MI77) postmaster@INTF.COM
+>       392-392-67934
+>    Technical Contact:
+>       Iannacone, Marco (MI77) postmaster@INTF.COM
+>       392-392-67934
+>    Billing Contact:
+>       Costantino, Iannacone (IC124) emmedue@IOL.IT
+>       +39-2-2870652
+> 
+>    Record last updated on 10-May-96.
+>    Record created on 10-May-96.
+> 
+>    Domain servers in listed order:
+> 
+>    DATA.INTERNETFORCE.COM       206.20.95.3
+>    HARLEY.IOS.COM               198.4.75.46
+
+Done.
+
+-- 
+  ______
+  \____/  IDT Corporation		E-mail:	alexis@ios.com
+   \__/   Internet Online Services	Phone:	201 928 4492
+    \/    Alexei Yashkov		Pager:	800 225 0256 PIN 310495
+
+From alexis@silver.ios.com Sat Apr 27 07:23:06 1996
+Return-Path: alexis@silver.ios.com
+Received: from silver.ios.com (root@silver.ios.com [198.4.75.60]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id HAA03495 for <ianna@marco.internetforce.com>; Sat, 27 Apr 1996 07:23:05 +0100
+Received: (from alexis@localhost) by silver.ios.com (8.7.5/8.7.3) id BAA28012 for ianna@marco.internetforce.com; Sat, 27 Apr 1996 01:50:07 -0400 (EDT)
+From: Alexei Yashkov <alexis@silver.ios.com>
+Message-Id: <199604270550.BAA28012@silver.ios.com>
+Subject: Re: Domain name registration
+To: ianna@marco.internetforce.com (Marco Iannacone)
+Date: Sat, 27 Apr 1996 01:50:07 -0400 (EDT)
+In-Reply-To: <Pine.LNX.3.91.960426093658.26545A-100000@marco.internetforce.com> from "Marco Iannacone" at Apr 26, 96 11:36:45 am
+Content-Type: text
+Status: RO
+X-Status: 
+
+> Domain Version Number: 2.0
+> 
+> 0.   (N)ew (M)odify (D)elete....: New
+> 
+> 1.   Purpose/Description........: commercial
+> 
+> 2.   Complete Domain Name.......: art-diary.com
+> 
+> Organization Using Domain Name
+> 3a.  Organization Name..........: Internet Force
+> 3b.  Street Address.............: Via Plana, 20
+> 3c.  City.......................: Milano
+> 3d.  State......................:
+> 3e.  Postal Code................: 20155
+> 3f.  Country....................: IT
+
+Created. Changes will be visible from harley.ios.com today April 27
+after 11am.
+
+-- 
+  ______
+  \____/  IDT Corporation		E-mail:	alexis@ios.com
+   \__/   Internet Online Services	Phone:	201 928 4492
+    \/    Alexei Yashkov		Pager:	800 225 0256 PIN 310495
+
+From alexis@silver.ios.com Wed Jun  5 19:19:12 1996
+Return-Path: alexis@silver.ios.com
+Received: from silver.ios.com (root@silver.ios.com [198.4.75.60]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id TAA06130 for <ianna@marco.internetforce.com>; Wed, 5 Jun 1996 19:19:10 +0100
+Received: (from alexis@localhost) by silver.ios.com (8.7.5/8.7.3) id OAA04329 for ianna@marco.internetforce.com; Wed, 5 Jun 1996 14:10:34 -0400 (EDT)
+From: Alexei Yashkov <alexis@silver.ios.com>
+Message-Id: <199606051810.OAA04329@silver.ios.com>
+Subject: Re: domain name registration
+To: ianna@marco.internetforce.com (Marco Iannacone)
+Date: Wed, 5 Jun 1996 14:10:34 -0400 (EDT)
+In-Reply-To: <Pine.LNX.3.91.960605173053.5203D-100000@marco.internetforce.com> from "Marco Iannacone" at Jun 5, 96 05:36:19 pm
+Content-Type: text
+Status: RO
+X-Status: 
+
+Hi,
+
+> how you doing?
+
+I'm fine how about you?
+
+> here comes some new domains...
+> 
+> pcpesaro.com
+> 
+> boldyoung.com
+> 
+> creo-mi.com
+> 
+> 
+> Can you please update harley.ios.com? 
+
+Sure. Changes will be visible from harley.ios.com today June 5
+after 5pm EDT.
+
+> I have already registered them to InterNIC:
+> 
+> >   Domain servers in listed order:
+> >
+> >   DATA.INTERNETFORCE.COM       206.20.95.3
+> >   HARLEY.IOS.COM               198.4.75.46
+
+It would be great if you send a copy of InterNIN form to
+hostmaster@ios.com when ypu register a domain.
+
+-- 
+  ______
+  \____/  IDT Corporation		E-mail:	alexis@ios.com
+   \__/   Internet Online Services	Phone:	201 928 4492
+    \/    Alexei Yashkov		Pager:	800 225 0256 PIN 310495
+
+From domreg@internic.net Wed Jun 12 23:44:05 1996
+Return-Path: domreg@internic.net
+Received: from wham.internic.net (wham.internic.net [198.41.0.69]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id XAA26300 for <ianna@marco.internetforce.com>; Wed, 12 Jun 1996 23:44:01 +0100
+Received: (domreg@localhost) by wham.internic.net (8.7.4/SLAM-1) id RAA07880; Wed, 12 Jun 1996 17:43:41 -0400 (EDT)
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199606122143.RAA07880@wham.internic.net>
+Subject: Re: [NIC-960605.807] SHISEIDOIT.COM
+Date: Wed, 12 Jun 1996 17:43:41 -0400 (GMT-0400)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: RO
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Internet Force (SHISEIDOIT-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: SHISEIDOIT.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Billing Contact:
+      Stoppa, Patrizia (PS557) patrizia@INTERNETFORCE.COM
+      +39-2-39210765
+
+   Record last updated on 12-Jun-96.
+   Record created on 12-Jun-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com    Wed Dec 31 19:00:00 1969
+>Received: from users.internetforce.com (internetforce.com [206.20.95.4]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id HAA27247 for <hostmaster@internic.net>; Wed, 5 Jun 1996 07:01:55 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id NAA12533 for <hostmaster@internic.net>; Wed, 5 Jun 1996 13:01:52 +0200
+>Date: Wed, 5 Jun 1996 12:10:06 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>Subject: [NIC-960605.807] Domain name registration
+>Message-ID: <Pine.LNX.3.91.960605120707.4806B-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960605.807
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960605070206
+>Status: RO
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: shiseidoit.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......: MI77
+>5b.  Name (Last, First).........: 
+>5c.  Organization Name..........: 
+>5d.  Street Address.............: 
+>5e.  City.......................: 
+>5f.  State......................:
+>5g.  Postal Code................: 
+>5h.  Country....................: 
+>5i.  Phone Number...............: 
+>5j.  E-Mailbox..................: 
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: 
+>6b.  Name (Last, First).........: Patrizia Stoppa
+>6c.  Organization Name..........: Internet Force
+>6d.  Street Address.............: Via, Plana 20
+>6e.  City.......................: MILANO
+>6f.  State......................:
+>6g.  Postal Code................: I-20155
+>6h.  Country....................: Italy
+>6i.  Phone Number...............: +39-2-39210765
+>6j.  E-Mailbox..................: patrizia@internetforce.com
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+
+From domreg@internic.net Wed Jun  5 16:59:00 1996
+Return-Path: domreg@internic.net
+Received: from moses.internic.net (moses.internic.net [198.41.0.68]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id QAA05722 for <ianna@marco.internetforce.com>; Wed, 5 Jun 1996 16:58:58 +0100
+Received: (domreg@localhost) by moses.internic.net (8.6.10/MOSES-1) id KAA00346; Wed, 5 Jun 1996 10:51:35 -0500
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199606051551.KAA00346@moses.internic.net>
+Subject: Re: [NIC-960605.819] LOVEISLAND.COM
+Date: Wed, 5 Jun 1996 10:51:34 -0500 (GMT-0500)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: RO
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Internet Force (LOVEISLAND-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: LOVEISLAND.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Billing Contact:
+      Mascini, Gennaro (GM1133) mascio@INTERNETFORCE.COM
+      +39-721-403731
+
+   Record last updated on 05-Jun-96.
+   Record created on 05-Jun-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com   Wed Dec 31 19:00:00 1969
+>Received: from users.internetforce.com (internetforce.com [206.20.95.4]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id HAA27772 for <hostmaster@internic.net>; Wed, 5 Jun 1996 07:07:01 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id NAA12572 for <hostmaster@internic.net>; Wed, 5 Jun 1996 13:07:00 +0200
+>Date: Wed, 5 Jun 1996 12:15:14 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>Subject: [NIC-960605.819] Domain name registration
+>Message-ID: <Pine.LNX.3.91.960605121025.4806C-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960605.819
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960605070709
+>Status: O
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: loveisland.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......: MI77
+>5b.  Name (Last, First).........: 
+>5c.  Organization Name..........: 
+>5d.  Street Address.............: 
+>5e.  City.......................: 
+>5f.  State......................:
+>5g.  Postal Code................: 
+>5h.  Country....................: 
+>5i.  Phone Number...............: 
+>5j.  E-Mailbox..................: 
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: 
+>6b.  Name (Last, First).........: Gennaro Mascini
+>6c.  Organization Name..........: Pesaro Point
+>6d.  Street Address.............: Via, Petrucci 5
+>6e.  City.......................: PESARO
+>6f.  State......................:
+>6g.  Postal Code................: I-61100
+>6h.  Country....................: IT
+>6i.  Phone Number...............: +39-721-403731
+>6j.  E-Mailbox..................: mascio@internetforce.com
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+
+From domreg@internic.net Tue May 21 21:23:25 1996
+Return-Path: domreg@internic.net
+Received: from moses.internic.net (moses.internic.net [198.41.0.68]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id VAA17179 for <ianna@marco.internetforce.com>; Tue, 21 May 1996 21:23:22 +0100
+Received: (domreg@localhost) by moses.internic.net (8.6.10/MOSES-1) id OAA22520; Tue, 21 May 1996 14:32:54 -0500
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199605211932.OAA22520@moses.internic.net>
+Subject: Re: [NIC-960521.1407] BOLDYOUNG.COM
+Date: Tue, 21 May 1996 14:32:54 -0500 (GMT-0500)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: RO
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Internet Force (BOLDYOUNG-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: BOLDYOUNG.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Billing Contact:
+      Gerosa, Maurizio (MG1163) maus@INTERNETFORCE.COM
+      39-2-39210765
+
+   Record last updated on 21-May-96.
+   Record created on 21-May-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com   Wed Dec 31 19:00:00 1969
+>Received: from users.internetforce.com (users.internetforce.com [206.20.95.4]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id GAA11072 for <hostmaster@internic.net>; Tue, 21 May 1996 06:49:05 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id MAA02544 for <hostmaster@internic.net>; Tue, 21 May 1996 12:48:59 +0200
+>Date: Tue, 21 May 1996 12:40:14 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>Subject: [NIC-960521.1407] Domain name registration
+>Message-ID: <Pine.LNX.3.91.960521123919.14402B-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960521.1407
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960521064912
+>Status: O
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: boldyoung.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......: MI77
+>5b.  Name (Last, First).........: 
+>5c.  Organization Name..........: 
+>5d.  Street Address.............: 
+>5e.  City.......................: 
+>5f.  State......................:
+>5g.  Postal Code................: 
+>5h.  Country....................: 
+>5i.  Phone Number...............: 
+>5j.  E-Mailbox..................: 
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: MG1163
+>6b.  Name (Last, First).........:
+>6c.  Organization Name..........:
+>6d.  Street Address.............:
+>6e.  City.......................:
+>6f.  State......................:
+>6g.  Postal Code................:
+>6h.  Country....................:
+>6i.  Phone Number...............:
+>6j.  E-Mailbox..................:
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+>
+>
+>
+>
+>
+>
+
+From domreg@internic.net Wed May 15 21:56:20 1996
+Return-Path: domreg@internic.net
+Received: from moses.internic.net (moses.internic.net [198.41.0.68]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id VAA13819 for <ianna@marco.internetforce.com>; Wed, 15 May 1996 21:56:17 +0100
+Received: (domreg@localhost) by moses.internic.net (8.6.10/MOSES-1) id PAA28839; Wed, 15 May 1996 15:11:10 -0500
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199605152011.PAA28839@moses.internic.net>
+Subject: Re: [NIC-960515.964] PCPESARO.COM
+Date: Wed, 15 May 1996 15:11:10 -0500 (GMT-0500)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: RO
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Internet Force (PCPESARO-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: PCPESARO.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Billing Contact:
+      Gerosa, Maurizio (MG1163) maus@INTERNETFORCE.COM
+      39-2-39210765
+
+   Record last updated on 15-May-96.
+   Record created on 15-May-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com   Wed Dec 31 19:00:00 1969
+>Received: from users.internetforce.com (users.internetforce.com [206.20.95.4]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id JAA18774 for <hostmaster@internic.net>; Wed, 15 May 1996 09:25:50 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id PAA06279 for <hostmaster@internic.net>; Wed, 15 May 1996 15:25:49 +0200
+>Date: Wed, 15 May 1996 15:11:54 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>Subject: [NIC-960515.964] Domain name registration
+>Message-ID: <Pine.LNX.3.91.960515151122.11859K-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960515.964
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960515092557
+>Status: O
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: pcpesaro.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......: MI77
+>5b.  Name (Last, First).........: 
+>5c.  Organization Name..........: 
+>5d.  Street Address.............: 
+>5e.  City.......................: 
+>5f.  State......................:
+>5g.  Postal Code................: 
+>5h.  Country....................: 
+>5i.  Phone Number...............: 
+>5j.  E-Mailbox..................: 
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: MG1163
+>6b.  Name (Last, First).........:
+>6c.  Organization Name..........:
+>6d.  Street Address.............:
+>6e.  City.......................:
+>6f.  State......................:
+>6g.  Postal Code................:
+>6h.  Country....................:
+>6i.  Phone Number...............:
+>6j.  E-Mailbox..................:
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+
+From domreg@internic.net Sat May 11 01:32:46 1996
+Return-Path: domreg@internic.net
+Received: from ops.internic.net (ops.internic.net [198.41.0.67]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id BAA26858 for <ianna@marco.internetforce.com>; Sat, 11 May 1996 01:32:44 +0100
+Received: (domreg@localhost) by ops.internic.net (8.7.4/InterNIC-RS) id TAA00280; Fri, 10 May 1996 19:50:36 -0400 (EDT)
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199605102350.TAA00280@ops.internic.net>
+Subject: Re: [NIC-960510.863] PIPPO.COM
+Date: Fri, 10 May 1996 19:50:35 -0400 (EDT)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: RO
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Emmedue (PIPPO-DOM)
+   Via Casoretto, 40
+   Milano, I-20100
+   IT
+
+   Domain Name: PIPPO.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Billing Contact:
+      Costantino, Iannacone (IC124) emmedue@IOL.IT
+      +39-2-2870652
+
+   Record last updated on 10-May-96.
+   Record created on 10-May-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com   Wed Dec 31 19:00:00 1969
+>Received: from users.internetforce.com (users.internetforce.com [206.20.95.4]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id KAA06417 for <hostmaster@internic.net>; Fri, 10 May 1996 10:29:19 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id PAA27591 for <hostmaster@internic.net>; Fri, 10 May 1996 15:59:00 +0200
+>Date: Fri, 10 May 1996 15:40:42 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>Subject: [NIC-960510.863] Domain name registration
+>Message-ID: <Pine.LNX.3.91.960510153808.24827E-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960510.863
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960510102925
+>Status: O
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: pippo.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Emmedue
+>3b.  Street Address.............: Via Casoretto, 40
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: I-20100
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......: MI77
+>5b.  Name (Last, First).........: 
+>5c.  Organization Name..........: 
+>5d.  Street Address.............: 
+>5e.  City.......................: 
+>5f.  State......................:
+>5g.  Postal Code................: 
+>5h.  Country....................: 
+>5i.  Phone Number...............: 
+>5j.  E-Mailbox..................: 
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: 
+>6b.  Name (Last, First).........: Iannacone Costantino
+>6c.  Organization Name..........: Emmedue
+>6d.  Street Address.............: Via Casoretto, 40
+>6e.  City.......................: MILANO
+>6f.  State......................: 
+>6g.  Postal Code................: I-20100
+>6h.  Country....................: ITALY
+>6i.  Phone Number...............: +39-2-2870652
+>6j.  E-Mailbox..................: emmedue@iol.it
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+>
+>
+>
+>
+>
+>
+
+From domreg@internic.net Sat May 11 01:32:30 1996
+Return-Path: domreg@internic.net
+Received: from ops.internic.net (ops.internic.net [198.41.0.67]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id BAA26854 for <ianna@marco.internetforce.com>; Sat, 11 May 1996 01:32:26 +0100
+Received: (domreg@localhost) by ops.internic.net (8.7.4/InterNIC-RS) id TAA00121; Fri, 10 May 1996 19:50:17 -0400 (EDT)
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199605102350.TAA00121@ops.internic.net>
+Subject: Re: [NIC-960510.862] CALABRIA.COM
+Date: Fri, 10 May 1996 19:50:16 -0400 (EDT)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: RO
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Internet Force (CALABRIA-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: CALABRIA.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Billing Contact:
+      Gerosa, Maurizio (MG1163) maus@INTERNETFORCE.COM
+      39-2-39210765
+
+   Record last updated on 10-May-96.
+   Record created on 10-May-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com   Wed Dec 31 19:00:00 1969
+>Received: from users.internetforce.com (users.internetforce.com [206.20.95.4]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id KAA06405 for <hostmaster@internic.net>; Fri, 10 May 1996 10:29:16 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id PAA27600 for <hostmaster@internic.net>; Fri, 10 May 1996 15:59:43 +0200
+>Date: Fri, 10 May 1996 15:41:26 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>Subject: [NIC-960510.862] Domain name registration
+>Message-ID: <Pine.LNX.3.91.960510154056.24827F-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960510.862
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960510102922
+>Status: O
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: calabria.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......: MI77
+>5b.  Name (Last, First).........: 
+>5c.  Organization Name..........: 
+>5d.  Street Address.............: 
+>5e.  City.......................: 
+>5f.  State......................:
+>5g.  Postal Code................: 
+>5h.  Country....................: 
+>5i.  Phone Number...............: 
+>5j.  E-Mailbox..................: 
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: MG1163
+>6b.  Name (Last, First).........:
+>6c.  Organization Name..........:
+>6d.  Street Address.............:
+>6e.  City.......................:
+>6f.  State......................:
+>6g.  Postal Code................:
+>6h.  Country....................:
+>6i.  Phone Number...............:
+>6j.  E-Mailbox..................:
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+>
+>
+>
+>
+>
+>
+
+From maus@internetforce.com Mon Mar 25 10:53:18 1996
+Return-Path: maus@internetforce.com
+Received: from users.internetforce.com (root@users.internetforce.com [206.20.95.4]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id KAA06788 for <ianna@marco.internetforce.com>; Mon, 25 Mar 1996 10:53:17 +0100
+From: maus@internetforce.com
+Received: from [206.20.95.131] (anna.internetforce.com [206.20.95.131]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id KAA03066 for <ianna>; Mon, 25 Mar 1996 10:52:07 +0100
+Message-Id: <v01530500ad7c1ddfdfe2@[206.20.95.131]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Mon, 25 Mar 1996 10:54:46 +0100
+To: ianna@users.internetforce.com
+Subject: Re: [NIC-960320.1033] CANALEMODA.COM
+Status: RO
+X-Status: 
+
+>Date: Thu, 21 Mar 1996 08:27:34 -0500
+>X-Sender: irosen@styx.ios.com
+>Mime-Version: 1.0
+>To: maus@internetforce.com
+>From: Ira Rosen <irosen@ios.com>
+>Subject: Re: [NIC-960320.1033] CANALEMODA.COM
+>
+>>From: Domain Registration Role Account <domreg@internic.net>
+>>Subject: Re: [NIC-960320.1033] CANALEMODA.COM
+>>Date: Wed, 20 Mar 1996 20:43:19 -0500 (EST)
+>>To: irosen@ios.com
+>>Cc: noc@ios.com
+>>
+>>Registration for the domain shown below has been completed.
+>>Please let us know if any changes are required by resubmitting
+>>the domain template with a subject line reading MODIFY DOMAIN.
+>>
+>>The new information will not be visible via WHOIS until the
+>>next business day.
+>>
+>>Before this information is released to the Internet (normally
+>>accomplished via root server file updates on Mon, Wed, and Fri
+>>afternoons about 17:00 Eastern time) we will check to see that the
+>>primary and secondary name servers are reachable and contain the
+>>appropriate SOA and NS resource records.
+>>
+>>If your name servers are not properly configured, we will place your
+>>registration on hold until we hear from you.  When you are ready to
+>>have the domain released to the network, contact us at any of
+>>the addresses below.
+>>
+>>Registering a domain name does not confer any legal rights to that
+>>name and any disputes between parties over the rights to use a
+>>particular name are to be settled between the contending parties
+>>using normal legal methods (See RFC 1591).
+>>
+>>   InterNIC Domain Registration
+>>
+>>   email                          domreg@internic.net
+>>   voice                          (703) 742-4777
+>>   telnet, ftp, whois, wais       rs.internic.net or 198.41.0.5
+>>   nslookup, dig                  ns.internic.net or 198.41.0.4
+>>
+>>=========================================================================
+>>
+>>Internet Force (CANALEMODA-DOM)
+>>   Via Plana, 20
+>>   Milano, 20155
+>>   IT
+>>
+>>   Domain Name: CANALEMODA.COM
+>>
+>>   Administrative Contact:
+>>      Iannacone, Marco (MI77) postmaster@INTF.COM
+>>      392-392-67934
+>>   Technical Contact:
+>>      Gerosa, Maurizio (MG1163) maus@INTERNETFORCE.COM
+>>      39-2-39210765
+>>   Billing Contact:
+>>      Iannacone, Marco (MI77) postmaster@INTF.COM
+>>      392-392-67934
+>>
+>>   Record last updated on 20-Mar-96.
+>>   Record created on 20-Mar-96.
+>>
+>>   Domain servers in listed order:
+>>
+>>   DATA.INTERNETFORCE.COM       206.20.95.3
+>>   HARLEY.IOS.COM               198.4.75.46
+>>
+>>=========================================================================
+>>
+>>>From irosen@ios.com   Wed Dec 31 19:00:00 1969
+>>>Received: from styx.ios.com (styx.ios.com [198.4.75.44]) by
+>ops.internic.net (8.7.4/InterNIC-RS) with SMTP id LAA00688 for
+><hostmaster@internic.net>; Wed, 20 Mar 1996 11:09:19 -0500 (EST)
+>>>Received: from irosen.ios.com (irosen.sales.ios.com [204.235.95.219]) by
+>styx.ios.com (8.6.12/8.6.9) with SMTP id IAA12960; Wed, 20 Mar 1996 08:37:13
+>-0500
+>>>Date: Wed, 20 Mar 1996 08:37:13 -0500
+>>>Message-Id: <199603201337.IAA12960@styx.ios.com>
+>>>X-Sender: irosen@styx.ios.com
+>>>X-Mailer: Windows Eudora Light Version 1.5.2
+>>>Mime-Version: 1.0
+>>>Content-Type: text/plain; charset="us-ascii"
+>>>To: hostmaster@internic.net
+>>>From: Ira Rosen <irosen@ios.com>
+>>>Subject: [NIC-960320.1033] New DOMAIN canalemoda.com
+>>>Cc: alexis@silver.ios.com
+>>>X-MTS-Ticket: 960320.1033
+>>>X-MTS-Type: Domain
+>>>X-MTS-Mode: Insert
+>>>X-MTS-Priority: Normal
+>>>X-MTS-Status: Open
+>>>X-MTS-Timestamp: 960320110949
+>>>Status: O
+>>>
+>>>
+>>>Domain Version Number: 2.0
+>>>
+>>>0.   (N)ew (M)odify (D)elete....: New
+>>>
+>>>1.   Purpose/Description........: commercial
+>>>
+>>>2.   Complete Domain Name.......: canalemoda.com
+>>>
+>>>Organization Using Domain Name
+>>>3a.  Organization Name..........: Internet Force
+>>>3b.  Street Address.............: Via Plana, 20
+>>>3c.  City.......................: Milano
+>>>3d.  State......................:
+>>>3e.  Postal Code................: 20155
+>>>3f.  Country....................: IT
+>>>
+>>>Administrative Contact
+>>>4a.  NIC Handle (if known)......: MI77
+>>>4b.  Name (Last, First).........:
+>>>4c.  Organization Name..........:
+>>>4d.  Street Address.............:
+>>>4e.  City.......................:
+>>>4f.  State......................:
+>>>4g.  Postal Code................:
+>>>4h.  Country....................:
+>>>4i.  Phone Number...............:
+>>>4j.  E-Mailbox..................:
+>>>
+>>>Technical Contact
+>>>5a.  NIC Handle (if known)......:
+>>>5b.  Name (Last, First).........: Gerosa, Maurizio
+>>>5c.  Organization Name..........: Internet Force
+>>>5d.  Street Address.............: Via Plana, 20
+>>>5e.  City.......................: Milano
+>>>5f.  State......................:
+>>>5g.  Postal Code................: 20155
+>>>5h.  Country....................: IT
+>>>5i.  Phone Number...............: 39-2-39210765
+>>>5j.  E-Mailbox..................: maus@internetforce.com
+>>>
+>>>Billing Contact
+>>>6a.  NIC Handle (if known)......: MI77
+>>>6b.  Name (Last, First).........:
+>>>6c.  Organization Name..........:
+>>>6d.  Street Address.............:
+>>>6e.  City.......................:
+>>>6f.  State......................:
+>>>6g.  Postal Code................:
+>>>6h.  Country....................:
+>>>6i.  Phone Number...............:
+>>>6j.  E-Mailbox..................:
+>>>
+>>>Prime Name Server
+>>>7a.  Primary Server Hostname....: data.internetforce.com
+>>>7b.  Primary Server Netaddress..: 206.20.95.3
+>>>
+>>>Secondary Name Server(s)
+>>>8a.  Secondary Server Hostname..: harley.ios.com
+>>>8b.  Secondary Server Netaddress: 198.4.75.46
+>>>
+>>>Invoice Delivery
+>>>9.   (E)mail (P)ostal...........: Postal
+>>
+>>
+>
+
+
+From domreg@internic.net Tue Jun 25 14:51:32 1996
+Return-Path: domreg@internic.net
+Received: from moses.internic.net (moses.internic.net [198.41.0.68]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id OAA23402 for <ianna@marco.internetforce.com>; Tue, 25 Jun 1996 14:51:29 +0100
+Received: (domreg@localhost) by moses.internic.net (8.6.10/MOSES-1) id IAA17588; Tue, 25 Jun 1996 08:46:52 -0500
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199606251346.IAA17588@moses.internic.net>
+Subject: Re: [NIC-960624.678] GLASSONLINE.COM
+Date: Tue, 25 Jun 1996 08:46:52 -0500 (GMT-0500)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: RO
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+The domain template can be used to replace a contact with a different
+contact or register a new contact, but can not be used to update
+the record of an existing contact.  To update information associated
+with the administrative, technical, or billing contact (for example,
+a change of postal address, phone number, or e-mail address for a
+contact), please use the contact template available at:
+
+   ftp://rs.internic.net/templates/contact-template.txt
+
+The domain template can be used to replace existing name servers with
+new name servers, but can not be used to change the name or IP address
+of an existing host. To update the name or IP address of a host, please
+use the host template available at:
+
+   ftp://rs.internic.net/templates/host-template.txt
+
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Internet Force (GLASSONLINE-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: GLASSONLINE.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Billing Contact:
+      Gerosa, Maurizio (MG1163) maus@INTERNETFORCE.COM
+      39-2-39210765
+
+   Record last updated on 25-Jun-96.
+   Record created on 25-Jun-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com   Wed Dec 31 19:00:00 1969
+>Received: from users.internetforce.com (users.internetforce.com [206.20.95.4]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id JAA23928 for <hostmaster@internic.net>; Mon, 24 Jun 1996 09:48:53 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id PAA21939; Mon, 24 Jun 1996 15:48:39 +0200
+>Date: Mon, 24 Jun 1996 14:53:15 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>cc: hostmaster@ios.com, alexis@silver.ios.com
+>Subject: [NIC-960624.678] Domain name registration: glassonline.com
+>Message-ID: <Pine.LNX.3.91.960624142529.19108A-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960624.678
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960624094936
+>Status: O
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: glassonline.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......: MI77
+>5b.  Name (Last, First).........: 
+>5c.  Organization Name..........: 
+>5d.  Street Address.............: 
+>5e.  City.......................: 
+>5f.  State......................:
+>5g.  Postal Code................: 
+>5h.  Country....................: 
+>5i.  Phone Number...............: 
+>5j.  E-Mailbox..................: 
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: MG1163
+>6b.  Name (Last, First).........:
+>6c.  Organization Name..........:
+>6d.  Street Address.............:
+>6e.  City.......................:
+>6f.  State......................:
+>6g.  Postal Code................:
+>6h.  Country....................:
+>6i.  Phone Number...............:
+>6j.  E-Mailbox..................:
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+
+From domreg@internic.net Thu Jun 27 00:12:40 1996
+Return-Path: domreg@internic.net
+Received: from moses.internic.net (moses.internic.net [198.41.0.68]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id AAA29068 for <ianna@marco.internetforce.com>; Thu, 27 Jun 1996 00:12:26 +0100
+Received: (domreg@localhost) by moses.internic.net (8.6.10/MOSES-1) id TAA13740; Wed, 26 Jun 1996 19:06:17 -0400
+From: Domain Registration Role Account <domreg@internic.net>
+Message-Id: <199606262306.TAA13740@moses.internic.net>
+Subject: Re: [NIC-960626.817] NASSETTI.COM
+Date: Wed, 26 Jun 1996 19:06:17 -0400 (GMT-0400)
+To: ianna@marco.internetforce.com
+Cc: noc@IOS.COM
+X-Mailer: fastmail [version 2.4 PL24alpha4]
+Status: RO
+X-Status: 
+
+Registration for the domain name shown below has been completed.
+Please let us know if any changes are required by resubmitting
+the domain template with a subject line reading MODIFY DOMAIN.
+
+If registered before 18:00 Eastern Standard Time on a business day,
+the domain name will be included in today's root server update -
+about 22:00 Eastern Standard Time.  Otherwise, it will be in the
+root server update for the following business day.  The domain name
+record will be visible via "whois" tomorrow morning.
+
+Registering a domain name does not confer any legal rights to that
+name and any disputes between parties over the rights to use a
+particular name are to be settled between the contending parties
+using normal legal methods (See RFC 1591).
+
+The domain template can be used to replace a contact with a different
+contact or register a new contact, but can not be used to update
+the record of an existing contact.  To update information associated
+with the administrative, technical, or billing contact (for example,
+a change of postal address, phone number, or e-mail address for a
+contact), please use the contact template available at:
+
+   ftp://rs.internic.net/templates/contact-template.txt
+
+The domain template can be used to replace existing name servers with
+new name servers, but can not be used to change the name or IP address
+of an existing host. To update the name or IP address of a host, please
+use the host template available at:
+
+   ftp://rs.internic.net/templates/host-template.txt
+
+
+InterNIC Registration Services
+email  hostmaster@internic.net
+voice  (703) 742-4777
+
+=========================================================================
+
+Internet Force (NASSETTI-DOM)
+   Via Plana, 20
+   Milano, 20155
+   IT
+
+   Domain Name: NASSETTI.COM
+
+   Administrative Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Technical Contact:
+      Iannacone, Marco (MI77) postmaster@INTF.COM
+      392-392-67934
+   Billing Contact:
+      Gerosa, Maurizio (MG1163) maus@INTERNETFORCE.COM
+      39-2-39210765
+
+   Record last updated on 26-Jun-96.
+   Record created on 26-Jun-96.
+
+   Domain servers in listed order:
+
+   DATA.INTERNETFORCE.COM       206.20.95.3
+   HARLEY.IOS.COM               198.4.75.46
+
+=========================================================================
+
+>From ianna@marco.internetforce.com   Wed Dec 31 19:00:00 1969
+>Received: from users.internetforce.com (internetforce.com [206.20.95.4]) by ops.internic.net (8.7.4/InterNIC-RS) with SMTP id HAA09099 for <hostmaster@internic.net>; Wed, 26 Jun 1996 07:41:10 -0400 (EDT)
+>Received: from marco.internetforce.com (ianna@marco.internetforce.com [206.20.95.140]) by users.internetforce.com (8.6.12/8.6.12) with SMTP id MAA05023; Wed, 26 Jun 1996 12:55:33 +0200
+>Date: Wed, 26 Jun 1996 12:01:48 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: hostmaster@internic.net
+>cc: hostmaster@ios.com, alexis@silver.ios.com
+>Subject: [NIC-960626.817] Domain name registration: nassetti.com
+>Message-ID: <Pine.LNX.3.91.960626115353.26939A-100000@marco.internetforce.com>
+>MIME-Version: 1.0
+>Content-Type: TEXT/PLAIN; charset=US-ASCII
+>X-MTS-Ticket: 960626.817
+>X-MTS-Type: Domain
+>X-MTS-Mode: Unknown
+>X-MTS-Priority: Normal
+>X-MTS-Status: Open
+>X-MTS-Timestamp: 960626074121
+>Status: RO
+>
+>
+>
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: nassetti.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......: MI77
+>5b.  Name (Last, First).........: 
+>5c.  Organization Name..........: 
+>5d.  Street Address.............: 
+>5e.  City.......................: 
+>5f.  State......................:
+>5g.  Postal Code................: 
+>5h.  Country....................: 
+>5i.  Phone Number...............: 
+>5j.  E-Mailbox..................: 
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: MG1163
+>6b.  Name (Last, First).........:
+>6c.  Organization Name..........:
+>6d.  Street Address.............:
+>6e.  City.......................:
+>6f.  State......................:
+>6g.  Postal Code................:
+>6h.  Country....................:
+>6i.  Phone Number...............:
+>6j.  E-Mailbox..................:
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+

@@ -1,0 +1,42 @@
+For every company we want to create a search engine, we should build an 
+index file. This is done by creating a swish . This is done by creating a 
+swish.conf file like the following:
+
+# SWISH configuration file
+# Lines beginning with hash marks (#) and
+# blank lines are ignored.
+
+IndexDir /users/01/artdiary/home/public_html
+
+IndexFile /usr/export/sd1c/swish/database/artdiary.swish
+# This is the name your SWISH index will be saved as.
+
+IndexOnly .html .txt .c .ps .gif .au .hqx .xbm .mpg .pict .tiff
+# Only files with these suffixes will be indexed.
+
+IndexReport 3
+# This is how detailed you want reporting. You can specify numbers
+# 0 to 3 - 0 is totally silent, 3 is the most verbose.
+
+FollowSymLinks yes
+# Put "yes" to follow symbolic links in indexing, else "no".
+
+NoContents .ps .gif .au .hqx .xbm .mpg .pict .tiff
+
+ReplaceRules replace "/users/01/artdiary/home/public_html/" "http://www.art-diary.com/"
+
+FileRules pathname contains admin test demo trash construction confidential prov stat
+FileRules filename is index.html
+FileRules filename contains # % ~ .bak .orig .old old.
+FileRules title contains construction example pointers
+FileRules directory contains .htaccess
+
+# Files matching the above criteria will *not* be indexed.
+
+IgnoreWords SwishDefault
+
+--------------
+
+After that just create the index file with:
+
+ swish -c /usr/local/httpd/swish/swish.conf

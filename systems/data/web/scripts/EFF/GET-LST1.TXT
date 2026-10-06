@@ -1,0 +1,43 @@
+#!/usr/local/bin/perl
+
+###########################################################################
+#                       get_last_update.cgi                               #
+#                                                                         #
+# This script was written by Selena Sol (selena@eff.org                   #
+# http://www.eff.org/~erict) having been inspired by countless other      #
+# perl authors.  Feel free to copy, cite, reference, sample, borrow or    #
+# plagiarize the contents.  However, please let me know where it goes so  #
+# that I can at least watch and take part in the development of the       #
+# memes. Information wants to be free, support public domain freware.     #
+#                                                                         #
+###########################################################################
+
+# Set some server specific variables
+
+  $page_name = "Template Message Board Last Update Form";
+  $background = "/Images/Backgrounds/bkgnd.jpg";
+  $get_update_script = "get_last_update_part_2.cgi";
+  $post_response_script = "post_response.cgi?oldmid=$MYDATA{'mid'}";
+  $post_a_reply_button = "/Images/Buttons/post.gif";
+  $gen_first_page_script = "gen_first_page.cgi?mid=1&oldmid=1";
+  $read_button = "/Images/Buttons/message_archive_top.gif";
+  $last_modified_button = "/Images/Buttons/last_modified_grey.gif";
+  $line = "/Images/Icons/Lines/smalline.gif";
+
+# Output the HTML form
+
+  print "Content-type: text/html\n\n";
+  print "<HTML><HEAD><TITLE>$page_name</TITLE></HEAD>";
+  print "<BODY BACKGROUND=\"$background\">";
+  print "<FORM METHOD=\"GET\" ACTION=\"$get_update_script\">";
+  print "How many days has it been since you last checked the message board\n";
+  print "<INPUT TYPE=\"text\" NAME=\"time\" SIZE=\"3\" MAXLENGTH=\"2\">";
+  print "<P><CENTER><INPUT TYPE=\"submit\" VALUE=\"Submit the number\">"; 
+  print "<INPUT TYPE=\"reset\"></P></CENTER></FORM>";
+  print "<CENTER><P><IMG SRC=\"$line\"><P>";
+  print "<A HREF=\"$gen_first_page_script\">";
+  print "<IMG SRC=\"$read_button\" BORDER=0 ALT=\"[Read";
+  print "through Message Archive]\"></A>\n";
+  print "<IMG SRC=\"$last_modified_button\"";
+  print "BORDER=0 ALT=\"[Last Modified List]\"></A>";
+  print "</CENTER></BODY></HTML>";  
