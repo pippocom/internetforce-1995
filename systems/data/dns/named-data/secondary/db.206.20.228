@@ -1,0 +1,13 @@
+@  IN	SOA	cnn-server.cnn.it.   root.cnn.it. (
+		1996091801	 ; Serial
+	        86400 		 ; Refresh 3 hours
+		3600		 ; Retry 1 hour
+		604800		 ; Expire after a week
+		86400 )	 ; Minimum ttl 1 day
+				NS	cnn-server.cnn.it.
+                                NS	dns.internetforce.it.
+				NS	dns.nis.garr.it.
+; *****************************************************************
+; This file is auto-generated from a master file -- do not edit it,
+; but arrange that the master is edited instead.
+; *****************************************************************

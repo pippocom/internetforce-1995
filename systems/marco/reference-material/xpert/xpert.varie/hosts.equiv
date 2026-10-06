@@ -1,0 +1,17 @@
+#
+# hosts.lpd	This file describes the names of the hosts which are
+#		to be considered "equivalent", i.e. which are to be
+#		trusted enought for allowing rsh(1) commands.
+#
+# Version:	@(#)/etc/hosts.lpd	2.00	04/30/93
+#
+# Author:	Fred N. van Kempen, <waltje@uwalt.nl.mugnet.org
+#
+#
+
+localhost
+server.xpert.com
+pclimor.xpert.com
+pceran.xpert.com
+
+# End of hosts.lpd.

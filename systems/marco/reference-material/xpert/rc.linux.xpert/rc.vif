@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# Virtual Interfaces (vif) configuration
+# Written 16-04-96, Yossi Gottlieb.
+#
+
+# List of addresses, space-delimited. This is the only user-servicable
+# part in this file.
+ADDRLIST='199.203.132.2 199.203.132.7 199.203.132.11 199.203.132.12'
+MODULEDIR=/boot/vif
+
+# Fetch Ethernet address
+ETHADDR=`/sbin/ifconfig -a|/usr/bin/awk '/^eth0/ { print $6 }'`
+export ADDRLIST MODULEDIR ETHADDR
+
+iface=0
+for addr in $ADDRLIST
+do
+	## Create interface by loading uniqly-named module
+	modfile=$MODULEDIR/dummy${iface}.o
+	[ -L $modfile ] || ln -s $MODULEDIR/dummy.o $modfile
+	/sbin/insmod $modfile
+
+	## Configure interface
+	/sbin/ifconfig dummy$iface $addr netmask 255.255.255.0 up
+	/sbin/route add $addr dummy$iface
+	/sbin/arp -s $addr $ETHADDR pub
+
+	iface=$(($iface + 1))
+done
+
+# End of rc.vif

@@ -1,0 +1,232 @@
+!
+version 10.3
+!
+hostname 2511gorgonzola
+!
+enable secret 5 $1$HeLT$OJrXaSzmFsJa.zrMck1HI.
+enable password <ORIGINAL PASSWORD REMOVED>
+!
+ip subnet-zero
+!
+interface Ethernet0
+ ip address 194.133.2.196 255.255.255.224
+!
+interface Serial0
+ ip address 194.133.3.174 255.255.255.252
+ bandwidth 64
+!
+interface Serial1
+ no ip address
+ shutdown
+!
+interface Async1
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.206
+ async mode interactive
+ no cdp enable
+!
+interface Async2
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.207
+ async mode interactive
+ no cdp enable
+!
+interface Async3
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.208
+ async mode interactive
+ no cdp enable
+!
+interface Async4
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.209
+ async mode interactive
+ no cdp enable
+!
+interface Async5
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.210
+ async mode interactive
+ no cdp enable
+!
+interface Async6
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.211
+ async mode interactive
+ no cdp enable
+!
+interface Async7
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.212
+ async mode interactive
+ no cdp enable
+!
+interface Async8
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.213
+ async mode interactive
+ no cdp enable
+!
+interface Async9
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.214
+ async mode interactive
+ no cdp enable
+!
+interface Async10
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.215
+ async mode interactive
+ no cdp enable
+!
+interface Async11
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.216
+ async mode interactive
+ no cdp enable
+!
+interface Async12
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.217
+ async mode interactive
+ no cdp enable
+!
+interface Async13
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.218
+ async mode interactive
+ no cdp enable
+!
+interface Async14
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.219
+ async mode interactive
+ no cdp enable
+!
+interface Async15
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.220
+ async mode interactive
+ no cdp enable
+!
+interface Async16
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 194.133.2.221
+ async mode interactive
+ no cdp enable
+!
+ip domain-name pointest.com
+ip name-server 194.133.0.2
+ip route 0.0.0.0 0.0.0.0 194.133.3.173
+ip route 194.133.2.192 255.255.255.224 Ethernet0
+ip route 194.133.3.173 255.255.255.255 Serial0
+tacacs-server host 194.133.2.197
+tacacs-server extended
+tacacs-server authenticate connections
+tacacs-server authenticate slip always
+tacacs-server notify connections
+tacacs-server notify enable
+tacacs-server notify logout
+tacacs-server notify slip
+snmp-server community <ORIGINAL SECRET REMOVED> RO
+!
+line con 0
+ exec-timeout 0 0
+ terminal-type vt100
+ exec-character-bits 8
+line 1 10
+ exec-timeout 0 0
+ login tacacs
+ modem ri-is-cd
+ terminal-type vt100
+ exec-character-bits 8
+ stopbits 1
+ rxspeed 115200
+ txspeed 115200
+ flowcontrol hardware
+line 11
+ exec-timeout 0 30
+ login tacacs
+ modem ri-is-cd
+ terminal-type vt100
+ exec-character-bits 8
+ no history
+ stopbits 1
+ rxspeed 115200
+ txspeed 115200
+ flowcontrol hardware
+line 12 15
+ exec-timeout 0 0
+ login tacacs
+ modem ri-is-cd
+ terminal-type vt100
+ exec-character-bits 8
+ stopbits 1
+ rxspeed 115200
+ txspeed 115200
+ flowcontrol hardware
+line 16
+ exec-timeout 0 30
+ password <ORIGINAL PASSWORD REMOVED>
+ login
+ modem InOut
+ no activation-character
+ terminal-type vt100
+ exec-character-bits 8
+ special-character-bits 8
+ transport input telnet
+ transport output telnet
+ escape-character BREAK
+ stopbits 1
+ rxspeed 19200
+ txspeed 19200
+ flowcontrol hardware
+line aux 0
+ login
+ terminal-type vt100
+ exec-character-bits 8
+ rxspeed 38400
+ txspeed 38400
+ flowcontrol hardware
+line vty 0 4
+ password <ORIGINAL PASSWORD REMOVED>
+ login
+ terminal-type vt100
+ exec-character-bits 8
+!
+end
+
+
+

@@ -1,0 +1,297 @@
+
+!
+! Last configuration change at 16:46:20 MET Tue Oct 22 1996 by enter
+! NVRAM config last updated at 21:36:56 MET Mon Oct 21 1996 by enter
+!
+version 10.2
+!
+hostname gw-enter.inet.it
+!
+clock timezone MET 1
+enable password <ORIGINAL PASSWORD REMOVED>
+!
+username dlx password 7 <ORIGINAL PASSWORD REMOVED>
+username dlx autocommand rlogin 194.20.50.2
+username dlz password 7 <ORIGINAL PASSWORD REMOVED>
+username dlz autocommand rlogin 194.20.50.2
+username tia nopassword
+username tia autocommand telnet 194.20.50.2 541 /stream
+username marco password 7 <ORIGINAL PASSWORD REMOVED>
+username enter password 7 <ORIGINAL PASSWORD REMOVED>
+username isi password 7 <ORIGINAL PASSWORD REMOVED>
+username abri password 7 <ORIGINAL PASSWORD REMOVED>
+username dilorenzo password 7 <ORIGINAL PASSWORD REMOVED>
+username lupi password 7 <ORIGINAL PASSWORD REMOVED>
+username calderoni password 7 <ORIGINAL PASSWORD REMOVED>
+username calapric password 7 <ORIGINAL PASSWORD REMOVED>
+username giacobaz password 7 <ORIGINAL PASSWORD REMOVED>
+username paolo password 7 <ORIGINAL PASSWORD REMOVED>
+username wolter password 7 <ORIGINAL PASSWORD REMOVED>
+username fgreseli password 7 <ORIGINAL PASSWORD REMOVED>
+username cllom password 7 <ORIGINAL PASSWORD REMOVED>
+username ceccon password 7 <ORIGINAL PASSWORD REMOVED>
+username gatti password 7 <ORIGINAL PASSWORD REMOVED>
+username edu password 7 <ORIGINAL PASSWORD REMOVED>
+username massimo password 7 <ORIGINAL PASSWORD REMOVED>
+username ssvb password 7 <ORIGINAL PASSWORD REMOVED>
+username salva password 7 <ORIGINAL PASSWORD REMOVED>
+username lella password 7 <ORIGINAL PASSWORD REMOVED>
+username degrandi password 7 <ORIGINAL PASSWORD REMOVED>
+username alovati password 7 <ORIGINAL PASSWORD REMOVED>
+username npo password 7 <ORIGINAL PASSWORD REMOVED>
+username asciume password 7 <ORIGINAL PASSWORD REMOVED>
+username thx2 password 7 <ORIGINAL PASSWORD REMOVED>
+username mbombelli password 7 <ORIGINAL PASSWORD REMOVED>
+username perduca password 7 <ORIGINAL PASSWORD REMOVED>
+username lzamboni password 7 <ORIGINAL PASSWORD REMOVED>
+username apiviali password 7 <ORIGINAL PASSWORD REMOVED>
+username schiatti password 7 <ORIGINAL PASSWORD REMOVED>
+username pcastell password 7 <ORIGINAL PASSWORD REMOVED>
+username mascio password 7 <ORIGINAL PASSWORD REMOVED>
+username netstore password 7 <ORIGINAL PASSWORD REMOVED>
+username betty password 7 <ORIGINAL PASSWORD REMOVED>
+username ariel password 7 <ORIGINAL PASSWORD REMOVED>
+username ravizza password 7 <ORIGINAL PASSWORD REMOVED>
+username stellaf password 7 <ORIGINAL PASSWORD REMOVED>
+username somam password 7 <ORIGINAL PASSWORD REMOVED>
+username drusian password 7 <ORIGINAL PASSWORD REMOVED>
+username murachel password 7 <ORIGINAL PASSWORD REMOVED>
+username gallotti password 7 <ORIGINAL PASSWORD REMOVED>
+username montic password 7 <ORIGINAL PASSWORD REMOVED>
+username abqhksi password 7 <ORIGINAL PASSWORD REMOVED>
+username vtlhksi password 7 <ORIGINAL PASSWORD REMOVED>
+username glzhksi password 7 <ORIGINAL PASSWORD REMOVED>
+username enghksi password 7 <ORIGINAL PASSWORD REMOVED>
+username sempio password 7 <ORIGINAL PASSWORD REMOVED>
+username icitecnr password 7 <ORIGINAL PASSWORD REMOVED>
+username simon password 7 <ORIGINAL PASSWORD REMOVED>
+username gusmini password 7 <ORIGINAL PASSWORD REMOVED>
+username smatti password 7 <ORIGINAL PASSWORD REMOVED>
+username baby password 7 <ORIGINAL PASSWORD REMOVED>
+!
+rcmd remote-username root
+!
+ip subnet-zero
+no ip source-route
+ip accounting-threshold 65536
+chat-script cisco-default ABORT ERROR "" "AT Z" OK "ATDT \T" TIMEOUT 30 \c CONNECT \c
+chat-script cardinal "" AT&F\\A3L0M0&D3&K3S0=1&C1E0&W0 OK
+chat-script robots "" AT&F1L0M0&D2E0&M0&W0 OK
+!
+interface Ethernet0
+description "Enter local network"
+ip address 194.20.50.1 255.255.255.224
+ip mask-reply
+!
+interface Serial0
+description "CDN 64Kbit/s. To Milano/Etnoteam/I.Net"
+ip address 194.20.14.114 255.255.255.252
+ip broadcast-address 194.20.14.115
+encapsulation ppp
+no ip route-cache
+bandwidth 64
+load-interval 30
+priority-group 1
+!
+interface Serial1
+description "CDN 64Kbit/s. To Milano/Etnoteam/I.Net"
+ip address 194.185.142.110 255.255.255.252
+ip broadcast-address 194.185.142.111
+encapsulation ppp
+no ip route-cache
+bandwidth 64
+load-interval 30
+priority-group 1
+!
+interface Async1
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.111
+async dynamic routing
+async mode interactive
+!
+interface Async2
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.126
+async dynamic routing
+async mode interactive
+!
+interface Async3
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.125
+async dynamic routing
+async mode interactive
+!
+interface Async4
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.124
+async dynamic routing
+async mode interactive
+!
+interface Async5
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.123
+async dynamic routing
+async mode interactive
+!
+interface Async6
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.122
+async dynamic routing
+async mode interactive
+!
+interface Async7
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.121
+async dynamic routing
+async mode interactive
+!
+interface Async8
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.120
+async dynamic routing
+async mode interactive
+!
+interface Async9
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.119
+async dynamic routing
+async mode interactive
+!
+interface Async10
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.118
+async dynamic routing
+async mode interactive
+!
+interface Async11
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.117
+async dynamic routing
+async mode interactive
+!
+interface Async12
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.116
+async dynamic routing
+async mode interactive
+!
+interface Async13
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.115
+async dynamic routing
+async mode interactive
+!
+interface Async14
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.114
+async dynamic routing
+async mode interactive
+!
+interface Async15
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.113
+async dynamic routing
+async mode interactive
+!
+interface Async16
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+async default ip address 194.20.50.112
+async dynamic routing
+async mode interactive
+!
+ip domain-name inet.it.
+ip name-server 194.20.50.2
+ip name-server 194.20.8.4
+ip classless
+ip route 194.185.0.47 255.255.255.255 Serial0
+ip route 194.185.0.47 255.255.255.255 Serial1
+ip route 0.0.0.0 0.0.0.0 194.185.0.47
+ip route 194.20.50.252 255.255.255.252 194.20.50.4
+ip route 194.185.100.192 255.255.255.192 194.20.50.4
+ip route 194.20.50.248 255.255.255.252 194.20.50.4
+ip route 194.185.114.64 255.255.255.192 194.20.50.9
+ip route 194.20.50.0 255.255.255.224 Ethernet0
+ip route 194.20.50.32 255.255.255.224 Ethernet0
+ip route 194.20.50.64 255.255.255.224 194.20.50.19
+ip route 194.185.122.0 255.255.254.0 194.20.50.13
+ip route 194.185.103.0 255.255.255.0 194.20.50.4
+no logging console
+no logging monitor
+logging trap debugging
+logging 194.20.8.4
+tacacs-server host 194.20.50.2
+tacacs-server last-resort succeed
+banner login 
+ENTER - The Way To Internet
+
+!
+line con 0
+exec-timeout 0 0
+line 1 5
+exec-timeout 5 0
+login tacacs
+modem ri-is-cd
+no history
+no editing
+transport output telnet rlogin
+escape-character NONE
+stopbits 1
+rxspeed 57600
+txspeed 57600
+flowcontrol hardware
+autohangup
+line 6
+exec-timeout 0 30
+login tacacs
+modem ri-is-cd
+no history
+no editing
+transport output telnet rlogin
+escape-character NONE
+stopbits 1
+rxspeed 57600
+txspeed 57600
+flowcontrol hardware
+autohangup
+line 7 16
+exec-timeout 5 0
+login tacacs
+modem ri-is-cd
+no history
+no editing
+transport output telnet rlogin
+escape-character NONE
+stopbits 1
+rxspeed 57600
+txspeed 57600
+flowcontrol hardware
+autohangup
+line aux 0
+line vty 0 4
+exec-timeout 0 0
+login local
+history size 128
+line vty 5 16
+exec-timeout 0 0
+login local
+history size 128
+!
+ntp clock-period 17179904
+ntp peer 194.20.14.1
+end

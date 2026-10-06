@@ -1,0 +1,112 @@
+#!/usr/local/bin/perl
+
+###########################################################################
+#                          gen_first_page.cgi                             #
+#                                                                         #
+# This script was written by Selena Sol (selena@eff.org                   #
+# http://www.eff.org/~erict) having been inspired by countless other      #
+# perl authors.  Feel free to copy, cite, reference, sample, borrow or    #
+# plagiarize the contents.  However, please let me know where it goes so  #
+# that I can at least watch and take part in the development of the       #
+# memes. Information wants to be free, support public domain freware.     #
+#                                                                         #
+###########################################################################
+
+# Gather and sort the incoming data
+
+  &get_form_data;
+
+# Define some server specific variables
+
+  $header = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Header/header_$MYDATA{'mid'}.dat";
+  $body = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Body/body_$MYDATA{'mid'}.txt";
+  $reply_list = "/usr/local/etc/httpd/cgi-bin/BBS/Template/Messages/Replies/replies_$MYDATA{'mid'}.list";
+  $background = "/Images/Backgrounds/bkgnd.jpg";
+  $logo = "/Images/dcrt_star.gif";
+  $generate_post_url = "http://www.nchgr.nih.gov/cgi-bin/BBS/Template/Scripts/generate_post.cgi?oldmid=$MYDATA{'mid'}";
+  $line = "/Images/Icons/Lines/smalline.gif";
+  $post_response_script = "post_response.cgi?oldmid=$MYDATA{'mid'}";
+  $post_button = "/Images/Buttons/post.gif";
+  $read_button_grey = "/Images/Buttons/message_archive_top_grey.gif";
+  $page_name = "The Template Message Board";
+  $get_last_update_script = "get_last_update.cgi";
+  $last_modified_button = "/Images/Buttons/last_modified.gif";
+
+# Begin sending the HTML response
+
+  print "Content-type: text/html\n\n";
+  print "<HTML><HEAD><TITLE>$page_name</TITLE></HEAD>";
+  print "<BODY BACKGROUND=\"$background\">";
+  print "<TABLE><TR ALIGN=CENTER>";
+  print "<TD><IMG SRC=\"$logo\" BORDER=0 ALT=\"[logo]\"></TD>";
+  print "<TD><BR><HR><BR><FONT SIZE=+2>Welcome to the top\n";
+  print "level of <BR>$page_name</FONT><BR><HR><BR></TD></TR>"; 
+  print "</TABLE>";
+  print "<B>Messages:</B>";
+  print "<UL>";
+
+# Gather the list of top level items
+
+  open (REPLIES, $reply_list);
+  while (<REPLIES>)
+    {
+    ($url,$subject1) = split(/:/, $_);
+    print "<LI><A HREF=\"$generate_post_url&mid=$url\">Subject$subject1</A>";
+    print "<BR>";
+    }
+  close (REPLIES);    
+
+# Print out some more HTML
+
+  print "</UL><CENTER><P><IMG SRC=\"$line\"><P>";
+  print "<A HREF=\"$post_response_script\">";
+  print "<IMG SRC=\"$post_button\" BORDER=0 ALT=\"[Post a Message]\"></a>";
+  print "\n<IMG SRC=\"$read_button_grey\" BORDER=0 ALT=\"[Read";
+  print "through Message Archive]\"></A>\n";
+  print "<A HREF=\"$get_last_update_script\">";
+  print "<IMG SRC=\"$last_modified_button\"";
+  print "BORDER=0 ALT=\"[Last Modified List]\"></A>";
+  print "</BODY></HTML>";
+
+#############################################################################
+#                            SUBROUTINES                                    #
+#############################################################################
+
+sub get_form_data
+
+  {
+
+# This form parsing routine was adapted from a script by Robert John
+# Mudry which was published by the Coriolis Group as freeware in "Serving
+# The Web".  This is an excellent book which I recommend to any cgi
+# programmer.
+
+# First, split up $FORM_DATA into $NAME and $VALUE.  Store $VALUE
+# in $MYDATA{$NAME} provided that $NAME is not already in use.  If it is, a
+# temporary number stored in $NUM is incremented and a new the $VALUE is
+# saved as the new variable.
+
+  $FORM_DATA = $ENV{'QUERY_STRING'};
+  foreach (split(/&/, $FORM_DATA))
+    {
+    ($NAME, $VALUE) = split(/=/, $_);
+    $NAME =~ s/\+/ /g;
+    $NAME =~ s/%([0-9|A-F]{2})/pack(C,hex($1))/eg;
+    $VALUE =~ s/\+/ /g;
+    $VALUE =~ s/%([0-9|A-F]{2})/pack(C,hex($1))/eg;
+
+# Find unique Variable Name for every variable coming in from the form input
+
+    $NUM = "0";
+    while ($MYDATA{$NAME} ne "")
+      {
+      $NUM++;
+      $NAME =~ s/\.([0-9]+$)|$/\.$NUM/;
+      }
+# Store Variable NAME=Variable VAUE pair
+
+      $MYDATA{$NAME} = $VALUE;
+    }
+  }
+
+

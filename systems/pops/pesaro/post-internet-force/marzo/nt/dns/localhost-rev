@@ -1,0 +1,23 @@
+;
+;  Database file localhost-rev for 0.0.127.in-addr.arpa zone.
+;      Zone version:  96070201l
+;
+
+@                       IN	SOA	dns.pesaro.com.	dnsmaster.pesaro.com.	(
+                        96070201    ; serial number
+                        28800       ; refresh
+                        7200        ; retry
+                        604800      ; expire
+                        86400     ) ; minimum TTL
+
+;
+;  Zone NS records
+;
+
+@                       IN	NS	dns.pesaro.com.
+
+;
+;  Zone records
+;
+
+1                       IN	PTR	localhost.

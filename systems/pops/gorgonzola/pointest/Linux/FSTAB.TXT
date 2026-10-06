@@ -1,0 +1,10 @@
+[root@shelley]/etc>less fstab
+/dev/sda1       /        ext2        defaults   1   1
+/dev/sda2       /usr        ext2        defaults   1   1
+/dev/sda5       /var        ext2        defaults   1   1
+/dev/sda6       /export        ext2        defaults   1   1
+none             /proc    proc        defaults   1   1
+/dev/sda3       none    swap    sw
+
+
+

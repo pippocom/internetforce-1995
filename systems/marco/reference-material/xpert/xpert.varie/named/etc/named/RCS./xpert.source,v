@@ -1,0 +1,163 @@
+head	1.5;
+access;
+symbols;
+locks
+	root:1.5; strict;
+comment	@# @;
+
+
+1.5
+date	95.08.20.18.03.39;	author root;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	95.08.20.17.58.57;	author root;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	95.08.20.17.57.24;	author root;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	95.07.20.13.28.47;	author root;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	95.07.20.00.48.02;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@inverse order for PTR record in makezones (limor)
+@
+text
+@@@       IN      SOA     xpert.co.il. udi.xpert.co.il. (
+                                1995071701      ; Serial
+                                10800           ; Refresh 3 hours
+                                3600            ; Retry 1 hour
+                                604800          ; Expire after a week
+                                86400 )         ; Minimum ttl 1 day
+
+                   NS      dns.xpert.co.il.
+                   NS      dns.mofet.macam98.ac.il.
+                   NS      zeus.datasrv.co.il.
+
+
+;F *****************************************************************
+;F This file is auto-generated from a master file -- do not edit it,
+;F but arrange that the master is edited instead.
+;F *****************************************************************
+
+;R *****************************************************************
+;R This file is auto-generated from a master file -- do not edit it,
+;R but arrange that the master is edited instead.
+;R *****************************************************************
+
+; This is the master file from which the zone files for the following
+; zones are generated:
+;   xpert.co.il
+;   137.114.192.in-addr.arpa.
+;
+; See the makezones script for full details of this process.
+;
+;      Syntax of this file:
+;
+;      ;F      comment for forward file only
+;      ;R      comment for reverse files only
+;      >F      A record for forward file only
+;      >R      A record for reverse file only
+;      >E      A record refers to external network
+;      >M      A record with multiply-named IP address,
+;                causing multiple PTR records in reverse file
+
+
+;router             A       192.114.137.???
+
+
+; Ethernet hubs needing IP addresses (for management)
+;
+;hub1               A       192.114.137.209
+
+localhost          A       127.0.0.1
+xpertsrv           A       192.114.137.1
+                   HINFO   Sparc2 SunOs4.1.3_U1
+kalimero           CNAME   xpertsrv.xpert.co.il.
+ftp                CNAME   xpertsrv.xpert.co.il.
+www                CNAME   xpertsrv.xpert.co.il.
+gopher             CNAME   xpertsrv.xpert.co.il.
+news               CNAME   xpertsrv.xpert.co.il.
+
+>F mailhost        A       192.114.137.1
+>F dns             A   	   192.114.137.1
+>F smtp            A       192.114.137.1
+>F imap            A       192.114.137.1
+>F pop             A       192.114.137.1
+
+; start Internal Network definition, include ts, www of colleges
+gozal              A       192.114.137.129
+; end Network definition
+
+; MX records for mofet.macam98.ac.il.
+
+@@                  MX 7    mailhost.xpert.co.il.
+                   MX 8    mofetsrv.mofet.macam98.ac.il.
+>M                 A       192.114.137.1
+
+; some inverse-only addresses
+2.137.114.192      PTR     limor.Xpert.com.
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@a64 1
+limor.xpert.com.   PTR     192.114.137.2
+d72 3
+@
+
+
+1.3
+log
+@limor.xpert.com
+@
+text
+@d25 2
+a26 2
+;   mofet.macam98.ac.il.
+;   206.114.192.in-addr.arpa.
+d65 1
+a65 1
+>R limor.xpert.com.  A     192.114.137.2
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d65 1
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@a63 1
+limor              A       192.114.137.2
+@

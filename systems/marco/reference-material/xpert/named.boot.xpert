@@ -1,0 +1,25 @@
+;
+;    boot file for name server
+;
+
+directory /etc/named
+
+cache      .						root_nameservers
+primary    0.0.127.in-addr.arpa				primary/localhost-rev
+
+primary    xpert.co.il					primary/xpert.co.il
+primary    xpert.com					primary/xpert.com
+;primary    elmar.co.il					primary/elmar.co.il
+;primary    elmar.com					primary/elmar.com
+primary    divra.com					primary/divra.com
+primary    xacct.com					primary/xacct.com
+primary	   yahel.org					primary/yahel.org
+primary	   ag-tech.co.il				primary/ag-tech.co.il
+primary	   topmusic.com					primary/topmusic.com
+primary    igud.org.il					primary/igud.org.il
+primary    easybase.com					primary/easybase.com
+primary    nmcfast.com					primary/nmcfast.com
+primary    132.203.199.in-addr.arpa			primary/db.199.203.132
+
+
+secondary  mtds.com		194.204.200.1		secondary/mtds.com

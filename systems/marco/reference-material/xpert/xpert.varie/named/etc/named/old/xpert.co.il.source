@@ -1,0 +1,40 @@
+@       IN      SOA     xpert.co.il. limor.xpert.com. (
+                                1996051901      ; Serial
+                                10800           ; Refresh 3 hours
+                                3600            ; Retry 1 hour
+                                604800          ; Expire after a week
+                                86400 )         ; Minimum ttl 1 day
+		
+		NS	dns.xpert.com.
+		NS	dns.netvision.net.il.
+		NS	nypop.elron.net.
+
+@		MX 10	mailhost.xpert.com.
+		MX 20 	mail.netvision.net.il.
+		MX 30	nypop.elron.net.
+
+
+;F *****************************************************************
+;F This file is auto-generated from a master file -- do not edit it,
+;F but arrange that the master is edited instead.
+;F *****************************************************************
+
+;R *****************************************************************
+;R This file is auto-generated from a master file -- do not edit it,
+;R but arrange that the master is edited instead.
+;R *****************************************************************
+
+ftp                CNAME   xpert.com.
+www                CNAME   xpert.com.
+gopher             CNAME   xpert.com.
+news               CNAME   xpert.com.
+
+>E mailhost	   A	   199.203.132.1
+>E dns		   A	   199.203.132.1
+
+>E pcLimor	   A	   199.203.132.3
+>E pcShiri         A       199.203.132.4
+>E pcEran          A       199.203.132.6
+>E xterm1	   A	   199.203.132.10
+>E kalimero        A       199.203.132.254
+>E kalimero-cisco  A       199.203.99.233

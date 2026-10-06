@@ -1,0 +1,13 @@
+Su data:
+
+tar czvf /usr/export/sd1c/old_logs/web.log.aprile.tar.z *
+
+\rm access_log
+touch access_log
+chown www.www access_log
+chmod og+r access_log
+
+
+Su users:
+
+tar czvf /usr/export/sd1c/old_logs/web.log.aprile.tar.z *

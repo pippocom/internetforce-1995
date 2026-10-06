@@ -1,0 +1,10 @@
+WEL-KIT\PROG-2\INST640.FRM
+D:\VB\INSTALL\INSTALLA.BAS
+CHKDIR.BAS
+MESSAGE.FRM
+ProjWinSize=90,344,207,168
+ProjWinShow=2
+IconForm="Form1"
+Title="Welcome kit setup"
+ExeName="INSTALLA.EXE"
+Path="C:\TMP\PROVA"

@@ -1,0 +1,62 @@
+
+postmaster: limor
+MAILER-DAEMON: postmaster
+info: wags,limor
+sales: wags,limor
+jobs: limor,wags,shiri
+nadavl: nadav
+udi: kedar
+sysadmin: yuvalt,yahel
+system: yuvalt,yahel
+#liliana: liliana@sun70.iec.co.il
+webmaster: etamar, yahel, wags
+software-db: yuvalt
+xacct: yogo,limor
+dnsmaster: limor
+marketing: limor
+ohad: strudel
+barak: strudel
+yossi: yogo
+
+#######################
+#      Majordomo      #
+#######################
+
+majordomo: "|/usr/local/majordomo/wrapper majordomo"
+majordomo-owner: xpert
+owner-majordomo: xpert
+
+#
+# Xpert-l mailing list
+#
+xpert-l: "|/usr/local/majordomo/wrapper resend -l xpert-l -h xpert-l xpert-l-outgoing"
+xpert-l-outgoing::include:/usr/local/majordomo/lists/xpert-l,"| /usr/local/majordomo/wrapper archive2.pl -a -m -f /usr/local/majordomo/lists/xpert-l.archive/xpert-l.archive"
+xpert-l-request: "|/usr/local/majordomo/wrapper request-answer xpert-l"
+owner-xpert-l: yuvalt
+xpert-l-approval: yuvalt
+
+#
+# Xpert-staff mailing list
+#
+xpert-staff: "|/usr/local/majordomo/wrapper resend -l xpert-staff -h xpert-staff xpert-staff-outgoing"
+xpert-staff-outgoing::include:/usr/local/majordomo/lists/xpert-staff,"| /usr/local/majordomo/wrapper archive2.pl -a -m -f /usr/local/majordomo/lists/xpert-staff.archive/xpert-staff.archive"
+xpert-staff-request: "|/usr/local/majordomo/wrapper request-answer xpert-staff"
+owner-xpert-staff: yuvalt
+xpert-staff-approval: yuvalt
+
+#
+# Fun mailing list - by Yahel.
+#
+fun: "|/usr/local/majordomo/wrapper resend -l fun -h fun fun-outgoing"
+fun-outgoing::include:/usr/local/majordomo/lists/fun
+fun-request: "|/usr/local/majordomo/wrapper request-answer fun"
+owner-fun: yahel
+fun-approval: yahel
+
+# xacct development list
+#
+xacct-dev: "|/usr/local/majordomo/wrapper resend -l xacct-dev -h xacct-dev xacct-dev-outgoing"
+xacct-dev-outgoing::include:/usr/local/majordomo/lists/xacct-dev
+xacct-dev-request: "|/usr/local/majordomo/wrapper request-answer xacct-dev"
+owner-xacct-dev: yuvalt
+xacct-dev-approval: yuvalt

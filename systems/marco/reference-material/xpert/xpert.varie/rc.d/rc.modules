@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# Create a generic link to the modules for the current kernel
+#
+ln -snf /lib/modules/`uname -r` /lib/modules/current
+
+if [ \! -r /lib/modules/current/modules.dep ]
+then
+	echo "Creating module dependencies"
+	/sbin/depmod -a
+fi
+
+#
+# Load the boot modules
+#
+if [ -x /sbin/kerneld ]
+then
+	if find /lib/modules/boot -type f -o type l > /dev/null 2>&1
+	then
+		echo "Loading boot-time modules"
+		/sbin/modprobe -a -t boot \*
+	fi
+else
+	echo "Loading modules"
+	/sbin/modprobe -a \*
+fi
+
+#
+#
+if [ -x /sbin/kdsound ]
+then
+	echo "Starting sound daemon"
+	/sbin/kdsound &
+fi

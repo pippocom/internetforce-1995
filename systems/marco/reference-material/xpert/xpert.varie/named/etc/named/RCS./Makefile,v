@@ -1,0 +1,68 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	95.10.08.10.32.35;	author yogo;	state Exp;
+branches;
+next	;
+
+
+desc
+@makefile for all of xpert's domain names and ip addresses
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@
+#all :
+#	@@echo Usage : make Michlala-Name
+
+# Yoav: if you get the error message "whatever is 5% shorter than previous..."
+# then change the appropriate line in this file and add the -short
+# as in the next line.
+#makezones-0.10 -short <michlala>.source <michlala>.macam98.ac.il ........
+#
+all = 	primary/xpert.co.il \
+	primary/xpert.com \
+	primary/holyland.com \
+	primary/elmar.co.il \
+	primary/elmar.com
+
+all : ${all}
+
+primary/xpert.co.il : xpert.co.il.source
+	makezones-0.10 xpert.co.il.source xpert.co.il primary/xpert.co.il primary/db.192.114.137
+	kill -HUP `cat /etc/named.pid`
+
+primary/xpert.com : xpert.com.source
+	makezones-0.10 xpert.com.source xpert.com primary/xpert.com
+	kill -HUP `cat /etc/named.pid`
+
+primary/holyland.com : holyland.com.source
+	makezones-0.10 holyland.com.source holyland.com primary/holyland.com
+	kill -HUP `cat /etc/named.pid`
+
+primary/elmar.co.il : elmar.co.il.source
+	makezones-0.10 elmar.co.il.source elmar.co.il primary/elmar.co.il
+	kill -HUP `cat /etc/named.pid`
+
+primary/elmar.com : elmar.com.source
+	makezones-0.10 elmar.com.source elmar.com primary/elmar.com
+	kill -HUP `cat /etc/named.pid`
+
+
+# Demo
+skb: primary/skb.macam98.ac.il
+primary/skb.macam98.ac.il : skb.source
+	makezones-0.10 skb.source skb.macam98.ac.il primary/skb.macam98.ac.il primary/db.192.115.97
+	kill -HUP `cat /etc/named.pid`
+
+@

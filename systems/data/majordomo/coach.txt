@@ -1,0 +1,25 @@
+From: [email]
+To: naismith@intf.com
+Subject: Richiesta di iscrizione a Coach mailing list
+
+
+Dati dell'utente:
+
+Nome: [nome]
+
+Cognome: [cognome]
+
+Indirizzo E-Mail: [email]
+
+Nazionalià: [nazione]
+
+Qualifica professionale: [qualifica]
+
+Età: [eta]
+
+
+Ricordiamo che il moderatore di una lista approva un'iscrizione spedendo il 
+seguente messaggio:
+
+approve _password_ subscrive _nome lista_ _e-mail utente_
+ 

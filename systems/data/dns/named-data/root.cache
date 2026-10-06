@@ -1,0 +1,28 @@
+; Data file for initial cache data for root domain servers.
+;
+; Updated from nic.ddn.mil:<netinfo>root-servers.txt
+; 15 Feb 1990
+; Updated per DDN MGT Bulletin 72, 6 Apr 90
+; Updated per DDN Reference message of 28 Jun 91
+; Updated per GSI reference message of 25 Sep 91
+;
+;       $Header: /etc/named/root_nameservers,v 1.1 1994/10/17 00:33:16 limor Exp limor $
+;
+.               99999999        IN	NS	A.ROOT-SERVERS.NET. 
+.		99999999	IN	NS	B.ROOT-SERVERS.NET.
+.               99999999        IN	NS	C.ROOT-SERVERS.NET.
+.               99999999        IN	NS	D.ROOT-SERVERS.NET.
+.               99999999        IN	NS	E.ROOT-SERVERS.NET.
+.               99999999        IN	NS	F.ROOT-SERVERS.NET.
+.		99999999	IN	NS	G.ROOT-SERVERS.NET.
+.               99999999        IN	NS	H.ROOT-SERVERS.NET.
+.               99999999        IN	NS	I.ROOT-SERVERS.NET.
+A.ROOT-SERVERS.NET.	99999999	IN	A        198.41.0.4
+B.ROOT-SERVERS.NET.	99999999	IN	A        128.9.0.107  ; BIND
+C.ROOT-SERVERS.NET.	99999999	IN	A        192.33.4.12  ; BIND
+D.ROOT-SERVERS.NET.	99999999	IN	A        128.8.10.90  ; BIND
+E.ROOT-SERVERS.NET.	99999999	IN	A        192.203.230.10  ; BIND
+F.ROOT-SERVERS.NET.	99999999	IN	A        192.5.5.241  ; BIND
+G.ROOT-SERVERS.NET.	99999999	IN	A        192.112.36.4  ; BIND
+H.ROOT-SERVERS.NET.	99999999	IN	A        128.63.2.53  ; BIND
+I.ROOT-SERVERS.NET.	99999999	IN	A        192.36.148.17 ; BIND

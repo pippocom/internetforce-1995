@@ -1,0 +1,104 @@
+Using 4372 out of 32762 bytes
+!
+version 10.2
+!
+hostname c2511IF
+!
+enable secret 5 $1$cwHJ$3OLSREONzbRsKbDMBhPsl/
+enable password <ORIGINAL PASSWORD REMOVED>
+!
+username guest nopassword
+username guest autocommand connect users
+!
+interface Ethernet0
+ip address 10.0.2.1 255.255.255.0
+!
+interface Serial0
+no ip address
+encapsulation lapb multi
+shutdown
+!
+interface Serial1
+no ip address
+shutdown                                                                        
+!
+interface Async1
+ip unnumbered Ethernet0
+ip tcp header-compression passive
+encapsulation ppp
+async default ip address 206.20.95.70
+async mode interactive
+!
+interface Async2                                                                
+!
+ip default-gateway 10.0.0.1
+ip domain-name internetforce.com                                                
+ip name-server 206.20.95.3
+ip default-network 10.0.0.0
+ip route 0.0.0.0 0.0.0.0 10.0.0.1
+ip route 10.0.0.0 255.0.0.0 10.0.0.1
+ip route 10.0.0.1 255.255.255.255 Ethernet0
+ip route 206.20.95.0 255.255.255.0 10.0.0.1
+access-list 111 permit tcp 0.0.0.0 255.255.255.255 206.20.95.4 0.0.0.0 eq 80
+access-list 111 permit tcp 0.0.0.0 255.255.255.255 206.20.95.3 0.0.0.0 eq 80
+access-list 111 permit tcp 0.0.0.0 255.255.255.255 206.20.95.4 0.0.0.0 eq 8081
+access-list 111 permit udp 0.0.0.0 255.255.255.255 206.20.95.3 0.0.0.0 eq 53
+access-list 111 permit udp 0.0.0.0 255.255.255.255 206.20.95.4 0.0.0.0 eq 53
+access-list 111 deny   ip 0.0.0.0 255.255.255.255 0.0.0.0 255.255.255.255
+tacacs-server host 206.20.95.4
+tacacs-server extended
+tacacs-server authenticate connections
+tacacs-server authenticate slip always access-lists
+tacacs-server notify connections
+tacacs-server notify enable
+tacacs-server notify logout
+tacacs-server notify slip
+snmp-server community <ORIGINAL SECRET REMOVED> RO
+!
+line con 0                                                                      
+exec-timeout 0 0
+terminal-type vt100
+exec-character-bits 8
+line 1 16
+exec-timeout 0 0
+login tacacs
+modem ri-is-cd
+terminal-type vt100
+exec-character-bits 8
+stopbits 1
+rxspeed 115200
+txspeed 115200
+flowcontrol hardware
+line aux 0
+login
+terminal-type vt100
+exec-character-bits 8
+rxspeed 38400
+txspeed 38400
+flowcontrol hardware
+line vty 0 4
+password <ORIGINAL PASSWORD REMOVED>
+login                                                                           
+rxspeed 115200
+txspeed 115200
+flowcontrol hardware
+line aux 0
+login
+terminal-type vt100
+exec-character-bits 8
+rxspeed 38400
+txspeed 38400
+flowcontrol hardware
+line vty 0 4
+password <ORIGINAL PASSWORD REMOVED>
+login
+terminal-type vt100
+exec-character-bits 8
+line vty 5 16
+password <ORIGINAL PASSWORD REMOVED>
+login
+terminal-type vt100
+exec-character-bits 8
+!
+end                                                                             
+

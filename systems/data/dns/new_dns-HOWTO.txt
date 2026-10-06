@@ -1,0 +1,149 @@
+         Registration of a new domain (and use of VIF)
+
+
+1 - Copy and rename canalemoda.source file to follow the new needs:
+
+
+              ---------- canalemoda.source --------
+
+@  IN   SOA     canalemoda.com dnsmaster.internetforce.com. (
+                1996041801       ; Serial
+                10800            ; Refresh 3 hours
+                3600             ; Retry 1 hour
+                604800           ; Expire after a week
+                86400 )  ; Minimum ttl 1 day
+                                NS      harley.ios.com.
+                                NS      users.internetforce.com 
+
+>E www                  A       206.20.95.20
+localhost               A       127.0.0.1
+
+        ------- EOF canalemoda.source ----------
+
+
+dnsmaster.internetforce.com is where is going its mail..
+
+NS harley.ios.com is saying that the queries for
+that domain should come to harley.ios.com.
+The other one is to say that should come to us too.
+
+2 - Add the following line in named.boot
+
+primary   canalemoda.com                        primary/canalemoda.com
+
+
+3 - do ifconfig le0 to get the ethernet address:
+
+users: 8:0:20:74:ff:4f
+data: 8:0:20:77:cb:64
+
+4 - Modify the Makefile file in this way:
+
+# Yoav: if you get the error message "whatever is 5% shorter than previous..."
+# then change the appropriate line in this file and add the -short
+# as in the next line.
+#makezones-0.10 -short <michlala>.source <michlala>.com ........
+#
+
+all :   primary/internetforce.com \
+        primary/internetforce.it \
+        primary/canalemoda.com \
+        primary/sicilia.com \
+        primary/intf.com \
+        primary/art-diary.com 
+
+primary/internetforce.com : internetforce.source
+        makezones-0.10 internetforce.source internetforce.com primary/internetfo
+rce.com primary/db.206.20.115 primary/db.206.20.95
+        kill -HUP `cat /etc/named.pid`
+
+
+primary/intf.com : intf.source
+        makezones-0.10 intf.source intf.com primary/intf.com
+        kill -HUP `cat /etc/named.pid`
+
+
+primary/internetforce.it : internetforce.it.source
+        makezones-0.10 internetforce.it.source internetforce.it primary/internet
+force.it
+        kill -HUP `cat /etc/named.pid`
+
+primary/canalemoda.com : canalemoda.source
+        makezones-0.10 canalemoda.source canalemoda.com primary/canalemoda.com
+        kill -HUP `cat /etc/named.pid`
+
+primary/sicilia.com : sicilia.source
+        makezones-0.10 sicilia.source sicilia.com primary/sicilia.com
+        kill -HUP `cat /etc/named.pid`
+
+primary/art-diary.com : art-diary.source
+        makezones-0.10 art-diary.source art-diary.com primary/art-diary.com
+        kill -HUP `cat /etc/named.pid`
+
+4 - Add the following line in internetforce.source
+
+; PTR record (added by marco following yogo's suggestion)
+
+20.95.20.206    PTR     www.canalemoda.com.
+
+5 - Add a routing line in firewall's rc.route:
+
+ifconfig qe0 fw-data netmask 255.255.255.192
+route delete intfnet fw-data
+route add host data fw-data 0
+route add host 206.20.95.20 fw-data 0
+
+
+
+Problems:
+
+1 - Error while making makezones:
+
+    make: Fatal error in reader: Makefile, line 28: Unexpected end of line seen
+
+  Solution: The Make file should be written with TAB and not spaces.
+
+
+2 - PTR problem:
+
+Makezones 0.10 [02-Nov-94]
+Generating DNS zone files for internetforce.com from internetforce.source.
+  Forward zone file:  primary/internetforce.com
+  Reverse zone files: primary/db.206.20.115
+                      primary/db.206.20.95
+
+Updating the serial number in the source file...
+Generating the zone data...
+
+** Makezones: PTR record must point to a valid, fully qualified name.
+   At line 80 of internetforce.source:
+   206.20.95.150        PTR     www.canalemoda.com
+
+** Makezones: 150.95 is not a known network.
+   At line 80 of internetforce.source:
+   206.20.95.150        PTR     www.canalemoda.com
+
+
+** Makezones failed.
+*** Error code 99
+make: Fatal error: Command failed for target `primary/internetforce.com'
+
+
+SOLUTION:
+
+
+Pay attention to the dot!!
+
+
+
+
+3 - Got the message missing first record, so I added:
+
+@                               MX 0    internetforce.com.
+
+but since the mail is sent to internetforce.com why I got 
+
+554 MX list for canalemoda.com. points back to users.internetforce.com
+554 <ianna@canalemoda.com>... Local configuration error
+
+if I try to send a message to myself at th new domain?

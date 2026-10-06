@@ -1,0 +1,5 @@
+makezones-0.10 internetforce.source internetforce.com primary/internetforce.com primary/db.206.20.95 primery/db.206.20.115
+
+makezones-0.10 intf.source intf.com primary/intf.com
+makezones-0.10 internetforce.it.source internetforce.it primary/internetforce.it
+kill -HUP `cat /etc/named.pid`

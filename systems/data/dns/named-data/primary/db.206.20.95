@@ -1,0 +1,66 @@
+@  IN	SOA	dns dnsmaster.internetforce.com. (
+		1996091101	 ; Serial
+		10800		 ; Refresh 3 hours
+		3600		 ; Retry 1 hour
+		604800		 ; Expire after a week
+		86400 )	 ; Minimum ttl 1 day
+				NS	styx.ios.com.
+				NS	noc.ios.com.
+				NS	harley.ios.com.
+; *****************************************************************
+; This file is auto-generated from a master file -- do not edit it,
+; but arrange that the master is edited instead.
+; *****************************************************************
+3      PTR  data.internetforce.com.
+4      PTR  users.internetforce.com.
+5      PTR  shell.internetforce.com.
+10      PTR  fw-data.internetforce.com.
+11      PTR  fw-users.internetforce.com.
+12      PTR  fw-shell.internetforce.com.
+129      PTR  firewall.internetforce.com.
+130      PTR  dvlp.internetforce.com.
+131      PTR  anna.internetforce.com.
+132      PTR  franz.internetforce.com.
+133      PTR  maxi.internetforce.com.
+134      PTR  html.internetforce.com.
+135      PTR  aps.internetforce.com.
+136      PTR  cust2.internetforce.com.
+137      PTR  isa.internetforce.com.
+140      PTR  marco.internetforce.com.
+141      PTR  PcDemo.internetforce.com.
+142      PTR  oracolo.internetforce.com.
+20     PTR  www.canalemoda.com.
+21     PTR  www.sicilia.com.
+22     PTR  www.pesaro.com.
+23     PTR  www.art-diary.com.
+24     PTR  www.creo-mi.com.
+25     PTR  www.pippo.com.
+26     PTR  www.pcpesaro.com.
+27     PTR  www.boldyoung.com.
+28     PTR  www.loveisland.com.
+29     PTR  www.shiseidoit.com.
+30     PTR  www.calabria.com.
+31     PTR  www.glassonline.com.
+32     PTR  www.nassetti.com.
+33     PTR  www.net-pool.com.
+34     PTR  www.tecnos.com.
+35     PTR  www.financialreports.com.
+3      PTR  dns.internetforce.com.
+4      PTR  dns2.internetforce.com.
+4      PTR  internetforce.com.
+70      PTR  ppp1-milano.internetforce.com.
+71      PTR  ppp2-milano.internetforce.com.
+72      PTR  ppp3-milano.internetforce.com.
+73      PTR  ppp4-milano.internetforce.com.
+74      PTR  ppp5-milano.internetforce.com.
+75      PTR  ppp6-milano.internetforce.com.
+76      PTR  ppp7-milano.internetforce.com.
+77      PTR  ppp8-milano.internetforce.com.
+78      PTR  ppp9-milano.internetforce.com.
+79      PTR  ppp10-milano.internetforce.com.
+80      PTR  ppp11-milano.internetforce.com.
+81      PTR  ppp12-milano.internetforce.com.
+82      PTR  ppp13-milano.internetforce.com.
+83      PTR  ppp14-milano.internetforce.com.
+84      PTR  ppp15-milano.internetforce.com.
+85      PTR  ppp16-milano.internetforce.com.

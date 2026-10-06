@@ -1,0 +1,46 @@
+!
+version 11.1
+service udp-small-servers
+service tcp-small-servers
+!
+hostname gw-uli
+!
+enable secret 5 $1$d1It$5YwenUArpVeFl0QHQXmpk1
+enable password <ORIGINAL PASSWORD REMOVED>
+!
+ip subnet-zero
+!
+interface Ethernet0
+ description "Enter local ethernet"
+ ip address 194.20.50.13 255.255.255.224
+!
+interface Serial0
+ description "CDN 64Kbps Sesto --> Seveso"
+ ip unnumbered Ethernet0
+ no ip mroute-cache
+ encapsulation ppp
+ bandwidth 64                                                                  
+ no fair-queue
+ compress stac
+!
+interface Serial1
+ no ip address
+ shutdown
+!
+interface BRI0
+ no ip address
+ encapsulation ppp
+ shutdown
+!
+ip domain-name enter.it
+ip name-server 194.20.50.2
+ip classless
+ip route 0.0.0.0 0.0.0.0 194.20.50.1
+ip route 194.185.122.0 255.255.254.0 Serial0
+!
+line con 0
+line aux 0
+line vty 0 4
+ no login                                                                     
+!
+end

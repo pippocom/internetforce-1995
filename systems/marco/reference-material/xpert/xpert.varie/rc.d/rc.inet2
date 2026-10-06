@@ -1,0 +1,117 @@
+#!/bin/sh
+#
+# rc.inet2	This shell script boots up the entire INET system.
+#		Note, that when this script is used to also fire
+#		up any important remote NFS disks (like the /usr
+#		distribution), care must be taken to actually
+#		have all the needed binaries online _now_ ...
+#
+# Author:	Fred N. van Kempen, <waltje@uwalt.nl.mugnet.org>
+#
+
+# Constants.
+NET="/usr/sbin"
+IN_SERV="lpd httpd"
+LPSPOOL="/var/spool/lpd"
+
+# At this point, we are ready to talk to The World...
+echo "Mounting remote file systems..."
+/sbin/mount -a -t nfs		# This may be our /usr runtime!!!
+
+echo -n "Starting daemons:"
+
+# Start the SYSLOGD/Klogd daemons.  These must come first.
+if [ -f ${NET}/syslogd ]; then
+  echo -n " syslogd"
+  ${NET}/syslogd
+  echo -n " klogd"
+  ${NET}/klogd
+fi
+
+# Start the SUN RPC Portmapper.
+#if [ -f ${NET}/rpc.portmap ]; then
+#   echo -n " portmap"
+#   ${NET}/rpc.portmap
+#fi
+
+# Start the INET SuperServer
+if [ -f ${NET}/inetd ]; then
+  echo -n " inetd"
+  ${NET}/inetd
+else
+  echo "no INETD found.  INET cancelled!"
+  exit 1
+fi
+
+# Start the NAMED/BIND name server.
+if [ -f ${NET}/named ]; then
+  echo -n " named"
+  ${NET}/named
+fi
+
+# # Start the ROUTEd server.
+# if [ -f ${NET}/routed ]; then
+#   echo -n " routed"
+#   ${NET}/routed -g -s
+# fi
+
+# # Start the RWHO server.
+# if [ -f ${NET}/rwhod ]; then
+#   echo -n " rwhod"
+#   ${NET}/rwhod -t -s
+# fi
+
+# Start the various INET servers.
+for server in ${IN_SERV} ; do
+  if [ -f ${NET}/${server} ]; then
+    echo -n " ${server}"
+    ${NET}/${server}
+  fi
+done
+
+# # Start the various SUN RPC servers.
+#if [ -f ${NET}/rpc.portmap ]; then
+#  # Start the NFS server daemons.
+#  if [ -f ${NET}/rpc.mountd ]; then
+#    echo -n " mountd"
+#    ${NET}/rpc.mountd
+#  fi
+#  if [ -f ${NET}/rpc.nfsd ]; then
+#    echo -n " nfsd"
+#    ${NET}/rpc.nfsd
+#  fi
+#  # Fire up the PC-NFS daemon(s).
+#  if [ -f ${NET}/rpc.pcnfsd ]; then
+#    echo -n " pcnfsd"
+#    ${NET}/rpc.pcnfsd ${LPSPOOL}
+#  fi
+#  if [ -f ${NET}/rpc.bwnfsd ]; then
+#    echo -n " bwnfsd"
+#    ${NET}/rpc.bwnfsd ${LPSPOOL}
+#  fi
+#fi # Done starting various SUN RPC servers.
+
+# The 'echo' below will put a carriage return at the end
+# of the list of started servers.
+echo
+
+# # Setting up NIS:
+# # (NOTE: For detailed information about setting up NIS, see the
+# #  documentation in /usr/doc/yp-clients* and /usr/doc/ypserv*.)
+# #
+# # First, we must set the NIS domainname.  NOTE: this is not
+# # necessarily the same as your DNS domainname, set in 
+# # /etc/resolv.conf!  The NIS domainname is the name of a domain
+# # served by your NIS server.
+#
+# if [ -r /etc/nisdomainname ]; then
+#   domainname-yp `cat /etc/nisdomainname`
+# fi
+# # Then, we start up ypbind.  It will use broadcast to find a server.
+# if [ -d /var/yp ] ; then
+#   echo "Running ypbind..."
+#   /usr/sbin/ypbind 
+# fi
+
+# Done!
+

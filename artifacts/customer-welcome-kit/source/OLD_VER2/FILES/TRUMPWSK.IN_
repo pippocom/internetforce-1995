@@ -1,0 +1,47 @@
+[Trumpet Winsock]
+ip=0.0.0.0
+netmask=0.0.0.0
+gateway=0.0.0.0
+dns=206.20.95.3
+time=
+domain=internetforce.com
+vector=00
+mtu=256
+rwin=848
+mss=212
+rtomax=60
+ip-buffers=32
+slip-enabled=1
+slip-port=2
+slip-baudrate=38400
+slip-handshake=0
+slip-compressed=1
+dial-option=0
+online-check=0
+inactivity-timeout=5
+slip-timeout=0
+slip-redial=0
+dial-parity=0
+font=Courier,9
+registration-name=""
+registration-password="h[G?"Rgl"
+use-socks=0
+socks-host=0.0.0.0
+socks-port=1080
+socks-id=
+socks-local1=0.0.0.0 0.0.0.0
+socks-local2=0.0.0.0 0.0.0.0
+socks-local3=0.0.0.0 0.0.0.0
+socks-local4=0.0.0.0 0.0.0.0
+ppp-enabled=1
+ppp-usepap=0
+ppp-username=""
+ppp-password=""
+win-posn=71 79 735 475 96 528 -1 -1 1
+trace-options=0
+
+[default vars]
+$number=
+$username=
+$password=
+$select=t

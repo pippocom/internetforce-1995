@@ -1,0 +1,46 @@
+Added world group in /etc/group file
+
+world:*:110:
+
+
+Created a directory in ~segir/home ftp-world with this permission:
+
+drwxrwx---   2 segir    world         512 Jan 18 12:45 ftp-world/
+
+in /etc/passwd file:
+
+cliente1:ftp:110:utente anonimizzato,azienda anonimizzata,,:/users/01/segir/./ftp-wor
+ld:/ftponly
+
+Added the gropu world in /urs/local/etc/ftpaccess:
+
+guestgroup users www world
+
+
+More than this for security reason I put this permissions to segir home dir:
+
+drwxrwxrwt   2 root     staff         512 Nov  8 15:04 tmp/
+d--x--x--x   3 root     staff         512 Nov  8 15:08 usr/
+d--x--x--x   2 root     staff         512 Nov  8 16:26 etc/
+dr-xr-xr-x   2 root     staff         512 Nov 10 15:25 bin/
+drwxr-xr--   2 segir    users         512 Jan 18 13:08 home/
+        ^^^ I took out the execution
+
+
+drwxr-xr--   8 root     world         512 Jan 18 13:08 ./
+                       ^^^^^^^^ I changed the group (to allow 
+                                cliente1 to see the content of 
+                                the directory ftp-world)
+
+drwxr-xr-x 181 root     daemon       3584 Jan 18 17:07 ../
+drwxrwx--x   4 segir    world         512 Jan 18 18:01 ftp-world/
+
+in ftp-world, instead:
+
+drwxr-xr--   8 root     world         512 Jan 18 13:08 ../
+drwxr-xr-x   2 segir    world         512 Jan 18 18:01 segir/
+drwxrwx--x   4 segir    world         512 Jan 18 18:01 ./
+drwxr-xr-x   2 cliente1  world         512 Jan 18 18:01 cliente1/
+
+
+

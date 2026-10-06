@@ -1,0 +1,9 @@
+EASY.FRM
+C:\WINDOWS\SYSTEM\THREED.VBX
+ABOUT.FRM
+NOTFND.FRM
+ProjWinSize=91,573,207,168
+ProjWinShow=2
+IconForm="Form1"
+Title="Easy!"
+ExeName="EASY.EXE"

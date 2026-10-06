@@ -1,0 +1,14 @@
+[root@marco]/home/ianna/document>fdisk
+Using /dev/sda as default device!
+
+Command (m for help): p
+
+Disk /dev/sda: 255 heads, 63 sectors, 131 cylinders
+Units = cylinders of 16065 * 512 bytes
+
+   Device Boot  Begin   Start     End  Blocks   Id  System
+/dev/sda1   *       1       1      26  208813+   6  DOS 16-bit >=32M
+/dev/sda2          27      27      65  313267+  83  Linux native
+/dev/sda3          66      66      70   40162+  82  Linux swap
+/dev/sda4          71      71     131  489982+  83  Linux native
+

@@ -1,0 +1,14 @@
+We use webcopy on data
+
+I added the following line in the crontab:
+
+30 4 * * * /usr/local/etc/httpd/tools/intf.mirror.script
+
+and this is the content of the file:
+
+#!/bin/sh
+/usr/local/etc/webcopy.pl -ut60 -rw/usr/local/etc/httpd/htdocs/annabella http://
+www.areacom.it/html/arte_cultura/annabella/
+chown www.www /usr/local/etc/httpd/htdocs/annabella/*
+chmod og+r /usr/local/etc/httpd/htdocs/annabella/*
+

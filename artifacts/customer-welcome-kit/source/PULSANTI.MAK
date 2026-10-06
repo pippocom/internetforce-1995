@@ -1,0 +1,10 @@
+BARRA.FRM
+C:\WINDOWS\SYSTEM\THREED.VBX
+ABOUT.FRM
+NOTYET.FRM
+ProjWinSize=91,573,207,168
+ProjWinShow=2
+IconForm="Form1"
+Title="Easy-Net"
+ExeName="EASY-NET.EXE"
+Path="C:\TMP\PROVA"

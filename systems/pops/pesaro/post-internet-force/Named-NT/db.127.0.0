@@ -1,0 +1,18 @@
+;
+;    File:      db.127.0.0 file
+;    Purpose:   This file establishes the identity of this DNS.
+;               SOA stands for 'start of authority' and sets the
+;               default parameters for information this DNS is 
+;               authoritative for:
+;
+@        IN SOA    data.pesaro.com. postmaster.pesaro.com. (
+        1996100601   ; serial  [yyyyMMddNN]
+             21600   ; refresh [6h]
+              3600   ; retry   [1h]
+            691200   ; expire  [8d]
+             86400)  ; minimum [1d]
+;
+         IN NS    data.pesaro.com. 
+1        IN PTR    localhost.pesaro.com.
+;
+

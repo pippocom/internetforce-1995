@@ -1,0 +1,6 @@
+/dev/hda1       /        ext2        defaults   1   1
+/dev/hda6        /usr        ext2        defaults   1   1
+/dev/hda7        /var        ext2        defaults   1   1
+/dev/hda8        /export        ext2        defaults,rw,usrquota   1   1
+none             /proc    proc        defaults   1   1
+/dev/hda5	none	swap		sw	0	0

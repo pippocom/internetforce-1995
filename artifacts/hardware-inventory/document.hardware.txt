@@ -1,0 +1,579 @@
+1. Introduction
+
+2. Computer systems configuration
+	2.1 FIREWALL
+		2.1.1 Hardware
+		2.1.2 Disks
+		2.1.3 File systems
+		2.1.4 Kernel configuration
+	2.2 DVLP
+		2.2.1 Hardware
+		2.2.2 Disks
+		2.2.3 File systems
+		2.2.4 Kernel configuration
+	2.3 DATA
+		2.3.1 Hardware
+		2.3.2 Disks
+		2.3.3 File systems
+		2.3.4 Kernel configuration
+	2.4 USER
+		2.4.1 Hardware
+		2.4.2 Disks
+		2.4.3 File systems
+		2.4.4 Kernel configuration
+
+3. Communication hardware configuration
+	3.1 Routers
+	3.2 Terminal server
+
+4. Network topology
+
+5. Servers and services
+	5.1 FIREWALL
+		5.1.1 Operating system
+		5.1.2 FireWall-1 configuration
+		5.1.3 General information
+	5.2 DVLP
+		5.2.1 Operating system
+		5.2.2 Tools
+		5.2.3 General information
+	5.3 DATA
+		5.3.1 Operating system
+		5.3.2 Primary Name server
+		5.3.3 Anonymous FTP site
+		5.3.4 Majordomo mailing list server
+		5.3.5 News
+		5.3.6 WWW site & VIF
+		5.3.7 General information
+	5.4 USER
+		5.4.1 Operating system
+		5.4.2 Secondary name server
+		5.4.3 User's home environment
+		5.4.4 FTP site
+		5.4.5 WWW site & user home pages
+		5.4.6 TACACS authentication server
+		5.4.7 General information
+
+6. Site management and routine tasks
+	6.1 Backup
+	6.2 Systems startup and shutdown
+	6.3 Users management
+	6.4 Quota management
+	6.5 HTML site management
+	6.6 FTP site management
+	6.7 Majordomo management
+
+
+Chapter 2
+
+2.1 FIREWALL
+
+
+	General Information
+
+Host Name           : firewall
+Host Address(es)    : 206.20.95.129 
+Host ID             : 8074f7c9
+Serial Number       : 
+Manufacturer        : Sun (Sun Microsystems Incorporated)
+System Model        : SPARCstation 5
+Main Memory         : 32 MB
+Virtual Memory      : 192 MB
+ROM Version         : 2.15
+CPU Type            : sparc
+App Architecture    : sun4
+Kernel Architecture : sun4d
+OS Name             : SunOS
+OS Version          : 4.1.4
+
+	Kernel Information
+
+Maximum number of processes for system is        266
+Maximum number of processes per user is          261
+Maximum number of BSD (/dev/ptyXX) pty's is      256
+Size of the virtual address cache is             16384
+Size of the callout table is                     282
+Size of the directory name lookup cache is       362
+Size of the quotas table is                      426
+UDP Check Summing is                             0
+STREAMS: Maximum number of pushes allowed is     9
+STREAMS: Maximum event size is                   256
+STREAMS: Maximum message size is                 4096
+STREAMS: Maximum size of ctl part of message is  1024
+Has UFS driver is                                TRUE
+Has NFS driver is                                TRUE
+Has PCFS driver is                               TRUE
+Has RFS driver is                                TRUE
+Has LOFS driver is                               TRUE
+Has TMPFS driver is                              TRUE
+Has SD driver is                                 TRUE
+Has FD driver is                                 TRUE
+Has ST driver is                                 TRUE
+Has SR (CDROM) driver is                         TRUE
+Has NFSSERVER is                                 TRUE
+Has NFSCLIENT is                                 TRUE
+Has IPCSEMAPHORE is                              TRUE
+Has IPCMESSAGE is                                TRUE
+Has IPCSHMEM is                                  TRUE
+Has SYSACCT is                                   TRUE
+
+
+	System Configuration
+
+Max combined size of argv[] and envp[] is  1048576
+Max processes allowed to any UID is        266
+Clock ticks per second is                  60
+Max simultaneous groups per user is        16
+Max open files per process is              64
+Job control supported is                   TRUE
+Savid ids (seteuid()) supported is         TRUE
+Version of POSIX.1 standard supported is   198808
+
+
+	Device Information
+
+SUNW,SPARCstation-5 is a "SUNW,501-2286"
+    openprom0 is a "Open Boot PROM" device
+    iommu0 is a "I/O Memory Management Unit" system bus
+        sbus0 is a "SBus" system bus
+            espdma is a "SCSI DMA" pseudo device
+              esp0 is a "Generic SCSI" SCSI controller disk controller
+                  sr0 is a CD-ROM disk drive
+                  st0 is a SCSI tape drive
+                  sd0 is a "SUN0535" 510 MB disk drive
+            SUNW,bpp is a "Sun Bidirectional Parallel Port"
+            ledma is a "LANCE Ethernet DMA" pseudo device
+             le0 is a "AMD Lance Am7990" 10Mb/sec Ethernet network interface
+            SUNW,CS42310 is a "Crystal Semiconductor 4231" audio device
+            qec0 is a "Sun Quad Ethernet Controller"
+              qe0 is a "Sun Quad" 10Mb/sec Ethernet network interface
+              qe1 is a "Sun Quad" 10Mb/sec Ethernet network interface
+              qe2 is a "Sun Quad" 10Mb/sec Ethernet network interface
+              qe3 is a "Sun Quad" 10Mb/sec Ethernet network interface
+            cgsix0 is a "GX 8-bit Accelerated Color Graphics [cgsix]" frame buffer
+    obio0 is a "On Board I/O" system bus
+        zs0 is a "Zilog 8530" serial communications chip
+        zs1 is a "Zilog 8530" serial communications chip
+        eeprom is a "EEPROM (mk48t08)" device
+        SUNW,fdtwo0 is a Floppy disk drive
+    cpu0 is a "110 MHz microSPARC II" CPU
+    kbd is a "Sun Type-5 PC" Keyboard
+
+
+Filesystem     kbytes    used   avail capacity  Mounted on   used for
+/dev/sd0a      19023    6117   11004    36%     /               OS
+/dev/sd0g      287822   56580  202460    22%    /usr           OS-FW
+/dev/sd0b      188916       0  188916     0%    /tmp         swap-files
+
+2.2 DVLP
+
+	General Information
+
+Host Name           : dvlp
+Host Address(es)    : 206.20.95.130 
+Host ID             : 807473b4
+Serial Number       : 
+System Model        : SPARCstation 4
+Main Memory         : 32 MB
+Virtual Memory      : 152 MB
+ROM Version         : 2.20
+Number of CPUs      : 1
+CPU Type            : sparc
+App Architecture    : sun4
+Kernel Architecture : sun4d
+OS Name             : SunOS
+OS Version          : 4.1.4
+
+	Kernel Information
+
+Maximum number of processes for system is        266
+Maximum number of processes per user is          261
+Maximum number of BSD (/dev/ptyXX) pty's is      256
+Size of the virtual address cache is             16384
+Size of the callout table is                     282
+Size of the directory name lookup cache is       362
+Size of the quotas table is                      426
+UDP Check Summing is                             0
+STREAMS: Maximum number of pushes allowed is     9
+STREAMS: Maximum event size is                   256
+STREAMS: Maximum message size is                 4096
+STREAMS: Maximum size of ctl part of message is  1024
+Has UFS driver is                                TRUE
+Has NFS driver is                                TRUE
+Has PCFS driver is                               TRUE
+Has RFS driver is                                TRUE
+Has LOFS driver is                               TRUE
+Has TMPFS driver is                              TRUE
+Has SD driver is                                 TRUE
+Has FD driver is                                 TRUE
+Has ST driver is                                 TRUE
+Has SR (CDROM) driver is                         TRUE
+Has NFSSERVER is                                 TRUE
+Has NFSCLIENT is                                 TRUE
+Has IPCSEMAPHORE is                              TRUE
+Has IPCMESSAGE is                                TRUE
+Has IPCSHMEM is                                  TRUE
+Has SYSACCT is                                   TRUE
+
+	System Configuration
+
+Max combined size of argv[] and envp[] is  1048576
+Max processes allowed to any UID is        266
+Clock ticks per second is                  60
+Max simultaneous groups per user is        16
+Max open files per process is              64
+Job control supported is                   TRUE
+Savid ids (seteuid()) supported is         TRUE
+Version of POSIX.1 standard supported is   198808
+
+
+	Device Information
+
+SUNW,SPARCstation-4 is a "SUNW,501-2572"
+    openprom0 is a "Open Boot PROM" device
+    iommu0 is a "I/O Memory Management Unit" system bus
+        sbus0 is a "SBus" system bu
+            espdma is a "SCSI DMA" pseudo device
+              esp0 is a "Generic SCSI" SCSI controller disk controller
+                   sd0 is a "SUN1.05" 1002 MB disk drive
+            SUNW,bpp is a "Sun Bidirectional Parallel Port"
+            ledma is a "LANCE Ethernet DMA" pseudo device
+               le0 is a "AMD Lance Am7990" 10Mb/sec Ethernet network interface
+    obio0 is a "On Board I/O" system bus
+        zs0 is a "Zilog 8530" serial communications chip
+        zs1 is a "Zilog 8530" serial communications chip
+        eeprom is a "EEPROM (mk48t08)" device
+        SUNW,fdtwo0 is a Floppy disk drive
+    cpu0 is a "85 MHz microSPARC II" CPU
+    kbd is a "Sun Type-5 PC" Keyboard
+
+Filesystem            kbytes    used   avail capacity  Mounted on
+/dev/sd0a              23231    6824   14084    33%    /
+/dev/sd0g             795982  355135  361249    50%    /usr
+/dev/sd0b             134280      12  134268     0%    /tmp
+/dev/sd2h             481336  412695   20508    95%    /mnt
+/dev/sr0              571444  571446       0   100%    /cdrom
+
+
+In /cisco is stored the configuration of the routers.
+
+2.3 DATA
+
+	General Information
+
+Host Name           : data
+Host Address(es)    : 206.20.95.3 
+Host ID             : 8077cb64
+Serial Number       : 
+System Model        : SPARCstation 5
+Main Memory         : 64 MB
+Virtual Memory      : 291 MB
+ROM Version         : 2.15
+Number of CPUs      : 1
+CPU Type            : sparc
+App Architecture    : sun4
+Kernel Architecture : sun4d
+OS Name             : SunOS
+OS Version          : 4.1.4
+
+	Kernel Information
+
+Maximum number of processes for system is        266
+Maximum number of processes per user is          261
+Maximum number of BSD (/dev/ptyXX) pty's is      256
+Size of the virtual address cache is             16384
+Size of the callout table is                     282
+Size of the directory name lookup cache is       362
+Size of the quotas table is                      426
+UDP Check Summing is                             0
+STREAMS: Maximum number of pushes allowed is     9
+STREAMS: Maximum event size is                   256
+STREAMS: Maximum message size is                 4096
+STREAMS: Maximum size of ctl part of message is  1024
+Has UFS driver is                                TRUE
+Has NFS driver is                                TRUE
+Has PCFS driver is                               TRUE
+Has RFS driver is                                TRUE
+Has LOFS driver is                               TRUE
+Has TMPFS driver is                              TRUE
+Has SD driver is                                 TRUE
+Has FD driver is                                 TRUE
+Has ST driver is                                 TRUE
+Has SR (CDROM) driver is                         TRUE
+Has NFSSERVER is                                 TRUE
+Has NFSCLIENT is                                 TRUE
+Has IPCSEMAPHORE is                              TRUE
+Has IPCMESSAGE is                                TRUE
+Has IPCSHMEM is                                  TRUE
+Has SYSACCT is                                   TRUE
+
+
+	System Configuration
+
+Max combined size of argv[] and envp[] is  1048576
+Max processes allowed to any UID is        266
+Clock ticks per second is                  60
+Max simultaneous groups per user is        16
+Max open files per process is              256
+Job control supported is                   TRUE
+Savid ids (seteuid()) supported is         TRUE
+Version of POSIX.1 standard supported is   198808
+
+
+	Device Information
+
+SUNW,SPARCstation-5 is a "SUNW,501-2286"
+    openprom0 is a "Open Boot PROM" device
+    iommu0 is a "I/O Memory Management Unit" system bus
+        sbus0 is a "SBus" system bus
+            espdma is a "SCSI DMA" pseudo device
+                esp0 is a "Generic SCSI" SCSI controller disk controller
+                    sd3 is a "SUN2.1G" 2.0 GB disk drive
+                    sd2 is a "SUN2.1G" 2.0 GB disk drive
+                    sd1 is a "SUN2.1G" 2.0 GB disk drive
+                    sd0 is a "SUN0535" 510 MB disk drive
+            SUNW,bpp is a "Sun Bidirectional Parallel Port"
+            ledma is a "LANCE Ethernet DMA" pseudo device
+                le0 is a "AMD Lance Am7990" 10Mb/sec Ethernet network interface
+            SUNW,CS42310 is a "Crystal Semiconductor 4231" audio device
+            cgsix0 is a "GX 8-bit Accelerated Color Graphics [cgsix]" frame buffer
+    obio0 is a "On Board I/O" system bus
+        zs0 is a "Zilog 8530" serial communications chip
+        zs1 is a "Zilog 8530" serial communications chip
+        eeprom is a "EEPROM (mk48t08)" device
+        SUNW,fdtwo0 is a Floppy disk drive
+    cpu0 is a "110 MHz microSPARC II" CPU
+    kbd is a "Sun Type-5 PC" Keyboard
+
+In the DATA SERVER are installed 3 ST-32430N 
+
+
+Filesystem     kbytes    used   avail capacity  Mounted on         used for
+/dev/sd0a         19023    6432   10689    38%    /
+/dev/sd0g        191783   52237  120368    30%    /usr
+/dev/sd1c       1952573    2518 1754798     0%    /usr/export/sd1c   NEWS
+/dev/sd2c       1952573    9911 1747405     1%    /usr/export/sd2c   HTTP
+/dev/sd3c       1952573   87705 1669611     5%    /usr/export/sd3c   FUTURE
+/dev/sd0b        290656       0  290656     0%    /tmp
+
+
+2.4 USERS
+
+	General Information
+
+Host Name           : users
+Host Address(es)    : 206.20.95.4 
+Host ID             : 8074ff4f
+Serial Number       : 
+System Model        : SPARCstation 5
+Main Memory         : 64 MB
+Virtual Memory      : 783 MB
+ROM Version         : 2.15
+Number of CPUs      : 1
+CPU Type            : sparc
+App Architecture    : sun4
+Kernel Architecture : sun4d
+OS Name             : SunOS
+OS Version          : 4.1.4
+
+	Kernel Information
+
+Maximum number of processes for system is        266
+Maximum number of processes per user is          261
+Maximum number of BSD (/dev/ptyXX) pty's is      256
+Size of the virtual address cache is             16384
+Size of the callout table is                     282
+Size of the directory name lookup cache is       362
+Size of the quotas table is                      426
+UDP Check Summing is                             0
+STREAMS: Maximum number of pushes allowed is     9
+STREAMS: Maximum event size is                   256
+STREAMS: Maximum message size is                 4096
+STREAMS: Maximum size of ctl part of message is  1024
+Has UFS driver is                                TRUE
+Has NFS driver is                                TRUE
+Has PCFS driver is                               TRUE
+Has RFS driver is                                TRUE
+Has LOFS driver is                               TRUE
+Has TMPFS driver is                              TRUE
+Has SD driver is                                 TRUE
+Has FD driver is                                 TRUE
+Has ST driver is                                 TRUE
+Has SR (CDROM) driver is                         TRUE
+Has NFSSERVER is                                 TRUE
+Has NFSCLIENT is                                 TRUE
+Has IPCSEMAPHORE is                              TRUE
+Has IPCMESSAGE is                                TRUE
+Has IPCSHMEM is                                  TRUE
+Has SYSACCT is                                   TRUE
+
+
+	System Configuration
+
+Max combined size of argv[] and envp[] is  1048576
+Max processes allowed to any UID is        266
+Clock ticks per second is                  60
+Max simultaneous groups per user is        16
+Max open files per process is              256
+Job control supported is                   TRUE
+Savid ids (seteuid()) supported is         TRUE
+Version of POSIX.1 standard supported is   198808
+
+	Device Information
+
+SUNW,SPARCstation-5 is a "SUNW,501-2286"
+    openprom0 is a "Open Boot PROM" device
+    iommu0 is a "I/O Memory Management Unit" system bus
+      sbus0 is a "SBus" system bus
+          espdma is a "SCSI DMA" pseudo device
+              esp0 is a "Generic SCSI" SCSI controller disk controller
+                  sd3 is a "SUN2.1G" 2.0 GB disk drive
+                  sd2 is a "SUN2.1G" 2.0 GB disk drive
+                  sd1 is a "SUN2.1G" 2.0 GB disk drive
+                  sd0 is a "SUN1.05" 1002 MB disk drive
+           SUNW,bpp is a "Sun Bidirectional Parallel Port"
+           ledma is a "LANCE Ethernet DMA" pseudo device
+             le0 is a "AMD Lance Am7990" 10Mb/sec Ethernet network interface
+           SUNW,CS42310 is a "Crystal Semiconductor 4231" audio device
+         cgsix0 is a "GX 8-bit Accelerated Color Graphics [cgsix]" frame buffer
+   obio0 is a "On Board I/O" system bus
+       zs0 is a "Zilog 8530" serial communications chip
+       zs1 is a "Zilog 8530" serial communications chip
+       eeprom is a "EEPROM (mk48t08)" device
+       SUNW,fdtwo0 is a Floppy disk drive
+   cpu0 is a "110 MHz microSPARC II" CPU
+   kbd is a "Sun Type-5 PC" 
+Keyboard
+
+IN USERS SERVER is installed one ST-32550N    SN: 52462595
+
+
+Filesystem    kbytes    used   avail capacity  Mounted on         used for
+/dev/sd0a       18679    4288   12524    26%    /
+/dev/sd0g      191919   54326  118402    31%    /usr
+/dev/sd1c     1952573    5407 1751909     0%    /usr/export/sd1c  USERS acnt 
+/dev/sd2c     1952573      11 1757305     0%    /usr/export/sd2c  FUTURE 
+/dev/sd0b      799352   10488  788864     1%    /tmp
+/dev/sd3c     1952573 1284258  473058    73%    /mnt
+
+
+
+DISKS
+
+TECHNICAL SPECIFICATIONS OF SCSII DISKS.
+
+
+                            ST-32430N
+                            Hawk 2LP
+                            (connected to DATA)
+
+       UNFORMATTED CAPACITY (MB) ________________2590
+       FORMATTED CAPACITY (xx SECTORS) (MB) _____2140
+       AVERAGE SECTORS PER TRACK ________________116
+       ACTUATOR TYPE ____________________________ROTARY VOICE COIL
+       TRACKS ___________________________________19,960
+       CYLINDERS ________________________________3992
+       HEADS ______PHYSICAL______________________9
+       DISCS (3.5 in) ___________________________5
+       MEDIA TYPE _______________________________THIN FILM
+       RECORDING METHOD _________________________ZBR RLL (1,7)
+       INTERNAL TRANSFER RATE (mbits/sec)________35.8 to 62.2
+       EXTERNAL TRANSFER RATE (mbyte/sec) _______5.2 Async
+       EXTERNAL TRANSFER RATE (mbyte/sec) _______10 Sync
+       SPINDLE SPEED (RPM) ______________________5411
+       AVERAGE LATENCY (mSEC) ___________________5.54
+       BUFFER ___________________________________512 KByte
+         Read Look-Ahead, Adaptive,
+         Multi-Segmented Cache
+       INTERFACE ________________________________SCSI-2 FAST
+       TPI (TRACKS PER INCH) ____________________4200
+       AVERAGE ACCESS (ms) (read/write)__________10.4/11.4
+         Including controller overhead
+       SINGLE TRACK SEEK (ms) (read/write)_______2.1/2.5
+       MAX FULL SEEK (ms) (read/write)___________20.4/21.4
+       MTBF (power-on hours) ____________________800,000
+       SHOCK (G's):
+                operating (Read/Write) __________10
+                nonoperating ____________________75
+       ACOUSTICS (typ/max dBA) __________________
+       POWER REQUIREMENTS: +12V START-UP (amps) _2.0
+                           +12V TYPICAL (amps) __0.35
+                           +5V START-UP (amps) __0.61
+                           +5V TYPICAL (amps) ___0.35
+                           TYPICAL (watts) ______6
+                           MAXIMUM (watts) ______9
+       LANDING ZONE (cyl) _______________________AUTO PARK
+       IBM AT DRIVE TYPE ________________________0 or NONE
+
+       Physical:
+                        Height (inches/mm):     1.00/25.4
+                        Width  (inches/mm):     4.02/101.6
+                        Depth  (inches/mm):     5.74/145.8
+                        Weight    (lbs/kg):     1.5/0.68
+
+Already low-level formatted at the factory with 1 spare sector
+per head (all spare sectors are on one track) and 2 spare
+cylinders per unit.
+
+ZBR = Zone Bit Recording = Variable sectors per track
+
+
+                      ST-32550N
+                     Barracuda 2LP
+                     (connected to USERS)
+
+       UNFORMATTED CAPACITY (MB) ________________2541.3
+       FORMATTED CAPACITY (xx SECTORS) (MB) _____2147.4
+       AVERAGE SECTORS PER TRACK ________________108 rounded down
+       ACTUATOR TYPE ____________________________ROTARY VOICE COIL
+       TRACKS ___________________________________38,610
+       CYLINDERS ________________________________3,510 user
+       HEADS ______PHYSICAL______________________11
+       DISCS (3.5 in) ___________________________6
+       MEDIA TYPE _______________________________THIN FILM
+       RECORDING METHOD _________________________ZBR RLL (1,7)
+       INTERNAL TRANSFER RATE (mbits/sec)________49.4 to 72.0
+       EXTERNAL TRANSFER RATE (mbyte/sec) _______5 Async
+       EXTERNAL TRANSFER RATE (mbyte/sec) _______2.5 to 10 Sync
+       SPINDLE SPEED (RPM) ______________________7,200
+       AVERAGE LATENCY (mSEC) ___________________4.17
+       BUFFER ___________________________________512 KByte
+         Read Look-Ahead, Adaptive,
+         Multi-Segmented Cache
+       INTERFACE ________________________________SCSI-2 FAST
+       BYTES PER TRACK __________________________64,160 average
+       SECTORS PER DRIVE ________________________
+       TPI (TRACKS PER INCH) ____________________4,048
+       BPI (BITS PER INCH) ______________________72,680
+       AVERAGE ACCESS (ms) (read/write)__________8.0/9.0
+         Drive level without controller overhead
+       SINGLE TRACK SEEK (ms) ___________________0.6/0.9
+       MAX FULL SEEK (ms) _______________________17/19
+       MTBF (power-on hours) ____________________800,000
+       SHOCK (G's):
+                operating (Read/Write) __________2
+                nonoperating ____________________50
+       ACOUSTICS (typ/max dBA) __________________4.7/
+       POWER REQUIREMENTS: +12V START-UP (amps) _1.26
+                           +12V TYPICAL (amps) __0.88 idle
+                           +5V START-UP (amps) __0.91
+                           +5V TYPICAL (amps) ___0.33 idle
+                           IDLE (watts) _________
+       LANDING ZONE (cyl) _______________________AUTO PARK
+       IBM AT DRIVE TYPE ________________________0 or NONE
+
+       Physical:
+                        Height (inches/mm):     1.00/25.4
+                        Width  (inches/mm):     4.00/101.6
+                        Depth  (inches/mm):     5.75/146.05
+                        Weight     (lbs/g):     1.2/545
+
+Already low-level formatted at the factory with 9 spare sectors
+per cylinder and 1 spare cylinder per unit.
+
+ZBR = Zone Bit Recording = Variable sectors per track
+
+
+Service	Related files	Purpose
+	or directory
+

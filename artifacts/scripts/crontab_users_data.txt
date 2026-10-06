@@ -1,0 +1,24 @@
+this is the crontab on users for root
+
+[root@users]/users/01/ianna/home>crontab -e
+
+
+15 3 * * * /usr/bin/find / -name .nfs\* -mtime +7 -exec rm -f {} \; -o -fstype n
+fs -prune
+5 4 * * 6 /usr/lib/newsyslog >/dev/null 2>&1
+15 4 * * * /usr/bin/find /var/preserve/ -mtime +7 -a -exec rm -f {} \;
+0 0 * * * /usr/local/etc/httpd-sec/cgi-bin/login/do-expire
+30 3 * * * /users/01/ianna/home/public_html/tools/stats/intf.stat
+
+on data, instead:
+
+[root@data]/usr/local/etc/httpd/htdocs/cosmopolitan>crontab -e
+
+
+15 3 * * * /usr/bin/find / -name .nfs\* -mtime +7 -exec rm -f {} \; -o -fstype n
+fs -prune
+5 4 * * 6 /usr/lib/newsyslog >/dev/null 2>&1
+15 4 * * * /usr/bin/find /var/preserve/ -mtime +7 -a -exec rm -f {} \;
+30 2 * * * /usr/export/sd2c/httpd/tools/intf.stats
+30 4 * * * /usr/local/etc/httpd/tools/intf.mirror.script
+

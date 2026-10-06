@@ -1,0 +1,3 @@
+namedxpo.z contiene tutta la conf di pointest.com
+bind-49e.z contiene gli eseguibili dell'ultima versione di bind...
+           va scompattata da /

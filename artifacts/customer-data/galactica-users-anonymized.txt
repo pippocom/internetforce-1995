@@ -1,0 +1,110 @@
+# Galactica user list (anonymized)
+
+Recovered list of subscribers of galactica.it, a Milanese provider of the
+period, obtained during a consultancy and kept as a scale comparison with
+Internet Force. Names and aliases have been removed; the online-minutes
+column is preserved to give an idea of the size and usage of a comparable
+provider.
+
+
+SEGUE LA LISTA DEGLI UTENTI DI GALACTICA CHE AI TEMPI ERA UN NOTO PROVIDER MILANESE. LI HO OTTENUTI DURANTE UNA CONSULENZA CHE HO FATTO LORO. 
+I CONFRONTI CON IL NUMERO DI UTENTI DI INTERNETFORCE DA L'IDEA DELAL DIMENSIONE
+
+
+[galactica.it]
+Utenti collegati a GALACTICA (galactica.it)
+
+Linea Alias              User-ID                        Minuti online
+----- -----              -------                        -------------
+  1   user1          88
+  2   user2          2
+  3   user3          10
+  4   user4          3
+  5   user5          10
+  6   user6          8
+  7   user7          45
+  8   user8          22
+ 10   user10         21
+ 11   user11         2
+ 12   user12         13
+ 13   user13         1
+ 15   user15         2
+ 17   user17         1
+ 18   user18         13
+ 21   user21         9
+ 22   user22         7
+ 23   user23         10
+ 24   user24         31
+ 26   user26         0
+ 27   user27         7
+ 28   user28         17
+ 29   user29         9
+ 30   user30         13
+ 32   user32         39
+ 33   user33         35
+ 35   user35         19
+ 36   user36         4
+ 40   user40         15
+ 41   user41         35
+ 43   user43         2
+ 44   user44         6
+ 46   user46         24
+ 50   user50         57
+ 52   user52         6
+ 53   user53         62
+ 54   user54         13
+ 55   user55         7
+ 57   user57         66
+ 58   user58         22
+ 59   user59         15
+ 60   user60         1
+ 61   user61         34
+ 63   user63         67
+ 64   user64         24
+ 68   user68         11
+ 69   user69         21
+ 70   user70         22
+ 72   user72         35
+ 73   user73         100
+ 74   user74         26
+ 75   user75         36
+ 76   user76         4
+ 78   user78         34
+ 79   user79         37
+ 80   user80         8
+ 81   user81         49
+ 82   user82         36
+ 83   user83         7
+ 85   user85         1
+ 86   user86         1
+ 87   user87         16
+ 88   user88         3
+ 89   user89         33
+ 91   user91         3
+ 92   user92         3
+ 93   user93         10
+ 94   user94         21
+ 95   user95         11
+ 96   user96         11
+ 97   user97         7
+ 98   user98         20
+ 99   user99         20
+ 10   user10         68
+ 10   user10         1
+ 10   user10         27
+ 10   user10         9
+ 10   user10         1
+ 10   user10         2
+ 10   user10         11
+ 10   user10         1
+ 10   user10         10
+ 10   user10         14
+ 11   user11         20
+ 11   user11         22
+ 11   user11         20
+ 11   user11         9
+ 11   user11         9
+ 11   user11         3
+
+Totale utenti: 94
+

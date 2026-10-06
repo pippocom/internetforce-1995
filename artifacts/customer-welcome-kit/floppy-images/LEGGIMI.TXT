@@ -1,0 +1,5 @@
+IMMAGINI DISCHI DI INSTALLAZIONE PROGRAMMI INTERNET PER IL PROVIDER INTERNET FORCE
+
+Le immagini di seguito sono copia dei dischi necessari all'installazione del Welcome Kit Internet Force
+Oltre a contenere il programam di collegamento WINSOCKET THRUMPET, contengono anche i programmi per 
+utilizzare i principali servizi di Internet evitando di dover passare più di un ora a scaricarli tutti

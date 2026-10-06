@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>USERS — Internet Force 1995</title>
+<meta name="description" content="Internet Force USERS server (1995): XTACACS, SMTP/POP3/IMAP mail, customer accounts and personal web pages.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <p class="brand">Internet Force <span class="years">1995–1996</span></p>
+    <nav class="lang" aria-label="Language">
+<a href="users.html" hreflang="it" lang="it">Italiano</a> <span class="sep">·</span> <span class="current" aria-current="page">English</span>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="content">
+  <p class="eyebrow">Systems Overview · 1995</p>
+  <h1>USERS <span class="host">(users)</span></h1>
+  <p class="lede">USERS was one of the two central production servers and the one customers interacted with most: authentication, mail and customer accounts.</p>
+  <figure class="system">
+    <img src="../../images/crops/users.png" width="336" height="349" alt="USERS box in the 1995 Systems Overview">
+    <figcaption>Crop from <code>images/internetforce_server_map.png</code> (Systems Overview 1995).</figcaption>
+  </figure>
+  <section aria-labelledby="identity-h">
+    <h2 id="identity-h">System identity</h2>
+    <dl class="identity">
+    <dt>Hostname</dt><dd><code>users</code></dd>
+    <dt>Address</dt><dd><code>206.20.95.4</code> · segment via <code>fw-users</code> 206.20.95.11</dd>
+    <dt>Platform</dt><dd>Sun SPARCstation 5</dd>
+    <dt>OS</dt><dd>SunOS 4.1.4</dd>
+    <dt>Role</dt><dd>User services: authentication, mail, customer accounts.</dd>
+</dl>
+  </section>
+  <section aria-labelledby="services-h">
+    <h2 id="services-h">Services and configuration</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Service / role</th>
+      <th scope="col">Description</th>
+      <th scope="col">Configuration / evidence</th>
+      <th scope="col">Documentation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Secondary DNS (<code>dns2</code>)</th>
+      <td>Secondary nameserver for the Internet Force zones, transferred from DATA.</td>
+      <td class="col-cfg"><em>no USERS-specific configuration recovered</em></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/03-dns.en.md">DNS</a></td>
+    </tr>
+    <tr>
+      <th scope="row">XTACACS / AAA</th>
+      <td>Central authentication for every dial-up access server.</td>
+      <td class="col-cfg"><a href="../../systems/users/tacacs/xtacacsd-conf" class="cfg">tacacs/xtacacsd-conf</a> <span class="sep">·</span> <a href="../details.html?file=systems/users/tacacs/README.en.md" class="cfg">tacacs/</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/10-authentication-tacacs.en.md">Authentication (XTACACS)</a></td>
+    </tr>
+    <tr>
+      <th scope="row">SMTP / sendmail</th>
+      <td>Primary mail host for <code>internetforce.com</code> (MX 0), Sendmail 8.6.12.</td>
+      <td class="col-cfg"><a href="../../systems/users/mail/sendmail.cf.users" class="cfg">mail/sendmail.cf.users</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/04-email.en.md">Email</a></td>
+    </tr>
+    <tr>
+      <th scope="row">POP3</th>
+      <td>Mailbox access via the Berkeley <code>popper</code>.</td>
+      <td class="col-cfg"><a href="../../systems/users/system/inetd.conf" class="cfg">system/inetd.conf</a> <span class="sep">·</span> <a href="../../systems/users/system/services" class="cfg">system/services</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/04-email.en.md">Email</a> <span class="sep">·</span> <a class="doc" href="../details.html?file=docs/18-pop3-and-mailbox-access.en.md">POP3 and mailbox access</a></td>
+    </tr>
+    <tr>
+      <th scope="row">IMAP</th>
+      <td>Mailbox access via <code>imapd</code>.</td>
+      <td class="col-cfg"><a href="../../systems/users/system/inetd.conf" class="cfg">system/inetd.conf</a> <span class="sep">·</span> <a href="../../systems/users/system/services" class="cfg">system/services</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/04-email.en.md">Email</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Customer home directories and quotas</th>
+      <td>Accounts, restricted shell, disk quotas and filesystem layout.</td>
+      <td class="col-cfg"><a href="../../systems/users/system/passwd.users-jan1995" class="cfg">system/passwd.users-jan1995</a> <span class="sep">·</span> <a href="../../systems/users/system/quota.txt" class="cfg">system/quota.txt</a> <span class="sep">·</span> <a href="../../systems/users/system/restricted-shell.txt" class="cfg">system/restricted-shell.txt</a> <span class="sep">·</span> <a href="../../systems/users/system/rc.local" class="cfg">system/rc.local</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/12-customer-provisioning.en.md">Customer provisioning</a> <span class="sep">·</span> <a class="doc" href="../details.html?file=docs/14-operations-and-backup.en.md">Operations and backup</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Customer web pages</th>
+      <td>NCSA HTTPd for <code>~user</code> and virtual hosts.</td>
+      <td class="col-cfg"><a href="../../systems/users/system/httpd/httpd.conf" class="cfg">system/httpd/httpd.conf</a> <span class="sep">·</span> <a href="../details.html?file=systems/users/system/README.en.md" class="cfg">system/</a></td>
+      <td class="col-doc"><a class="doc" href="../details.html?file=docs/05-web-news-ftp.en.md">Web, FTP, news and mailing lists</a> <span class="sep">·</span> <a class="doc" href="../details.html?file=docs/19-web-permissions-and-cgi.en.md">Web permissions and CGI</a></td>
+    </tr>
+  </tbody>
+  </table>
+</div>  </section>
+
+  <section aria-labelledby="dnsnote-h">
+    <h2 id="dnsnote-h">Secondary DNS note</h2>
+    <p>There is no USERS-specific <code>named.boot</code> in the public archive: the secondary DNS role is documented, not configured here. The secondary-zone material is kept with the primary nameserver (<a href="../details.html?file=systems/data/dns/README.en.md">DATA/dns</a>).</p>
+  </section>
+  <section class="maps" aria-labelledby="maps-h">
+    <h2 id="maps-h">On the maps</h2>
+    <ul class="maplinks">
+      <li><a href="../network-map.en.html">Internet Force Network Map</a></li>
+      <li><a href="../systems-map.en.html">Systems Overview</a></li>
+    </ul>
+  </section>
+  <section class="techdoc" aria-labelledby="techdoc-h">
+    <h2 id="techdoc-h">Full technical documentation</h2>
+    <p><a class="button" href="../details.html?file=systems/users/README.en.md">Open the canonical USERS README</a></p>
+    <p class="muted">This HTML page is a compact presentation; the Markdown README is the canonical source.</p>
+  </section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Internet Force 1995–1996 Historical Archive · <a href="../details.html?file=LICENSE">CC BY 4.0</a> · <a href="https://pippo.com/me/">Marco Iannacone</a> · <a href="https://github.com/pippocom/internetforce-1995">GitHub repository</a></p>
+  </div>
+</footer>
+</body>
+</html>

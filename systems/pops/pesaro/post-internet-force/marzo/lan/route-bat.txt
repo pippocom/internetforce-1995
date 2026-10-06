@@ -1,0 +1,5 @@
+Ogni workstation sulla lan necessita del seguente batch:
+
+route add 195.120.225.64 MASK 255.255.255.224 195.120.225.5
+route add 195.120.225.128 MASK 255.255.255.224 195.120.225.5
+

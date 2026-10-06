@@ -1,0 +1,12 @@
+;
+;       Reverse mapping for localhost (127) pseudo subnet
+@                       IN      SOA     dns.xpert.com. limor.xpert.coml. (
+                                        96070201        ; serial
+                                        28800           ; refresh: 1 per day
+                                        7200            ; retry:   1 per hour
+                                        604800          ; expire:  42 days
+                                        86400           ; minimum: 1 week
+                                        )
+                        IN      NS      dns.xpert.com.
+1                       IN      PTR     localhost.
+

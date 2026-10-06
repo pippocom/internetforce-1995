@@ -1,0 +1,397 @@
+##
+## This file was created by tkined version 1.3.4	>> DO NOT EDIT <<
+##
+## This may look like TCL code but it is definitely not!
+##
+
+ined page A4 landscape
+
+set node18 [ ined -noupdate create NODE ]
+ined -noupdate move $node18 407.00 52.00
+ined -noupdate icon $node18 switch.xbm
+ined -noupdate font $node18 fixed
+ined -noupdate name $node18 {Office Hub}
+ined -noupdate address $node18 206.20.95.254
+ined -noupdate attribute $node18 SNMP:Config {-community public -address 206.20.95.254 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node18 name
+
+set node20 [ ined -noupdate create NODE ]
+ined -noupdate move $node20 876.00 33.00
+ined -noupdate icon $node20 router.xbm
+ined -noupdate font $node20 fixed
+ined -noupdate name $node20 206.20.64.29
+ined -noupdate address $node20 206.20.64.29
+ined -noupdate label $node20 name
+
+set node19 [ ined -noupdate create NODE ]
+ined -noupdate move $node19 553.00 212.00
+ined -noupdate icon $node19 switch.xbm
+ined -noupdate font $node19 fixed
+ined -noupdate name $node19 {World Hub}
+ined -noupdate address $node19 10.0.0.254
+ined -noupdate attribute $node19 SNMP:Config {-community public -address 10.0.0.254 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node19 name
+
+set node21 [ ined -noupdate create NODE ]
+ined -noupdate move $node21 877.00 101.00
+ined -noupdate font $node21 fixed
+ined -noupdate name $node21 {IDT / NYC}
+ined -noupdate address $node21 206.20.64.30
+ined -noupdate label $node21 name
+
+set node22 [ ined -noupdate create NODE ]
+ined -noupdate move $node22 601.00 157.00
+ined -noupdate icon $node22 bigBox.xbm
+ined -noupdate font $node22 fixed
+ined -noupdate color $node22 red
+ined -noupdate name $node22 UPS
+ined -noupdate address $node22 10.0.127.3
+ined -noupdate attribute $node22 {round trip time} {UPS\nunreachable}
+ined -noupdate attribute $node22 SNMP:Config {-community public -address 10.0.0.253 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node22 {round trip time}
+
+set node23 [ ined -noupdate create NODE ]
+ined -noupdate move $node23 560.00 565.00
+ined -noupdate icon $node23 tserver.xbm
+ined -noupdate font $node23 fixed
+ined -noupdate name $node23 10.0.4.130
+ined -noupdate address $node23 10.0.4.130
+ined -noupdate attribute $node23 {active users} {Line/1 9/1 */1 16/1}
+ined -noupdate attribute $node23 SNMP:Config {-community public -address 10.0.4.130 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node23 name
+
+set node24 [ ined -noupdate create NODE ]
+ined -noupdate move $node24 557.00 473.00
+ined -noupdate icon $node24 cisco.xbm
+ined -noupdate font $node24 fixed
+ined -noupdate name $node24 {2501 Palermo}
+ined -noupdate address $node24 10.0.4.1
+ined -noupdate attribute $node24 SNMP:Config {-community public -address 10.0.4.1 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node24 name
+
+set node25 [ ined -noupdate create NODE ]
+ined -noupdate move $node25 554.00 40.00
+ined -noupdate icon $node25 cisco.xbm
+ined -noupdate font $node25 fixed
+ined -noupdate name $node25 {CISCO 2501 - Intf}
+ined -noupdate address $node25 10.0.1.1
+ined -noupdate label $node25 name
+
+set node26 [ ined -noupdate create NODE ]
+ined -noupdate move $node26 814.00 283.00
+ined -noupdate icon $node26 cisco.xbm
+ined -noupdate font $node26 fixed
+ined -noupdate name $node26 {2501 Pesaro}
+ined -noupdate address $node26 10.0.3.1
+ined -noupdate attribute $node26 SNMP:Config {-community public -address 10.0.3.1 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node26 name
+
+set node27 [ ined -noupdate create NODE ]
+ined -noupdate move $node27 46.00 46.00
+ined -noupdate icon $node27 SparcStation.xbm
+ined -noupdate font $node27 fixed
+ined -noupdate name $node27 dvlp
+ined -noupdate address $node27 206.20.95.130
+ined -noupdate attribute $node27 SNMP:Config {-community public -address 206.20.95.130 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node27 name
+
+set network5 [ ined -noupdate create NETWORK 0.000000 0.000000 127.000000 0.000000  ]
+ined -noupdate move $network5 428.00 282.00
+ined -noupdate icon $network5 3
+ined -noupdate font $network5 fixed
+ined -noupdate name $network5 {10 (class A)}
+ined -noupdate address $network5 10
+ined -noupdate label $network5 name
+
+set node28 [ ined -noupdate create NODE ]
+ined -noupdate move $node28 447.00 201.00
+ined -noupdate icon $node28 SparcStation.xbm
+ined -noupdate font $node28 fixed
+ined -noupdate name $node28 firewall
+ined -noupdate address $node28 206.20.95.129
+ined -noupdate label $node28 name
+
+set network6 [ ined -noupdate create NETWORK 0.000000 0.000000 118.000000 0.000000  ]
+ined -noupdate move $network6 603.00 36.00
+ined -noupdate font $network6 fixed
+ined -noupdate name $network6 {206.20.64 (class C)}
+ined -noupdate address $network6 206.20.64
+ined -noupdate label $network6 name
+
+set node30 [ ined -noupdate create NODE ]
+ined -noupdate move $node30 296.00 2.00
+ined -noupdate icon $node30 SUN-Server.xbm
+ined -noupdate font $node30 fixed
+ined -noupdate name $node30 users
+ined -noupdate address $node30 206.20.95.4
+ined -noupdate label $node30 name
+
+set node29 [ ined -noupdate create NODE ]
+ined -noupdate move $node29 217.00 0.00
+ined -noupdate icon $node29 SUN-Server.xbm
+ined -noupdate font $node29 fixed
+ined -noupdate name $node29 data
+ined -noupdate address $node29 206.20.95.3
+ined -noupdate label $node29 name
+
+set network7 [ ined -noupdate create NETWORK 0.000000 0.000000 193.000000 0.000000  ]
+ined -noupdate move $network7 212.00 140.00
+ined -noupdate icon $network7 3
+ined -noupdate font $network7 fixed
+ined -noupdate name $network7 {206.20.95 (class C)}
+ined -noupdate address $network7 206.20.95
+ined -noupdate label $network7 name
+
+set node31 [ ined -noupdate create NODE ]
+ined -noupdate move $node31 817.00 430.00
+ined -noupdate icon $node31 tserver.xbm
+ined -noupdate font $node31 fixed
+ined -noupdate name $node31 10.0.3.130
+ined -noupdate address $node31 10.0.3.130
+ined -noupdate attribute $node31 {active users} {8/1 Line/1 */1 6/1 16/1}
+ined -noupdate label $node31 name
+
+set network8 [ ined -noupdate create NETWORK 0.000000 0.000000 90.000000 0.000000  ]
+ined -noupdate move $network8 785.00 525.00
+ined -noupdate font $network8 fixed
+ined -noupdate name $network8 {206.20.115 (class C)}
+ined -noupdate address $network8 206.20.115
+ined -noupdate label $network8 name
+
+set link22 [ ined -noupdate create LINK $network5 $node19  ]
+
+set network10 [ ined -noupdate create NETWORK 0 0 109.0 0.0 ]
+ined -noupdate move $network10 629.00 629.00
+ined -noupdate font $network10 fixed
+ined -noupdate name $network10 {206.20.224 (class C)}
+ined -noupdate address $network10 206.20.224
+ined -noupdate label $network10 name
+
+set node32 [ ined -noupdate create NODE ]
+ined -noupdate move $node32 42.00 119.00
+ined -noupdate icon $node32 unixpc.xbm
+ined -noupdate font $node32 fixed
+ined -noupdate name $node32 marco
+ined -noupdate address $node32 206.20.95.140
+ined -noupdate attribute $node32 {active users} root/6
+ined -noupdate label $node32 name
+
+set network9 [ ined -noupdate create NETWORK 0.000000 0.000000 96.000000 0.000000  ]
+ined -noupdate move $network9 490.00 662.00
+ined -noupdate font $network9 fixed
+ined -noupdate name $network9 {206.20.225 (class C)}
+ined -noupdate address $network9 206.20.225
+ined -noupdate label $network9 name
+
+set link23 [ ined -noupdate create LINK $network6 $node20  ]
+
+set node33 [ ined -noupdate create NODE ]
+ined -noupdate move $node33 697.00 174.00
+ined -noupdate icon $node33 tserver.xbm
+ined -noupdate font $node33 fixed
+ined -noupdate name $node33 ts1.internetforce.com
+ined -noupdate address $node33 10.0.2.1
+ined -noupdate attribute $node33 {active users} {Line/1 */1}
+ined -noupdate label $node33 address
+
+set link24 [ ined -noupdate create LINK $network6 $node25  ]
+
+set node34 [ ined -noupdate create NODE ]
+ined -noupdate move $node34 430.00 497.00
+ined -noupdate icon $node34 cisco.xbm
+ined -noupdate font $node34 fixed
+ined -noupdate name $node34 {2501 Gorgonzola}
+ined -noupdate address $node34 10.0.5.1
+ined -noupdate attribute $node34 SNMP:Config {-community public -address 10.0.5.1 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node34 name
+
+set link25 [ ined -noupdate create LINK $node22 $node19  ]
+
+set node35 [ ined -noupdate create NODE ]
+ined -noupdate move $node35 435.00 612.00
+ined -noupdate icon $node35 tserver.xbm
+ined -noupdate font $node35 fixed
+ined -noupdate name $node35 10.0.5.130
+ined -noupdate address $node35 10.0.5.130
+ined -noupdate attribute $node35 {active users} {Line/1 */1 16/1}
+ined -noupdate attribute $node35 SNMP:Config {-community public -address 10.0.5.130 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node35 name
+
+set link26 [ ined -noupdate create LINK $node25 $node19  ]
+
+set link27 [ ined -noupdate create LINK $network5 $node26  ]
+
+set link28 [ ined -noupdate create LINK $node20 $node21  ]
+
+set link30 [ ined -noupdate create LINK $network5 $node28  ]
+
+set link29 [ ined -noupdate create LINK $network7 $node27  ]
+
+set link31 [ ined -noupdate create LINK $node23 $node24  ]
+
+set link32 [ ined -noupdate create LINK $network5 $node24  ]
+
+set stripchart17 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart17 447.00 0.00
+ined -noupdate font $stripchart17 fixed
+ined -noupdate color $stripchart17 blue
+ined -noupdate scale $stripchart17 14.00
+ined -noupdate size $stripchart17 415 -22 479 22
+ined -noupdate name $stripchart17 {Office Hub}
+ined -noupdate address $stripchart17 206.20.95.254
+ined -noupdate attribute $stripchart17 {interface load} {3Com LinkBuilder FMS type:ETH 0.00 %}
+ined -noupdate label $stripchart17 {interface load}
+ined -noupdate values $stripchart17 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0299683 0.000706549 0.000374604 0.000374542 0.000711881 0.000459923 0.000706196 0.000545333 0.000882373 0.00046 0.000791736 0.000459847 0.000601033 0.000711763
+
+set link34 [ ined -noupdate create LINK $network5 $node34  ]
+
+set stripchart18 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart18 500.00 107.00
+ined -noupdate font $stripchart18 fixed
+ined -noupdate color $stripchart18 blue
+ined -noupdate scale $stripchart18 14.00
+ined -noupdate size $stripchart18 468 85 532 129
+ined -noupdate name $stripchart18 {CISCO 2501 - Intf}
+ined -noupdate address $stripchart18 10.0.1.1
+ined -noupdate attribute $stripchart18 {interface load} {Ethernet0 0.03 %}
+ined -noupdate label $stripchart18 {interface load}
+ined -noupdate values $stripchart18 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0867114 0.242619 0.299692 0.387346 0.230951 0.0200847 0.0795149 0.119556 0.0593448 0.0784523 0.0493051 0.0516781 0.0497804 0.0276581
+
+set link35 [ ined -noupdate create LINK $node35 $node34  ]
+
+set stripchart20 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart20 594.00 369.00
+ined -noupdate font $stripchart20 fixed
+ined -noupdate color $stripchart20 blue
+ined -noupdate scale $stripchart20 100.00
+ined -noupdate size $stripchart20 562 347 626 391
+ined -noupdate name $stripchart20 {2501 Palermo}
+ined -noupdate address $stripchart20 10.0.4.1
+ined -noupdate attribute $stripchart20 {interface load} {Ethernet0 0.02 %}
+ined -noupdate label $stripchart20 {interface load}
+ined -noupdate values $stripchart20 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0686733 0.006052 0.00284353 0.00273021 0.00271955 0.0182703 0.00353498 0.0572842 0.0623056 0.171906 0.0483559 0.0489465 0.0472724 0.0247491
+
+set stripchart19 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart19 796.00 70.00
+ined -noupdate font $stripchart19 fixed
+ined -noupdate color $stripchart19 blue
+ined -noupdate scale $stripchart19 17.00
+ined -noupdate size $stripchart19 764 48 828 92
+ined -noupdate name $stripchart19 {CISCO 2501 - Intf}
+ined -noupdate address $stripchart19 10.0.1.1
+ined -noupdate attribute $stripchart19 {interface load} {Serial0 1.31 %}
+ined -noupdate label $stripchart19 {interface load}
+ined -noupdate values $stripchart19 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 2.46454 16.5646 20.3811 27.1179 13.6213 0.870272 4.07026 4.24771 2.92816 3.31788 2.80365 3.02427 2.90115 1.30884
+
+set link36 [ ined -noupdate create LINK $node31 $node26  ]
+
+set stripchart21 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart21 626.00 479.50
+ined -noupdate font $stripchart21 fixed
+ined -noupdate color $stripchart21 blue
+ined -noupdate scale $stripchart21 14.00
+ined -noupdate size $stripchart21 594 458 658 501
+ined -noupdate name $stripchart21 {2501 Palermo}
+ined -noupdate address $stripchart21 10.0.4.1
+ined -noupdate attribute $stripchart21 {interface load} {Serial0 2.45 %}
+ined -noupdate label $stripchart21 {interface load}
+ined -noupdate values $stripchart21 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.344375 0.130187 0.116647 0.127479 1.53704 0.173842 6.2848 8.99286 18.7736 5.3841 5.73746 5.5242 2.44668
+
+set link37 [ ined -noupdate create LINK $network7 $node32  ]
+
+set stripchart22 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart22 475.00 369.00
+ined -noupdate font $stripchart22 fixed
+ined -noupdate color $stripchart22 blue
+ined -noupdate scale $stripchart22 1.00
+ined -noupdate size $stripchart22 443 347 507 391
+ined -noupdate name $stripchart22 10.0.5.1
+ined -noupdate address $stripchart22 10.0.5.1
+ined -noupdate attribute $stripchart22 {interface load} {Ethernet0 0.00 %}
+ined -noupdate label $stripchart22 {interface load}
+ined -noupdate values $stripchart22 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0900779 0.00176771 0.00575333 0.00265022 0.0025809 0.00265022 0.0026489 0.00297116 0.0034261 0.00289018 0.00296968 0.00297017 0.00296968 0.00296968
+
+set link38 [ ined -noupdate create LINK $node31 $network8  ]
+
+set stripchart23 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart23 362.50 552.00
+ined -noupdate font $stripchart23 fixed
+ined -noupdate color $stripchart23 blue
+ined -noupdate scale $stripchart23 14.00
+ined -noupdate size $stripchart23 330 530 395 574
+ined -noupdate name $stripchart23 10.0.5.1
+ined -noupdate address $stripchart23 10.0.5.1
+ined -noupdate attribute $stripchart23 {interface load} {Serial0 0.12 %}
+ined -noupdate label $stripchart23 {interface load}
+ined -noupdate values $stripchart23 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0399933 0.353542 0.116647 0.105816 0.116628 0.116608 0.116686 0.116628 0.116667 0.116628 0.116647 0.116628 0.116628
+
+set link40 [ ined -noupdate create LINK $network7 $node29  ]
+
+set link39 [ ined -noupdate create LINK $network5 $node33  ]
+
+set stripchart24 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart24 766.00 182.00
+ined -noupdate font $stripchart24 fixed
+ined -noupdate color $stripchart24 blue
+ined -noupdate scale $stripchart24 14.00
+ined -noupdate size $stripchart24 734 160 798 204
+ined -noupdate name $stripchart24 {2511 Milano}
+ined -noupdate address $stripchart24 10.0.2.1
+ined -noupdate attribute $stripchart24 {interface load} {Ethernet0 0.00 %}
+ined -noupdate label $stripchart24 {interface load}
+ined -noupdate values $stripchart24 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0585532 0.00139577 0.00439733 0.00220897 0.00220897 0.0022086 0.00220823 0.00252933 0.00298484 0.00244893 0.00252891 0.00260846 0.00260846 0.00260803
+
+set link41 [ ined -noupdate create LINK $network7 $node30  ]
+
+set stripchart25 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart25 726.00 315.00
+ined -noupdate font $stripchart25 fixed
+ined -noupdate color $stripchart25 blue
+ined -noupdate scale $stripchart25 100.00
+ined -noupdate size $stripchart25 694 293 758 337
+ined -noupdate name $stripchart25 {2501 Pesaro}
+ined -noupdate address $stripchart25 10.0.3.1
+ined -noupdate attribute $stripchart25 {interface load} {Ethernet0 0.03 %}
+ined -noupdate label $stripchart25 {interface load}
+ined -noupdate values $stripchart25 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.337091 0.168388 0.153523 0.1774 0.147511 0.00889703 0.00485357 0.00554564 0.00553774 0.00500267 0.00501083 0.00573238 0.0149133 0.0278681
+
+set link42 [ ined -noupdate create LINK $network7 $node28  ]
+
+set stripchart26 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart26 855.00 349.00
+ined -noupdate font $stripchart26 fixed
+ined -noupdate color $stripchart26 blue
+ined -noupdate scale $stripchart26 14.00
+ined -noupdate size $stripchart26 823 327 887 371
+ined -noupdate name $stripchart26 {2501 Pesaro}
+ined -noupdate address $stripchart26 10.0.3.1
+ined -noupdate attribute $stripchart26 {interface load} {Serial0 2.07 %}
+ined -noupdate label $stripchart26 {interface load}
+ined -noupdate values $stripchart26 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 22.9308 22.0252 24.8617 20.739 44.577 45.4966 39.8778 40.186 39.8794 40.1726 39.9098 7.83729 2.07195
+
+set link43 [ ined -noupdate create LINK $node18 $network7  ]
+
+set link44 [ ined -noupdate create LINK $network10 $node23  ]
+
+set link45 [ ined -noupdate create LINK $network5 $node23  ]
+
+set link47 [ ined -noupdate create LINK $network9 $node35  ]
+
+set interpreter7 [ ined -noupdate create INTERPRETER ip_monitor.tcl ]
+ined send $interpreter7 restart {Active Users} 60 job0 $stripchart15 
+ined send $interpreter7 restart {Active Users} 60 job1 $node31 
+ined send $interpreter7 restart {Active Users} 60 job2 $node23 
+ined send $interpreter7 restart {Active Users} 60 job3 $node35 
+ined send $interpreter7 restart {Active Users} 60 job4 $node33 
+ined send $interpreter7 restart {Active Users} 60 job5 $node32 
+ined send $interpreter7 restart {Check Reachability} 60 job6 $node22 
+
+set interpreter8 [ ined -noupdate create INTERPRETER snmp_monitor.tcl ]
+ined send $interpreter8 restart start_ifload_monitor 60 job0 10.0.1.1  $stripchart18 1 $stripchart19 2 $ 3
+ined send $interpreter8 restart start_ifload_monitor 60 job1 206.20.95.254  $stripchart17 1 $ 2
+ined send $interpreter8 restart start_ifload_monitor 60 job2 10.0.4.1  $stripchart20 1 $stripchart21 2 $ 3
+ined send $interpreter8 restart start_ifload_monitor 60 job3 10.0.5.1  $stripchart22 1 $stripchart23 2 $ 3
+ined send $interpreter8 restart start_ifload_monitor 60 job4 10.0.2.1  $stripchart24 1 $ 2 $ 3 $ 4 $ 5 $ 6 $ 7 $ 8 $ 9 $ 10 $ 11 $ 12 $ 13 $ 14 $ 15 $ 16 $ 17 $ 18 $ 19
+ined send $interpreter8 restart start_ifload_monitor 60 job5 10.0.3.1  $stripchart10 1 $ 2 $ 3
+ined send $interpreter8 restart start_ifload_monitor 60 job6 10.0.3.1  $stripchart25 1 $stripchart26 2 $ 3
+

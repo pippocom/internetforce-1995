@@ -1,0 +1,213 @@
+!
+version 10.3
+!
+hostname 2511pesaro
+!
+enable secret 5 $1$pdMX$ItxWZEGF35JPN.exx6rJg/
+enable password <ORIGINAL PASSWORD REMOVED>
+!
+ip subnet-zero
+!
+interface Ethernet0
+ ip address 195.120.225.2 255.255.255.224
+!
+interface Serial0
+ no ip address
+ encapsulation ppp
+ bandwidth 64
+ shutdown
+!
+interface Serial1
+ no ip address
+ shutdown
+!
+interface Async1
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.97
+ async mode interactive
+ no cdp enable
+!
+interface Async2
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.98
+ async mode interactive
+ no cdp enable
+!
+interface Async3
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.99
+ async mode interactive
+no cdp enable
+!
+interface Async4
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.100
+ async mode interactive
+ no cdp enable
+!
+interface Async5
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.101
+ async mode interactive
+ no cdp enable
+!
+interface Async6
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.102
+ async mode interactive
+ no cdp enable
+!
+interface Async7
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.103
+ async mode interactive
+ no cdp enable
+!
+interface Async8
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.104
+ async mode interactive
+ no cdp enable
+!
+interface Async9
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+async default ip address 195.120.225.105
+ async mode interactive
+ no cdp enable
+!
+interface Async10
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.106
+ async mode interactive
+ no cdp enable
+!
+interface Async11
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.107
+ async mode interactive
+ no cdp enable
+!
+interface Async12
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.108
+ async mode interactive
+ no cdp enable
+!
+interface Async13
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.109
+ async mode interactive
+ no cdp enable
+!
+interface Async14
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.110
+ async mode interactive
+ no cdp enable
+!
+interface Async15
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.111
+ async mode interactive
+ no cdp enable
+!
+interface Async16
+ ip unnumbered Ethernet0
+ ip tcp header-compression passive
+ encapsulation ppp
+ async default ip address 195.120.225.112
+ async mode interactive
+ no cdp enable
+!
+ip name-server 195.120.225.6
+ip name-server 151.99.125.2
+ip route 0.0.0.0 0.0.0.0 195.120.225.1
+ip route 195.120.225.0 255.255.255.224 Ethernet0
+ip route 195.120.225.32 255.255.255.224 Ethernet0
+ip route 195.120.225.64 255.255.255.224 Ethernet0
+ip route 195.120.225.160 255.255.255.224 195.120.225.3
+ip route 195.120.225.192 255.255.255.224 195.120.225.3
+tacacs-server host 195.120.225.6
+tacacs-server extended
+tacacs-server authenticate connections
+tacacs-server authenticate slip always
+tacacs-server notify connections
+tacacs-server notify enable
+tacacs-server notify logout
+tacacs-server notify slip
+snmp-server community <ORIGINAL SECRET REMOVED> RO
+!
+line con 0
+ exec-timeout 0 0
+ terminal-type vt100
+ exec-character-bits 8
+line 1 15
+ exec-timeout 0 0
+ login tacacs
+ modem ri-is-cd
+ terminal-type vt100
+ exec-character-bits 8
+ stopbits 1
+ rxspeed 38400
+ txspeed 38400
+ flowcontrol hardware
+line 16
+ exec-timeout 0 30
+ password <ORIGINAL PASSWORD REMOVED>
+ login
+ modem InOut
+ no activation-character
+ terminal-type vt100
+ exec-character-bits 8
+ special-character-bits 8
+ transport input telnet
+ transport output telnet
+ escape-character BREAK
+ stopbits 1
+ rxspeed 19200
+ txspeed 19200
+ flowcontrol hardware
+line aux 0
+ login
+ terminal-type vt100
+ exec-character-bits 8
+ rxspeed 38400
+ txspeed 38400
+ flowcontrol hardware
+line vty 0 4
+ password <ORIGINAL PASSWORD REMOVED>
+ login
+ terminal-type vt100
+ exec-character-bits 8
+!
+end

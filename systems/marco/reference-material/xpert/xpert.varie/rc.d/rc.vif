@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Virtual Interfaces (vif) configuration
+# Written 16-04-96, Yossi Gottlieb.
+# Updated for Linux 2.0, 19-07-96, Yossi Gottlieb.
+# Added 132.8 - limor 21/07/96
+
+# List of addresses, space-delimited. This is the only user-servicable
+# part in this file.
+ADDRLIST='199.203.132.2 199.203.132.7 199.203.132.8 199.203.132.11 199.203.132.12'
+MODULEDIR=/boot/vif
+
+iface=0
+for addr in $ADDRLIST
+do
+	/sbin/ifconfig eth0:$iface $addr netmask 255.255.255.0 up
+	/sbin/route add $addr eth0:$iface
+
+	iface=$((iface + 1))
+done
+
+# End of rc.vif

@@ -1,0 +1,287 @@
+Registration of .it domains - Internet Force procedure 1995-1996
+================================================================
+
+This document reconstructs how Internet Force registered Italian .it domains in
+the years 1995-1996. The reconstruction is based on the email exchanges with
+GARR-NIS (the service that managed the .it registry at the time) and on the DNS
+configurations of the period.
+
+Compared with .com/.net domains, registering a .it domain required two things
+together:
+
+- technical DNS requirements: a configured zone and declared nameservers;
+- administrative information about the requesting subject, with a declaration
+  of assumption of responsibility also sent by fax.
+
+The registry was not InterNIC but GARR-NIS (GARR Network Information Service,
+c/o CNUCE - Istituto del CNR, Pisa). The request was not submitted through an
+InterNIC template but as a RIPE-style textual object, sent by email.
+
+------------------------------------------------------------------------------
+1. Who did what
+------------------------------------------------------------------------------
+
+Customer
+  Provided the domain name, the company/body data and the administrative
+  contacts.
+
+Internet Force (Marco Iannacone, with the technical and administrative contacts)
+  Collected the data, registered the organization, prepared the DNS zone, filled
+  in the domain object (with the nameservers) and sent it to GARR-NIS, handled
+  the declaration of responsibility by fax and followed the exchanges through to
+  completion.
+
+GARR-NIS (.it registry)
+  Received the requests at domain@nis.garr.it, the registration of organizations
+  at ORG-REG@NIS.GARR.IT and the exchanges with staff@nis.garr.it. The system
+  had two automatic phases and one human verification phase: a "syntax check
+  phase" (syntactic check by a robot) and a "semantic control phase"
+  (verification of the domain name and cross-check with the documents of the
+  requesting organization), which could take up to 10 working days.
+
+------------------------------------------------------------------------------
+2. Workflow followed by Internet Force
+------------------------------------------------------------------------------
+
+From the preserved exchanges this sequence emerges:
+
+1.  Request for the domain and collection of the requester's data.
+2.  Registration of the organization with GARR-NIS
+    (message to ORG-REG@NIS.GARR.IT with the company data and the contacts).
+3.  Preparation of the domain object in RIPE style: domain name, organization,
+    description, administrative/technical/postmaster/zone contacts, nameservers,
+    network, remark, maintainer.
+4.  DNS configuration: zone on the Internet Force server and declared
+    nameservers (Internet Force primary, GARR secondary dns.nis.garr.it).
+5.  Sending the request to domain@nis.garr.it.
+6.  Automatic syntactic check ("Syntax Check Phase") by the GARR-NIS robot. If
+    there are no errors, the request passes the phase.
+7.  Passing to the "semantic control phase" by the registry staff.
+8.  Sending by fax of the declaration of assumption of responsibility and of the
+    detailed information about the company requested for registration.
+9.  Handling of any warnings or correction requests and, if needed, re-sending of
+    the request.
+10. Completion: GARR-NIS confirms with "Update OK: [domain] ..." and sends a
+    notification of the new object created in the database.
+11. Postmaster reachability test: GARR sends an automatic message to
+    postmaster@<domain> to check that the address works, as foreseen by the rules
+    subscribed at the time of registration.
+
+Note on the maintainer. From spring-summer 1996 GARR-NIS made the mnt-by
+attribute (reference to the object's "maintainer") mandatory in domain objects:
+in the absence of that field the robot prevented the request from passing the
+syntactic check. Internet Force used the maintainer INTERNETFORCE-MNT.
+
+------------------------------------------------------------------------------
+3. Data requested
+------------------------------------------------------------------------------
+
+Domain field (RIPE-style "domain" object):
+
+  domain        name of the domain (e.g. cnn.it)
+  x400-domain   X.400 representation (e.g. c=it; admd=0; prmd=cnn;)
+  org           organization holding the domain
+  descr         description of the organization
+  admin-c       administrative contact
+  tech-c        technical contact (one or more)
+  postmaster    address responsible for mail
+  zone-c        contact for the DNS zone
+  nserver       nameserver, with IP address (one or more)
+  dom-net       network associated with the domain
+  remarks       notes (e.g. "Fully-managed")
+  mnt-by        maintainer responsible for the object (e.g. INTERNETFORCE-MNT)
+  changed       author and date of the last modification
+  source        source of the data (GARR-NIS)
+
+Related "person" objects (one for each contact):
+
+  person, address (street, city, postal code, country), phone, fax-no, e-mail,
+  changed, source
+
+Registration of the organization (separate message):
+
+  organization-name, organization-alias-name, organization-unit,
+  address-street, address-locality, address-province, address-zip, country,
+  descr, phone, fax-no, telex, associated-domain, dir-admin, directory,
+  and the related person objects
+
+Administrative data.
+  From the exchanges it emerges that to complete the registration an "assumption
+  of responsibility" was necessary: Marco Iannacone had sent by fax "la mia
+  domanda di assunzione di responsabilita', e le informazioni dettagliate sulla
+  nostra societa' che richiedete per la registrazione di un dominio" ["my letter
+  of assumption of responsibility, and the detailed information about our
+  company that you request for the registration of a domain"]. The preserved
+  emails do not list in detail the individual company data contained in that fax;
+  therefore fields that are not documented are not reported here.
+
+------------------------------------------------------------------------------
+4. Brief explanation of the DNS concepts
+------------------------------------------------------------------------------
+
+SOA, NS, A, MX, CNAME, primary/master DNS, secondary/slave DNS and delegation
+are the same concepts described for .com/.net domains in the document
+domini_com_net.txt. In the .it case two elements typical of this registry are
+added:
+
+- the secondary nameserver was often the GARR DNS (dns.nis.garr.it,
+  131.114.2.5 / 192.12.192.5), which appeared as an NS of the zone;
+- the delegation took place through the GARR-NIS registry, which published the
+  nameservers declared in the domain object.
+
+For .it domains too the close relationship between registration and DNS holds:
+the zone had to be ready and the nameservers reachable, otherwise the domain
+would not resolve even once registered.
+
+------------------------------------------------------------------------------
+5. Real example of a request (domain object)
+------------------------------------------------------------------------------
+
+Below is the domain object sent for cnn.it (mailbox GARR-DOMINI_IT.mailbox), in
+the final version that passed the checks. The structure and terminology are the
+original ones.
+
+    domain:    cnn.it
+    x400-domain: c=it; admd=0; prmd=cnn;
+    org:       Cyber National Network
+    descr:     Cyber National Network - Servizi su Internet
+    admin-c:   Christian Colombo
+    tech-c:    Marco Iannacone
+    tech-c:    Christian Colombo
+    postmaster: Christian Colombo
+    zone-c:    Christian Colombo
+    nserver:   206.20.228.70  cnn-server.cnn.it
+    nserver:   131.114.2.5  192.12.192.5  dns.nis.garr.it
+    nserver:   206.20.95.3 dns.internetforce.it
+    dom-net:   206.20.228.0
+    remarks:   Fully-managed
+    mnt-by:    INTERNETFORCE-MNT
+    changed:   ianna@marco.internetforce.com 960902
+    source:    GARR-NIS
+
+The outcome, reported by GARR-NIS, was:
+
+    Syntax Check Phase OK: [domain] cnn.it
+    ...
+    Update OK: [domain] cnn.it
+
+followed by the "OBJECT BELOW CREATED" notification with the new domain object.
+
+The same exchange also documents the registration of the organization "Cyber
+National Network" and of the related person objects (Marco Iannacone and
+Christian Colombo), which were sent separately to ORG-REG@NIS.GARR.IT.
+
+Domain internetforce.it.
+  The request for internetforce.it (June 1996) shows the complete case with
+  registration of the organization and of the zone before completion; the domain
+  is declared "Fully-managed" with nameservers dns.internetforce.it
+  (206.20.95.3) and dns.nis.garr.it.
+
+------------------------------------------------------------------------------
+6. Real example of a DNS configuration (.it)
+------------------------------------------------------------------------------
+
+The domain promotion.it, registered with GARR-NIS, is hosted on the Internet
+Force DNS. The generated zone is in
+systems/data/dns/named-data/primary/promotion.it:
+
+    @  IN  SOA  dns.promotion.it. dnsmaster.promotion.it. (
+              1996092404   ; Serial
+              86400        ; Refresh
+              3600         ; Retry 1 hour
+              604800       ; Expire after a week
+              86400 )      ; Minimum ttl 1 day
+                        NS  dns.nis.garr.it.
+                        NS  dns.promotion.it.
+    www     A   206.20.95.143
+    dns     A   206.20.95.3
+    localhost  A  127.0.0.1
+
+Here too the zone mirrors the registration:
+
+- the nameservers declared to GARR (dns.promotion.it and dns.nis.garr.it) appear
+  as NS records;
+- the host www has the site's address (206.20.95.143).
+
+The complete zone: systems/data/dns/named-data/primary/promotion.it
+Master source: systems/data/dns/named-data/promotion.it.source
+Declaration in named.boot: systems/data/dns/named.boot (line "primary
+promotion.it").
+
+Another example linked to the exchanges: the domain cnn.it appears as a
+secondary zone managed by Internet Force
+(systems/data/dns/named-data/secondary/cnn.it; source cnn.it.source), with the
+primary at CNN (cnn-server.cnn.it, 206.20.228.70).
+
+------------------------------------------------------------------------------
+7. Errors and iterations
+------------------------------------------------------------------------------
+
+The process was manual and provided for several check points.
+
+- Syntax warning. In the first request for internetforce.it the GARR robot
+  reported:
+
+      WARNING:     if you have a mntner object, please add the "mnt-by:" tag.
+
+  Since the message added that "Objects that just generated a WARNING have been
+  reset to the correct value and have gotten over the syntax control phase",
+  Marco asked the staff to confirm that the request did not have to be
+  re-sent. It is a concrete example of how the automatic syntactic check could
+  report a missing field without definitively blocking the request.
+
+- Declaration of responsibility. Before completion, the letter of assumption of
+  responsibility was sent by fax together with the information about the
+  company. Registration therefore required an administrative step on paper, not
+  only electronic.
+
+- Re-sends and updates. For promotion.it one observes a first send, a positive
+  syntactic check and then a later message with the subject "Re: registrazione
+  dominio promotion.it (2)" ["Re: promotion.it domain registration (2)"] that
+  produces the "OBJECT BELOW CREATED" notification with the nameserver updated
+  to dns.promotion.it.
+
+- Unrecognized domains. GARR-NIS periodically sent the "Lista dei domini non
+  riconosciuti" ["List of unrecognized domains"] and flagged the domains that
+  remained without an associated maintainer, marked with
+  "mnt-by: NO-PROVIDER-MNT" and deactivatable after six months. It helps to
+  understand how central the maintainer attribute was in the .it registry.
+
+------------------------------------------------------------------------------
+Repository references
+------------------------------------------------------------------------------
+
+Mailboxes used:
+  artifacts/email-archive/technical/GARR-DOMINI_IT.mailbox
+    Requests for internetforce.it, cnn.it and promotion.it; registration of the
+    organization; syntax and semantic control phase; declaration of
+    responsibility; "OBJECT BELOW CREATED" notifications.
+  artifacts/email-archive/technical/ITALIAN_POSTMAST.mailbox
+    GARR thread on the postmasters list and on the maintainer (activation of
+    mnt-by, list of the orphan domains).
+
+DNS configurations used:
+  systems/data/dns/named-data/primary/promotion.it   (example .it zone)
+  systems/data/dns/named-data/promotion.it.source    (master source)
+  systems/data/dns/named-data/primary/internetforce.it
+  systems/data/dns/named-data/secondary/cnn.it
+  systems/data/dns/named.boot                         (list of the zones)
+
+Related DNS documentation:
+  systems/data/dns/README.md
+  systems/data/dns/TECHNICAL.md
+  systems/data/dns/DOMAIN-PROVISIONING-WORKFLOW.md
+  docs/03-dns.md
+  systems/sun-vif/README.md
+
+------------------------------------------------------------------------------
+Historical external sources
+------------------------------------------------------------------------------
+
+- GARR-NIS, "Regole di naming" for .it domains. It is the document that the GARR
+  emails themselves refer to:
+  http://www.nis.garr.it/netdoc/ITA-PE/Documenti/regole-naming.txt
+  (URL cited in the preserved automatic replies of 1996).
+
+Note: the domain/person/organization objects are not an external source, but the
+historical format actually used in the Internet Force exchanges.

@@ -1,0 +1,57 @@
+
+MAKEZONES = /etc/named/makezones-0.10
+
+all = 	primary/xpert.co.il \
+	primary/xpert.com \
+	primary/elmar.co.il \
+	primary/elmar.com \
+	primary/divra.com \
+	primary/xacct.com \
+	primary/yahel.org \
+	primary/topmusic.com \
+	primary/ag-tech.co.il \
+	primary/igud.org.il \
+
+all : ${all}
+
+#primary/xpert.co.il : xpert.co.il.source
+#	$(MAKEZONES) xpert.co.il.source xpert.co.il primary/xpert.co.il
+#	kill -HUP `cat /var/run/named.pid`
+
+primary/xpert.com : xpert.com.source
+	$(MAKEZONES) xpert.com.source xpert.com primary/xpert.com primary/db.199.203.132
+	sed -e 's;xpert.com;xpert.co.il;g' < primary/xpert.com > primary/xpert.co.il
+	kill -HUP `cat /var/run/named.pid`
+
+primary/elmar.co.il : elmar.co.il.source
+	$(MAKEZONES) elmar.co.il.source elmar.co.il primary/elmar.co.il
+	kill -HUP `cat /var/run/named.pid`
+
+primary/elmar.com : elmar.com.source
+	$(MAKEZONES) elmar.com.source elmar.com primary/elmar.com
+	kill -HUP `cat /var/run/named.pid`
+
+primary/divra.com : divra.com.source
+	$(MAKEZONES) divra.com.source divra.com primary/divra.com
+	kill -HUP `cat /var/run/named.pid`
+
+primary/xacct.com : xacct.com.source
+	$(MAKEZONES) xacct.com.source xacct.com primary/xacct.com
+	kill -HUP `cat /var/run/named.pid`
+
+primary/ag-tech.co.il : ag-tech.co.il.source
+	$(MAKEZONES) ag-tech.co.il.source ag-tech.co.il primary/ag-tech.co.il
+	kill -HUP `cat /var/run/named.pid`
+
+primary/yahel.org : yahel.org.source
+	$(MAKEZONES) yahel.org.source yahel.org primary/yahel.org
+	kill -HUP `cat /var/run/named.pid`
+
+primary/topmusic.com : topmusic.com.source
+	$(MAKEZONES) topmusic.com.source topmusic.com primary/topmusic.com
+	kill -HUP `cat /var/run/named.pid`
+
+primary/igud.org.il : igud.org.il.source
+	$(MAKEZONES) igud.org.il.source igud.org.il primary/igud.org.il
+	kill -HUP `cat /var/run/named.pid`
+

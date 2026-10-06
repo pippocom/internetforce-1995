@@ -1,0 +1,1661 @@
+From ianna@marco.internetforce.com Fri May 10 15:00:49 1996
+Date: Fri, 10 May 1996 15:00:42 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: rashid@ios.com
+Subject: news.ios.com
+Message-ID: <Pine.LNX.3.91.960510145249.24827C-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+
+Hi Rashid, how you doing?
+
+Today I have some problems to connect to news.ios.com and access to the 
+newsgroup.... I get the following message:
+
+Error reported by server: 502 you have no permission to talk.
+
+Are Internet Force's users forbidden to read news from ios?
+Since when? 
+
+thanks,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE - Italy
+
+
+From ianna@marco.internetforce.com Tue May 14 12:07:47 1996
+Date: Tue, 14 May 1996 12:07:45 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: ianna@iol.it
+Subject: IDT dedicated Internet service update
+Message-ID: <Pine.LNX.3.91.960514120729.7640A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+---------- Forwarded message ----------
+Date: Mon, 13 May 1996 14:48:42 -0400 (EDT)
+From: IDT Network Operations Center <noc@idt.net>
+To: IDT Dedicated Internet Customers <dedicated@idt.net>
+Subject: IDT dedicated Internet service update
+
+Hi folks.  As I move on to other responsibilities, I'd like to update
+you with the latest contact info for your dedicated Internet service.
+It has been a pleasure to work with many of you.
+
+The current contact list is as follows:
+
+IDT post-sales customer support, domain name registration, business issues,
+and initial contact for technical issues:
+		Ira Rosen		(201)928-4423		irosen@ios.com
+		Joe Kelly		""					polarcat@village.ios.com
+
+IDT dedicated network operations:
+		Dan Burnham		(201)928-4457, pager (800)225-0256 #313647
+		Golan Ben-Oni	(201)928-4357, pager (800)225-0256 #85452
+		nights/weekends (800)321-7648 (and be sure to tell us you are
+						a DEDICATED Internet customer)
+		via e-mail		noc@ios.com
+
+IDT domain name service (DNS) operations, database updates, Usenet
+news configuration issues:
+		Alex Yashkov	(201)928-4492, pager (800)225-0256 #310495
+											alexis@ios.com
+---
+Stuart Freedman					stuart@ios.com
+International Discount Telecommunications	+1 201 928 4457
+294 State Street				FAX: +1 201 928 1057
+Hackensack, NJ 07601-5515 U.S.A.
+
+
+From ianna@marco.internetforce.com Wed May 15 12:52:32 1996
+Date: Wed, 15 May 1996 12:52:29 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: noc@ios.com
+cc: stuart@ios.com
+Subject: routing problem
+Message-ID: <Pine.LNX.3.91.960515123136.11859B-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+Dear sirs,
+Since this morning (italian time) we experienced a very slow connection 
+to the Internet.
+I did a couple of checks and I foud out that there is a sort of look 
+beetwen this two IP address:
+
+205.147.144.134 and 205.147.144.133
+
+If I do a trace route to www.sun.com (but it happens with every 
+domain) this is what I get:
+
+traceroute to www.sun.com (192.9.9.100), 30 hops max, 40 byte packets
+ 1  firewall.internetforce.com (206.20.95.129)  2.97 ms  2.726 ms  2.713 ms
+ 2  10.0.1.1 (10.0.1.1)  4.801 ms  4.969 ms  5.067 ms
+ 3  206.20.64.29 (206.20.64.29)  154.5 ms  141.544 ms  138.064 ms
+ 4  eth-0.gw-2.nyc.idt.net (199.248.149.253)  139.334 ms  138.668 ms  
+138.464 ms
+ 5  205.147.144.134 (205.147.144.134)  224.051 ms  225.261 ms  219.436 ms
+ 6  205.147.144.133 (205.147.144.133)  222.411 ms  221.023 ms  219.846 ms
+ 7  205.147.144.134 (205.147.144.134)  297.218 ms  305.712 ms  314.834 ms
+ 8  205.147.144.133 (205.147.144.133)  301.549 ms  299.927 ms  308.029 ms
+ 9  205.147.144.134 (205.147.144.134)  381.315 ms  391.182 ms  390.404 ms
+10  205.147.144.133 (205.147.144.133)  400.995 ms  382.148 ms  385.265 ms
+11  205.147.144.134 (205.147.144.134)  464.362 ms  473.874 ms  468.222 ms
+12  205.147.144.133 (205.147.144.133)  482.306 ms  473.724 ms  474.5 ms
+13  205.147.144.134 (205.147.144.134)  559.098 ms  547.821 ms  553.325 ms
+14  205.147.144.133 (205.147.144.133)  554.411 ms  541.875 ms  556.215 ms
+15  205.147.144.134 (205.147.144.134)  640.633 ms  640.912 ms  638.473 ms
+16  205.147.144.133 (205.147.144.133)  633.595 ms  647.503 ms  640.536 ms
+17  205.147.144.134 (205.147.144.134)  704.03 ms  713.307 ms  742.151 ms
+18  205.147.144.133 (205.147.144.133)  732.173 ms  702.742 ms  729.971 ms
+19  205.147.144.134 (205.147.144.134)  795.957 ms  798.584 ms  799.926 ms
+
+
+Can you please see what is wrong?
+
+Thanks,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE - Italy
+
+ -------------------------------------------------------------------------
+| It's sad to say goodbye... so write soon to -> ianna@internetforce.com  |
+ -------------------------------------------------------------------------
+
+    \|/     +     +     +    +  +    +     +       Odero si potero,
+  (@) (@)   +    + +    + +  +  + +  +    + +      si non, invitus amabo.
+     o      +   + + +   +  + +  +  + +   + + +
+   <--->    +  +     +  +    +  +    +  +     +        - Ovidio -
+
+ ------------------------------------------------------------------------
+    Tel. +39-2-26414228    WWW: http://www.internetforce.com/~ianna/
+
+
+
+
+From ianna@marco.internetforce.com Wed May 15 15:21:24 1996
+Date: Wed, 15 May 1996 15:21:21 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: Golan Ben-Oni <bnite@tremere.ios.com>
+Subject: Re: routing problem
+In-Reply-To: <Pine.SUN.3.93.960515074706.1467B-100000@tremere.ios.com>
+Message-ID: <Pine.LNX.3.91.960515151956.11859M-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+Hi Golan,
+thanks for your answer.
+Please let me know when everything is OK.
+
+Marco Iannacone
+Internet Force - Italy
+
+From ianna@marco.internetforce.com Tue May 21 10:02:57 1996
+Date: Tue, 21 May 1996 10:02:55 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: Golan Ben-Oni <bnite@tremere.ios.com>
+Subject: problems?
+Message-ID: <Pine.LNX.3.91.960521095707.13406A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+Hi Golan,
+how you doing?
+I'm sorry to bother you again, but this morning (here is 10:15am)
+is very difficult for us to reach a lot of sites...
+
+If I do a traceroute it get stack at hck-t1.gw-1.nynap.idt.net 
+(206.20.128.17) and after a very long time it moves to 192.157.69.11...
+
+Is there something wrong?
+
+thanks,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE
+
+ -------------------------------------------------------------------------
+| It's sad to say goodbye... so write soon to -> ianna@internetforce.com  |
+ -------------------------------------------------------------------------
+
+    \|/     +     +     +    +  +    +     +       Odero si potero,
+  (@) (@)   +    + +    + +  +  + +  +    + +      si non, invitus amabo.
+     o      +   + + +   +  + +  +  + +   + + +
+   <--->    +  +     +  +    +  +    +  +     +        - Ovidio -
+
+ ------------------------------------------------------------------------
+    Tel. +39-2-26414228    WWW: http://www.internetforce.com/~ianna/
+
+
+
+
+
+From ianna@marco.internetforce.com Tue May 21 15:09:25 1996
+Date: Tue, 21 May 1996 15:09:23 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: Golan Ben-Oni <bnite@tremere.ios.com>
+Subject: problems (2)?
+Message-ID: <Pine.LNX.3.91.960521150352.15059A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+
+Hi Golan,
+sorry to disturb you again, but today half of the Internet is unreachble
+for us... Is there any problem overthere?
+For example if I do traceroute to very known sites for us like 
+netvision.co.il or www.vol.it I get:
+
+[root@marco]/root>traceroute www.vol.it
+traceroute to k400-fddi.vol.it (194.20.35.12), 30 hops max, 40 byte packets
+ 1  firewall.internetforce.com (206.20.95.129)  3.561 ms  3.097 ms  3.078 ms
+ 2  10.0.1.1 (10.0.1.1)  5.359 ms  5.3 ms  5.326 ms
+ 3  206.20.64.29 (206.20.64.29)  205.106 ms  136.564 ms  135.865 ms
+ 4  eth-0.gw-2.nyc.idt.net (199.248.149.253)  207.612 ms  188.861 ms  
+140.823 ms
+ 5  10.255.255.2 (10.255.255.2)  142.078 ms  142.145 ms  141.82 ms
+ 6  New-Brunswick1.NJ.ALTER.NET (137.39.229.1)  510.389 ms *  238.579 ms
+ 7  Serial2/0.New-York4.NY.Alter.Net (137.39.101.37)  208.49 ms  239.578 
+ms  224.449 ms
+ 8  * Fddi0/0.New-York2.NY.Alter.Net (137.39.126.3)  309.783 ms  210.707 ms
+ 9  nyh-wdc.emi.com (167.152.2.37)  181.464 ms  392.234 ms  217.302 ms
+10  * * *
+11  * * *
+12  * * *
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  * * *
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *
+
+
+What's wrong?
+
+thanks,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE - Italy
+
+
+From ianna@marco.internetforce.com Tue May 21 15:44:48 1996
+Date: Tue, 21 May 1996 15:44:46 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: Golan Ben-Oni <bnite@tremere.ios.com>
+Subject: Re: problems (2)?
+In-Reply-To: <Pine.SUN.3.93.960521093659.6038C-100000@tremere.ios.com>
+Message-ID: <Pine.LNX.3.91.960521154058.15227A@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+Hi Golan,
+thanks for your quick answer.
+
+On Tue, 21 May 1996, Golan Ben-Oni wrote:
+
+> In every msg that you've sent me today, the problems existed
+> in other peoples networks.  It appears that your first problem
+> existed after we got to nynap.  Most of our nynap traffic goes
+> through MCI's network, and they have known problems.
+> 
+
+I'm sorry if I disturbed you with that... I just wanted to know
+if it was a known problem and if they (MCI) told you something about when 
+it will be solved...
+
+> In the second instance, it appears that your traffic was dying
+> inside alternets network. 
+
+I know that the problem is in their network, but just I wanted to
+know if you knew something more.
+
+thanks,
+
+marco
+
+
+From ianna@marco.internetforce.com Tue Jun 11 15:04:15 1996
+Date: Tue, 11 Jun 1996 15:04:13 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: irosen@ios.com
+Subject: new Class C IP addresses
+Message-ID: <Pine.LNX.3.91.960611143447.20467A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+Hi Ira,
+how you doing?
+
+I'm writing to you 'cause Internet Force will need soon more class C IP 
+addresses.
+
+Till now IDT gave us the following:
+206.20.95.* 
+206.20.115.* 
+206.20.224.* 
+206.20.225.* 
+206.20.226.* 
+206.20.227.* 
+206.20.228.* 
+206.20.229.* 
+206.20.230.* 
+206.20.231.*
+206.20.232.*
+
+(Can you please confirm me the last 4?)
+
+Now we need to connect to the Internet a couple of big companies 
+Can you please gave us more IPs?
+
+More than this can you send me a ready-to-use template of the form
+that we have to fill to ask them directly to InterNIC?
+
+Thanks,
+
+Marco Iannacone
+system administrator
+INTERNET FORCE
+
+
+From ianna@marco.internetforce.com Mon Jun 17 17:28:32 1996
+Date: Mon, 17 Jun 1996 17:28:20 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: irosen@ios.com
+cc: mn@ios.com, meyerj@ios.com, maus@intf.com
+Subject: 15 new Class C IP addresses
+Message-ID: <Pine.LNX.3.91.960617171623.11602E-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+
+Dear Ira,
+I'm sorry to disturb you again, but we are going to sell connectivity to a 
+couple of huge new company and we need 15 new class C IP address.
+I've already written you wrote about this, but since I didn't receive any 
+answer I send you the mail again.
+
+Thanks,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE - Italy
+
+Note: If you can teach me how to require them directly from InterNIC,
+I won't disturb you again for this.. 
+
+
+---------- Forwarded message ----------
+Date: Tue, 11 Jun 1996 15:04:13 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: irosen@ios.com
+Subject: new Class C IP addresses
+
+
+Hi Ira,
+how you doing?
+
+I'm writing to you 'cause Internet Force will need soon more class C IP 
+addresses.
+
+Till now IDT gave us the following:
+206.20.95.* 
+206.20.115.* 
+206.20.224.* 
+206.20.225.* 
+206.20.226.* 
+206.20.227.* 
+206.20.228.* 
+206.20.229.* 
+206.20.230.* 
+206.20.231.*
+206.20.232.*
+
+(Can you please confirm me the last 4?)
+
+Now we need to connect to the Internet a couple of big companies 
+Can you please gave us more IPs?
+
+More than this can you send me a ready-to-use template of the form
+that we have to fill to ask them directly to InterNIC?
+
+Thanks,
+
+Marco Iannacone
+system administrator
+INTERNET FORCE
+
+
+
+From ianna@marco.internetforce.com Thu Jun 20 13:00:20 1996
+Date: Thu, 20 Jun 1996 13:00:17 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: hostmaster@ios.com
+cc: Alexei Yashkov <alexis@silver.ios.com>
+Subject: CALABRIA.COM (fwd)
+Message-ID: <Pine.LNX.3.91.960620125654.3433A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+
+>Domain Version Number: 2.0
+>
+>0.   (N)ew (M)odify (D)elete....: New
+>
+>1.   Purpose/Description........: commercial
+>
+>2.   Complete Domain Name.......: calabria.com
+>
+>Organization Using Domain Name
+>3a.  Organization Name..........: Internet Force
+>3b.  Street Address.............: Via Plana, 20
+>3c.  City.......................: Milano
+>3d.  State......................:
+>3e.  Postal Code................: 20155
+>3f.  Country....................: IT
+>
+>Administrative Contact
+>4a.  NIC Handle (if known)......: MI77
+>4b.  Name (Last, First).........:
+>4c.  Organization Name..........:
+>4d.  Street Address.............:
+>4e.  City.......................:
+>4f.  State......................:
+>4g.  Postal Code................:
+>4h.  Country....................:
+>4i.  Phone Number...............:
+>4j.  E-Mailbox..................:
+>
+>Technical Contact
+>5a.  NIC Handle (if known)......: MI77
+>5b.  Name (Last, First).........: 
+>5c.  Organization Name..........: 
+>5d.  Street Address.............: 
+>5e.  City.......................: 
+>5f.  State......................:
+>5g.  Postal Code................: 
+>5h.  Country....................: 
+>5i.  Phone Number...............: 
+>5j.  E-Mailbox..................: 
+>
+>Billing Contact
+>6a.  NIC Handle (if known)......: MG1163
+>6b.  Name (Last, First).........:
+>6c.  Organization Name..........:
+>6d.  Street Address.............:
+>6e.  City.......................:
+>6f.  State......................:
+>6g.  Postal Code................:
+>6h.  Country....................:
+>6i.  Phone Number...............:
+>6j.  E-Mailbox..................:
+>
+>Prime Name Server
+>7a.  Primary Server Hostname....: data.internetforce.com
+>7b.  Primary Server Netaddress..: 206.20.95.3
+>
+>Secondary Name Server(s)
+>8a.  Secondary Server Hostname..: harley.ios.com
+>8b.  Secondary Server Netaddress: 198.4.75.46
+>
+>Invoice Delivery
+>9.   (E)mail (P)ostal...........: Postal
+>
+
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE - Italy
+
+From ianna@marco.internetforce.com Thu Jun 20 16:03:44 1996
+Date: Thu, 20 Jun 1996 16:03:42 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: ira rosen <irosen@styx.ios.com>
+cc: maus@internetforce.com
+Subject: Re: CLASS C
+Message-ID: <Pine.LNX.3.91.960620155408.3734F-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+On Wed, 19 Jun 1996, ira rosen wrote:
+
+> No Problem,
+> Just send us the list of workstations and a statement of purpose/description
+> of what you need that many IPs for.  The internic won't directly give you 15
+> class Cs as they are experiencing a shortage of them, in turn this affects  
+> the number of class Cs that are distributed to IDT.  Documentation is now   
+> required to obtain a class C license.  You may want to include the number of
+> workstations that each company will be using (plus the network default 
+> and  router IP).  As soon as we recieve this information, we will do our 
+> best to obtain 15 class C licenses for you.
+
+Ok.
+I send you the actual configuration of one of the company that we have to
+sell connectivity to.
+It is an Internet Provider itself. Actually they have 10 Class C but they
+are not the owner of these address and the owner (the Italian IBENET)
+asked to have them back. For this reason we are asking new CLASS C for them.
+I'm waiting to have the information back from the other company...
+but can you please start asking for these IPs?
+
+Thanks,
+
+Marco Iannacone
+System Administrator 
+INTERNET FORCE
+
+# Router rt-sg1	CISCO 4500	SENIGALLIA (nodo centrale)
+
+eth0		194.179.175.254		255.255.255.0		194.179.175.255
+ser0	IBE	194.179.143.130		255.255.255.252		194.179.143.131
+ser1	ancona	194.179.143.133		255.255.255.252		194.179.143.135
+ser2	jesi	194.179.143.137		255.255.255.252		194.179.143.139
+ser3	fano	194.179.143.145		255.255.255.252		194.179.143.147
+
+# Router gw-sg1 CISCO 2511	SENIGALLIA
+
+eth0		194.179.175.253		255.255.255.0		194.179.175.255
+16 modem 	194.179.175.65-80
+16 workstation	194.179.175.1-16
+ser0	ferreri	194.179.142.129		255.255.255.252		194.179.142.131
+
+# Router gw-ferreri.ferreri.it CISCO 1005	FERRERI
+
+eth0		194.179.159.254		255.255.255.224		194.179.159.255
+5 workstation	194.179.159.225-229
+ser0	indi	194.179.142.130		255.255.255.252		194.179.142.131
+
+# Router gw-an1 CISCO 2511	ANCONA
+
+eth0		194.179.174.254		255.255.255.0		194.179.174.255
+16 modem	194.179.174.65-80
+10 workstation	194.179.174.1-10
+ser0	seniga	194.179.143.134		255.255.255.252		194.179.143.135
+ser1	osimo	194.179.143.157		255.255.255.252		194.179.143.159
+
+# Router gw-os1 CISCO 2511	OSIMO	INDI2000
+
+eth0		194.179.168.254		255.255.255.0		194.179.168.255
+16 modem	194.179.168.65-80
+5 workstation	194.179.168.1-5
+ser0	ancona	194.179.143.158		255.255.255.252		194.179.143.159
+ser1	fermo	194.179.143.121		255.255.255.252		194.179.143.123
+
+# Router gw-fermo1 CISCO 2511	FERMO
+
+eth0		194.179.167.254		255.255.255.0		194.179.167.255
+16 modem	194.179.167.65-80
+2 workstation	194.179.167.1-2
+ser0	osimo	194.179.143.122		255.255.255.252		194.179.143.123
+
+# Router gw-fano1  CISCO 2511	FANO
+
+eth0		194.179.171.254		255.255.255.0		194.179.171.255
+16 modem	194.179.171.65-80
+2 workstation	194.179.171.1-2
+ser0	seniga	194.179.143.146		255.255.255.252		194.179.143.147
+ser1	pesaro	194.179.143.149		255.255.255.252		194.179.143.151
+
+# Router gw-ps1	CISCO 2511	PESARO
+
+eth0		194.179.170.254		255.255.255.0		194.179.170.255
+16 modem	194.179.170.65-80
+4 workstation	194.179.170.1-4
+ser0	fano	194.179.143.150		255.255.255.252		194.179.143.151	
+
+# Router gw-jesi1 CISCO 2511	JESI
+
+eth0		194.179.173.254		255.255.255.0		194.179.173.255
+16 modem	194.179.173.65-80
+10 workstation	194.179.173.1-10
+ser0	seniga	194.179.143.138		255.255.255.252		194.179.143.139
+ser1	macera	194.179.143.141		255.255.255.252		194.179.143.143
+
+# Router rt-jesi1 CISCO 2501	JESI
+
+eth0		194.179.173.253		255.255.255.0		194.179.173.255
+ser0	mateli	194.179.143.153		255.255.255.252		194.179.143.155
+
+# Router gw-mc1	 CISCO 2511	MACERATA
+
+eth0		194.179.172.254		255.255.255.0		194.179.172.255
+16 modem	194.179.172.65-80
+2 workstation	194.179.172.1-2
+ser0	jesi	194.179.143.142		255.255.255.252		194.179.143.143
+
+# Router gw-mt1  CISCO 2511	MATELICA
+
+eth0		194.179.169.254		255.255.255.0		194.179.169.255
+16 modem	194.179.169.65-80
+3 workstation	194.179.169.1-3
+ser0	jesi	194.179.143.154		255.255.255.252		194.179.143.155
+
+
+From ianna@marco.internetforce.com Fri Jun 28 11:20:58 1996
+Date: Fri, 28 Jun 1996 11:20:55 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: mn@ios.com
+cc: stuart@ios.com, custserv@internetforce.com
+Subject: no connection with well.com
+Message-ID: <Pine.LNX.3.91.960628111158.2173A-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+Hi Mike,
+how you doing?
+
+We have a problem...
+From Internet Force is impossible to reach well.com and from there it is 
+impossible to reach Internet Force.
+We have some customers that need to comunicate with people there and they 
+can't. E-mails don't arrive to destination starting from both side.
+
+Since it is possible to comunicate with well from other Italian and 
+American provider, I think there is a problem with the comunication 
+between IDT and them.
+
+Look how a traceroute produces:
+
+traceroute well.com
+traceroute to well.com (206.15.64.10), 30 hops max, 40 byte packets
+ 1  firewall.internetforce.com (206.20.95.129)  3.461 ms  3.137 ms  3.18 ms
+ 2  10.0.1.1 (10.0.1.1)  5.313 ms  5.183 ms  5.314 ms
+ 3  206.20.64.29 (206.20.64.29)  239.114 ms  271.034 ms  245.904 ms
+ 4  eth-0.gw-2.nyc.idt.net (199.248.149.253)  179.685 ms  272.603 ms  
+184.28 ms
+ 5  eth-0.gw-2.nyc.idt.net (199.248.149.253)  180.249 ms !H *  181.577 ms !H
+
+
+
+
+
+traceroute www.well.com
+traceroute to www.well.com (206.15.64.12), 30 hops max, 40 byte packets
+ 1  firewall.internetforce.com (206.20.95.129)  3.306 ms  2.965 ms  2.998 ms
+ 2  10.0.1.1 (10.0.1.1)  5.103 ms  5.174 ms  5.206 ms
+ 3  206.20.64.29 (206.20.64.29)  181 ms  183.934 ms  179.063 ms
+ 4  eth-0.gw-2.nyc.idt.net (199.248.149.253)  180.156 ms  213.972 ms  
+180.39 ms
+ 5  eth-0.gw-2.nyc.idt.net (199.248.149.253)  181.354 ms !H *  191.973 ms !H
+
+
+Can you please solve this?
+
+thanks,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE
+
+From ianna@marco.internetforce.com Fri Jun 28 11:24:10 1996
+Date: Fri, 28 Jun 1996 11:24:07 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: noc@ios.com
+Subject: no connection with well.com
+Message-ID: <Pine.LNX.3.91.960628112241.2173B-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+
+Dear Sirs,
+
+We have a problem...
+From Internet Force is impossible to reach well.com and from there it is 
+impossible to reach Internet Force.
+We have some customers that need to comunicate with people there and they 
+can't. E-mails don't arrive to destination starting from both side.
+
+Since it is possible to comunicate with well from other Italian and 
+American provider, I think there is a problem with the comunication 
+between IDT and them.
+
+Look what a traceroute produces:
+
+traceroute well.com
+traceroute to well.com (206.15.64.10), 30 hops max, 40 byte packets
+ 1  firewall.internetforce.com (206.20.95.129)  3.461 ms  3.137 ms  3.18 ms
+ 2  10.0.1.1 (10.0.1.1)  5.313 ms  5.183 ms  5.314 ms
+ 3  206.20.64.29 (206.20.64.29)  239.114 ms  271.034 ms  245.904 ms
+ 4  eth-0.gw-2.nyc.idt.net (199.248.149.253)  179.685 ms  272.603 ms  
+184.28 ms
+ 5  eth-0.gw-2.nyc.idt.net (199.248.149.253)  180.249 ms !H *  181.577 ms !H
+
+
+or
+
+
+traceroute www.well.com
+traceroute to www.well.com (206.15.64.12), 30 hops max, 40 byte packets
+ 1  firewall.internetforce.com (206.20.95.129)  3.306 ms  2.965 ms  2.998 ms
+ 2  10.0.1.1 (10.0.1.1)  5.103 ms  5.174 ms  5.206 ms
+ 3  206.20.64.29 (206.20.64.29)  181 ms  183.934 ms  179.063 ms
+ 4  eth-0.gw-2.nyc.idt.net (199.248.149.253)  180.156 ms  213.972 ms  
+180.39 ms
+ 5  eth-0.gw-2.nyc.idt.net (199.248.149.253)  181.354 ms !H *  191.973 ms !H
+
+
+Can you please solve this?
+
+thanks,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE - Italy
+(DEDICATED Internet customer)
+
+From ianna@marco.internetforce.com Sun Jun 30 13:42:15 1996
+Date: Sun, 30 Jun 1996 13:42:11 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: ira rosen <irosen@styx.ios.com>, meyerj@ios.com
+cc: maus@intf.com
+Subject: Re: CLASS C (2)
+Message-ID: <Pine.LNX.3.91.960630133445.10123C-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+
+Hi Ira,
+how you doing?
+I'm writing to you 'cause as I told you it is very urgent for us to have 
+those CLASS C I asked you...
+As I told you there is this italian provider that wants to change it's 
+access provider and buy connectivity from us.
+Since the old access provider (the italian IBENET - http://www.ibenet.it) 
+is going to cut their line soon, we need to provide them these IP address.
+
+I sent you the information you asked me on the 20th June. Do you have any 
+news from InterNIC? When do you think we will receive that addresses?
+
+hope to hear from you soon,
+regards,
+
+Marco Iannacone
+
+
+
+Wed, 19 Jun 1996, ira rosen wrote:
+
+> No Problem,
+> Just send us the list of workstations and a statement of purpose/description
+> of what you need that many IPs for.  The internic won't directly give you 15
+> class Cs as they are experiencing a shortage of them, in turn this affects  
+> the number of class Cs that are distributed to IDT.  Documentation is now   
+> required to obtain a class C license.  You may want to include the number of
+> workstations that each company will be using (plus the network default 
+> and  router IP).  As soon as we recieve this information, we will do our 
+> best to obtain 15 class C licenses for you.
+
+Ok.
+I send you the actual configuration of one of the company that we have to
+sell connectivity to.
+It is an Internet Provider itself. Actually they have 10 Class C but they
+are not the owner of these address and the owner (the Italian IBENET)
+asked to have them back. For this reason we are asking new CLASS C for them.
+I'm waiting to have the information back from the other company...
+but can you please start asking for these IPs?
+
+Thanks,
+
+Marco Iannacone
+System Administrator 
+INTERNET FORCE
+
+# Router rt-sg1	CISCO 4500	SENIGALLIA (nodo centrale)
+
+eth0		194.179.175.254		255.255.255.0		194.179.175.255
+ser0	IBE	194.179.143.130		255.255.255.252		194.179.143.131
+ser1	ancona	194.179.143.133		255.255.255.252		194.179.143.135
+ser2	jesi	194.179.143.137		255.255.255.252		194.179.143.139
+ser3	fano	194.179.143.145		255.255.255.252		194.179.143.147
+
+# Router gw-sg1 CISCO 2511	SENIGALLIA
+
+eth0		194.179.175.253		255.255.255.0		194.179.175.255
+16 modem 	194.179.175.65-80
+16 workstation	194.179.175.1-16
+ser0	ferreri	194.179.142.129		255.255.255.252		194.179.142.131
+
+# Router gw-ferreri.ferreri.it CISCO 1005	FERRERI
+
+eth0		194.179.159.254		255.255.255.224		194.179.159.255
+5 workstation	194.179.159.225-229
+ser0	indi	194.179.142.130		255.255.255.252		194.179.142.131
+
+# Router gw-an1 CISCO 2511	ANCONA
+
+eth0		194.179.174.254		255.255.255.0		194.179.174.255
+16 modem	194.179.174.65-80
+10 workstation	194.179.174.1-10
+ser0	seniga	194.179.143.134		255.255.255.252		194.179.143.135
+ser1	osimo	194.179.143.157		255.255.255.252		194.179.143.159
+
+# Router gw-os1 CISCO 2511	OSIMO	INDI2000
+
+eth0		194.179.168.254		255.255.255.0		194.179.168.255
+16 modem	194.179.168.65-80
+5 workstation	194.179.168.1-5
+ser0	ancona	194.179.143.158		255.255.255.252		194.179.143.159
+ser1	fermo	194.179.143.121		255.255.255.252		194.179.143.123
+
+# Router gw-fermo1 CISCO 2511	FERMO
+
+eth0		194.179.167.254		255.255.255.0		194.179.167.255
+16 modem	194.179.167.65-80
+2 workstation	194.179.167.1-2
+ser0	osimo	194.179.143.122		255.255.255.252		194.179.143.123
+
+# Router gw-fano1  CISCO 2511	FANO
+
+eth0		194.179.171.254		255.255.255.0		194.179.171.255
+16 modem	194.179.171.65-80
+2 workstation	194.179.171.1-2
+ser0	seniga	194.179.143.146		255.255.255.252		194.179.143.147
+ser1	pesaro	194.179.143.149		255.255.255.252		194.179.143.151
+
+# Router gw-ps1	CISCO 2511	PESARO
+
+eth0		194.179.170.254		255.255.255.0		194.179.170.255
+16 modem	194.179.170.65-80
+4 workstation	194.179.170.1-4
+ser0	fano	194.179.143.150		255.255.255.252		194.179.143.151	
+
+# Router gw-jesi1 CISCO 2511	JESI
+
+eth0		194.179.173.254		255.255.255.0		194.179.173.255
+16 modem	194.179.173.65-80
+10 workstation	194.179.173.1-10
+ser0	seniga	194.179.143.138		255.255.255.252		194.179.143.139
+ser1	macera	194.179.143.141		255.255.255.252		194.179.143.143
+
+# Router rt-jesi1 CISCO 2501	JESI
+
+eth0		194.179.173.253		255.255.255.0		194.179.173.255
+ser0	mateli	194.179.143.153		255.255.255.252		194.179.143.155
+
+# Router gw-mc1	 CISCO 2511	MACERATA
+
+eth0		194.179.172.254		255.255.255.0		194.179.172.255
+16 modem	194.179.172.65-80
+2 workstation	194.179.172.1-2
+ser0	jesi	194.179.143.142		255.255.255.252		194.179.143.143
+
+# Router gw-mt1  CISCO 2511	MATELICA
+
+eth0		194.179.169.254		255.255.255.0		194.179.169.255
+16 modem	194.179.169.65-80
+3 workstation	194.179.169.1-3
+ser0	jesi	194.179.143.154		255.255.255.252		194.179.143.155
+
+
+From ianna@marco.internetforce.com Sun Jun 30 13:58:38 1996
+Date: Sun, 30 Jun 1996 13:58:35 +0100 (GMT+0100)
+From: Marco Iannacone <ianna@marco.internetforce.com>
+To: mn@ios.com
+cc: meyerj@ios.com, noc@ios.com
+Subject: no connection with well.com (2)
+Message-ID: <Pine.LNX.3.91.960630135230.10123D-100000@marco.internetforce.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+
+Hi Mike,
+how you doing?
+Sorry if I disturb you again but I didn't get any answer at the e-mail I 
+sent you on 28/6.
+
+As I wrote you from Internet Force is impossible to reach a part of 
+the internet and from that part anything can reach us.
+
+For example some of our customer wnat to write to well.com and see their 
+web pages but this is not possible.
+Mail sent to well.com of from there to us, simply get lost!
+
+Since it is possible to comunicate with well from other Italian and 
+American provider (I have a couple of account and from there everything 
+is ok), I think there is a problem with the comunication between IDT and 
+part of the Net.
+
+Look how a traceroute produces:
+
+traceroute well.com
+traceroute to well.com (206.15.64.10), 30 hops max, 40 byte packets
+ 1  firewall.internetforce.com (206.20.95.129)  3.461 ms  3.137 ms  3.18 ms
+ 2  10.0.1.1 (10.0.1.1)  5.313 ms  5.183 ms  5.314 ms
+ 3  206.20.64.29 (206.20.64.29)  239.114 ms  271.034 ms  245.904 ms
+ 4  eth-0.gw-2.nyc.idt.net (199.248.149.253)  179.685 ms  272.603 ms  
+184.28 ms
+ 5  eth-0.gw-2.nyc.idt.net (199.248.149.253)  180.249 ms !H *  181.577 ms !H
+
+
+
+
+
+traceroute www.well.com
+traceroute to www.well.com (206.15.64.12), 30 hops max, 40 byte packets
+ 1  firewall.internetforce.com (206.20.95.129)  3.306 ms  2.965 ms  2.998 ms
+ 2  10.0.1.1 (10.0.1.1)  5.103 ms  5.174 ms  5.206 ms
+ 3  206.20.64.29 (206.20.64.29)  181 ms  183.934 ms  179.063 ms
+ 4  eth-0.gw-2.nyc.idt.net (199.248.149.253)  180.156 ms  213.972 ms  
+180.39 ms
+ 5  eth-0.gw-2.nyc.idt.net (199.248.149.253)  181.354 ms !H *  191.973 ms !H
+
+
+Can you please solve this?
+
+thanks,
+
+Marco Iannacone
+System Administrator
+INTERNET FORCE
+
+
+From bnite@tremere.ios.com Sun Jun 30 15:44:29 1996
+Return-Path: bnite@tremere.ios.com
+Received: from tremere.ios.com (tremere.ios.com [169.132.32.250]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id PAA10650 for <ianna@marco.internetforce.com>; Sun, 30 Jun 1996 15:44:27 +0100
+Received: from localhost (bnite@localhost) by tremere.ios.com (8.7.5/8.6.9) with SMTP id JAA19158 for <ianna@marco.internetforce.com>; Sun, 30 Jun 1996 09:33:28 -0400 (EDT)
+Date: Sun, 30 Jun 1996 09:33:28 -0400 (EDT)
+From: Golan Ben-Oni <bnite@tremere.ios.com>
+To: Marco Iannacone <ianna@marco.internetforce.com>
+Subject: Re: no connection with well.com (2)
+In-Reply-To: <Pine.LNX.3.91.960630135230.10123D-100000@marco.internetforce.com>
+Message-ID: <Pine.SUN.3.93.960630093250.19150B-100000@tremere.ios.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+HI Marco,  We are aware of this problem, and I have contacted our
+providers to find out why we're not receiving the well's routes.
+
+I will let you know when we find out more.
+
+----------------------------------------------------------
+                                                   IDT
+Golan Ben-Oni                                   ---------
+Senior Network Engineer                         \       /
+(201) 928 4357                                   -------
+(201) 928 1888 FAX                                \   /
+bnite@tremere.ios.com                              ---
+                                                    V
+                                                   IOS
+
+
+From bnite@tremere.ios.com Sun Jun 30 17:41:52 1996
+Return-Path: bnite@tremere.ios.com
+Received: from tremere.ios.com (tremere.ios.com [169.132.32.250]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id RAA11021 for <ianna@marco.internetforce.com>; Sun, 30 Jun 1996 17:41:42 +0100
+Received: from localhost (bnite@localhost) by tremere.ios.com (8.7.5/8.6.9) with SMTP id LAA19269 for <ianna@marco.internetforce.com>; Sun, 30 Jun 1996 11:30:38 -0400 (EDT)
+Date: Sun, 30 Jun 1996 11:30:38 -0400 (EDT)
+From: Golan Ben-Oni <bnite@tremere.ios.com>
+To: Marco Iannacone <ianna@marco.internetforce.com>
+Subject: Re: no connection with well.com (2)
+In-Reply-To: <Pine.LNX.3.91.960630172913.10671D-100000@marco.internetforce.com>
+Message-ID: <Pine.SUN.3.93.960630113033.19150E-100000@tremere.ios.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: A
+
+Try it now.
+
+----------------------------------------------------------
+                                                   IDT
+Golan Ben-Oni                                   ---------
+Senior Network Engineer                         \       /
+(201) 928 4357                                   -------
+(201) 928 1888 FAX                                \   /
+bnite@tremere.ios.com                              ---
+                                                    V
+                                                   IOS
+
+
+From bnite@tremere.ios.com Sun Jun 30 18:12:05 1996
+Return-Path: bnite@tremere.ios.com
+Received: from tremere.ios.com (tremere.ios.com [169.132.32.250]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id SAA11135 for <ianna@marco.internetforce.com>; Sun, 30 Jun 1996 18:12:02 +0100
+Received: from localhost (bnite@localhost) by tremere.ios.com (8.7.5/8.6.9) with SMTP id MAA19287 for <ianna@marco.internetforce.com>; Sun, 30 Jun 1996 12:00:53 -0400 (EDT)
+Date: Sun, 30 Jun 1996 12:00:53 -0400 (EDT)
+From: Golan Ben-Oni <bnite@tremere.ios.com>
+To: Marco Iannacone <ianna@marco.internetforce.com>
+Subject: Re: no connection with well.com (2)
+In-Reply-To: <Pine.LNX.3.91.960630174646.11052A-100000@marco.internetforce.com>
+Message-ID: <Pine.SUN.3.93.960630120031.19150F-100000@tremere.ios.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: A
+
+Okay, that should have been the last run.  Its too bad that
+we're not doing BGP sessions <sigh>.
+
+----------------------------------------------------------
+                                                   IDT
+Golan Ben-Oni                                   ---------
+Senior Network Engineer                         \       /
+(201) 928 4357                                   -------
+(201) 928 1888 FAX                                \   /
+bnite@tremere.ios.com                              ---
+                                                    V
+                                                   IOS
+
+
+From irosen@styx.ios.com Wed Jun 19 20:36:03 1996
+Return-Path: irosen@styx.ios.com
+Received: from styx.ios.com (root@styx.ios.com [198.4.75.44]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id UAA00627 for <ianna@marco.internetforce.com>; Wed, 19 Jun 1996 20:36:02 +0100
+Received: from irosen.ios.com ([169.132.7.141]) by styx.ios.com (8.6.12/8.6.9) with SMTP id PAA26499 for <ianna@marco.internetforce.com>; Wed, 19 Jun 1996 15:35:28 -0400
+Message-Id: <1.5.4.32.19960619193424.00697d18@styx.ios.com>
+X-Sender: irosen@styx.ios.com
+X-Mailer: Windows Eudora Light Version 1.5.4 (32)
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Wed, 19 Jun 1996 15:34:24 -0400
+To: ianna@marco.internetforce.com
+From: ira rosen <irosen@styx.ios.com>
+Status: RO
+X-Status: A
+
+No Problem, 
+Just send us the list of workstations and a statement of purpose/description
+of what you need that many IPs for.  The internic won't directly give you 15
+class Cs as they are experiencing a shortage of them, in turn this affects
+the number of class Cs that are distributed to IDT.  Documentation is now
+required to obtain a class C license.  You may want to include the number of
+workstations that each company will be using (plus the network default and
+router IP).  As soon as we recieve this information, we will do our best to
+obtain 15 class C licenses for you.
+Sachiko Butler
+Customer Service Representative
+201-928-4325
+============================================================================
+============  
+>Dear Ira,
+>I'm sorry to disturb you again, but we are going to sell connectivity to a 
+>couple of huge new company and we need 15 new class C IP address.
+>I've already written you wrote about this, but since I didn't receive any 
+>answer I send you the mail again.
+>
+>Thanks,
+>
+>Marco Iannacone
+>System Administrator
+>INTERNET FORCE - Italy
+>
+>Note: If you can teach me how to require them directly from InterNIC,
+>I won't disturb you again for this.. 
+>
+>
+>---------- Forwarded message ----------
+>Date: Tue, 11 Jun 1996 15:04:13 +0100 (GMT+0100)
+>From: Marco Iannacone <ianna@marco.internetforce.com>
+>To: irosen@ios.com
+>Subject: new Class C IP addresses
+>
+>
+>Hi Ira,
+>how you doing?
+>
+>I'm writing to you 'cause Internet Force will need soon more class C IP 
+>addresses.
+>
+>Till now IDT gave us the following:
+>206.20.95.* 
+>206.20.115.* 
+>206.20.224.* 
+206.20.225.* 
+>>206.20.226.* 
+>206.20.227.* 
+>206.20.228.* 
+>206.20.229.* 
+>206.20.230.* 
+>206.20.231.*
+>206.20.232.*
+>
+>>(Can you please confirm me the last 4?)
+>
+>Now we need to connect to the Internet a couple of big companies 
+>Can you please gave us more IPs?
+>
+>>More than this can you send me a ready-to-use template of the form
+>that we have to fill to ask them directly to InterNIC?
+>
+>Thanks,
+>
+>Marco Iannacone
+>system administrator
+>INTERNET FORCE
+>
+>
+>
+>
+
+From jeffg@haven.ios.com Thu Jun 20 21:34:49 1996
+Return-Path: jeffg@haven.ios.com
+Received: from haven.ios.com (root@haven.ios.com [198.4.75.45]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id VAA05115 for <ianna@marco.internetforce.com>; Thu, 20 Jun 1996 21:34:42 +0100
+Received: from joy.labs.idt.net (joy.labs.idt.net [169.132.65.128]) by haven.ios.com (8.6.11/8.6.9) with SMTP id QAA29895 for <ianna@marco.internetforce.com>; Thu, 20 Jun 1996 16:32:58 -0400
+Date: Thu, 20 Jun 1996 16:32:58 -0400
+Message-Id: <1.5.4.16.19960620163224.37df0c9e@haven.ios.com>
+X-Sender: jeffg@haven.ios.com (Unverified)
+X-Mailer: Windows Eudora Light Version 1.5.4 (16)
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: ianna@marco.internetforce.com
+From: Jeff Goldberg <jeffg@haven.ios.com>
+Subject: Net2Phone Software
+Status: RO
+X-Status: 
+
+Marco,
+
+Thank your for willing to help us test the Net2Phone product.
+To get a copy, use netscape to go to URL ftp://haven.ios.com/pub/users/netftp/
+and download idtn2p.exe
+Then execute that program in a separate directory where it will self-expand.
+Finally, execute the setup.exe program in that directory.
+
+Of course this should be done on a PC (486/33 min, higher preferred) that
+has a mic,speakers, and an internet connection of at least 28.8.
+
+Run the program and you should be able to register to place calls.
+
+Send me some email as to when you want to run the test so we will have the 
+server running. Then call me using the local number "3630213,24" . DO NOT
+ADD AREA CODES OR INTERNATIONAL ACCESS CODES, since this number is dialed
+from Lakewood NJ.
+
+Please call between 10 AM and 6 PM US Eastern Standard Time.
+
+Also, please do not place calls at other times since we are busy making some
+other changes to the server software.
+
+Thanks Again,
+
+Jeff
+
+Jeff Goldberg, IDT Labs (908) 363-0213 x24  jeffg@haven.ios.com
+
+From maus@internetforce.com Tue Jul 16 17:06:08 1996
+Return-Path: maus@internetforce.com
+Received: from users.internetforce.com (root@users.internetforce.com [206.20.95.4]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id RAA00711 for <ianna@marco.internetforce.com>; Tue, 16 Jul 1996 17:06:08 +0100
+From: maus@internetforce.com
+Received: from data.internetforce.com (data.internetforce.com [206.20.95.3]) by users.internetforce.com (8.6.12/8.6.12) with ESMTP id SAA29981 for <ianna@internetforce.com>; Tue, 16 Jul 1996 18:05:26 +0200
+Received: from [206.20.95.131] (anna.internetforce.com [206.20.95.131]) by data.internetforce.com (8.6.12/8.6.12) with SMTP id SAA18430; Tue, 16 Jul 1996 18:05:17 +0200
+Message-Id: <v01540b05ae116d9221cf@[206.20.95.131]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Tue, 16 Jul 1996 18:10:55 +0200
+To: stuart@ios.com
+Subject: requests
+Cc: ianna@internetforce.com
+Status: RO
+X-Status: 
+
+Dear Sir,
+I see that in the last period is very difficult to have answers from IDT.
+
+We asked you (in the last month):
+
+1 - 15 new Class C addresses (and we sent you all the info you asked)
+2 - if we can mirror our site on your machines and how much is the cost
+3 - if is possible to delegate the reverse addressing of the Class C
+address 206.20.231. to the following DNS 206.20.231.241.
+
+I'm sure that you are very busy, but we need at least an answer from your
+Company, as we have to give answers to our customers.
+
+Waiting for your kind reply, I send you my best regards
+
+------------------------------------------------------------------------
+Maurizio Gerosa - Technical Director - Internet Force srl - Milan - Italy
+---------------   E-Mail: maus@intf.com
+--------------------------  Phone: +39 2 39210765
+-------------------------------------  Fax: +39 2 39210119
+------------------------------------------------------------------------
+
+
+From len@netsys.com Tue Jul 16 17:39:57 1996
+Return-Path: len@netsys.com
+Received: from users.internetforce.com (root@users.internetforce.com [206.20.95.4]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id RAA00845 for <ianna@marco.internetforce.com>; Tue, 16 Jul 1996 17:39:55 +0100
+Received: from netsys.com (root@netsys.com [198.175.9.100]) by users.internetforce.com (8.6.12/8.6.12) with ESMTP id SAA00327; Tue, 16 Jul 1996 18:39:06 +0200
+Received: from velocity (velocity.netsys.com [198.175.9.151]) by netsys.com (8.7.5/NETSYS-LEN) with SMTP id JAA18249; Tue, 16 Jul 1996 09:38:41 -0700 (PDT)
+Message-Id: <2.2.32.19960716163707.00608df4@netsys.com>
+X-Sender: len@netsys.com
+X-Mailer: Windows Eudora Pro Version 2.2 (32)
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Priority: 1 (Highest)
+Date: Tue, 16 Jul 1996 09:37:07 -0700
+To: maus@internetforce.com
+From: Len Rose <len@netsys.com>
+Subject: Re: requests
+Cc: ianna@internetforce.com, len@idt.net
+Status: RO
+X-Status: 
+
+
+Hi.. I am not able to address your other concerns as they are outside my area
+of responsibility at this time. I can however tell you that we do provide
+co-location facilities to customer's servers. If you are confused by my
+email address, I have just joined IDT (from BBN Planet) and my title is
+Director of Operations.
+
+I am forwarding your mail to our co-location group.. You should be contacted
+soon.
+
+Thanks
+
+Len
+
+At 18:18 7/16/96 +0200, maus@internetforce.com wrote:
+>Dear Sirs,
+>I see that in the last period is very difficult to have answers from IDT.
+>
+>We asked you (in the last month):
+>
+>1 - 15 new Class C addresses (and we sent you all the info you asked)
+>2 - if we can mirror our site on your machines and how much is the cost
+>3 - if is possible to delegate the reverse addressing of the Class C
+>address 206.20.231. to the following DNS 206.20.231.241.
+>
+>I'm sure that you are very busy, but we need at least an answer from your
+>Company, as we have to give answers to our customers.
+>
+>Waiting for your kind reply, I send you my best regards
+>
+>------------------------------------------------------------------------
+>Maurizio Gerosa - Technical Director - Internet Force srl - Milan - Italy
+>---------------   E-Mail: maus@intf.com
+>--------------------------  Phone: +39 2 39210765
+>-------------------------------------  Fax: +39 2 39210119
+>------------------------------------------------------------------------
+>
+>
+>
+
+len@netsys.com
+http://www.netsys.com
+
+From parthiv@admin.idt.net Wed Jul 17 15:02:50 1996
+Return-Path: parthiv@admin.idt.net
+Received: from admin.idt.net (root@[169.132.144.10]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id PAA04864 for <ianna@marco.internetforce.com>; Wed, 17 Jul 1996 15:02:42 +0100
+Received: from admin.idt.net (parthiv@admin.idt.net [169.132.144.10]) by admin.idt.net (8.7.4/8.7.3) with SMTP id KAA08309; Wed, 17 Jul 1996 10:01:10 -0400 (EDT)
+Date: Wed, 17 Jul 1996 10:01:10 -0400 (EDT)
+From: Parthiv Shah <parthiv@admin.idt.net>
+To: ianna@marco.internetforce.com
+cc: Golan Ben-Oni <bnite@tremere.ios.com>
+Subject: Re: Reverse address (fwd)
+In-Reply-To: <Pine.SUN.3.93.960716075951.10899A-100000@tremere.ios.com>
+Message-ID: <Pine.BSI.3.94.960717100039.8152B-100000@admin.idt.net>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+Give me the domain names and how do you want me to set it up, and I will
+set it up for you.
+Parthiv
+
+On Tue, 16 Jul 1996, Golan Ben-Oni wrote:
+
+> Date: Tue, 16 Jul 1996 08:00:07 -0400 (EDT)
+> From: Golan Ben-Oni <bnite@tremere.ios.com>
+> To: parthiv@idt.net
+> Subject: Reverse address (fwd)
+> 
+> 
+> 
+> ----------------------------------------------------------
+>                                                    IDT
+> Golan Ben-Oni                                   ---------
+> Senior Network Engineer                         \       /
+> (201) 928 4357                                   -------
+> (201) 928 1888 FAX                                \   /
+> bnite@tremere.ios.com                              ---
+>                                                     V
+>                                                    IOS
+> 
+> 
+> ---------- Forwarded message ----------
+> Date: Tue, 16 Jul 1996 11:49:53 +0100 (GMT+0100)
+> From: Marco Iannacone <ianna@marco.internetforce.com>
+> To: Golan Ben-Oni <bnite@tremere.ios.com>
+> Subject: Reverse address
+> 
+> 
+> Hi Golan,
+> how you doing?
+> 
+> We gave one of our CLASS C (206.02.231) to a company that has a huge 
+> network and they asked us if IDT can delegate them the reverse 
+> addressing.
+> Can you do it?
+> 
+> thanks,
+> 
+> Marco Iannacone
+> 
+> 
+
+--
+ Shah, Parthiv             	http://www.genious.com/
+ parthiv@admin.idt.net		(201) 928 - 4414
+ System Administrator at IDT	pgp? -> finger parthiv@haven.ios.com
+
+From parthiv@admin.idt.net Wed Jul 17 15:03:06 1996
+Return-Path: parthiv@admin.idt.net
+Received: from admin.idt.net (root@[169.132.144.10]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id PAA04868 for <ianna@marco.internetforce.com>; Wed, 17 Jul 1996 15:03:05 +0100
+Received: from admin.idt.net (parthiv@admin.idt.net [169.132.144.10]) by admin.idt.net (8.7.4/8.7.3) with SMTP id KAA08315; Wed, 17 Jul 1996 10:01:32 -0400 (EDT)
+Date: Wed, 17 Jul 1996 10:01:32 -0400 (EDT)
+From: Parthiv Shah <parthiv@admin.idt.net>
+To: Golan Ben-Oni <bnite@tremere.ios.com>
+cc: ianna@marco.internetforce.com
+Subject: Re: Reverse address (2) (fwd)
+In-Reply-To: <Pine.SUN.3.93.960716080013.10899B-100000@tremere.ios.com>
+Message-ID: <Pine.BSI.3.94.960717100122.8152C-100000@admin.idt.net>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+domain name?
+Parthiv
+
+On Tue, 16 Jul 1996, Golan Ben-Oni wrote:
+
+> Date: Tue, 16 Jul 1996 08:00:18 -0400 (EDT)
+> From: Golan Ben-Oni <bnite@tremere.ios.com>
+> To: parthiv@idt.net
+> Subject: Reverse address (2) (fwd)
+> 
+> 
+> 
+> ----------------------------------------------------------
+>                                                    IDT
+> Golan Ben-Oni                                   ---------
+> Senior Network Engineer                         \       /
+> (201) 928 4357                                   -------
+> (201) 928 1888 FAX                                \   /
+> bnite@tremere.ios.com                              ---
+>                                                     V
+>                                                    IOS
+> 
+> 
+> ---------- Forwarded message ----------
+> Date: Tue, 16 Jul 1996 11:52:11 +0100 (GMT+0100)
+> From: Marco Iannacone <ianna@marco.internetforce.com>
+> To: Golan Ben-Oni <bnite@tremere.ios.com>
+> Subject: Reverse address (2)
+> 
+> 
+> ... sorry I forgot to tell you the IP addres of their domain name server:
+> 
+> 206.20.231.241
+> 
+> 
+> thanks,
+> 
+> marco
+> 
+> 
+> 
+
+--
+ Shah, Parthiv             	http://www.genious.com/
+ parthiv@admin.idt.net		(201) 928 - 4414
+ System Administrator at IDT	pgp? -> finger parthiv@haven.ios.com
+
+From parthiv@admin.idt.net Wed Jul 17 19:39:32 1996
+Return-Path: parthiv@admin.idt.net
+Received: from admin.idt.net (root@admin.idt.net [169.132.144.10]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id TAA05675 for <ianna@marco.internetforce.com>; Wed, 17 Jul 1996 19:39:28 +0100
+Received: from admin.idt.net (parthiv@admin.idt.net [169.132.144.10]) by admin.idt.net (8.7.4/8.7.3) with SMTP id OAA10715 for <ianna@marco.internetforce.com>; Wed, 17 Jul 1996 14:37:44 -0400 (EDT)
+Date: Wed, 17 Jul 1996 14:37:44 -0400 (EDT)
+From: Parthiv Shah <parthiv@admin.idt.net>
+To: Marco Iannacone <ianna@marco.internetforce.com>
+Subject: Re: Reverse address (fwd)
+In-Reply-To: <Pine.LNX.3.91.960717152037.4896A-100000@marco.internetforce.com>
+Message-ID: <Pine.BSI.3.94.960717143657.10463D-100000@admin.idt.net>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+On Wed, 17 Jul 1996, Marco Iannacone wrote:
+
+> Date: Wed, 17 Jul 1996 15:26:01 +0100 (GMT+0100)
+> From: Marco Iannacone <ianna@marco.internetforce.com>
+> To: Parthiv Shah <parthiv@admin.idt.net>
+> Cc: Golan Ben-Oni <bnite@tremere.ios.com>
+> Subject: Re: Reverse address (fwd)
+> 
+> 
+> Hi Parthiv,
+> 
+> On Wed, 17 Jul 1996, Parthiv Shah wrote:
+> 
+> > Give me the domain names and how do you want me to set it up, and I will
+> > set it up for you.
+> > Parthiv
+> > 
+> 
+> Our client asked us to delegate them the reverse naming of the 
+> class C 206.20.231.0 
+
+Can you rephrase this? do you want us to  be secondary through dns for
+this class c or something please let me know... how exectly do you want
+this..
+Parthiv
+
+> 
+> domain name: indi.it
+> dns: 206.20.231.241
+> 
+> thanks,
+> 
+> Marco Iannacone
+> System Administrator
+> INTERNET FORCE - Italy
+> 
+> 
+
+--
+ Shah, Parthiv             	http://www.genious.com/
+ parthiv@admin.idt.net		(201) 928 - 4414
+ System Administrator at IDT	pgp? -> finger parthiv@haven.ios.com
+
+From parthiv@admin.idt.net Wed Jul 17 19:44:20 1996
+Return-Path: parthiv@admin.idt.net
+Received: from admin.idt.net (root@admin.idt.net [169.132.144.10]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id TAA05681 for <ianna@marco.internetforce.com>; Wed, 17 Jul 1996 19:44:17 +0100
+Received: from admin.idt.net (parthiv@admin.idt.net [169.132.144.10]) by admin.idt.net (8.7.4/8.7.3) with SMTP id OAA10760 for <ianna@marco.internetforce.com>; Wed, 17 Jul 1996 14:42:28 -0400 (EDT)
+Date: Wed, 17 Jul 1996 14:42:28 -0400 (EDT)
+From: Parthiv Shah <parthiv@admin.idt.net>
+To: Marco Iannacone <ianna@marco.internetforce.com>
+Subject: Re: Reverse address (2)
+In-Reply-To: <Pine.LNX.3.91.960717153329.4896C-100000@marco.internetforce.com>
+Message-ID: <Pine.BSI.3.94.960717144145.10463F-100000@admin.idt.net>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: A
+
+same question again please tell me what do exectly mean by delegating the
+revserse name of a class C
+Parthiv
+On Wed, 17 Jul 1996, Marco Iannacone wrote:
+
+> Date: Wed, 17 Jul 1996 15:36:48 +0100 (GMT+0100)
+> From: Marco Iannacone <ianna@marco.internetforce.com>
+> To: Parthiv Shah <parthiv@admin.idt.net>
+> Subject: Re: Reverse address (2)
+> 
+> 
+> Hi Parthiv,
+> I just got some additional information that you need:
+> 
+> 
+> On Wed, 17 Jul 1996, Parthiv Shah wrote:
+> 
+> > Give me the domain names and how do you want me to set it up, and I will
+> > set it up for you.
+> > Parthiv
+> > 
+> 
+> Our client asked us to delegate them the reverse naming of the 
+> class C 206.20.231.0 
+> 
+> domain name: indi.it
+> primary domain name server: dns.indi.it     206.20.231.241  
+> secondary domain name server: dns.free.it     194.179.131.1
+> 
+> thanks,
+> 
+> Marco Iannacone
+> System Administrator
+> INTERNET FORCE - Italy
+> 
+> 
+> 
+> 
+
+--
+ Shah, Parthiv             	http://www.genious.com/
+ parthiv@admin.idt.net		(201) 928 - 4414
+ System Administrator at IDT	pgp? -> finger parthiv@haven.ios.com
+
+From meyerj@styx.ios.com Fri Aug  9 19:33:00 1996
+Return-Path: meyerj@styx.ios.com
+Received: from users.internetforce.com (root@users.internetforce.com [206.20.95.4]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id TAA27458 for <ianna@marco.internetforce.com>; Fri, 9 Aug 1996 19:33:00 +0100
+Received: from styx.ios.com (meyerj@styx.ios.com [198.4.75.44]) by users.internetforce.com (8.6.12/8.6.12) with ESMTP id UAA02391 for <ianna@internetforce.com>; Fri, 9 Aug 1996 20:28:21 +0200
+Received: (from meyerj@localhost) by styx.ios.com (8.6.12/8.6.9) id OAA11670; Fri, 9 Aug 1996 14:28:17 -0400
+Date: Fri, 9 Aug 1996 14:28:17 -0400 (EDT)
+From: Jonathan Meyer <meyerj@styx.ios.com>
+Subject: 16.5 hour outage
+To: Marco Iannacone <ianna@internetforce.com>
+cc: Ira Rosen <irosen@styx.ios.com>
+In-Reply-To: <Pine.LNX.3.91.960809153520.26758A-100000@marco.internetforce.com>
+Message-ID: <Pine.3.89.9608091401.A10894-0100000@styx.ios.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: A
+
+Marco,
+
+Sorry about the outage.  I've instructed Ira to do a post-mortem on the 
+outage and reply to you.  Expect something by close of business Monday.
+
+Jonathan
+
+From meyerj@styx.ios.com Mon May 20 14:12:59 1996
+Return-Path: meyerj@styx.ios.com
+Received: from styx.ios.com (meyerj@styx.ios.com [198.4.75.44]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id OAA07830 for <ianna@marco.internetforce.com>; Mon, 20 May 1996 14:12:57 +0100
+Received: (from meyerj@localhost) by styx.ios.com (8.6.12/8.6.9) id IAA05594; Mon, 20 May 1996 08:17:06 -0400
+Date: Mon, 20 May 1996 08:17:01 -0400 (EDT)
+From: Jonathan Meyer <meyerj@styx.ios.com>
+Subject: Re: site mirroring
+To: Marco Iannacone <ianna@marco.internetforce.com>
+cc: bnite@soho.ios.com, Ira Rosen <irosen@styx.ios.com>
+In-Reply-To: <Pine.LNX.3.91.960520135723.7709A-100000@marco.internetforce.com>
+Message-ID: <Pine.3.89.9605200836.A5239-0100000@styx.ios.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+Marco,
+
+Nice to hear from you.
+
+Re:  mirroring, the person to speak with is Golan Ben-Oni, reachable at 
+bnite@soho.ios.com.  He's at 201-928-4357.  A backup is Ira Rosen, 
+201-928-4423.
+
+All the best.
+
+Jonathan Meyer
+
+
+On Mon, 20 May 1996, Marco Iannacone wrote:
+
+> 
+> Hi Jonathan,
+> how you doing?
+> 
+> I'm writing to you because Internet Force is thinking at the possibility
+> to have a mirror site in USA, in order to preserve our small line to the
+> Internet.
+> 
+> Since it will be very expensive for us to increase its bandwidth, maybe 
+> creating a mirror site in IDT will avoid a lot of people to come to our
+> server and more bandwidth will be available for our users to go to the 
+> Internet.
+> 
+> Is IDT able to mirror our site? Who shall I write to get more information?
+> 
+> thanks,
+> 
+> Marco Iannacone
+> System Administrator
+> INTERNET FORCE - Italy
+> 
+> 
+
+From bnite@tremere.ios.com Wed Sep 11 15:44:28 1996
+Return-Path: bnite@tremere.ios.com
+Received: from tremere.ios.com (tremere.ios.com [169.132.32.250]) by marco.internetforce.com (8.6.12/8.6.9) with ESMTP id PAA16270 for <ianna@marco.internetforce.com>; Wed, 11 Sep 1996 15:44:25 +0100
+Received: from localhost (bnite@localhost) by tremere.ios.com (8.7.5/8.6.9) with SMTP id KAA15104 for <ianna@marco.internetforce.com>; Wed, 11 Sep 1996 10:37:04 -0400 (EDT)
+Date: Wed, 11 Sep 1996 10:37:03 -0400 (EDT)
+From: Golan Ben-Oni <bnite@tremere.ios.com>
+To: Marco Iannacone <ianna@marco.internetforce.com>
+Subject: Re: routing of some class C (2)
+In-Reply-To: <Pine.LNX.3.91.960911152136.16002C-100000@marco.internetforce.com>
+Message-ID: <Pine.SUN.3.95.960911102502.14579B-100000@tremere.ios.com>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: A
+
+> Hi Golan,
+> 
+> sorry if I bother you again...
+> 
+> my previous question was:
+> 
+> Can IDT do the propagation?
+
+Yes, however keep in mind the following:
+
+It has been widely known that for some time Sprint Corporation
+has been using filters which limit the amount of routes that
+get propagated throughout their network.  Their filters basically
+do not ensure routing from any network smaller than a /18.  Since this
+block is smaller (only 4 class C's) we too can not ensure that it will
+be routed to by everyone.
+
+This is also the answer we give to our customers who want to come onto the
+internet with their own class C's assigned to them by the internic.
+
+The best way to ensure that your customers will always be routed would be
+to assign them from network addresses from a block that is large in size.
+
+> How much does it costs?
+
+This is free.
+
+> How long it will take?
+
+This can take anywhere from several hours to a day depending on how
+quickly we can get other providers (such as Alternet) to make changes to
+their access-lists ...
+

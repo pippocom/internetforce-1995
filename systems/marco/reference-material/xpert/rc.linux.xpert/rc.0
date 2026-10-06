@@ -1,0 +1,21 @@
+#! /bin/sh
+#
+# brc		This file is executed by init(8) when the system is being
+#		shutdown (i.e. set to run at level 0).  It usually takes
+#		care of un-mounting al unneeded file systems.
+#
+# Version:	@(#)/etc/brc		2.01	02/17/93
+#
+# Authors:	Miquel van Smoorenburg, <miquels@drinkel.nl.mugnet.org>
+#		Fred N. van Kempen, <waltje@uwalt.nl.mugnet.org>
+#
+
+  PATH=/sbin:/bin:/usr/sbin:/usr/bin
+  echo Unmounting file systems.....
+  sync
+  if [ "`mount | grep ' on / ' | grep umsdos`" = "" ]; then
+   umount -a
+  else
+   umount -a 2> /dev/null # Let's not put ugly errors on the screen with UMSDOS.
+  fi
+  echo Done.

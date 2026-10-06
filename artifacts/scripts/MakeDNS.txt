@@ -1,0 +1,49 @@
+# Yoav: if you get the error message "whatever is 5% shorter than previous..."
+# then change the appropriate line in this file and add the -short
+# as in the next line.
+#makezones-0.10 -short <michlala>.source <michlala>.com ........
+#
+
+all :	primary/internetforce.com \
+	primary/internetforce.it \
+        primary/canalemoda.com \
+        primary/sicilia.com \
+	primary/pesaro.com \
+        primary/intf.com \
+	primary/creo-mi.com \
+	primary/art-diary.com 
+
+primary/internetforce.com : internetforce.source
+	makezones-0.10 internetforce.source internetforce.com primary/internetforce.com primary/db.206.20.115 primary/db.206.20.95
+	kill -HUP `cat /etc/named.pid`
+
+
+primary/intf.com : intf.source
+	makezones-0.10 intf.source intf.com primary/intf.com
+	kill -HUP `cat /etc/named.pid`
+
+
+primary/internetforce.it : internetforce.it.source
+	makezones-0.10 internetforce.it.source internetforce.it primary/internetforce.it
+	kill -HUP `cat /etc/named.pid`
+
+primary/canalemoda.com : canalemoda.source
+	makezones-0.10 canalemoda.source canalemoda.com primary/canalemoda.com
+	kill -HUP `cat /etc/named.pid`
+
+primary/sicilia.com : sicilia.source
+	makezones-0.10 sicilia.source sicilia.com primary/sicilia.com
+	kill -HUP `cat /etc/named.pid`
+
+primary/pesaro.com : pesaro.source
+	makezones-0.10 pesaro.source pesaro.com primary/pesaro.com
+	kill -HUP `cat /etc/named.pid`
+
+primary/creo-mi.com : creo-mi.source
+	makezones-0.10 creo-mi.source creo-mi.com primary/creo-mi.com
+	kill -HUP `cat /etc/named.pid`
+
+primary/art-diary.com : art-diary.source
+	makezones-0.10 art-diary.source art-diary.com primary/art-diary.com
+	kill -HUP `cat /etc/named.pid`
+

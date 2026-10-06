@@ -1,0 +1,61 @@
+LUGLIO 1996: ACQUISTATO NUOVO SERVER INTEL DA USARE CON WINDOWS NT E LICENZA SOFTWARE ORACLE PER CLIENTE INTERNETFORCE.
+
+APPUNTI DI MARCO (MIEI): AVENDO IMPARATO DA AUTODIDATTA COME FARE INSTALLAZIONE ED USARE ORACLE PREFERISCO SEGNARMI GLI STEP NON PRESENTI SUI MANUALI
+
+
+                  INSTALLAZIONE DI ORACLE WEBSERVER
+
+
+Aggiunte alle istruzioni riportate sui manuali:
+
+1 - Durante le fasi di installazione creare SEMPRE il database.
+In alternativa lo si puo' fare dopo, ma possono nascere dei problemi.
+
+2 - Prima di configurare Oracle Webserver riavviare il sistema per fare 
+in modo che \ORANT\BIN sia nel path.
+E' possibile verificarlo attreverso il pannello di controllo -> system
+
+3 - Disattivare eventuali servizi come OracleWWWListener
+ad eccezione di quello configurato nella fase di installazione (nel nostro
+caso su porta 9999)
+
+4 - attivare manualmente il servizio OracleTNSListener
+
+5 - Se si installa il protocollo named pipes verificare che esista il file:
+\ORAWIN\NETWORK\ADMIN\TNSNAMES.ORA
+Controllare che all'interno di esso vi sia:
+
+ORCL.WORLD =
+  (DESCRIPTION =
+    (ADDRESS.LIST =
+      (ADDRESS =  
+        (COMMUNITY = nmp.world)
+        (protocol = NMP)
+        (server = oracle-server)
+        (pipe = ORAPIPE)
+      )
+     )
+    (CONNECT_DADA = (SID = ORCL)
+     )
+  )
+
+Se tale file non esiste copiarlo da:
+
+\ORAWIN\NETWORK\ADMIN\SAMPLES
+
+e aggiungervi la parte relativa a ORCL.WORLD
+
+6 - Aggiungere nel file
+
+\WINNT\ORACLE.INI
+
+dopo la riga [Oracle]
+
+la seguente riga:
+
+LOCAL = ORCL.WORLD
+
+
+7 - Verificare poi che in pannello di controllo - > services
+siano attivati tutti i servizi relativi ad oracle.
+

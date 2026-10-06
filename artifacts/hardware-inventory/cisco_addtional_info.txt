@@ -1,0 +1,30 @@
+
+Hardware:
+
+HUB: 3C16670 LinkBuilder FMS II
+Tranceiver: Etherlink Tranceiver
+            3C583A on CISCO AUI
+
+Connections:
+             The tranceiver connect a port of a HUB to
+             the router.
+
+
+--------------------- Buffering Log --------------------
+
+The following instructions will enable the buffering log in the CISCO:
+
+logging buffered
+service timestamps debug datetime
+service timestamps log datetime
+
+than do
+
+clock set
+
+and fix the correct time.
+
+To view the log it is enough to enter:
+
+show log
+

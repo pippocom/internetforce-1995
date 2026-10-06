@@ -1,0 +1,1167 @@
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+NAME
+     xtacacsd - Extended TAC  Access  Control  server  for  Cisco
+     commServers
+
+SYNOPSIS
+     xtacacsd [ -bdhilnpqs ] [ -c _c_o_n_f_i_g_f_i_l_e ] [ -u _u_t_m_p_f_i_l_e ]  [
+     -w _w_t_m_p_f_i_l_e ] [ _p_a_s_s_w_o_r_d-_f_i_l_e_n_a_m_e...  ]
+           -b  (_p_e_r_m_i_t _B_l_a_n_k _p_a_s_s_w_o_r_d_s _f_i_e_l_d_s, _u_s_e_f_u_l _f_o_r _a_n_o_n_y_m_o_u_s _u_s_e_r_s)
+           -d  (_D_e_b_u_g, _r_e_p_e_a_t _f_o_r _h_i_g_h_e_r _d_e_b_u_g _l_e_v_e_l_s)
+           -h  (_u_p_d_a_t_e _H_o_s_t _w_t_m_p _f_i_l_e_s _a_l_s_o, _e._g. _w_t_m_p._m_y_c_i_s_c_o)
+           -i  (_I_g_n_o_r_e _c_a_s_e _i_n _u_s_e_r_n_a_m_e_s _f_o_r _p_a_s_s_w_o_r_d _f_i_l_e _m_a_t_c_h_e_s)
+           -l  (_L_o_g _i_n_f_o _m_e_s_s_a_g_e_s _a_n_d _n_o_r_m_a_l _a_c_t_i_o_n_s _v_i_a _s_y_s_l_o_g)
+           -n  (_d_i_s_a_b_l_e _u_s_e _o_f _D_o_m_a_i_n _N_a_m_e_s_e_r_v_e_r)
+           -p  (_s_e_a_r_c_h _s_y_s_t_e_m _P_a_s_s_w_o_r_d _f_i_l_e _i_n _a_d_d_i_t_i_o_n _t_o _a_l_t_e_r_n_a_t_e _f_i_l_e_s)
+           -q  (_Q_u_i_e_t _m_o_d_e-  _D_E_N_Y _t_y_p_e _r_e_s_p_o_n_s_e_s _n_o_t _s_e_n_t _b_a_c_k)
+           -s  (_S_t_a_n_d_a_l_o_n_e _m_o_d_e- _d_e_f_a_u_l_t _i_s _v_i_a  inetd)
+
+DESCRIPTION
+     xtacacsd is an _e_x_t_e_n_d_e_d TACACS  server  (for  Cisco  network
+     devices)  which  authenticates users logging onto a terminal
+     server (or any host which cares to  query  the  server).  It
+     uses  the  standard password file (/_e_t_c/_p_a_s_s_w_d ) by default,
+     or an alternate list of password files.
+
+     This version of xtacacsd has the following _n_e_w features:
+
+     -    support for calling an external  password  verification
+          program if the password entry for a user matches a spe-
+          cial  keyword.  This  allows  support   for   TokenCard
+          software  such as the Enigma Logic SafeWord system, the
+          Security Dynamics SecurID card, etc.
+
+     -    allows calling an external program _A_F_T_E_R  the  password
+          verification  to allow finer control over permitting or
+          denying a user. The program is run with  the  username,
+          terminal  server  and  line number as arguments (can be
+          used to deny access to certain users dialing in on res-
+          tricted ports at certain times, etc.)
+
+     -    Case insensitive username matches (the earlier  TOLOWER
+          option has been deleted and replaced with case insensi-
+          tive searches).
+
+     -    updates and maintain its UTMP file (as well as its WTMP
+          file).   The   UTMP  file  indicates  which  users  are
+          currently logged into all network devices on your  net-
+          work.
+
+     -    optionally reads a configuration file on  startup  con-
+          taining   commands   to   allow  extensive  control  of
+          responses based  on  the  username,  group-id  or  geco
+          string  matches. Allows permitting or denying a request
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                   1
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+          based on its type, originating host and  line  numbers,
+          and setting access control lists.
+
+     -    Execute a program  on  the  Unix  server  (not  on  the
+          client)  on  getting  a request from a specified user &
+          host (can be used to initiate dialback)
+
+     -    When run under inetd, it has an inactivity timer of  15
+          minutes before exiting.
+
+     -    Can send back a SLIP ACL in/out list in tacacs response
+          (need cisco software _v_9._2_1(_5._2) or higher).
+
+     -    Can update a separate WTMP file for each  host  sending
+          the  TACACS query- this is needed so that the _l_a_s_t pro-
+          gram can parse the WTMP sensibly (its back on 'popular'
+          request).
+
+     Other `standard' tacacs features are:
+
+     -    Can run under _i_n_e_t_d or in standalone mode as a daemon.
+
+     -    can process either the old tacacs queries  or  the  new
+          extended tacacs format queries.
+
+     -    can process multiple password files (upto 5 files).
+
+     -    optionally disable the use of  nameservers  for  faster
+          response times or avoid depending on the nameservers.
+
+     -    optionally not send DENY type  responses  so  that  the
+          client can query multiple tacacs servers.
+
+     Old features deleted in this version are:
+
+     -    Does not use the gid as the  access  list  number.  Now
+          specify the access-list using the config file.
+
+     -    Does not  use  the  group  gid  to  permit/deny  access
+          (defined  during compile time in earlier versions). Now
+          control using the config file.
+
+     -    converting  all  query  names  to  lowercase  has  been
+          replaced with case insensitive username matching.
+
+     This program can be used to authenticate users when they try
+     to access a terminal server ( _c_i_s_c_o terminal servers support
+     this option). The  server  can  log  information  about  all
+     queries coming to the server using syslog. It is meant to be
+     invoked by inetd but can be run from  a  terminal  in  stan-
+     dalone  mode  if desired. In this mode, it writes all errors
+     to the controlling terminal.
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                   2
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+     The server expects a _u_s_e_r_n_a_m_e and _p_a_s_s_w_o_r_d to be supplied in
+     the  query  packet  recieved from the terminal servers. This
+     username and password are authenticated by searching in  the
+     password file(s).  (The default is /_e_t_c/_p_a_s_s_w_d but upto five
+     alternate filenames can be specified).  If it cannot find  a
+     match  in any of the password files, it sends an _a_u_t_h_e_n_t_i_c_a_-
+     _t_i_o_n _f_a_i_l_u_r_e reply to the query (unless the _q_u_i_e_t option  is
+     specified in which case no negative response will be sent).
+
+     The server always returns an authentication failure for  any
+     queries  that  have a uid of 0 ( _r_o_o_t _u_i_d ) or for any users
+     that do not have a password (null  password  field)  in  the
+     password  files.   It  also  verifies  that  the  account is
+     current and  not  expired  if  the  last  password  field  (
+     _p_w__s_h_e_l_l)  supports  this  feature. Finally, permissions are
+     checked for the request by matching the  username,  group-id
+     and  gecos field of the user in the tacacs request. The per-
+     missions  are  specified  in  the  configuration   file   as
+     described in the CONFIG FILE section below.
+
+     To facilitate user login record keeping, the  server  writes
+     formatted  log  messages  at the NOTICE level. The format of
+     these messages is:
+           STAT:Service:Username:UID:GID @ From-Host:line TTY:TransID:Action:Misc
+           STAT:xlogin:vikas:913:10 @ cs500:line tty5:67:accepted:9
+     The TransID is the tacacs transaction ID (which is a  unique
+     number per tacacs query-reply). It is useful for eliminating
+     duplicate entries from redundant tacacs server logs.
+
+     The entry in the /_e_t_c/_s_e_r_v_i_c_e_s file is:
+           tacacs        49/udp
+     and in the _i_n_e_t_d._c_o_n_f file:
+           tacacs  dgram  udp  wait  root  /etc/xtacacsd  xtacacsd -dlc /etc/xtacacsd-conf
+
+     _N_O_T_E: When run under _i_n_e_t_d, it is strongly advised  to  list
+     most of the options in the configuration file and NOT on the
+     command line since there is a limit to the number  of  argu-
+     ments  that  can be listed in the _i_n_e_t_d._c_o_n_f file (and it is
+     easy to hit this limit if the utmp and password  files  etc.
+     are specified on the tacacs command line).
+
+PROTOCOL DESCRIPTION
+     Extended tacacs on the cisco Communication  servers  support
+     two  types  of  configurations- notification and authentica-
+     tion. Authentication requires a  response  from  the  tacacs
+     server  to  indicate  whether the user can perform the indi-
+     cated action. Services that can be authenticated are  login,
+     enable,  slipaddr and slipon. In addition, _n_o_t_i_f_i_c_a_t_i_o_n mes-
+     sages for terminal connections, slipoff and logout can  also
+     be sent to the tacacs server.
+
+
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                   3
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+Slip Setup
+     The 'slipaddr' service  is  essentially  a  dynamic  address
+     selection on the dialup line. Thus, a remote dialup user who
+     always wants to get the IP address 192.100.100.11  can  dia-
+     lin  and  request  to be assigned his 'personal' IP address.
+     Authentication of these requests means that the user has  to
+     supply a password for the IP address desired, and the tacacs
+     server will check the supplied IP address and password.
+
+     To facilitate configuration, it is  easier  to  map  the  IP
+     address to a hostname (via DNS) and then let the user supply
+     this hostname instead of an  IP  address.  Preferably,  this
+     hostname  will  be the same as the username used for logging
+     in, so only one entry needs to be made in the password  file
+     used by the tacacs server for authenticating.
+
+     Alternatively, the terminal server can have static 'default'
+     IP addresses assigned to the dialup lines and a user can use
+     'slip default' instead of requesting an IP address using the
+     slipaddr query.
+
+     When a user issues a 'slip default' command, the cisco  does
+     _n_o_t  ask  for  a  username and password. Instead, it sends a
+     SLIPON message to the tacacs server with the username (which
+     the user had supplied upon login) in the request. The tacacs
+     server can either permit/deny this request alongwith a  SLIP
+     access-list  to be applied. Logins can be forced by specify-
+     ing the 'always' keyword in the Cisco configuration.
+
+
+CHAP & ARAP
+     CHAP usernames and secrets can be  stored  as  part  of  the
+     cisco  configuration  or alternatively one can configure the
+     commServers to use xtacacs to do the CHAP and ARAP verifica-
+     tion.   The xtacacsd daemon simply creates the ARAP and CHAP
+     responses and sends them back to  the  cisco-  it  does  not
+     authenticate the connection by comparing the challenges with
+     the response, etc. This is done by the cisco CommServer.
+
+     These security mechanisms work by the local and remote hosts
+     encrypting  the  same  data  using  the  user's password (or
+     "secret"), and then comparing the _e_n_c_r_y_p_t_e_d  values  of  the
+     challenge.  This  avoids  having  to transmit  the secret in
+     clear text during the entire handshake.
+
+     This version of xtacacsd assumes the user's  password  field
+     (in the password file) is the secret (stored in clear text).
+     The password file format is used for CHAP and  ARAP  secrets
+     simply  for  convenience. A simple way to separate your arap
+     and chap entries is to make  sure  that  you  use  different
+     usernames for the regular logins and the chap/arap logins.
+
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                   4
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+     Note that the 'secret' has to be  stored  in  cleartext  and
+     hence  you  MUST  protect these files from being readable by
+     anyone except root. Since the xtacacsd daemon runs as  root,
+     you  should  set the file permissions on the alternate pass-
+     word files to be 0600.
+
+     ARAP requests send an extended tacacs packet with  the  user
+     name  immediately  following  the  xtacacstype structure and
+     it's length is specified in the  namelen  field.   Following
+     that  are  two  ARAP challenges.  One from the remote client
+     and one from the commserver.  Both are 8 bytes long and  the
+     pwlen value must be 16 bytes.  Both challenge values are DES
+     encrypted using the  users  secret  and  the  resulting  two
+     values  are  sent  back.   Both  response values are 8 bytes
+     long.  They are appended after the xtacacstype structure (in
+     the  respective order that they were recieved in).  The ver-
+     sion field must be the same as one in the  received  packet.
+     The  namelen  must  be set to 0 and the pwlen must be set to
+     16.
+
+     CHAP requests come with a user name value  with  the  length
+     specified in the namelen field.  In the password field there
+     is a single byte id value followed by a challenge.   The  id
+     is from the CHAP message that the commserver recieved, or is
+     preparing to send.  The challenge value is a stream of bytes
+     that  the  commserver recieved or is preparing to send.  The
+     length of the challenge is pwlen - 1.  (The -1 is for the id
+     byte.)   TACACS must create a new stream of bytes that looks
+     like:
+               <id><user secret><challenge>
+     and perform an MD5 hash of that stream.  The  return  packet
+     must have the same version number that was received, namelen
+     set to 0, pwlen set to 16 (the size of an MD5 hash) and  the
+     xtacacstype  structure  is  immediately  followed by the MD5
+     hash.  CHAP requests may arrive when a remote user is trying
+     to  authenticate  to  the commserver, or when the commserver
+     has been asked to authenticate to the remote node.   In  the
+     latter case, the username in the request will be the name of
+     the commserver.
+
+     To compile with the ARAP  support,  you  must  get  the  DES
+     libraries  separately.  If  you  are in the United States or
+     Canada, you may get these files from  ftp.cisco.com  in  the
+     ftp area where you got TACACS.
+
+     Alternatively, one can use the _a_r_a_p  _u_s_e-_t_a_c_a_c_s  _s_i_n_g_l_e-_l_i_n_e
+     or  the _c_h_a_p _u_s_e-_t_a_c_a_c_s _s_i_n_g_l_e-_l_i_n_e cisco configuration com-
+     mands upon which the user logging in specifies the  username
+     as  "<username>*<password>",  and  the  password  is  always
+     "arap" (or "chap"). This "sneaks" the username/password pair
+     through in clear text.  The terminal server notes the "*" in
+     the username, and splits that into a username/password pair,
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                   5
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+     and  then  issues  a  _X_L_O_G_I_N  xtacacs  query  to the xtacacs
+     server. Note that in this case there will be  no  difference
+     between  a  regular LOGIN request and a ARAP or CHAP request
+     (however, you dont have to worry about having the  passwords
+     in clear text on your system somewhere).
+
+SAMPLE SETUP
+     1.   Compile the xtacacsd server software. Then:
+
+          -    Edit the  /etc/services  file  and  add  the  port
+               number for tacacs.
+
+          -    Edit /etc/inetd.conf and add the line for xtacacsd
+
+          -    Edit /etc/syslog.conf and add  logging  of  LOCAL6
+               messages at debug level
+
+          -    Restart or send the HUP signal to your _i_n_e_t_d, _s_y_s_-
+               _l_o_g_d processes.
+
+     2.   Monitor the syslog messages by doing a 'tail -f' on the
+          log file.
+
+     3.   Configure the cisco using the commands:
+          tacacs-server extended
+          tacacs-server host 192.1.1.1
+          tacacs-server host 192.1.1.15
+          tacacs-server last-resort password
+          !
+          tacacs-server notify connect
+          tacacs-server notify slip
+          tacacs-server notify enable
+          tacacs-server notify logout
+          !
+          tacacs authenticate enable
+          tacacs authenticate connect
+          tacacs-server authenticate slip [ always ] [ access-lists ]
+          !
+          ppp auth chap
+          line 1
+           login tacacs
+          inter async 1
+           ppp use-tacacs [single-line]
+           arap use-tacacs [single-line]
+          !
+
+     4.   For SLIP/PPP support where you want the user to be able
+          to  ask  for  a  particular IP address, put an entry in
+          your nameserver so that the user can do a _s_l_i_p  _m_y_u_s_e_r_-
+          _n_a_m_e  on  the cisco and use the same password as he did
+          when logging in. This is  preferred  instead  of  using
+          _s_l_i_p   _1_9_2._1._3._4  for  convenience  and  simplicity  in
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                   6
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+          maintaining the password file.
+
+     5.   For CHAP/ARAP support, you can create a separate  pass-
+          word  file  with  the CHAP & ARAP secrets in clear text
+          (yes, the secrets are in clear  text  if  you  are  not
+          using  the  _s_i_n_g_l_e-_l_i_n_e keyword in the cisco configura-
+          tion). Make sure that this file is  set  mode  0600  so
+          that only root can read it.
+
+     The current xtacacsd server implementation always returns an
+     OKAY  response  to a 'connect' message, since the same func-
+     tionality can  be  achieved  (more  cleanly)  using  an  ACL
+     applied during login.
+
+OPTIONS
+     -b   (_b_l_a_n_k _p_a_s_s_w_o_r_d_s) Normally, the xtacacsd daemon  denies
+          all  requests  where the password field for the user is
+          blank. However, this  option  permits  blank  passwords
+          which  would  normally  be  used for allowing _a_n_o_n_y_m_o_u_s
+          FTP users to log in.
+
+          Use this option with care and  apply  careful  restric-
+          tions via access lists to prevent undesired breakin's.
+
+     -d   (_d_e_b_u_g) Logs additional debugging information (to  _s_y_s_-
+          _l_o_g  or  on the terminal in standalone mode). Extensive
+          debugging information is obtained by compiling the pro-
+          gram with the DEBUG option.
+
+     -s   (_s_t_a_n_d_a_l_o_n_e) When the server is run in  the  standalone
+          mode,  it  sits  in an endless loop waiting for data to
+          arrive on the TACACS port. If the debug (-d) option  is
+          not  specified,  the  program forks and detaches itself
+          from the controlling terminal. All errors are logged to
+          _s_t_d_e_r_r.
+
+     -h   (_h_o_s_t _w_t_m_p _f_i_l_e_s) With this flag, the  xtacacsd  daemon
+          will  update and maintain a separate WTMP file for each
+          cisco sending the xtacacs query. It is  useful  to  use
+          the  standard  'last' Unix utility to create accounting
+          reports. The names of the wtmp files created will  have
+          the  same  basename as the WTMP file and have the host-
+          name appended to it.
+
+     -i   (_i_g_n_o_r_e_c_a_s_e)  This  option  performs  case  insensitive
+          username matches in the password file.  It is useful in
+          SLIP queries since the cisco terminal  servers  convert
+          all SLIP username queries to uppercase.
+
+     -l   (_l_o_g_g_i_n_g) With this option, the server logs all queries
+          that  it  serves  via syslog at the INFO level. Without
+          this option, only errors are  logged.  The  logging  is
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                   7
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+          done  at  the  facility set (LOG_LOCAL6) during compile
+          time.
+
+     -n   (_n_o _n_a_m_e_s_e_r_v_e_r) This option disables  the  use  of  the
+          nameserver  to  resolve  internet addresses into names.
+          This speeds up responses  in  case  the  nameserver  is
+          heavily loaded or is down.
+
+     -p   (_s_y_s_t_e_m  _p_a_s_s_w_o_r_d)  To  aid  portability,  the  program
+          searches  through  the  listed alternate password files
+          assuming that they are text files. If you  are  running
+          NIS  or  shadow passwords, and want to search for users
+          in these files, then specify this  option  (or  specify
+          DEFAULT as a password filename in the config file).
+           _N_o_t_e _t_h_a_t _u_s_e_r_n_a_m_e_s _s_e_a_r_c_h_e_d _u_s_i_n_g _t_h_e _D_E_F_A_U_L_T _k_e_y_w_o_r_d
+          _w_i_l_l   _N_O_T  _b_e  _c_a_s_e  _i_n_s_e_n_s_i_t_i_v_e  _s_i_n_c_e  _i_t  _u_s_e_s  _t_h_e
+          getpwnam() _s_y_s_t_e_m _c_a_l_l.
+
+     -q   (_q_u_i_e_t) So that  the  server  does  not  send  _n_e_g_a_t_i_v_e
+          responses  to  a  query. Thus a client can ask the next
+          tacacs server in its list in case of  a  timeout.  Note
+          that  if a user has accounts on two systems with tacacs
+          servers, and if the number  of  logins  in  being  con-
+          trolled  via the group-id, then the second server might
+          respond even though the  maximum  number  of  allowable
+          logins has been reached on the first tacacs server.
+
+     -u <_u_t_m_p_f_i_l_e>
+          specifies an alternate _u_t_m_p file to be searched for the
+          number of allowed logins (can also be set in the config
+          file).  The default file is defined during compile time
+          (typically  /var/adm/tacacs/utmp).  The xtacacsd server
+          deletes entries in the utmp file when a user logs  out,
+          and  also when a cisco server reloads (since the server
+          sends out a _x_r_e_l_o_a_d xtacacs  message  to  the  daemon).
+          However,  if  the  cisco  server crashes, then the utmp
+          file could get out of sync.
+
+     -w <_w_t_m_p_f_i_l_e>
+          Extended tacacs logs the times that a user connects  to
+          the  terminal  server,  logs  out  or enters _s_l_i_p.  All
+          queries from all terminal servers are  also  logged  in
+          the  same WTMP file.  Standard Unix accounting programs
+          like ac(8) can parse and  generate  reports  from  this
+          file.
+
+     -c  <config file>
+          A config file can be specified with the UTMP  filename,
+          the  WTMP  filename, the password files and the permis-
+          sions for each request type. See the CONFIG  FILE  sec-
+          tion below for the config file syntax.
+
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                   8
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+     files
+          <_a_l_t_e_r_n_a_t_e  _p_a_s_s_w_o_r_d  _f_i_l_e_s>  By   default   the   file
+          /etc/passwd  is used for verifying the username and the
+          password in a tacacs query.  However, upto 5  alternate
+          password files can be specified on the command line and
+          the server will search in all the files until it  finds
+          a match or else return an error. The alternate password
+          files must be in the /etc/passwd  format  so  that  the
+          _g_e_t_p_w_e_n_t(3) routines can be used on them.
+
+CONFIGURATION FILE
+     This version of xtacacsd supports a  configuration  file  on
+     the  command  line.  The configuration file can (optionally)
+     list the WTMP, UTMP and the alternate  PASSWORD  files.   It
+     also  lists  permissions  and corresponding actions for each
+     tacacs request type.  The AUTHTOKEN config line specifies an
+     external  stub  program  for  password  verification. If the
+     password string in the password  file  matches  the  keyword
+     specified  in  the  config  file,  then the external program
+     specified is called  with  the  username  and  password  for
+     verification.  The  external stub program should return 1 to
+     permit access and 0 to deny access.
+
+     The syntax of the config file is:
+          #
+          # Boolean options
+          BLANKPASSWORD
+          NONAMESERVER
+          IGNORECASE
+          HOSTWTMP
+          LOGGING
+          QUIET
+
+          DEBUGLEVEL  2
+
+          # Specify alternate UTMP and the WTMP files (strongly recommended)
+          WTMP /var/xtacacs/wtmp
+          UTMP /var/xtacacs/utmp
+
+          # Upto 5 password files. Command line arguments will precede this list.
+          # Specify DEFAULT if you are running NIS or shadow passwords and also want to
+          # search through those files.
+          PASSWD    DEFAULT
+          PASSWD    /etc/passwd.local
+          PASSWD    /usr/local/etc/passwd.xtacacs
+
+          ##
+          # For password authentication using an external stub program, use the
+          # 'AUTHTOKEN' config lines.The password string is case sensitive and
+          # the external program must return 1 to permit access and 0 to deny access.
+          #
+          #       AUTHTOKEN  <passwd-string>  <prog to exec for passwd auth>
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                   9
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+          AUTHTOKEN      ENIGMA    /usr/local/tacacs/bin/enigma
+          AUTHTOKEN      SDI  /usr/local/tacacs/bin/sdi
+
+          ## To put restrictions on the connections...
+          ##
+          #
+          # While doing an 'exec', it adds on the username, host & line number
+          # at the end as an argument.
+          #
+          # [<list type>] <key> HOST {hostname} [<request type>] [<action>] <args>
+          #
+          #    where
+          #    <list type> is one of:
+          #         USER GROUP or GECO
+          #    <request type> is one of:
+          #         arap chap login connect enable slipaddr slipon all
+          #    <action> is one of:
+          #         permit deny norouting acl numlogin exec execdeny
+          #
+
+     The list can further be tailored using HOST to  specify  the
+     terminal  server that is sending the tacacs request and LINE
+     to specify the tty line number (the LINE's are optional).
+
+     Note the syntax of the SLIP access-lists  in  the  SLIP  ACL
+     configuration  line  - it is <_a_c_l _i_n> - <_a_c_l _o_u_t> (separated
+     by a hyphen). You  need  the  new  cisco  software  versions
+     (above 9.21.5) for this functionality.
+
+     In following example, the user 'admin' will have an  ACL  of
+     '0'  (no  access-list)  and  a  permit  for  *all*  types of
+     requests.  SLIPaddr   requests   will   have   the   program
+     'mail_download'  run  on the server host.  Users in group 10
+     will be okay-ed against the program 'daytime_logins'  (which
+     will  be  run  with the username, gid, host & port as args).
+     This check is done AFTER the  password  has  been  verified.
+     Users  in  the  group 10 will have an inbound slip ACL of 33
+     and outbound slip ACL of 44 applied when they go  into  slip
+     mode.   Group  10  and  users with 'slip' in the gecos field
+     will be permitted to go  into  slip  mode.   User  'bin'  is
+     denied all access.  Users with the keyword 'dialback' as the
+     last string in the geco field will be denied  access  (exec-
+     deny)  and the program 'dialback.csh' will be run (typically
+     a routine to dialout to the remote user's home).  Users with
+     'slip'  as the last string in the geco field will be permit-
+     ted access (subject to that fact that no previous  line  has
+     denied  them  access  (order  is  important).  All remaining
+     users will have an ACL of '8'  on  all  connections,  and  a
+     limit  of  5  on  the number of logins.  The last entry is a
+     catch-all so that all other users not listed will be  denied
+     access.
+          ##
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                  10
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+          #   <list>       <host [line]>      <req>     <action>      <args>
+          #
+          USER admin     HOST all  all  acl       0
+          USER admin     HOST all  all  permit
+          USER all  HOST mycisco  LINE  13,14     login     deny
+
+          USER  all HOST all  all  acl       8
+
+          USER all  HOST all  LINE all  slipaddr execpermit      /usr/bin/mail_download
+          GROUP 10  HOST noontime  login     getok          /bin/daytime_logins
+          GROUP 10  HOST all  LINE 4,5,6,9   slipon    acl       33-44
+          GROUP 10  HOST all  slipon    permit
+
+          USER bin  HOST all  LINE 1,2,3,4   all  deny
+
+          GECO dialback  HOST cs500     login     execdeny  /bin/dialback.csh
+          GECO slip HOST all  slipon    permit
+
+          USER  all HOST all  all  numlogin  5
+
+          USER all  HOST all  all  deny
+
+     There are three permission lists: _u_s_e_r,  _g_r_o_u_p,  and  _g_e_c_o_s.
+     For  the  user-list, the key is the _u_s_e_r_n_a_m_e, for the group-
+     list it is the _g_i_d, (NOT group-name) and for  the  geco-list
+     it  is  a  _g_e_c_o  string  match (the last portion of the geco
+     string if it has fields separated by commas).
+
+     Request types are one of the following:
+
+     login
+          During initial login into the communication server.
+
+     connect
+          If the cisco server is set to authenticate _c_o_n_n_e_c_t type
+          requests made by the user.
+
+     enable
+          If the server is set to authenticate _e_n_a_b_l_e type tacacs
+          requests.  Note that if you do not define a ENABLE_USER
+          (see compile time options), then you should use this to
+          control  which  user  can  enable.  Users  permitted to
+          enable will be able to do so with  their  own  username
+          and password if ENABLE_USER is not defined.
+
+     slipon
+          authentication requests to permit going into SLIP mode.
+          Note that this is a new feature available in CommServer
+          releases 9.21(5) and higher only.
+
+     slipaddr
+          authentication requests  to  allocate  the  desired  IP
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                  11
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+          address for going into SLIP mode.
+
+     all  Any and all tacacs requests.
+
+     All configuration file entries are processed  in  the  order
+     they are read.  The first permit or deny match will stop any
+     further searches.  Note that ACL entries do not  set  permit
+     or  deny, so put these entries first in the config file. All
+     other entries set permit or deny explicitly on matching  the
+     key,  and  will  cause  an  immediate return without further
+     searches.
+
+     If the _k_e_y, _h_o_s_t_n_a_m_e and _r_e_q_u_e_s_t__t_y_p_e match,  the  specified
+     action is performed. The list of _a_c_t_i_o_n_s are:
+
+     permit
+          Send back a XTACACS_A_ACCEPT response. Stop  trying  to
+          match any more permission lines.
+
+     deny Send back a XTACACS_A_REJECT response. Stop  trying  to
+          match any more permission lines.
+
+     norouting
+          If the request type is SLIPON and has the ROUTING  flag
+          set,  send  back a REJECT response. Stops searching for
+          any more matches.
+
+     acl  send the access-list number specified in  the  argument
+          field in the tacacs response.
+
+     numlogin
+          check the UTMP file for the number of  current  login's
+          into  the  various servers on the network. Set the max-
+          imum number of allowed login's  to  the  value  in  the
+          argument  field.  If  the  number of logins exceeds the
+          limit, a REJECT response is sent and no  more  searches
+          are done. Otherwise no action is performed.
+
+     getok
+          run the external program specified with  the  username,
+          group-id,  hostname  and  dialin port number as command
+          line arguments. If  the  external  program  returns  0,
+          access  will be denied, else the rest of the lines will
+          be processed until an explicit permit or deny condition
+          is  met. This program is run AFTER the password authen-
+          tication. It can be used  to  deny  access  to  certain
+          users  at  specific  times of the day, depending on the
+          dialin terminal server and port, etc.
+
+     execpermit
+          Execute the specified program, while granting access at
+          the  same  time.  The program specified in the argument
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                  12
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+          field is executed in the background, with the username,
+          hostname and line number tacked on on the command line.
+          Stops searching for any more matches.
+
+     execdeny
+          Execute the specified program,  while  denying  access.
+          Similar  to the _e_x_e_c_p_e_r_m_i_t option. Can be used to setup
+          dialback for remote users.   Stops  searching  for  any
+          more matches.
+
+COMPILE TIME OPTIONS
+     The complete list of compile time options are  described  in
+     the Makefile and the source code. The most relevant ones (to
+     use) are described here.
+
+     UTMP Location of the _u_t_m_p(5) format file that is updated and
+          maintained  by the xtacacsd daemon. This file lists all
+          the current users on the network. Do  _n_o_t  specify  the
+          Unix  system-wide  /_e_t_c/_u_t_m_p  file-  select  a  xtacacs
+          specific file instead.  This file is also searched  for
+          the number of allowed logins.
+
+     WTMP Location of the _w_t_m_p(5) format file for  maintaining  a
+          history  of  all  login/logouts.  Do  not  specify  the
+          system-wide /usr/adm/wtmp file.
+
+     ENABLE_USER
+          If  the  CommServers  are  configured  to  authenticate
+          'Enable'   type  requests,  you  can  either  define  a
+          specific username using ENABLE_USER, or  else  let  the
+          user  enter  his/her  own  username  and  password.  If
+          ENABLE_USER is defined, the username+password  that  is
+          required  during  an  'enable'  will  be  that  of  the
+          ENABLE_USER.
+
+     LOG_FACILITY
+          The _s_y_s_l_o_g(3) logging facility (LOG_LOCAL6 by default).
+
+USEFUL TIDBITS
+     -    The utmp file on Unix systems keeps track of the  users
+          _c_u_r_r_e_n_t_l_y  logged on the system, as opposed to the wtmp
+          file which lists all the logins and logouts in the life
+          of the current file.
+
+     -    Sun workstations (perhaps others too) have an  account-
+          ing  tool  under /var/adm/acct/nite/fwtmp that can help
+          modify and repair corrupted _w_t_m_p format files.
+
+     -    If desired (strongly  advised  for  alternate  password
+          file),  the alternate password files can be set to _r_o_o_t
+          readable only since the server  is  run  as  _r_o_o_t  from
+          inetd.
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                  13
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+     -    _i_n_e_t_d cannot handle a  large  number  of  command  line
+          arguments  in  the  configuration  file. It is strongly
+          advised to list as many options as possible in the xta-
+          cacs  configuration  file  instead of in the inetd.conf
+          file.
+
+XTACACS PROTOCOL LIMITATIONS
+     The following are some of the  limitations  of  the  xtacacs
+     protocol-  these  are  NOT a deficiency in the xtacacsd Unix
+     software, but are simply  not  possible  using  the  current
+     tacacs protocol.
+
+     1.   Cannot send back a separate IP  address  than  the  one
+          that the user asked for.
+
+     2.   Cannot  use  the  cisco  _a_u_t_o_c_o_m_m_a_n_d  configuration  to
+          specify  a  command to execute on the cisco when a user
+          logs into the commServer.
+
+     3.   Does NOT log packets or bytes transferred.
+
+     4.   Cannot use 'autoselect  ppp'  on  the  cisco  and  send
+          queries to tacacs. These are independent features.
+
+TROUBLESHOOTING
+     Please see the Protocol Limitations and  the  Sample  Confi-
+     guration sections in this document also.
+
+     1.   The xtacacsd daemon writes detailed  log  messages  via
+          syslog().  Please  compile  with  -DDEBUG, increase the
+          debug level by specifying multiple -_d_d_d options on  the
+          command  line,  add the -_l option for logging, and make
+          sure that your syslog.conf is set to  log  LOCAL6  mes-
+          sages at the DEBUG level.
+
+     Else, comment out the  entry  in  inetd.conf,  and  run  the
+     server in standalone mode with the -_s option.
+          xtacacsd -dddd -l -s
+
+     2.   Turn on the debugging on  the  Cisco  commServer  using
+          "debug tacacs" and "terminal monitor".
+
+     3.   Most systems have a limitation on the number  of  space
+          separated  arguments that you can put in the inetd.conf
+          file. Hence, try to set most of the xtacacsd options in
+          the  xtacacsd-conf   config file and not on the command
+          line in inetd.conf.
+
+     4.   The "groups" specified in the  config  file  should  be
+          group  numbers and not names (i.e. use  '10' instead of
+          'staff', etc.)
+
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                  14
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+     5.   For SLIP access via xtacacsd, if the user is specifying
+          a  hostname to get an IP address assigned, you must use
+          the IGNORECASE option on the xtacacsd since  the  Cisco
+          converts  the  hostname into all uppercase.  If you use
+          the 'PASSWD DEFAULT' option in the  config  file,  then
+          the  program  uses the system's getpw() routines to get
+          the username, and the ignorecase option will  not  work
+          on  the  system  passwd  files. It is preferable to not
+          specify PASSWD DEFAULT and  directly  list  the  passwd
+          file instead. However, if you are using Yellow Pages or
+          shadow passwords, you will have to use 'PASSWD DEFAULT'
+          or else create a separate password file.
+
+     6.   If no entry is matched in the permissions listed in the
+          config  file, the default is ALLOW. However, to prevent
+          any unpredictable situations, you should have an expli-
+          cit  deny or permit wildcard statement as the last line
+          of the configuration.
+
+BUGS
+     Please report new bugs and fixes to vikas@navya.com.  Please
+     look in the TROUBLESHOOTING section of the document also.
+
+     1.   The 'IGNORECASE'  keyword is  ignored  during  username
+          searches in the system password file (since it uses the
+          getpwnam() system call).
+
+     2    Due to vagaries in the utmp.h  file  on  various  plat-
+          forms,  your system's _l_a_s_t or _a_c utilities might not be
+          able to parse the wtmp and utmp files produced by  this
+          daemon.  Use  the supplied _t_a_c_l_a_s_t program instead, and
+          process the times using awk/perl for accounting.
+
+     3.   The daemon tries to avoid duplicate entries in the UTMP
+          and  the  WTMP files, but duplicates/anomalies can show
+          up if a  terminal-server  was  unreachable  or  crashed
+          without  sending out a 'xreload' message. Would help to
+          have a tool to periodically query all terminal  servers
+          and ensure that the UTMP file is up to date.
+
+     4.   If there are multiple redundant servers and the primary
+          goes  down,  the wtmp & utmp files will get out of sync
+          on the alternate and primary xtacacs server  hosts.  In
+          this  case,  you might have to use the 'STAT' log lines
+          to merge and extract the  data  for  user  logins.  The
+          TransID  number  can be used to eliminate duplicate log
+          lines.
+
+FILES
+     /etc/xtacacsd       the main server
+
+     /etc/xtacacsd-conf  the xtacacsd config file.
+
+
+
+Sun Release 4.1     Last change: Jun 28, 1995                  15
+
+
+
+
+
+
+XTACACSD(8)           MAINTENANCE COMMANDS            XTACACSD(8)
+
+
+
+     /etc/passwd         default password file used for authenti-
+                         cation
+
+     /var/adm/tacacs/utmp
+                         file used to  check  number  of  allowed
+                         logins
+
+     /var/adm/tacacs/wtmp
+                         file  used  to  record  all  logins  and
+                         logouts.
+
+     wtmp.<hostname>     for host dependent wtmp records.
+
+SEE ALSO
+     taclast(1) inetd(8)  inetd.conf(5),  services(5),  syslog(8)
+     syslog.conf(5)
+
+     _T_A_C_A_C_S _U_s_e_r _I_d_e_n_t_i_f_i_c_a_t_i_o_n _T_e_l_n_e_t _O_p_t_i_o_n Brian A.  Anderson,
+     _R_F_C _9_2_7, _R_F_C _1_4_9_2
+
+AUTHOR
+     The enhanced version of the software (with all the  features
+     described  in  this  man  page) is written and maintained by
+     Vikas Aggarwal (vikas@navya.com) with contributions by many.
+     Please send all bugs and suggestions to vikas@navya.com.
+
+     Greg Satz (satz@cisco.com), Cisco Systems. Original version,
+     available from ftp.cisco.com.
+
+     Derick  Linegar   (dlinegar@cisco.com)   &   Pierre   Fortin
+     (fortin@cisco.com).  Routines for calling external stub pro-
+     grams for use with Enigma Logic token cards, formatted  log-
+     ging, etc.
+
+     Jeffery  Posner  (jposner@saratoga.dcrt.nih.gov).   Supplied
+     external  stub routine for SDI token cards. (See RCS logs in
+     the source file for a  complete  list  of  contributors  and
+     their contributions).
+
+     Tom Brisco (brisco@rutgers.edu) for ARAP and CHAP support.
+
+AVAILABILITY
+     Freely available from _f_t_p._n_a_v_y_a._c_o_m under _p_u_b/_v_i_k_a_s/.
+
+
+
+ -----------------------  Configuration in INTF ---------------------
+
+## xtacacs config file. Use with xtacacsd v2.x
+#
+# All entries are processed and in the order they are read.
+# The first permit or deny match will stop searching any further.
+# ACL entries do not set permit or deny. However, most other
+# entries will set permit or deny, and will cause an immediate
+# return if they explicity set permit or deny.
+
+# Boolean options
+BLANKPASSWORD
+NONAMESERVER
+#IGNORECASE
+HostWTMP
+LOGGING
+#QUIET
+
+DEBUGLEVEL 2
+
+#WTMP   /var/xtacacs/wtmp
+#UTMP   /var/xtacacs/utmp
+
+# Upto 5 password files. Command line arguments will precede  this list.
+# Specify DEFAULT if you want to search the default password file (which
+# can use NIS)- however this default system password file will be
+# searched in a case-sensitive manner since the getpwnam() call does not
+# permit case-insensitive searching.
+# All the other password files listed here will be searched using the
+# Getpw() routines (which does not support YP style entries).
+PASSWD  DEFAULT
+#PASSWD /usr/local/tacacs/passwd
+#PASSWD  /etc/passwd.local
+
+##
+# For password authentication using Enigma Logic or SDI cards, use the
+# 'AUTHTOKEN' config lines.The password string is case sensitive and
+# the program to exec must exist and be executable. It should return
+# 1 to permit access, and 0 to deny access.
+#       AUTHTOKEN  <passwd-string>  <prog to exec for passwd auth>
+#AUTHTOKEN  ENIGMA  /usr/local/tacacs/bin/enigma 
+#AUTHTOKEN  SDI /usr/local/tacacs/bin/sdcheck
+
+##
+## To put restrictions on the connections...
+##
+#
+# While doing an 'exec', it adds on the username, host & line number
+# at the end as an argument.
+#
+# <list type> <key> HOST {hostname} [LINE <line number>,<line number>] \
+#       <request type>|ALL [<action>] <args>
+#
+#       where
+#       <list type> is one of:
+#               USER GROUP or GECO
+#       <request type> is one of:
+#               arap chap login connect enable slip slipaddr old any/all
+#       <action> is one of:
+#               acl permit deny getok norouting numlogin execpermit execdeny
+#
+#  The list can further be tailored using HOST to specify the terminal
+#  server that is sending the tacacs request and LINE to specify the
+#  tty line number (the LINE's are optional).
+#
+# For the user-list, the <key> is the username, for the group-list
+# it is the gid (NOT group-name) and for the geco-list it is an geco 
+# string match (the last portion of the geco string if it has fields
+# separated by commas).
+# 
+# The first explicit 'permit' or 'deny' match will return. Hence, put
+# 'acl' entries first.
+#
+# In following example, the user 'admin' will have an ACL of '0' (no
+# access-list) and a permit for *all* types of requests. SLIP requests
+# will have the program 'mail_download' run on the server host.
+# Users in group 10 will be okay-ed against the program 'daytime_logins'
+# (which will automatically be run with the username, gid, host & port
+# as args. This check is done AFTER the password has been verified.
+# User 'bin' is denied all access.
+# Users with the keyword 'dialback' as the last string in the geco field
+# will be denied access (execdeny) and the program 'dialback.csh' will be 
+run.
+# Users with 'slip' as the last string in the geco field will be
+# permitted access (subject to that fact that no previous line has denied
+# them access (order is important).
+# All remaining users will have an ACL of '8' on all connections. SLIP 
+# requests will have an inbound ACL of 101, outbound ACL of 202 and a limit
+# of 5 on the number of logins.
+#
+##
+# <list>          <host>        <req>    <action>       <args>
+#
+#USER guest     HOST all        slip    acl             0-111
+## La seguente e' un aggiunta di marco
+USER all        HOST all        all     numlogin        1
+USER guest      HOST all        all     acl             0-111
+USER guest      HOST all        slip    deny
+GROUP all       HOST all        all     numlogin        1
+GROUP all       HOST all        all     login   permit
+GROUP all       HOST all        all     slip    permit
+#USER admin     HOST all        all     acl             0
+#USER admin     HOST all        slip    execpermit      
+/usr/bin/mail_download
+#USER admin     HOST all LINE 1,2,3,4   all     permit
+#
+#GROUP 10       HOST noontime   login   getok           /bin/daytime_logins
+#
+#USER bin       HOST all        all     deny
+#
+#
+#GECO dialback  HOST cs500      login   execdeny        /bin/dialback.csh
+#
+#GROUP all      HOST all        all     acl             8
+#GROUP all      HOST all        slip    acl             101-202
+#GROUP 55       HOST all        all     numlogin        5       
+#
+### since slipaddr requests are all authenticated anyway
+#GROUP all      HOST all        slipaddr        permit
+#
+### permit doing a slip default on the following lines
+#GECO slip      HOST all        LINE 5,6,7,8,9  slip    permit
+#
+

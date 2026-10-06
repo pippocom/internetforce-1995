@@ -1,0 +1,44 @@
+@       IN      SOA     easybase.com. limor.xpert.com. (
+                                1996082001      ; Serial
+                                10800           ; Refresh 3 hours
+                                3600            ; Retry 1 hour
+                                604800          ; Expire after a week
+                                86400 )         ; Minimum ttl 1 day
+
+                   NS      dns.xpert.com.
+                   NS      mailhost.xpert.com.
+@		   MX 0    xpert.com.
+;>E 		A	199.203.132.2
+
+
+;F *****************************************************************
+;F This file is auto-generated from a master file -- do not edit it,
+;F but arrange that the master is edited instead.
+;F *****************************************************************
+
+;R *****************************************************************
+;R This file is auto-generated from a master file -- do not edit it,
+;R but arrange that the master is edited instead.
+;R *****************************************************************
+
+; This is the master file from which the zone files for the following
+; zones are generated:
+;   xpert.com
+;   doesnt have an in-addr.arpa cause it belongs to ubique.co.il
+;
+; See the makezones script for full details of this process.
+;
+;      Syntax of this file:
+;
+;      ;F      comment for forward file only
+;      ;R      comment for reverse files only
+;      >F      A record for forward file only
+;      >R      A record for reverse file only
+;      >E      A record refers to external network
+;      >M      A record with multiply-named IP address,
+;                causing multiple PTR records in reverse file
+
+
+;>E www		A	199.203.132.2
+;>E dns		A	199.203.132.2
+;localhost	A	127.0.0.1

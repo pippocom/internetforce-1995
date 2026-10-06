@@ -1,0 +1,24 @@
+[OPTIONS]
+CONTENTS=start
+TITLE=Internet Force welcome kit
+COMPRESS= high
+OLDKEYPHRASE = FALSE
+ICON=easy.ico
+copyright = (C) 1995 - Marco Iannacone
+CITATION= Testo estratto da Easy-Net guide - Copyright © 1994 Marco Iannacone - Il materiale contenuto in questo Ipertesto appartiene ai rispettivi autori (-> bibliografia)
+REPORT=ON
+WARNING=3
+
+[FILES]
+easynet.rtf
+
+[BITMAPS]
+BARRA.BMP
+WS_FTP.BMP
+
+[WINDOWS]
+main = "Internet Force welcome kit", (0,0,1023,1023 ),,, (192,192,192 )
+
+[CONFIG]
+BrowseButtons()
+CB("uscita","&Esci", "Exit()")

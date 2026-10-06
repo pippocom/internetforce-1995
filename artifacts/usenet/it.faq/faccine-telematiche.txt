@@ -1,0 +1,100 @@
+
+DaMarco Iannacone
+18 ott 1995, 09:00:00
+a it.faq
+
+FACCINE TELEMATICHE
+di Marco Iannacone - ianna@pippo.com
+----------------------------------------------------------------------------
+-------------------------------------
+Il presente articolo e' un estratto dalla guida ad Internet e alla Realta'
+Virtuale - http://www.pippo.com/hypertxt/
+----------------------------------------------------------------------------
+-------------------------------------
+
+Quattro sono i sistemi in cui è scomponibile un'interazione comunicativa:
+
+1 - Sistema verbale
+2 - Sistema intonazionale
+3 - Sistema paralinguistico
+4 - Sistema cinesico
+
+
+Nella comunicazione telematica, risulta possibile impiegare solo il primo
+sistema, con evidente perdita di informazioni e possibili malintesi. Nel
+linguaggio parlato, infatti il messaggio verbale viene completato
+dall'intonazione, dall'espressione del viso, dalla mimica e la stessa frase
+può sembrare ironica, aggressiva o simpatica in funzione delle altre
+componenti. Poiché nello scambio di messaggi telematici non si può vedere
+la mimica né sentire l'intonazione della voce, onde evitare spiacevoli
+equivoci (una frase ironica può essere interpretata come offensiva), si
+sono instaurate delle convenzioni. Normalmente si scrive in minuscolo, per
+cui un testo in maiuscolo equivale a GRIDARE, mentre per *sottolineare* una
+parola si usa racchiuderla tra asterischi. Per la mimica si usano invece
+gli smiley: cioè delle faccine telematiche (sinonimi: emoticon). Queste
+faccine sono formate da caratteri ASCII della tastiera (per esempio ":",
+"-", ".", "<", "/", ...) che scritti uno dopo l'altro riproducono
+abbastanza fedelmente alcune espressioni di un volto. Se ad esempio provate
+a leggere i seguenti tre caratteri: :-) ruotando la testa di 90° in senso
+antiorario, avrete di fronte un volto sorridente che nelle comunicazioni
+telematiche sta a indicare che la frase precedente è scherzosa.
+
+Quello appena visto è lo smiley di base (ed è anche il più usato) impiegato
+per indicare alla gente di non prendere troppo sul serio il commento che si
+è appena fatto. Alcuni preferiscono usare la parola "grin", di solito in
+questa forma:
+
+<grin>
+
+Qualche volta, potrai trovarlo come *grin* o solamente <g> per brevità.
+
+Ecco un esempio di faccine tipiche:
+
+:-( sono triste o infelice
+:-o sono sorpreso
+:-/ hum (perplessità)
+:^) messaggio ironico che prende in giro qualcuno
+:*) bacio sulla punta del naso
+
+Associare queste faccine ad una frase serve a far capire se questa va presa
+in senso ironico, serio o in qualche altro modo. Spesso il senso viene
+rafforzato ripetendo l'ultimo carattere per esempio: :-(( molto triste
+:-((( tristissimo. Ovviamente le faccine possono essere personalizzate: un
+variante molto usata è quella di sostituire i : con un 8 per es.
+8-)
+In realtà l'uso delle faccine è un modo come un altro per creare un codice
+da addetto ai lavori che consenta di capire se la persona con cui si sta
+comunicando è un novizio o meno (i principianti o non ne usano o ne usano
+troppe: siate moderati, quindi). Vedi anche gergo.
+
+Un altro modo per ovviare alle carenze del linguaggio telematico è l'uso di
+acronimi. Oltre ad accelerare i tempi di scrittura tali acronimi permettono
+di sintetizzare un concetto in una sigla. Eccone una breve lista:
+
+
+ASAP As Soon As Possible
+BTW By The Way
+FYI For Your Information
+IMOBO In My Own Biased Opinion
+POV Point of view
+RTFM Read The Fucking Manual
+TANSTAAFL There ain't No Such Thing As A Free Lunch (se qualcuno ti offre
+un pranzo, ti vuol f..)
+TTBOMK To The Best Of My Knowledge
+
+Per una lista più completa degli acronimi si legga il messaggio telematico
+di Alfredo Persivale ai Cybernauti con soggetto appunto Acronimi scritto l'
+8/01/94 nell'area messaggi Cyberpunk di Cybernet, oppure l'ottimo documento
+di Leopoldo Saggin <lsaggin@civ.bio.unipd.it> disponibile su
+http://www.bio.unipd.it/local/internet_docs/tla.html, mentre per una lista
+più ampia di faccine segnalo l'articolo Curiosità: le faccine, in
+Telematicus, vol. 1, n.1, oppure Metanetwork 2000, n.1 1993. Su
+quest'ultimo argomento esiste anche un libricino della APOGEO, decisamente
+poco costoso (£5.000).
+
+E' possibile identificare ulteriori caratteristiche specifiche dellla
+comunicazione via Internet analizzando lo stile di scrittura degli
+*hackers*. A questo proposito segnalo l'ottimo The Hacker Writing Style
+dipsonibile su http://www.wins.uva.nl/~mes/jargon/h/HackerWritingStyle.html.
+
+Copyright ® 1994-99 Marco Iannacone <ianna@pippo.com>

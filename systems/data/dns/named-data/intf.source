@@ -1,0 +1,93 @@
+@  IN	SOA	dns.intf.com. dnsmaster.internetforce.com. (
+		1996082901	 ; Serial
+		10800		 ; Refresh 3 hours
+		3600		 ; Retry 1 hour
+		604800		 ; Expire after a week
+		86400 )	 ; Minimum ttl 1 day
+				NS	styx.ios.com.
+				NS	noc.ios.com.
+				NS	harley.ios.com.
+				NS	dns.internetforce.com.
+				NS	dns2.internetforce.com.
+;F *****************************************************************
+;F This file is auto-generated from a master file -- do not edit it,
+;F but arrange that the master is edited instead.
+;F *****************************************************************
+
+;R *****************************************************************
+;R This file is auto-generated from a master file -- do not edit it,
+;R but arrange that the master is edited instead.
+;R *****************************************************************
+
+; This is the master file from which the zone files for the following
+; zones are generated:
+;   intf.com.
+;
+; See the makezones script for full details of this process.
+;
+;      Syntax of this file:
+;
+;      ;F      comment for forward file only
+;      ;R      comment for reverse files only
+;      >F      A record for forward file only
+;      >R      A record for reverse file only
+;      >E      A record refers to external network
+;      >M      A record with multiply-named IP address,
+;		 causing multiple PTR records in reverse file
+
+localhost		A	127.0.0.1
+
+; hosts on the 206.20.95.0/255.255.255.192 subnet 
+; (virtual subnet simulated by the firewall and many point-to-point links)
+>E data			A	206.20.95.3
+>E users			A	206.20.95.4
+>E shell			A	206.20.95.5
+>E fw-data			A	206.20.95.10
+>E fw-users		A	206.20.95.11
+>E fw-shell		A	206.20.95.12
+
+; hosts on the 206.20.95.64/255.255.255.192 subnet
+; (the ethernet segment on which all routers and terminal servers live)
+;>E fw-world		A	206.20.95.65
+;;; cisco 2501 and 2511+16 modems should be added.
+
+; hosts on the 206.20.95.128/255.255.255.128 subnet
+; (the office network on which the development and all pc/mac machines live)
+>E firewall		A	206.20.95.129
+>E dvlp			A	206.20.95.130
+>E anna			A	206.20.95.131
+>E franz			A 	206.20.95.132
+>E maxi			A	206.20.95.133
+>E html			A	206.20.95.134
+>E aps			A	206.20.95.135
+>E cust2			A	206.20.95.136
+>E marco			A	206.20.95.140
+
+; well-known aliases
+mailhost		CNAME	users.intf.com.
+mail			CNAME	users.intf.com.
+loghost			CNAME	data.intf.com.
+ftp			CNAME	data.intf.com.
+www			CNAME	users.intf.com.
+news			CNAME	news.ios.com.
+
+
+;  Other CNAMEs and some virtual domains.
+
+
+
+www1			CNAME   data.intf.com.
+
+>E dns			A	206.20.95.3
+>E dns2			A	206.20.95.4
+
+; dns				A	206.20.95.3
+; dns2				A	206.20.95.4
+
+
+; MX records for internetforce.com.
+
+@			MX 0	users.internetforce.com.
+			MX 1	data.internetforce.com.
+>E 			A       206.20.95.4
+;

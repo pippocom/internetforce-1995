@@ -1,0 +1,28 @@
+@       IN      SOA     xpert.com. limor.xpert.com. (
+                                1996091601      ; Serial
+                                10800           ; Refresh 3 hours
+                                3600            ; Retry 1 hour
+                                604800          ; Expire after a week
+                                86400 )         ; Minimum ttl 1 day
+		   NS	   dns.xpert.com.
+		   NS	   dns.netvision.net.il.
+		   NS	   nypop.elron.net.
+1      PTR  xpert.com.
+; *****************************************************************
+; This file is auto-generated from a master file -- do not edit it,
+; but arrange that the master is edited instead.
+; *****************************************************************
+8      PTR  dns.xpert.com.
+2     PTR  www.xacct.com.
+7     PTR  yahel.org.
+11     PTR  www.igud.org.il.
+3      PTR  pcLimor.xpert.com.
+4      PTR  pcShiri.xpert.com.
+5      PTR  server.xpert.com.
+6      PTR  pcEran.xpert.com.
+10      PTR  xterm1.xpert.com.
+14      PTR  pcElla.xpert.com.
+15      PTR  pcYarden.xpert.com.
+16      PTR  pcAnatoly.xpert.com.
+254      PTR  kalimero.xpert.com.
+50      PTR  dimka.test.xpert.com.

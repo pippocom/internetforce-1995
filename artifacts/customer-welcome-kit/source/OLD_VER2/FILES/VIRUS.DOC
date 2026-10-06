@@ -1,0 +1,18 @@
+			 Internet Force Welcome kit
+
+Qui di seguito riportiamo i CRC degli eseguibili contenuti nel disco.
+Si tratta di un utile accorgimento per limitare la diffusione dei virus:
+Per verificare che questi files non siano stati modificati e' sufficiente
+digitare VALIDATE (ver. 2.0) e il nome del file che si desidera control-
+lare, confrontando il risultato con quanto riportato qui sotto:
+
+
+SETUP.EXE     15312  04-28-93   0:00a   D2FA   F95B
+
+SETUP1.EX_     19875  03-05-96   0:31a   7D2C   9BF3
+
+
+Nella directory A:\IFORCE si trova il programma Easy! il cui CRC e':
+
+
+EASY.EX_     39507  03-03-96   7:42p   7581   FD3D

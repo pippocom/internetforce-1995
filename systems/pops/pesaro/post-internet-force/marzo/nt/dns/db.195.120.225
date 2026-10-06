@@ -1,0 +1,77 @@
+;
+;  Database file db.195.120.225 for 225.120.195.in-addr.arpa zone.
+;      Zone version:  1021255470l
+;
+
+@                       IN	SOA	dns.225.120.195.in-addr.arpa.	dnsmaster.pesaro.com.	(
+                        1021255470   ; serial number
+                        10800       ; refresh
+                        7200        ; retry
+                        2592000     ; expire
+                        86400     ) ; minimum TTL
+
+;
+;  Zone NS records
+;
+
+@                       IN	NS	dns.interbusiness.it.
+@                       IN	NS	dns.pesaro.com.
+@                       IN	NS	data.pesaro.com.
+
+;
+;  Zone records
+;
+
+100                     IN	PTR	ppp4.pesaro.com.
+101                     IN	PTR	ppp5.pesaro.com.
+102                     IN	PTR	ppp6.pesaro.com.
+103                     IN	PTR	ppp7.pesaro.com.
+104                     IN	PTR	ppp8.pesaro.com.
+105                     IN	PTR	www.esperia.it.
+106                     IN	PTR	ppp10.pesaro.com.
+107                     IN	PTR	ppp11.pesaro.com.
+108                     IN	PTR	ppp12.pesaro.com.
+109                     IN	PTR	ppp13.pesaro.com.
+110                     IN	PTR	ppp14.pesaro.com.
+111                     IN	PTR	ppp15.pesaro.com.
+112                     IN	PTR	ppp16.pesaro.com.
+195                     IN	PTR	ppp1-fano.pesaro.com.
+196                     IN	PTR	ppp2-fano.pesaro.com.
+197                     IN	PTR	ppp3-fano.pesaro.com.
+198                     IN	PTR	ppp4-fano.pesaro.com.
+199                     IN	PTR	ppp5-fano.pesaro.com.
+200                     IN	PTR	ppp6-fano.pesaro.com.
+201                     IN	PTR	ppp7-fano.pesaro.com.
+21                      IN	PTR	roberto.pesaro.com.
+22                      IN	PTR	olivieri.pesaro.com.
+23                      IN	PTR	libero.pesaro.com.
+24                      IN	PTR	shake.pesaro.com.
+25                      IN	PTR	digital.pesaro.com.
+26                      IN	PTR	www.fano.net.
+27                      IN	PTR	www.boldyoung.com.
+28                      IN	PTR	promotion.it.
+29                      IN	PTR	alluflon.it.
+30                      IN	PTR	orciani.it.
+5                       IN	PTR	data.pesaro.com.
+6                       IN	PTR	users.pesaro.com.
+                        IN	PTR	dns.pesaro.com.
+                        IN	PTR	pesaro.com.
+65                      IN	PTR	confartps.it.
+66                      IN	PTR	www.pcpesaro.com.
+67                      IN	PTR	promoitalia.it.
+68                      IN	PTR	setware.com.
+69                      IN	PTR	rommy.it.
+7                       IN	PTR	web.pesaro.com.
+70                      IN	PTR	www.bbc.it.
+71                      IN	PTR	www.diamantinidomeniconi.it.
+72                      IN	PTR	radiocitta.it.
+73                      IN	PTR	sgm.it.
+74                      IN	PTR	www.cdopesaro.com.
+75                      IN	PTR	www.tecnos.com.
+76                      IN	PTR	cmtutensili.it.
+77                      IN	PTR	pieroguidi.it.
+78                      IN	PTR	www.loveisland.com.
+79                      IN	PTR	teorema.it.
+97                      IN	PTR	ppp1.pesaro.com.
+98                      IN	PTR	ppp2.pesaro.com.
+99                      IN	PTR	ppp3.pesaro.com.

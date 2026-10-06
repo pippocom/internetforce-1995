@@ -1,0 +1,660 @@
+##
+## This file was created by tkined version 1.3.4	>> DO NOT EDIT <<
+##
+## This may look like TCL code but it is definitely not!
+##
+
+ined page A4 landscape
+
+set node64 [ ined -noupdate create NODE ]
+ined -noupdate move $node64 103.00 687.00
+ined -noupdate font $node64 fixed
+ined -noupdate name $node64 firewall.internetforce.com
+ined -noupdate address $node64 206.20.95.129
+ined -noupdate attribute $node64 SNMP:Config {-community public -address 206.20.95.129 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node64 name
+
+set network0 [ ined -noupdate create NETWORK 0.000000 0.000000 300.000000 0.000000  ]
+ined -noupdate move $network0 233.00 463.00
+ined -noupdate font $network0 fixed
+ined -noupdate name $network0 {206.20.231 (class C)}
+ined -noupdate address $network0 206.20.231
+ined -noupdate label $network0 name
+
+set node9 [ ined -noupdate create NODE ]
+ined -noupdate move $node9 687.00 25.00
+ined -noupdate font $node9 fixed
+ined -noupdate name $node9 m-1-ancona.indi.it
+ined -noupdate address $node9 206.20.231.133
+ined -noupdate label $node9 name
+
+set link55 [ ined -noupdate create LINK $network0 $node9  ]
+
+set node65 [ ined -noupdate create NODE ]
+ined -noupdate move $node65 619.00 685.00
+ined -noupdate font $node65 fixed
+ined -noupdate name $node65 10.0.10.1
+ined -noupdate address $node65 10.0.10.1
+ined -noupdate attribute $node65 SNMP:Config {-community public -address 10.0.10.1 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node65 name
+
+set node31 [ ined -noupdate create NODE ]
+ined -noupdate move $node31 930.00 263.00
+ined -noupdate font $node31 fixed
+ined -noupdate name $node31 206.20.231.239
+ined -noupdate address $node31 206.20.231.239
+ined -noupdate label $node31 name
+
+set link56 [ ined -noupdate create LINK $network0 $node31  ]
+
+set node10 [ ined -noupdate create NODE ]
+ined -noupdate move $node10 308.00 576.00
+ined -noupdate font $node10 fixed
+ined -noupdate name $node10 gw-ancona-eth0.indi.it
+ined -noupdate address $node10 206.20.231.142
+ined -noupdate label $node10 name
+
+set link57 [ ined -noupdate create LINK $network0 $node10  ]
+
+set node32 [ ined -noupdate create NODE ]
+ined -noupdate move $node32 65.00 138.00
+ined -noupdate font $node32 fixed
+ined -noupdate name $node32 206.20.231.240
+ined -noupdate address $node32 206.20.231.240
+ined -noupdate label $node32 name
+
+set link58 [ ined -noupdate create LINK $network0 $node32  ]
+
+set node34 [ ined -noupdate create NODE ]
+ined -noupdate move $node34 69.00 469.00
+ined -noupdate font $node34 fixed
+ined -noupdate name $node34 indi15.indi.it
+ined -noupdate address $node34 206.20.231.245
+ined -noupdate label $node34 name
+
+set link60 [ ined -noupdate create LINK $network0 $node34  ]
+
+set node33 [ ined -noupdate create NODE ]
+ined -noupdate move $node33 59.00 388.00
+ined -noupdate font $node33 fixed
+ined -noupdate name $node33 dns.indi.it
+ined -noupdate address $node33 206.20.231.241
+ined -noupdate label $node33 name
+
+set link59 [ ined -noupdate create LINK $network0 $node33  ]
+
+set node35 [ ined -noupdate create NODE ]
+ined -noupdate move $node35 260.00 162.00
+ined -noupdate font $node35 fixed
+ined -noupdate name $node35 indi2.indi.it
+ined -noupdate address $node35 206.20.231.242
+ined -noupdate label $node35 name
+
+set link61 [ ined -noupdate create LINK $network0 $node35  ]
+
+set node36 [ ined -noupdate create NODE ]
+ined -noupdate move $node36 325.00 138.00
+ined -noupdate font $node36 fixed
+ined -noupdate name $node36 indi13.indi.it
+ined -noupdate address $node36 206.20.231.246
+ined -noupdate label $node36 name
+
+set link62 [ ined -noupdate create LINK $network0 $node36  ]
+
+set node37 [ ined -noupdate create NODE ]
+ined -noupdate move $node37 231.00 548.00
+ined -noupdate font $node37 fixed
+ined -noupdate name $node37 gw-jesi-ser0.indi.it
+ined -noupdate address $node37 206.20.231.10
+ined -noupdate label $node37 name
+
+set link63 [ ined -noupdate create LINK $network0 $node37  ]
+
+set network1 [ ined -noupdate create NETWORK 0.000000 0.000000 300.000000 0.000000  ]
+ined -noupdate move $network1 140.00 687.00
+ined -noupdate font $network1 fixed
+ined -noupdate name $network1 {206.20.95 (class C)}
+ined -noupdate address $network1 206.20.95
+ined -noupdate label $network1 name
+
+set link65 [ ined -noupdate create LINK $network1 $node64  ]
+
+set stripchart0 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart0 741.00 480.00
+ined -noupdate font $stripchart0 fixed
+ined -noupdate color $stripchart0 blue
+ined -noupdate scale $stripchart0 100.00
+ined -noupdate size $stripchart0 709 458 773 502
+ined -noupdate name $stripchart0 rt-milano-ser0.indi.it
+ined -noupdate address $stripchart0 206.20.231.2
+ined -noupdate attribute $stripchart0 {interface load} {Ethernet0 0.39 %}
+ined -noupdate label $stripchart0 {interface load}
+ined -noupdate values $stripchart0 0.385614 0.4453 0.551828 0.451201 0.503691 0.655039 0.552472 0.488288 0.562724 0.546342 0.419946 0.425624 0.466994 0.460941 0.455889 0.475249 0.426951 0.33121 0.454427 0.331165 0.540256 0.47823 0.387251 0.352975 0.282805 0.455841 0.36828 0.28094 0.327781 0.213459 0.346376 0.441629 0.376987 0.345957 0.306272 0.424492 0.3448 0.294914 0.269155 0.354974 0.292651 0.30073 0.304495 0.292203 0.288637 0.250936 0.244495 0.354758 0.387467 0.283251 0.401913 0.415947 0.262958 0.361163 0.514773 0.197347 0.287508 0.264039 0.273949 0.387958
+
+set stripchart1 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart1 939.00 481.00
+ined -noupdate font $stripchart1 fixed
+ined -noupdate color $stripchart1 blue
+ined -noupdate scale $stripchart1 100.00
+ined -noupdate size $stripchart1 906 459 970 503
+ined -noupdate name $stripchart1 rt-milano-ser0.indi.it
+ined -noupdate address $stripchart1 206.20.231.2
+ined -noupdate attribute $stripchart1 {interface load} {Serial0 2.17 %}
+ined -noupdate label $stripchart1 {interface load}
+ined -noupdate values $stripchart1 2.05019 2.51143 2.53852 2.49598 2.38244 2.94298 3.03368 2.85451 2.79223 3.06438 2.48105 2.52827 2.74168 2.6916 2.65815 2.58895 2.21922 1.93439 2.49015 1.96086 3.13694 2.84123 2.08445 2.04264 1.67503 2.66749 2.07411 1.39618 1.77952 1.22095 1.92833 2.35488 2.1431 1.97143 1.75064 2.41632 2.00986 1.7128 1.55907 2.02426 1.70927 1.57079 1.54765 1.5531 1.28067 1.44322 1.41986 1.65022 2.19433 1.63956 2.07181 2.29626 1.4616 2.0233 2.95926 1.10593 1.60306 1.49719 1.51427 2.16599
+
+set stripchart4 [ ined -noupdate create STRIPCHART ]
+ined -noupdate move $stripchart4 553.00 687.00
+ined -noupdate font $stripchart4 fixed
+ined -noupdate color $stripchart4 blue
+ined -noupdate scale $stripchart4 81.00
+ined -noupdate size $stripchart4 521 665 585 709
+ined -noupdate name $stripchart4 10.0.10.1
+ined -noupdate address $stripchart4 10.0.10.1
+ined -noupdate attribute $stripchart4 {interface load} {Serial0 1.99 %}
+ined -noupdate label $stripchart4 {interface load}
+ined -noupdate values $stripchart4 2.08453 2.98352 2.49467 2.31415 2.28608 3.67887 2.67448 2.96157 2.81961 2.81972 2.47946 2.47198 2.88969 2.62756 2.5078 2.55821 1.92906 2.25202 2.14796 2.74009 3.09963 2.19389 2.28355 1.38227 2.67728 2.19687 1.40736 1.9791 1.30074 1.57177 2.28982 2.18248 2.25118 1.60219 2.38687 1.98605 1.70452 1.71077 2.0223 1.70711 1.56569 1.58467 1.5058 1.34674 1.36489 1.33061 1.71567 1.90371 1.90236 2.0674 2.00098 1.83636 1.92337 2.7233 1.82768 1.20568 1.44405 1.49184 1.99444
+
+set node11 [ ined -noupdate create NODE ]
+ined -noupdate move $node11 780.00 62.00
+ined -noupdate font $node11 fixed
+ined -noupdate name $node11 206.20.231.143
+ined -noupdate address $node11 206.20.231.143
+ined -noupdate attribute $node11 SNMP:Config {-community public -address 206.20.231.143 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node11 name
+
+set node12 [ ined -noupdate create NODE ]
+ined -noupdate move $node12 845.00 38.00
+ined -noupdate font $node12 fixed
+ined -noupdate name $node12 206.20.231.144
+ined -noupdate address $node12 206.20.231.144
+ined -noupdate label $node12 name
+
+set node13 [ ined -noupdate create NODE ]
+ined -noupdate move $node13 958.00 70.00
+ined -noupdate font $node13 fixed
+ined -noupdate name $node13 m-1-osimo.indi.it
+ined -noupdate address $node13 206.20.231.150
+ined -noupdate label $node13 name
+
+set node14 [ ined -noupdate create NODE ]
+ined -noupdate move $node14 970.00 304.00
+ined -noupdate font $node14 fixed
+ined -noupdate name $node14 206.20.231.159
+ined -noupdate address $node14 206.20.231.159
+ined -noupdate label $node14 name
+
+set node15 [ ined -noupdate create NODE ]
+ined -noupdate move $node15 758.00 551.00
+ined -noupdate font $node15 fixed
+ined -noupdate name $node15 206.20.231.160
+ined -noupdate address $node15 206.20.231.160
+ined -noupdate label $node15 name
+
+set node16 [ ined -noupdate create NODE ]
+ined -noupdate move $node16 65.00 88.00
+ined -noupdate font $node16 fixed
+ined -noupdate name $node16 jesi1.indi.it
+ined -noupdate address $node16 206.20.231.161
+ined -noupdate label $node16 name
+
+set node17 [ ined -noupdate create NODE ]
+ined -noupdate move $node17 52.00 322.00
+ined -noupdate font $node17 fixed
+ined -noupdate name $node17 m-3-jesi.indi.it
+ined -noupdate address $node17 206.20.231.168
+ined -noupdate label $node17 name
+
+set node48 [ ined -noupdate create NODE ]
+ined -noupdate move $node48 65.00 188.00
+ined -noupdate font $node48 fixed
+ined -noupdate name $node48 206.20.231.19
+ined -noupdate address $node48 206.20.231.19
+ined -noupdate label $node48 name
+
+set link10 [ ined -noupdate create LINK $network0 $node48  ]
+
+set node18 [ ined -noupdate create NODE ]
+ined -noupdate move $node18 195.00 88.00
+ined -noupdate font $node18 fixed
+ined -noupdate name $node18 206.20.231.175
+ined -noupdate address $node18 206.20.231.175
+ined -noupdate label $node18 name
+
+set node49 [ ined -noupdate create NODE ]
+ined -noupdate move $node49 80.00 219.00
+ined -noupdate font $node49 fixed
+ined -noupdate name $node49 206.20.231.24
+ined -noupdate address $node49 206.20.231.24
+ined -noupdate label $node49 name
+
+set link11 [ ined -noupdate create LINK $network0 $node49  ]
+
+set node19 [ ined -noupdate create NODE ]
+ined -noupdate move $node19 260.00 112.00
+ined -noupdate font $node19 fixed
+ined -noupdate name $node19 206.20.231.176
+ined -noupdate address $node19 206.20.231.176
+ined -noupdate label $node19 name
+
+set node20 [ ined -noupdate create NODE ]
+ined -noupdate move $node20 393.00 288.00
+ined -noupdate font $node20 fixed
+ined -noupdate name $node20 206.20.231.191
+ined -noupdate address $node20 206.20.231.191
+ined -noupdate label $node20 name
+
+set node50 [ ined -noupdate create NODE ]
+ined -noupdate move $node50 357.00 312.00
+ined -noupdate font $node50 fixed
+ined -noupdate name $node50 206.20.231.3
+ined -noupdate address $node50 206.20.231.3
+ined -noupdate label $node50 name
+
+set link12 [ ined -noupdate create LINK $network0 $node50  ]
+
+set node21 [ ined -noupdate create NODE ]
+ined -noupdate move $node21 513.00 178.00
+ined -noupdate font $node21 fixed
+ined -noupdate name $node21 206.20.231.192
+ined -noupdate address $node21 206.20.231.192
+ined -noupdate label $node21 name
+
+set node52 [ ined -noupdate create NODE ]
+ined -noupdate move $node52 175.00 581.00
+ined -noupdate font $node52 fixed
+ined -noupdate name $node52 gw-pesaro-ser0.indi.it
+ined -noupdate address $node52 206.20.231.26
+ined -noupdate label $node52 name
+
+set link13 [ ined -noupdate create LINK $network0 $node52  ]
+
+set node22 [ ined -noupdate create NODE ]
+ined -noupdate move $node22 455.00 88.00
+ined -noupdate font $node22 fixed
+ined -noupdate name $node22 206.20.231.207
+ined -noupdate address $node22 206.20.231.207
+ined -noupdate label $node22 name
+
+set node51 [ ined -noupdate create NODE ]
+ined -noupdate move $node51 260.00 212.00
+ined -noupdate font $node51 fixed
+ined -noupdate name $node51 206.20.231.4
+ined -noupdate address $node51 206.20.231.4
+ined -noupdate label $node51 name
+
+set link14 [ ined -noupdate create LINK $network0 $node51  ]
+
+set node23 [ ined -noupdate create NODE ]
+ined -noupdate move $node23 942.00 349.00
+ined -noupdate font $node23 fixed
+ined -noupdate name $node23 206.20.231.208
+ined -noupdate address $node23 206.20.231.208
+ined -noupdate label $node23 name
+
+set node53 [ ined -noupdate create NODE ]
+ined -noupdate move $node53 369.00 203.00
+ined -noupdate font $node53 fixed
+ined -noupdate name $node53 206.20.231.27
+ined -noupdate address $node53 206.20.231.27
+ined -noupdate label $node53 name
+
+set link15 [ ined -noupdate create LINK $network0 $node53  ]
+
+set node24 [ ined -noupdate create NODE ]
+ined -noupdate move $node24 585.00 88.00
+ined -noupdate font $node24 fixed
+ined -noupdate name $node24 m-6-fano.indi.it
+ined -noupdate address $node24 206.20.231.219
+ined -noupdate label $node24 name
+
+set node54 [ ined -noupdate create NODE ]
+ined -noupdate move $node54 371.00 516.00
+ined -noupdate font $node54 fixed
+ined -noupdate name $node54 rt-senigallia-ser0.indi.it
+ined -noupdate address $node54 206.20.231.6
+ined -noupdate label $node54 name
+
+set link16 [ ined -noupdate create LINK $network0 $node54  ]
+
+set node25 [ ined -noupdate create NODE ]
+ined -noupdate move $node25 496.00 266.00
+ined -noupdate font $node25 fixed
+ined -noupdate name $node25 206.20.231.223
+ined -noupdate address $node25 206.20.231.223
+ined -noupdate label $node25 name
+
+set node55 [ ined -noupdate create NODE ]
+ined -noupdate move $node55 462.00 300.00
+ined -noupdate font $node55 fixed
+ined -noupdate name $node55 206.20.231.28
+ined -noupdate address $node55 206.20.231.28
+ined -noupdate label $node55 name
+
+set link17 [ ined -noupdate create LINK $network0 $node55  ]
+
+set node26 [ ined -noupdate create NODE ]
+ined -noupdate move $node26 715.00 88.00
+ined -noupdate font $node26 fixed
+ined -noupdate name $node26 206.20.231.224
+ined -noupdate address $node26 206.20.231.224
+ined -noupdate label $node26 name
+
+set node56 [ ined -noupdate create NODE ]
+ined -noupdate move $node56 585.00 188.00
+ined -noupdate font $node56 fixed
+ined -noupdate name $node56 206.20.231.7
+ined -noupdate address $node56 206.20.231.7
+ined -noupdate label $node56 name
+
+set link18 [ ined -noupdate create LINK $network0 $node56  ]
+
+set node27 [ ined -noupdate create NODE ]
+ined -noupdate move $node27 780.00 112.00
+ined -noupdate font $node27 fixed
+ined -noupdate name $node27 ferreri1.ferreri.it
+ined -noupdate address $node27 206.20.231.225
+ined -noupdate label $node27 name
+
+set node58 [ ined -noupdate create NODE ]
+ined -noupdate move $node58 509.00 622.00
+ined -noupdate font $node58 fixed
+ined -noupdate name $node58 gw-matelica-ser0.indi.it
+ined -noupdate address $node58 206.20.231.30
+ined -noupdate label $node58 name
+
+set link20 [ ined -noupdate create LINK $network0 $node58  ]
+
+set node57 [ ined -noupdate create NODE ]
+ined -noupdate move $node57 650.00 212.00
+ined -noupdate font $node57 fixed
+ined -noupdate name $node57 206.20.231.8
+ined -noupdate address $node57 206.20.231.8
+ined -noupdate label $node57 name
+
+set link19 [ ined -noupdate create LINK $network0 $node57  ]
+
+set node28 [ ined -noupdate create NODE ]
+ined -noupdate move $node28 959.00 206.00
+ined -noupdate font $node28 fixed
+ined -noupdate name $node28 ferreri3.ferreri.it
+ined -noupdate address $node28 206.20.231.227
+ined -noupdate label $node28 name
+
+set node59 [ ined -noupdate create NODE ]
+ined -noupdate move $node59 780.00 212.00
+ined -noupdate font $node59 fixed
+ined -noupdate name $node59 206.20.231.31
+ined -noupdate address $node59 206.20.231.31
+ined -noupdate label $node59 name
+
+set link21 [ ined -noupdate create LINK $network0 $node59  ]
+
+set node29 [ ined -noupdate create NODE ]
+ined -noupdate move $node29 910.00 112.00
+ined -noupdate font $node29 fixed
+ined -noupdate name $node29 206.20.231.229
+ined -noupdate address $node29 206.20.231.229
+ined -noupdate label $node29 name
+
+set node30 [ ined -noupdate create NODE ]
+ined -noupdate move $node30 970.00 134.00
+ined -noupdate font $node30 fixed
+ined -noupdate name $node30 gw-ferreri.ferreri.it
+ined -noupdate address $node30 206.20.231.238
+ined -noupdate label $node30 name
+
+set node60 [ ined -noupdate create NODE ]
+ined -noupdate move $node60 874.00 249.00
+ined -noupdate font $node60 fixed
+ined -noupdate name $node60 206.20.231.32
+ined -noupdate address $node60 206.20.231.32
+ined -noupdate label $node60 name
+
+set link22 [ ined -noupdate create LINK $network0 $node60  ]
+
+set node61 [ ined -noupdate create NODE ]
+ined -noupdate move $node61 403.00 581.00
+ined -noupdate font $node61 fixed
+ined -noupdate name $node61 gw-macerata-ser1.indi.it
+ined -noupdate address $node61 206.20.231.34
+ined -noupdate label $node61 name
+
+set link23 [ ined -noupdate create LINK $network0 $node61  ]
+
+set node62 [ ined -noupdate create NODE ]
+ined -noupdate move $node62 821.00 404.00
+ined -noupdate font $node62 fixed
+ined -noupdate name $node62 206.20.231.35
+ined -noupdate address $node62 206.20.231.35
+ined -noupdate label $node62 name
+
+set link24 [ ined -noupdate create LINK $network0 $node62  ]
+
+set node63 [ ined -noupdate create NODE ]
+ined -noupdate move $node63 890.00 562.00
+ined -noupdate font $node63 fixed
+ined -noupdate name $node63 206.20.231.36
+ined -noupdate address $node63 206.20.231.36
+ined -noupdate label $node63 name
+
+set link25 [ ined -noupdate create LINK $network0 $node63  ]
+
+set link26 [ ined -noupdate create LINK $network0 $node11  ]
+
+set node0 [ ined -noupdate create NODE ]
+ined -noupdate move $node0 65.00 38.00
+ined -noupdate font $node0 fixed
+ined -noupdate name $node0 206.20.231.39
+ined -noupdate address $node0 206.20.231.39
+ined -noupdate label $node0 name
+
+set link27 [ ined -noupdate create LINK $network0 $node12  ]
+
+set node1 [ ined -noupdate create NODE ]
+ined -noupdate move $node1 130.00 62.00
+ined -noupdate font $node1 fixed
+ined -noupdate name $node1 206.20.231.96
+ined -noupdate address $node1 206.20.231.96
+ined -noupdate label $node1 name
+
+set link28 [ ined -noupdate create LINK $network0 $node13  ]
+
+set node2 [ ined -noupdate create NODE ]
+ined -noupdate move $node2 135.00 164.00
+ined -noupdate font $node2 fixed
+ined -noupdate name $node2 gw-fermo-eth0.indi.it
+ined -noupdate address $node2 206.20.231.110
+ined -noupdate label $node2 name
+
+set link30 [ ined -noupdate create LINK $network0 $node15  ]
+
+set link29 [ ined -noupdate create LINK $network0 $node14  ]
+
+set node3 [ ined -noupdate create NODE ]
+ined -noupdate move $node3 260.00 62.00
+ined -noupdate font $node3 fixed
+ined -noupdate name $node3 206.20.231.111
+ined -noupdate address $node3 206.20.231.111
+ined -noupdate label $node3 name
+
+set node38 [ ined -noupdate create NODE ]
+ined -noupdate move $node38 455.00 138.00
+ined -noupdate font $node38 fixed
+ined -noupdate name $node38 206.20.231.11
+ined -noupdate address $node38 206.20.231.11
+ined -noupdate label $node38 name
+
+set link31 [ ined -noupdate create LINK $network0 $node16  ]
+
+set node4 [ ined -noupdate create NODE ]
+ined -noupdate move $node4 325.00 38.00
+ined -noupdate font $node4 fixed
+ined -noupdate name $node4 206.20.231.112
+ined -noupdate address $node4 206.20.231.112
+ined -noupdate label $node4 name
+
+set node39 [ ined -noupdate create NODE ]
+ined -noupdate move $node39 422.00 342.00
+ined -noupdate font $node39 fixed
+ined -noupdate name $node39 gw-senigallia-eth0.indi.it
+ined -noupdate address $node39 206.20.231.254
+ined -noupdate label $node39 name
+
+set node40 [ ined -noupdate create NODE ]
+ined -noupdate move $node40 585.00 138.00
+ined -noupdate font $node40 fixed
+ined -noupdate name $node40 206.20.231.12
+ined -noupdate address $node40 206.20.231.12
+ined -noupdate label $node40 name
+
+set link32 [ ined -noupdate create LINK $network0 $node17  ]
+
+set node5 [ ined -noupdate create NODE ]
+ined -noupdate move $node5 432.00 202.00
+ined -noupdate font $node5 fixed
+ined -noupdate name $node5 206.20.231.127
+ined -noupdate address $node5 206.20.231.127
+ined -noupdate label $node5 name
+
+set node41 [ ined -noupdate create NODE ]
+ined -noupdate move $node41 665.00 559.00
+ined -noupdate font $node41 fixed
+ined -noupdate name $node41 rt-ancona-ser3.indi.it
+ined -noupdate address $node41 206.20.231.13
+ined -noupdate label $node41 name
+
+set link33 [ ined -noupdate create LINK $network0 $node18  ]
+
+set node6 [ ined -noupdate create NODE ]
+ined -noupdate move $node6 455.00 38.00
+ined -noupdate font $node6 fixed
+ined -noupdate name $node6 206.20.231.128
+ined -noupdate address $node6 206.20.231.128
+ined -noupdate attribute $node6 SNMP:Config {-community public -address 206.20.231.128 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node6 name
+
+set node42 [ ined -noupdate create NODE ]
+ined -noupdate move $node42 485.00 530.00
+ined -noupdate font $node42 fixed
+ined -noupdate name $node42 gw-osimo-ser0.indi.it
+ined -noupdate address $node42 206.20.231.14
+ined -noupdate label $node42 name
+
+set link34 [ ined -noupdate create LINK $network0 $node19  ]
+
+set node43 [ ined -noupdate create NODE ]
+ined -noupdate move $node43 780.00 162.00
+ined -noupdate font $node43 fixed
+ined -noupdate name $node43 206.20.231.15
+ined -noupdate address $node43 206.20.231.15
+ined -noupdate label $node43 name
+
+set node7 [ ined -noupdate create NODE ]
+ined -noupdate move $node7 298.00 307.00
+ined -noupdate font $node7 fixed
+ined -noupdate name $node7 defcom.it
+ined -noupdate address $node7 206.20.231.129
+ined -noupdate attribute $node7 SNMP:Config {-community public -address 206.20.231.129 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node7 name
+
+set link35 [ ined -noupdate create LINK $network0 $node0  ]
+
+set link0 [ ined -noupdate create LINK $network0 $node38  ]
+
+set node44 [ ined -noupdate create NODE ]
+ined -noupdate move $node44 845.00 138.00
+ined -noupdate font $node44 fixed
+ined -noupdate name $node44 206.20.231.16
+ined -noupdate address $node44 206.20.231.16
+ined -noupdate label $node44 name
+
+set node8 [ ined -noupdate create NODE ]
+ined -noupdate move $node8 554.00 36.00
+ined -noupdate font $node8 fixed
+ined -noupdate name $node8 ancona1.indi.it
+ined -noupdate address $node8 206.20.231.130
+ined -noupdate label $node8 name
+
+set link36 [ ined -noupdate create LINK $network0 $node20  ]
+
+set link1 [ ined -noupdate create LINK $network0 $node39  ]
+
+set node45 [ ined -noupdate create NODE ]
+ined -noupdate move $node45 66.00 597.00
+ined -noupdate font $node45 fixed
+ined -noupdate name $node45 rt-ancona-ser0.indi.it
+ined -noupdate address $node45 206.20.231.1
+ined -noupdate label $node45 name
+
+set link37 [ ined -noupdate create LINK $network0 $node21  ]
+
+set link2 [ ined -noupdate create LINK $network0 $node40  ]
+
+set node46 [ ined -noupdate create NODE ]
+ined -noupdate move $node46 58.00 547.00
+ined -noupdate font $node46 fixed
+ined -noupdate name $node46 gw-fano-ser0.indi.it
+ined -noupdate address $node46 206.20.231.18
+ined -noupdate label $node46 name
+
+set link38 [ ined -noupdate create LINK $network0 $node22  ]
+
+set link3 [ ined -noupdate create LINK $network0 $node41  ]
+
+set node47 [ ined -noupdate create NODE ]
+ined -noupdate move $node47 870.00 490.00
+ined -noupdate font $node47 fixed
+ined -noupdate name $node47 rt-milano-ser0.indi.it
+ined -noupdate address $node47 206.20.231.2
+ined -noupdate attribute $node47 SNMP:Config {-community public -address 206.20.231.2 -port 161 -version SNMPv1 -timeout 3 -retries 3}
+ined -noupdate label $node47 name
+
+set link40 [ ined -noupdate create LINK $network0 $node1  ]
+
+set link39 [ ined -noupdate create LINK $network0 $node2  ]
+
+set link4 [ ined -noupdate create LINK $network0 $node42  ]
+
+set link41 [ ined -noupdate create LINK $network0 $node23  ]
+
+set link5 [ ined -noupdate create LINK $network0 $node44  ]
+
+set link42 [ ined -noupdate create LINK $network0 $node3  ]
+
+set link6 [ ined -noupdate create LINK $network0 $node43  ]
+
+set link43 [ ined -noupdate create LINK $network0 $node24  ]
+
+set link7 [ ined -noupdate create LINK $network0 $node45  ]
+
+set link44 [ ined -noupdate create LINK $network0 $node4  ]
+
+set link8 [ ined -noupdate create LINK $network0 $node46  ]
+
+set link45 [ ined -noupdate create LINK $network0 $node25  ]
+
+set link9 [ ined -noupdate create LINK $network0 $node47  ]
+
+set link46 [ ined -noupdate create LINK $network0 $node26  ]
+
+set link47 [ ined -noupdate create LINK $network0 $node5  ]
+
+set link48 [ ined -noupdate create LINK $network0 $node27  ]
+
+set link50 [ ined -noupdate create LINK $network0 $node28  ]
+
+set link49 [ ined -noupdate create LINK $network0 $node6  ]
+
+set link51 [ ined -noupdate create LINK $network0 $node7  ]
+
+set link52 [ ined -noupdate create LINK $network0 $node29  ]
+
+set link53 [ ined -noupdate create LINK $network0 $node8  ]
+
+set link54 [ ined -noupdate create LINK $network0 $node30  ]
+
+set interpreter3 [ ined -noupdate create INTERPRETER snmp_monitor.tcl ]
+ined send $interpreter3 restart start_ifload_monitor 60 job0 206.20.231.2  $stripchart0 1 $stripchart1 2 $stripchart2 3
+ined send $interpreter3 restart start_ifload_monitor 60 job1 10.0.10.1  $stripchart3 1 $stripchart4 2 $stripchart5 3
+

@@ -1,0 +1,59 @@
+#!/usr/local/bin/perl
+
+###########################################################################
+#                           frontpage.cgi                                 #
+#                                                                         #
+# This script was written by Selena Sol (selena@eff.org                   #
+# http://www.eff.org/~erict) having been inspired by countless other      #
+# perl authors.  Feel free to copy, cite, reference, sample, borrow or    #
+# plagiarize the contents.  However, please let me know where it goes so  #
+# that I can at least watch and take part in the development of the       #
+# memes. Information wants to be free, support public domain freware.     #
+#                                                                         #
+###########################################################################
+
+# Set some server specific variables
+
+  $page_title = "The Template Message Board Homepage";
+  $background = "/Images/Backgrounds/bkgnd.jpg";
+  $logo = "/Images/dcrt_star.gif";
+  $line = "/Images/Icons/Lines/smalline.gif";
+  $get_last_update_script = "get_last_update.cgi";
+  $last_modified_button = "/Images/Buttons/last_modified.gif";
+  $gen_first_page_script = "gen_first_page.cgi?mid=1&oldmid=1";
+  $read_button = "/Images/Buttons/read.gif";
+
+# Basically, all this script does it output the frontpage.  :)
+
+  print "Content-type: text/html\n\n";
+  print "<HTML><HEAD>\n";
+  print "<TITLE>$page_title</TITLE>\n";
+  print "</HEAD>\n";
+  print "<BODY BACKGROUND=\"$background\">";
+  print "<TABLE BORDER=0 CELLPADDING=2 CELLSPACING=5>\n";
+  print "<TR ALIGN=CENTER>";
+  print "<TD><IMG SRC=\"$logo\"";
+  print "BORDER=0 ALT=\"[logo]\"></TD>";
+  print "<TD><BR><HR><BR><FONT SIZE=+2>$page_title";
+  print "</FONT><BR><HR><BR></TD>";
+  print "</TR>";
+  print "</TABLE>";
+  print "<CENTER><P>";
+  print "<IMG SRC=\"$line\"><P></CENTER>";
+  print "<CENTER><FONT SIZE=+2>Welcome</FONT></CENTER>";
+  print "Welcome to the Template Message Board.  The goal of this";
+  print "area is to provide an interactive platform with which to discuss";
+  print "with others in ral-time (IRC-like) or archived (Newsgroup-like)";
+  print "style.  Feel free to explore this template and give me any";
+  print "feedback you have. Because this is only a template, I've left"; 
+  print "things as general as possible.  Everything can be personalized";
+  print "by hacking into the perl script which runs the thing and";
+  print "changing URL paths and file locations...";
+  print "<CENTER><P><IMG SRC=\"$line\"><P>";
+  print "<A HREF=\"$get_last_update_script\">";
+  print "<IMG SRC=\"$last_modified_button\"";
+  print "BORDER=0 ALT=\"[Last Update List]\"></A>";
+  print "<A HREF=\"$gen_first_page_script\">";
+  print "<IMG SRC=\"$read_button\" BORDER=0 ALT=\"[Read";
+  print "through Message Archive]\"></A></TD>";
+  print "</TR></TABLE></CENTER></BODY>";

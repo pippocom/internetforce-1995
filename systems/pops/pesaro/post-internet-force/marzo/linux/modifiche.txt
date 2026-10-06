@@ -1,0 +1,112 @@
+Routing:
+
+users:~> netstat -rn
+Kernel routing table
+Destination     Gateway         Genmask         Flags Metric Ref Use    Iface
+195.120.225.0   0.0.0.0         255.255.255.224 U     0      0        6 eth0
+195.120.225.32  195.120.225.2   255.255.255.224 UG    0      0        0 eth0
+195.120.225.96  195.120.225.2   255.255.255.224 UG    0      0        0 eth0
+195.120.225.160 195.120.225.3   255.255.255.224 UG    0      0        3 eth0
+195.120.225.192 195.120.225.3   255.255.255.224 UG    0      0        3 eth0
+10.0.1.128      195.120.225.2   255.255.255.128 UG    0      0        0 eth0
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      0        3 lo
+0.0.0.0         195.120.225.1   0.0.0.0         UG    1      0       54 eth0   
+
+Ottenuto con le seguenti modifiche in rc.local:
+
+route add -net 195.120.225.32 netmask 255.255.255.224 gw 195.120.225.2
+route add -net 195.120.225.64 netmask 255.255.255.224 gw 195.120.225.5
+route add -net 195.120.225.96 netmask 255.255.255.224 gw 195.120.225.2
+route add -net 195.120.225.128 netmask 255.255.255.224 gw 195.120.225.5
+route add -net 195.120.225.160 netmask 255.255.255.224 gw 195.120.225.3
+route add -net 195.120.225.192 netmask 255.255.255.224 gw 195.120.225.3
+route add -net 10.0.1.128 netmask 255.255.255.128 gw 195.120.225.2             
+
+
+A livello di symbolic link, invece:
+
+lrwxrwxrwx   1 root     root           12 Oct 15 23:02 /home -> /export/home/
+lrwxrwxrwx   1 root     root           11 Mar  8 15:15 /tmp -> /export/tmp/
+lrwxrwxrwx   1 root     root           15 Oct 12 23:17 /var/xtacacs -> /export/xtacacs/
+lrwxrwxrwx   1 helioass mail           12 Nov  6 00:22 /var/spool/mail -> /export/mail/
+
+OLtre a cio':
+
+Directory /usr/doc svuotata
+Directory /usr/info svuotata
+
+Fstab:
+
+/dev/sda1       /        ext2        defaults   1   1
+/dev/sda2       /usr        ext2        defaults   1   1
+/dev/sda3       none    swap    sw
+/dev/sda5       /var        ext2        defaults   1   1
+/dev/sda6       /export        ext2        defaults,usrquota   1   1
+none             /proc    proc        defaults   1   1                         
+
+
+df:
+
+/dev/sda1             152215    6592   137763      5%   /
+/dev/sda2             199079   66817   121981     35%   /usr
+/dev/sda5              89751   25962    59154     31%   /var
+/dev/sda6            1487307   40784  1367095      3%   /export
+
+
+comandi aggiunti nella root:
+
+save_config:
+
+#!/bin/sh
+# salva configurazione
+/monta_backup
+cp /backup/nuovo/conf/linux-cfg.tar.z /backup/vecchio/conf/linux-cfg.tar.z
+tar -cvzf /backup/nuovo/conf/linux-cfg.tar.z /etc/.
+sync
+sync
+sync
+/smonta_backup                                                                 
+
+save_routine:
+
+#!/bin/sh
+# salva routine
+/monta_backup
+cp /backup/nuovo/routine/linux-mail.tar.z /backup/vecchio/routine/linux-mail.tar
+.z
+cp /backup/nuovo/routine/linux-usr.tar.z /backup/vecchio/routine/linux-usr.tar.z
+tar -cvzf /backup/nuovo/routine/linux-mail.tar.z /export/mail/.
+tar -cvzf /backup/nuovo/routine/linux-usr.tar.z /export/home/.
+sync
+sync
+sync
+/smonta_backup                                                                 
+
+restore_config:
+
+#!/bin/sh
+# restore configurazione
+tar -xvzPf /backup/nuovo/conf/linux-cfg.tar.z /etc                             
+
+restore_routine:
+
+#!/bin/sh
+# restore routine
+tar -xvzPf /backup/nuovo/routine/linux-mail.tar.z /export/mail
+tar -xvzPf /backup/nuovo/routine/linux-usr.tar.z /export/home                  
+
+monta_backup:
+
+#!/bin/sh
+# monta partizioni per backup
+mount /dev/sdb1 /backup/vecchio
+mount /dev/sdb2 /backup/nuovo
+
+smonta_backup:
+
+#!/bin/sh
+#smonta partizioni per backup
+umount /backup/vecchio
+umount /backup/nuovo                                                           
+
+

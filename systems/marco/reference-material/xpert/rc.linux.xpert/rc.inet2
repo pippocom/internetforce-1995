@@ -1,0 +1,150 @@
+#! /bin/sh
+#
+# rc.inet2	This shell script boots up the entire INET system.
+#		Note, that when this script is used to also fire
+#		up any important remote NFS disks (like the /usr
+#		distribution), care must be taken to actually
+#		have all the needed binaries online _now_ ...
+#
+# Version:	@(#)/etc/rc.d/rc.inet2	2.18	05/27/93
+#
+# Author:	Fred N. van Kempen, <waltje@uwalt.nl.mugnet.org>
+#
+
+# Constants.
+NET="/usr/sbin"
+IN_SERV=""			
+LPSPOOL="/var/spool/lpd"
+
+# At this point, we are ready to talk to The World...
+echo "Mounting remote file systems..."
+/sbin/mount -a -t nfs		# This may be our /usr runtime!!!
+
+echo -n "Starting daemons:"
+# Start the SYSLOGD/Klogd daemons.  These must come first.
+if [ -f ${NET}/syslogd ]
+then
+ echo -n " syslogd"
+ ${NET}/syslogd
+ echo -n " klogd"
+ ${NET}/klogd
+fi
+
+# Start the SUN RPC Portmapper.
+#if [ -f ${NET}/rpc.portmap ]
+#then
+ #echo -n " portmap"
+ #${NET}/rpc.portmap
+#fi
+
+# Start the INET SuperServer
+if [ -f ${NET}/inetd ]
+then
+ echo -n " inetd"
+ ${NET}/inetd
+else
+ echo "no INETD found.  INET cancelled!"
+ exit 1
+fi
+
+#Start the NAMED/BIND name server.
+if [ -f ${NET}/named ]
+then
+ echo -n " named"
+ ${NET}/named
+fi
+
+# Start the ROUTEd server.
+# if [ -f ${NET}/routed ]
+# then
+#  echo -n " routed"
+#  ${NET}/routed -g -s
+# fi
+
+# Start the RWHO server.
+# if [ -f ${NET}/rwhod ]
+# then
+#  echo -n " rwhod"
+#  ${NET}/rwhod -t -s
+# fi
+
+# Start the U-MAIL SMTP server.
+# if [ -f XXX/usr/lib/umail/umail ]
+# then
+#  echo -n " umail"
+#  /usr/lib/umail/umail -d7 -bd </dev/null >/dev/null 2>&1 &
+# fi
+
+# Start the various INET servers.
+for server in ${IN_SERV}
+do
+ if [ -f ${NET}/${server} ]
+ then
+  echo -n " ${server}"
+  ${NET}/${server}
+ fi
+done
+
+# # Start the various SUN RPC servers.
+# if [ -f ${NET}/rpc.portmap ]
+# then
+#  if [ -f ${NET}/rpc.ugidd ]
+#  then
+#   echo -n " ugidd"
+#   ${NET}/rpc.ugidd -d
+#  fi
+#  if [ -f ${NET}/rpc.mountd ]
+#  then
+#   echo -n " mountd"
+#   ${NET}/rpc.mountd
+#  fi
+#  if [ -f ${NET}/rpc.nfsd ]
+#  then
+#   echo -n " nfsd"
+#   ${NET}/rpc.nfsd
+#  fi
+#  # Fire up the PC-NFS daemon(s).
+#  if [ -f ${NET}/rpc.pcnfsd ]
+#  then
+#   echo -n " pcnfsd"
+#   ${NET}/rpc.pcnfsd ${LPSPOOL}
+#  fi
+#  if [ -f ${NET}/rpc.bwnfsd ]
+#  then
+#   echo -n " bwnfsd"
+#   ${NET}/rpc.bwnfsd ${LPSPOOL}
+#  fi
+# fi
+
+#
+# Start the httpd
+#
+if [ -f /usr/sbin/httpd ]
+then
+ echo -n " httpd"
+ /usr/sbin/httpd 
+fi
+
+#
+# Start deslogin
+#
+if [ -f /usr/local/etc/deslogind ]
+then
+ echo -n " deslogind"
+ /usr/local/etc/deslogind -w global -c
+fi
+
+#
+# Start NIS
+#
+#if [ -x /etc/defaultdomain ] ; then
+        #domainname `cat /etc/defaultdomain`
+#fi
+
+#if [ -d /var/yp ] ; then
+#        /usr/sbin/ypbind ;      echo -n " ypbind"
+#fi
+
+echo
+
+# Done!

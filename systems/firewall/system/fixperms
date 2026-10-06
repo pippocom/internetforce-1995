@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+#
+BINDIR="/etc /sbin /usr/bin /usr/etc /usr/lib"
+
+##
+## all non set-[u,g]id binaries should be owned by root
+##
+echo - Securing binaries ownership
+for d in $BINDIR
+do
+        echo "          $d"
+        chown root `find $d \! -perm -4000 -a -perm -0111 -a -type f -print`
+        chgrp staff `find $d \! -perm -2000 -a -perm -0111 -a -type f -print`
+done
+
+
+##
+## change things tiger worries about
+##
+echo - Securing additional files
+
+chmod g-w /var/log/syslog
+chmod 0700 /vmunix
+chmod 0400 /.rhosts
+chmod 0600 /etc/fstab
+chmod 0400 /etc/hosts.equiv
+chmod 0644 /etc/motd
+chmod 0644 /etc/syslog.pid
+chmod 0644 /etc/utmp
+chmod g-s /usr/etc/arp
+chmod g-x /usr/etc/yp/yppush
+chmod g-rw /dev/sd*
+chmod u-s /usr/bin/mail
+chmod u-s /usr/bin/chsh
+chmod u-s /usr/bin/chfn
+chmod u-s /usr/bin/ypchsh
+chmod u-s /usr/bin/ypchfn
+chmod u-s /usr/bin/cu
+chmod u-s /usr/bin/atrm
+chmod u-s /usr/bin/atq
+chmod u-s /usr/bin/sunview1/*
+chmod u-s /usr/bin/tip
+chmod ug-s /usr/bin/cancel
+chmod ug-s /usr/bin/lpstat
+chmod u-s /usr/bin/yppasswd
+chmod u-s /usr/ucb/lpr
+chmod u-s /usr/ucb/lpq
+chmod u-s /usr/ucb/lprm
+chmod u-s /usr/ucb/rdist
+chmod u-s /usr/etc/shutdown
+chmod u-s /usr/etc/keyenvoy
+chmod u-s /usr/etc/auditd
+chmod u-s /usr/lib/sendmail.mx

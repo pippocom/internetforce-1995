@@ -1,0 +1,74 @@
+#!/bin/sh
+#
+#
+umask 022
+
+NAWK=/bin/nawk			# nawk (or gawk) binary
+GREP=/bin/grep			# grep binary
+GNU_CP=/usr/local/bin/cp	# GNU version of cp
+GNU_TAR=/usr/local/bin/gtar	
+PASSWD=/etc/passwd		# password file
+USERGID=100			# group to assign users for
+USERUID=500			# first uid for users
+MAXUID=32767			# max. uid for users
+USERBASE=/users/01		# users directories base
+USERSHELL=/bin/lynx		# users default shell
+SHARE_DIR=/usr/export/sd1c/shared	# home directory skeleton
+SKEL_DIR=/usr/export/sd1c/skel  # files to be copied
+
+#
+# Validate parameters
+#
+if [ $# != 3 ]; then
+	echo usage: adduser [login-name] [full name] [encrypted pwd]
+	exit 1
+fi
+
+login=$1
+realname=$2
+password=$3
+
+# verify we don't get blank login name. NOTE: The caller *must* verify
+# the login name does not contain spaces, CRs or ':' for obvious security
+# reasons.
+if [ "$login" = "" -o "$realname" = "" ]; then
+	echo adduser: invalid login or real name attempted.
+	exit 1
+fi
+
+# 
+# Verify login name does not already exist
+#
+if $GREP "^$login:" $PASSWD > /dev/null; then 
+	echo $login: account already exists
+	exit 1
+fi
+
+#
+# Look up uid
+# XXX Does not make sure a uid *could* be allocated XXX
+# XXX Also, passwd comments may screw things...     XXX
+#
+newuid=`$NAWK 'BEGIN { FS = ":" ; newuid = USERUID }
+   		     { if ($3 >= newuid && $3 < MAXUID) newuid = $3+1 }
+	       END   { print newuid }' MAXUID=$MAXUID USERUID=$USERUID $PASSWD`
+
+# create home directory/environment:
+mkdir $USERBASE/$login			# jail root
+homedir=$USERBASE/$login/./home		# home
+mkdir $homedir
+chown $newuid.$USERGID $homedir
+$GNU_CP -al $SHARE_DIR/* $USERBASE/$login
+$GNU_CP $SKEL_DIR/pinerc $homedir/.pinerc
+chown $newuid.$USERGID $homedir/.pinerc
+
+# create jailed password file
+jailpasswd=$USERBASE/$login/etc/passwd
+echo "root:*:0:0:root:/:/dev/null" > $jailpasswd
+echo "$login:*:$newuid:$USERGID:$realname:/home:$USERSHELL" >> $jailpasswd
+
+# append user to real passwd
+echo "$login:$password:$newuid:$USERGID:$realname:$homedir:$USERSHELL" >> $PASSWD
+
+# set quota for user
+edquota -p quota $login

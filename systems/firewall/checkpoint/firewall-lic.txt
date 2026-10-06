@@ -1,0 +1,15 @@
+fw putlic <SANITIZED-LICENSE-KEY>
+This is FireWall-1 Version 2.0a
+
+Type             Expiration Features
+ID-8074f7c9	Never      stdmedium
+ID-8074f7c9	Never      stdmedium
+Eval             31Dec95    pfm control routers
+
+License file updated
+
+Type             Expiration Features
+ID-807473b4	Never      control
+ID-807473b4	Never      control
+Eval             31Dec95    pfm control routers
+

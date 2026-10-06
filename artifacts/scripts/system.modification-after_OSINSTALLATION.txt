@@ -1,0 +1,111 @@
+                              CRONJOB
+
+added the followin cronjob on users:
+
+30 2 * * * /users/01/ianna/home/public_html/tools/stats/intf.stat
+
+
+How did I do it?
+
+
+crontab -e
+
+                              ON USERS
+
+in /etc/passwd
+
+operator:*:0:0:System Operator:/:/bin/nosh
+
+in
+
+operator:*:999:0:System Operator:/:/bin/nosh
+
+--
+in rc.local modificato 
+
+/etc/xtacacsd -ls
+
+in
+
+/etc/xtacacsd -lsn
+
+per evitare il name resolving e quindi i problemi su NO RESPONSE from 
+xtacacs server
+
+--
+in rc.local modificato
+
+chmod 666 /etc/motd
+
+in
+
+chmod 664 /etc/motd
+
+
+--
+in rc
+
+        chmod 666 /dev/tty[pqrs]*
+in
+
+        chmod 664 /dev/tty[pqrs]*
+
+--
+in /etc/sendmail.cf
+
+added Cwpippo.com
+
+--
+In /var/ changed tmp permission:
+
+chown o-t tmp
+
+so now it is
+
+drwxrwsr-x   2 root     staff         512 May 28 16:38 tmp/
+--
+In /var/xxtacacsd-conf
+
+USER all        HOST all        all     numlogin        1
+
+to avoid multiple login
+
+
+--
+Compiled makemap (which is part of sendmail) to allow virtual mail.
+From Makefile.dist just take away -DNEWDB (just on SunOS) to evoid:
+
+> [root@dvlp]/users/ianna/source/sendmail.8.6.12/makemap>make -f Makefile.dist
+> cc -I. -O -I../src -I/usr/sww/include/db -DNDBM -DNEWDB   -target sun4 
+> -c  makemap.c
+> makemap.c: 54: Can't find include file db.h
+> *** Error code 2
+> make: Fatal error: Command failed for target `makemap.o'
+> 
+  
+
+                                 ON DATA
+
+changed ownership of group file from majordomo.majordomo to
+root.staff
+
+
+on /usr/localftp/etc/ changed from
+
+-r--r--r--   1 bin      ftp            16 Oct 25  1995 group
+-rwxr--r--   1 bin      ftp            27 Oct 25  1995 group~*
+-r--r--r--   1 bin      ftp            54 Oct 25  1995 passwd
+-rwxr--r--   1 bin      ftp            54 Oct 25  1995 passwd~*
+
+to
+
+-r--r--r--   1 root     ftp            16 Oct 25  1995 group
+-rwxr--r--   1 bin      ftp            27 Oct 25  1995 group~*
+-r--r--r--   1 root     ftp            54 Oct 25  1995 passwd
+-rwxr--r--   1 bin      ftp            54 Oct 25  1995 passwd~*
+
+In /bin/ tolta la possibilita' di eseguire uudecode.
+
+-rwxr--r--   1 root     staff       16384 Oct 14  1994 uudecode*
+
+

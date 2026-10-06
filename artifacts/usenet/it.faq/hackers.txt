@@ -1,0 +1,235 @@
+Da Marco Iannacone
+29 giu 1996, 09:00:00
+a it.faq
+
+HACKERS
+di Marco Iannacone - ianna@pippo.com
+Versione 0.2c
+
+INDICE
+======
+
+1. INTRODUZIONE
+2. IN ORIGINE
+3. HACKER = CRACKER ?
+4. CYBERPUNKS
+5. MANIFESTO
+6. ALTRI LINK UTILI
+
+A. INTRODUZIONE A GNU
+B. LICENZA D'USO
+
+
+1. INTRODUZIONE
+-------------------------------
+"Hackers." Questa parola assume significati differenti in funzione delle
+persone a cui lo chiedi.
+Al CERT, il Computer Emergency Response Team della Carnegie Mellon
+University di Pittsburgh (http://www.cert.org/), potrebbero dire che un
+hacker e' colui che penetra nei computer altrui. Nello stesso tempo -
+pero' - Richard Stallman, fondatore della Free Software Foundation
+(http://www.fsf.org/), si definisce un hacker. Per lui "hacking" significa
+sviluppare software in un "open, collaborative environment", con un forte
+senso etico per cio' che e' giusto o sbagliato (informaticamente parlando).
+Usando questa accezione il New Hacker's Dictionary di Eric S. Raymond
+(http://www.tuxedo.org/~esr/jargon/html/index.html) definisce un hacker
+come qualcuno che ama esplorare le possibilita' offerte da un sistema
+informativo e mettere alla prova le sue capacita', in contrapposizione con
+la maggior parte degli utenti che preferisce apprendere solo lo stretto
+indispensabile.
+
+Una nota rivista underground recita:
+Hacking, hackers, hack-- in qualsiasi forma, non sono altro che i test di
+Rorschach del cyberspazio: quelloche pensate significhi il termine hacker
+rivela tanto di voi quanto degli hacker stessi. Gli hackers sono buoni?
+Sono cattivi? Tutto dipende dalla accezione del termine che volete usare..
+
+Questo documento - che si sviluppa su un paragrafo della Guida ad Internet
+e alla Realta' Virtuale dello stesso autore - cerca di chiarire il
+significato piu' esteso di questo termine.
+
+
+2. IN ORIGINE
+-----------------------------------------
+Il termine Hacker definiva in origine i maghi del computer, programmatori
+in grado di risolvere ogni problema, programmatori e progettisti di
+computer che considerano l'informatica come la cosa più importante al
+mondo. Nel parlare con questi esploratori digitali, da quelli che negli
+anni cinquanta, domarono macchine da decine di milioni di dollari, fino ai
+giovani maghi contemporanei che dominano le proprie macchine nelle loro
+camerette di periferia, si scopre un elemento comune, una filosofia
+condivisa che pare legata al flusso elegante della logica dello stesso
+computer. E' una filosofia di socializzazione, di apertura, di
+decentralizzazione e del mettere le mani sulle macchine a qualunque costo,
+per migliorarle e per migliorare il mondo. Come racconta Steven Levy nel
+suo libro HACKERS (che consiglio caldamente), tutto e' iniziato grazie ai
+trenini elettrici. Verso la fine degli anni 50, infatti, un gruppo di
+studenti del MIT fondo' il Tech Model Railroad Club (TMRC). Si trattava di
+un club di appassionati di modellismo che pero' non si limitavano a
+costruire locomotive e vagoni, ma anche di farli funzionare su una rete
+ferroviaria in miniatura, perfettemente funzionante. La complessita' del
+sistema poneva agli studenti problemi sempre piu' complessi: trovare i
+pezzi, far funzionare insieme apparecchiature che non avevano niente in
+comune. Queste setesse persone, appassionate di tecnologia, utilizzarono lo
+stesso approccio nei confronti dei primi (supercostosi) computer che le
+universita' misero a disposizione.
+Con un background di questo tipo fu naturale che le cose presero una certa
+piega....
+
+A questa prima generazione di hackers animata dal motto INFORMATION WANTS
+TO BE FREE e dalla convinzione che la tecnologia dovesse essere diffusa in
+ogni ambito segui' quella dei cosidetti homebrewer - appassionati di
+hardware il cui obbiettivo era provocare lo sviluppo dell'informatica
+rendendo libere le architetture delle macchine e le specifiche tecniche per
+realizzarle. A questo mondo appartiene Wozniak - inventore del primo
+computer della Apple.
+
+
+3. HACKER = CRACKER ?
+------------------------------------------
+Oggi spesso il termine hacker viene utilizzato con un significato negativo.
+Gli hackers, infatti sono anche i pirati cibernetici che entrano nelle
+banche dati altrui facendosi beffe dei sistemi di sicurezza. In realta' il
+termine piu' corretto per identificare questo gruppo di individui e'
+crackers, ma spesso i due termini vengono confusi.
+Gli antenati dei crackers erano i phone phreakers, che alla fine degli anni
+Settanta, in lotta contro le compagnie dei telefoni, imitavano i segnali
+d'accesso delle reti telefoniche per telefonare gratis in tutto il mondo.
+Tra questi il piu' famoso e' John Draper (alias Captain Crunch) inventore
+della blue-box.
+Con l'arrivo dei primi personal computers, ecco nascere una generazione di
+ragazzini terribili (come l'eroe del film War Games), per i quali non c'è
+codice segreto che tenga. Alcuni come Robin Tappan Morris, inventore di un
+terribile virus che nel 1988 distrusse le banche dati di varie università
+americane, sono geniali sperimentatori, travolti dai loro stessi
+esperimenti. Altri, come il tedesco "Pengo", che rubava informazioni
+segrete e le vendeva ai sovietici, usano la loro attività per pratici scopi
+criminali.
+
+
+4. CYBERPUNKS
+-----------------------------
+Il movimento internazionale degli hacker e del nuovo underground
+tecnologico ha issato volentieri la bandiera cyberpunk, riconoscendo in
+Gibson, Sterling e compagni non solo una piacevole lettura, ma anche
+l'indicazione trasversale di modalità di comportamento che già maturavano
+nella società postindustriale, ma a cui questi scrittori davano visibilità
+e nuove possibilità di riflessione e di autorappresentazione. Non a caso
+Sterling, che del cyberpunk letterario è stato il teorico, (in un
+intervista rilasciata a Science-Fiction Studies e pubblicata nel 1992)
+affermava : Oggi i riferimenti al cyberpunk come fenomeno letterario sono
+sempre meno rispetto all'uso che si fa del termine come sinonimo di
+criminale del computer. Fra un paio di anni nei cataloghi delle biblioteche
+universitarie alla voce cyberpunk si troveranno solo libri sui crimini
+informatici.
+La maggior parte degli hacker si considera un ribelle high-tech, come i
+software cowboys del cyberpunk, per i quali la lotta contro il sistema e'
+un fine in se stessa, una filosofia di vita. Gli hacker raccolgono nelle
+loro fila molti degli operatori delle prime comunità virtuali degli anni
+'70, che, radicalmente idealisti e sostenitori della politica della libera
+circolazione delle idee, ma non solo di quelle (riproducono illegalmente
+programmi commerciali e giochi protetti da copyright (vedi Italian
+Crackdown) e le immettono nei circuiti di distribuzione (BBS), effettuano
+reverse engineering su programmi protetti dalla copia per eliminarne la
+protezione rendendone così possibile la distribuzione, distribuiscono
+informazioni su funzioni non documentate ...), hanno attirato recentemente
+l'attenzione della stampa e talvolta (per questa loro utopica filosofia)
+anche la simpatia dell'opinione pubblica.
+
+
+5. MANIFESTO
+----------------------------
+Di seguito riporto un estratto da un vivido manifesto hacker, ricavato dal
+volume uno, numero 7, phile 3 di Phrack - una delle più note riviste
+elettroniche underground (traduzione tratta da Giro di vite contro gli
+hacker - vedi bibliografia):
+
+
+OGGI HO FATTO UNA SCOPERTA.
+HO TROVATO UN COMPUTER.
+ASPETTA UN ATTIMO, CHE GANZO. FA QUELLO CHE VOGLIO CHE FACCIA.
+SE FA UN ERRORE, È PERCHÉ SONO IO CHE HO COMBINATO UN GUAIO. NON PERCHÉ NON
+GLI PIACCIO...
+E POI È SUCCESSO...
+SI È APERTA UNA PORTA SUL MONDO...
+CORRENDO ATTRAVERSO LE LINEE TELEFONICHE COME L'EROINA NELLE VENE DI UN
+DROGATO, VIENE MANDATO FUORI UN IMPULSO ELETTRONICO, VIENE RICERCATO UN
+RIFUGIO DALLE INCOMPETENZE QUOTIDIANE...
+SI TROVA UN BOLLETTINO.
+QUI...
+
+QUESTA È LA MIA PATRIA...
+QUI CONOSCO TUTTI... ANCHE SE NON LI HO MAI INCONTRATI, NON HO MAI PARLATO
+CON LORO, E MAGARI NON LI SENTIRÒ MAI PIÙ..
+VI CONOSCO TUTTI... QUESTO ORA È IL NOSTRO MONDO... IL MONDO DELL'ELETTRONE
+E DEL COMMUTATORE, LA BELLEZZA DEL BAUD.
+FACCIAMO USO DI UN SERVIZIO GIÀ ESISTENTE, SENZA PAGARE PER QUELLO CHE
+POTREBBE ESSERE A BUON PREZZO COME L'ACQUA SE NON FOSSE GESTITO DA AVIDI
+PROFITTATORI.
+E VOI CI CHIAMATE CRIMINALI.
+NOI ESPLORIAMO...
+E VOI CI CHIAMATE CRIMINALI...
+NOI CERCHIAMO LA CONOSCENZA...
+
+E VOI CI CHIAMATE CRIMINALI.
+NOI ESISTIAMO SENZA COLORE DELLA PELLE, SENZA NAZIONALITÀ, SENZA PREGIUDIZI
+RELIGIOSI... E VOI CI CHIAMATE CRIMINALI.
+VOI COSTRUITE BOMBE ATOMICHE, DICHIARATE GUERRA, UCCIDETE, SPERGIURATE E CI
+MENTITE E CERCATE DI FARCI CREDERE CHE È PER IL NOSTRO BENE, EPPURE SIAMO
+NOI I CRIMINALI.
+SI, IO SONO UN CRIMINALE.
+LA MIA COLPA È QUELLA DELLA CURIOSITÀ, LA MIA COLPA È QUELLA DI GIUDICARE
+LA GENTE IN BASE A QUELLO CHE DICE E CHE PENSA, NON IN BASE AL SUO ASPETTO.
+LA MIA COLPA È QUELLA DI ESSERE PIÙ FURBO DI VOI E, PER QUESTO, NON POTRETE
+MAI PERDONARMI.
+
+
+6. ALTRI LINK UTILI
+-------------------------------
+
+The Jargon File - http://www.tuxedo.org/~esr/jargon/html/index.html
+The Electronic Frontier Foundation - http://www.eff.org/
+
+La homepage dell'autore - http://www.pippo.com/
+
+A. INTRODUZIONE A GNU
+-----------------------------------------
+GNU sta per Gnu is Not Unix.
+Si tratta di un progetto che e' nato per sostituire le utility proprietarie
+dei sistemi Unix. Questi programmi sono gratuiti e vengono distribuiti (con
+tanto di codice sorgente) insieme al sistema operativo con una particolare
+licenza (chiamata GNU Public License) che autorizza chiunque a modificare
+i sorgenti e ridistribuire il codice modificato a patto di farlo
+utilizzando lo steso tipo di licenza.
+Col tempo molti altri programmi hanno adottato questo tipo di filosofia
+rendendo possibile lo sviluppo di sistemi operativi quali Linux e FreeBSD,
+ma anche il miglioramento di tutti gli altri sistemi operativi proprietari.
+Per maggiori informazioni a riguardo:
+
+
+http://www.fsf.org/
+
+http://www.opensource.org/
+
+http://www.linux.org
+
+
+B. LICENZA D'USO
+-----------------------------------
+Questo documento realizzato da Marco Iannacone (ianna@pippo.com) viene
+rilasciato secondo la licenza GNU General Public License (GPL o copyleft)
+versione 2 della Free Software Foundation.
+
+Chiunque e' autorizzato a distribuire copie elettroniche o cartacee del
+presente documento, allegarlo a raccolte, CD-ROM o programmi, a patto di
+citare la fonte da cui e' stato tratto. Dato che il documento viene
+distribuito gratuitamente l'autore non si assume NESSUNA responsabilita'
+per eventuali errori o inesattezze che possano essere presenti.
+Le considerazioni espresse all'interno del documento devono essere considerate
+opinioni personali dell'autore e NON dogmi assoluti.
+
+
+Copyright ® 1994-99 Marco Iannacone <ianna@pippo.com>
+
+--
+Posted from root@shelley.pointest.com [194.133.145.2]

@@ -1,0 +1,21 @@
+Con il comando edquota -p userxiname otteniamo i dati relativi ad un particolare
+utente.
+
+Es.
+
+fs /usr/export/sd2c blocks (soft = 8192, hard = 10240) inodes (soft = 80, 
+hard =
+ 120)
+fs /usr/export/sd1c blocks (soft = 8192, hard = 10240) inodes (soft = 80, 
+hard =
+ 120)
+
+oppure
+
+fs /usr/export/sd2c blocks (soft = 28672, hard = 30720) inodes (soft = 630, hard
+ = 660)
+fs /usr/export/sd1c blocks (soft = 28672, hard = 30720) inodes (soft = 630, hard
+ = 660)
+
+E' importante usare ogni tanto il comando quotacheck -v filesystem.
+con questo ho risolto i problemi di artdiary.

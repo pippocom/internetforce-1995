@@ -1,0 +1,9 @@
+xtac-34.taz - File Originale con sorgenti - INTF (ottimo anche su Linux)
+xtacacsd-conf - File di configurazione di INTF e Pointest
+
+Dopo averlo installato, aggiungere in rc.inet2
+
+if [ -f /etc/xtacacsd]
+then
+   /etc/xtacacsd -lsn &
+fi

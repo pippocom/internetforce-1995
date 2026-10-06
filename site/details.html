@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documento — Internet Force 1995–1996</title>
+<meta name="description" content="Visualizzatore dei documenti Markdown dell'archivio storico Internet Force 1995–1996.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <p class="brand">Internet Force <span class="years">1995–1996</span></p>
+    <nav class="viewer-nav" aria-label="Navigazione">
+      <a id="back" href="#" class="backlink">← Indietro</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="content">
+  <p class="eyebrow" id="filepath"></p>
+  <article id="md" class="md-body" aria-live="polite">
+    <p class="muted" id="loading">Caricamento…</p>
+  </article>
+  <noscript>
+    <div class="viewer-error">
+      <h1>JavaScript richiesto</h1>
+      <p>Questo visualizzatore renderizza i documenti Markdown nel browser. Attiva JavaScript per leggere il documento.</p>
+      <p><a href="../README.md">Apri il README dell'archivio</a></p>
+    </div>
+  </noscript>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Internet Force 1995–1996 Historical Archive · <a href="details.html?file=LICENSE">CC BY 4.0</a> · <a href="https://pippo.com/me/">Marco Iannacone</a> · <a id="repo-link" href="https://github.com/pippocom/internetforce-1995">Repository GitHub</a></p>
+  </div>
+</footer>
+<script src="assets/vendor/marked.min.js"></script>
+<script src="assets/details.js"></script>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var file = params.get('file') || '';
+  var lang = (window.IFDetails && window.IFDetails.uiLang(file)) || 'it';
+  var STR = {
+    it: { back: '← Indietro', loading: 'Caricamento…', errTitle: 'Documento non disponibile',
+          missing: 'Nessun documento richiesto (parametro «file» mancante).',
+          invalid: 'Percorso non valido o non consentito.',
+          fail: 'Impossibile caricare il documento.',
+          raw: 'Apri il file originale' },
+    en: { back: '← Back', loading: 'Loading…', errTitle: 'Document not available',
+          missing: 'No document requested (missing “file” parameter).',
+          invalid: 'Invalid or disallowed path.',
+          fail: 'Could not load the document.',
+          raw: 'Open raw file' }
+  }[lang];
+  document.documentElement.lang = lang;
+
+  var repoLink = document.getElementById('repo-link');
+  if (repoLink) repoLink.textContent = (lang === 'en') ? 'GitHub repository' : 'Repository GitHub';
+
+  var article = document.getElementById('md');
+  var back = document.getElementById('back');
+  var filepath = document.getElementById('filepath');
+  document.title = (lang === 'en' ? 'Document' : 'Documento') + ' — Internet Force 1995–1996';
+  if (back) {
+    back.textContent = STR.back;
+    back.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (window.history.length > 1) window.history.back();
+    });
+  }
+  var loading = document.getElementById('loading');
+  if (loading) loading.textContent = STR.loading;
+  if (filepath) filepath.textContent = file || '';
+
+  function showError(msg) {
+    article.innerHTML = '<div class="viewer-error"><h1>' + STR.errTitle + '</h1><p>' + msg + '</p>' +
+      '<p class="muted">site/details.html?file=&lt;file&gt;</p></div>';
+    article.setAttribute('data-state', 'error');
+  }
+
+  if (!file) { showError(STR.missing); return; }
+  if (!window.IFDetails || !window.IFDetails.isAllowedFile(file)) { showError(STR.invalid); return; }
+  var kind = window.IFDetails.classify(file);
+  if (!kind) { showError(STR.invalid); return; }
+
+  article.setAttribute('aria-busy', 'true');
+  fetch(window.IFDetails.buildRepoURL(window.location.href, file), { cache: 'no-store' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.arrayBuffer();
+    })
+    .then(function (buf) {
+      var text = new TextDecoder('utf-8').decode(buf);   // force UTF-8
+      var base = 'Internet Force 1995–1996';
+      if (kind === 'markdown') {
+        article.innerHTML = window.IFDetails.renderMarkdown(text, file);
+        var h1 = article.querySelector('h1');
+        document.title = (h1 ? h1.textContent.trim() + ' — ' : '') + base;
+        if (window.location.hash) {
+          var el = document.getElementById(window.location.hash.slice(1));
+          if (el) el.scrollIntoView();
+        }
+      } else {
+        // Text / configuration: exact contents, no Markdown interpretation.
+        article.innerHTML = '';
+        var title = document.createElement('h1');
+        title.className = 'doc-title';
+        title.textContent = file.split('/').pop();
+        var raw = document.createElement('p');
+        raw.className = 'rawlink';
+        var rawA = document.createElement('a');
+        rawA.href = window.IFDetails.buildRepoURL(window.location.href, file);
+        rawA.textContent = STR.raw;
+        raw.appendChild(rawA);
+        var pre = document.createElement('pre');
+        var code = document.createElement('code');
+        code.textContent = text;                          // exact, unmodified
+        pre.appendChild(code);
+        article.appendChild(title);
+        article.appendChild(raw);
+        article.appendChild(pre);
+        document.title = file.split('/').pop() + ' — ' + base;
+      }
+      article.removeAttribute('aria-busy');
+    })
+    .catch(function (err) {
+      showError(STR.fail + ' (' + err.message + ')');
+    });
+})();
+</script>
+</body>
+</html>

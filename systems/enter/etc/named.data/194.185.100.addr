@@ -1,0 +1,16 @@
+@               IN      SOA     dante.enter.it. hostmaster.enter.it. (
+                                1996070400      ;serial
+                                86400           ;refresh period (1 day)
+                                7200            ;retry interval (2 hours)
+                                604800          ;expire time (1 week)
+                                86400           ;minimum ttl (1 day)
+                                )
+
+		IN	NS	dante.enter.it.
+		IN	NS	venere.inet.it.
+		IN	NS	ns2.inet.it.
+
+193		IN	PTR	gw-racdyn.racdyn.it.
+194		IN	PTR	colombus.racdyn.it.
+195		IN	PTR	vespucci.racdyn.it.
+196		IN	PTR	polo.racdyn.it.
