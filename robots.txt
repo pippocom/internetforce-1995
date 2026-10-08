@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pippocom.github.io/internetforce-1995/site-map
+Sitemap: https://pippocom.github.io/internetforce-1995/site-map.txt
