@@ -1,0 +1,92 @@
+[OPTIONS]
+CONTENTS=indice
+TITLE=Versione dimostrativa - NON distribuire
+COMPRESS= high
+OLDKEYPHRASE = FALSE
+ICON=rv.ico
+copyright = DEMO - Internet news
+CITATION= Testo estratto da Hypertxt 1.29b - DEMO - Vietata la distribuzione
+REPORT=ON
+WARNING=3
+
+[FILES]
+virtual.rtf
+gergo.rtf
+internet.rtf
+ita_crk.rtf
+reti.rtf
+
+[BITMAPS]
+ALFABETH.BMP        
+APPLE.BMP
+ARCHIE.BMP
+BBS.BMP
+BIBLIO.BMP
+CAPITOLI.BMP
+CELLO.BMP
+CHIUDI.BMP
+CINEMA.BMP
+CLIPP.BMP
+CYB_TXT.BMP
+CYB.BMP
+DIR.BMP
+DIRITTI.BMP
+DOMANI.BMP
+EARTH.BMP
+ESCHER.BMP
+FACCE.BMP
+FIDO.BMP
+FINGER.BMP
+FTP.BMP
+GENESI.BMP
+GOPHER.BMP
+GOPHER2.BMP
+HABITAT.BMP
+HACK.BMP
+INDICE.BMP
+INDIETRO.BMP
+INDINTE.BMP
+INTRIC.BMP
+IO.BMP
+ITACRK.BMP
+LUDO.BMP
+MAIL.BMP
+MAILING.BMP
+MATRICE.BMP
+MODELLO1.BMP
+MODELLO2.BMP
+MOSAIC.BMP
+NATAN.BMP
+PALESTRE.BMP
+PGP.BMP
+PROSE.BMP
+PUNK.BMP
+REALTA.BMP
+RELSOC.BMP
+RETI.BMP
+RISPO.BMP
+RIVISTE.BMP
+RV.BMP
+SEGUE.BMP
+SIMNET.BMP
+TCPIP.BMP
+TELNET.BMP
+TRON.BMP
+VERO.BMP
+VIRUS.BMP
+WEB.BMP
+WELL.BMP
+
+[WINDOWS]
+main = "Versione dimostrativa - NON distribuire", (0,0,1023,1023 ),,, (192,192,192 )
+seconda = "Gergo", (560,0,463,1014 ),,, (192,192,192 ), 1
+terza = "Indice degli argomenti", (590,222,400,736 ),,, (192,192,192 ), 1
+
+[CONFIG]
+SetHelpOnFile("help.hlp`uso_def'>main")
+BrowseButtons()
+ChangeButtonBinding(`btn_contents', `JumpId("internet.hlp>terza", "ind_def")')
+RegisterRoutine("MMSystem.DLL","MCIExecute","v=S")
+CB("io","&About", "JI(`virtual.hlp', `io_def')")
+CB("gerg","&Gergo", "JI(`virtual.hlp>seconda', `Gerg_def')")
+CB("uscita","&Esci", "Exit()")

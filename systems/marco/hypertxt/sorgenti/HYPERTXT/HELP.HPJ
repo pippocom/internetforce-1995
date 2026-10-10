@@ -1,0 +1,20 @@
+[OPTIONS]
+CONTENTS=Help_ndx
+TITLE=Guida all'uso
+COMPRESS= high
+OLDKEYPHRASE = FALSE
+REPORT=ON
+ICON=hlp.ico
+copyright = (C) 1994 - Marco Iannacone
+WARNING=3
+
+[FILES]
+help.rtf ; main topics
+
+[BITMAPS]
+
+[WINDOWS]
+main = "Guida all'uso", (4,460,1019,550) ,,, (255,255,192), 1
+
+[CONFIG]
+CB("uscita","&Esci", "Exit()")

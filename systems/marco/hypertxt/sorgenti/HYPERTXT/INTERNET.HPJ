@@ -1,0 +1,31 @@
+[OPTIONS]
+CONTENTS=inizio
+TITLE=Internet
+COMPRESS= high
+OLDKEYPHRASE = FALSE
+ICON=rv.ico
+copyright = (C) 1994 - Marco Iannacone
+CITATION= Testo estratto da Hypertxt 1.30 - Copyright © 1994 Marco Iannacone - Il materiale contenuto in questo Ipertesto appartiene ai rispettivi autori (-> bibliografia)
+REPORT=ON
+WARNING=3
+
+[FILES]
+inter.rtf
+
+[BITMAPS]
+BIGEARTH.BMP
+CAPITOLI.BMP
+DIR.BMP    ; simbolo indice
+INDICE.BMP
+
+[WINDOWS]
+main = "Internet", (0,0,1023,1023 ),,, (192,192,192 )
+seconda = "Gergo", (560,0,463,1014 ),,, (192,192,192 ), 1
+terza = "Indice degli argomenti", (585,222,407,738 ),,, (192,192,192 ), 1
+
+[CONFIG]
+SetHelpOnFile("help.hlp`uso_def'>main")
+BrowseButtons()
+CB("io","&About", "JI(`virtual.hlp', `io_def')")
+CB("gerg","&Gergo", "JI(`virtual.hlp>seconda', `Gerg_def')")
+CB("uscita","&Esci", "Exit()")

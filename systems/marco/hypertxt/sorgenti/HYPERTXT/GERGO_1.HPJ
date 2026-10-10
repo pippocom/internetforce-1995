@@ -1,0 +1,41 @@
+[OPTIONS]
+CONTENTS=Gergo
+TITLE=Gergo
+COMPRESS= high
+OLDKEYPHRASE = FALSE
+REPORT=ON
+ICON=rv.ico
+copyright = (C) 1994 - Marco Iannacone
+WARNING=3
+
+[FILES]
+gergo_1.rtf ; main topics
+
+[BITMAPS]
+ALFABETH.BMP        
+
+[WINDOWS]
+main = "Gergo", (560,0,463,1014 ),,, (192,192,192 ), 1
+
+[CONFIG]
+;ChangeButtonBinding(`btn_contents', `JumpId("virtual.hlp", "somm_def"))
+;DestroyButton("btn_search")
+;DestroyButton("btn_back")
+;DestroyButton("btn_history")
+;DestroyButton("btn_previous")
+;DestroyButton("btn_next")
+;DeleteItem("mnu_open")
+;DeleteItem("mnu_print")
+;DeleteItem("mnu_exit")
+;DeleteItem("mnu_psetup")
+;DeleteItem("new_file")
+;DeleteItem("mnu_copy")
+;DeleteItem("mnu_annotate")
+;DeleteItem("mnu_edit")
+;DeleteItem("mnu_bkdefine")
+;DeleteItem("mnu_bkmore")
+;DeleteItem("mnu_bookmark")
+;DeleteItem("mnu_ontop")
+;DeleteItem("mnu_about")
+;DeleteItem("mnu_help")
+CB("uscita","&Chiudi", "CloseWindow(`Gergo')")
