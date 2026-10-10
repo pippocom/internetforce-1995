@@ -1,0 +1,151 @@
+{\rtf1\ansi \deff0\deflang1024{\fonttbl{\f0\froman Times New Roman;}{\f1\froman Symbol;}{\f2\fswiss Arial;}{\f3\froman Tms Rmn;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;
+\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue127;\red0\green127\blue127;\red0\green127\blue0;\red127\green0\blue127;\red127\green0\blue0;\red127\green127\blue0;\red127\green127\blue127;
+\red192\green192\blue192;}{\stylesheet{\s244 \fs16\up6\lang1040 \sbasedon0\snext0 footnote reference;}{\s245 \fs20\lang1040 \sbasedon0\snext245 footnote text;}{\s246\li708 \i\fs20\lang1040 \sbasedon0\snext255 heading 9;}{\s247\li708 \i\fs20\lang1040 
+\sbasedon0\snext255 heading 8;}{\s248\li708 \i\fs20\lang1040 \sbasedon0\snext255 heading 7;}{\s249\li708 \fs20\ul\lang1040 \sbasedon0\snext255 heading 6;}{\s250\li708 \b\fs20\lang1040 \sbasedon0\snext255 heading 5;}{\s251\li354 \ul\lang1040 
+\sbasedon0\snext255 heading 4;}{\s252\li354 \b\lang1040 \sbasedon0\snext255 heading 3;}{\s253\sb120 \b\f2\lang1040 \sbasedon0\snext0 heading 2;}{\s254\sb240 \b\f2\ul\lang1040 \sbasedon0\snext0 heading 1;}{\s255\li708 \fs20\lang1040 
+\sbasedon0\snext255 Normal Indent;}{\fs20\lang1040 \snext0 Normal;}}{\info{\title Help On Help}{\subject Hypertext v. 1.15a}{\creatim\yr1994\mo12\dy17\hr17\min25}{\revtim\yr1995\mo4\dy7\hr11\min1}{\version40}{\edmins62}{\nofpages0}{\nofwords65536}
+{\nofchars65536}{\vern16415}}\paperw12240\paperh15840\margl1134\margr1134\margt1417\margb1134\gutter0 \deftab708\widowctrl\ftnbj\hyphhotz425 {\*\template C:\\WINWORD\\HYPERTXT.DOT}\sectd \linex0\headery709\footery709\colsx709 \pard\plain 
+\sl240\keepn\tx144\tx432\tx2592\tx7056 \fs20\lang1040 {\fs16\up6 #{\footnote \pard\plain \s245 \fs20\lang1040 {\fs16\up6 #} Help_ndx}}{\b\f2\fs34  }{\fs16\up6 ${\footnote \pard\plain \s245 \fs20\lang1040 {\fs16\up6 $} Introduzione}}{\b\f2\fs34  }{
+\b\f2\fs34\cf9 MaIsoft Hypertext ver. 1.29b}{\b\f2\fs34 
+\par }\pard \qj\sl360\tx144\tx432\tx2592\tx7056 {\plain \lang1040 Hypetext 1.29b }{\plain \lang1040 \'e8}{\plain \lang1040  un Ipertesto sulla realt}{\plain \lang1040 \'e0}{\plain \lang1040  virtuale. Esso utilizza il motore ipertestuale dell}{\plain 
+\lang1040 'help di Windows (il noto Winhelp.exe).}{\plain \lang1040 
+\par }{\plain \lang1040 Realizzare un Ipertesto oggi non }{\plain \lang1040 \'e8}{\plain \lang1040  particolarmente difficile, esistono diversi programmi di }{\plain \i\lang1040 authoring}{\plain \lang1040  che lo consentono, fornend}{\plain \lang1040 
+o anche numerose funzioni multimediali. Il motivo per cui ho deciso di utilizzare l'Help di Windows }{\plain \lang1040 \'e8}{\plain \lang1040  quello di dimostrare che chiunque pu}{\plain \lang1040 \'f2}{\plain \lang1040 
+ realizzare un ipertesto usando strumenti economici (mi sembra che l'help compiler sia }{\plain \uldb\lang1040 PD}{\plain \v\lang1040 ! JI(`virtual.hlp>seconda', `pd_def')}{\plain \lang1040 
+ - io comunque l'ho avuto insieme a Visual C++, regolarmente registrato), e di stimolare altri a }{\plain \lang1040 realizzare lavori in questo formato.}{\plain \lang1040 
+\par }{\plain \lang1040 
+\par }{\plain \lang1040 Questa }{\plain \i\lang1040 Guida all'uso}{\plain \lang1040  consente di analizzare i seguenti aspetti:}{\plain \lang1040 
+\par }{\plain \lang1040 
+\par }{\plain \uldb\lang1040 Installazione}{\plain \v\lang1040 installa_def}{\plain \lang1040 
+\par }{\plain \uldb\lang1040 Come usare questo Ipertesto}{\plain \v\lang1040 uso_def}{\plain \lang1040 
+\par }{\plain \uldb\lang1040 Problemi}{\plain \v\lang1040 proble_def}{\plain \uldb\lang1040 
+\par }{\plain \uldb\lang1040 Disinstallazione}{\plain \v\lang1040 uninstall_def}{\plain \lang1040 
+\par }{\plain \uldb\lang1040 Licenza d'uso}{\plain \v\lang1040 licenza_def}{\plain \lang1040 
+\par }\pard \qj\sl360\keepn\tx144\tx432\tx2592\tx7056 {\plain \lang1040 \page }{\fs16\up6 #{\footnote \pard\plain \s245 \fs20\lang1040 {\fs16\up6 #} installa_def}}{\plain \lang1040  }{\b\fs28\cf9 INSTALLAZIONE:}{\plain \cf9\lang1040 
+\par }\pard \qj\sl360\tx144\tx432\tx2592\tx7056 {\plain \lang1040 Il dischetto contiene un programma di installazione sviluppa}{\plain \lang1040 \-}{\plain \lang1040 to in Visual Basic, che si occuper}{\plain \lang1040 \'e0}{\plain \lang1040  di tutto.}
+{\plain \lang1040 
+\par }{\plain \lang1040 Dal Program Manager selezionate FILE-ESEGUI A:}{\plain \lang1040 \\}{\plain \lang1040 INSTALLA.EXE.}{\plain \lang1040 
+\par }{\plain \lang1040 Le impostazioni di }{\plain \i\lang1040 default}{\plain \lang1040  creeranno una directory }{\plain \i\lang1040 C:}{\plain \i\lang1040 \\}{\plain \i\lang1040 HYPERTXT}{\plain \lang1040  nella quale copieranno i files}{\plain \lang1040 
+
+\par }{\plain \i\lang1040 VIRTUAL.HLP}{\plain \lang1040 , }{\plain \i\lang1040 INTERNET.HLP, ADDRESS.HLP, HELP.HLP}{\plain \lang1040 , }{\plain \i\lang1040 RV.ICO, SOUND.WAV}{\plain \lang1040 . In seguito verr}{\plain \lang1040 \'e0}{\plain \lang1040 
+ aggiunto un gruppo nel PROGRAM MANAGER e in esso due }{\plain \i\lang1040 ICONE}{\plain \lang1040  per l'avvi}{\plain \lang1040 o dell'applicazione. L'ipertesto pu}{\plain \lang1040 \'f2}{\plain \lang1040 
+ essere consultato partendo da due punti differenti: la }{\plain \b\lang1040 realt}{\plain \b\lang1040 \'e0}{\plain \b\lang1040  virtuale}{\plain \lang1040  o }{\plain \b\lang1040 Internet}{\plain \lang1040 .}{\plain \lang1040 
+\par }\pard \qj\sl360\keepn\tx144\tx432\tx2592\tx7056 {\plain \lang1040 \page }{\fs16\up6 #{\footnote \pard\plain \s245 \fs20\lang1040 {\fs16\up6 #} proble_def}}{\plain \lang1040  }{\b\fs28\cf9 PROBLEMI:}{\plain \cf9\lang1040 
+\par }{\plain \lang1040 La consultazione dell'Ipertesto necessita di una configurazione video }{\plain \b\lang1040 Super Vga 800x600}{\plain \lang1040 .}{\plain \lang1040 
+\par }{\plain \lang1040 
+\par }\pard \qj\fi-142\li142\sl360\keepn\tx432\tx1134\tx2592\tx7056 {\plain \lang1040 - Utilizzando una configurazione Super Vga 640x480 il programma di installazione risulta leggermente distorto (ma perfettamente funzionante) mentre l'Ipertesto funzioner}
+{\plain \lang1040 \'e0}{\plain \lang1040  ma potrebbe essere visualizzato in maniera differente da quella da me voluta.}{\plain \lang1040 
+\par }\pard \qj\sl360\keepn\tx144\tx432\tx2592\tx7056 {\plain \lang1040 
+\par }\pard \qj\fi-142\li142\sl360\keepn\tx426\tx2592\tx7056 {\plain \lang1040 - La mancanza di scheda audio, invece, provocher}{\plain \lang1040 \'e0}{\plain \lang1040  un messaggio d'errore al lancio dell'icona Realt}{\plain \lang1040 \'e0}{\plain \lang1040 
+ Virtuale, solo nella versione dimostrativa (1.29).}{\plain \lang1040 
+\par }\pard \qj\sl360\keepn\tx144\tx432\tx2592\tx7056 {\plain \lang1040 \page }{\fs16\up6 #{\footnote \pard\plain \s245 \fs20\lang1040 {\fs16\up6 #} uninstall_def}}{\plain \lang1040  }{\b\fs28\cf9 DISINSTALLAZIONE:}{\plain \lang1040 
+\par }\pard \qj\sl360\tx144\tx432\tx2592\tx7056 {\plain \lang1040 Personalmente odio i programmi che si installano senza spiegare esattamente quali sono i files che andranno a spargere per il computer e le modifiche che effettueranno nei files }{\plain 
+\lang1040 di sistema (CONFIG.SYS, AUTOEXEC.BAT, WIN.INI, SYSTEM.INI ...}{\plain \lang1040 
+). Per questo scrivo sempre una nota che spieghi cosa bisogna eliminare per fare tornare il PC allo stato precedente, anche se in questo caso, non trattandosi di un vero programma, le modifiche apportate sono veramente irrisorie.}{\plain \lang1040 
+\par }{\plain \lang1040 Ad ogni modo per disinstallare HYPERTEXT v. 1.29b }{\plain \lang1040 \'e8}{\plain \lang1040  sufficiente rimuovere la directory in cui si trov}{\plain \lang1040 a.}{\plain \lang1040 
+\par }\pard \qj\sl360\keepn\tx144\tx432\tx2592\tx7056 {\plain \lang1040 \page }{\fs16\up6 ${\footnote \pard\plain \s245 \fs20\lang1040 {\fs16\up6 $} Informazioni per l'uso}}{\plain \lang1040  }{\fs16\up6 k{\footnote \pard\plain \s245 \fs20\lang1040 {\fs16\up6 
+k} uso;info}}{\plain \lang1040  }{\fs16\up6 #{\footnote \pard\plain \s245 \fs20\lang1040 {\fs16\up6 #} uso_def}}{\plain \lang1040  }{\b\fs28\cf9 USO:}{\plain \lang1040 
+\par }\pard \qj\sl360\tx144\tx432\tx2592\tx7056 {\plain \lang1040 Esistono 2 modi per sfogliare questo lavoro:}{\plain \lang1040 
+\par }\pard \qj\sl240\tx144\tx432\tx2592\tx7056 {\fs16 
+\par }{\plain \lang1040 a) Si pu}{\plain \lang1040 \'f2}{\plain \lang1040  scorrerlo in maniera sequenziale (cio}{\plain \lang1040 \'e8}{\plain \lang1040  come }{\plain \lang1040 un libro tradizionale),dall'inizio alla fine}{\plain \lang1040 
+\par }\pard \qj\fi-284\li284\sl360\tx284\tx432\tx2592\tx7056 {\plain \lang1040 \tab }{\plain \lang1040 Per fare ci}{\plain \lang1040 \'f2}{\plain \lang1040  }{\plain \lang1040 \'e8}{\plain \lang1040  sufficiente premere il bottone}{\plain \dn12\lang1040  }
+{\field{\*\fldinst ref {\dn12 INCORPORA}{\dn12  PBrush }{\dn12 \\}{\dn12 s}}{\fldrslt {\dn12 {\pict\wmetafile8\picw2011\pich609\picwgoal1140\pichgoal345 
+010009000003d205000001008b0500000000050000000b0200000000050000000c0217004c008b050000410b2000cc0017004c000000000017004c0000000000280000004c00000017000000010008000000000000000000000000000000000000000000000000000000000000008000008000000080800080000000800080
+0080800000c0c0c000c0dcc000f0c8a4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f0fbff00a4a0a000808080000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff00ffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0000000000000000f8ffff00f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f800ffff00fff8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8
+f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff070707070707070707070707
+0707070707070707070707070700000000000000000707070707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707
+0707070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707000007070707070000070707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070000070707070700000707
+070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070700000707070707000007070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff07070707070707070707070707
+07070707070707070707070707070707000007070707070000070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff07070707070707070707070707070707070707070707070707070707000007070707070000070707070707070707070707070707070707070707070707070707
+07070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070000070707070700000707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff070707070707070707070707070707070707070707070707070700000707070707000007070707
+0707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff0707070707070707070707070707
+070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707
+070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff07070707070707070707070707070707070707070707070707070707070707070707070707070707
+07070707070707070707070707070707070707070707070707070707f8f800ffff00fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8f800ffff00ffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff800fffff80000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000f8ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2d000000f7000003140000000000800000000080000080800000000080008000800000808000c0c0c000c0dcc0
+00a6caf000fffbf000a0a0a40080808000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00ffffff000400000034020000030000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff}}}}{\dn12  }{\plain \lang1040 
+ ogni volta che si desidera passare al paragrafo successivo (seguendo l'ordine indicato nel sommario). Per tornare al paragrafo precedente, invece, si deve premere}{\plain \dn12\lang1040  }{\field{\*\fldinst ref {\dn12 INCORPORA PBrush }{\dn12 \\}{\dn12 s
+}}{\fldrslt {\dn12 {\pict\wmetafile8\picw2011\pich582\picwgoal1140\pichgoal330 
+010009000003ac0500000100650500000000050000000b0200000000050000000c0216004c0065050000410b2000cc0016004c000000000016004c0000000000280000004c00000016000000010008000000000000000000000000000000000000000000000000000000000000008000008000000080800080000000800080
+0080800000c0c0c000c0dcc000f0c8a4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f0fbff00a4a0a000808080000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff00ffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0000000000000000f8ffff00f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f800ffff00fff8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8
+f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff070707070707070707070707
+0707070707070707070707070707070700000000000000000000070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707
+0707070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070707000007070707070700000707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070700000707070707070000
+070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070000070707070707000007070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff07070707070707070707070707
+07070707070707070707070707000007070707070700000707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff07070707070707070707070707070707070707070707070707070700000707070707070000070707070707070707070707070707070707070707070707070707
+07070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070700000707070707070000070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff070707070707070707070707070707070707070707070707070707070700000707070707070000
+0707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff0707070707070707070707070707
+070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707
+070707f8f800ffff00ffff0707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070707f8f800ffff00ffff07070707070707070707070707070707070707070707070707070707070707070707070707070707
+07070707070707070707070707070707070707070707070707070707f8f800ffff00fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8f800ffff00ffffffffffffffffffffffffffffffffff
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff800fffff80000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000f8ff2d000000f7000003140000000000800000000080000080800000000080008000800000808000c0c0c000c0dcc000a6caf000fffbf000a0a0a40080808000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00ffffff000400000034020000030000000000ffffffffffbfffffff3ffffffe3ffffffc
+007ffff8007ffff0007ffff8007ffffc007ffffe3fffff}}}}{\plain \dn12\lang1040  }{\plain \lang1040 .}{\plain \lang1040 
+\par }\pard \qj\sl240\tx284\tx432\tx2592\tx7056 {\fs16 
+\par }\pard \qj\fi-284\li284\sl360\tx284\tx432\tx2592\tx7056 {\plain \lang1040 b) Oltre al metodo tradizionale, }{\plain \lang1040 \'e8}{\plain \lang1040 
+ consigliabile sfruttarne le caratteristiche Ipertestuali che funzionano seguendo il medesimo schema usato da tutti gli Help di MS W}{\plain \lang1040 
+indows 3.x. Ogni volta che passando su una parola o una  figura il cursore si  trasforma in  una manina, significa che esiste un argomento collegato a quell'oggetto. In questo modo sar}{\plain \lang1040 \'e0}{\plain \lang1040 
+ possibile approfondire particolari concetti che ve}{\plain \lang1040 ngono accennati in un paragrafo, per poi tornare a finirne la lettura con una maggiore conoscenza dell'argomento di cui si sta parlando.}{\plain \lang1040 
+\par }\pard \sl240\tx144\tx432\tx2592\tx7056 {\fs16 
+\par }\pard \qj\sl360\tx144\tx432\tx2592\tx7056 {\plain \lang1040 
+Per facilitare la consultazione del maggior numero possibile di paragrafi ho creato due indici (uno situato nel file VIRTUAL.HLP e uno in INTERNET.HLP) che indicano alcuni dei capitoli principali. Ricordate, comunque, che esistono degli argomenti raggiung
+}{\plain \lang1040 ibili }{\plain \b\lang1040 SOLO}{\plain \lang1040  in maniera ipertestuale ed altri, invece, che possono essere visualizzati }{\plain \b\lang1040 SOLO}{\plain \lang1040  utilizzando il pulsante CERCA.}{\plain \lang1040 
+\par }{\plain \lang1040 Inoltre alcune immagini contengono importanti spiegazioni, come quella contenuta nel capitolo }{\plain \b\i\lang1040 Realt}{\plain \b\i\lang1040 \'e0}{\plain \b\i\lang1040  Virtual}{\plain \lang1040 e (provate a clic}{\plain \lang1040 
+\-}{\plain \lang1040 care sul }{\plain \lang1040 guanto, per esempio).}{\plain \lang1040 
+\par }\pard \qj\sl360\keepn\tx144\tx432\tx2592\tx7056 {\plain \lang1040 \page }{\fs16\up6 ${\footnote \pard\plain \s245 \fs20\lang1040 {\fs16\up6 $} Licenza d'uso}}{\plain \lang1040  }{\fs16\up6 k{\footnote \pard\plain \s245 \fs20\lang1040 {\fs16\up6 k}
+ Licenza;Copyright;Registrazione}}{\plain \lang1040  }{\fs16\up6 #{\footnote \pard\plain \s245 \fs20\lang1040 {\fs16\up6 #} licenza_def}}{\plain \lang1040  }{\b\fs28\cf9 LICENZA D'USO:}{\plain \b\lang1040 
+\par }\pard \qj\sl240 {\plain \b\lang1040 
+\par }{\plain \b\lang1040 Singolo Utente}{\plain \lang1040 
+\par }\pard \qj\sl240\tx144\tx432\tx2592\tx7056 {\plain \lang1040 Pu}{\plain \lang1040 \'f2}{\plain \lang1040  considerare questa}{\plain \lang1040  versione dimostrativa }{\plain \ul\lang1040 freeware}{\plain \v\lang1040 ! PI(`virtual.hlp>main', `free_}
+{\plain \v\lang1040 de}{\plain \v\lang1040 f')}{\plain \lang1040  e utilizzarla gratuitamente per tutto il tempo che desidera, ma se gli piace pu}{\plain \lang1040 \'f2}{\plain \lang1040  mandarmi una cartolina all'indirizzo che trover}{\plain \lang1040 
+\'e0}{\plain \lang1040  (magari con un po' di fatica) nella schermata con le Notizie sull'Autore - oppure alla fine di questa pagina..}{\plain \lang1040 
+\par }\pard \qj\sl240 {\plain \lang1040 
+\par }{\plain \b\lang1040 Software house}{\plain \lang1040 
+\par }{\plain \lang1040 Possono distribuire }{\plain \lang1040 la versione }{\plain \lang1040 dimostrativa }{\plain \lang1040 
+(1.29) di questo Ipertesto liberamente a condizione di non modificarla in alcun modo. Possono includerla in qualsiasi raccolta di prodotti }{\plain \uldb\lang1040 shareware}{\plain \v\lang1040 ! JI(`virtual.hlp>main', `share_def')}{\plain \lang1040  o }
+{\plain \ul\lang1040 freeware}{\plain \v\lang1040 ! PI(`virtual.hlp>main', `free_def')}{\plain \lang1040  (su floppy o CD-ROM), allegarlo a qualsiasi programma di comunicazione (o di altro genere) dopo averne chiesta l'autorizzazione all'autore. }{\plain 
+\lang1040 
+\par }{\plain \lang1040 
+\par }{\plain \b\lang1040 BBS}{\plain \lang1040 
+\par }{\plain \lang1040 Possono distribuire }{\plain \lang1040 la versione }{\plain \lang1040 dimostrativa }{\plain \lang1040 (1.29) di questo Ipertesto liberamente a condizione di non modificarla in alcun modo. }{\plain \lang1040 
+Se decidono di distribuirla ad ogni nuovo abbonato (come istruzioni per la navigazione) l'autore gradirebbe esserne informato.}{\plain \lang1040 
+\par }{\plain \lang1040 
+\par }{\plain \b\lang1040 Riviste}{\plain \b\lang1040 
+\par }{\plain \lang1040 Sono te}{\plain \lang1040 nute a chiedere l'autorizzazione all'autore prima di distribuire in edicola qualsiasi versione dell'Ipertesto.}{\plain \lang1040 
+\par }{\plain \lang1040 
+\par }{\plain \lang1040 
+\par }{\plain \i\lang1040 LA VERSIO}{\plain \i\lang1040 NE COMPLETA E' RICHIEDIBILE ALL'AUTORE A }{\plain \i\lang1040 \'a3}{\plain \i\lang1040  15.000 + SPESE DI SPEDIZIONE.}{\plain \i\lang1040 
+\par }{\plain \i\lang1040 
+\par }{\plain \i\lang1040 Chi fosse eventualmente interessato a includerne solo una parte di questo saggio in un proprio programma }{\plain \i\lang1040 \'e8}{\plain \i\lang1040  pregato di contatt}{\plain \i\lang1040 
+are l'autore all'indirizzo riportato di segu}{\plain \i\lang1040 ito.}{\plain \i\lang1040 
+\par }{\plain \i\lang1040 Eventuali critiche e/o consigli sono sempre ben accetti, al fine di migliorare le versioni successive.}{\plain \lang1040 
+\par }{\plain \lang1040 
+\par }{\plain \lang1040 
+\par }{\plain \lang1040 
+\par }{\fs26 Marco Iannacone}{\fs26 
+\par }{\fs26 Res. Spiga Milano 2}{\fs26 
+\par }{\fs26 20090 Segrate - MILANO}{\fs26 
+\par }\pard \qj\sl360\tx144\tx432\tx2592\tx7056 {\plain \lang1040 
+\par }\pard {\plain \lang1040 Buona lettura!}
+\par 
+\par 
+\par }

@@ -1,0 +1,105 @@
+@echo off
+cls
+echo.
+echo                         MaISoft Hypertext 1.29b
+echo.
+echo Con questo saggio si vuole fare il punto sullo, stato dell'arte dell'attuale 
+echo tecnologia, cercando, nello stesso tempo, di dare un'idea su ci• che potr… 
+echo essere il prossimo futuro. Il formato con cui Š stato realizzato il saggio Š 
+echo ipertestuale, in quanto l'autore ritiene che questo strumento sar… sempre pi— 
+echo usato negli anni a venire, grazie alle notevoli capacit… informative e di 
+echo navigazione che offre. 
+echo Le informazioni che un ipertesto riesce a fornire, infatti, sono decisamente 
+echo superiori rispetto ad una relazione scritta in maniera convenzionale, ma 
+echo nonostante ci•, la lettura non Š appesantita da noiose precisazioni.
+echo.
+echo I requisiti minimi necessari per poter consultare questo ipertesto sono:
+echo.
+echo   - PC IBM-compatibile 286 o sup.
+echo   - 2 Mb (o pi—) di RAM, 1,2 Mb liberi sul HD 
+echo   - Windows 3.1 o sup.
+echo.
+echo In oltre, per poterlo utilizzare pienamente si consiglia:
+echo
+echo   - Scheda Audio (necessaria per sentire i suoni iniziali)
+echo   - Scheda Video SuperVGA che consenta una risoluzione 800x600
+echo     in quanto il saggio Š stato sviluppato per quella risoluzione.
+echo.
+echo   ----------------------  Premi INVIO per continuare  ----------------------
+pause > nul
+cls
+echo.
+echo.
+echo  USO: 
+echo  Esistono 2 modi per consultare questo ipertesto:
+echo.
+echo.
+echo a) Lo si pu• scorrere in maniera sequenziale (cioŠ come un libro tradizionale),
+echo    dall'inizio alla fine.
+echo    Per fare ci• Š sufficiente premere il bottone freccia ogni volta che si 
+echo    desidera passare al paragrafo successivo o tornare al precedente (seguendo 
+echo    l'ordine indicato nel sommario). 
+echo.
+echo.
+echo b) Oltre al metodo tradizionale, Š consigliabile sfruttarne le caratteristiche
+echo    Ipertestuali che funzionano seguendo il medesimo schema usato da tutti gli
+echo    Help di MS Windows 3.x. 
+echo    Ogni volta che passando su una parola o una  figura il cursore si  trasfor-
+echo    ma in  una manina, significa che esiste un argomento collegato a quell'og-
+echo    getto. 
+echo    In questo modo sar… possibile approfondire particolari concetti che vengono 
+echo    accennati in un paragrafo, per poi tornare a finirne la lettura con una mag-
+echo    giore conoscenza dell'argomento di cui si sta parlando.
+echo.
+echo.
+echo   ----------------------  Premi INVIO per continuare  ----------------------
+pause > nul
+cls
+echo IMPORTANTE:
+echo E' importante ricordare che esistono degli argomenti raggiungibili solo in 
+echo maniera ipertestuale mentre altri, invece, possono essere visualizzati solo 
+echo utilizzando il pulsante CERCA (Per esempio i numerosi paragrafi su Internet 
+echo sono raggiungibili solo attraverso salti Ipertestuali o mediante ricerche).
+echo Inoltre alcune immagini contengono importanti spiegazioni, come quella conte-
+echo nuta nel capitolo Realt… Virtuale (provate a cliccare sul guanto, per esempio).
+echo.
+echo CREAZIONE:
+echo Per la realizzazione della ver.0.4 sono state impiegate circa 5 settimane, con 
+echo una media di 3 ore di lavoro al giorno. Questo tempo comprende anche il tempo 
+echo di ricerca e di battitura del testo, il quale, per la stesura di un Ipertesto, 
+echo deve essere suddiviso in capitoli separati che andranno collegati ad opportune
+echo parole chiavi (nodi). Il tempo della creazione del solo Ipertesto, invece,
+echo (partendo dai dati gi… inseriti nel computer) Š di circa 3 ore.
+echo.
+echo DISTRIBUZIONE:
+echo Per cercare di contenere la diffusione dei Virus (argomento di cui si parla
+echo anche nel saggio) si allega il file VIRUS.DOC che contiene i CRC di tutti i 
+echo files, ottenuti con Validate della McAfee. Si consiglia, quindi, di verificare 
+echo l'integrit… del programma, prima procedere alla sua installazione.
+echo.
+echo   ----------------------  Premi INVIO per continuare  ----------------------
+pause > nul
+cls
+ECHO INSTALLAZIONE
+echo Se il programma INSTALLA non funziona, Š possibile effettuare un'installa-
+echo zione manuale:
+echo - copiate VIRTUAL.HL_, HELP.HL_, RV.IC_, SOUND.WA_, INTERNET.HL_, ADDRESS.HL_ 
+ECHO   nella dir. HYPERTXT, rinominandoli i files *.HL_ in *.HLP, RV.ICO, SOUND.WAV.
+echo - Aggiungete al Program Manager l'icona RV.ICO assegnandola a 
+echo   WINHELP.EXE C:\HYPERTXT\VIRTUAL.HLP (directory di lavoro C:\HYPERTXT)
+echo   WINHELP.EXE C:\HYPERTXT\INTERNET.HLP (directory di lavoro C:\HYPERTXT)
+echo.
+echo Per finire, ecco alcune informazioni sull'autore: 
+echo si tratta di uno studente del II anno della Scuola di Statistica presso la 
+echo facolt… di Economia e Commercio dell'Universit… Cattolica di Milano, facolt… 
+echo alla quale Š giunto dopo aver frequentato per tre anni la facolt… di Ingegne-
+echo ria dell'Universit… di Pavia e trascorso il servizio militare presso il CED 
+echo (Centro Elaborazione Dati) della Marina Militare a La Spezia.
+echo.
+echo                                               Buona lettura,
+echo                                                  l'Autore
+echo.
+echo.
+echo                                               Marco Iannacone
+echo                                              Res.Spiga Milano 2
+echo                                              20090 Segrate (MI)

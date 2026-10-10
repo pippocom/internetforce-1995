@@ -1,0 +1,103 @@
+[OPTIONS]
+CONTENTS=indice
+TITLE=Realtà Virtuale
+COMPRESS= high
+OLDKEYPHRASE = FALSE
+ICON=rv.ico
+copyright = (C) 1994 - Marco Iannacone
+CITATION= Testo estratto da Hypertxt 1.30 - Copyright © 1994 Marco Iannacone - Il materiale contenuto in questo Ipertesto appartiene ai rispettivi autori (-> bibliografia)
+REPORT=ON
+WARNING=3
+
+[FILES]
+virtual.rtf  ; main topics
+gergo.rtf
+internet.rtf
+ita_crk.rtf
+reti.rtf
+
+[BITMAPS]
+ALFABETH.BMP        
+APPLE.BMP
+ARCHIE.BMP
+BBS.BMP
+BIBLIO.BMP
+CAPITOLI.BMP
+CELLO.BMP
+CHIUDI.BMP
+CINEMA.BMP
+CLIPP.BMP
+COLLEGA.BMP
+CRAY.BMP
+CSERVE.BMP
+CYB_TXT.BMP
+CYB.BMP    ; titolo cyberspace
+DIR.BMP    ; simbolo indice
+DIRITTI.BMP ; titolo diritti virtuali
+DOMANI.BMP
+EARTH.BMP  ; titolo internet
+ESCHER.BMP
+FACCE.BMP
+FIDO.BMP
+FINGER.BMP
+FTP.BMP
+GENESI.BMP
+GOPHER.BMP
+GOPHER2.BMP
+HABITAT.BMP
+HACK.BMP
+INDICE.BMP
+INDIETRO.BMP
+INDINTE.BMP
+INTRIC.BMP
+IO.BMP
+ITACRK.BMP
+LUDO.BMP
+MAIL.BMP
+MAILING.BMP
+MATRICE.BMP
+;MISC04.BMP inglobato in palestre
+MODELLO1.BMP
+MODELLO2.BMP
+MOSAIC.BMP
+NATAN.BMP
+NET.BMP
+PALESTRE.BMP
+PGP.BMP
+PROSE.BMP
+PUNK.BMP
+REALTA.BMP
+RELSOC.BMP
+RETI.BMP
+RCM.BMP
+RISPO.BMP
+RIVISTE.BMP
+RV.BMP
+;SECU03.BMP INGLOBATA in ITA_CRCK
+;SECU08.BMP INGLOBATA in CLIPPER
+SEGUE.BMP
+SIMNET.BMP
+SOFT.BMP
+TCPIP.BMP
+TELNET.BMP
+TRON.BMP
+VERO.BMP
+VERONICA.BMP
+VIRUS.BMP
+VOICE.BMP
+WEB.BMP
+WELL.BMP
+
+[WINDOWS]
+main = "Realtà Virtuale", (0,0,1023,1023 ),,, (192,192,192 )
+seconda = "Gergo", (560,0,463,1014 ),,, (192,192,192 ), 1
+terza = "Indice degli argomenti", (590,222,400,738 ),,, (192,192,192 ), 1
+
+[CONFIG]
+SetHelpOnFile("help.hlp`uso_def'>main")
+BrowseButtons()
+ChangeButtonBinding(`btn_contents', `JumpId("internet.hlp>terza", "ind_def")')
+RegisterRoutine("MMSystem.DLL","MCIExecute","v=S")
+CB("io","&About", "JI(`virtual.hlp', `io_def')")
+CB("gerg","&Gergo", "JI(`virtual.hlp>seconda', `Gerg_def')")
+CB("uscita","&Esci", "Exit()")

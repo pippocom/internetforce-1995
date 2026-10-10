@@ -1,0 +1,35 @@
+trickle.inf in garbo.uwasa.fi:/pc/pd2/moder*.zip
+================================================
+
+Mon 30-Aug-93 11:24
+
+The TRICKLE server is a 'concentrator' of FTP sites into central servers.  Each server has its own (large) cache disk to store files that have been recently ordered by users, and is in communication
+with all other TRICKLE servers about the contents of its cache. When a user orders a file that is not in local cache, TRICKLE can usually forward this command to one other TRICKLE server that is known to hold the file.  In some cases, "broadcasts" to all other TRICKLEs for this file is necessary, and if the file is new, or accessed very infrequently, it is requested from one of the 3 FTP slave-servers it has.  These 3 are special servers who fetch the file via FTP and send it via NJE to TRICKLE.
+
+TRICKLE servers reduce load on FTP sites substantially: Their incoming-to outgoing file rate is usually 1/5.  Meaning, each cached file is usually sent out five times during its lifetime in the cache disk.
+
+TRICKLE supports a wide range of delivery methods to the user. Besides the usual  mail+(UUE,XXE,BTOA,etc), it can also FTP the files to the user, or use NJE SENDFILE where possible and desired.
+
+It is possible to subscribe to file patterns, such as <MSDOS.VIRUS>SCAN and to have server deliver you a new copy of the file each time it is made available.  A special keyword, '*' can be used instead of the pattern to subscribe to an entire subdirectories, like: <OS2.NEW>*
+
+It mirrors many FTP site's popular directories: (exact site names are described in the help file): MSDOS, MISC, SIGM, MACINTOS, LINUX, UNIX-C, GARFIELD, OS2, KERMIT, X11, IBM, VM-CMS, WUARCHIVE, EXPO-MIT, UUNET, TEX, AMIGA, ARCHIVES. 
+
+The servers are accessible from any connected network, via email or NJE interactive messages.
+
+ Send a:
+/HELP
+command in a mail message (with the leading slash) to:
+trickle@frmop11.cnusc.fr     (or TRICKLE@FRMOP11.BITNET), or
+trickle@hearn.nic.surfnet.nl (TRICKLE@HEARN.BITNET) for a help file,
+and to assist you locate your closest TRICKLE server (there are
+currently 12 TRICKLE servers).
+
+Note! This server code is entirely different than the TRICKLE server
+written by John Fisher (which I called "FTP slave-servers" in this
+document).  However, John Fisher's server is greatly used by TRICKLE
+servers to fetch the files.
+
+Regards,
+  turgut kalfaoglu
+  EARN staff on server programming
+  TURGUT@TREARN.BITNET

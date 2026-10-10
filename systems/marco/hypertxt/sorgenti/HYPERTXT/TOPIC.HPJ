@@ -1,0 +1,63 @@
+
+[MAP] 
+topic1001L0     0       ;First Page Contents
+topic1002L1     1       ;Overview of HyperTrack
+topic1003L1     2       ;Overview of HyperDoc
+topic1004L1     3       ;Installation and Getting Started
+topic1005L2     4       ;Disclaimer
+topic1006L2     5       ;Changes in Release 4 of HyperTrack
+topic1007L1     6       ;HyperTrack: revolutionising the WinHelp application
+topic1008L2     7       ;How to use HyperTrack
+topic1009L3     8       ;How to use the Search window
+topic1010L2     9       ;Summary of HyperTrack features
+topic1011L2     10      ;List of Short-Cut Keys in HyperTrack
+topic1012L2     11      ;Short-Cut Keys added for WinHelp
+topic1013L2     12      ;Performing Word Searches
+topic1014L2     13      ;Anticipated Improvements for Future Releases
+topic1015L1     14      ;HyperDoc: the easy way to produce help files from existing documents
+topic1016L2     15      ;Summary of HyperDoc Features 
+topic1017L2     16      ;Document Preparation
+topic1018L3     17      ;Heading styles must only be on one line
+topic1019L3     18      ;First line of document should not be part of document hierarchy
+topic1020L3     19      ;Inconsistent Styles or Heading levels
+topic1021L2     20      ;Tips for Creating Help Files with HyperDoc
+topic1022L3     21      ;What you see in Winword vs. what appears finally
+topic1023L3     22      ;Use the proper HyperTrack Loading option
+topic1024L3     23      ;Remove the Keep With Next paragraph attribute for Popup Windows
+topic1025L3     24      ;Use Cross Reference macro to create new topic groups
+topic1026L3     25      ;Consider using Undo Process macro to preserve Cross References
+topic1027L3     26      ;Remember to distribute Project and Keyword Files with Help File
+topic1028L3     27      ;More Customisation?
+topic1029L2     28      ;Steps for creating a basic help file with HyperDoc
+topic1030L2     29      ;Acknowledgments
+topic1031L1     30      ;Detailed Description of HyperDoc Macros
+topic1032L2     31      ;Process Topic Outlines
+topic1033L3     32      ;ProcessTopicOutlines Setup Options
+topic1034L3     33      ;Customise Keywords Dialog Box
+topic1035L3     34      ;Set Run + HyperTrack Options Dialog Box
+topic1036L2     35      ;Jump To Topic
+topic1037L2     36      ;Edit Topic
+topic1038L2     37      ;Scan Keywords
+topic1039L2     38      ;Master Contents And Listings
+topic1040L2     39      ;Cross References
+topic1041L3     40      ;Using the Tracker for Cross References
+topic1042L2     41      ;Insert Helpfile Graphic
+topic1043L2     42      ;Undo Process
+topic1044L2     43      ;Insert Macro Hotspot
+topic1045L2     44      ;Insert Topic Keywords
+topic1046L2     45      ;Insert Help Topic 
+topic1047L2     46      ;Run Help Compiler
+topic1048L2     47      ;Open Help File
+topic1049L2     48      ;Other Useful Macros
+topic1050L3     49      ;Change Directory (as well as Open and Delete files)
+topic1051L3     50      ;Toggle View Style Name Area
+topic1052L3     51      ;Toggle View Hidden 
+topic1053L3     52      ;Jump To Page (the dynamic way)
+topic1054L3     53      ;Dynamic Zoom (the easiest way to change view)
+topic1055L3     54      ;Dos Shell
+topic1056L3     55      ;Copy Macro
+topic1057L3     56      ;Select Word
+topic1058L3     57      ;Pre-Process FAQ files
+topic1059L2     58      ;List of all Key Assignments under HyperDoc
+topic1060L1     59      ;Registration and Support
+topic1061L2     60      ;Special Offer for Source Code
