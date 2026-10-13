@@ -43,6 +43,24 @@ network software, downloading and building it locally.
 | tkined | 1.3.4 | SNMP network management |
 | CERN httpd | 3.0 | caching proxy (1996) |
 
+## Xpert IP accounting / `addr_stats`
+
+**Path:** [`artifacts/tools/addr_stats.shar`](../artifacts/tools/addr_stats.shar)
+
+**Package contents:** Xpert shell archive (`Wrapped by xpert.com`, 1996), declared contents `Xpert IP accounting`.
+
+**Role:** surviving user-space component of the Xpert IP usage-accounting solution.
+
+The principal component of the complete solution was a module loaded into the firewall kernel, observing and classifying traffic in transit. Cisco 2511 / PPP, XTACACS and routing supplied the context needed to associate the observed traffic with sessions and users.
+
+The software deployed at Internet Force was **one of the early prototype versions of the Xpert technology that became XACCT Technologies**.
+
+Internet Force used the tracking capability but never billed customers according to IP usage.
+
+Related material: [`artifacts/scripts/IP_ADDRESS_NOTI_DEBUG.txt`](../artifacts/scripts/IP_ADDRESS_NOTI_DEBUG.txt).
+
+See [From Xpert to XACCT](25-xpert-ip-accounting-xacct.en.md).
+
 ## Web servers
 
 | Software | Version | Phase |

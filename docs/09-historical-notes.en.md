@@ -33,6 +33,22 @@ The Xpert relationship continued after launch: the firewall's original rule
 base allows `xpert.com` talk and remote-login access to DVLP and Marco's
 workstation, which is the support path used during the early build.
 
+## Xpert: the people behind part of the infrastructure
+
+The relationship with Xpert was much more direct than a conventional customer-vendor relationship.
+
+Marco Iannacone worked personally with **Limor Schweitzer, Eran Wagner, Yahel Ben-David and Yossi Gottlieb**, all involved at different levels in the technical construction of Internet Force.
+
+Xpert Integrated Systems was founded in 1993 by Limor Schweitzer and Eran Wagner. Very early in its history, Xpert acquired the company Yahel Ben-David had founded in Haifa; Yahel joined the core group and is later described in public biographies as a *co-founder of the Xpert Group*.
+
+Limor spoke Italian, having lived in Rome for the first six years of his life, and during his visits to Milan could speak directly with the Internet Force shareholders.
+
+Limor presented IP accounting as strategic technology: the ability to measure actual network and service use could give Internet Force a major competitive advantage in a market where ISPs mainly sold flat access.
+
+The personal relationships continued long after the project. **Limor Schweitzer and Yahel Ben-David remain personal friends of Marco Iannacone today.**
+
+For the Xpert → Internet Force prototype IP accounting → XACCT technological line, see [From Xpert to XACCT](25-xpert-ip-accounting-xacct.en.md).
+
 ## IDT and the international link
 
 The upstream provider was **IDT**, reachable in New York. The initial

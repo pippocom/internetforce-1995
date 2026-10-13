@@ -178,6 +178,20 @@ users : NFS`) exists because the shell design would have mounted home areas
 from USERS over NFS; because SHELL was never built, that path was never
 exercised.
 
+### The firewall as an IP-accounting observation point
+
+At Internet Force, FireWall-1 did more than enforce security policy.
+
+Xpert's IP usage-accounting solution used **a module loaded into the firewall kernel** as its principal component for observing traffic in transit and distinguishing traffic types such as HTTP, SMTP and FTP.
+
+Cisco 2511, XTACACS and routing supplied the information needed to relate that traffic to the session and user. The firewall therefore also became the primary collection point for events used by the accounting system.
+
+The kernel module itself has not survived in the backups. Part of the user-space component has, including [`artifacts/tools/addr_stats.shar`](../artifacts/tools/addr_stats.shar).
+
+This architecture was one of the early prototype versions of the Xpert technology that later became XACCT Technologies.
+
+See [From Xpert to XACCT](25-xpert-ip-accounting-xacct.en.md).
+
 ## Centralised authentication
 
 XTACACS on USERS centralised authentication for every dial-up POP. Rules 7

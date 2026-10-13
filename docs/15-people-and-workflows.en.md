@@ -194,6 +194,22 @@ intentionally omitted from the Office LAN infographic for visual
 simplicity, but is documented here as part of the organizational
 reconstruction.
 
+### The Xpert core
+
+An important part of the architecture and technology brought into Internet Force came through a direct working relationship with the Xpert core.
+
+Marco Iannacone worked personally with **Limor Schweitzer, Eran Wagner, Yahel Ben-David and Yossi Gottlieb**.
+
+Xpert was founded in 1993 by Limor Schweitzer and Eran Wagner. Very early, it acquired the company founded by Yahel Ben-David in Haifa and integrated him into the core group.
+
+Limor, who spoke Italian after living in Rome for the first six years of his life, could speak directly with the Internet Force shareholders during his visits to Milan.
+
+Yossi Gottlieb was the very young engineer in the group with an almost legendary technical reputation. The Xpert team even joked with the Internet Force shareholders that Yossi could **recognise binary files by listening to them through a loudspeaker**. Marco played along. It was obviously a joke, but it captures his technical reputation in the group.
+
+The personal relationships continued after Internet Force. **Limor Schweitzer and Yahel Ben-David remain personal friends of Marco Iannacone today.**
+
+See [From Xpert to XACCT](25-xpert-ip-accounting-xacct.en.md).
+
 ## 4. Web production workflow
 
 Website production followed a process separated from production on the

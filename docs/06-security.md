@@ -177,6 +177,20 @@ DNS e nel firewall ma mai messo in esercizio. La regola 9 in particolare
 home da USERS via NFS; poiché SHELL non fu mai realizzato, quel percorso non fu
 mai esercitato.
 
+### Il firewall come punto di osservazione per l'IP accounting
+
+In Internet Force FireWall-1 non svolgeva soltanto una funzione di sicurezza.
+
+La soluzione Xpert di IP usage accounting utilizzava **un modulo caricato nel kernel del firewall** come componente principale per osservare il traffico in transito e distinguerne il tipo, per esempio HTTP, SMTP e FTP.
+
+Cisco 2511, XTACACS e routing fornivano le informazioni necessarie per ricondurre quel traffico alla sessione e all'utente. Il firewall diventava quindi anche il principale punto di raccolta degli eventi usati dal sistema di accounting.
+
+Il modulo kernel non è sopravvissuto nei backup. È invece rimasta parte della componente user-space, fra cui [`artifacts/tools/addr_stats.shar`](../artifacts/tools/addr_stats.shar).
+
+Questa architettura era una delle prime versioni prototipali della tecnologia Xpert che sarebbe poi diventata XACCT Technologies.
+
+Vedi [Da Xpert a XACCT](25-xpert-ip-accounting-xacct.md).
+
 ## Autenticazione centralizzata
 
 XTACACS su USERS centralizzava l'autenticazione per ogni POP dial-up. Le regole

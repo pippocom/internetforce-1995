@@ -44,6 +44,26 @@ localmente.
 | tkined | 1.3.4 | gestione di rete SNMP |
 | CERN httpd | 3.0 | proxy cache (1996) |
 
+## Xpert IP accounting / `addr_stats`
+
+**Percorso:** [`artifacts/tools/addr_stats.shar`](../artifacts/tools/addr_stats.shar)
+
+**Contenuto del package:** shell archive Xpert (`Wrapped by xpert.com`, 1996), contenuto dichiarato `Xpert IP accounting`.
+
+**Funzione:** IP usage accounting, distinto sia dal network monitoring SNMP sia dall'access accounting XTACACS.
+
+Il componente principale della soluzione completa era un modulo caricato nel kernel del firewall, che osservava e classificava il traffico in transito. Cisco 2511 / PPP, XTACACS e routing fornivano il contesto necessario per associare il traffico osservato a sessioni e utenti; `addr_stats.shar` è la componente user-space sopravvissuta, non l'intero sistema.
+
+Il software installato in Internet Force era **una delle prime versioni prototipali della tecnologia Xpert che sarebbe diventata XACCT Technologies**.
+
+La funzione non era semplicemente produrre grafici di traffico. Il sistema serviva a raccogliere e attribuire l'uso della rete IP, creando dati che potevano essere utilizzati per accounting e potenzialmente billing.
+
+Internet Force utilizzò la capacità di tracking, ma non fatturò mai i clienti in funzione dell'IP usage.
+
+Materiale collegato: [`artifacts/scripts/IP_ADDRESS_NOTI_DEBUG.txt`](../artifacts/scripts/IP_ADDRESS_NOTI_DEBUG.txt).
+
+Approfondimento: [Da Xpert a XACCT](25-xpert-ip-accounting-xacct.md).
+
 ## Server web
 
 | Software | Versione | Fase |

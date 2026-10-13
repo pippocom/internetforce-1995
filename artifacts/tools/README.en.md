@@ -15,7 +15,7 @@ this project; provenance and attribution are given in the table.
 |---|---|---|
 | `makezones-0.10` | University of Cambridge (Philip Hazel) | Generate forward/reverse DNS zones and bump SOA serials. |
 | `digest.shar` | Brent Chapman | Majordomo digest and mail-utility shell archive. |
-| `addr_stats.shar` | Brent Chapman | Mailing-list address statistics by domain. |
+| `addr_stats.shar` | Xpert | Historical IP usage-accounting package; shell archive declared `Wrapped by xpert.com` (1996), contents `Xpert IP accounting`. See [From Xpert to XACCT](../../docs/25-xpert-ip-accounting-xacct.en.md). |
 | `NCSA-HTTP-HOWTO.txt` | — | Local notes on building/using NCSA HTTPd. |
 | `hypermail-HOWTO.txt` | — | Web archiving of mailing lists with Hypermail. |
 | `swish-wwwwais-HOWTO.txt` | — | Search indexing notes (SWISH/WAIS). |

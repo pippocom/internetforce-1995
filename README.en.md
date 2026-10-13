@@ -114,6 +114,9 @@ Best for understanding the architecture component by component:
   hosting.
 - [Monitoring](docs/08-monitoring.en.md) — tkined and SNMP.
 - [Software inventory](docs/11-software-inventory.en.md) — versions and origins.
+- [Xpert, IP accounting and XACCT](docs/25-xpert-ip-accounting-xacct.en.md) —
+  how Internet Force used in 1995–1996 one of the early prototype versions of the
+  Xpert technology that became XACCT.
 - [Operations and backup](docs/14-operations-and-backup.en.md) — routine tasks.
 - [Historical notes](docs/09-historical-notes.en.md) — Xpert UNIX Systems, the
   Tel Aviv training period and the organisational context.

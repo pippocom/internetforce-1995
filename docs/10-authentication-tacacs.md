@@ -70,6 +70,22 @@ report di connessione, e un helper dedicato all'accounting dial-up
 collegato, quando e da quale access server - la base per l'accounting dei
 clienti e per la pianificazione della capacità dei banchi modem.
 
+## Access accounting non era IP usage accounting
+
+XTACACS poteva registrare l'accesso: chi si era collegato, quando e per quanto tempo.
+
+Internet Force disponeva anche di un livello ulteriore, il software Xpert di **IP usage accounting**, conservato oggi come [`artifacts/tools/addr_stats.shar`](../artifacts/tools/addr_stats.shar).
+
+Le due cose non erano equivalenti.
+
+Un record TACACS descrive una sessione. Il software Xpert osservava invece il traffico reale dentro il kernel del firewall, distingueva traffico come HTTP, SMTP e FTP e usava le informazioni Cisco/XTACACS/routing per ricondurre quel traffico a una sessione e a un utente.
+
+Quella versione installata in Internet Force era una delle prime versioni prototipali della tecnologia che poco dopo sarebbe diventata **XACCT**.
+
+Internet Force usò il tracking, ma non applicò usage-based billing ai propri clienti.
+
+Vedi [Da Xpert a XACCT](25-xpert-ip-accounting-xacct.md).
+
 ## Rapporto con il resto del sistema
 
 - **Provisioning:** un nuovo account cliente creato dagli strumenti di

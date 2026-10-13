@@ -53,6 +53,18 @@ accounts, and the routine use of `quotacheck`. Quotas were an availability
 safeguard: without them a customer could exhaust a shared filesystem through
 uploads or home-directory growth.
 
+## A capability that never became a pricing model
+
+Internet Force had in production an early prototype version of Xpert's **IP usage-accounting** technology that shortly afterwards became XACCT.
+
+The system could observe, classify and attribute IP-network use, but **Internet Force never billed customers according to traffic or services consumed**.
+
+This matters because the ISP market of the period mainly sold access, generally on a flat ISP-subscription basis. Xpert's technology opened the possibility of assigning economic value to actual network use.
+
+The technical capability was installed. The commercial pricing model was not deployed.
+
+See [From Xpert to XACCT](25-xpert-ip-accounting-xacct.en.md).
+
 ## Dial-up identity
 
 A customer's dial-up session was authenticated centrally by XTACACS (see

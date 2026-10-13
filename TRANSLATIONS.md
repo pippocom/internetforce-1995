@@ -44,6 +44,7 @@ Questo repository è bilingue. La convenzione è: **il nome base è in italiano*
 | `docs/22-unix-host-preparation.md` |
 | `docs/23-learning-internet-culture.md` |
 | `docs/24-ip-addressing-and-provider-space.md` |
+| `docs/25-xpert-ip-accounting-xacct.md` |
 | `docs/archive-provenance.md` |
 
 ## Sistema (`systems/`)

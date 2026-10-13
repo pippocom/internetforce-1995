@@ -200,6 +200,22 @@ non compare nella tavola grafica dell'Office LAN per scelta di sintesi,
 ma è documentato qui perché fa parte della ricostruzione organizzativa
 dell'ufficio.
 
+### Il nucleo Xpert
+
+Una parte importante dell'architettura e delle tecnologie portate in Internet Force arrivò attraverso un rapporto di lavoro diretto con il nucleo Xpert.
+
+Marco Iannacone lavorò personalmente con **Limor Schweitzer, Eran Wagner, Yahel Ben-David e Yossi Gottlieb**.
+
+Xpert era stata fondata nel 1993 da Limor Schweitzer ed Eran Wagner. Nei primissimi tempi acquisì la società fondata da Yahel Ben-David ad Haifa, integrandolo nel nucleo del gruppo.
+
+Limor, che parlava italiano dopo aver vissuto a Roma nei primi sei anni della propria vita, poteva parlare direttamente anche con i soci di Internet Force durante le sue presenze a Milano.
+
+Yossi Gottlieb era il giovanissimo tecnico del gruppo con una reputazione quasi leggendaria per capacità tecnica. Il team Xpert prese persino in giro i soci di Internet Force raccontando che Yossi fosse in grado di **riconoscere i file binari ascoltandoli attraverso un altoparlante**. Marco stette al gioco. Era naturalmente una battuta, ma descrive bene la reputazione tecnica che aveva nel gruppo.
+
+I rapporti personali continuarono anche dopo Internet Force. **Limor Schweitzer e Yahel Ben-David sono ancora oggi amici personali di Marco Iannacone.**
+
+Per la storia della tecnologia IP accounting che da Xpert passò per Internet Force e poi divenne XACCT: [Da Xpert a XACCT](25-xpert-ip-accounting-xacct.md).
+
 ## 4. Il workflow di produzione Web
 
 La realizzazione dei siti seguiva un processo separato dalla produzione

@@ -83,6 +83,26 @@ Ogni access server interroga XTACACS su USERS: ramo separato dal percorso dati.
 
 **Tecnologie:** XTACACS, USERS. **Evidenza:** `xtacacsd-conf`, `passwd`.
 
+> **Approfondimento storico-tecnico — IP usage accounting.**
+> Un ISP non doveva soltanto autenticare gli utenti e sapere per quanto tempo
+> fossero collegati. Internet Force sperimentò anche un livello molto più
+> avanzato: **IP usage accounting**, cioè la capacità di attribuire il traffico e
+> l'uso dei servizi a utenti e sessioni.
+>
+> Il sistema Xpert usato in Internet Force aveva come componente principale per
+> la raccolta del traffico un **modulo nel kernel del firewall**, mentre Cisco
+> 2511 / PPP, XTACACS e routing fornivano identità e contesto di sessione. Il
+> pacchetto user-space sopravvissuto è
+> [`artifacts/tools/addr_stats.shar`](../artifacts/tools/addr_stats.shar).
+>
+> Era una delle prime versioni prototipali della tecnologia che sarebbe poi
+> diventata **XACCT Technologies**.
+>
+> Internet Force utilizzò il tracking, ma non lo trasformò mai in usage-based
+> customer billing.
+>
+> Vedi [Da Xpert a XACCT](25-xpert-ip-accounting-xacct.md).
+
 ## 6. [DNS](03-dns.md)
 
 Risoluzione e servizio autoritativo: zone dirette e inverse, MX, delega dei

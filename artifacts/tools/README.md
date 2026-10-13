@@ -15,7 +15,7 @@ questo progetto; provenienza e attribuzione sono indicate nella tabella.
 |---|---|---|
 | `makezones-0.10` | University of Cambridge (Philip Hazel) | Generare zone DNS dirette/inverse e incrementare i seriali SOA. |
 | `digest.shar` | Brent Chapman | Shell archive di utilità per digest e posta di Majordomo. |
-| `addr_stats.shar` | Brent Chapman | Statistiche degli indirizzi delle mailing list per dominio. |
+| `addr_stats.shar` | Xpert | Pacchetto storico di IP usage accounting; shell archive dichiarato `Wrapped by xpert.com` (1996), contenuto `Xpert IP accounting`. Vedi [Da Xpert a XACCT](../../docs/25-xpert-ip-accounting-xacct.md). |
 | `NCSA-HTTP-HOWTO.txt` | — | Note locali su come costruire/usare NCSA HTTPd. |
 | `hypermail-HOWTO.txt` | — | Archiviazione web delle mailing list con Hypermail. |
 | `swish-wwwwais-HOWTO.txt` | — | Note sull'indicizzazione per la ricerca (SWISH/WAIS). |

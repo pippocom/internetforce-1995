@@ -164,6 +164,22 @@ ined -noupdate attribute $node18 SNMP:Config {-community public -address 206.20.
 → Complete map: [`artifacts/tkined/intf.snmp.map`](../artifacts/tkined/intf.snmp.map) ·
 [`artifacts/monitoring/`](../artifacts/monitoring/geographic-pop-backbone/README.en.md)
 
+## Monitoring and IP accounting were different things
+
+The SNMP/tkined monitoring described in this chapter was used to understand whether the network was operating, whether devices and links were reachable, and how heavily they were used.
+
+Internet Force also had another Xpert technology: **IP usage accounting**.
+
+The surviving package is [`artifacts/tools/addr_stats.shar`](../artifacts/tools/addr_stats.shar), an Xpert shell archive (`Wrapped by xpert.com`, 1996) whose declared contents are `Xpert IP accounting`. It was only the user-space portion that survived. The main component was a module in the firewall kernel, observing and classifying traffic such as HTTP, SMTP and FTP.
+
+SNMP observed the network; XTACACS recorded users and sessions; Xpert IP accounting attributed actual IP-network use.
+
+This was one of the early prototype versions of the technology that shortly afterwards became **XACCT Technologies**.
+
+Internet Force used IP-usage tracking but never billed customers according to traffic or services consumed.
+
+See [From Xpert to XACCT](25-xpert-ip-accounting-xacct.en.md).
+
 ---
 
 See also: [Architecture overview](01-architecture.en.md) ·

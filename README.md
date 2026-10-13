@@ -116,6 +116,9 @@ Ideale per capire l'architettura componente per componente:
   virtual hosting.
 - [Monitoraggio](docs/08-monitoring.md) — tkined e SNMP.
 - [Inventario software](docs/11-software-inventory.md) — versioni e origini.
+- [Xpert, IP accounting e XACCT](docs/25-xpert-ip-accounting-xacct.md) — come
+  Internet Force usò nel 1995–1996 una delle prime versioni prototipali della
+  tecnologia Xpert che sarebbe diventata XACCT.
 - [Operazioni e backup](docs/14-operations-and-backup.md) — attività di routine.
 - [Note storiche](docs/09-historical-notes.md) — Xpert UNIX Systems, il periodo
   di formazione a Tel Aviv e il contesto organizzativo.

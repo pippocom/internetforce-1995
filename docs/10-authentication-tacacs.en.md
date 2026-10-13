@@ -69,6 +69,20 @@ gave a per-session record of who connected, when, and from which access
 server - the basis for customer accounting and for capacity planning on the
 modem banks.
 
+## Access accounting was not IP usage accounting
+
+XTACACS could record access: who connected, when and for how long.
+
+Internet Force also had another layer, Xpert's **IP usage-accounting** system.
+
+The two were not equivalent. A TACACS record described a session. The Xpert system observed actual traffic inside the firewall kernel, distinguished traffic such as HTTP, SMTP and FTP, and used Cisco/XTACACS/routing information to relate that traffic to a session and user.
+
+The Internet Force implementation was one of the early prototype versions of the technology that shortly afterwards became **XACCT**.
+
+Internet Force used the tracking capability but did not apply usage-based billing to its customers.
+
+See [From Xpert to XACCT](25-xpert-ip-accounting-xacct.en.md).
+
 ## Relationship to the rest of the system
 
 - **Provisioning:** a new customer account created by the provisioning tools

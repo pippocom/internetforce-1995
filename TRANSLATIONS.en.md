@@ -44,6 +44,7 @@ This repository is bilingual. The convention is: **the base name is in Italian**
 | `docs/22-unix-host-preparation.md` |
 | `docs/23-learning-internet-culture.md` |
 | `docs/24-ip-addressing-and-provider-space.md` |
+| `docs/25-xpert-ip-accounting-xacct.md` |
 | `docs/archive-provenance.md` |
 
 ## System (`systems/`)

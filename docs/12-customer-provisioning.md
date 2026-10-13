@@ -54,6 +54,18 @@ agli account, e l'uso di routine di `quotacheck`. Le quote erano una protezione
 di disponibilità: senza di esse un cliente avrebbe potuto esaurire un filesystem
 condiviso con upload o crescita della home.
 
+## Una capability che non diventò un modello tariffario
+
+Internet Force aveva in produzione una versione prototipale della tecnologia Xpert di **IP usage accounting** che poco dopo sarebbe diventata XACCT.
+
+Il software poteva raccogliere e attribuire l'uso della rete IP, ma **Internet Force non fatturò mai i propri clienti in base al traffico o ai servizi consumati**.
+
+Questo è importante perché nel mercato ISP dell'epoca il prodotto commerciale era soprattutto l'accesso, normalmente venduto con un modello flat dal punto di vista del provider. La tecnologia Xpert apriva invece la possibilità di associare un valore economico all'uso effettivo della rete.
+
+La capability tecnica venne installata. Il modello commerciale non venne messo in campo.
+
+Approfondimento: [Da Xpert a XACCT](25-xpert-ip-accounting-xacct.md).
+
 ## Identità dial-up
 
 La sessione dial-up di un cliente era autenticata centralmente da XTACACS (vedi

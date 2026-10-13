@@ -164,6 +164,22 @@ ined -noupdate attribute $node18 SNMP:Config {-community public -address 206.20.
 → Mappa completa: [`artifacts/tkined/intf.snmp.map`](../artifacts/tkined/intf.snmp.map) ·
 [`artifacts/monitoring/`](../artifacts/monitoring/geographic-pop-backbone/README.md)
 
+## Monitoring e IP accounting erano due cose diverse
+
+Il monitoraggio SNMP/tkined descritto in questo capitolo serviva a capire se la rete stesse funzionando, se apparati e link fossero raggiungibili e quanto fossero utilizzati.
+
+Internet Force disponeva però anche di un'altra tecnologia, fornita da Xpert: **IP usage accounting**.
+
+Il componente principale era un modulo nel kernel del firewall, che osservava e classificava il traffico in transito, per esempio HTTP, SMTP e FTP; Cisco 2511 / PPP, XTACACS e routing fornivano identità e contesto di sessione. Il pacchetto storico conservato nel repository è [`artifacts/tools/addr_stats.shar`](../artifacts/tools/addr_stats.shar), uno shell archive Xpert (`Wrapped by xpert.com`, 1996) il cui contenuto è dichiarato come `Xpert IP accounting`: è la parte user-space sopravvissuta, non l'intero sistema.
+
+La differenza era sostanziale. SNMP osservava la rete; XTACACS registrava utenti e sessioni; il software Xpert cercava invece di attribuire l'utilizzo effettivo della rete IP.
+
+Questa tecnologia era una delle prime versioni prototipali di ciò che poco dopo sarebbe diventato **XACCT Technologies**.
+
+Internet Force la usò per il tracking dell'IP usage, ma non arrivò mai a fatturare i clienti sulla base del traffico o dei servizi utilizzati.
+
+Per la storia completa: [Da Xpert a XACCT: l'IP accounting dentro Internet Force](25-xpert-ip-accounting-xacct.md).
+
 ---
 
 Vedi anche: [Panoramica dell'architettura](01-architecture.md) ·
