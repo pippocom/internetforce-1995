@@ -196,7 +196,10 @@ belonged to the connection session rather than to a permanent IP configuration
 for that subscriber. Dynamic address assignment to subscribers should not be
 confused with network routing: Internet Force routing was static. Routing on
 the access server used the PPP peer and the server's default route toward the
-backbone.
+backbone. The address assigned was nevertheless **routed public IPv4 space**, not
+an RFC1918 private address hidden behind provider NAT: during the PPP session the
+customer PC was directly a public node. See
+[IP addressing](24-ip-addressing-and-provider-space.en.md).
 
 Customers could then use the full range of TCP/IP services: web browsing,
 email, Usenet news, FTP and the rest. On Windows 3.1/95 machines the usual

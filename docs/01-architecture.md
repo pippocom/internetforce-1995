@@ -187,6 +187,11 @@ collegati DVLP, la workstation di Marco e i PC e Mac dell'ufficio. Vedi il
   POP remoti, con il pool clienti in una `/27` sull'access server.
 - `206.20.226.0/24` … `206.20.231.0/24` — POP del 1996.
 
+Per la distinzione completa fra indirizzi pubblici e privati, statici e dinamici,
+con o senza NAT, e per il ruolo del carrier nella fornitura dello spazio pubblico,
+vedi [Indirizzamento IP: spazio pubblico, backbone privato e dipendenza dal
+carrier](24-ip-addressing-and-provider-space.md).
+
 Il firewall applicava rotte host-specific sulle interfacce DATA e USERS
 (`/etc/rc.route` cancellava la rotta connessa ampia e aggiungeva una rotta per
 server), applicando il disegno segmentato anche a livello 3.

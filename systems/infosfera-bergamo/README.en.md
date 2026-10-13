@@ -32,7 +32,12 @@ server**. See
 These files come from the configurations preserved from the Infosfera/Bergamo
 environment, after Internet Force's closure.
 
+The environment uses the public space `194.235.140.*`, distinct from the Internet
+Force `206.20.*`. See
+[IP addressing](../../docs/24-ip-addressing-and-provider-space.en.md).
+
 ---
 
 See also: [Wind-down and migrations](../../docs/17-wind-down-and-migrations.en.md) ·
+[IP addressing](../../docs/24-ip-addressing-and-provider-space.en.md) ·
 [The POPs](../pops/README.en.md) · [Historical notes](../../docs/09-historical-notes.en.md)

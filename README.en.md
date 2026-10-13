@@ -93,6 +93,9 @@ Best for understanding the architecture component by component:
 
 - [Architecture overview](docs/01-architecture.en.md) — topology, addressing,
   host configuration and segmentation.
+- [IP addressing: public space, private backbone and carrier
+  dependency](docs/24-ip-addressing-and-provider-space.en.md) — why a 1995 ISP
+  needed routed public space and how it changed with the carrier.
 - [Network growth 1995 → 1996](docs/13-network-growth-1995-1996.en.md) — the
   later POPs and expansions.
 - [The closure of Internet Force and the later evolutions](docs/17-wind-down-and-migrations.en.md)
@@ -134,10 +137,10 @@ lists and Usenet, and the expectation of researching before asking - is told in
 - **1996 — growth.** Additional POPs (Tera, CNN, Fano, INDI, Seregno),
   expanded modem capacity, a CERN caching proxy, migration from NCSA HTTPd
   to Apache, and SSH/SCP for secure administration.
-- **1996–1997 — closure and migration.** Internet Force closes; customers and
-  central services migrate to **Enter**, while the POPs that continue operating
-  are progressively made autonomous (Pesaro Point, Pointest/Gorgonzola,
-  Infosfera/Bergamo). See
+- **1996–1997 — closure and migration.** Internet Force closes; the POPs that
+  continue operating are progressively made autonomous (Pesaro Point,
+  Pointest/Gorgonzola, Infosfera/Bergamo), and only afterwards do the Milan
+  customers and central services migrate to **Enter**. See
   [The closure of Internet Force and the later evolutions](docs/17-wind-down-and-migrations.en.md).
 
 ## Repository layout

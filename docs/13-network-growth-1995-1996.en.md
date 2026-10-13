@@ -51,6 +51,13 @@ Corresponding reverse zones were added to DNS, and the new customer domains
 (`tera-it.com`, and the secondary `cnn.it`) were served alongside the
 existing ones.
 
+Every new POP therefore also required **new public IPv4 space** routed toward
+Internet Force, in addition to the link: without addresses there was no usable
+dial-up POP. The same constraint would later drive the closure phase, when the
+POPs made independent had to be **renumbered** onto space supplied by a new
+carrier. See [IP addressing](24-ip-addressing-and-provider-space.en.md) and
+[Wind-down and migrations](17-wind-down-and-migrations.en.md).
+
 ## Regional links
 
 Rather than connecting every new POP directly to the Milan backbone, the

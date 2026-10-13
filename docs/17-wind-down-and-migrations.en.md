@@ -8,11 +8,22 @@
 > License: [CC BY 4.0](../LICENSE)
 
 Internet Force operated in 1995–1996 and closed while the Italian Internet-access
-market was still very small. Its end was not a sudden shutdown: it was a gradual
-handover that moved customers and central services to **Enter** and made the POPs
-that wanted to continue operating as independent providers progressively
-autonomous. The surviving configurations and documents allow this handover, and
-the later evolutions, to be followed.
+market was still very small. The surviving configurations and documents allow
+this handover, and the later evolutions, to be followed.
+
+Internet Force was not simply switched off. The infrastructure wind-down was
+**designed and organised by Marco Iannacone** to minimise service interruption,
+allow POPs that intended to continue operating to become independent, and
+preserve continuity for customers whose services were still active.
+
+The sequence was deliberately progressive. The remote POPs were separated first.
+Only after those POPs had become independent did the final migration of the Milan
+customers and central services to Enter take place.
+
+This distinction matters: Internet Force was not moved wholesale to another
+provider. Its infrastructure was **decomposed into several independent networks**,
+with new links, new IP address space, local services and user accounts separated
+by POP. Enter received only the remaining Milan operation.
 
 ## Why Internet Force closed
 
@@ -51,33 +62,172 @@ concerns the legal closure of the company and does not correspond to a single
 moment of technical service shutdown.
 
 ```text
-Internet Force (central)
+Internet Force operating
         |
-        +--> customers and services migrated to Enter
+        +--> POPs progressively made independent
         |        |
-        |        +--> workstation "marco" reconfigured as transition server
+        |        +--> new COMM 2000 link
+        |        +--> new public IP space
+        |        +--> equipment renumbering
+        |        +--> local services
+        |        +--> customer accounts copied to the POP
+        |        |
+        |        +--> Pesaro Point
+        |        +--> Pointest / Gorgonzola
+        |        +--> Infosfera / Bergamo
+        |        +--> other environments documented in the repository
         |
-        +--> POPs progressively made autonomous
+        +--> Milan + central services remain
                  |
-                 +--> Pesaro Point
-                 +--> Pointest / Gorgonzola
-                 +--> Infosfera / Bergamo
+                 +--> `marco` reinstalled with Linux
+                 +--> USERS + DATA content copied beforehand
+                 +--> Milan customers told the new Enter numbers
+                 |
+                 +--> final Internet Force shutdown
+                 +--> physical transport of `marco` to Enter
+                 +--> new IP 194.20.50.14
+                 +--> Web virtual IPs
+                 +--> DNS updated
+                 +--> services restarted
+                 |
+                 +--> ~2 hours total downtime
 ```
+
+## Making the POPs independent
+
+The first phase of the wind-down was to make the POPs that wanted to continue
+operating independent.
+
+During the Internet Force period, the POPs depended on the central infrastructure
+for essential functions, including address space supplied in the context of the
+IDT connection and centralised authentication on USERS. Turning a POP into an
+independent ISP therefore required much more than leaving it with routers, modems
+and telephone lines.
+
+Each POP first needed:
+
+- a new Internet link;
+- new public IPv4 address space;
+- autonomous router and access-server configuration;
+- local services, including authentication;
+- the accounts belonging only to that POP's customers.
+
+The carrier used for the links and address space during this phase was **COMM
+2000**.
+
+Waiting for the new link and addresses was a real migration constraint. The
+equipment could not simply be detached from Internet Force while retaining the
+`206.20.*` addresses used under IDT. Once moved into the new carrier's network, it
+had to be renumbered and its configuration adapted.
+
+When the local infrastructure was ready, Marco Iannacone copied the accounts
+belonging to that POP's users onto its new systems. Each POP therefore took its
+own customer base with it rather than continuing to depend on the central account
+database.
+
+The surviving configurations make the separation visible:
+
+- Pesaro Point later uses `195.120.225.*`;
+- Pointest, built from the former Gorgonzola POP, uses `194.133.145.*`, with
+  `shelley.pointest.com` documented at `194.133.145.2`;
+- Infosfera/Bergamo uses `194.235.140.*`, and its surviving Cisco 2511
+  configuration contains `async default ip address 194.235.140.230`.
+
+These addresses are not incidental configuration details. They are traces of the
+point at which networks formerly belonging to Internet Force began to operate
+independently.
+
+For the full analysis of addressing and renumbering see
+[IP addressing: public space, private backbone and carrier
+dependency](24-ip-addressing-and-provider-space.en.md).
+
+## The role of COMM 2000
+
+COMM 2000 was a Milan telecommunications operator founded in 1985 and one of the
+early Italian private telecommunications companies operating outside the
+incumbent monopoly. During the 1990s it also developed into an Internet Service
+Provider focused particularly on business customers.
+
+In the Internet Force wind-down its role was specific: **it supplied the new
+carrier links and public address space needed by POPs becoming independent**.
+This allowed them to leave the Internet Force/IDT network and be configured as
+autonomous infrastructures.
+
+The source for COMM 2000's role in the migration is Marco Iannacone's direct
+testimony as the engineer who designed and managed the technical wind-down. The
+surviving configurations independently document the result through the new and
+distinct address spaces used after separation.
+
+COMM 2000 was acquired by KPNQwest in 2000 and renamed KPNQwest Italia. Messagenet
+had been created from the COMM2000 group in 1999.
+
+## Milan was the final stage
+
+The migration of customers and central services to Enter took place **after** the
+POPs had been made independent.
+
+Enter therefore did not receive the entire Internet Force customer base. Users
+belonging to already detached POPs had been transferred to their respective
+independent infrastructures. **Only the Milan customers moved to Enter.**
+
+The remaining central infrastructure still had to preserve services that had
+previously been distributed mainly between USERS and DATA.
+
+In preparation, Marco Iannacone reformatted his Linux workstation `marco`,
+reinstalled Linux and configured it as a transition system capable of absorbing
+the required central services. While Internet Force was still operating, he
+copied the necessary data from USERS and DATA onto `marco`.
+
+At the same time, Milan customers were informed by email of the new Enter dial-up
+telephone numbers.
+
+The system was therefore prepared before shutdown. What remained was the cutover
+itself.
+
+## The roughly two-hour final shutdown
+
+The final move was not a remote migration. It also involved physically moving the
+server.
+
+When everything was ready, Marco Iannacone shut down the Internet Force
+infrastructure. `marco`, already prepared and holding the necessary data from
+USERS and DATA, was disconnected.
+
+The machine was then **personally transported by Marco to Enter**.
+
+Once there:
+
+1. `marco` was connected and powered up on the Enter network;
+2. its IP address was changed to fit the new provider's address space;
+3. the virtual IP addresses needed by the Web services were configured;
+4. DNS records were changed;
+5. services were restarted and checked.
+
+The documented main address for `marco` on the Enter network is:
+
+`194.20.50.14`
+
+Recovered DNS material subsequently makes names and roles previously distributed
+across Internet Force converge on this host, including `users`, `mail`,
+`mailhost`, `loghost`, and the MX records for `internetforce.com` and `intf.com`.
+
+**About two hours after the Internet Force shutdown, the services were available
+again.**
+
+Milan customers could connect using the new Enter dial-up numbers that had
+already been communicated to them.
+
+The operational detail matters because it shows what an ISP migration meant in
+1996: preparing data before cutover, renumbering, DNS changes, virtual IPs, and
+even physically carrying the machine that would keep the services alive.
 
 ## Enter
 
 Internet Force chose **Enter** as the destination for the migration of its
 customers and central services. The surviving DNS configurations show Enter
 authoritative for `internetforce.com` and `intf.com`, with files dated October
-1996, and the machine `marco` in the Enter network at `194.20.50.14`. Several
-roles that had belonged to the Internet Force environment converged on `marco` -
-`mailhost`, `users`, `mail`, `loghost` - together with the MX for
-`internetforce.com` and `intf.com`; the `news` feed pointed to `news.enter.it`.
-
-The Linux workstation `marco` was therefore reconfigured as a **transition
-server**, to move customers and services while minimising the change perceived by
-users. The Enter environment keeps Cisco configurations for both Internet Force
-and Enter; it is described in
+1996; the `news` feed pointed to `news.enter.it`. The Enter environment keeps
+Cisco configurations for both Internet Force and Enter; it is described in
 [`systems/enter/`](../systems/enter/README.en.md).
 
 ## Pesaro and Pesaro Point
@@ -169,6 +319,26 @@ For the provenance of the recovered material see
 `marco` workstation see
 [Marco's workstation](../systems/marco/README.en.md).
 
+## Chronology and evidence basis
+
+| Claim | Basis |
+|---|---|
+| The technical wind-down was designed and organised by Marco Iannacone | RECOLLECTION |
+| POPs were made independent before the final Enter migration | RECOLLECTION + DOCUMENTED |
+| COMM 2000 supplied new links and public IP space to the independent POPs | RECOLLECTION; resulting renumbering DOCUMENTED in later configurations |
+| User accounts were separated by POP and copied to the respective systems | RECOLLECTION |
+| Only Milan customers were migrated to Enter | RECOLLECTION |
+| `marco` was reformatted/reinstalled and prepared before shutdown to absorb USERS and DATA content and services | RECOLLECTION + final result DOCUMENTED |
+| Milan customers were emailed the new Enter dial-up numbers before cutover | RECOLLECTION |
+| `marco` was physically moved from Internet Force to Enter during cutover | RECOLLECTION |
+| `marco` had address `194.20.50.14` on the Enter network | DOCUMENTED |
+| The final cutover included a new IP, Web virtual IPs and DNS changes | RECOLLECTION + IP/DNS DOCUMENTED |
+| Total final-cutover downtime was about two hours | RECOLLECTION |
+
+Methodological note: `RECOLLECTION` is a **primary source**, not a synonym for
+unreliable information. The label distinguishes evidence provenance; it does not
+automatically establish a hierarchy of evidential value.
+
 ## Sources and context
 
 Some market figures are used only as context and as an order of magnitude:
@@ -189,4 +359,5 @@ the author/curator's reconstruction and opinion.
 
 See also: [Historical notes](09-historical-notes.en.md) ·
 [Network growth 1995 → 1996](13-network-growth-1995-1996.en.md) ·
+[IP addressing](24-ip-addressing-and-provider-space.en.md) ·
 [Archive provenance](archive-provenance.en.md)

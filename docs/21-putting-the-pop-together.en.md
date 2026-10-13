@@ -53,6 +53,13 @@ The remote POPs (Pesaro, Palermo, Gorgonzola) reached Milan over dedicated
 capacity follows Xpert's empirical rule described in
 [The POPs](../systems/pops/README.en.md).
 
+Before the POP could be configured, two prerequisites that do not depend on the
+routers had to be in place: the **carrier link** and the **public IPv4 space**
+routed for the dial-up networks. This is the same constraint that, during the
+closure, forced the POPs made independent to be renumbered. See
+[IP addressing](24-ip-addressing-and-provider-space.en.md) and
+[Wind-down and migrations](17-wind-down-and-migrations.en.md).
+
 ## The path in order
 
 1. [Architecture](01-architecture.en.md) — understand the machines and the link.

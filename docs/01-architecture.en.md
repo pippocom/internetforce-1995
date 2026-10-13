@@ -187,6 +187,11 @@ workstation and the office PCs and Macs were attached here. See
   dial networks, with the customer pool in a `/27` on the access server.
 - `206.20.226.0/24` … `206.20.231.0/24` — 1996 POPs.
 
+For the full distinction between public and private addresses, static and dynamic,
+with and without NAT, and the carrier's role in supplying public space, see
+[IP addressing: public space, private backbone and carrier
+dependency](24-ip-addressing-and-provider-space.en.md).
+
 The firewall applied host-specific routes on the DATA and USERS interfaces
 (`/etc/rc.route` deleted the broad connected route and added one route per
 server), which enforced the segmented design at layer 3 as well.

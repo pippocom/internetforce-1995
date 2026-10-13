@@ -64,9 +64,15 @@ l'infrastruttura di servizio autonoma:
 Questi file provengono dalle configurazioni conservate della fase successiva
 Pointest, dopo la chiusura di Internet Force.
 
+La fase Pointest usò spazio `194.133.*` (il Cisco 2511 su `194.133.2.196/27`,
+`shelley.pointest.com` a `194.133.145.2`), distinto dal `206.20.*` Internet
+Force. Vedi
+[Indirizzamento IP](../../../docs/24-ip-addressing-and-provider-space.md).
+
 ---
 
 Vedi anche: [Chiusura e migrazioni](../../../docs/17-wind-down-and-migrations.md) ·
+[Indirizzamento IP](../../../docs/24-ip-addressing-and-provider-space.md) ·
 [I POP](../README.md) ·
 [L'uplink Internet](../../cisco-2501-uplink/README.md) ·
 [La sessione dial-up](../../../docs/02-dialup-session.md)

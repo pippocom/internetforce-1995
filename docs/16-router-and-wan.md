@@ -29,6 +29,12 @@ sull'Ethernet del router, un link seriale `/25` tra router e access server, e la
 rete dial-up pubblica `/24`. Ogni router aveva una **rotta di default verso il
 gateway world/backbone `10.0.0.1`**. IOS in uso: **10.2** sul 2501.
 
+Il collegamento verso il carrier e le reti del POP vivevano però dentro **spazio
+IPv4 pubblico instradato**, fornito dall'upstream: senza quello spazio le reti
+dial-up non sarebbero state raggiungibili da Internet. Il capitolo
+[Indirizzamento IP](24-ip-addressing-and-provider-space.md) spiega il rapporto
+fra carrier, routing e indirizzi.
+
 ## Componenti e host
 
 - Cisco **2501** centrale/world (uplink Internet + bordo IDT a New York).

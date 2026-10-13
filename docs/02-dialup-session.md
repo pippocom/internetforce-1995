@@ -200,7 +200,11 @@ quindi alla sessione di collegamento, non a una configurazione IP permanente del
 singolo abbonato. L'assegnazione dinamica degli indirizzi agli utenti non va
 confusa con il routing della rete: il routing di Internet Force era statico.
 Il routing sull'access server usava il peer PPP e la rotta di default del server
-verso il backbone.
+verso il backbone. L'indirizzo assegnato era però uno **spazio IPv4 pubblico
+instradato**, non un indirizzo privato RFC1918 nascosto dietro un NAT del
+provider: durante la sessione PPP il PC del cliente era direttamente un nodo
+pubblico. Vedi
+[Indirizzamento IP](24-ip-addressing-and-provider-space.md).
 
 I clienti potevano quindi usare tutta la gamma di servizi TCP/IP: navigazione
 web, posta, news Usenet, FTP e il resto. Sulle macchine Windows 3.1/95 lo stack

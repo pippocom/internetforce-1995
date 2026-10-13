@@ -67,9 +67,14 @@ Questi file provengono dalle configurazioni conservate della fase successiva
 alla chiusura di Internet Force, con l'evoluzione verso Pesaro Point e
 l'autonomia locale.
 
+Questa fase usò un nuovo spazio pubblico `195.120.225.*`, distinto dal `206.20.*`
+dell'epoca Internet Force: è la traccia materiale della rinumerazione. Vedi
+[Indirizzamento IP](../../../docs/24-ip-addressing-and-provider-space.md).
+
 ---
 
 Vedi anche: [Chiusura e migrazioni](../../../docs/17-wind-down-and-migrations.md) ·
+[Indirizzamento IP](../../../docs/24-ip-addressing-and-provider-space.md) ·
 [I POP](../README.md) ·
 [L'uplink Internet](../../cisco-2501-uplink/README.md) ·
 [Crescita della rete](../../../docs/13-network-growth-1995-1996.md)

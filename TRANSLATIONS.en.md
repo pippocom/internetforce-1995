@@ -43,6 +43,7 @@ This repository is bilingual. The convention is: **the base name is in Italian**
 | `docs/21-putting-the-pop-together.md` |
 | `docs/22-unix-host-preparation.md` |
 | `docs/23-learning-internet-culture.md` |
+| `docs/24-ip-addressing-and-provider-space.md` |
 | `docs/archive-provenance.md` |
 
 ## System (`systems/`)

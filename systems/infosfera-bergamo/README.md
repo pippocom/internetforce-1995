@@ -33,7 +33,12 @@ Linux**. Vedi
 Questi file provengono dalle configurazioni conservate dell'ambiente
 Infosfera/Bergamo, successivo alla chiusura di Internet Force.
 
+L'ambiente usa lo spazio pubblico `194.235.140.*`, distinto dal `206.20.*`
+Internet Force. Vedi
+[Indirizzamento IP](../../docs/24-ip-addressing-and-provider-space.md).
+
 ---
 
 Vedi anche: [Chiusura e migrazioni](../../docs/17-wind-down-and-migrations.md) ·
+[Indirizzamento IP](../../docs/24-ip-addressing-and-provider-space.md) ·
 [I POP](../pops/README.md) · [Note storiche](../../docs/09-historical-notes.md)

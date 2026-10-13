@@ -95,6 +95,9 @@ Ideale per capire l'architettura componente per componente:
 
 - [Panoramica dell'architettura](docs/01-architecture.md) — topologia,
   indirizzamento, configurazione degli host e segmentazione.
+- [Indirizzamento IP: spazio pubblico, backbone privato e dipendenza dal
+  carrier](docs/24-ip-addressing-and-provider-space.md) — perché un ISP del 1995
+  aveva bisogno di spazio pubblico instradato e come cambiò con i carrier.
 - [Crescita della rete 1995 → 1996](docs/13-network-growth-1995-1996.md) — i
   POP successivi e le espansioni.
 - [La chiusura di Internet Force e le evoluzioni successive](docs/17-wind-down-and-migrations.md)
@@ -137,10 +140,10 @@ raccontato in
 - **1996 — crescita.** POP aggiuntivi (Tera, CNN, Fano, INDI, Seregno),
   capacità modem ampliata, un proxy cache CERN, migrazione da NCSA HTTPd ad
   Apache e SSH/SCP per l'amministrazione sicura.
-- **1996–1997 — chiusura e migrazione.** Internet Force chiude; clienti e
-  servizi centrali migrano su **Enter**, mentre i POP che continuano l'attività
-  vengono resi progressivamente autonomi (Pesaro Point, Pointest/Gorgonzola,
-  Infosfera/Bergamo). Vedi
+- **1996–1997 — chiusura e migrazione.** Internet Force chiude; i POP che
+  continuano l'attività vengono resi progressivamente autonomi (Pesaro Point,
+  Pointest/Gorgonzola, Infosfera/Bergamo) e solo dopo i clienti di Milano e i
+  servizi centrali migrano su **Enter**. Vedi
   [La chiusura di Internet Force e le evoluzioni successive](docs/17-wind-down-and-migrations.md).
 
 ## Struttura del repository

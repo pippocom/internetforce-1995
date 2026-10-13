@@ -46,7 +46,23 @@ From a freshly installed system to a useful host: identity, address, routes,
 **Technologies:** SunOS/Linux, `ifconfig`, `route`, `rc` scripts. **Evidence:**
 `rc.local`, `rc.route`, `fixperms`, network files.
 
-## 2. [Router, WAN and connectivity](16-router-and-wan.en.md)
+## 2. [Obtaining and designing IP addressing](24-ip-addressing-and-provider-space.en.md)
+
+Before reconfiguring routers and services you need a **link and public IPv4
+space**. In 1995 an ISP did not simply "buy bandwidth": it obtained blocks of
+routable addresses from its carrier or upstream and had to decide how to divide
+them among the central network, routers, servers, POPs and dial-up pools, keeping
+the private backbone network separate.
+
+This is a step a modern NATed home LAN never sees: the ISP received public space
+that was already routed and assigned it even to dial-up customers, who during the
+PPP session became public nodes rather than private hosts behind translation.
+
+**Technologies:** public IPv4 space, private `10.0.0.0/8`, subnetting, CIDR and
+"Class C" terminology. **Evidence:** Cisco configurations, `/etc/networks`,
+`/etc/netmasks`, tkined maps.
+
+## 3. [Router, WAN and connectivity](16-router-and-wan.en.md)
 
 Connecting the POP to the backbone: interfaces, addressing, serial links and the
 default route to the world gateway.
@@ -54,7 +70,7 @@ default route to the world gateway.
 **Technologies:** Cisco 2501, serial/WAN, IOS 10.2. **Evidence:** `2501.cfg`,
 `rc.route`.
 
-## 3. [Dial-up and the modem bank](02-dialup-session.en.md)
+## 4. [Dial-up and the modem bank](02-dialup-session.en.md)
 
 Letting the customer into the IP network through the modem bank and the access
 server.
@@ -62,99 +78,99 @@ server.
 **Technologies:** Cisco 2511, US Robotics 28.8 modems, PPP. **Evidence:**
 `2511.cfg`, `modem.txt`, dial-in numbers.
 
-## 4. [Authentication (XTACACS)](10-authentication-tacacs.en.md)
+## 5. [Authentication (XTACACS)](10-authentication-tacacs.en.md)
 
 Every access server queries XTACACS on USERS: a branch separate from the data
 path.
 
 **Technologies:** XTACACS, USERS. **Evidence:** `xtacacsd-conf`, `passwd`.
 
-## 5. [DNS](03-dns.en.md)
+## 6. [DNS](03-dns.en.md)
 
 Resolution and authoritative service: forward and reverse zones, MX, customer
 domain delegation.
 
 **Technologies:** BIND/named. **Evidence:** `named.boot`, zone files, reverse.
 
-## 6. [Mail (Sendmail)](04-email.en.md)
+## 7. [Mail (Sendmail)](04-email.en.md)
 
 SMTP transport and local delivery: MX, aliases and mailboxes.
 
 **Technologies:** Sendmail 8.6.12, `mail.local`. **Evidence:** `sendmail.cf`.
 
-## 7. [POP3 and mailbox access](18-pop3-and-mailbox-access.en.md)
+## 8. [POP3 and mailbox access](18-pop3-and-mailbox-access.en.md)
 
 How the customer reads delivered mail: POP3/IMAP on USERS, the `.mailbox` model.
 
 **Technologies:** popper 1.6, imapd, `inetd`. **Evidence:** popper config.
 
-## 8. [Web server](05-web-news-ftp.en.md#world-wide-web)
+## 9. [Web server](05-web-news-ftp.en.md#world-wide-web)
 
 Serving the sites: DocumentRoot, virtual hosts, personal areas.
 
 **Technologies:** NCSA HTTPd. **Evidence:** `httpd.conf`, `srm.conf`.
 
-## 9. [Web permissions and CGI](19-web-permissions-and-cgi.en.md)
+## 10. [Web permissions and CGI](19-web-permissions-and-cgi.en.md)
 
 Running programs safely: CGI directories, ownership, permissions, `fixperms`.
 
 **Technologies:** CGI, `srm.conf`, `fixperms`. **Evidence:** CGI inventory,
 `fixperms`.
 
-## 10. [Virtual hosting (VIF)](../systems/sun-vif/README.en.md)
+## 11. [Virtual hosting (VIF)](../systems/sun-vif/README.en.md)
 
 Many sites on one Sun: virtual interfaces in the SunOS kernel.
 
 **Technologies:** VIF, SunOS 4.1.x, `modload`. **Evidence:** VIF bundle,
 `VirtualHost`.
 
-## 11. [FTP and confinement](05-web-news-ftp.en.md#ftp)
+## 12. [FTP and confinement](05-web-news-ftp.en.md#ftp)
 
 Anonymous and authenticated FTP, `inetd → tcpd → ftpd`, `chroot`, `ftpusers`.
 
 **Technologies:** wu-ftpd, `chroot`. **Evidence:** `ftpusers`, `ftp-world.txt`.
 
-## 12. [Mailing lists (Majordomo)](20-mailing-lists-majordomo.en.md)
+## 13. [Mailing lists (Majordomo)](20-mailing-lists-majordomo.en.md)
 
 Group mail: subscriptions, approvals, distribution and archives.
 
 **Technologies:** Majordomo on DATA, Sendmail aliases, Hypermail. **Evidence:**
 Majordomo material.
 
-## 13. [Security and hardening](06-security.en.md)
+## 14. [Security and hardening](06-security.en.md)
 
 Reducing Unix to the machine's role, the firewall, `inetd`, confinement.
 
 **Technologies:** TCP wrappers, `chroot`, firewall. **Evidence:** `inetd.conf`,
 `fixperms`.
 
-## 14. [Monitoring](08-monitoring.en.md)
+## 15. [Monitoring](08-monitoring.en.md)
 
 Observing interfaces, links, servers and modem lines.
 
 **Technologies:** SNMP, tkined. **Evidence:** `intf.snmp.map`, maps.
 
-## 15. [Operations and backup](14-operations-and-backup.en.md)
+## 16. [Operations and backup](14-operations-and-backup.en.md)
 
 Boot order, tape backup, scheduled tasks, logs, quotas.
 
 **Technologies:** `gtar`/`dump`, cron, NTP. **Evidence:** backup scripts,
 `crontab`.
 
-## 16. [Customer provisioning](12-customer-provisioning.en.md)
+## 17. [Customer provisioning](12-customer-provisioning.en.md)
 
 From contract to account: creation, home, quota, dial-up identity.
 
 **Technologies:** `adduser`, `edquota`. **Evidence:** `adduser`, `quota.txt`.
 
-## 17. [Development and deploy](07-development.en.md)
+## 18. [Development and deploy](07-development.en.md)
 
 Building on DVLP and releasing to production: build-and-deploy.
 
 **Technologies:** DVLP, internal FTP, SSH/SCP. **Evidence:** `/cisco`, operational
 notes.
 
-## 18. [Putting the POP together](21-putting-the-pop-together.en.md)
+## 19. [Putting the POP together](21-putting-the-pop-together.en.md)
 
 How all the subsystems form one complete service, from the modem to the backbone.
 

@@ -26,6 +26,9 @@ The configurations and material in this area document:
 
 The set documents the transition described in
 [The closure of Internet Force and the later evolutions](../../docs/17-wind-down-and-migrations.en.md).
+For `marco` the move from the Internet Force network to Enter changed its address
+from `206.20.95.140` to `194.20.50.14`. See
+[IP addressing](../../docs/24-ip-addressing-and-provider-space.en.md).
 
 ## Provenance
 
@@ -35,4 +38,5 @@ towards Enter (autumn 1996).
 ---
 
 See also: [Wind-down and migrations](../../docs/17-wind-down-and-migrations.en.md) ·
+[IP addressing](../../docs/24-ip-addressing-and-provider-space.en.md) ·
 [Marco's workstation](../marco/README.en.md) · [The POPs](../pops/README.en.md)

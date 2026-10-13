@@ -53,6 +53,13 @@ dedicati **CDA/CDN da 64 kbit/s**; il dimensionamento del banco modem rispetto a
 quella capacità segue la regola empirica di Xpert descritta in
 [I POP](../systems/pops/README.md).
 
+Prima che il POP potesse essere configurato servivano però due prerequisiti che
+non dipendono dai router: il **collegamento al carrier** e lo **spazio IPv4
+pubblico** instradato per le reti dial-up. È lo stesso vincolo che, durante la
+chiusura, obbligò i POP resi autonomi a essere rinumerati. Vedi
+[Indirizzamento IP](24-ip-addressing-and-provider-space.md) e
+[Chiusura e migrazioni](17-wind-down-and-migrations.md).
+
 ## Il percorso in ordine
 
 1. [Architettura](01-architecture.md) — capire le macchine e il collegamento.

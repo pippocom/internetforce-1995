@@ -52,6 +52,14 @@ Le corrispondenti zone inverse furono aggiunte al DNS, e i nuovi domini clienti
 (`tera-it.com` e il secondario `cnn.it`) furono serviti accanto a quelli
 esistenti.
 
+Ogni nuovo POP richiedeva quindi anche **nuovo spazio IPv4 pubblico** instradato
+verso Internet Force, oltre al collegamento: senza indirizzi non esisteva un POP
+dial-up utilizzabile. Lo stesso vincolo avrebbe poi guidato la fase di chiusura,
+quando i POP resi autonomi dovettero essere **rinumerati** su spazio fornito da un
+nuovo carrier. Vedi
+[Indirizzamento IP](24-ip-addressing-and-provider-space.md) e
+[Chiusura e migrazioni](17-wind-down-and-migrations.md).
+
 ## Collegamenti regionali
 
 Invece di collegare ogni nuovo POP direttamente al backbone di Milano, i POP

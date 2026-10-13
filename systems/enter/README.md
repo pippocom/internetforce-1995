@@ -26,6 +26,9 @@ Le configurazioni e il materiale in questa area documentano:
 
 L'insieme documenta la transizione descritta in
 [La chiusura di Internet Force e le evoluzioni successive](../../docs/17-wind-down-and-migrations.md).
+Per `marco` il passaggio dalla rete Internet Force a quella Enter comportò il
+cambio di indirizzo da `206.20.95.140` a `194.20.50.14`. Vedi
+[Indirizzamento IP](../../docs/24-ip-addressing-and-provider-space.md).
 
 ## Provenienza
 
@@ -35,4 +38,5 @@ verso Enter (autunno 1996).
 ---
 
 Vedi anche: [Chiusura e migrazioni](../../docs/17-wind-down-and-migrations.md) ·
+[Indirizzamento IP](../../docs/24-ip-addressing-and-provider-space.md) ·
 [La workstation di Marco](../marco/README.md) · [I POP](../pops/README.md)

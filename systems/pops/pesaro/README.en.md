@@ -65,9 +65,14 @@ mentioned:
 These files come from the configurations preserved from the phase after Internet
 Force's closure, with the evolution towards Pesaro Point and local autonomy.
 
+This phase used a new public space `195.120.225.*`, distinct from the `206.20.*`
+of the Internet Force period: it is the material trace of the renumbering. See
+[IP addressing](../../../docs/24-ip-addressing-and-provider-space.en.md).
+
 ---
 
 See also: [Wind-down and migrations](../../../docs/17-wind-down-and-migrations.en.md) ·
+[IP addressing](../../../docs/24-ip-addressing-and-provider-space.en.md) ·
 [The POPs](../README.en.md) ·
 [The Internet uplink](../../cisco-2501-uplink/README.en.md) ·
 [Network growth](../../../docs/13-network-growth-1995-1996.en.md)

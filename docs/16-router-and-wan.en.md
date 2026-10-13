@@ -29,6 +29,12 @@ POPs shared one addressing scheme: a private `/26` on the router Ethernet, a
 Every router had a **default route toward the world/backbone gateway `10.0.0.1`**.
 IOS in use: **10.2** on the 2501.
 
+The carrier link and the POP networks nonetheless lived inside **routed public
+IPv4 space** supplied by the upstream: without that space the dial-up networks
+would not have been reachable from the Internet. The
+[IP addressing](24-ip-addressing-and-provider-space.en.md) chapter explains the
+relationship between carrier, routing and addresses.
+
 ## Components and hosts
 
 - Central/world Cisco **2501** (Internet uplink + IDT edge in New York).
