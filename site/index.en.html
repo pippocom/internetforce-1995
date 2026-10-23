@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Internet Force 1995–1996 | Historical archive of an Italian ISP</title>
-<meta name="description" content="Historical archive and technical reconstruction of Internet Force, an Italian ISP from 1995–1996: Unix systems, Cisco routers, dial-up access, POPs, DNS, email, firewall configurations and interactive network maps.">
+<title>Internet Force 1995–1996 Interactive Network Maps | Historical Italian ISP</title>
+<meta name="description" content="Interactive maps reconstructing the 1995–1996 network of Internet Force, an early Italian commercial ISP designed and operated with the contribution of system &amp; network administrator Marco Iannacone.">
 <meta name="author" content="Marco Iannacone">
 <meta name="robots" content="index, follow">
 
@@ -16,41 +16,98 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Internet Force 1995–1996 Historical Archive">
-<meta property="og:title" content="Internet Force 1995–1996 | Historical archive of an Italian ISP">
-<meta property="og:description" content="Technical reconstruction of a 1995 Italian Internet Service Provider using original configurations, documentation, Unix systems, Cisco routers, POP infrastructure and historical network maps.">
+<meta property="og:title" content="Internet Force 1995–1996 Interactive Network Maps | Historical Italian ISP">
+<meta property="og:description" content="Interactive maps reconstructing the 1995–1996 network of Internet Force, an early Italian commercial ISP designed and operated with the contribution of system &amp; network administrator Marco Iannacone.">
 <meta property="og:url" content="https://pippocom.github.io/internetforce-1995/site/index.en.html">
 <meta property="og:image" content="https://pippocom.github.io/internetforce-1995/images/internetforce_network_map.png">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="it_IT">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Internet Force 1995–1996 Historical Archive">
-<meta name="twitter:description" content="Historical archive and technical reconstruction of an Italian Internet Service Provider from 1995.">
+<meta name="twitter:title" content="Internet Force 1995–1996 Interactive Network Maps | Historical Italian ISP">
+<meta name="twitter:description" content="Interactive maps reconstructing the 1995–1996 network of Internet Force, an early Italian commercial ISP.">
 <meta name="twitter:image" content="https://pippocom.github.io/internetforce-1995/images/internetforce_network_map.png">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Internet Force 1995–1996 Historical Archive",
-  "description": "Historical archive and technical reconstruction of Internet Force, an Italian Internet Service Provider active in 1995–1996.",
-  "url": "https://pippocom.github.io/internetforce-1995/site/index.en.html",
-  "inLanguage": "en",
-  "author": {
-    "@type": "Person",
-    "name": "Marco Iannacone",
-    "url": "https://pippo.com/me/"
-  },
-  "creator": {
-    "@type": "Person",
-    "name": "Marco Iannacone",
-    "url": "https://pippo.com/me/"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Internet Force 1995–1996 Historical Archive",
-    "url": "https://pippocom.github.io/internetforce-1995/"
-  }
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://pippocom.github.io/internetforce-1995/site/index.en.html#webpage",
+      "url": "https://pippocom.github.io/internetforce-1995/site/index.en.html",
+      "name": "Internet Force 1995–1996 Interactive Network Maps",
+      "inLanguage": "en",
+      "description": "Interactive maps reconstructing the 1995–1996 network of Internet Force, an early Italian commercial ISP designed and operated with the contribution of system & network administrator Marco Iannacone.",
+      "author": {
+        "@id": "https://pippo.com/me/#person"
+      },
+      "about": [
+        {
+          "@id": "https://pippocom.github.io/internetforce-1995/site/index.html#internet-force"
+        },
+        {
+          "@id": "https://pippo.com/me/#person"
+        }
+      ],
+      "mentions": {
+        "@id": "https://pippo.com/"
+      },
+      "mainEntity": {
+        "@id": "https://pippocom.github.io/internetforce-1995/site/index.en.html#maps"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://pippocom.github.io/internetforce-1995/site/index.html#internet-force",
+      "name": "Internet Force",
+      "description": "Internet Force was one of Italy's early commercial Internet service providers, active in 1995–1996. Its network was a structured routed IP infrastructure, with Cisco routers and access servers, centralized Unix systems and services, authentication, firewalling, monitoring and geographically distributed Points of Presence. It was a technologically advanced architecture for a small ISP of the period."
+    },
+    {
+      "@type": "Person",
+      "@id": "https://pippo.com/me/#person",
+      "name": "Marco Iannacone",
+      "url": "https://pippo.com/me/",
+      "sameAs": [
+        "https://pippo.com/me-it/"
+      ],
+      "description": "Marco Iannacone was Internet Force's system & network administrator and contributed directly to designing, building and operating the infrastructure. Part of the expertise used in the project came from technical training with Xpert Unix Systems in Israel."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pippo.com/",
+      "url": "https://pippo.com/",
+      "name": "pippo.com",
+      "description": "Marco Iannacone's personal domain, first hosted on Internet Force infrastructure in 1995."
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://pippocom.github.io/internetforce-1995/site/index.en.html#maps",
+      "name": "Internet Force interactive network maps",
+      "numberOfItems": 3,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "POP Network Map",
+          "url": "https://pippocom.github.io/internetforce-1995/site/pop-map.en.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Network Map",
+          "url": "https://pippocom.github.io/internetforce-1995/site/network-map.en.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Systems Overview",
+          "url": "https://pippocom.github.io/internetforce-1995/site/systems-map.en.html"
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -68,7 +125,7 @@
 <main class="wrap">
   <p class="eyebrow">Internet Force 1995–1996</p>
   <h1>Explore Internet Force</h1>
-  <p class="lede">Two ways to explore the archive: the narrative path “Build an Internet Force POP” and the three interactive historical maps.</p>
+  <p class="lede">Internet Force was one of Italy's early commercial Internet service providers, active in 1995–1996. Its infrastructure combined a structured routed IP network, Unix systems, Cisco equipment and distributed Points of Presence in a technically advanced architecture for a small ISP of the period. These interactive maps reconstruct that network from surviving original technical material.</p>
 
   <section aria-labelledby="build-h">
     <h2 id="build-h">Build an Internet Force POP</h2>
@@ -76,13 +133,13 @@
     <p><a class="button" href="details.html?file=docs/00-build-an-isp.en.md">Open the “Build a POP” path</a></p>
   </section>
 
-  <section aria-labelledby="explore-h">
+  <section id="maps" aria-labelledby="explore-h">
     <h2 id="explore-h">Explore the network</h2>
     <p>Three reconstructed 1995 maps: select a highlighted device or system to open its configuration or technical page.</p>
     <ul class="map-cards">
       <li><a href="pop-map.en.html">
         <img src="../images/internetforce_pop_map.png" width="1448" height="1086" loading="lazy" alt="POP Network Map 1995 preview">
-        <span class="cardbody"><strong>POP Network Map</strong><small>Central World/Milano uplink and the Milano, Pesaro, Palermo and Gorgonzola POPs.</small></span>
+        <span class="cardbody"><strong>POP Network Map</strong><small>Central World/Milano uplink; Milano, Pesaro, Palermo and Gorgonzola POPs.</small></span>
       </a></li>
       <li><a href="network-map.en.html">
         <img src="../images/internetforce_network_map.png" width="1448" height="1086" loading="lazy" alt="Network Map 1995 preview">
@@ -93,12 +150,16 @@
         <span class="cardbody"><strong>Systems Overview</strong><small>Central and office systems: FIREWALL, DATA, USERS, DVLP, marco, Office LAN.</small></span>
       </a></li>
     </ul>
+    <p>The maps reconstruct the infrastructure by correlating surviving original technical material, including network and system configurations, monitoring maps, DNS records and Cisco configurations.</p>
   </section>
 
   <p>Want to explore the archive, files, configurations and preserved materials directly? <a href="https://github.com/pippocom/internetforce-1995" target="_blank" rel="noopener noreferrer">Visit the Internet Force GitHub repository</a>.</p>
 
   <section class="secondary" aria-labelledby="context-h">
     <h2 id="context-h">Historical context</h2>
+    <p>Internet Force was not built simply as a concentration of modems attached to individual systems. Its network was designed as a structured routed IP infrastructure, with Cisco routers and access servers, centralized Unix services, authentication, firewalling, monitoring and geographically distributed POPs. This was a very different approach from the more organically grown “spaghetti modem” configurations inherited from some BBS environments.</p>
+    <p><a href="https://pippo.com/me/">Marco Iannacone</a> was Internet Force's system &amp; network administrator and contributed directly to designing, building and operating the infrastructure. Part of the expertise used in the project came from technical training with Xpert Unix Systems in Israel. The <a href="details.html?file=docs/01-architecture.en.md">network architecture</a>, <a href="details.html?file=docs/24-ip-addressing-and-provider-space.en.md">IP addressing</a> and <a href="details.html?file=docs/15-people-and-workflows.en.md">people and workflow context</a> are documented in the technical material.</p>
+    <p>Internet Force was also the first provider on which Iannacone hosted his personal domain, <a href="https://pippo.com/">pippo.com</a>, in 1995.</p>
     <ul>
       <li><a href="details.html?file=docs/09-historical-notes.en.md">Historical notes</a> — Xpert UNIX Systems, the Tel Aviv training period and the organisational context.</li>
       <li><a href="details.html?file=docs/23-learning-internet-culture.en.md">How we learned the Internet</a> — competence, autonomy and RTFM.</li>

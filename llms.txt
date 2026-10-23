@@ -69,6 +69,13 @@ https://pippocom.github.io/internetforce-1995/site/index.html
 
 Italian-language entry point to the interactive archive.
 
+## Internet Force interactive network maps
+
+Internet Force was one of Italy's early commercial Internet service providers, active in 1995–1996. Its structured routed-IP architecture was technologically advanced for a small ISP of the period. System & network administrator Marco Iannacone contributed directly to designing, building and operating the infrastructure, drawing in part on technical training with Xpert Unix Systems in Israel. Internet Force was also the first provider to host Iannacone's pippo.com domain in 1995. The interactive maps reconstruct the historical network from surviving original technical material, including network and system configurations, monitoring maps, DNS records and Cisco configurations.
+
+- Italian interactive maps: https://pippocom.github.io/internetforce-1995/site/index.html
+- English interactive maps: https://pippocom.github.io/internetforce-1995/site/index.en.html
+
 ## Citation and attribution
 
 The archive and its documentation are curated by Marco Iannacone.
