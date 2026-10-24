@@ -21,8 +21,8 @@ sono mantenuti solo dove storicamente rilevanti.
 
 | Cartella | Contenuto |
 |---|---|
-| [`company/`](company/) | materiale societario: il contratto di consulenza del 1996 e l'avviso di fallimento del 1996 |
-| [`customer-welcome-kit/`](customer-welcome-kit/README.md) | il manuale cliente del 1996 e i dischetti di installazione forniti ai nuovi clienti |
+| [`company/`](company/) | materiale societario e commerciale: contratto di consulenza, documentazione del fallimento e listino aziende del 1996 |
+| [`customer-welcome-kit/`](customer-welcome-kit/README.md) | Welcome Kit cliente: manuale, immagini dei dischetti, sorgenti e fotografie del packaging originale v1.0 |
 | [`customer-data/`](customer-data/README.md) | dati sulla scala della clientela, senza identificatori personali |
 | [`domain-registration/`](domain-registration/README.md) | documentazione sulla registrazione dei domini |
 | [`email-archive/`](email-archive/README.md) | messaggi e mailbox storiche sopravvissute |

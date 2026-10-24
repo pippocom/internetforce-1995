@@ -78,6 +78,35 @@ delle operazioni quotidiane. L'ufficio comprendeva anche staff per i contenuti
 web e amministrativo, i cui account e alias di ruolo compaiono nella
 configurazione recuperata.
 
+## Non soltanto accesso: l'offerta per le aziende
+
+Un **Listino Aziende datato 15 giugno 1996**, conservato e fornito nel 2026 da
+**Pascal Schait**, socio fondatore di Internet Force, documenta in modo diretto
+l'offerta commerciale rivolta alle imprese. Accanto all'accesso Internet
+compaiono IP statici, LAN IP in dial-up, collegamenti dedicati a 19,2 e 64 Kbps,
+registrazione di domini, backup DNS, realizzazione di pagine HTML, hosting Web
+e assistenza tecnica specializzata.
+
+Anche la scala dell'hosting fotografa bene il Web del periodo: lo spazio veniva
+venduto in tagli da **1, 5 e 10 MB**, mentre quantità superiori erano a
+preventivo. Una piccola presenza aziendale poteva consistere in poche pagine di
+presentazione, recapiti, un form e un piccolo catalogo; dall'altra parte molti
+visitatori navigavano a **28,8 kbit/s**, quindi il peso delle pagine era un
+vincolo concreto tanto quanto lo spazio disco disponibile.
+
+→ [Listino Aziende Internet Force, 15 giugno 1996](../artifacts/company/business-services-price-list-1996/README.md)
+
+## Il Welcome Kit come prodotto fisico
+
+Il materiale del Welcome Kit già conservato nel repository comprende manuale,
+disk image e sorgenti. Le fotografie fornite da Pascal Schait aggiungono il
+livello materiale: mostrano la **confezione originale della versione 1.0**, il
+sigillo Internet Force, il manuale e i floppy etichettati. È quindi possibile
+vedere non soltanto il software distribuito, ma come il primo accesso a Internet
+veniva concretamente consegnato a un cliente.
+
+→ [Welcome Kit cliente](../artifacts/customer-welcome-kit/README.md)
+
 ## La stampa contemporanea
 
 La ricostruzione si basa principalmente sul materiale tecnico recuperato. Una
@@ -87,6 +116,15 @@ Andrea Maffini), conservato in
 [`artifacts/press/`](../artifacts/press/README.md). Descrive la rete di POP, i
 servizi, l'hosting Web e le tecnologie di posta, e documenta anche una
 sperimentazione VRML (Web 3D) del periodo.
+
+## Una ricostruzione pubblicata insieme al repository
+
+Nell'ottobre 2026 Marco Iannacone ha pubblicato su Codemotion l'articolo
+[*Archeologia di un ISP: come funzionava davvero un Internet provider nel 1995*](../publications/codemotion-2026/README.md)
+insieme a questo repository. L'articolo ripercorre il recupero dell'archivio,
+l'architettura, una connessione dial-up, il lavoro quotidiano e i materiali
+sopravvissuti; nel repository ne è conservata anche una copia PDF dell'edizione
+italiana.
 
 ## Cronologia
 
@@ -99,7 +137,8 @@ sperimentazione VRML (Web 3D) del periodo.
 - **Fine 1995 / inizio 1996** — collegamento internazionale portato a 2 Mbit/s;
   POP aggiuntivi e capacità modem; proxy cache CERN.
 - **1996** — Tera, CNN, Fano, INDI e Seregno; migrazione da NCSA HTTPd ad
-  Apache; introduzione di SSH/SCP; un esperimento web Oracle-su-Windows-NT.
+  Apache; introduzione di SSH/SCP; un esperimento web Oracle-su-Windows-NT;
+  il Listino Aziende del 15 giugno documenta l'offerta commerciale per imprese.
 
 ## L'archivio recuperato
 
@@ -108,12 +147,15 @@ La ricostruzione si basa su pezzi sopravvissuti di un archivio di configurazione
 completi del firewall e dei server centrali, l'insieme delle zone BIND-4, le
 configurazioni Sendmail, il demone XTACACS e la sua configurazione, la mappa
 tkined, lo screenshot della rule base di FireWall-1 e script e procedure
-operative. Il racconto qui presentato combina questi materiali con la memoria
-diretta di Marco Iannacone, che ha costruito e gestito l'infrastruttura.
+operative. Il racconto qui presentato combina questi materiali con la testimonianza
+diretta di Marco Iannacone, che ha costruito e gestito l'infrastruttura. Altri
+reperti originali conservati da partecipanti al progetto vengono integrati con
+la loro provenienza esplicita.
 
 ---
 
 Vedi anche: [Panoramica dell'architettura](01-architecture.md) ·
 [Crescita della rete 1995 → 1996](13-network-growth-1995-1996.md) ·
-[Materiale di riferimento Xpert](../systems/marco/reference-material/xpert/README.md) ·
-[Come si imparava Internet: competenza, autonomia e RTFM](23-learning-internet-culture.md)
+[Xpert reference material](../systems/marco/reference-material/xpert/README.md) ·
+[Come si imparava Internet: competenza, autonomia e RTFM](23-learning-internet-culture.md) ·
+[Provenienza dell'archivio](archive-provenance.md)

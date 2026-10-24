@@ -7,7 +7,6 @@
 > Author and archive curator: **Marco Iannacone** · https://pippo.com
 > License: [CC BY 4.0](../LICENSE)
 
-
 The repository does not originate from one complete backup of the Internet Force infrastructure. It has been reconstructed by Marco from surviving material recovered progressively from several sources.
 
 This provenance explains why some groups of files are unusually complete while others are fragmentary.
@@ -57,11 +56,28 @@ Incomplete directories, zero-byte entries and partial trees may still preserve u
 
 Where useful, a note may describe the state of a file - fully recovered, only partly recovered, truncated or unreadable - to guide the reader. That describes what survived, not the historical value of the document.
 
+## Material preserved by other participants
+
+The archive also continues to grow through original material preserved by people who took part in Internet Force. In 2026 **Pascal Schait**, a founding shareholder of the company, supplied two additional surviving items:
+
+- the **Business Price List dated 15 June 1996**, documenting the commercial offer for connectivity, static IP and LAN services, domains, DNS, Web-page production and hosting;
+- photographs of the **original Welcome Kit v1.0 packaging**, including the box, manual and physical floppies.
+
+These materials are preserved respectively under
+[`artifacts/company/business-services-price-list-1996/`](../artifacts/company/business-services-price-list-1996/README.en.md)
+and [`artifacts/customer-welcome-kit/`](../artifacts/customer-welcome-kit/README.en.md).
+
 ## An evolving archive
 
-The 2026 DAT recovery explains why new artifacts continue to appear after the initial reconstruction. New material is compared with the other sources and integrated into the repository.
+The 2026 DAT recovery and the appearance of additional material preserved by people involved at the time explain why new artifacts continue to be added after the initial reconstruction. Each new item is compared with the other sources and integrated with its provenance recorded.
 
 For the partial Hypertxt source copies found on workstation `marco`, see [Hypertxt source provenance](../systems/marco/hypertxt/PROVENANCE.en.md).
+
+## The Codemotion article and repository
+
+In October 2026 Marco Iannacone published the Codemotion article
+[*The Archaeology of an ISP: How an Internet Provider Really Worked in 1995*](../publications/codemotion-2026/README.en.md)
+together with the Internet Force 1995–1996 repository and the reconstruction data. The article describes the recovery of the archive and operation of the infrastructure; a digital copy of the Italian edition is preserved in the repository together with links to the Codemotion editions.
 
 ## Reconstruction inputs
 

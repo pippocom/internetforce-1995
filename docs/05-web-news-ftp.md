@@ -158,6 +158,29 @@ di nuove esperienze Web.
 [`artifacts/press/internet-e-musica-provider-review/`](../artifacts/press/internet-e-musica-provider-review/README.md)
 ([scansione originale](../artifacts/press/internet-e-musica-provider-review/internet-e-musica-internet-force.pdf)).
 
+### Il Web come servizio commerciale: 1, 5 o 10 MB
+
+Il **Listino Aziende del 15 giugno 1996** mostra che realizzazione e hosting di
+pagine Web erano anche servizi commerciali espliciti di Internet Force. La
+società offriva realizzazione, manutenzione e variazione di pagine HTML e
+vendeva spazio sui propri server in tagli da **1 MB, 5 MB e 10 MB**; oltre 10 MB
+il prezzo diventava **a preventivo**.
+
+Quelle dimensioni descrivono bene la scala del Web aziendale dell'epoca. Per
+molte piccole imprese italiane una presenza online poteva essere composta da
+poche pagine vetrina, recapiti e un form di contatto, eventualmente con un
+piccolo catalogo prodotti. Non c'era soltanto un vincolo di spazio sul server:
+molti visitatori arrivavano via modem a **28,8 kbit/s**, quindi pagine con
+immagini grandi o ad alta qualità potevano richiedere tempi di caricamento molto
+lunghi. Spazio disco e banda disponibile spingevano entrambi verso siti piccoli
+e leggeri.
+
+Il confronto con oggi è quasi comico ma storicamente utile: **10 MB era già il
+taglio più grande con un prezzo pubblicato; per quantità superiori occorreva un
+preventivo**.
+
+→ Documento originale: [Listino Aziende Internet Force, 15 giugno 1996](../artifacts/company/business-services-price-list-1996/README.md)
+
 ## Hosting web virtuale (VIF)
 
 ### Il problema: una macchina, molti domini
@@ -167,7 +190,7 @@ normale che decine di siti puntino allo stesso indirizzo IP; nel 1995 non lo
 era. Le prime implementazioni HTTP non potevano sapere con certezza **quale
 nome DNS il browser avesse usato** per arrivare al server, quindi il metodo
 affidabile era assegnare a ogni sito il proprio indirizzo IP, anche se tutti
-quei indirizzi finivano fisicamente sulla stessa Sun.
+quegli indirizzi finivano fisicamente sulla stessa Sun.
 
 La documentazione Apache conservata nel bundle Xpert lo dice in modo diretto:
 
@@ -681,7 +704,8 @@ software e nella pagina di sicurezza.
 Vedi anche: [Server DATA](../systems/data/README.md) ·
 [Server USERS](../systems/users/README.md) ·
 [VIF — Virtual Interface per SunOS 4.x](../systems/sun-vif/README.md) ·
-[Inventario software](11-software-inventory.md)
+[Inventario software](11-software-inventory.md) ·
+[Listino Aziende 1996](../artifacts/company/business-services-price-list-1996/README.md)
 
 ---
 

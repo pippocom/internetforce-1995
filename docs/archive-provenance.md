@@ -7,7 +7,6 @@
 > Autore e curatore dell’archivio: **Marco Iannacone** · https://pippo.com
 > Licenza: [CC BY 4.0](../LICENSE)
 
-
 Il repository non deriva da un singolo backup completo dell’infrastruttura Internet Force. È stato ricostruito da Marco a partire da materiali sopravvissuti in luoghi diversi e recuperati progressivamente.
 
 Questa provenienza spiega perché alcuni insiemi di file sono molto completi mentre altri sono frammentari.
@@ -40,7 +39,7 @@ L’interpretazione assistita dall’IA è servita a capire e identificare quant
 recuperato, a modificarne il formato per renderlo leggibile o a estrarre documenti parziali,
 mai per fabbricare silenziosamente file storici mancanti.
 
-La causa esatta non è stata ancora determinata: potrebbe dipendere dallo stato fisico del supporto, dalla modalità con cui i dati furono scritti, dalla variante/implementazione di `tar` utilizzata, da una parziale incompatibilità del DAT noleggiato,  o da una combinazione di questi fattori. Per questo il repository non attribuisce automaticamente il problema a una specifica incompatibilità software.
+La causa esatta non è stata ancora determinata: potrebbe dipendere dallo stato fisico del supporto, dalla modalità con cui i dati furono scritti, dalla variante/implementazione di `tar` utilizzata, da una parziale incompatibilità del DAT noleggiato, o da una combinazione di questi fattori. Per questo il repository non attribuisce automaticamente il problema a una specifica incompatibilità software.
 
 ## Come interpretare le assenze
 
@@ -52,11 +51,28 @@ In particolare, directory incomplete, file a zero byte e frammenti di alberi pos
 
 Dove serve, una nota può descrivere lo stato di un file - recuperato integralmente, solo in parte, troncato o illeggibile - per orientare il lettore. È una descrizione di che cosa è sopravvissuto, non del valore storico del documento.
 
+## Materiali conservati da altre persone
+
+L'archivio continua ad ampliarsi anche grazie a materiali originali conservati da persone che parteciparono a Internet Force. Nel 2026 **Pascal Schait**, socio fondatore della società, ha fornito due nuovi reperti:
+
+- il **Listino Aziende del 15 giugno 1996**, che documenta l'offerta commerciale di connettività, IP statici e LAN, domini, DNS, realizzazione di pagine Web e hosting;
+- fotografie del **packaging originale del Welcome Kit v1.0**, inclusi confezione, manuale e floppy fisici.
+
+Questi materiali sono conservati rispettivamente in
+[`artifacts/company/business-services-price-list-1996/`](../artifacts/company/business-services-price-list-1996/README.md)
+e [`artifacts/customer-welcome-kit/`](../artifacts/customer-welcome-kit/README.md).
+
 ## Un archivio in evoluzione
 
-Il recupero del DAT nel 2026 spiega perché nuovi reperti continuano ad aggiungersi alla ricostruzione iniziale. Ogni nuovo elemento viene confrontato con le altre fonti e inserito nel repository.
+Il recupero del DAT nel 2026 e l'emersione di altri materiali conservati dai protagonisti dell'epoca spiegano perché nuovi reperti continuino ad aggiungersi alla ricostruzione iniziale. Ogni nuovo elemento viene confrontato con le altre fonti e inserito nel repository con la propria provenienza.
 
 Per le copie parziali dei sorgenti di Hypertxt presenti sulla workstation `marco`, vedere anche [Provenienza dei sorgenti Hypertxt](../systems/marco/hypertxt/PROVENANCE.md).
+
+## L'articolo Codemotion e il repository
+
+Nell'ottobre 2026 Marco Iannacone ha pubblicato su Codemotion l'articolo
+[*Archeologia di un ISP: come funzionava davvero un Internet provider nel 1995*](../publications/codemotion-2026/README.md)
+insieme al repository Internet Force 1995–1996 e ai dati della ricostruzione. L'articolo racconta il recupero dell'archivio e il funzionamento dell'infrastruttura; una copia digitale dell'edizione italiana è conservata nel repository insieme ai collegamenti alle edizioni Codemotion.
 
 ## Input della ricostruzione
 

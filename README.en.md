@@ -15,15 +15,15 @@ Presence, a central Sun UNIX service platform, a Check Point FireWall-1
 security gateway and a dedicated international link to IDT in New York.
 
 This repository reconstructs how the service actually worked, using the
-recovered configuration archive and the recollection of Marco Iannacone, who
-built and ran the infrastructure as its sole system and network
+recovered configuration archive and the direct first-person testimony of Marco Iannacone,
+who built and ran the infrastructure as its sole system and network
 administrator. The documentation is written for someone who wants to
 understand the architecture and the day-to-day operation, not just admire the
 hardware.
 
 ## Explore Internet Force
 
-Two principal routes to explore the archive:
+Three complementary routes to explore the history and archive:
 
 - **Build an Internet Force POP** — the technical walkthrough showing how the
   1995 infrastructure was assembled, from Unix host preparation through
@@ -34,6 +34,10 @@ Two principal routes to explore the archive:
   1995 infrastructure visually and open real system pages
   and surviving configurations.
   → [Explore Internet Force](https://pippocom.github.io/internetforce-1995/site/index.en.html)
+- **Read the story** — Marco Iannacone's Codemotion article, published together
+  with the repository, follows the recovery of the archive and the day-to-day
+  operation of Internet Force, from modems to Unix systems, POPs and the Welcome Kit.
+  → [*The Archaeology of an ISP: How an Internet Provider Really Worked in 1995*](publications/codemotion-2026/README.en.md)
 
 ## The system at a glance (1995)
 
@@ -58,7 +62,7 @@ Two principal routes to explore the archive:
 
 ## How to read this repository
 
-The repository has two complementary entry points and a short cultural context.
+The repository has several complementary entry points and a short cultural context.
 
 ### 1. Build the ISP — narrative path
 
@@ -81,11 +85,14 @@ not the whole path.
    access server validated users against USERS.
 4. [DNS](docs/03-dns.en.md) — how names resolved once the session was up.
 5. [Email](docs/04-email.en.md) — SMTP, POP3 and IMAP for customers.
-6. [Web, FTP, news and mailing lists](docs/05-web-news-ftp.en.md) — the public
-   services a customer reached.
+6. [Web, FTP, news and mailing lists](docs/05-web-news-ftp.en.md) — public
+   services reached by customers and Web hosting also sold to businesses.
 7. [The customer Welcome Kit](artifacts/customer-welcome-kit/README.en.md) — the
-   manual, the Easy! customer program and the installation floppies shipped to
-   new customers.
+   manual, the Easy! customer program, installation floppies and original
+   packaging supplied to new customers.
+8. [The 1996 Business Price List](artifacts/company/business-services-price-list-1996/README.en.md)
+   — business connectivity, static IP and LAN services, domains, DNS, Web-page
+   production and hosting in 1, 5 and 10 MB tiers.
 
 ### 2. Explore by system and infrastructure
 
@@ -130,6 +137,10 @@ acquired and shared on that network - manuals, RFCs, `man` pages, FAQs, mailing
 lists and Usenet, and the expectation of researching before asking - is told in
 [Learning the Internet: competence, autonomy and RTFM](docs/23-learning-internet-culture.en.md).
 
+Marco Iannacone's Codemotion article [*The Archaeology of an ISP*](publications/codemotion-2026/README.en.md),
+published together with this repository, reconstructs the overall story of the
+infrastructure and its recovery thirty years later.
+
 ## Timeline
 
 - **1995 — design and launch.** Xpert UNIX Systems (Israel) assists with the
@@ -138,8 +149,11 @@ lists and Usenet, and the expectation of researching before asking - is told in
   Four POPs. The international link starts at 128 kbit/s and is later
   upgraded to 2 Mbit/s.
 - **1996 — growth.** Additional POPs (Tera, CNN, Fano, INDI, Seregno),
-  expanded modem capacity, a CERN caching proxy, migration from NCSA HTTPd
-  to Apache, and SSH/SCP for secure administration.
+  expanded modem capacity, a CERN caching proxy, migration from NCSA HTTPd to
+  Apache, and SSH/SCP for secure administration. The [Business Price List dated
+  15 June 1996](artifacts/company/business-services-price-list-1996/README.en.md)
+  also documents the company's business offer: LAN connectivity, static IP,
+  leased lines, domains, DNS, Web-page production and hosting.
 - **1996–1997 — closure and migration.** Internet Force closes; the POPs that
   continue operating are progressively made autonomous (Pesaro Point,
   Pointest/Gorgonzola, Infosfera/Bergamo), and only afterwards do the Milan
@@ -152,8 +166,9 @@ lists and Usenet, and the expectation of researching before asking - is told in
 docs/          narrative documentation (architecture, services, operations)
 systems/       per-system reference: uplink, pops, firewall, data, users,
                dvlp, office-lan, marco, oracolo, enter, infosfera-bergamo
-artifacts/     historical materials: welcome kit, inventories, manuals,
-               photographs, email archive, Usenet, tools
+artifacts/     historical materials: welcome kit, commercial documents,
+               inventories, manuals, photographs, email archive, Usenet, tools
+publications/  articles and publications connected with the archive reconstruction
 site/          static web presentation
 ```
 

@@ -151,6 +151,28 @@ to network infrastructure, but also to exploring new forms of Web experience.
 [`artifacts/press/internet-e-musica-provider-review/`](../artifacts/press/internet-e-musica-provider-review/README.en.md)
 ([original scan](../artifacts/press/internet-e-musica-provider-review/internet-e-musica-internet-force.pdf)).
 
+### The Web as a commercial service: 1, 5 or 10 MB
+
+The **Business Price List dated 15 June 1996** shows that Web-page production
+and hosting were explicit commercial Internet Force services. The company sold
+creation, maintenance and modification of HTML pages and offered server space
+in **1 MB, 5 MB and 10 MB** tiers; anything above 10 MB was **priced on
+request**.
+
+Those sizes capture the scale of the business Web of the period. For many small
+Italian companies, an online presence could consist of a few presentation
+pages, contact details and a contact form, perhaps with a small product
+catalogue. Server capacity was only half the constraint: many visitors arrived
+through **28.8 kbit/s modems**, so pages with large or high-quality images could
+take a very long time to download. Disk space and access bandwidth both pushed
+towards small, lightweight sites.
+
+The contrast with today is almost comic but historically useful: **10 MB was
+already the largest tier with a published price; larger sites required a
+quotation**.
+
+→ Original document: [Internet Force Business Price List, 15 June 1996](../artifacts/company/business-services-price-list-1996/README.en.md)
+
 ## Virtual web hosting (VIF)
 
 ### The problem: one machine, many domains
@@ -674,7 +696,8 @@ the software inventory and the security page.
 See also: [DATA server](../systems/data/README.en.md) ·
 [USERS server](../systems/users/README.en.md) ·
 [VIF — Virtual Interface for SunOS 4.x](../systems/sun-vif/README.en.md) ·
-[Software inventory](11-software-inventory.en.md)
+[Software inventory](11-software-inventory.en.md) ·
+[1996 Business Price List](../artifacts/company/business-services-price-list-1996/README.en.md)
 
 ---
 

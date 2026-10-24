@@ -11,8 +11,9 @@
 > project license.
 
 This directory brings together the original material of the **Internet Force
-Welcome Kit**: the connection KIT distributed to customers, made up of 4 floppies,
-the manual and the source code of the application and of the installation program.
+Welcome Kit**: the connection kit distributed to customers, made up of four
+floppies, the manual, the application and installer source code, and photographs
+of the original version 1.0 packaging.
 
 ## Structure
 
@@ -21,12 +22,26 @@ the manual and the source code of the application and of the installation progra
 | `floppy-images/` | the four Welcome Kit floppy images, the Windows 95 disk and `LEGGIMI.TXT` |
 | `manual/` | `MANUALE_UTENTE_INTERNETFORCE.PDF`, 33 pages, produced on 18 March 1996 with Acrobat Distiller 1.0 for Macintosh; here too there is a real example of **Trumpet Winsock** configuration instructions for a customer (`trumpet_config-HOWTO_for_maoz.doc`) |
 | `source/` | the application source (Visual Basic) and the development material of the installation program |
+| `packaging/` | photographs of the **original Welcome Kit v1.0 packaging**, box, manual and physical floppies; material preserved and supplied in 2026 by **Pascal Schait**, a founding shareholder of Internet Force |
 
 ## Original distribution media
 
 `DISK1.IMA` through `DISK4.IMA` are the original Welcome Kit media.
 `WIN95.IMA` preserves the additional Windows 95 support disk. They are
 historical FAT12 images and are kept unmodified.
+
+## Original v1.0 packaging
+
+The PDF [`packaging/internet-force-welcome-kit-v1.0-packaging.pdf`](packaging/internet-force-welcome-kit-v1.0-packaging.pdf)
+preserves photographs of the physical Welcome Kit version 1.0. They show the
+Internet Force-branded box and seal, the manual and the original floppies
+labelled **WELCOME-KIT versione 1.0**.
+
+The photographs complement the digital floppy images by showing how the kit was
+actually delivered to a new customer: not just software and configuration, but
+a physical product intended to guide someone through their first Internet
+connection. The photographs were preserved and supplied in 2026 by **Pascal
+Schait**, a founding shareholder of Internet Force.
 
 ## Development and sources
 

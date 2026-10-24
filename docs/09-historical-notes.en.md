@@ -77,6 +77,35 @@ handled day-to-day operations. The office also included web content and
 administrative staff, whose accounts and role aliases appear in the recovered
 configuration.
 
+## More than access: the business offer
+
+A **Business Price List dated 15 June 1996**, preserved and supplied in 2026 by
+**Pascal Schait**, a founding shareholder of Internet Force, directly documents
+the services sold to businesses. Alongside Internet access it lists static IP
+addresses, LAN IP dial-up, dedicated 19.2 and 64 Kbps LAN connections, domain
+registration, DNS backup, HTML page production, Web hosting and specialised
+technical support.
+
+The scale of the hosting offer also captures the Web of the period: space was
+sold in **1 MB, 5 MB and 10 MB** tiers, with larger quantities priced on
+request. A small business presence could consist of a few presentation pages,
+contact information, a form and a small product catalogue; many visitors, at
+the same time, were browsing at **28.8 kbit/s**, so page weight was as real a
+constraint as server disk space.
+
+→ [Internet Force Business Price List, 15 June 1996](../artifacts/company/business-services-price-list-1996/README.en.md)
+
+## The Welcome Kit as a physical product
+
+The Welcome Kit material already preserved in the repository includes the
+manual, disk images and source code. Photographs supplied by Pascal Schait add
+the physical layer: they show the **original version 1.0 box**, the Internet
+Force seal, manual and labelled floppies. The archive can therefore show not
+only the distributed software but how a customer's first Internet access was
+actually delivered.
+
+→ [Customer Welcome Kit](../artifacts/customer-welcome-kit/README.en.md)
+
 ## The contemporary press
 
 The reconstruction relies mainly on recovered technical material. An **external**
@@ -85,6 +114,14 @@ Musica* (the *Prova il provider* column, by Andrea Maffini), kept in
 [`artifacts/press/`](../artifacts/press/README.en.md). It describes the POP
 network, the services, Web hosting and the mail technologies, and documents an
 early VRML (3D Web) experiment of the period.
+
+## A reconstruction published with the repository
+
+In October 2026 Marco Iannacone published the Codemotion article
+[*The Archaeology of an ISP: How an Internet Provider Really Worked in 1995*](../publications/codemotion-2026/README.en.md)
+together with this repository. It follows the archive recovery, architecture,
+a dial-up connection, day-to-day work and the surviving materials; the
+repository also preserves a PDF copy of the Italian edition.
 
 ## Timeline
 
@@ -96,7 +133,8 @@ early VRML (3D Web) experiment of the period.
 - **Late 1995 / early 1996** — international link upgraded to 2 Mbit/s;
   additional POPs and modem capacity; CERN caching proxy.
 - **1996** — Tera, CNN, Fano, INDI and Seregno; migration from NCSA HTTPd to
-  Apache; SSH/SCP introduced; an Oracle-on-Windows-NT web experiment.
+  Apache; SSH/SCP introduced; an Oracle-on-Windows-NT web experiment; the
+  Business Price List dated 15 June documents the structured business offer.
 
 ## The recovered archive
 
@@ -105,12 +143,15 @@ Cisco IOS configurations for the uplink and every POP, the full
 `/etc` trees of the firewall and the central servers, the BIND-4 zone set,
 Sendmail configurations, the XTACACS daemon and its configuration, the
 tkined map, the FireWall-1 rule base screenshot, and operational scripts and
-procedures. The account given here combines these materials with the direct
-recollection of Marco Iannacone, who built and ran the infrastructure.
+procedures. The account given here combines these materials with Marco Iannacone's direct
+first-person testimony as the person who built and ran the infrastructure. Other
+original material preserved by participants is integrated with its provenance
+made explicit.
 
 ---
 
 See also: [Architecture overview](01-architecture.en.md) ·
 [Network growth 1995 → 1996](13-network-growth-1995-1996.en.md) ·
 [Xpert reference material](../systems/marco/reference-material/xpert/README.en.md) ·
-[Learning the Internet: competence, autonomy and RTFM](23-learning-internet-culture.en.md)
+[Learning the Internet: competence, autonomy and RTFM](23-learning-internet-culture.en.md) ·
+[Archive provenance](archive-provenance.en.md)

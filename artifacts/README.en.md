@@ -21,8 +21,8 @@ kept only where historically relevant.
 
 | Directory | Contents |
 |---|---|
-| [`company/`](company/) | company material: the 1996 consultancy contract and the 1996 bankruptcy notice |
-| [`customer-welcome-kit/`](customer-welcome-kit/README.en.md) | the 1996 customer manual and the installation floppies shipped to new customers |
+| [`company/`](company/) | company and commercial material: consultancy contract, bankruptcy documentation and the 1996 business price list |
+| [`customer-welcome-kit/`](customer-welcome-kit/README.en.md) | customer Welcome Kit: manual, floppy images, source code and photographs of the original v1.0 packaging |
 | [`customer-data/`](customer-data/README.en.md) | customer-scale data, without personal identifiers |
 | [`domain-registration/`](domain-registration/README.en.md) | documentation on domain registration |
 | [`email-archive/`](email-archive/README.en.md) | surviving historical messages and mailboxes |

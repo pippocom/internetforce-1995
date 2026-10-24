@@ -16,14 +16,14 @@ Check Point FireWall-1 e un collegamento internazionale dedicato verso IDT a
 New York.
 
 Questo repository ricostruisce come il servizio funzionava davvero, usando
-l'archivio di configurazioni recuperato e la memoria di Marco Iannacone, che
+l'archivio di configurazioni recuperato e la testimonianza diretta di Marco Iannacone, che
 ha costruito e gestito l'infrastruttura come unico amministratore di sistema
 e di rete. La documentazione è scritta per chi vuole capire l'architettura e
 il funzionamento quotidiano, non solo ammirare l'hardware.
 
 ## Esplora Internet Force
 
-Due percorsi principali per esplorare l'archivio:
+Tre percorsi complementari per esplorare la storia e l'archivio:
 
 - **Costruire un Internet Force POP** - il percorso tecnico che mostra come
   l'infrastruttura del 1995 veniva messa insieme, dalla preparazione degli host
@@ -34,6 +34,10 @@ Due percorsi principali per esplorare l'archivio:
   l'infrastruttura del 1995 e aprire le schede dei sistemi e le
   configurazioni sopravvissute.
   → [Esplora Internet Force](https://pippocom.github.io/internetforce-1995/)
+- **Leggi la storia** - l'articolo di Marco Iannacone pubblicato su Codemotion
+  insieme al repository racconta il recupero dell'archivio e il funzionamento
+  quotidiano di Internet Force, dai modem ai sistemi Unix, dai POP al Welcome Kit.
+  → [*Archeologia di un ISP: come funzionava davvero un Internet provider nel 1995*](publications/codemotion-2026/README.md)
 
 ## Il sistema in sintesi (1995)
 
@@ -59,7 +63,7 @@ Due percorsi principali per esplorare l'archivio:
 
 ## Come leggere questo repository
 
-Il repository ha due punti d'ingresso complementari e un breve contesto culturale.
+Il repository ha più punti d'ingresso complementari e un breve contesto culturale.
 
 ### 1. Costruire l'ISP — percorso narrativo
 
@@ -84,10 +88,13 @@ questo percorso più ampio, non l'intero percorso.
    sessione.
 5. [Posta elettronica](docs/04-email.md) — SMTP, POP3 e IMAP per i clienti.
 6. [Web, FTP, news e mailing list](docs/05-web-news-ftp.md) — i servizi
-   pubblici raggiunti dal cliente.
+   pubblici raggiunti dal cliente e l'hosting Web offerto anche alle aziende.
 7. [Il Welcome Kit cliente](artifacts/customer-welcome-kit/README.md) — il
-   manuale, il programma cliente Easy! e i dischetti di installazione forniti
-   ai nuovi clienti.
+   manuale, il programma cliente Easy!, i dischetti di installazione e il
+   packaging originale forniti ai nuovi clienti.
+8. [Il Listino Aziende del 1996](artifacts/company/business-services-price-list-1996/README.md)
+   — connettività business, IP statici e LAN, domini, DNS, pagine Web e hosting
+   in tagli da 1, 5 e 10 MB.
 
 ### 2. Esplorare per sistema e infrastruttura
 
@@ -133,6 +140,10 @@ mailing list e Usenet, e l'attesa di documentarsi prima di chiedere - è
 raccontato in
 [Come si imparava Internet: competenza, autonomia e RTFM](docs/23-learning-internet-culture.md).
 
+L'articolo Codemotion [*Archeologia di un ISP*](publications/codemotion-2026/README.md),
+pubblicato da Marco Iannacone insieme a questo repository, ricostruisce inoltre
+la storia complessiva dell'infrastruttura e del suo recupero trent'anni dopo.
+
 ## Cronologia
 
 - **1995 — progettazione e lancio.** Xpert UNIX Systems (Israele) è il prime contractor per la
@@ -142,7 +153,10 @@ raccontato in
   128 kbit/s e viene poi portato a 2 Mbit/s.
 - **1996 — crescita.** POP aggiuntivi (Tera, CNN, Fano, INDI, Seregno),
   capacità modem ampliata, un proxy cache CERN, migrazione da NCSA HTTPd ad
-  Apache e SSH/SCP per l'amministrazione sicura.
+  Apache e SSH/SCP per l'amministrazione sicura. Il [Listino Aziende del 15
+  giugno 1996](artifacts/company/business-services-price-list-1996/README.md)
+  documenta anche l'offerta commerciale per imprese: connettività LAN, IP
+  statici, linee dedicate, domini, DNS, realizzazione di pagine e hosting Web.
 - **1996–1997 — chiusura e migrazione.** Internet Force chiude; i POP che
   continuano l'attività vengono resi progressivamente autonomi (Pesaro Point,
   Pointest/Gorgonzola, Infosfera/Bergamo) e solo dopo i clienti di Milano e i
@@ -155,8 +169,9 @@ raccontato in
 docs/          documentazione narrativa (architettura, servizi, operazioni)
 systems/       riferimento per sistema: uplink, pops, firewall, data, users,
                dvlp, office-lan, marco, oracolo, enter, infosfera-bergamo
-artifacts/     materiali storici: welcome kit, inventari, manuali, foto,
-               archivio email, Usenet, strumenti
+artifacts/     materiali storici: welcome kit, documenti commerciali, inventari,
+               manuali, foto, archivio email, Usenet, strumenti
+publications/  articoli e pubblicazioni legati alla ricostruzione dell'archivio
 site/          presentazione web statica
 ```
 

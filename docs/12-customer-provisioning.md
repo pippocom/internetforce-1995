@@ -54,6 +54,20 @@ agli account, e l'uso di routine di `quotacheck`. Le quote erano una protezione
 di disponibilità: senza di esse un cliente avrebbe potuto esaurire un filesystem
 condiviso con upload o crescita della home.
 
+## Clienti individuali e offerta aziende
+
+Il provisioning degli account su USERS descrive soprattutto il lato operativo
+dell'accesso individuale, ma Internet Force vendeva anche servizi strutturati
+alle aziende. Il **Listino Aziende del 15 giugno 1996** documenta IP statici,
+LAN IP in dial-up, collegamenti LAN a 19,2 e 64 Kbps, registrazione dei domini,
+backup DNS, realizzazione di pagine HTML, hosting e assistenza tecnica.
+
+Il documento permette quindi di leggere il provisioning in un contesto più
+ampio: un cliente poteva richiedere non soltanto un account personale, ma anche
+indirizzamento e routing per una LAN, un dominio, servizi DNS e spazio Web.
+
+→ [Listino Aziende Internet Force, 15 giugno 1996](../artifacts/company/business-services-price-list-1996/README.md)
+
 ## Una capability che non diventò un modello tariffario
 
 Internet Force aveva in produzione una versione prototipale della tecnologia Xpert di **IP usage accounting** che poco dopo sarebbe diventata XACCT.
@@ -86,11 +100,16 @@ I nuovi clienti ricevevano un **Welcome Kit**: un manuale utente stampato e un
 set di dischetti di installazione contenenti Trumpet Winsock, il programma
 client **Easy!** di Internet Force e i programmi client per i principali servizi
 Internet. Easy!, scritto da Marco Iannacone, offriva ai clienti un semplice
-launcher/interfaccia per le applicazioni Internet incluse. Il manuale e le
-immagini originali dei dischi sono pubblicati in
+launcher/interfaccia per le applicazioni Internet incluse. Il manuale, le
+immagini originali dei dischi, i sorgenti e le **fotografie del packaging
+originale v1.0** sono pubblicati in
 [`artifacts/customer-welcome-kit/`](../artifacts/customer-welcome-kit/README.md).
 Questo era il lato cliente del processo di provisioning, a complemento
 dell'account creato su USERS e dei numeri dial-up pubblicati da ogni POP.
+
+Le fotografie della confezione, del manuale e dei floppy fisici sono state
+conservate e fornite nel 2026 da **Pascal Schait**, socio fondatore di Internet
+Force.
 
 ## Configurazione rappresentativa
 
@@ -115,7 +134,8 @@ quote: [`systems/users/system/quota.txt`](../systems/users/system/quota.txt)
 ---
 
 Vedi anche: [La sessione dial-up](02-dialup-session.md) ·
-[Server USERS](../systems/users/README.md) · [Posta elettronica](04-email.md)
+[Server USERS](../systems/users/README.md) · [Posta elettronica](04-email.md) ·
+[Listino Aziende 1996](../artifacts/company/business-services-price-list-1996/README.md)
 
 ---
 

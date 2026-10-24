@@ -9,9 +9,9 @@ Author website: https://pippo.com/me/
 
 This site is a historical and technical reconstruction of Internet Force, an Italian Internet Service Provider founded in Milan in 1995 and active during 1995–1996.
 
-The archive preserves and documents original technical material from the provider, including surviving system and network configurations, operational documentation, software, customer materials, historical network maps, email and Usenet material, and other artifacts from the period.
+The archive preserves and documents original technical material from the provider, including surviving system and network configurations, operational documentation, software, customer materials, historical network maps, email and Usenet material, company and commercial documents, photographs, and other artifacts from the period.
 
-The purpose of the project is not simply to preserve old files. It is to reconstruct how a small commercial Internet provider of the mid-1990s actually worked: its network architecture, Unix systems, dial-up access, routing, DNS, email, authentication, web services, security, monitoring, Point of Presence infrastructure, and day-to-day operations.
+The purpose of the project is not simply to preserve old files. It is to reconstruct how a small commercial Internet provider of the mid-1990s actually worked: its network architecture, Unix systems, dial-up access, routing, DNS, email, authentication, web services, security, monitoring, Point of Presence infrastructure, commercial services, customer onboarding, and day-to-day operations.
 
 ## Author and historical role
 
@@ -19,7 +19,7 @@ Marco Iannacone is the author and curator of this archive.
 
 At Internet Force, Marco Iannacone built and operated the provider's technical infrastructure as its sole system and network administrator. His work included the Unix service platform, networking, routing, authentication, Internet services, monitoring, security infrastructure, POP configuration and operational management.
 
-This historical reconstruction is based on original materials preserved by Marco Iannacone together with his direct recollection of designing, configuring and operating the infrastructure.
+This historical reconstruction is based on original materials preserved by Marco Iannacone together with his direct first-person testimony as the person who designed, configured and operated the infrastructure.
 
 More information about the author:
 https://pippo.com/me/
@@ -35,9 +35,10 @@ Internet Force provides a compact example of how an independent ISP was actually
 Preserving the archive therefore serves several purposes:
 
 - documenting the technical architecture of an early Italian commercial ISP;
-- preserving original configurations and operational artifacts rather than only retrospective descriptions;
+- preserving original configurations and operational artifacts together with first-person historical reconstruction;
 - showing how Internet services were deployed and administered before today's cloud platforms and managed infrastructure;
-- preserving the engineering practices, tools and operational culture of the period;
+- documenting what Internet access and related services were commercially sold to individuals and businesses;
+- preserving the engineering practices, tools, customer materials and operational culture of the period;
 - providing material for researchers, historians, engineers, students and anyone studying the development of the commercial Internet.
 
 This is intended as technical and digital archaeology, not nostalgia.
@@ -57,7 +58,12 @@ System-specific documentation and surviving configurations for routers, Unix hos
 ### Historical artifacts
 https://pippocom.github.io/internetforce-1995/artifacts/
 
-Original manuals, customer materials, software, network monitoring material, email, Usenet posts, photographs, inventories and other recovered material.
+Original manuals, customer materials, software, network monitoring material, email, Usenet posts, photographs, inventories, company and commercial documents and other recovered material.
+
+### Publications
+https://github.com/pippocom/internetforce-1995/tree/main/publications
+
+Articles and publications connected with the reconstruction of the Internet Force archive, including Marco Iannacone's 2026 Codemotion article published together with the repository.
 
 ### Interactive archive
 https://pippocom.github.io/internetforce-1995/site/index.en.html
@@ -75,6 +81,30 @@ Internet Force was one of Italy's early commercial Internet service providers, a
 
 - Italian interactive maps: https://pippocom.github.io/internetforce-1995/site/index.html
 - English interactive maps: https://pippocom.github.io/internetforce-1995/site/index.en.html
+
+## Codemotion article
+
+Marco Iannacone published the article *Archeologia di un ISP: come funzionava davvero un Internet provider nel 1995* with Codemotion in October 2026 together with the Internet Force 1995–1996 repository and its data. It describes the recovery of the archive, the architecture and operation of Internet Force, dial-up connectivity, Unix and Cisco infrastructure, the Welcome Kit, day-to-day work and the surviving historical material.
+
+- Italian Codemotion edition: https://www.codemotion.com/magazine/it/dev-life-it/storie/archeologia-di-un-isp-come-funzionava-davvero-un-internet-provider-nel-1995/
+- English Codemotion edition: https://www.codemotion.com/magazine/dev-life/stories/the-archaeology-of-an-isp-how-an-internet-provider-really-worked-in-1995/
+- Repository-preserved PDF and publication metadata: https://github.com/pippocom/internetforce-1995/tree/main/publications/codemotion-2026
+
+## Business services and 1996 Web hosting
+
+The Internet Force Business Price List dated 15 June 1996 documents a structured business offer in addition to individual Internet access: static IP addressing, LAN dial-up, 19.2 and 64 Kbps LAN connectivity, domain registration, DNS backup, HTML page production, Web hosting and specialised support.
+
+Web hosting was sold in 1 MB, 5 MB and 10 MB tiers, with larger quantities quoted individually. These sizes reflect the scale of business websites in 1996 and the constraints of users commonly accessing pages over 28.8 kbit/s dial-up connections.
+
+Price-list documentation:
+https://github.com/pippocom/internetforce-1995/tree/main/artifacts/company/business-services-price-list-1996
+
+## Customer Welcome Kit
+
+The customer Welcome Kit included a printed manual, installation floppies, Internet client software and the Easy! launcher developed by Marco Iannacone. The archive also preserves photographs of the original version 1.0 physical packaging and labelled floppies, supplied in 2026 by Internet Force founding shareholder Pascal Schait.
+
+Welcome Kit archive:
+https://github.com/pippocom/internetforce-1995/tree/main/artifacts/customer-welcome-kit
 
 ## Citation and attribution
 

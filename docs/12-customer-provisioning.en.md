@@ -53,6 +53,21 @@ accounts, and the routine use of `quotacheck`. Quotas were an availability
 safeguard: without them a customer could exhaust a shared filesystem through
 uploads or home-directory growth.
 
+## Individual customers and the business offer
+
+Provisioning accounts on USERS mainly describes the operational side of
+individual access, but Internet Force also sold structured services to
+businesses. The **Business Price List dated 15 June 1996** documents static IP
+addresses, LAN IP dial-up, 19.2 and 64 Kbps LAN connections, domain
+registration, DNS backup, HTML page production, hosting and specialised
+technical support.
+
+The document therefore puts provisioning in a broader context: a customer
+could request not only an individual account, but also addressing and routing
+for a LAN, a domain, DNS services and Web space.
+
+→ [Internet Force Business Price List, 15 June 1996](../artifacts/company/business-services-price-list-1996/README.en.md)
+
 ## A capability that never became a pricing model
 
 Internet Force had in production an early prototype version of Xpert's **IP usage-accounting** technology that shortly afterwards became XACCT.
@@ -84,11 +99,15 @@ New customers received a **Welcome Kit**: a printed user manual and a set of
 installation floppies containing Trumpet Winsock, the Internet Force customer
 program **Easy!** and the client programs for the main Internet services.
 Easy!, written by Marco Iannacone, gave customers a simple launcher/interface
-for the bundled Internet applications. The manual and the original disk images
-are published in
+for the bundled Internet applications. The manual, original disk images,
+source code and **photographs of the original v1.0 packaging** are published in
 [`artifacts/customer-welcome-kit/`](../artifacts/customer-welcome-kit/README.en.md).
 This was the customer's side of the provisioning process, complementing the
 account created on USERS and the dial-up numbers published by each POP.
+
+The photographs of the box, manual and physical floppies were preserved and
+supplied in 2026 by **Pascal Schait**, a founding shareholder of Internet
+Force.
 
 ## Representative configuration
 
@@ -113,8 +132,8 @@ quotas: [`systems/users/system/quota.txt`](../systems/users/system/quota.txt)
 ---
 
 See also: [The dial-up session](02-dialup-session.en.md) ·
-[USERS server](../systems/users/README.en.md) ·
-[Email](04-email.en.md)
+[USERS server](../systems/users/README.en.md) · [Email](04-email.en.md) ·
+[1996 Business Price List](../artifacts/company/business-services-price-list-1996/README.en.md)
 
 ---
 
