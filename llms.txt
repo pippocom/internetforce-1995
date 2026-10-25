@@ -9,7 +9,7 @@ Author website: https://pippo.com/me/
 
 This site is a historical and technical reconstruction of Internet Force, an Italian Internet Service Provider founded in Milan in 1995 and active during 1995–1996.
 
-The archive preserves and documents original technical material from the provider, including surviving system and network configurations, operational documentation, software, customer materials, historical network maps, email and Usenet material, company and commercial documents, photographs, and other artifacts from the period.
+The archive preserves and documents original technical material from the provider, including surviving system and network configurations, operational documentation, software, customer materials, historical network maps, email and Usenet material, company and commercial documents, photographs, public archival traces, and other artifacts from the period.
 
 The purpose of the project is not simply to preserve old files. It is to reconstruct how a small commercial Internet provider of the mid-1990s actually worked: its network architecture, Unix systems, dial-up access, routing, DNS, email, authentication, web services, security, monitoring, Point of Presence infrastructure, commercial services, customer onboarding, and day-to-day operations.
 
@@ -39,6 +39,7 @@ Preserving the archive therefore serves several purposes:
 - showing how Internet services were deployed and administered before today's cloud platforms and managed infrastructure;
 - documenting what Internet access and related services were commercially sold to individuals and businesses;
 - preserving the engineering practices, tools, customer materials and operational culture of the period;
+- connecting the recovered archive with contemporary and immediately subsequent public traces from Usenet, the Wayback Machine and public company records;
 - providing material for researchers, historians, engineers, students and anyone studying the development of the commercial Internet.
 
 This is intended as technical and digital archaeology, not nostalgia.
@@ -58,7 +59,7 @@ System-specific documentation and surviving configurations for routers, Unix hos
 ### Historical artifacts
 https://pippocom.github.io/internetforce-1995/artifacts/
 
-Original manuals, customer materials, software, network monitoring material, email, Usenet posts, photographs, inventories, company and commercial documents and other recovered material.
+Original manuals, customer materials, software, network monitoring material, email, Usenet posts, photographs, inventories, company and commercial documents, public Web traces and other recovered material.
 
 ### Publications
 https://github.com/pippocom/internetforce-1995/tree/main/publications
@@ -105,6 +106,24 @@ The customer Welcome Kit included a printed manual, installation floppies, Inter
 
 Welcome Kit archive:
 https://github.com/pippocom/internetforce-1995/tree/main/artifacts/customer-welcome-kit
+
+## Public traces and contemporary sources
+
+The repository also records public traces that can be read alongside the recovered technical archive:
+
+- Google Groups screenshots show 1996 Usenet conversations containing `@internetforce.com` and `@intf.com` addresses across unrelated newsgroups. A captured search for `Internetforce.com` displayed 208 conversations; this is a conversation count, not a distinct-user count.
+- A 22 March 1996 Usenet post by Marco Iannacone identifies him as Internet Force's System Administrator while discussing a proposed e-mail/GSM-SMS gateway.
+- The 5 June 1997 Wayback snapshot of `internetforce.com` shows Enter after the central-services migration.
+- The 3 May 1997 Wayback snapshot of `pesaro.com` shows autonomous Pesaro Point while still displaying the Internet Force I.S.P. mark.
+- The public Italian Business Register record shows a Milan local unit at Via Plana 20, matching the 1996 Business Price List's “Sede Operativa”.
+
+Documentation:
+https://github.com/pippocom/internetforce-1995/blob/main/docs/26-public-traces-and-contemporary-sources.en.md
+
+Artifacts:
+https://github.com/pippocom/internetforce-1995/tree/main/artifacts/usenet/google-groups
+https://github.com/pippocom/internetforce-1995/tree/main/artifacts/web-archive
+https://github.com/pippocom/internetforce-1995/tree/main/artifacts/company/company-registry
 
 ## Citation and attribution
 

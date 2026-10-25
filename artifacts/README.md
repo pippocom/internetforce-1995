@@ -9,9 +9,9 @@
 
 Quest'area raccoglie i materiali storici che non appartengono a un singolo
 sistema: documentazione e manuali, inventari, fotografie, rassegna stampa,
-archivio email, testi Usenet e strumenti d'epoca. Le configurazioni dei sistemi
-e dei POP sono invece conservate accanto al sistema a cui appartengono, sotto
-[`systems/`](../systems/).
+archivio email, testi Usenet, fonti Web pubbliche e strumenti d'epoca. Le
+configurazioni dei sistemi e dei POP sono invece conservate accanto al sistema a
+cui appartengono, sotto [`systems/`](../systems/).
 
 Credenziali e dati personali sono stati trattati in modo da poter pubblicare i
 materiali senza esporre segreti o informazioni private. I nomi delle persone
@@ -21,7 +21,7 @@ sono mantenuti solo dove storicamente rilevanti.
 
 | Cartella | Contenuto |
 |---|---|
-| [`company/`](company/) | materiale societario e commerciale: contratto di consulenza, documentazione del fallimento e listino aziende del 1996 |
+| [`company/`](company/) | materiale societario e commerciale: contratto di consulenza, documentazione del fallimento, listino aziende del 1996 e scheda pubblica del Registro Imprese |
 | [`customer-welcome-kit/`](customer-welcome-kit/README.md) | Welcome Kit cliente: manuale, immagini dei dischetti, sorgenti e fotografie del packaging originale v1.0 |
 | [`customer-data/`](customer-data/README.md) | dati sulla scala della clientela, senza identificatori personali |
 | [`domain-registration/`](domain-registration/README.md) | documentazione sulla registrazione dei domini |
@@ -35,7 +35,8 @@ sono mantenuti solo dove storicamente rilevanti.
 | [`scripts/`](scripts/README.md) | script operativi e di provisioning |
 | [`tkined/`](tkined/README.md) | la mappa di rete tkined originale |
 | [`tools/`](tools/README.md) | strumenti e utility usati all'epoca |
-| [`usenet/`](usenet/README.md) | FAQ, guide e testi pubblicati su Usenet |
+| [`usenet/`](usenet/README.md) | FAQ, guide, testi e tracce pubbliche conservate negli archivi Usenet |
+| [`web-archive/`](web-archive/README.md) | snapshot Wayback Machine di `internetforce.com` e `pesaro.com` nella fase successiva alla chiusura |
 
 ## Dove trovare il resto
 
@@ -45,3 +46,6 @@ conservato sotto [`systems/marco/`](../systems/marco/README.md).
 
 Le configurazioni dei sistemi centrali, dei POP e delle fasi successive sono
 sotto [`systems/`](../systems/), descritte per sistema.
+
+Per una lettura trasversale delle tracce pubbliche contemporanee e immediatamente
+successive, vedere [Tracce pubbliche e fonti contemporanee](../docs/26-public-traces-and-contemporary-sources.md).

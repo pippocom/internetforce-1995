@@ -9,8 +9,8 @@
 
 This area collects the historical materials that do not belong to a single
 system: documentation and manuals, inventories, photographs, press coverage,
-email archive, Usenet texts and period tools. System and POP configurations are
-instead kept next to the system they belong to, under
+email archive, Usenet texts, public Web sources and period tools. System and POP
+configurations are instead kept next to the system they belong to, under
 [`systems/`](../systems/).
 
 Credentials and personal data have been handled so that the materials can be
@@ -21,7 +21,7 @@ kept only where historically relevant.
 
 | Directory | Contents |
 |---|---|
-| [`company/`](company/) | company and commercial material: consultancy contract, bankruptcy documentation and the 1996 business price list |
+| [`company/`](company/) | company and commercial material: consultancy contract, bankruptcy documentation, the 1996 business price list and the public Business Register record |
 | [`customer-welcome-kit/`](customer-welcome-kit/README.en.md) | customer Welcome Kit: manual, floppy images, source code and photographs of the original v1.0 packaging |
 | [`customer-data/`](customer-data/README.en.md) | customer-scale data, without personal identifiers |
 | [`domain-registration/`](domain-registration/README.en.md) | documentation on domain registration |
@@ -35,7 +35,8 @@ kept only where historically relevant.
 | [`scripts/`](scripts/README.en.md) | operational and provisioning scripts |
 | [`tkined/`](tkined/README.en.md) | the original tkined network map |
 | [`tools/`](tools/README.en.md) | tools and utilities used at the time |
-| [`usenet/`](usenet/README.en.md) | FAQs, guides and texts published on Usenet |
+| [`usenet/`](usenet/README.en.md) | FAQs, guides, texts and public traces preserved in Usenet archives |
+| [`web-archive/`](web-archive/README.en.md) | Wayback Machine snapshots of `internetforce.com` and `pesaro.com` in the post-closure period |
 
 ## Where to find the rest
 
@@ -45,3 +46,6 @@ reference material, Hypertxt and the personal site `pippo.com` - is kept under
 
 The configurations of the central systems, the POPs and the later phases are
 under [`systems/`](../systems/), described per system.
+
+For a cross-cutting view of contemporary and immediately subsequent public
+traces, see [Public traces and contemporary sources](../docs/26-public-traces-and-contemporary-sources.en.md).
