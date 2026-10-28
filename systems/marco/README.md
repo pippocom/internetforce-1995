@@ -96,6 +96,7 @@ di Internet Force.
 - [`system/`](system/) — script di avvio e configurazione della macchina.
 - [`reference-material/xpert/`](reference-material/xpert/README.md) — materiale Xpert.
 - [`artifacts/photographs/`](../../artifacts/photographs/README.md) — fotografia storica dell'ufficio.
+- [Recupero del DAT DDS-1](../../docs/dat-tape-recovery.md) — note tecniche sulla lettura nel 2026 del nastro contenente il backup della workstation.
 
 ---
 

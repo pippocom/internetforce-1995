@@ -30,6 +30,8 @@ had to be identified or tested. Recovery produced substantial additional
 material: configuration copies, documentation, mail, source code, utilities and
 personal working files that were absent from the first archive set.
 
+For technical details on DDS drive selection, the historical use of **GNU tar** on SunOS, record blocking and reading the tape under Linux, see [Recovering in 2026 a DDS-1 DAT written in a SunOS environment](dat-tape-recovery.en.md).
+
 ## Incomplete recovery
 
 Part of the DAT content consists of `tar` archives created on the Sun **DVLP** system or otherwise processed through that environment.

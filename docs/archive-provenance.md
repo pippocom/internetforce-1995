@@ -23,6 +23,8 @@ All’autore è invece “rimasta” una singola cassetta DAT sulla quale, all�
 
 Nel 2026 è stata letta con un drive DAT USB noleggiato, collegato a una macchina Linux. Il contenuto è stato estratto con `tar`, usando anche `gzip` dove occorreva identificare o verificare la compressione. Il recupero ha restituito numerosi materiali aggiuntivi: copie di configurazioni, documentazione, posta, sorgenti, utility e file personali di lavoro che non erano presenti nel primo insieme di backup già disponibile.
 
+Per i dettagli tecnici sulla scelta del drive DDS, sull'uso storico di **GNU tar** su SunOS, sul blocking dei record e sulla lettura del nastro da Linux, vedere [Recuperare nel 2026 un DAT DDS-1 scritto nell'ambiente SunOS](dat-tape-recovery.md).
+
 ## Recupero incompleto
 
 Parte del contenuto del DAT consiste in archivi `tar` creati dalla macchina Sun **DVLP** o comunque transitati attraverso quell’ambiente.

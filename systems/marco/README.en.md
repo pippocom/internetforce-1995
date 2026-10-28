@@ -96,6 +96,7 @@ operational phase.
 - [`system/`](system/) — machine boot scripts and configuration.
 - [`reference-material/xpert/`](reference-material/xpert/README.en.md) — Xpert material.
 - [`artifacts/photographs/`](../../artifacts/photographs/README.en.md) — historical office photograph.
+- [DDS-1 DAT recovery](../../docs/dat-tape-recovery.en.md) — technical notes on the 2026 reading of the tape containing the workstation backup.
 
 ---
 
