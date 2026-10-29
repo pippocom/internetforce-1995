@@ -63,9 +63,9 @@ I nastri DAT utilizzati per i backup operativi erano proprietà di Internet Forc
 e rimasero all'azienda; non fanno quindi parte dell'archivio storico oggi
 disponibile.
 
-All'autore è però “rimasta” una diversa cassetta DAT, sulla quale all'epoca
-aveva effettuato una copia della propria workstation Linux `marco`. Nel 2026
-ha noleggiato un drive DAT (parzialmente) compatibile per recuperarne il contenuto.
+Mi era però "rimasta" una diversa cassetta DAT, sulla quale all'epoca
+avevo effettuato una copia della mia workstation Linux `marco`. Nel 2026
+ho noleggiato un drive DAT parzialmente compatibile per recuperarne il contenuto.
 Il nastro si è rivelato una fonte importante di ulteriori configurazioni,
 documentazione, posta e sorgenti.
 

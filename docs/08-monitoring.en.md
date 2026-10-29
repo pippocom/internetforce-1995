@@ -8,9 +8,9 @@
 > License: [CC BY 4.0](../LICENSE)
 
 Network and systems monitoring was built on **SNMP** and **Scotty/tkined**, a Tcl/Tk
-network-management application. The monitoring station was Marco's Linux/X
-workstation on the office LAN, which is where the recovered tkined map was
-created - [`intf.snmp.map`](../artifacts/tkined/intf.snmp.map), version **1.3.4**.
+network-management application. The monitoring station was my Linux/X
+workstation on the office LAN, which is where I created the recovered tkined map -
+[`intf.snmp.map`](../artifacts/tkined/intf.snmp.map), version **1.3.4**.
 
 ## Why centralised monitoring was needed
 
@@ -40,8 +40,8 @@ state. Each managed device ran an SNMP agent and published this data in standard
 structures called **MIBs**; the monitoring system queried them with a read-only
 community string.
 
-**tkined** was the network-management application that acted as the console. It
-ran on Marco's Linux/X workstation and is where the recovered map was created,
+**tkined** was the network-management application that acted as the console. tkined
+ran on my Linux/X workstation; I created the recovered map there,
 in version 1.3.4. tkined combined two different things:
 
 - a **topology map**: the managed devices drawn as nodes with their

@@ -86,7 +86,7 @@ All recovered Power Macintosh 9500 systems had **2 GB disks**; one had
 **32 MB of RAM**. In all probability
 the most powerful configuration was `laura`, one of the main DTP
 workstations. `salvatore`, also a power-user workstation, probably had
-32 MB, but Marco was unable to reconstruct the precise Power Macintosh model.
+32 MB, but I could not reconstruct the precise Power Macintosh model.
 
 ## 3. Technical and organizational roles
 
@@ -231,8 +231,8 @@ exchange/review, and publication to the public server, without
 retroactively applying CI/CD terminology that belongs to a much later
 period.
 
-In March 1996 Marco installed **PHP/FI**. **Postgres95** was later
-installed on `data`, the name the database used at the time before becoming
+In March 1996 I installed **PHP/FI**. I later also installed **Postgres95**
+on `data`, the name the database used at the time before becoming
 PostgreSQL. The Web environment therefore evolved from
 hand-written static HTML to CGI programs, then server-side scripting and
 eventually database-backed applications.

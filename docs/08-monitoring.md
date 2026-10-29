@@ -9,7 +9,7 @@
 
 Il monitoraggio di rete e sistemi era costruito su **SNMP** e **Scotty/tkined**,
 un'applicazione di gestione di rete in Tcl/Tk. La stazione di monitoraggio era
-la workstation Linux/X di Marco sulla LAN dell'ufficio, ed è lì che fu creata la
+la mia workstation Linux/X sulla LAN dell'ufficio, ed è lì che creai la
 mappa tkined recuperata - [`intf.snmp.map`](../artifacts/tkined/intf.snmp.map),
 versione **1.3.4**.
 
@@ -41,8 +41,8 @@ contatori di traffico, stato delle linee. Ogni apparato gestito eseguiva un
 agente SNMP e pubblicava questi dati in strutture standard chiamate **MIB**; il
 sistema di monitoraggio le interrogava con una community string di sola lettura.
 
-**tkined** era l'applicazione di gestione di rete che faceva da console. Girava
-sulla workstation Linux/X di Marco ed è lì che fu creata la mappa recuperata,
+**tkined** era l'applicazione di gestione di rete che faceva da console. tkined girava
+sulla mia workstation Linux/X; lì creai la mappa recuperata,
 nella versione 1.3.4. tkined univa due cose diverse:
 
 - una **mappa di topologia**: i dispositivi gestiti disegnati come nodi con le

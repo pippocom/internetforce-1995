@@ -52,7 +52,7 @@ sistemazione comune per un percorso console/gestione in un sito remoto.
 
 Il POP di Gorgonzola fu anche il contesto della successiva fase **Pointest**,
 distinta dal POP Internet Force descritto sopra. La directory
-[`pointest/`](pointest/) raccoglie il materiale con cui fu costruita
+[`pointest/`](pointest/) raccoglie il materiale con cui costruii
 l'infrastruttura di servizio autonoma:
 
 - `CISCO/2511BIGI.TXT` — configurazione Cisco 2511;

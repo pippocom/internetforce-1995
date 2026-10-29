@@ -76,7 +76,7 @@ Il software poteva raccogliere e attribuire l'uso della rete IP, ma **Internet F
 
 Questo è importante perché nel mercato ISP dell'epoca il prodotto commerciale era soprattutto l'accesso, normalmente venduto con un modello flat dal punto di vista del provider. La tecnologia Xpert apriva invece la possibilità di associare un valore economico all'uso effettivo della rete.
 
-La capability tecnica venne installata. Il modello commerciale non venne messo in campo.
+I soci decisero di adottare la capability tecnica, che installai insieme a Xpert UNIX Systems. Il modello commerciale non venne invece messo in campo.
 
 Approfondimento: [Da Xpert a XACCT](25-xpert-ip-accounting-xacct.md).
 

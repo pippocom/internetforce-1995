@@ -188,10 +188,8 @@ raccolta/condensazione: Bob Baggerman
 Questo è interessante perché la storia del software rimane incorporata nel
 software stesso.
 
-Non abbiamo soltanto il sorgente finale.
-
-Abbiamo ancora parte della conversazione che spiega **da dove viene e perché è
-cambiato**.
+L'archivio non conserva soltanto il sorgente finale. Conserva anche parte della
+conversazione che spiega **da dove viene e perché è cambiato**.
 
 ---
 

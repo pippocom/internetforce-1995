@@ -120,8 +120,8 @@ reconstruction:
 - company records show addresses, roles and legal transitions;
 - Usenet shows people and accounts using the public network;
 - the Wayback Machine preserves visible fragments of the subsequent phases;
-- first-person testimony reconstructs decisions, procedures and sequences that
-  did not always leave a formal document.
+- my first-person testimony reconstructs decisions, procedures and sequences that
+  did not always leave a formal document; where present, the testimonies of other participants are indicated separately.
 
 The value of the archive lies in the convergence of different source types, not
 in requiring every historical detail to have an identical duplicate in an

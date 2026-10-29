@@ -194,7 +194,9 @@ Questo rapporto diretto è parte della spiegazione di come un piccolo ISP italia
 
 ## 5. Una tecnologia installata, ma un vantaggio mai commercializzato
 
-La soluzione di IP accounting venne apprezzata dai soci e installata.
+I soci apprezzarono la soluzione di IP accounting e decisero di adottarla. L'installazione tecnica fu eseguita da me insieme a Xpert UNIX Systems.
+
+XACCT era allora una tecnologia molto nuova e non esisteva documentazione disponibile in rete sufficiente per studiarne autonomamente il funzionamento: furono le persone di Xpert a spiegarmelo direttamente mentre installavamo e configuravamo insieme la soluzione.
 
 Internet Force poté quindi tracciare l'utilizzo IP, ma non fece l'ultimo passaggio: **non collegò quei dati alla fatturazione dei clienti**.
 

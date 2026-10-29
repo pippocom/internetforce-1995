@@ -44,9 +44,8 @@ Google Groups message:
 
 <https://groups.google.com/g/alt.cellular-phone-tech/c/2IOGEvXaQwA/m/8CqAQtnX0TYJ>
 
-The screenshot shows the public address `ianna@iol.it`. According to the
-curator's first-person account, the address had been in use since 1994 and was
-often used in public newsgroups partly to avoid routinely exposing primary
+The screenshot shows the public address `ianna@iol.it`. I had used that address
+since 1994 and I often used it in public newsgroups, also to avoid routinely exposing primary
 mailboxes.
 
 ## Technical continuity after Internet Force — PHP, 1998

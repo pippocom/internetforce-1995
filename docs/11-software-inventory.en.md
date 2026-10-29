@@ -12,9 +12,10 @@ with the versions saved in the archive (when we found them in the backups).
 It is organized by layer.
 
 A note on terminology: in 1995 the phrase "open source" did not yet exist
-(even though GPL and MIT licences were spreading), and the distribution terms of these packages varied. Internet Force used the
-UNIX/Internet model of public protocol standards and freely distributable
-network software, downloading and building it locally.
+(even though GPL and MIT licences were spreading), and the distribution terms of these packages varied. Internet Force adopted the
+UNIX/Internet model based on public protocol standards and freely distributable
+network software.
+On the operational side, I always loaded and compiled the necessary software locally on DVLP.
 
 ## Operating systems and firmware
 

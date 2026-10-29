@@ -10,7 +10,7 @@
 
 The Hypertxt files recovered in this repository **are not the complete original development archive** of the guide.
 
-Hypertxt was developed on the author’s personal PC, with **Windows in a dual-boot configuration**. The complete project archive lived on the Windows partition, also because the compilers required to build the WinHelp files operated in that environment at the time.
+I developed Hypertxt on my personal PC, with **Windows in a dual-boot configuration**. The complete project archive lived on the Windows partition, also because the compilers required to build the WinHelp files operated in that environment at the time.
 
 That primary archive was lost over the years.
 

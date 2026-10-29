@@ -117,8 +117,8 @@ diversi della ricostruzione:
 - i materiali societari mostrano sedi, ruoli e passaggi giuridici;
 - Usenet mostra persone e account che usavano la rete pubblicamente;
 - Wayback Machine conserva frammenti visibili delle fasi successive;
-- la testimonianza diretta ricostruisce decisioni, procedure e sequenze che non
-  sempre hanno lasciato un documento formale.
+- la mia testimonianza diretta ricostruisce decisioni, procedure e sequenze che non
+  sempre hanno lasciato un documento formale; dove presenti, le testimonianze di altri partecipanti sono indicate separatamente.
 
 Il valore dell'insieme sta nella convergenza di fonti di natura diversa, non
 nell'obbligo che ogni singolo dettaglio storico debba avere una copia identica

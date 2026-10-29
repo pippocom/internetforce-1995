@@ -52,8 +52,8 @@ arrangement for a console/management path at a remote site.
 
 The Gorgonzola POP was also the context of the later **Pointest** phase, distinct
 from the Internet Force POP described above. The
-[`pointest/`](pointest/) directory holds the material with which the autonomous
-service infrastructure was built:
+[`pointest/`](pointest/) directory holds the material with which I built the autonomous
+service infrastructure:
 
 - `CISCO/2511BIGI.TXT` — Cisco 2511 configuration;
 - `Linux/named/` — BIND/DNS;

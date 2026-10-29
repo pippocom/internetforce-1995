@@ -85,7 +85,7 @@ modifiche successive
 espansioni 1996
 ```
 
-Per questo un `inetd.conf` che abbiamo recuperato **non** va letto automaticamente come
+Per questo un `inetd.conf` recuperato **non** va letto automaticamente come
 "la configurazione definitiva" o come l'esposizione finale dopo l'hardening. Può
 fotografare una fase precedente, una configurazione base poi modificata o uno
 snapshot intermedio. La prassi operativa era però chiara: le macchine
@@ -619,8 +619,8 @@ Spesso la sicurezza nasceva proprio dalla combinazione di più strumenti.
 
 ### Tutti i servizi erano chrooted?
 
-No, almeno non sulla base dei reperti disponibili. Abbiamo evidenza diretta del
-chroot nel mondo FTP e del confinamento degli account. Per altri daemon come
+No, almeno non sulla base dei reperti disponibili. I reperti documentano direttamente il
+chroot nel mondo FTP e il confinamento degli account. Per altri daemon come
 BIND, Sendmail, NCSA HTTPd, XTACACS, POP3 o IMAP non abbiamo materiale
 sufficiente per affermare che **ogni singolo servizio** girasse sempre dentro un
 chroot.

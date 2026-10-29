@@ -84,7 +84,7 @@ the authoring tools off the production machines.
 ## Remote and secure access
 
 In the first phase, administration used telnet and rlogin/rsh plus FTP over
-dedicated firewall rules. In 1996 **SSH and SCP** were introduced and became
+dedicated firewall rules. In 1996 I introduced **SSH and SCP**, which became
 the standard way to reach the servers and move files.
 
 ## Representative configuration

@@ -19,7 +19,7 @@ DDS-2 can read DDS-1 and DDS-3 can read DDS-2 and DDS-1; with DDS-4, backward co
 
 During this stage I used **DeepSeek** as a technical aid to reconstruct DDS-generation compatibility and identify a cautious choice of drive to rent. AI was used to support research and troubleshooting, not as a source of the recovered historical data.
 
-In 2026 the tape was therefore read with a rented USB DAT drive connected to a Linux machine.
+In 2026 I therefore read the tape with a rented USB DAT drive connected to a Linux machine.
 
 ## The logical format: GNU tar on SunOS
 
@@ -73,7 +73,7 @@ Text files, source code, scripts, HTML, configuration files, mail and documentat
 
 The situation is different for **platform-dependent binary files**. A SunOS/SPARC executable cannot run directly on a Linux x86-64 machine because it targets a different CPU architecture and ABI; simply “swapping the bytes” would not make it executable.
 
-Endianness can instead matter for databases, application binary files or serialised structures that stored numeric values directly in the machine's native representation. In those cases, dedicated tools, emulators or conversion scripts may be required. Some analysis scripts and procedures used during recovery were developed with AI assistance.
+Endianness can instead matter for databases, application binary files or serialised structures that stored numeric values directly in the machine's native representation. In those cases, dedicated tools, emulators or conversion scripts may be required. During the recovery I developed some analysis scripts and procedures with AI assistance.
 
 It is also important to remember that the DAT contained the backup of the Linux workstation `marco`, but also included archives and material created on or passed through the Sun **DVLP** environment. Binary files on the tape did not therefore necessarily all belong to the same platform.
 

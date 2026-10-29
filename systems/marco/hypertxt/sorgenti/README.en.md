@@ -8,7 +8,7 @@ The HYPERTXT/ folder preserves the original directory structure and filenames, i
 
 It also includes distribution files and reference materials used during development.
 
-This is a historical snapshot, not a modern, ready-to-build project. WinHelp is no longer supported by modern operating systems. The short, uppercase filenames reflect the DOS 8.3 naming convention, which also made it possible to share the files on floppy disks. Unfortunately, one of the original source files, GERGO_1.RTF, is missing.
+This is a historical snapshot, not a modern, ready-to-build project. WinHelp is no longer supported by modern operating systems. The short, uppercase filenames reflect the DOS 8.3 naming convention, which also made it possible to share the files on floppy disks. I noticed that the archive is unfortunately missing the file GERGO_1.RTF.
 
 All files are preserved in their original form, without modifications. They offer a glimpse into how a Windows hypertext guide was developed in the 1990s, including the original .BAT script showing the commands used to build it.
 

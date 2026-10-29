@@ -143,8 +143,8 @@ infrastructure and its recovery thirty years later.
 
 ## Timeline
 
-- **1995 — design and launch.** Xpert UNIX Systems (Israel) assists with the
-  design; Marco trains in Tel Aviv; the Sun hardware, the private backbone
+- **1995 — design and launch.** Xpert UNIX Systems (Israel) is the prime contractor for the
+  design; Marco trains between Milan and Tel Aviv; the Sun hardware, the private backbone
   and the IDT link are built. NCSA HTTPd, BIND 4, Sendmail 8.6.12, XTACACS.
   Four POPs. The international link starts at 128 kbit/s and is later
   upgraded to 2 Mbit/s.

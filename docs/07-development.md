@@ -87,7 +87,7 @@ siti pubblici e gli strumenti di authoring fuori dalle macchine di produzione.
 ## Accesso remoto e sicuro
 
 Nella prima fase l'amministrazione usava telnet e rlogin/rsh più FTP su regole
-firewall dedicate. Nel 1996 furono introdotti **SSH e SCP**, che divennero il
+firewall dedicate. Nel 1996 introdussi **SSH e SCP**, che divennero il
 modo standard per raggiungere i server e spostare file.
 
 ## Configurazione rappresentativa

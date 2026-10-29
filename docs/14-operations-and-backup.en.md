@@ -52,8 +52,8 @@ The DAT tapes used for operational backups belonged to Internet Force and
 remained with the company; they are therefore not part of the historical
 archive available today.
 
-A different DAT cassette did, however, “remain” with the author. It contained
-a copy of his Linux workstation `marco` made at the time. In 2026 he rented a (partially) compatible
+A different DAT cassette did, however, "remain" with me. It contained
+a copy of my Linux workstation `marco` made at the time. In 2026 I rented a partially compatible
 DAT drive to recover its contents. The tape proved to be an
 important source of additional configurations, documentation, mail and source
 code.

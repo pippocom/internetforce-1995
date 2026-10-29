@@ -43,8 +43,7 @@ founded in Cagliari in January **1998**, launched its free **FreeNet** service i
 like-for-like comparison - the market, regulation and commercial model had
 changed by then - but it shows how quickly the scale of the sector changed.
 
-**Marco Iannacone's** retrospective reading, as author and curator of the archive,
-is that **Internet Force closed too early**: the partners judged the economics of
+**My retrospective reading** is that **Internet Force closed too early**: the partners judged the economics of
 the business while the Italian market was still tiny, and the company left before
 the market revealed the scale it would reach shortly afterwards.
 
@@ -195,13 +194,12 @@ USERS and DATA, was disconnected.
 
 The machine was then **personally transported by Marco to Enter**.
 
-Once there:
-
-1. `marco` was connected and powered up on the Enter network;
-2. its IP address was changed to fit the new provider's address space;
-3. the virtual IP addresses needed by the Web services were configured;
-4. DNS records were changed;
-5. services were restarted and checked.
+In the roughly two hours of the final shutdown:
+1. I connected and powered up `marco` on the Enter network;
+2. I changed its IP address to fit the new provider's address space;
+3. I configured the virtual IP addresses needed by the Web services;
+4. I changed the DNS records;
+5. I restarted and checked the services.
 
 The documented main address for `marco` on the Enter network is:
 

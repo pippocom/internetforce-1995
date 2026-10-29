@@ -194,7 +194,9 @@ This direct relationship is part of the explanation of how a small Italian ISP o
 
 ## 5. A technology installed, but an advantage never commercialised
 
-The IP accounting solution was appreciated by the shareholders and installed.
+The shareholders appreciated the IP accounting solution and decided to adopt it. I carried out the technical installation together with Xpert UNIX Systems.
+
+XACCT was then a very new technology and there was not enough documentation available online for me to study how it worked independently: the people at Xpert explained it to me directly while we installed and configured the solution together.
 
 Internet Force could therefore track IP usage, but did not take the last step: **it did not link that data to customer billing**.
 

@@ -19,14 +19,12 @@ Recovered documentation nevertheless preserves traces of the procedures themselv
 
 ## The DAT cassette that “remained”
 
-One separate DAT cassette did “remain”: it contained a copy of the Linux
-workstation **`marco`** made at the time, and the cassette survived for almost
+One separate DAT cassette had "remained" with me; it contained a copy of my **`marco`** workstation made at the time, and the cassette survived for almost
 thirty years. The original tape had been written with a Sun DAT drive connected
 by SCSI to **DVLP**, the SunOS system used for backups.
 
-In 2026 it was read with a rented USB DAT drive connected to a Linux machine.
-The content was extracted with `tar`, also using `gzip` where the compression
-had to be identified or tested. Recovery produced substantial additional
+In 2026 I read the cassette with a USB DAT drive I had rented, connected to a Linux machine.
+I extracted the content with `tar`, also using `gzip` where I needed to identify or verify the compression. Recovery produced substantial additional
 material: configuration copies, documentation, mail, source code, utilities and
 personal working files that were absent from the first archive set.
 
@@ -41,8 +39,8 @@ zero-byte, and some appear as `.tar.Z` archives that could no longer be opened;
 in some cases the material emerged only as damaged binary or text blobs, or with
 unhelpful names.
 
-To interpret these fragments - headers, strings and possible file structures -
-**DeepSeek** was sometimes used as an aid through **OpenCode**. The AI-assisted
+To interpret these fragments — headers, strings and possible file structures —
+I sometimes used **DeepSeek** through **OpenCode** as an aid. The AI-assisted
 interpretation was used to understand and identify what had been recovered, decode and convert to readable format or extract partial surviving files.
 It was never used to silently fabricate missing historical files.
 
@@ -83,4 +81,4 @@ together with the Internet Force 1995–1996 repository and the reconstruction d
 
 ## Reconstruction inputs
 
-The reconstruction reorganised into this repository material that came from several input archives supplied by the curator; the original wrappers are not published. The technical guides were drafted by comparing them against the files in the curator's private reference archive, which is not published.
+For this reconstruction I reorganised material that came from several input archives into the repository; the original wrappers are not published. I drafted the technical guides by comparing them against the files in my private reference archive, which is not published.

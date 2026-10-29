@@ -8,7 +8,7 @@ Questa directory raccoglie i sorgenti originali superstiti di **MaISoft Hypertxt
 La cartella `HYPERTXT/` conserva la struttura e i nomi dei file storici: progetti di compilazione WinHelp (`.HPJ`), testi e marcatori (`.RTF`), immagini e icone, documentazione, script e materiali ausiliari.
 Sono presenti anche elementi di distribuzione e riferimenti utilizzati durante lo sviluppo.
 
-Si tratta di uno **snapshot storico**, non di un progetto moderno pronto per essere compilatoi (per altro il formato winhelp non risulta più supportato da nessun sistema operativo recente). I nomi dei files in maiuscolo e con nomi sintetici supportano il formato 8.3 dei file DOS in modo che potessero essere condivisi su floppy disk. Ci siamo accorti che nell'archivio manca purtroppo il file GERGO_1.RFT.
+Si tratta di uno **snapshot storico**, non di un progetto moderno pronto per essere compilatoi (per altro il formato winhelp non risulta più supportato da nessun sistema operativo recente). I nomi dei files in maiuscolo e con nomi sintetici supportano il formato 8.3 dei file DOS in modo che potessero essere condivisi su floppy disk. Mi sono accorto che nell'archivio manca purtroppo il file GERGO_1.RTF.
 
 Quanto qui riprodotto snon i file originali che non sono stati modificati e che possono essere utili per capire come veniva realizzata una guida ipertestuale in formato winhelp (è presente anche il file .BAT dove appaiono i comandi che venivano usati)
 

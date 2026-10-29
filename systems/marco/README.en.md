@@ -32,8 +32,8 @@ later used in the transition period after Internet Force.
 - it later became the daily administration, test and monitoring (tkined/SNMP)
   workstation, and hosted personal PGP use and occasional working copies,
   including irregular Hypertxt snapshots;
-- during the closure of Internet Force it was reconfigured as the
-  server which made possible the operational continuity in the migration to Enter
+- during the closure of Internet Force I reconfigured the `marco` workstation as the
+  server, making possible the operational continuity in the migration to Enter
   (it became the server with both USERS and DATA functionalities)
 
 Software for the Sun servers continued to be built in the Sun environment

@@ -19,9 +19,9 @@ La documentazione recuperata conserva comunque tracce delle procedure stesse, co
 
 ## La cassetta DAT “rimasta”
 
-All’autore è invece “rimasta” una singola cassetta DAT sulla quale, all’epoca, era stata effettuata una copia della workstation **`marco`**; la cassetta è sopravvissuta per quasi trent’anni. Il nastro originale era stato scritto con un’unità DAT Sun collegata via SCSI a **DVLP**, il sistema SunOS usato per i backup.
+Mi era invece "rimasta" una singola cassetta DAT sulla quale, all'epoca, avevo effettuato una copia della workstation **`marco`**; la cassetta è sopravvissuta per quasi trent'anni. Il nastro originale era stato scritto con un’unità DAT Sun collegata via SCSI a **DVLP**, il sistema SunOS usato per i backup.
 
-Nel 2026 è stata letta con un drive DAT USB noleggiato, collegato a una macchina Linux. Il contenuto è stato estratto con `tar`, usando anche `gzip` dove occorreva identificare o verificare la compressione. Il recupero ha restituito numerosi materiali aggiuntivi: copie di configurazioni, documentazione, posta, sorgenti, utility e file personali di lavoro che non erano presenti nel primo insieme di backup già disponibile.
+Nel 2026 ho letto la cassetta con un drive DAT USB che avevo noleggiato, collegato a una macchina Linux. Ho estratto il contenuto con `tar`, usando anche `gzip` dove occorreva identificare o verificare la compressione. Il recupero ha restituito numerosi materiali aggiuntivi: copie di configurazioni, documentazione, posta, sorgenti, utility e file personali di lavoro che non erano presenti nel primo insieme di backup già disponibile.
 
 Per i dettagli tecnici sulla scelta del drive DDS, sull'uso storico di **GNU tar** su SunOS, sul blocking dei record e sulla lettura del nastro da Linux, vedere [Recuperare nel 2026 un DAT DDS-1 scritto nell'ambiente SunOS](dat-tape-recovery.md).
 
@@ -35,8 +35,8 @@ archivi `.tar.Z` che non è più stato possibile aprire; in alcuni casi il
 materiale è emerso solo come frammenti binari o testuali danneggiati o con nomi
 poco significativi.
 
-Per interpretare questi frammenti - header, stringhe e possibili strutture dei
-file - è stato talvolta usato come ausilio **DeepSeek** tramite **OpenCode**.
+Per interpretare questi frammenti — header, stringhe e possibili strutture dei
+file — ho usato talvolta **DeepSeek** tramite **OpenCode** come ausilio.
 L’interpretazione assistita dall’IA è servita a capire e identificare quanto
 recuperato, a modificarne il formato per renderlo leggibile o a estrarre documenti parziali,
 mai per fabbricare silenziosamente file storici mancanti.
@@ -78,4 +78,4 @@ insieme al repository Internet Force 1995–1996 e ai dati della ricostruzione. 
 
 ## Input della ricostruzione
 
-La ricostruzione ha riorganizzato in questo repository materiale confluito da alcuni archivi di input forniti dal curatore; i wrapper originali non sono pubblicati. Le guide tecniche sono state redatte confrontandole con i file dell’archivio di riferimento privato del curatore, che non è pubblicato.
+Per questa ricostruzione ho riorganizzato nel repository materiale confluito da alcuni archivi di input; i wrapper originali non sono pubblicati. Ho redatto le guide tecniche confrontandole con i file del mio archivio di riferimento privato, che non è pubblicato.

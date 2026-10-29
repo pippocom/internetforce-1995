@@ -76,7 +76,7 @@ The system could observe, classify and attribute IP-network use, but **Internet 
 
 This matters because the ISP market of the period mainly sold access, generally on a flat ISP-subscription basis. Xpert's technology opened the possibility of assigning economic value to actual network use.
 
-The technical capability was installed. The commercial pricing model was not deployed.
+The shareholders decided to adopt the technical capability, which I installed together with Xpert UNIX Systems. The commercial pricing model was not deployed, however.
 
 See [From Xpert to XACCT](25-xpert-ip-accounting-xacct.en.md).
 

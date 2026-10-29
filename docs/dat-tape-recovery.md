@@ -19,7 +19,7 @@ DDS-2 può leggere DDS-1 e DDS-3 può leggere DDS-2 e DDS-1; con DDS-4 la retroc
 
 Durante questa fase utilizzai **DeepSeek** come supporto tecnico per ricostruire le compatibilità fra generazioni DDS e individuare una scelta prudente del drive da noleggiare. L'IA fu usata come ausilio alla ricerca e al troubleshooting, non come fonte dei dati storici recuperati.
 
-Nel 2026 il nastro fu quindi letto con un drive DAT USB noleggiato e collegato a una macchina Linux.
+Nel 2026 lessi quindi il nastro con un drive DAT USB noleggiato e collegato a una macchina Linux.
 
 ## Il formato logico: GNU tar su SunOS
 
@@ -73,7 +73,7 @@ File di testo, sorgenti, script, HTML, configurazioni, posta e documentazione po
 
 La situazione è diversa per i **file binari dipendenti dalla piattaforma**. Un eseguibile SunOS/SPARC non può essere eseguito direttamente su una macchina Linux x86-64 perché utilizza un'altra architettura di CPU e un'altra ABI; non è sufficiente semplicemente “invertire i byte”.
 
-L'endianness può invece diventare rilevante per database, file binari applicativi o strutture serializzate che memorizzavano direttamente valori numerici nel formato nativo della macchina. In questi casi possono servire strumenti specifici, emulatori oppure script di conversione. Alcuni script e procedure di analisi usati durante il recupero sono stati sviluppati con assistenza dell'IA.
+L'endianness può invece diventare rilevante per database, file binari applicativi o strutture serializzate che memorizzavano direttamente valori numerici nel formato nativo della macchina. In questi casi possono servire strumenti specifici, emulatori oppure script di conversione. Durante il recupero ho sviluppato, con assistenza dell'IA, alcuni script e procedure di analisi.
 
 È inoltre importante ricordare che il DAT conteneva il backup della workstation Linux `marco`, ma includeva anche archivi e materiali creati o transitati attraverso l'ambiente Sun **DVLP**. Non tutti i file binari presenti sul nastro appartenevano quindi necessariamente alla stessa piattaforma.
 

@@ -44,8 +44,8 @@ Messaggio Google Groups:
 
 <https://groups.google.com/g/alt.cellular-phone-tech/c/2IOGEvXaQwA/m/8CqAQtnX0TYJ>
 
-La schermata mostra l'indirizzo pubblico `ianna@iol.it`. Secondo la testimonianza
-del curatore, l'indirizzo era in uso dal 1994 e veniva spesso usato nei
+La schermata mostra l'indirizzo pubblico `ianna@iol.it`. Usavo quell'indirizzo
+dal 1994 e lo impiegavo spesso nei
 newsgroup pubblici anche per evitare di esporre sistematicamente le caselle
 principali.
 

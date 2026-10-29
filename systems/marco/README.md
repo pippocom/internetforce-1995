@@ -32,7 +32,7 @@ successivamente fu usata anche nel periodo di transizione dopo Internet Force.
 - divenne poi la workstation quotidiana di amministrazione, test e monitoraggio
   (tkined/SNMP), e ospitò l'uso personale di PGP e copie occasionali di lavoro,
   inclusi snapshot irregolari di Hypertxt;
-- durante la chiusura di Internet Force fu riconfigurata come server che rese possibile
+- durante la chiusura di Internet Force riconfigurai la workstation `marco` come server, rendendo possibile
  la continuità operativa nella migrazione verso Enter (divenne il server con a bordo sia
  le funzionalità di USERS che quelle di DATA) .
 

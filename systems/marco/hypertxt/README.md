@@ -8,10 +8,9 @@
 > Licenza: [CC BY 4.0](../../../LICENSE)
 
 **Hypertxt** era un prodotto di authoring/documentazione (pubblicato sul Web come
-*MaISoft Hypertxt*) sviluppato dall'autore dell'archivio sul proprio PC
-personale, con **Windows in dual boot**. Era un progetto personale, non un
+*MaISoft Hypertxt*) che sviluppavo sul mio PC personale, con **Windows in dual boot**. Era un progetto personale, non un
 servizio dell'infrastruttura Internet Force, ma sopravvive in parte proprio perché
-una cassetta DAT della workstation `marco` fu conservata e recuperata nel 2026.
+conservai una cassetta DAT della workstation `marco` e nel 2026 ne recuperai il contenuto.
 
 ## Che cosa è sopravvissuto, e perché solo in parte
 

@@ -126,10 +126,10 @@ browser**
 What the browser saw was still HTML. But that document might never have
 existed as a file.
 
-Internet Force used and developed CGI programs to add interactivity to
-websites; some of the surviving scripts and related information are
-documented in the [recovered Web software
-documentation](../systems/data/web/cgi-and-web-software.en.md).
+To add interactivity to websites I developed and used CGI programs; Internet
+Force used them as part of the Web environment it offered and managed. Some of
+the surviving scripts and related information are documented in the [recovered
+Web software documentation](../systems/data/web/cgi-and-web-software.en.md).
 
 ### PHP/FI: the program enters the page
 
@@ -145,7 +145,7 @@ PHP initially began as a collection of CGI programs. In 1995, FI
 PHP/FI combined those ideas into what was increasingly becoming a
 genuine Web scripting language.
 
-Internet Force installed **PHP/FI in March 1996**, initially using it as
+In March 1996 I installed **PHP/FI**, initially using it as
 CGI. In that model the Web server recognised pages requiring processing
 and passed them to the PHP/FI program; the parser executed the embedded
 instructions and produced the HTML finally sent to the browser.
@@ -185,7 +185,7 @@ embedded in the page → logic integrated into the Web server**
 Internet Force passed through precisely this transition. Its Web service
 began with **NCSA HTTPd** and manually authored HTML pages; CGI programs
 were developed when interactivity was needed; **PHP/FI** arrived in
-March 1996; NCSA HTTPd was later replaced by **Apache**, and the Web
+March 1996; I later replaced NCSA HTTPd with **Apache**, and the Web
 environment continued evolving towards applications backed by
 persistent data.
 
@@ -197,8 +197,7 @@ continued to receive HTML: what was changing radically was what happened
 
 ## How Internet Force implemented it
 
-- Pages were edited, uploaded to **DVLP** for testing, then released to **USERS**
-  (personal pages) or **DATA** (customer/virtual sites): see
+- The editorial team prepared and edited content and pages, which were uploaded to DVLP for testing. I checked their completeness and functionality and then released them to USERS (personal pages) or DATA (customer/virtual sites): see
   [Development and DVLP](07-development.en.md).
 - The CGI mapping was defined in the NCSA HTTPd configuration (`srm.conf`): the
   script directory and its public alias.

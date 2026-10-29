@@ -48,8 +48,7 @@ di utenti. Non si tratta di un confronto aziendale diretto - nel frattempo erano
 cambiati mercato, regole e modello commerciale - ma mostra quanto rapidamente
 cambiasse la scala del settore.
 
-La lettura retrospettiva di **Marco Iannacone**, autore e curatore dell'archivio,
-è che **Internet Force chiuse troppo presto**: i soci valutarono l'economia del
+La mia lettura retrospettiva è che **Internet Force chiuse troppo presto**: i soci valutarono l'economia del
 business quando il mercato italiano era ancora minuscolo, e l'azienda ne uscì
 prima che il mercato rivelasse la scala che avrebbe raggiunto di lì a poco.
 
@@ -201,13 +200,12 @@ da USERS e DATA, venne scollegata.
 
 La macchina fu quindi **trasportata personalmente da Marco presso Enter**.
 
-Una volta arrivata:
-
-1. `marco` venne collegata e riaccesa sulla rete Enter;
-2. il suo indirizzo IP venne cambiato per adattarla allo spazio del nuovo provider;
-3. vennero configurati i virtual IP necessari per ospitare i diversi servizi Web;
-4. furono modificati i record DNS;
-5. vennero riattivati e verificati i servizi.
+Nelle circa due ore dello shutdown finale:
+1. collegai e riaccesi `marco` sulla rete Enter;
+2. cambiai il suo indirizzo IP per adattarlo allo spazio del nuovo provider;
+3. configurai i virtual IP necessari per ospitare i diversi servizi Web;
+4. modificai i record DNS;
+5. riattivai e verificai i servizi.
 
 Il nuovo indirizzo principale documentato per `marco` nella rete Enter è:
 

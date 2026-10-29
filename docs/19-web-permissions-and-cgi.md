@@ -130,9 +130,9 @@ Una URL non identificava quindi più necessariamente un documento:
 Quello che il browser vedeva rimaneva HTML. Ma quel documento poteva
 non essere mai esistito come file.
 
-Internet Force utilizzò e sviluppò CGI proprio per aggiungere
-interattività ai siti; alcuni degli script e delle relative informazioni
-sopravvivono nella [documentazione del software Web
+Per aggiungere interattività ai siti sviluppai e utilizzai CGI; Internet Force li
+impiegava come parte dell'ambiente Web offerto e gestito. Alcuni degli script e
+delle relative informazioni sopravvivono nella [documentazione del software Web
 recuperato](../systems/data/web/cgi-and-web-software.md).
 
 ### PHP/FI: il programma entra nella pagina
@@ -149,7 +149,7 @@ PHP nacque inizialmente proprio come una raccolta di programmi CGI. Nel
 nell'HTML; nel 1996 PHP/FI riunì quelle idee in quello che stava ormai
 diventando un vero linguaggio di scripting per il Web.
 
-Internet Force installò **PHP/FI nel marzo 1996**, inizialmente
+Nel marzo 1996 installai **PHP/FI**, inizialmente
 utilizzandolo come CGI. In quel modello il Web server riconosceva le
 pagine da elaborare e le passava al programma PHP/FI; il parser eseguiva
 le istruzioni incorporate e produceva l'HTML che veniva infine inviato
@@ -190,7 +190,7 @@ server**
 Internet Force attraversò proprio questa transizione. Il Web partì con
 **NCSA HTTPd** e pagine HTML preparate manualmente; quando serviva
 interattività venivano sviluppati CGI; nel marzo 1996 arrivò **PHP/FI**;
-successivamente NCSA HTTPd fu sostituito da **Apache** e l'ambiente Web
+successivamente sostituii NCSA HTTPd con **Apache** e l'ambiente Web
 continuò a evolvere verso applicazioni collegate anche a dati
 persistenti.
 
@@ -202,8 +202,7 @@ cambiando radicalmente era ciò che succedeva **prima, sul server**.
 
 ## Come lo implementava Internet Force
 
-- Le pagine venivano modificate, caricate su **DVLP** per il test e poi rilasciate
-  su **USERS** (pagine personali) o **DATA** (siti clienti/virtuali): vedi
+- Il team editoriale preparava e modificava i contenuti e le pagine, che venivano caricate su DVLP per il test. Io ne verificavo completezza e funzionamento e provvedevo poi al rilascio su USERS (pagine personali) o DATA (siti clienti/virtuali): vedi
   [Sviluppo e DVLP](07-development.md).
 - La mappatura CGI era definita nella configurazione NCSA HTTPd (`srm.conf`): la
   directory degli script e il loro alias pubblico.

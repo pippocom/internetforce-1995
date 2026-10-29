@@ -13,9 +13,9 @@ Internet Force, con le versioni salvate nell'archivio (quando le abbiamo ritrova
 
 Una nota sulla terminologia: nel 1995 la locuzione "open source" non esisteva
 ancora (anche se licenze GPL e MIT stavano diffondendosi), e i termini di distribuzione di questi pacchetti variavano.
-Internet Force usava il modello UNIX/Internet di standard di protocollo pubblici
-e software di rete liberamente distribuibile, scaricandolo e compilandolo
-localmente.
+Internet Force adottava il modello UNIX/Internet basato su standard di protocollo
+pubblici e software di rete liberamente distribuibile.
+Sul lato operativo caricavo e compilavo sempre io localmente il software necessario su DVLP.
 
 ## Sistemi operativi e firmware
 

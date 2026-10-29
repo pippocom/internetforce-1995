@@ -10,7 +10,7 @@
 
 I file Hypertxt recuperati nel repository **non costituiscono l’archivio di sviluppo completo originale** della guida.
 
-Hypertxt veniva sviluppato sul PC personale dell’autore, con **Windows in dual boot**. Era proprio sulla partizione Windows che risiedeva l’archivio di progetto completo della guida, anche perché all’epoca i compilatori necessari per generare i file WinHelp funzionavano in quell’ambiente.
+Sviluppavo Hypertxt sul mio PC personale, con **Windows in dual boot**. Era proprio sulla partizione Windows che risiedeva l’archivio di progetto completo della guida, anche perché all’epoca i compilatori necessari per generare i file WinHelp funzionavano in quell’ambiente.
 
 Quell’archivio principale è andato perduto nel corso degli anni.
 
