@@ -26,6 +26,17 @@ The operational responsibilities also include:
 
 The document allows Iannacone's operational role and the skills involved in building and running the Internet Force infrastructure to be reconstructed.
 
+## Business card
+
+The same folder preserves a photograph of
+[Marco Iannacone's original business card](marco-iannacone-business-card-1995.jpeg),
+which gives the title **“system administrator”**, the Via Plana 20 address and
+the e-mail address `ianna@internetforce.com`.
+
+The card documents the shorter form of the role used in contemporary company
+material; the January 1996 agreement later formalizes its scope as
+**Senior System and Network Administrator**.
+
 ## Timeline
 
 - **1995** — collaboration already under way during the construction and launch of the provider;

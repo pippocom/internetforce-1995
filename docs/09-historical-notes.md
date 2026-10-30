@@ -15,11 +15,11 @@ servizio si è evoluto.
 ## Xpert UNIX Systems e il periodo di formazione a Tel Aviv
 
 Il progetto tecnico di Internet Force fu sviluppato con **Xpert UNIX Systems**,
-una società di consulenza UNIX israeliana, un particolare ruolo ebbe  **Yahel Ben-David**, che
-fece da principale mentore tecnico di Marco Iannacone durante il periodo di
-build e formazione. Marco trascorse circa sei mesi a Tel Aviv mentre
-l'infrastruttura italiana, il collegamento internazionale e l'hardware Sun
-venivano preparati.
+una società di consulenza UNIX israeliana; un particolare ruolo ebbe
+**Yahel Ben-David**, che fece da principale mentore tecnico di Marco Iannacone
+durante il periodo di build e formazione. Marco trascorse circa sei mesi a Tel
+Aviv mentre l'infrastruttura italiana, il collegamento internazionale e
+l'hardware Sun venivano preparati.
 
 Di quel periodo sopravvive una notevole quantità di materiale di riferimento.
 Fu copiato presso Xpert e riportato a casa come riferimento, e mostra il tipo di
@@ -33,6 +33,28 @@ Il rapporto con Xpert continuò dopo il lancio: la rule base originale del
 firewall consente a `xpert.com` accesso talk e remote-login a DVLP e alla
 workstation di Marco, che è il percorso di supporto usato durante la prima fase
 di build.
+
+## Net Way, IDT e l'ingresso di Xpert nel progetto
+
+Una presentazione contemporanea preparata da **Steve Maoz / Net Way** il
+21 settembre 1995 aiuta a ricostruire la composizione iniziale del progetto.
+Una delle slide rappresenta Internet Force come un insieme di componenti
+coordinati da Net Way: **Xpert** è associata all'Operating System, **IDT** alla
+Internet Connectivity, Telecom alla connettività locale e altri fornitori alle
+restanti componenti.
+
+Secondo la mia testimonianza diretta, Steve Maoz era il contatto commerciale di
+IDT attraverso la propria azienda Net Way. Fu lui a portare **Xpert UNIX
+Systems** nel progetto come **prime contractor tecnico**, dopo aver già lavorato
+con Xpert nella realizzazione di ISP in Israele e Nord Africa.
+
+La presentazione conserva inoltre uno schedule di avvio che colloca nello stesso
+piano consegna dell'hardware UNIX, installazione del sistema operativo,
+installazione software e training. Lo schedule viene usato qui come
+documentazione del **piano previsto nel settembre 1995**, non come prova che
+ogni singola attività sia stata completata esattamente nella data indicata.
+
+→ [Presentazione Net Way / Steve Maoz, 21 settembre 1995](../artifacts/company/bp/README.md)
 
 ## Xpert: le persone dietro una parte dell'infrastruttura
 
@@ -117,6 +139,9 @@ Andrea Maffini), conservato in
 servizi, l'hosting Web e le tecnologie di posta, e documenta anche una
 sperimentazione VRML (Web 3D) del periodo.
 
+I comunicati stampa societari forniti da Pascal Schait aggiungono una fonte
+primaria contemporanea sulla clientela Web e sull'attività commerciale.
+
 ## Una ricostruzione pubblicata insieme al repository
 
 Nell'ottobre 2026 Marco Iannacone ha pubblicato su Codemotion l'articolo
@@ -131,6 +156,8 @@ italiana.
 - **Inizio 1995** — formazione e build a Tel Aviv e Milano; preparati hardware
   Sun, backbone privato e collegamento IDT; raccolto il materiale di
   riferimento Xpert.
+- **21 settembre 1995** — la presentazione Net Way / Steve Maoz documenta
+  organigramma, modello funzionale proposto e schedule di installazione.
 - **1995** — lancio. FireWall-1 centrale, DATA e USERS; quattro POP (Milano,
   Pesaro, Palermo, Gorgonzola) con 16 modem ciascuno; NCSA HTTPd, BIND 4,
   Sendmail 8.6.12, XTACACS; collegamento internazionale a 128 kbit/s.

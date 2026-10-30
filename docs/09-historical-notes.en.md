@@ -15,8 +15,8 @@ evolved.
 ## Xpert UNIX Systems and the Tel Aviv training period
 
 The technical design of Internet Force was developed with **Xpert UNIX
-Systems**, an Israeli UNIX consultancy company; a particular role was played by **Yahel
-Ben-David**, who acted as Marco Iannacone's principal technical mentor
+Systems**, an Israeli UNIX consultancy company; a particular role was played by
+**Yahel Ben-David**, who acted as Marco Iannacone's principal technical mentor
 during the build and training period. Marco spent roughly six months in Tel
 Aviv while the Italian infrastructure, the international link and the Sun
 hardware were being prepared.
@@ -32,6 +32,28 @@ configuration; it is reference provenance, not Internet Force configuration.
 The Xpert relationship continued after launch: the firewall's original rule
 base allows `xpert.com` talk and remote-login access to DVLP and Marco's
 workstation, which is the support path used during the early build.
+
+## Net Way, IDT and Xpert's entry into the project
+
+A contemporary presentation prepared by **Steve Maoz / Net Way** on
+21 September 1995 helps reconstruct the initial composition of the project.
+One slide represents Internet Force as a set of components coordinated by Net
+Way: **Xpert** is associated with the Operating System, **IDT** with Internet
+Connectivity, Telecom with local connectivity, and other suppliers with the
+remaining components.
+
+According to my direct first-person testimony, Steve Maoz was IDT's commercial
+contact through his company Net Way. He brought **Xpert UNIX Systems** into the
+project as **technical prime contractor**, having previously worked with Xpert
+on ISP deployments in Israel and North Africa.
+
+The presentation also preserves a startup schedule placing UNIX hardware
+delivery, operating-system installation, software installation and training in
+the same plan. The schedule is used here as evidence of the **plan as of
+September 1995**, not as proof that every individual activity was completed on
+the exact listed date.
+
+→ [Net Way / Steve Maoz presentation, 21 September 1995](../artifacts/company/bp/README.en.md)
 
 ## Xpert: the people behind part of the infrastructure
 
@@ -115,6 +137,9 @@ Musica* (the *Prova il provider* column, by Andrea Maffini), kept in
 network, the services, Web hosting and the mail technologies, and documents an
 early VRML (3D Web) experiment of the period.
 
+The company press releases supplied by Pascal Schait add a contemporary primary
+source on Web customers and commercial activity.
+
 ## A reconstruction published with the repository
 
 In October 2026 Marco Iannacone published the Codemotion article
@@ -127,6 +152,8 @@ repository also preserves a PDF copy of the Italian edition.
 
 - **Early 1995** — training and build in Tel Aviv and Milan; Sun hardware,
   private backbone and IDT link prepared; Xpert reference material collected.
+- **21 September 1995** — the Net Way / Steve Maoz presentation documents the
+  organization chart, proposed functional model and installation schedule.
 - **1995** — launch. Central FireWall-1, DATA and USERS; four POPs (Milano,
   Pesaro, Palermo, Gorgonzola) with 16 modems each; NCSA HTTPd, BIND 4,
   Sendmail 8.6.12, XTACACS; international link at 128 kbit/s.

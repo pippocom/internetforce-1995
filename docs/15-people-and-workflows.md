@@ -92,6 +92,29 @@ non ho saputo ricostruire il modello preciso del Power Macintosh.
 
 ## 3. Ruoli tecnici e organizzativi
 
+### La struttura tecnica prevista nel settembre 1995
+
+Una presentazione di **Steve Maoz / Net Way del 21 settembre 1995**, fornita
+nel 2026 da Pascal Schait, conserva una fotografia dell'organizzazione nella
+fase di avvio. L'organigramma mostra **due Technical Directors** e,
+separatamente, Marco Iannacone come **System Administrator**.
+
+La mia testimonianza diretta identifica i due Technical Directors iniziali come
+**Pascal Schait e Maurizio Gerosa**. Successivamente Gerosa rinunciò al ruolo di
+Technical Director, rimanendo socio e mantenendo la responsabilità del parco
+macchine della LAN d'ufficio.
+
+La stessa presentazione contiene un modello organizzativo futuro nel quale
+l'area operativa viene articolata in quattro funzioni: **Office Computer/LAN,
+System, Security, Connectivity & Networking**. Il mio ruolo partì come System &
+Network Administrator; l'idea era che, con la crescita del provider e
+l'aumento del carico operativo, queste aree venissero progressivamente
+affiancate da figure più junior specializzate. Nella fase documentata dal
+repository, tuttavia, le responsabilità sistemistiche, di sicurezza e di rete
+del provider rimasero concentrate su di me.
+
+→ [Presentazione Net Way / Steve Maoz, 21 settembre 1995](../artifacts/company/bp/README.md)
+
 ### Pascal --- direzione IT
 
 `pascal` era utilizzato dal **direttore IT**. Il ruolo derivava da

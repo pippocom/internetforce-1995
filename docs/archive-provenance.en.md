@@ -58,14 +58,25 @@ Where useful, a note may describe the state of a file - fully recovered, only pa
 
 ## Material preserved by other participants
 
-The archive also continues to grow through original material preserved by people who took part in Internet Force. In 2026 **Pascal Schait**, a founding shareholder of the company, supplied two additional surviving items:
+The archive also continues to grow through original material preserved by people who took part in Internet Force. In 2026 **Pascal Schait**, a founding shareholder and Technical Director of the company, supplied several additional surviving items:
 
 - the **Business Price List dated 15 June 1996**, documenting the commercial offer for connectivity, static IP and LAN services, domains, DNS, Web-page production and hosting;
-- photographs of the **original Welcome Kit v1.0 packaging**, including the box, manual and physical floppies.
+- photographs of the **original Welcome Kit v1.0 packaging**, including the box, manual and physical floppies;
+- a collection of **contemporary Internet Force press releases**, with some portions redacted in the supplied copy;
+- a **Net Way / Steve Maoz presentation dated 21 September 1995**, from the design and startup phase, also with some portions redacted in the supplied copy;
+- the **ordinary shareholders' meeting minutes dated 24 September 1996**, covering the financial position, recapitalisation/liquidation alternatives and the decision to close; participant names and other details are redacted in the supplied copy.
 
-These materials are preserved respectively under
-[`artifacts/company/business-services-price-list-1996/`](../artifacts/company/business-services-price-list-1996/README.en.md)
-and [`artifacts/customer-welcome-kit/`](../artifacts/customer-welcome-kit/README.en.md).
+The materials are preserved under:
+[`artifacts/company/business-services-price-list-1996/`](../artifacts/company/business-services-price-list-1996/README.en.md),
+[`artifacts/customer-welcome-kit/`](../artifacts/customer-welcome-kit/README.en.md),
+[`artifacts/press/`](../artifacts/press/README.en.md),
+[`artifacts/company/bp/`](../artifacts/company/bp/README.en.md), and
+[`artifacts/company/bankruptcy-1996/`](../artifacts/company/bankruptcy-1996/README.en.md).
+
+Redacted portions are preserved exactly as received: the repository does not
+attempt to reconstruct or infer the censored text. Where a detail instead comes
+from Marco Iannacone's direct first-person testimony, it is identified as such
+rather than attributed to the visible content of the document.
 
 ## An evolving archive
 

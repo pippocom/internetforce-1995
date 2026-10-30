@@ -173,6 +173,28 @@ quotation**.
 
 → Original document: [Internet Force Business Price List, 15 June 1996](../artifacts/company/business-services-price-list-1996/README.en.md)
 
+### Web customers documented by the press releases
+
+The **contemporary Internet Force press releases** preserved in the archive
+document several customer Web presences, including *Cosmopolitan*, Edizioni
+Motori (*Auto Capital* and *Autopiù*), *Storia del XX Secolo*, Kraft,
+Designer Exchange, Canale Moda, Clear/Unilever and Motta.
+
+→ [Internet Force press releases](../artifacts/press/README.en.md)
+
+The document records the customers and initiatives publicly announced at the
+time. My direct first-person testimony adds the operational detail: Internet
+Force provided **both Web development and hosting** for these customers.
+
+The sites were predominantly static or presentation sites. For newspapers and
+magazines, editorial teams regularly produced and updated pages and editorial
+content. No CMS was used: authoring, material exchange, checking and publication
+to the server were separate steps in the workflow.
+
+Where dynamic functionality was required, I developed small CGI programs and,
+after PHP/FI was introduced in 1996, small PHP applications. These were not yet
+complex Web applications, but specific functions integrated into the sites.
+
 ## Virtual web hosting (VIF)
 
 ### The problem: one machine, many domains

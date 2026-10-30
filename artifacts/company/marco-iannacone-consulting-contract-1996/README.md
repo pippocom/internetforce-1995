@@ -26,6 +26,17 @@ Tra le responsabilità operative indica inoltre:
 
 Il documento consente di ricostruire il ruolo operativo di Iannacone e il tipo di competenze necessarie alla costruzione e gestione dell'infrastruttura Internet Force.
 
+## Biglietto da visita
+
+Nella stessa cartella è conservata una fotografia del
+[biglietto da visita originale di Marco Iannacone](marco-iannacone-business-card-1995.jpeg),
+che riporta il titolo **“system administrator”**, l'indirizzo di Via Plana 20 e
+l'indirizzo e-mail `ianna@internetforce.com`.
+
+Il biglietto documenta la forma sintetica del ruolo utilizzata nel materiale
+aziendale dell'epoca; il contratto del gennaio 1996 ne formalizza successivamente
+il perimetro come **Senior System and Network Administrator**.
+
 ## Cronologia
 
 - **1995** — collaborazione già in essere durante la costruzione e l'avvio del provider;

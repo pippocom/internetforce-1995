@@ -55,14 +55,25 @@ Dove serve, una nota può descrivere lo stato di un file - recuperato integralme
 
 ## Materiali conservati da altre persone
 
-L'archivio continua ad ampliarsi anche grazie a materiali originali conservati da persone che parteciparono a Internet Force. Nel 2026 **Pascal Schait**, socio fondatore della società, ha fornito due nuovi reperti:
+L'archivio continua ad ampliarsi anche grazie a materiali originali conservati da persone che parteciparono a Internet Force. Nel 2026 **Pascal Schait**, socio fondatore e Technical Director della società, ha fornito diversi reperti:
 
 - il **Listino Aziende del 15 giugno 1996**, che documenta l'offerta commerciale di connettività, IP statici e LAN, domini, DNS, realizzazione di pagine Web e hosting;
-- fotografie del **packaging originale del Welcome Kit v1.0**, inclusi confezione, manuale e floppy fisici.
+- fotografie del **packaging originale del Welcome Kit v1.0**, inclusi confezione, manuale e floppy fisici;
+- una raccolta di **comunicati stampa contemporanei** di Internet Force, con alcune parti oscurate nella copia ricevuta;
+- una **presentazione Net Way / Steve Maoz del 21 settembre 1995**, relativa alla fase di progettazione e avvio, anch'essa con alcune parti oscurate nella copia ricevuta;
+- il **verbale dell'assemblea ordinaria del 24 settembre 1996**, relativo alla situazione patrimoniale, alle alternative di ricapitalizzazione/liquidazione e alla decisione di chiusura; nella copia ricevuta i nomi dei partecipanti e altre informazioni risultano oscurati.
 
-Questi materiali sono conservati rispettivamente in
-[`artifacts/company/business-services-price-list-1996/`](../artifacts/company/business-services-price-list-1996/README.md)
-e [`artifacts/customer-welcome-kit/`](../artifacts/customer-welcome-kit/README.md).
+I materiali sono conservati nelle aree:
+[`artifacts/company/business-services-price-list-1996/`](../artifacts/company/business-services-price-list-1996/README.md),
+[`artifacts/customer-welcome-kit/`](../artifacts/customer-welcome-kit/README.md),
+[`artifacts/press/`](../artifacts/press/README.md),
+[`artifacts/company/bp/`](../artifacts/company/bp/README.md) e
+[`artifacts/company/bankruptcy-1996/`](../artifacts/company/bankruptcy-1996/README.md).
+
+Le parti oscurate vengono conservate esattamente come ricevute: il repository
+non tenta di ricostruire o inferire il testo censurato. Quando un'informazione
+deriva invece dalla testimonianza diretta di Marco Iannacone, viene indicata
+come tale e non attribuita al contenuto visibile del documento.
 
 ## Un archivio in evoluzione
 

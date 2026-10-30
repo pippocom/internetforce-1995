@@ -90,6 +90,28 @@ workstations. `salvatore`, also a power-user workstation, probably had
 
 ## 3. Technical and organizational roles
 
+### The technical structure envisaged in September 1995
+
+A **Steve Maoz / Net Way presentation dated 21 September 1995**, supplied in
+2026 by Pascal Schait, preserves a snapshot of the organization during the
+startup phase. Its organization chart shows **two Technical Directors** and,
+separately, Marco Iannacone as **System Administrator**.
+
+My direct first-person testimony identifies the two initial Technical Directors
+as **Pascal Schait and Maurizio Gerosa**. Gerosa later stepped down from the
+Technical Director role while remaining a shareholder and retaining
+responsibility for the office LAN computer fleet.
+
+The same presentation contains a proposed future organization in which
+operations are split into four functions: **Office Computer/LAN, System,
+Security, Connectivity & Networking**. My role began as System & Network
+Administrator; the plan was that, as the provider grew and the operational
+load increased, these areas would progressively gain more junior specialist
+staff. During the period documented by this repository, however, provider
+systems, security and networking responsibilities remained concentrated on me.
+
+→ [Net Way / Steve Maoz presentation, 21 September 1995](../artifacts/company/bp/README.en.md)
+
 ### Pascal --- IT management
 
 `pascal` was used by the **IT Director**. The role reflected broad

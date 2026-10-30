@@ -181,6 +181,30 @@ preventivo**.
 
 → Documento originale: [Listino Aziende Internet Force, 15 giugno 1996](../artifacts/company/business-services-price-list-1996/README.md)
 
+### Clienti Web documentati dai comunicati stampa
+
+I **comunicati stampa contemporanei di Internet Force** conservati
+nell'archivio documentano diverse presenze Web di clienti, fra cui
+*Cosmopolitan*, Edizioni Motori (*Auto Capital* e *Autopiù*), *Storia del XX
+Secolo*, Kraft, Designer Exchange, Canale Moda, Clear/Unilever e Motta.
+
+→ [Comunicati stampa Internet Force](../artifacts/press/README.md)
+
+I comunicati attestano i clienti e le iniziative pubblicamente comunicate
+all'epoca. La mia testimonianza diretta aggiunge il dettaglio operativo: per
+questi clienti Internet Force forniva **sia lo sviluppo sia l'hosting Web**.
+
+I siti erano prevalentemente statici o di tipo vetrina. Nel caso delle testate
+giornalistiche, le redazioni producevano e aggiornavano con regolarità pagine e
+contenuti editoriali. Non veniva utilizzato un CMS: authoring, scambio dei
+materiali, verifica e pubblicazione sul server erano passaggi distinti del
+workflow.
+
+Quando serviva una componente dinamica sviluppavo piccoli CGI e, dopo
+l'introduzione di PHP/FI nel 1996, anche piccoli applicativi PHP. Non si
+trattava ancora di applicazioni Web complesse, ma di funzioni specifiche
+integrate nei siti.
+
 ## Hosting web virtuale (VIF)
 
 ### Il problema: una macchina, molti domini
